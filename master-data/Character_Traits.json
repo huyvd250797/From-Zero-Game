@@ -1,0 +1,32 @@
+[
+  {
+    "id": "TRA_DETERMINED",
+    "name": "Kiên trì",
+    "description": "Ít bỏ cuộc trước khó khăn."
+  },
+  {
+    "id": "TRA_CURIOUS",
+    "name": "Ham học",
+    "description": "Thích khám phá kiến thức mới."
+  },
+  {
+    "id": "TRA_DISCIPLINED",
+    "name": "Kỷ luật",
+    "description": "Duy trì lịch sinh hoạt."
+  },
+  {
+    "id": "TRA_SOCIAL",
+    "name": "Hòa đồng",
+    "description": "Dễ kết nối NPC."
+  },
+  {
+    "id": "TRA_IMPULSIVE",
+    "name": "Bốc đồng",
+    "description": "Dễ quyết định thiếu cân nhắc."
+  },
+  {
+    "id": "TRA_CAREFUL",
+    "name": "Thận trọng",
+    "description": "Cân nhắc hậu quả."
+  }
+]

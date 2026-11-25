@@ -1,0 +1,20 @@
+[
+  {
+    "id": "SCHL_VOC",
+    "name": "Trường nghề An Lạc",
+    "district": "DST_EDUCATION",
+    "level": "EDU_VOC"
+  },
+  {
+    "id": "SCHL_UNI",
+    "name": "Đại học An Lạc",
+    "district": "DST_EDUCATION",
+    "level": "EDU_UNI"
+  },
+  {
+    "id": "SCHL_CENTER",
+    "name": "Trung tâm kỹ năng",
+    "district": "DST_CENTER",
+    "level": "EDU_NONE"
+  }
+]

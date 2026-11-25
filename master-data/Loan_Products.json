@@ -1,0 +1,26 @@
+[
+  {
+    "id": "LOAN_SMALL",
+    "name": "Vay tiêu dùng",
+    "bank": "BNK_ANLAC",
+    "annualRate": 0.16,
+    "maxPrincipal": 50000000,
+    "months": 12
+  },
+  {
+    "id": "LOAN_HOME",
+    "name": "Vay mua nhà",
+    "bank": "BNK_ANLAC",
+    "annualRate": 0.09,
+    "maxPrincipal": 2000000000,
+    "months": 240
+  },
+  {
+    "id": "LOAN_BIZ",
+    "name": "Vay kinh doanh",
+    "bank": "BNK_THINHVUONG",
+    "annualRate": 0.11,
+    "maxPrincipal": 500000000,
+    "months": 60
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "SKL_SERVICE",
+    "name": "Phục vụ",
+    "maxLevel": 10,
+    "description": "Chăm sóc khách hàng."
+  },
+  {
+    "id": "SKL_SALES",
+    "name": "Bán hàng",
+    "maxLevel": 10,
+    "description": "Tư vấn sản phẩm."
+  },
+  {
+    "id": "SKL_IT",
+    "name": "Lập trình",
+    "maxLevel": 10,
+    "description": "Xây dựng phần mềm."
+  },
+  {
+    "id": "SKL_ACCOUNT",
+    "name": "Kế toán",
+    "maxLevel": 10,
+    "description": "Quản lý sổ sách."
+  },
+  {
+    "id": "SKL_MANAGE",
+    "name": "Quản lý",
+    "maxLevel": 10,
+    "description": "Điều hành nhân sự."
+  },
+  {
+    "id": "SKL_COOK",
+    "name": "Nấu ăn",
+    "maxLevel": 10,
+    "description": "Chế biến món ăn."
+  },
+  {
+    "id": "SKL_DRIVE",
+    "name": "Lái xe",
+    "maxLevel": 10,
+    "description": "Điều khiển phương tiện."
+  },
+  {
+    "id": "SKL_REPAIR",
+    "name": "Sửa chữa",
+    "maxLevel": 10,
+    "description": "Bảo trì thiết bị."
+  },
+  {
+    "id": "SKL_COMM",
+    "name": "Giao tiếp",
+    "maxLevel": 10,
+    "description": "Tương tác xã hội."
+  },
+  {
+    "id": "SKL_FINANCE",
+    "name": "Tài chính",
+    "maxLevel": 10,
+    "description": "Quản lý tiền."
+  },
+  {
+    "id": "SKL_TEACH",
+    "name": "Giảng dạy",
+    "maxLevel": 10,
+    "description": "Truyền đạt kiến thức."
+  },
+  {
+    "id": "SKL_MED",
+    "name": "Y tế",
+    "maxLevel": 10,
+    "description": "Chăm sóc bệnh nhân."
+  },
+  {
+    "id": "SKL_DESIGN",
+    "name": "Thiết kế",
+    "maxLevel": 10,
+    "description": "Sáng tạo hình ảnh."
+  },
+  {
+    "id": "SKL_BUILD",
+    "name": "Xây dựng",
+    "maxLevel": 10,
+    "description": "Thi công cơ bản."
+  },
+  {
+    "id": "SKL_FARM",
+    "name": "Nông nghiệp",
+    "maxLevel": 10,
+    "description": "Canh tác."
+  }
+]

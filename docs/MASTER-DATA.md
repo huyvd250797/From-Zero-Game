@@ -1,0 +1,87 @@
+# From Zero — Canonical Master Data V1.0.0
+
+Game release V0.2.0 · 60 danh mục, 393 bản ghi seed. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+
+## Danh mục
+
+| Nhóm | JSON | Bản ghi | Trạng thái |
+|---|---|---:|---|
+| A – Foundation | `Game_Config.json` | 1 | Runtime prototype |
+| A – Foundation | `Difficulty.json` | 3 | Seed cho phiên bản sau |
+| A – Foundation | `Character_Origins.json` | 3 | Seed cho phiên bản sau |
+| A – Foundation | `Character_Traits.json` | 6 | Seed cho phiên bản sau |
+| A – Foundation | `Character_Attributes.json` | 13 | Tham chiếu/kiểm tra |
+| A – Foundation | `Life_Stages.json` | 4 | Seed cho phiên bản sau |
+| A – Foundation | `Needs_Rules.json` | 2 | Runtime prototype |
+| B – World & City | `Cities.json` | 1 | Runtime prototype |
+| B – World & City | `Districts.json` | 6 | Tham chiếu/kiểm tra |
+| B – World & City | `Building_Types.json` | 14 | Tham chiếu/kiểm tra |
+| B – World & City | `Building_Instances.json` | 21 | Runtime prototype |
+| B – World & City | `Road_Network.json` | 6 | Runtime prototype |
+| B – World & City | `Navigation_Nodes.json` | 9 | Runtime prototype |
+| B – World & City | `World_Schedules.json` | 8 | Seed cho phiên bản sau |
+| B – World & City | `Location_Actions.json` | 11 | Runtime prototype |
+| C – Character & Social | `NPC_Master.json` | 8 | Seed cho phiên bản sau |
+| C – Character & Social | `Relationships.json` | 5 | Seed cho phiên bản sau |
+| C – Character & Social | `Relationship_Events.json` | 4 | Seed cho phiên bản sau |
+| C – Character & Social | `Family_Rules.json` | 3 | Seed cho phiên bản sau |
+| C – Character & Social | `Social_Reputation.json` | 3 | Seed cho phiên bản sau |
+| D – Education & Career | `Education_Levels.json` | 6 | Seed cho phiên bản sau |
+| D – Education & Career | `Schools.json` | 3 | Seed cho phiên bản sau |
+| D – Education & Career | `Skills.json` | 15 | Seed cho phiên bản sau |
+| D – Education & Career | `Courses.json` | 6 | Seed cho phiên bản sau |
+| D – Education & Career | `Industries.json` | 10 | Seed cho phiên bản sau |
+| D – Education & Career | `Jobs.json` | 15 | Tham chiếu/kiểm tra |
+| D – Education & Career | `Employers.json` | 4 | Seed cho phiên bản sau |
+| D – Education & Career | `Career_Paths.json` | 4 | Seed cho phiên bản sau |
+| E – Assets & Lifestyle | `Items.json` | 5 | Seed cho phiên bản sau |
+| E – Assets & Lifestyle | `Food_Drinks.json` | 5 | Tham chiếu/kiểm tra |
+| E – Assets & Lifestyle | `Activities.json` | 5 | Seed cho phiên bản sau |
+| E – Assets & Lifestyle | `Properties.json` | 5 | Tham chiếu/kiểm tra |
+| E – Assets & Lifestyle | `Vehicles.json` | 6 | Runtime prototype |
+| E – Assets & Lifestyle | `Furniture.json` | 5 | Seed cho phiên bản sau |
+| E – Assets & Lifestyle | `Maintenance.json` | 4 | Seed cho phiên bản sau |
+| F – Finance & Economy | `Income_Types.json` | 6 | Seed cho phiên bản sau |
+| F – Finance & Economy | `Expense_Types.json` | 9 | Seed cho phiên bản sau |
+| F – Finance & Economy | `Banks.json` | 2 | Seed cho phiên bản sau |
+| F – Finance & Economy | `Loan_Products.json` | 3 | Seed cho phiên bản sau |
+| F – Finance & Economy | `Saving_Products.json` | 2 | Seed cho phiên bản sau |
+| F – Finance & Economy | `Investment_Assets.json` | 4 | Seed cho phiên bản sau |
+| F – Finance & Economy | `Economy_Events.json` | 3 | Seed cho phiên bản sau |
+| G – Business | `Business_Types.json` | 6 | Seed cho phiên bản sau |
+| G – Business | `Business_Products.json` | 5 | Seed cho phiên bản sau |
+| G – Business | `Business_Roles.json` | 5 | Seed cho phiên bản sau |
+| G – Business | `Business_Operations.json` | 6 | Seed cho phiên bản sau |
+| H – Health, Lifestyle & Law | `Diseases.json` | 3 | Seed cho phiên bản sau |
+| H – Health, Lifestyle & Law | `Treatments.json` | 3 | Seed cho phiên bản sau |
+| H – Health, Lifestyle & Law | `Lifestyle_Habits.json` | 5 | Seed cho phiên bản sau |
+| H – Health, Lifestyle & Law | `Addiction_Rules.json` | 2 | Seed cho phiên bản sau |
+| H – Health, Lifestyle & Law | `Legal_Offenses.json` | 6 | Seed cho phiên bản sau |
+| H – Health, Lifestyle & Law | `Legal_Proceedings.json` | 5 | Seed cho phiên bản sau |
+| H – Health, Lifestyle & Law | `Penalties.json` | 3 | Seed cho phiên bản sau |
+| H – Health, Lifestyle & Law | `Prison_Rehabilitation.json` | 4 | Seed cho phiên bản sau |
+| I – Story & Events | `Story_Chapters.json` | 12 | Seed cho phiên bản sau |
+| I – Story & Events | `Story_Events.json` | 8 | Seed cho phiên bản sau |
+| I – Story & Events | `Event_Choices.json` | 13 | Seed cho phiên bản sau |
+| J – Endgame | `Achievements.json` | 7 | Seed cho phiên bản sau |
+| J – Endgame | `Life_Endings.json` | 40 | Seed cho phiên bản sau |
+| J – Endgame | `Legacy_Rules.json` | 2 | Seed cho phiên bản sau |
+
+## Quyết định chuẩn hóa
+Roadmap trước ghi 60 nhưng liệt kê 65 tên. Giữ 60 danh mục vật lý, gộp năm khái niệm:
+- Game_Time → Game_Config (dayMinutes, realSecondsPerMinute).
+- NPC_Personalities → NPC_Master.personality tham chiếu Character_Traits.
+- NPC_Behaviors → NPC_Master.behavior và workplace.
+- Business_Risks → Business_Operations.risk / riskDescription.
+- Event_Consequences → Event_Choices (cashDelta, happyDelta, reputationDelta, offense, nextEvent, delayDays, consequence).
+
+## Hợp đồng dữ liệu
+- ID: PREFIX_UPPERCASE, duy nhất toàn bộ 60 danh mục. Không tái sử dụng ID đã phát hành. Các khóa legacyId chỉ là adapter bảo toàn prototype/save.
+- Giá và tiền: số nguyên VND, không dùng số thập phân; lãi suất là tỷ lệ 0–1; điểm 0–100; thời lượng có đơn vị trong tên trường hoặc schema.
+- `schema.json`: hợp đồng schema phiên bản 1.0.0, không phải danh mục gameplay thứ 61.
+- JSON là nguồn chuẩn. `src/master-data.generated.js` tự sinh từ JSON; không sửa tay. `src/master-data.js` cung cấp dữ liệu đóng băng và tra cứu theo ID.
+- `npm run data:validate` kiểm tra và tái sinh bundle; build/dev/test tự thực hiện. Build lỗi nếu dữ liệu không đạt.
+- Runtime state và schema save v1 độc lập với master schema 1.0.0. Không ghi runtime state vào JSON.
+
+## Phạm vi phiên bản
+Các danh mục seed chưa phải bộ nội dung đầy đủ V1.0.0. NPC chưa có hành vi AI từ seed; chưa mở mua nhà/ô tô, pháp luật, kinh doanh, đầu tư, cốt truyện đa nhánh. Điều kiện kết thúc hiện là mô tả, chưa phải biểu thức được engine thực thi. Tốc độ và hình học của renderer vẫn giới hạn bản đồ prototype 96×96. Giá trị cần playtest và cân bằng trước khi đóng băng nội dung.

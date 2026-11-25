@@ -1,0 +1,20 @@
+[
+  {
+    "id": "REP_LOW",
+    "name": "Uy tín thấp",
+    "min": 0,
+    "max": 29
+  },
+  {
+    "id": "REP_NORMAL",
+    "name": "Bình thường",
+    "min": 30,
+    "max": 69
+  },
+  {
+    "id": "REP_HIGH",
+    "name": "Được tin tưởng",
+    "min": 70,
+    "max": 100
+  }
+]

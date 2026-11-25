@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ADD_PARTY",
+    "name": "Lệ thuộc giải trí",
+    "habit": "HAB_PARTY",
+    "threshold": 70,
+    "description": "Chi tiêu và thời gian tăng, có nhánh phục hồi."
+  },
+  {
+    "id": "ADD_DRINK",
+    "name": "Lệ thuộc rượu",
+    "habit": "HAB_DRINK",
+    "threshold": 65,
+    "description": "Tác động sức khỏe và quan hệ, có nhánh hỗ trợ."
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "CRS_SERVICE",
+    "name": "Phục vụ cơ bản",
+    "school": "SCHL_CENTER",
+    "skill": "SKL_SERVICE",
+    "fee": 300000,
+    "durationDays": 7,
+    "gain": 1
+  },
+  {
+    "id": "CRS_IT",
+    "name": "Lập trình nhập môn",
+    "school": "SCHL_VOC",
+    "skill": "SKL_IT",
+    "fee": 3000000,
+    "durationDays": 60,
+    "gain": 2
+  },
+  {
+    "id": "CRS_ACCOUNT",
+    "name": "Kế toán cơ bản",
+    "school": "SCHL_CENTER",
+    "skill": "SKL_ACCOUNT",
+    "fee": 1500000,
+    "durationDays": 30,
+    "gain": 2
+  },
+  {
+    "id": "CRS_COOK",
+    "name": "Nghề bếp",
+    "school": "SCHL_VOC",
+    "skill": "SKL_COOK",
+    "fee": 2000000,
+    "durationDays": 45,
+    "gain": 2
+  },
+  {
+    "id": "CRS_MANAGE",
+    "name": "Quản trị",
+    "school": "SCHL_UNI",
+    "skill": "SKL_MANAGE",
+    "fee": 12000000,
+    "durationDays": 180,
+    "gain": 3
+  },
+  {
+    "id": "CRS_REPAIR",
+    "name": "Sửa chữa xe",
+    "school": "SCHL_VOC",
+    "skill": "SKL_REPAIR",
+    "fee": 2500000,
+    "durationDays": 60,
+    "gain": 2
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "BTY_SHOP",
+    "name": "Cửa hàng",
+    "description": "Nhu yếu phẩm và việc làm."
+  },
+  {
+    "id": "BTY_ROOM",
+    "name": "Phòng trọ",
+    "description": "Nơi nghỉ ngơi."
+  },
+  {
+    "id": "BTY_CAFE",
+    "name": "Cà phê",
+    "description": "Gặp gỡ và giải trí."
+  },
+  {
+    "id": "BTY_PARK",
+    "name": "Công viên",
+    "description": "Không gian công cộng."
+  },
+  {
+    "id": "BTY_OFFICE",
+    "name": "Văn phòng",
+    "description": "Nơi làm việc."
+  },
+  {
+    "id": "BTY_BANK",
+    "name": "Ngân hàng",
+    "description": "Dịch vụ tài chính."
+  },
+  {
+    "id": "BTY_BIKE",
+    "name": "Cửa hàng xe",
+    "description": "Mua phương tiện."
+  },
+  {
+    "id": "BTY_CLINIC",
+    "name": "Phòng khám",
+    "description": "Chăm sóc sức khỏe."
+  },
+  {
+    "id": "BTY_DECOR",
+    "name": "Công trình nền",
+    "description": "Trang trí thành phố."
+  },
+  {
+    "id": "BTY_SCHOOL",
+    "name": "Trường học",
+    "description": "Đào tạo."
+  },
+  {
+    "id": "BTY_COURT",
+    "name": "Tòa án",
+    "description": "Xét xử."
+  },
+  {
+    "id": "BTY_PRISON",
+    "name": "Nhà tù",
+    "description": "Thi hành án."
+  },
+  {
+    "id": "BTY_HOUSE",
+    "name": "Nhà ở",
+    "description": "Nhà có thể sở hữu."
+  },
+  {
+    "id": "BTY_FACTORY",
+    "name": "Nhà máy",
+    "description": "Sản xuất."
+  }
+]

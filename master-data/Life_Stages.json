@@ -1,0 +1,26 @@
+[
+  {
+    "id": "LIF_YOUNG",
+    "name": "Khởi đầu",
+    "minAge": 18,
+    "maxAge": 24
+  },
+  {
+    "id": "LIF_ADULT",
+    "name": "Xây dựng",
+    "minAge": 25,
+    "maxAge": 39
+  },
+  {
+    "id": "LIF_MATURE",
+    "name": "Trưởng thành",
+    "minAge": 40,
+    "maxAge": 59
+  },
+  {
+    "id": "LIF_SENIOR",
+    "name": "Tuổi già",
+    "minAge": 60,
+    "maxAge": 120
+  }
+]

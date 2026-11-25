@@ -1,0 +1,47 @@
+[
+  {
+    "id": "PROP_ROOM",
+    "name": "Phòng trọ",
+    "type": "BTY_ROOM",
+    "price": 0,
+    "rentDaily": 120000,
+    "maintenanceMonthly": 0,
+    "capacity": 1
+  },
+  {
+    "id": "PROP_SMALL",
+    "name": "Nhà nhỏ",
+    "type": "BTY_HOUSE",
+    "price": 500000000,
+    "rentDaily": 250000,
+    "maintenanceMonthly": 600000,
+    "capacity": 2
+  },
+  {
+    "id": "PROP_APT",
+    "name": "Căn hộ",
+    "type": "BTY_HOUSE",
+    "price": 1500000000,
+    "rentDaily": 450000,
+    "maintenanceMonthly": 1500000,
+    "capacity": 4
+  },
+  {
+    "id": "PROP_TOWN",
+    "name": "Nhà phố",
+    "type": "BTY_HOUSE",
+    "price": 3000000000,
+    "rentDaily": 800000,
+    "maintenanceMonthly": 2500000,
+    "capacity": 5
+  },
+  {
+    "id": "PROP_VILLA",
+    "name": "Biệt thự",
+    "type": "BTY_HOUSE",
+    "price": 10000000000,
+    "rentDaily": 2000000,
+    "maintenanceMonthly": 8000000,
+    "capacity": 8
+  }
+]

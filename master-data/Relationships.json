@@ -1,0 +1,32 @@
+[
+  {
+    "id": "REL_ACQUAINTANCE",
+    "name": "Quen biết",
+    "minTrust": 0,
+    "description": "Mới gặp."
+  },
+  {
+    "id": "REL_FRIEND",
+    "name": "Bạn bè",
+    "minTrust": 30,
+    "description": "Có sự tin tưởng."
+  },
+  {
+    "id": "REL_CLOSE",
+    "name": "Bạn thân",
+    "minTrust": 70,
+    "description": "Có thể giúp đỡ nhau."
+  },
+  {
+    "id": "REL_PARTNER",
+    "name": "Đối tác",
+    "minTrust": 50,
+    "description": "Quan hệ công việc."
+  },
+  {
+    "id": "REL_SPOUSE",
+    "name": "Vợ/chồng",
+    "minTrust": 75,
+    "description": "Quan hệ gia đình."
+  }
+]

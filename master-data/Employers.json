@@ -1,0 +1,40 @@
+[
+  {
+    "id": "EMP_SHOP",
+    "name": "Cửa hàng tiện lợi",
+    "building": "BLD_SHOP",
+    "jobs": [
+      "JOB_TEMP",
+      "JOB_CASHIER",
+      "JOB_SALES"
+    ]
+  },
+  {
+    "id": "EMP_ANPHAT",
+    "name": "Công ty An Phát",
+    "building": "BLD_OFFICE",
+    "jobs": [
+      "JOB_DEV",
+      "JOB_LEAD",
+      "JOB_ACCOUNT",
+      "JOB_MANAGER"
+    ]
+  },
+  {
+    "id": "EMP_CAFE",
+    "name": "Cà phê An Lạc",
+    "building": "BLD_CAFE",
+    "jobs": [
+      "JOB_COOK",
+      "JOB_TEMP"
+    ]
+  },
+  {
+    "id": "EMP_CLINIC",
+    "name": "Phòng khám An Lạc",
+    "building": "BLD_CLINIC",
+    "jobs": [
+      "JOB_NURSE"
+    ]
+  }
+]

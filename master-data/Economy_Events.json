@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ECO_INFLATION",
+    "name": "Lạm phát",
+    "durationMonths": 12,
+    "priceMultiplier": 1.1,
+    "wageMultiplier": 1.02,
+    "description": "Chi phí sinh hoạt tăng."
+  },
+  {
+    "id": "ECO_RECESSION",
+    "name": "Suy thoái",
+    "durationMonths": 6,
+    "priceMultiplier": 1.02,
+    "wageMultiplier": 0.9,
+    "description": "Cơ hội việc làm giảm."
+  },
+  {
+    "id": "ECO_BOOM",
+    "name": "Tăng trưởng",
+    "durationMonths": 12,
+    "priceMultiplier": 1.04,
+    "wageMultiplier": 1.1,
+    "description": "Nhu cầu lao động tăng."
+  }
+]

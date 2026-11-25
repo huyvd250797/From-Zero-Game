@@ -1,0 +1,32 @@
+[
+  {
+    "id": "FUR_BED",
+    "name": "Giường",
+    "price": 1500000,
+    "comfort": 40
+  },
+  {
+    "id": "FUR_DESK",
+    "name": "Bàn học",
+    "price": 600000,
+    "comfort": 15
+  },
+  {
+    "id": "FUR_FRIDGE",
+    "name": "Tủ lạnh",
+    "price": 4500000,
+    "comfort": 25
+  },
+  {
+    "id": "FUR_AC",
+    "name": "Máy lạnh",
+    "price": 7000000,
+    "comfort": 35
+  },
+  {
+    "id": "FUR_SOFA",
+    "name": "Sofa",
+    "price": 3500000,
+    "comfort": 25
+  }
+]

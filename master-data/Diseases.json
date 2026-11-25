@@ -1,0 +1,20 @@
+[
+  {
+    "id": "DIS_COLD",
+    "name": "Cảm nhẹ",
+    "healthDelta": -5,
+    "durationDays": 3
+  },
+  {
+    "id": "DIS_FATIGUE",
+    "name": "Kiệt sức",
+    "healthDelta": -15,
+    "durationDays": 7
+  },
+  {
+    "id": "DIS_CHRONIC",
+    "name": "Bệnh mạn tính giả lập",
+    "healthDelta": -20,
+    "durationDays": 30
+  }
+]

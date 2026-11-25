@@ -1,0 +1,23 @@
+[
+  {
+    "id": "FAM_MARRIAGE",
+    "name": "Kết hôn",
+    "minAge": 18,
+    "minTrust": 75,
+    "description": "Hai NPC trưởng thành đồng thuận trong game."
+  },
+  {
+    "id": "FAM_CHILD",
+    "name": "Nuôi con",
+    "minAge": 18,
+    "minTrust": 0,
+    "description": "Phát sinh trách nhiệm chăm sóc."
+  },
+  {
+    "id": "FAM_SEPARATION",
+    "name": "Chia tay",
+    "minAge": 18,
+    "minTrust": 0,
+    "description": "Giải quyết quan hệ và nghĩa vụ."
+  }
+]

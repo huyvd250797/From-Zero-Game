@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ATV_PARK",
+    "name": "Nghỉ ở công viên",
+    "minutes": 60,
+    "price": 0,
+    "happy": 12,
+    "description": "Hoạt động miễn phí."
+  },
+  {
+    "id": "ATV_CINEMA",
+    "name": "Xem phim",
+    "minutes": 120,
+    "price": 100000,
+    "happy": 18,
+    "description": "Giải trí."
+  },
+  {
+    "id": "ATV_GYM",
+    "name": "Tập thể dục",
+    "minutes": 60,
+    "price": 50000,
+    "happy": 8,
+    "description": "Rèn thể lực."
+  },
+  {
+    "id": "ATV_PARTY",
+    "name": "Tiệc tùng",
+    "minutes": 180,
+    "price": 600000,
+    "happy": 20,
+    "description": "Chi phí cao, vui ngắn hạn."
+  },
+  {
+    "id": "ATV_STUDY",
+    "name": "Đọc sách",
+    "minutes": 60,
+    "price": 0,
+    "happy": 2,
+    "description": "Tự học."
+  }
+]

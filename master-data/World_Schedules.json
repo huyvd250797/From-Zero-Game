@@ -1,0 +1,58 @@
+[
+  {
+    "id": "SCH_SHOP",
+    "name": "Cửa hàng tiện lợi",
+    "building": "BLD_SHOP",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_ROOM",
+    "name": "Khu phòng trọ",
+    "building": "BLD_ROOM",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_CAFE",
+    "name": "Quán cà phê",
+    "building": "BLD_CAFE",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_PARK",
+    "name": "Công viên An Lạc",
+    "building": "BLD_PARK",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_OFFICE",
+    "name": "Công ty An Phát",
+    "building": "BLD_OFFICE",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_BANK",
+    "name": "Ngân hàng",
+    "building": "BLD_BANK",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_BIKE",
+    "name": "Cửa hàng xe đạp",
+    "building": "BLD_BIKE",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_CLINIC",
+    "name": "Phòng khám",
+    "building": "BLD_CLINIC",
+    "opens": 0,
+    "closes": 1440
+  }
+]

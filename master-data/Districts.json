@@ -1,0 +1,38 @@
+[
+  {
+    "id": "DST_CENTER",
+    "name": "Trung tâm",
+    "city": "CTY_ANLAC",
+    "description": "Khu thử nghiệm hiện tại."
+  },
+  {
+    "id": "DST_RESIDENTIAL",
+    "name": "Dân cư",
+    "city": "CTY_ANLAC",
+    "description": "Nhà ở và dịch vụ."
+  },
+  {
+    "id": "DST_INDUSTRIAL",
+    "name": "Công nghiệp",
+    "city": "CTY_ANLAC",
+    "description": "Nhà máy và kho."
+  },
+  {
+    "id": "DST_EDUCATION",
+    "name": "Giáo dục",
+    "city": "CTY_ANLAC",
+    "description": "Trường và trung tâm."
+  },
+  {
+    "id": "DST_OUTSKIRTS",
+    "name": "Ngoại ô",
+    "city": "CTY_ANLAC",
+    "description": "Đất và nông trại."
+  },
+  {
+    "id": "DST_CIVIC",
+    "name": "Hành chính",
+    "city": "CTY_ANLAC",
+    "description": "Tòa án và dịch vụ công."
+  }
+]

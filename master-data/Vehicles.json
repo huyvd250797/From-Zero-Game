@@ -1,0 +1,56 @@
+[
+  {
+    "id": "VEH_BIKE",
+    "name": "Xe đạp cũ",
+    "price": 350000,
+    "speed": 12,
+    "energyType": "none",
+    "maintenanceMonthly": 10000,
+    "seats": 1
+  },
+  {
+    "id": "VEH_MOTO",
+    "name": "Xe máy",
+    "price": 22000000,
+    "speed": 20,
+    "energyType": "petrol",
+    "maintenanceMonthly": 200000,
+    "seats": 2
+  },
+  {
+    "id": "VEH_CAR",
+    "name": "Ô tô phổ thông",
+    "price": 550000000,
+    "speed": 30,
+    "energyType": "petrol",
+    "maintenanceMonthly": 1800000,
+    "seats": 5
+  },
+  {
+    "id": "VEH_EV",
+    "name": "Ô tô điện",
+    "price": 650000000,
+    "speed": 30,
+    "energyType": "electric",
+    "maintenanceMonthly": 1500000,
+    "seats": 5
+  },
+  {
+    "id": "VEH_LUX",
+    "name": "Ô tô cao cấp",
+    "price": 1800000000,
+    "speed": 32,
+    "energyType": "petrol",
+    "maintenanceMonthly": 4500000,
+    "seats": 5
+  },
+  {
+    "id": "VEH_TRUCK",
+    "name": "Xe tải",
+    "price": 850000000,
+    "speed": 22,
+    "energyType": "petrol",
+    "maintenanceMonthly": 3000000,
+    "seats": 2
+  }
+]

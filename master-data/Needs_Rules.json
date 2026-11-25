@@ -1,0 +1,18 @@
+[
+  {
+    "id": "NEE_ENERGY",
+    "name": "Tiêu hao năng lượng",
+    "attribute": "ATR_ENERGY",
+    "intervalMinutes": 15,
+    "delta": -1,
+    "warningBelow": 15
+  },
+  {
+    "id": "NEE_HUNGER",
+    "name": "Tiêu hao độ no",
+    "attribute": "ATR_HUNGER",
+    "intervalMinutes": 15,
+    "delta": -1,
+    "warningBelow": 20
+  }
+]

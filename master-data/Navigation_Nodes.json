@@ -1,0 +1,65 @@
+[
+  {
+    "id": "NAV_SPAWN",
+    "name": "Điểm xuất phát",
+    "city": "CTY_ANLAC",
+    "x": 21,
+    "z": 36
+  },
+  {
+    "id": "NAV_SHOP",
+    "name": "Cửa Cửa hàng tiện lợi",
+    "city": "CTY_ANLAC",
+    "x": 26,
+    "z": 32
+  },
+  {
+    "id": "NAV_ROOM",
+    "name": "Cửa Khu phòng trọ",
+    "city": "CTY_ANLAC",
+    "x": 11,
+    "z": 32
+  },
+  {
+    "id": "NAV_CAFE",
+    "name": "Cửa Quán cà phê",
+    "city": "CTY_ANLAC",
+    "x": 37,
+    "z": 43
+  },
+  {
+    "id": "NAV_PARK",
+    "name": "Cửa Công viên An Lạc",
+    "city": "CTY_ANLAC",
+    "x": 27,
+    "z": 54
+  },
+  {
+    "id": "NAV_OFFICE",
+    "name": "Cửa Công ty An Phát",
+    "city": "CTY_ANLAC",
+    "x": 60,
+    "z": 34
+  },
+  {
+    "id": "NAV_BANK",
+    "name": "Cửa Ngân hàng",
+    "city": "CTY_ANLAC",
+    "x": 69,
+    "z": 44
+  },
+  {
+    "id": "NAV_BIKE",
+    "name": "Cửa Cửa hàng xe đạp",
+    "city": "CTY_ANLAC",
+    "x": 60,
+    "z": 52
+  },
+  {
+    "id": "NAV_CLINIC",
+    "name": "Cửa Phòng khám",
+    "city": "CTY_ANLAC",
+    "x": 70,
+    "z": 64
+  }
+]

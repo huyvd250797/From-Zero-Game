@@ -1,0 +1,30 @@
+[
+  {
+    "id": "REV_HELP",
+    "name": "Giúp đỡ",
+    "relationship": "REL_FRIEND",
+    "trustDelta": 10,
+    "description": "Giúp bạn khi khó khăn."
+  },
+  {
+    "id": "REV_PROMISE",
+    "name": "Giữ lời hứa",
+    "relationship": "REL_PARTNER",
+    "trustDelta": 8,
+    "description": "Hoàn thành cam kết."
+  },
+  {
+    "id": "REV_NEGLECT",
+    "name": "Bỏ bê",
+    "relationship": "REL_SPOUSE",
+    "trustDelta": -15,
+    "description": "Không dành thời gian cho gia đình."
+  },
+  {
+    "id": "REV_CONFLICT",
+    "name": "Mâu thuẫn",
+    "relationship": "REL_CLOSE",
+    "trustDelta": -10,
+    "description": "Bất đồng quan điểm."
+  }
+]

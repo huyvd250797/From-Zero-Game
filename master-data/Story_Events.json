@@ -1,0 +1,82 @@
+[
+  {
+    "id": "EVT_ARRIVE",
+    "name": "Đến An Lạc",
+    "chapter": "CHP_01",
+    "minAge": 18,
+    "maxAge": 18,
+    "trigger": "arrival",
+    "repeatable": false,
+    "description": "Tìm cách sinh sống."
+  },
+  {
+    "id": "EVT_SHIFT",
+    "name": "Ca làm đầu tiên",
+    "chapter": "CHP_03",
+    "minAge": 18,
+    "maxAge": 80,
+    "trigger": "first_shift",
+    "repeatable": false,
+    "description": "Bắt đầu tích lũy."
+  },
+  {
+    "id": "EVT_FRIEND",
+    "name": "Bạn cần giúp đỡ",
+    "chapter": "CHP_05",
+    "minAge": 18,
+    "maxAge": 80,
+    "trigger": "friend_request",
+    "repeatable": false,
+    "description": "Một người bạn gặp khó khăn."
+  },
+  {
+    "id": "EVT_CRISIS",
+    "name": "Ngã rẽ doanh nghiệp",
+    "chapter": "CHP_07",
+    "minAge": 18,
+    "maxAge": 80,
+    "trigger": "business_crisis",
+    "repeatable": false,
+    "description": "Đối mặt đề xuất gian lận."
+  },
+  {
+    "id": "EVT_PARTY",
+    "name": "Chi tiêu mất kiểm soát",
+    "chapter": "CHP_08",
+    "minAge": 18,
+    "maxAge": 100,
+    "trigger": "overspending",
+    "repeatable": true,
+    "description": "Tài sản suy giảm do chi tiêu."
+  },
+  {
+    "id": "EVT_LEGAL",
+    "name": "Vụ việc pháp lý",
+    "chapter": "CHP_08",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "legal_case",
+    "repeatable": false,
+    "description": "Kết quả phụ thuộc quá trình xét xử."
+  },
+  {
+    "id": "EVT_RELEASE",
+    "name": "Cơ hội làm lại",
+    "chapter": "CHP_10",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "release",
+    "repeatable": false,
+    "description": "Tái hòa nhập xã hội."
+  },
+  {
+    "id": "EVT_RETIRE",
+    "name": "Nghỉ hưu",
+    "chapter": "CHP_11",
+    "minAge": 60,
+    "maxAge": 120,
+    "trigger": "retirement",
+    "repeatable": false,
+    "description": "Tổng kết mục tiêu sống."
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "FOOD_MEAL",
+    "name": "Cơm hộp",
+    "price": 30000,
+    "hunger": 35,
+    "energy": 2,
+    "happy": 3
+  },
+  {
+    "id": "FOOD_COFFEE",
+    "name": "Cà phê",
+    "price": 35000,
+    "hunger": -3,
+    "energy": 15,
+    "happy": 8
+  },
+  {
+    "id": "FOOD_WATER",
+    "name": "Nước uống",
+    "price": 10000,
+    "hunger": 0,
+    "energy": 2,
+    "happy": 0
+  },
+  {
+    "id": "FOOD_NOODLES",
+    "name": "Mì",
+    "price": 25000,
+    "hunger": 25,
+    "energy": 1,
+    "happy": 2
+  },
+  {
+    "id": "FOOD_FRUIT",
+    "name": "Trái cây",
+    "price": 20000,
+    "hunger": 15,
+    "energy": 2,
+    "happy": 2
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "CAR_TEMP_CASH",
+    "name": "Thời vụ → Thu ngân",
+    "from": "JOB_TEMP",
+    "to": "JOB_CASHIER",
+    "experienceMonths": 3
+  },
+  {
+    "id": "CAR_CASH_SALES",
+    "name": "Thu ngân → Bán hàng",
+    "from": "JOB_CASHIER",
+    "to": "JOB_SALES",
+    "experienceMonths": 6
+  },
+  {
+    "id": "CAR_SALES_MANAGER",
+    "name": "Bán hàng → Quản lý",
+    "from": "JOB_SALES",
+    "to": "JOB_MANAGER",
+    "experienceMonths": 24
+  },
+  {
+    "id": "CAR_DEV_LEAD",
+    "name": "Lập trình viên → Trưởng nhóm",
+    "from": "JOB_DEV",
+    "to": "JOB_LEAD",
+    "experienceMonths": 36
+  }
+]

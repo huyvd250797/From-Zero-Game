@@ -1,0 +1,30 @@
+[
+  {
+    "id": "MNT_BIKE",
+    "name": "Bảo dưỡng xe đạp",
+    "asset": "VEH_BIKE",
+    "intervalDays": 30,
+    "cost": 10000
+  },
+  {
+    "id": "MNT_MOTO",
+    "name": "Bảo dưỡng xe máy",
+    "asset": "VEH_MOTO",
+    "intervalDays": 30,
+    "cost": 200000
+  },
+  {
+    "id": "MNT_CAR",
+    "name": "Bảo dưỡng ô tô",
+    "asset": "VEH_CAR",
+    "intervalDays": 30,
+    "cost": 1800000
+  },
+  {
+    "id": "MNT_APT",
+    "name": "Phí căn hộ",
+    "asset": "PROP_APT",
+    "intervalDays": 30,
+    "cost": 1500000
+  }
+]

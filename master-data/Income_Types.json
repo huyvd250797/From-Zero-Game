@@ -1,0 +1,32 @@
+[
+  {
+    "id": "INC_WAGE",
+    "name": "Lương",
+    "description": "Thu nhập từ việc làm."
+  },
+  {
+    "id": "INC_TEMP",
+    "name": "Thời vụ",
+    "description": "Thu nhập theo ca."
+  },
+  {
+    "id": "INC_BUSINESS",
+    "name": "Kinh doanh",
+    "description": "Lợi nhuận hoạt động."
+  },
+  {
+    "id": "INC_INTEREST",
+    "name": "Lãi tiền gửi",
+    "description": "Thu nhập tài chính."
+  },
+  {
+    "id": "INC_DIVIDEND",
+    "name": "Cổ tức",
+    "description": "Phân phối lợi nhuận."
+  },
+  {
+    "id": "INC_RENT",
+    "name": "Cho thuê",
+    "description": "Thu nhập tài sản."
+  }
+]

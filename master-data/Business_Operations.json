@@ -1,0 +1,50 @@
+[
+  {
+    "id": "BOP_STALL",
+    "name": "Vận hành quầy",
+    "business": "BIZ_STALL",
+    "monthlyFixedCost": 1500000,
+    "risk": "medium",
+    "riskDescription": "Nhu cầu biến động."
+  },
+  {
+    "id": "BOP_CAFE",
+    "name": "Vận hành cà phê",
+    "business": "BIZ_CAFE",
+    "monthlyFixedCost": 12000000,
+    "risk": "medium",
+    "riskDescription": "Chi phí mặt bằng."
+  },
+  {
+    "id": "BOP_SHOP",
+    "name": "Vận hành bán lẻ",
+    "business": "BIZ_SHOP",
+    "monthlyFixedCost": 18000000,
+    "risk": "medium",
+    "riskDescription": "Hàng tồn kho."
+  },
+  {
+    "id": "BOP_SOFT",
+    "name": "Vận hành phần mềm",
+    "business": "BIZ_SOFT",
+    "monthlyFixedCost": 50000000,
+    "risk": "high",
+    "riskDescription": "Mất hợp đồng."
+  },
+  {
+    "id": "BOP_FACTORY",
+    "name": "Vận hành nhà máy",
+    "business": "BIZ_FACTORY",
+    "monthlyFixedCost": 120000000,
+    "risk": "high",
+    "riskDescription": "An toàn lao động và chi phí."
+  },
+  {
+    "id": "BOP_FARM",
+    "name": "Vận hành trang trại",
+    "business": "BIZ_FARM",
+    "monthlyFixedCost": 15000000,
+    "risk": "high",
+    "riskDescription": "Thời tiết và mùa vụ."
+  }
+]

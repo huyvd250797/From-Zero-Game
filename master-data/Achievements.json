@@ -1,0 +1,51 @@
+[
+  {
+    "id": "ACH_SHIFT",
+    "name": "Đồng tiền đầu tiên",
+    "metric": "shifts",
+    "threshold": 1,
+    "description": "Hoàn thành ca làm."
+  },
+  {
+    "id": "ACH_BIKE",
+    "name": "Chiếc xe đầu tiên",
+    "metric": "bike",
+    "threshold": 1,
+    "description": "Sở hữu xe đạp."
+  },
+  {
+    "id": "ACH_MILLION",
+    "name": "Triệu phú đầu tiên",
+    "metric": "cash",
+    "threshold": 1000000,
+    "description": "Tích lũy một triệu."
+  },
+  {
+    "id": "ACH_HOME",
+    "name": "Mái ấm",
+    "metric": "home",
+    "threshold": 1,
+    "description": "Có nhà."
+  },
+  {
+    "id": "ACH_LEARN",
+    "name": "Học không ngừng",
+    "metric": "education",
+    "threshold": 4,
+    "description": "Có bằng đại học."
+  },
+  {
+    "id": "ACH_BIZ",
+    "name": "Khởi nghiệp",
+    "metric": "business",
+    "threshold": 1,
+    "description": "Thành lập doanh nghiệp."
+  },
+  {
+    "id": "ACH_RECOVER",
+    "name": "Làm lại",
+    "metric": "recovery",
+    "threshold": 1,
+    "description": "Phục hồi sau thất bại."
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "LGL_REPORTED",
+    "name": "Tố cáo",
+    "next": [
+      "LGL_INVESTIGATE",
+      "LGL_CLOSED"
+    ],
+    "description": "Tiếp nhận vụ việc."
+  },
+  {
+    "id": "LGL_INVESTIGATE",
+    "name": "Điều tra",
+    "next": [
+      "LGL_TRIAL",
+      "LGL_CLOSED"
+    ],
+    "description": "Đánh giá chứng cứ, không mặc định có tội."
+  },
+  {
+    "id": "LGL_TRIAL",
+    "name": "Xét xử",
+    "next": [
+      "LGL_SENTENCE",
+      "LGL_CLOSED"
+    ],
+    "description": "Đưa ra kết quả."
+  },
+  {
+    "id": "LGL_SENTENCE",
+    "name": "Thi hành án",
+    "next": [
+      "LGL_CLOSED"
+    ],
+    "description": "Hoàn thành nghĩa vụ."
+  },
+  {
+    "id": "LGL_CLOSED",
+    "name": "Kết thúc",
+    "next": [],
+    "description": "Vụ việc đã kết thúc."
+  }
+]

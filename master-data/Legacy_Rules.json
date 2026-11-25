@@ -1,0 +1,16 @@
+[
+  {
+    "id": "LEG_HEIR",
+    "name": "Thừa kế",
+    "minHeirAge": 18,
+    "transferRatio": 1,
+    "description": "Chuyển tài sản hợp lệ sau nghĩa vụ."
+  },
+  {
+    "id": "LEG_NONE",
+    "name": "Không có người kế tiếp",
+    "minHeirAge": 18,
+    "transferRatio": 0,
+    "description": "Kết thúc lượt chơi."
+  }
+]

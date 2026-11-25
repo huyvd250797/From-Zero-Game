@@ -1,0 +1,106 @@
+[
+  {
+    "id": "ATR_HEALTH",
+    "name": "Sức khỏe",
+    "min": 0,
+    "max": 100,
+    "initial": 100,
+    "unit": "score"
+  },
+  {
+    "id": "ATR_ENERGY",
+    "name": "Năng lượng",
+    "min": 0,
+    "max": 100,
+    "initial": 100,
+    "unit": "score"
+  },
+  {
+    "id": "ATR_HUNGER",
+    "name": "Độ no",
+    "min": 0,
+    "max": 100,
+    "initial": 85,
+    "unit": "score"
+  },
+  {
+    "id": "ATR_HYGIENE",
+    "name": "Vệ sinh",
+    "min": 0,
+    "max": 100,
+    "initial": 80,
+    "unit": "score"
+  },
+  {
+    "id": "ATR_HAPPY",
+    "name": "Hạnh phúc",
+    "min": 0,
+    "max": 100,
+    "initial": 60,
+    "unit": "score"
+  },
+  {
+    "id": "ATR_STRESS",
+    "name": "Căng thẳng",
+    "min": 0,
+    "max": 100,
+    "initial": 20,
+    "unit": "score"
+  },
+  {
+    "id": "ATR_KNOWLEDGE",
+    "name": "Kiến thức",
+    "min": 0,
+    "max": 1000000,
+    "initial": 0,
+    "unit": "xp"
+  },
+  {
+    "id": "ATR_FITNESS",
+    "name": "Thể lực",
+    "min": 0,
+    "max": 100,
+    "initial": 50,
+    "unit": "score"
+  },
+  {
+    "id": "ATR_DISCIPLINE",
+    "name": "Kỷ luật",
+    "min": 0,
+    "max": 100,
+    "initial": 50,
+    "unit": "score"
+  },
+  {
+    "id": "ATR_SOCIAL",
+    "name": "Giao tiếp",
+    "min": 0,
+    "max": 100,
+    "initial": 30,
+    "unit": "score"
+  },
+  {
+    "id": "ATR_REPUTATION",
+    "name": "Uy tín",
+    "min": 0,
+    "max": 100,
+    "initial": 50,
+    "unit": "score"
+  },
+  {
+    "id": "ATR_INTEGRITY",
+    "name": "Chính trực",
+    "min": 0,
+    "max": 100,
+    "initial": 75,
+    "unit": "score"
+  },
+  {
+    "id": "ATR_EXPERIENCE",
+    "name": "Kinh nghiệm",
+    "min": 0,
+    "max": 1000000,
+    "initial": 0,
+    "unit": "xp"
+  }
+]

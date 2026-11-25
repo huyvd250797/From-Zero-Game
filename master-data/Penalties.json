@@ -1,0 +1,26 @@
+[
+  {
+    "id": "PEN_MINOR",
+    "name": "Xử phạt giả lập",
+    "fine": 5000000,
+    "prisonMonths": 0,
+    "reputationDelta": -5,
+    "description": "Mức phạt dùng để cân bằng game."
+  },
+  {
+    "id": "PEN_MAJOR",
+    "name": "Xử lý nghiêm trọng",
+    "fine": 100000000,
+    "prisonMonths": 12,
+    "reputationDelta": -30,
+    "description": "Có thể áp dụng tù tùy kết quả xét xử giả lập."
+  },
+  {
+    "id": "PEN_SERIOUS",
+    "name": "Hậu quả nặng",
+    "fine": 300000000,
+    "prisonMonths": 48,
+    "reputationDelta": -60,
+    "description": "Thông số hư cấu, không phải mức án thực tế."
+  }
+]

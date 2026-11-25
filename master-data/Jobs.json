@@ -1,0 +1,194 @@
+[
+  {
+    "id": "JOB_TEMP",
+    "name": "Lao động thời vụ",
+    "industry": "IND_LABOR",
+    "education": "EDU_NONE",
+    "skills": [],
+    "pay": 200000,
+    "payPeriod": "shift",
+    "shiftMinutes": 240,
+    "stress": 25
+  },
+  {
+    "id": "JOB_WORKER",
+    "name": "Công nhân",
+    "industry": "IND_LABOR",
+    "education": "EDU_NONE",
+    "skills": [],
+    "pay": 7000000,
+    "payPeriod": "month",
+    "shiftMinutes": 480,
+    "stress": 40
+  },
+  {
+    "id": "JOB_CASHIER",
+    "name": "Thu ngân",
+    "industry": "IND_SERVICE",
+    "education": "EDU_HIGH",
+    "skills": [
+      "SKL_SERVICE"
+    ],
+    "pay": 6500000,
+    "payPeriod": "month",
+    "shiftMinutes": 480,
+    "stress": 30
+  },
+  {
+    "id": "JOB_SALES",
+    "name": "Nhân viên bán hàng",
+    "industry": "IND_SERVICE",
+    "education": "EDU_HIGH",
+    "skills": [
+      "SKL_SALES"
+    ],
+    "pay": 8000000,
+    "payPeriod": "month",
+    "shiftMinutes": 480,
+    "stress": 45
+  },
+  {
+    "id": "JOB_COOK",
+    "name": "Đầu bếp",
+    "industry": "IND_SERVICE",
+    "education": "EDU_VOC",
+    "skills": [
+      "SKL_COOK"
+    ],
+    "pay": 11000000,
+    "payPeriod": "month",
+    "shiftMinutes": 480,
+    "stress": 50
+  },
+  {
+    "id": "JOB_DEV",
+    "name": "Lập trình viên",
+    "industry": "IND_IT",
+    "education": "EDU_VOC",
+    "skills": [
+      "SKL_IT"
+    ],
+    "pay": 16000000,
+    "payPeriod": "month",
+    "shiftMinutes": 480,
+    "stress": 55
+  },
+  {
+    "id": "JOB_LEAD",
+    "name": "Trưởng nhóm kỹ thuật",
+    "industry": "IND_IT",
+    "education": "EDU_VOC",
+    "skills": [
+      "SKL_IT",
+      "SKL_MANAGE"
+    ],
+    "pay": 26000000,
+    "payPeriod": "month",
+    "shiftMinutes": 480,
+    "stress": 65
+  },
+  {
+    "id": "JOB_ACCOUNT",
+    "name": "Kế toán",
+    "industry": "IND_FIN",
+    "education": "EDU_COLLEGE",
+    "skills": [
+      "SKL_ACCOUNT"
+    ],
+    "pay": 11000000,
+    "payPeriod": "month",
+    "shiftMinutes": 480,
+    "stress": 45
+  },
+  {
+    "id": "JOB_MANAGER",
+    "name": "Quản lý",
+    "industry": "IND_SERVICE",
+    "education": "EDU_COLLEGE",
+    "skills": [
+      "SKL_MANAGE"
+    ],
+    "pay": 18000000,
+    "payPeriod": "month",
+    "shiftMinutes": 480,
+    "stress": 60
+  },
+  {
+    "id": "JOB_DRIVER",
+    "name": "Tài xế",
+    "industry": "IND_TRANSPORT",
+    "education": "EDU_NONE",
+    "skills": [
+      "SKL_DRIVE"
+    ],
+    "pay": 10000000,
+    "payPeriod": "month",
+    "shiftMinutes": 480,
+    "stress": 45
+  },
+  {
+    "id": "JOB_TEACHER",
+    "name": "Giáo viên",
+    "industry": "IND_EDU",
+    "education": "EDU_UNI",
+    "skills": [
+      "SKL_TEACH"
+    ],
+    "pay": 12000000,
+    "payPeriod": "month",
+    "shiftMinutes": 480,
+    "stress": 40
+  },
+  {
+    "id": "JOB_NURSE",
+    "name": "Điều dưỡng",
+    "industry": "IND_MED",
+    "education": "EDU_COLLEGE",
+    "skills": [
+      "SKL_MED"
+    ],
+    "pay": 11000000,
+    "payPeriod": "month",
+    "shiftMinutes": 480,
+    "stress": 55
+  },
+  {
+    "id": "JOB_BUILDER",
+    "name": "Thợ xây",
+    "industry": "IND_BUILD",
+    "education": "EDU_NONE",
+    "skills": [
+      "SKL_BUILD"
+    ],
+    "pay": 9000000,
+    "payPeriod": "month",
+    "shiftMinutes": 480,
+    "stress": 45
+  },
+  {
+    "id": "JOB_DESIGNER",
+    "name": "Thiết kế",
+    "industry": "IND_MEDIA",
+    "education": "EDU_VOC",
+    "skills": [
+      "SKL_DESIGN"
+    ],
+    "pay": 12000000,
+    "payPeriod": "month",
+    "shiftMinutes": 480,
+    "stress": 45
+  },
+  {
+    "id": "JOB_FARMER",
+    "name": "Nông dân",
+    "industry": "IND_FARM",
+    "education": "EDU_NONE",
+    "skills": [
+      "SKL_FARM"
+    ],
+    "pay": 7000000,
+    "payPeriod": "month",
+    "shiftMinutes": 480,
+    "stress": 35
+  }
+]

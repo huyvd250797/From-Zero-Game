@@ -1,0 +1,74 @@
+[
+  {
+    "id": "CHP_01",
+    "name": "A New Beginning",
+    "order": 1,
+    "description": "Đến thành phố"
+  },
+  {
+    "id": "CHP_02",
+    "name": "Survival",
+    "order": 2,
+    "description": "Sinh tồn"
+  },
+  {
+    "id": "CHP_03",
+    "name": "First Opportunity",
+    "order": 3,
+    "description": "Cơ hội đầu tiên"
+  },
+  {
+    "id": "CHP_04",
+    "name": "Building a Future",
+    "order": 4,
+    "description": "Xây dựng tương lai"
+  },
+  {
+    "id": "CHP_05",
+    "name": "Crossroads",
+    "order": 5,
+    "description": "Ngã rẽ"
+  },
+  {
+    "id": "CHP_06",
+    "name": "Ambition",
+    "order": 6,
+    "description": "Tham vọng"
+  },
+  {
+    "id": "CHP_07",
+    "name": "Temptation",
+    "order": 7,
+    "description": "Cám dỗ"
+  },
+  {
+    "id": "CHP_08",
+    "name": "Consequences",
+    "order": 8,
+    "description": "Hậu quả"
+  },
+  {
+    "id": "CHP_09",
+    "name": "Rise or Fall",
+    "order": 9,
+    "description": "Thăng trầm"
+  },
+  {
+    "id": "CHP_10",
+    "name": "Second Chance",
+    "order": 10,
+    "description": "Làm lại"
+  },
+  {
+    "id": "CHP_11",
+    "name": "The Final Years",
+    "order": 11,
+    "description": "Tuổi già"
+  },
+  {
+    "id": "CHP_12",
+    "name": "Legacy",
+    "order": 12,
+    "description": "Di sản"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "BNK_ANLAC",
+    "name": "Ngân hàng An Lạc",
+    "building": "BLD_BANK"
+  },
+  {
+    "id": "BNK_THINHVUONG",
+    "name": "Ngân hàng Thịnh Vượng",
+    "building": null
+  }
+]

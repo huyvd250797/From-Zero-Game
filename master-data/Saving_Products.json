@@ -1,0 +1,18 @@
+[
+  {
+    "id": "SAV_SHORT",
+    "name": "Tiết kiệm ngắn hạn",
+    "bank": "BNK_ANLAC",
+    "annualRate": 0.04,
+    "months": 3,
+    "minimum": 1000000
+  },
+  {
+    "id": "SAV_LONG",
+    "name": "Tiết kiệm dài hạn",
+    "bank": "BNK_THINHVUONG",
+    "annualRate": 0.055,
+    "months": 12,
+    "minimum": 1000000
+  }
+]

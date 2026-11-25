@@ -1,0 +1,37 @@
+[
+  {
+    "id": "HAB_EXERCISE",
+    "name": "Tập luyện",
+    "weeklyCost": 50000,
+    "healthDelta": 4,
+    "disciplineDelta": 2
+  },
+  {
+    "id": "HAB_SAVING",
+    "name": "Tiết kiệm",
+    "weeklyCost": 0,
+    "healthDelta": 0,
+    "disciplineDelta": 3
+  },
+  {
+    "id": "HAB_PARTY",
+    "name": "Ăn chơi quá mức",
+    "weeklyCost": 2000000,
+    "healthDelta": -5,
+    "disciplineDelta": -5
+  },
+  {
+    "id": "HAB_DRINK",
+    "name": "Uống rượu thường xuyên",
+    "weeklyCost": 1000000,
+    "healthDelta": -6,
+    "disciplineDelta": -3
+  },
+  {
+    "id": "HAB_OVERWORK",
+    "name": "Làm việc quá sức",
+    "weeklyCost": 0,
+    "healthDelta": -5,
+    "disciplineDelta": -1
+  }
+]

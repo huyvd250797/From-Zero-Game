@@ -1,0 +1,47 @@
+[
+  {
+    "id": "EXP_FOOD",
+    "name": "Ăn uống",
+    "description": "Chi phí thực phẩm."
+  },
+  {
+    "id": "EXP_RENT",
+    "name": "Thuê nhà",
+    "description": "Chi phí nơi ở."
+  },
+  {
+    "id": "EXP_TRANSPORT",
+    "name": "Đi lại",
+    "description": "Chi phí phương tiện."
+  },
+  {
+    "id": "EXP_EDU",
+    "name": "Học tập",
+    "description": "Học phí."
+  },
+  {
+    "id": "EXP_HEALTH",
+    "name": "Y tế",
+    "description": "Điều trị."
+  },
+  {
+    "id": "EXP_FUN",
+    "name": "Giải trí",
+    "description": "Hoạt động vui chơi."
+  },
+  {
+    "id": "EXP_DEBT",
+    "name": "Trả nợ",
+    "description": "Nghĩa vụ khoản vay."
+  },
+  {
+    "id": "EXP_TAX",
+    "name": "Thuế phí",
+    "description": "Nghĩa vụ tài chính."
+  },
+  {
+    "id": "EXP_PENALTY",
+    "name": "Tiền phạt",
+    "description": "Hậu quả pháp lý."
+  }
+]

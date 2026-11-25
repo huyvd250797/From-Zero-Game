@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ROD_X_16",
+    "name": "Đường X 16",
+    "city": "CTY_ANLAC",
+    "axis": "x",
+    "center": 16,
+    "width": 7
+  },
+  {
+    "id": "ROD_X_48",
+    "name": "Đường X 48",
+    "city": "CTY_ANLAC",
+    "axis": "x",
+    "center": 48,
+    "width": 7
+  },
+  {
+    "id": "ROD_X_80",
+    "name": "Đường X 80",
+    "city": "CTY_ANLAC",
+    "axis": "x",
+    "center": 80,
+    "width": 7
+  },
+  {
+    "id": "ROD_Z_16",
+    "name": "Đường Z 16",
+    "city": "CTY_ANLAC",
+    "axis": "z",
+    "center": 16,
+    "width": 7
+  },
+  {
+    "id": "ROD_Z_48",
+    "name": "Đường Z 48",
+    "city": "CTY_ANLAC",
+    "axis": "z",
+    "center": 48,
+    "width": 7
+  },
+  {
+    "id": "ROD_Z_80",
+    "name": "Đường Z 80",
+    "city": "CTY_ANLAC",
+    "axis": "z",
+    "center": 80,
+    "width": 7
+  }
+]

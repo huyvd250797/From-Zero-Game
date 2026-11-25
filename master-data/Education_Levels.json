@@ -1,0 +1,32 @@
+[
+  {
+    "id": "EDU_NONE",
+    "name": "Chưa có bằng chuyên môn",
+    "rank": 0
+  },
+  {
+    "id": "EDU_HIGH",
+    "name": "THPT",
+    "rank": 1
+  },
+  {
+    "id": "EDU_VOC",
+    "name": "Học nghề",
+    "rank": 2
+  },
+  {
+    "id": "EDU_COLLEGE",
+    "name": "Cao đẳng",
+    "rank": 3
+  },
+  {
+    "id": "EDU_UNI",
+    "name": "Đại học",
+    "rank": 4
+  },
+  {
+    "id": "EDU_POST",
+    "name": "Sau đại học",
+    "rank": 5
+  }
+]

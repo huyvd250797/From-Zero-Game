@@ -1,0 +1,21 @@
+[
+  {
+    "id": "CFG_DEFAULT",
+    "name": "Mặc định",
+    "age": 18,
+    "cash": 500000,
+    "minutes": 420,
+    "energy": 100,
+    "hunger": 85,
+    "happy": 60,
+    "dayMinutes": 1440,
+    "realSecondsPerMinute": 1,
+    "walkSpeed": 6,
+    "bikeSpeed": 12,
+    "lowEnergyThreshold": 15,
+    "lowEnergyMultiplier": 0.55,
+    "movementDecayInterval": 15,
+    "rentMinutes": 1440,
+    "spawn": "NAV_SPAWN"
+  }
+]

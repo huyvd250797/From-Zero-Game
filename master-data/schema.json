@@ -1,0 +1,517 @@
+{
+  "version": "1.0.0",
+  "catalogs": {
+    "Game_Config": {
+      "prefix": "CFG",
+      "fields": {
+        "age": "int:18:100",
+        "cash": "money",
+        "minutes": "int:0:1439",
+        "energy": "pct",
+        "hunger": "pct",
+        "happy": "pct",
+        "dayMinutes": "int:1440:1440",
+        "realSecondsPerMinute": "positive",
+        "walkSpeed": "positive",
+        "bikeSpeed": "positive",
+        "lowEnergyThreshold": "pct",
+        "lowEnergyMultiplier": "ratio",
+        "movementDecayInterval": "positiveInt",
+        "rentMinutes": "positiveInt",
+        "spawn": "ref:Navigation_Nodes"
+      }
+    },
+    "Difficulty": {
+      "prefix": "DIF",
+      "fields": {
+        "startingCash": "money",
+        "expenseMultiplier": "positive",
+        "incomeMultiplier": "positive"
+      }
+    },
+    "Character_Origins": {
+      "prefix": "ORG",
+      "fields": {
+        "cash": "money",
+        "description": "text",
+        "traits": "refs:Character_Traits"
+      }
+    },
+    "Character_Traits": {
+      "prefix": "TRA",
+      "fields": {
+        "description": "text"
+      }
+    },
+    "Character_Attributes": {
+      "prefix": "ATR",
+      "fields": {
+        "min": "int",
+        "max": "int",
+        "initial": "int",
+        "unit": "enum:score,xp"
+      }
+    },
+    "Life_Stages": {
+      "prefix": "LIF",
+      "fields": {
+        "minAge": "int:18:120",
+        "maxAge": "int:18:120"
+      }
+    },
+    "Needs_Rules": {
+      "prefix": "NEE",
+      "fields": {
+        "attribute": "ref:Character_Attributes",
+        "intervalMinutes": "positiveInt",
+        "delta": "int:-100:100",
+        "warningBelow": "pct"
+      }
+    },
+    "Cities": {
+      "prefix": "CTY",
+      "fields": {
+        "size": "positiveInt",
+        "currency": "enum:VND",
+        "description": "text"
+      }
+    },
+    "Districts": {
+      "prefix": "DST",
+      "fields": {
+        "city": "ref:Cities",
+        "description": "text"
+      }
+    },
+    "Building_Types": {
+      "prefix": "BTY",
+      "fields": {
+        "description": "text"
+      }
+    },
+    "Building_Instances": {
+      "prefix": "BLD",
+      "fields": {
+        "legacyId": "text",
+        "type": "ref:Building_Types",
+        "district": "ref:Districts",
+        "icon": "string",
+        "x": "nonnegative",
+        "z": "nonnegative",
+        "w": "positive",
+        "d": "positive",
+        "h": "nonnegative",
+        "color": "color",
+        "door": "nullable:ref:Navigation_Nodes",
+        "interactive": "bool"
+      }
+    },
+    "Road_Network": {
+      "prefix": "ROD",
+      "fields": {
+        "city": "ref:Cities",
+        "axis": "enum:x,z",
+        "center": "positive",
+        "width": "positive"
+      }
+    },
+    "Navigation_Nodes": {
+      "prefix": "NAV",
+      "fields": {
+        "city": "ref:Cities",
+        "x": "nonnegative",
+        "z": "nonnegative"
+      }
+    },
+    "World_Schedules": {
+      "prefix": "SCH",
+      "fields": {
+        "building": "ref:Building_Instances",
+        "opens": "int:0:1439",
+        "closes": "int:1:1440"
+      }
+    },
+    "Location_Actions": {
+      "prefix": "ACT",
+      "fields": {
+        "legacyId": "text",
+        "building": "ref:Building_Instances",
+        "detail": "text",
+        "cash": "int",
+        "time": "int:0:1440",
+        "energy": "int:-100:100",
+        "hunger": "int:-100:100",
+        "happy": "int:-100:100",
+        "log": "text",
+        "rule": "enum:none,work,rent,sleep,buybike,ride",
+        "job": "nullable:ref:Jobs",
+        "asset": "nullable:refAny:Food_Drinks,Properties,Vehicles"
+      }
+    },
+    "NPC_Master": {
+      "prefix": "NPC",
+      "fields": {
+        "personality": "ref:Character_Traits",
+        "behavior": "enum:work,study,visit,service",
+        "homeDistrict": "ref:Districts",
+        "workplace": "nullable:ref:Building_Instances",
+        "description": "text"
+      }
+    },
+    "Relationships": {
+      "prefix": "REL",
+      "fields": {
+        "minTrust": "pct",
+        "description": "text"
+      }
+    },
+    "Relationship_Events": {
+      "prefix": "REV",
+      "fields": {
+        "relationship": "ref:Relationships",
+        "trustDelta": "int:-100:100",
+        "description": "text"
+      }
+    },
+    "Family_Rules": {
+      "prefix": "FAM",
+      "fields": {
+        "minAge": "int:18:120",
+        "minTrust": "pct",
+        "description": "text"
+      }
+    },
+    "Social_Reputation": {
+      "prefix": "REP",
+      "fields": {
+        "min": "pct",
+        "max": "pct"
+      }
+    },
+    "Education_Levels": {
+      "prefix": "EDU",
+      "fields": {
+        "rank": "nonnegativeInt"
+      }
+    },
+    "Schools": {
+      "prefix": "SCHL",
+      "fields": {
+        "district": "ref:Districts",
+        "level": "ref:Education_Levels"
+      }
+    },
+    "Skills": {
+      "prefix": "SKL",
+      "fields": {
+        "maxLevel": "positiveInt",
+        "description": "text"
+      }
+    },
+    "Courses": {
+      "prefix": "CRS",
+      "fields": {
+        "school": "ref:Schools",
+        "skill": "ref:Skills",
+        "fee": "money",
+        "durationDays": "positiveInt",
+        "gain": "positiveInt"
+      }
+    },
+    "Industries": {
+      "prefix": "IND",
+      "fields": {
+        "description": "text"
+      }
+    },
+    "Jobs": {
+      "prefix": "JOB",
+      "fields": {
+        "industry": "ref:Industries",
+        "education": "ref:Education_Levels",
+        "skills": "refs:Skills",
+        "pay": "money",
+        "payPeriod": "enum:shift,month",
+        "shiftMinutes": "positiveInt",
+        "stress": "pct"
+      }
+    },
+    "Employers": {
+      "prefix": "EMP",
+      "fields": {
+        "building": "ref:Building_Instances",
+        "jobs": "refs:Jobs"
+      }
+    },
+    "Career_Paths": {
+      "prefix": "CAR",
+      "fields": {
+        "from": "ref:Jobs",
+        "to": "ref:Jobs",
+        "experienceMonths": "positiveInt"
+      }
+    },
+    "Items": {
+      "prefix": "ITM",
+      "fields": {
+        "price": "money",
+        "category": "enum:personal,study,utility"
+      }
+    },
+    "Food_Drinks": {
+      "prefix": "FOOD",
+      "fields": {
+        "price": "money",
+        "hunger": "int:-100:100",
+        "energy": "int:-100:100",
+        "happy": "int:-100:100"
+      }
+    },
+    "Activities": {
+      "prefix": "ATV",
+      "fields": {
+        "minutes": "nonnegativeInt",
+        "price": "money",
+        "happy": "int:-100:100",
+        "description": "text"
+      }
+    },
+    "Properties": {
+      "prefix": "PROP",
+      "fields": {
+        "type": "ref:Building_Types",
+        "price": "money",
+        "rentDaily": "money",
+        "maintenanceMonthly": "money",
+        "capacity": "positiveInt"
+      }
+    },
+    "Vehicles": {
+      "prefix": "VEH",
+      "fields": {
+        "price": "money",
+        "speed": "positive",
+        "energyType": "enum:none,petrol,electric",
+        "maintenanceMonthly": "money",
+        "seats": "positiveInt"
+      }
+    },
+    "Furniture": {
+      "prefix": "FUR",
+      "fields": {
+        "price": "money",
+        "comfort": "pct"
+      }
+    },
+    "Maintenance": {
+      "prefix": "MNT",
+      "fields": {
+        "asset": "refAny:Properties,Vehicles",
+        "intervalDays": "positiveInt",
+        "cost": "money"
+      }
+    },
+    "Income_Types": {
+      "prefix": "INC",
+      "fields": {
+        "description": "text"
+      }
+    },
+    "Expense_Types": {
+      "prefix": "EXP",
+      "fields": {
+        "description": "text"
+      }
+    },
+    "Banks": {
+      "prefix": "BNK",
+      "fields": {
+        "building": "nullable:ref:Building_Instances"
+      }
+    },
+    "Loan_Products": {
+      "prefix": "LOAN",
+      "fields": {
+        "bank": "ref:Banks",
+        "annualRate": "ratio",
+        "maxPrincipal": "money",
+        "months": "positiveInt"
+      }
+    },
+    "Saving_Products": {
+      "prefix": "SAV",
+      "fields": {
+        "bank": "ref:Banks",
+        "annualRate": "ratio",
+        "months": "positiveInt",
+        "minimum": "money"
+      }
+    },
+    "Investment_Assets": {
+      "prefix": "INV",
+      "fields": {
+        "type": "enum:stock,gold,property",
+        "price": "money",
+        "risk": "pct"
+      }
+    },
+    "Economy_Events": {
+      "prefix": "ECO",
+      "fields": {
+        "durationMonths": "positiveInt",
+        "priceMultiplier": "positive",
+        "wageMultiplier": "positive",
+        "description": "text"
+      }
+    },
+    "Business_Types": {
+      "prefix": "BIZ",
+      "fields": {
+        "industry": "ref:Industries",
+        "capital": "money",
+        "maxStaff": "positiveInt"
+      }
+    },
+    "Business_Products": {
+      "prefix": "PRD",
+      "fields": {
+        "business": "ref:Business_Types",
+        "unitCost": "money",
+        "salePrice": "money"
+      }
+    },
+    "Business_Roles": {
+      "prefix": "BROL",
+      "fields": {
+        "skill": "ref:Skills",
+        "monthlyPay": "money"
+      }
+    },
+    "Business_Operations": {
+      "prefix": "BOP",
+      "fields": {
+        "business": "ref:Business_Types",
+        "monthlyFixedCost": "money",
+        "risk": "enum:low,medium,high",
+        "riskDescription": "text"
+      }
+    },
+    "Diseases": {
+      "prefix": "DIS",
+      "fields": {
+        "healthDelta": "int:-100:0",
+        "durationDays": "positiveInt"
+      }
+    },
+    "Treatments": {
+      "prefix": "TRT",
+      "fields": {
+        "disease": "ref:Diseases",
+        "cost": "money",
+        "healthGain": "pct"
+      }
+    },
+    "Lifestyle_Habits": {
+      "prefix": "HAB",
+      "fields": {
+        "weeklyCost": "money",
+        "healthDelta": "int:-100:100",
+        "disciplineDelta": "int:-100:100"
+      }
+    },
+    "Addiction_Rules": {
+      "prefix": "ADD",
+      "fields": {
+        "habit": "ref:Lifestyle_Habits",
+        "threshold": "pct",
+        "description": "text"
+      }
+    },
+    "Legal_Offenses": {
+      "prefix": "OFF",
+      "fields": {
+        "severity": "enum:minor,major,serious",
+        "penalty": "ref:Penalties",
+        "description": "text"
+      }
+    },
+    "Legal_Proceedings": {
+      "prefix": "LGL",
+      "fields": {
+        "next": "refs:Legal_Proceedings",
+        "description": "text"
+      }
+    },
+    "Penalties": {
+      "prefix": "PEN",
+      "fields": {
+        "fine": "money",
+        "prisonMonths": "nonnegativeInt",
+        "reputationDelta": "int:-100:0",
+        "description": "text"
+      }
+    },
+    "Prison_Rehabilitation": {
+      "prefix": "REH",
+      "fields": {
+        "minutes": "positiveInt",
+        "disciplineDelta": "int:-100:100",
+        "description": "text"
+      }
+    },
+    "Story_Chapters": {
+      "prefix": "CHP",
+      "fields": {
+        "order": "positiveInt",
+        "description": "text"
+      }
+    },
+    "Story_Events": {
+      "prefix": "EVT",
+      "fields": {
+        "chapter": "ref:Story_Chapters",
+        "minAge": "int:18:120",
+        "maxAge": "int:18:120",
+        "trigger": "enum:arrival,first_shift,friend_request,business_crisis,overspending,legal_case,release,retirement",
+        "repeatable": "bool",
+        "description": "text"
+      }
+    },
+    "Event_Choices": {
+      "prefix": "CHO",
+      "fields": {
+        "event": "ref:Story_Events",
+        "cashDelta": "int",
+        "happyDelta": "int:-100:100",
+        "reputationDelta": "int:-100:100",
+        "offense": "nullable:ref:Legal_Offenses",
+        "nextEvent": "nullable:ref:Story_Events",
+        "delayDays": "nonnegativeInt",
+        "consequence": "text"
+      }
+    },
+    "Achievements": {
+      "prefix": "ACH",
+      "fields": {
+        "metric": "enum:shifts,cash,bike,home,education,business,recovery",
+        "threshold": "nonnegativeInt",
+        "description": "text"
+      }
+    },
+    "Life_Endings": {
+      "prefix": "END",
+      "fields": {
+        "group": "enum:success,ordinary,failure,legal",
+        "conditionDescription": "text"
+      }
+    },
+    "Legacy_Rules": {
+      "prefix": "LEG",
+      "fields": {
+        "minHeirAge": "int:0:120",
+        "transferRatio": "ratio",
+        "description": "text"
+      }
+    }
+  }
+}

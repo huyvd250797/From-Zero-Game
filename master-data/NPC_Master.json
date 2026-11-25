@@ -1,0 +1,74 @@
+[
+  {
+    "id": "NPC_LAN",
+    "name": "Lan",
+    "personality": "TRA_SOCIAL",
+    "behavior": "service",
+    "homeDistrict": "DST_CENTER",
+    "workplace": "BLD_SHOP",
+    "description": "Quản lý cửa hàng, hỗ trợ việc thời vụ."
+  },
+  {
+    "id": "NPC_NAM",
+    "name": "Nam",
+    "personality": "TRA_DISCIPLINED",
+    "behavior": "work",
+    "homeDistrict": "DST_CENTER",
+    "workplace": "BLD_OFFICE",
+    "description": "Nhân viên văn phòng."
+  },
+  {
+    "id": "NPC_THAO",
+    "name": "Thảo",
+    "personality": "TRA_CURIOUS",
+    "behavior": "study",
+    "homeDistrict": "DST_CENTER",
+    "workplace": null,
+    "description": "Bạn trẻ đang học nghề."
+  },
+  {
+    "id": "NPC_HUNG",
+    "name": "Hùng",
+    "personality": "TRA_CAREFUL",
+    "behavior": "service",
+    "homeDistrict": "DST_CENTER",
+    "workplace": "BLD_BIKE",
+    "description": "Chủ cửa hàng xe."
+  },
+  {
+    "id": "NPC_MAI",
+    "name": "Mai",
+    "personality": "TRA_SOCIAL",
+    "behavior": "service",
+    "homeDistrict": "DST_CENTER",
+    "workplace": "BLD_CAFE",
+    "description": "Nhân viên cà phê."
+  },
+  {
+    "id": "NPC_DUC",
+    "name": "Đức",
+    "personality": "TRA_DETERMINED",
+    "behavior": "work",
+    "homeDistrict": "DST_CENTER",
+    "workplace": "BLD_BANK",
+    "description": "Nhân viên ngân hàng."
+  },
+  {
+    "id": "NPC_LINH",
+    "name": "Linh",
+    "personality": "TRA_CAREFUL",
+    "behavior": "service",
+    "homeDistrict": "DST_CENTER",
+    "workplace": "BLD_CLINIC",
+    "description": "Nhân viên y tế."
+  },
+  {
+    "id": "NPC_AN",
+    "name": "An",
+    "personality": "TRA_IMPULSIVE",
+    "behavior": "visit",
+    "homeDistrict": "DST_CENTER",
+    "workplace": "BLD_PARK",
+    "description": "Người bạn có lối sống phóng khoáng."
+  }
+]

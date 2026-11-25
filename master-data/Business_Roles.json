@@ -1,0 +1,32 @@
+[
+  {
+    "id": "BROL_OWNER",
+    "name": "Quản lý",
+    "skill": "SKL_MANAGE",
+    "monthlyPay": 18000000
+  },
+  {
+    "id": "BROL_SELLER",
+    "name": "Bán hàng",
+    "skill": "SKL_SALES",
+    "monthlyPay": 7000000
+  },
+  {
+    "id": "BROL_ACCOUNT",
+    "name": "Kế toán",
+    "skill": "SKL_ACCOUNT",
+    "monthlyPay": 11000000
+  },
+  {
+    "id": "BROL_DEV",
+    "name": "Lập trình",
+    "skill": "SKL_IT",
+    "monthlyPay": 16000000
+  },
+  {
+    "id": "BROL_COOK",
+    "name": "Bếp",
+    "skill": "SKL_COOK",
+    "monthlyPay": 10000000
+  }
+]

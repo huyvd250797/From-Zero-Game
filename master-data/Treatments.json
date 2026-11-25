@@ -1,0 +1,23 @@
+[
+  {
+    "id": "TRT_COLD",
+    "name": "Khám cảm nhẹ",
+    "disease": "DIS_COLD",
+    "cost": 150000,
+    "healthGain": 5
+  },
+  {
+    "id": "TRT_FATIGUE",
+    "name": "Phục hồi",
+    "disease": "DIS_FATIGUE",
+    "cost": 500000,
+    "healthGain": 15
+  },
+  {
+    "id": "TRT_CHRONIC",
+    "name": "Theo dõi điều trị",
+    "disease": "DIS_CHRONIC",
+    "cost": 1000000,
+    "healthGain": 10
+  }
+]

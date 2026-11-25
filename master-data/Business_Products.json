@@ -1,0 +1,37 @@
+[
+  {
+    "id": "PRD_COFFEE",
+    "name": "Cà phê",
+    "business": "BIZ_CAFE",
+    "unitCost": 12000,
+    "salePrice": 35000
+  },
+  {
+    "id": "PRD_MEAL",
+    "name": "Suất ăn",
+    "business": "BIZ_STALL",
+    "unitCost": 18000,
+    "salePrice": 30000
+  },
+  {
+    "id": "PRD_GOODS",
+    "name": "Hàng tiêu dùng",
+    "business": "BIZ_SHOP",
+    "unitCost": 60000,
+    "salePrice": 90000
+  },
+  {
+    "id": "PRD_SOFT",
+    "name": "Dịch vụ phần mềm",
+    "business": "BIZ_SOFT",
+    "unitCost": 4000000,
+    "salePrice": 6500000
+  },
+  {
+    "id": "PRD_CROP",
+    "name": "Nông sản",
+    "business": "BIZ_FARM",
+    "unitCost": 15000,
+    "salePrice": 25000
+  }
+]

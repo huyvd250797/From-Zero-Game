@@ -1,0 +1,242 @@
+[
+  {
+    "id": "END_SUCCESS_01",
+    "name": "Tỷ phú tự thân",
+    "group": "success",
+    "conditionDescription": "Tài sản ròng rất cao"
+  },
+  {
+    "id": "END_SUCCESS_02",
+    "name": "Nhà sáng lập tập đoàn",
+    "group": "success",
+    "conditionDescription": "Doanh nghiệp quy mô lớn"
+  },
+  {
+    "id": "END_SUCCESS_03",
+    "name": "Nhà đầu tư huyền thoại",
+    "group": "success",
+    "conditionDescription": "Thành tích đầu tư cao"
+  },
+  {
+    "id": "END_SUCCESS_04",
+    "name": "Chuyên gia hàng đầu",
+    "group": "success",
+    "conditionDescription": "Kỹ năng chuyên môn tối đa"
+  },
+  {
+    "id": "END_SUCCESS_05",
+    "name": "Người có công với xã hội",
+    "group": "success",
+    "conditionDescription": "Đóng góp xã hội lớn"
+  },
+  {
+    "id": "END_SUCCESS_06",
+    "name": "Gia tộc thịnh vượng",
+    "group": "success",
+    "conditionDescription": "Di sản nhiều thế hệ"
+  },
+  {
+    "id": "END_SUCCESS_07",
+    "name": "Tự do tài chính",
+    "group": "success",
+    "conditionDescription": "Thu nhập thụ động đủ chi phí"
+  },
+  {
+    "id": "END_SUCCESS_08",
+    "name": "Sự nghiệp viên mãn",
+    "group": "success",
+    "conditionDescription": "Sự nghiệp ổn định"
+  },
+  {
+    "id": "END_SUCCESS_09",
+    "name": "Gia đình hạnh phúc",
+    "group": "success",
+    "conditionDescription": "Quan hệ gia đình bền vững"
+  },
+  {
+    "id": "END_SUCCESS_10",
+    "name": "Cuộc đời trọn vẹn",
+    "group": "success",
+    "conditionDescription": "Cân bằng nhiều mục tiêu"
+  },
+  {
+    "id": "END_ORDINARY_01",
+    "name": "Người lao động bình dị",
+    "group": "ordinary",
+    "conditionDescription": "Thu nhập lao động ổn định"
+  },
+  {
+    "id": "END_ORDINARY_02",
+    "name": "Cuộc sống đủ đầy",
+    "group": "ordinary",
+    "conditionDescription": "Đủ chi phí thiết yếu"
+  },
+  {
+    "id": "END_ORDINARY_03",
+    "name": "Nghỉ hưu an nhàn",
+    "group": "ordinary",
+    "conditionDescription": "Nghỉ hưu đủ tích lũy"
+  },
+  {
+    "id": "END_ORDINARY_04",
+    "name": "Người sống độc thân",
+    "group": "ordinary",
+    "conditionDescription": "Độc thân tự nguyện và hài lòng"
+  },
+  {
+    "id": "END_ORDINARY_05",
+    "name": "Người đam mê khám phá",
+    "group": "ordinary",
+    "conditionDescription": "Nhiều trải nghiệm"
+  },
+  {
+    "id": "END_ORDINARY_06",
+    "name": "Chủ cửa hàng nhỏ",
+    "group": "ordinary",
+    "conditionDescription": "Cửa hàng nhỏ ổn định"
+  },
+  {
+    "id": "END_ORDINARY_07",
+    "name": "Dành trọn đời cho gia đình",
+    "group": "ordinary",
+    "conditionDescription": "Quan hệ gia đình tốt"
+  },
+  {
+    "id": "END_ORDINARY_08",
+    "name": "Người sống tự do",
+    "group": "ordinary",
+    "conditionDescription": "Tự chủ thời gian"
+  },
+  {
+    "id": "END_ORDINARY_09",
+    "name": "Cuộc đời nhiều thăng trầm",
+    "group": "ordinary",
+    "conditionDescription": "Có thăng trầm nhưng ổn định"
+  },
+  {
+    "id": "END_ORDINARY_10",
+    "name": "Bình yên tuổi già",
+    "group": "ordinary",
+    "conditionDescription": "Tuổi già an toàn"
+  },
+  {
+    "id": "END_FAILURE_01",
+    "name": "Trắng tay",
+    "group": "failure",
+    "conditionDescription": "Tài sản ròng không dương"
+  },
+  {
+    "id": "END_FAILURE_02",
+    "name": "Vỡ nợ",
+    "group": "failure",
+    "conditionDescription": "Mất khả năng trả nợ"
+  },
+  {
+    "id": "END_FAILURE_03",
+    "name": "Vô gia cư",
+    "group": "failure",
+    "conditionDescription": "Không có nơi ở"
+  },
+  {
+    "id": "END_FAILURE_04",
+    "name": "Con bạc trắng tay",
+    "group": "failure",
+    "conditionDescription": "Mất tài sản do cờ bạc"
+  },
+  {
+    "id": "END_FAILURE_05",
+    "name": "Đại gia sa cơ",
+    "group": "failure",
+    "conditionDescription": "Từng giàu và mất phần lớn tài sản"
+  },
+  {
+    "id": "END_FAILURE_06",
+    "name": "Gia đình tan vỡ",
+    "group": "failure",
+    "conditionDescription": "Gia đình đổ vỡ"
+  },
+  {
+    "id": "END_FAILURE_07",
+    "name": "Giàu có nhưng cô độc",
+    "group": "failure",
+    "conditionDescription": "Tài sản lớn nhưng quan hệ yếu"
+  },
+  {
+    "id": "END_FAILURE_08",
+    "name": "Sự nghiệp sụp đổ",
+    "group": "failure",
+    "conditionDescription": "Mất việc dài hạn"
+  },
+  {
+    "id": "END_FAILURE_09",
+    "name": "Tuổi già khốn khó",
+    "group": "failure",
+    "conditionDescription": "Tuổi già thiếu tích lũy"
+  },
+  {
+    "id": "END_FAILURE_10",
+    "name": "Cuộc đời dang dở",
+    "group": "failure",
+    "conditionDescription": "Qua đời khi mục tiêu chưa đạt"
+  },
+  {
+    "id": "END_LEGAL_01",
+    "name": "Đế chế bất chính sụp đổ",
+    "group": "legal",
+    "conditionDescription": "Doanh nghiệp bất chính bị xử lý"
+  },
+  {
+    "id": "END_LEGAL_02",
+    "name": "Tỷ phú sau song sắt",
+    "group": "legal",
+    "conditionDescription": "Tài sản lớn khi chấp hành án"
+  },
+  {
+    "id": "END_LEGAL_03",
+    "name": "Kẻ lừa đảo mất tất cả",
+    "group": "legal",
+    "conditionDescription": "Bị kết án lừa đảo và mất tài sản"
+  },
+  {
+    "id": "END_LEGAL_04",
+    "name": "Quan chức sa ngã",
+    "group": "legal",
+    "conditionDescription": "Mất chức vụ vì vi phạm"
+  },
+  {
+    "id": "END_LEGAL_05",
+    "name": "Doanh nhân mất danh tiếng",
+    "group": "legal",
+    "conditionDescription": "Uy tín doanh nghiệp sụp đổ"
+  },
+  {
+    "id": "END_LEGAL_06",
+    "name": "Cuộc đời trong tù",
+    "group": "legal",
+    "conditionDescription": "Qua đời khi chấp hành án"
+  },
+  {
+    "id": "END_LEGAL_07",
+    "name": "Người liên tục tái phạm",
+    "group": "legal",
+    "conditionDescription": "Có nhiều lần tái phạm"
+  },
+  {
+    "id": "END_LEGAL_08",
+    "name": "Làm lại cuộc đời",
+    "group": "legal",
+    "conditionDescription": "Phục hồi sau thất bại"
+  },
+  {
+    "id": "END_LEGAL_09",
+    "name": "Từ tù nhân đến doanh nhân chân chính",
+    "group": "legal",
+    "conditionDescription": "Tái hòa nhập và kinh doanh hợp pháp"
+  },
+  {
+    "id": "END_LEGAL_10",
+    "name": "Chuộc lại lỗi lầm",
+    "group": "legal",
+    "conditionDescription": "Hoàn thành nghĩa vụ và phục hồi uy tín"
+  }
+]

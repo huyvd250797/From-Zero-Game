@@ -1,0 +1,30 @@
+[
+  {
+    "id": "REH_READ",
+    "name": "Đọc sách",
+    "minutes": 60,
+    "disciplineDelta": 2,
+    "description": "Duy trì học tập."
+  },
+  {
+    "id": "REH_TRAIN",
+    "name": "Học nghề",
+    "minutes": 180,
+    "disciplineDelta": 4,
+    "description": "Chuẩn bị tái hòa nhập."
+  },
+  {
+    "id": "REH_FAMILY",
+    "name": "Liên lạc gia đình",
+    "minutes": 30,
+    "disciplineDelta": 1,
+    "description": "Duy trì quan hệ."
+  },
+  {
+    "id": "REH_SUPPORT",
+    "name": "Hỗ trợ phục hồi",
+    "minutes": 60,
+    "disciplineDelta": 3,
+    "description": "Xây dựng kế hoạch sống hợp pháp."
+  }
+]

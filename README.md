@@ -1,10 +1,10 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.1.0 — Foundation & Playable City Prototype**
+**V0.2.0 — Canonical Master Data**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 8 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
 
 ## Deploy GitHub → Vercel
-1. Giải nén ZIP. Đưa **nội dung bên trong** (package.json, package-lock.json, src/, public/, scripts/, index.html, vercel.json...) vào thư mục gốc repository GitHub.
+1. Giải nén ZIP. Đưa **nội dung bên trong** (package.json, package-lock.json, src/, master-data/, public/, scripts/, index.html, vercel.json...) vào thư mục gốc repository GitHub.
 2. Trên Vercel chọn Add New → Project, import repository. Dùng Root Directory là repository root (hoặc thư mục chứa package.json nếu là monorepo).
 3. Framework Preset: Other. Install Command: `npm ci`. Build Command: `npm run build`. Output Directory: `dist`. Node.js: 22.x hoặc phiên bản hỗ trợ >=20. Không có Environment Variables.
 4. Deploy, sau đó mở URL được Vercel cấp. Khi repo đã liên kết, lần push tiếp theo vào production branch sẽ tự deploy theo cấu hình của Vercel.
@@ -44,10 +44,17 @@ Mở http://localhost:5173. `npm run dev` cũng dùng được. Không double-cl
 
 Do môi trường phát triển không truy cập npm registry, phiên bản này dùng ES module JavaScript + WebGL/Canvas + Node build không dependency, thay cho Vite/React/Three.js/TypeScript. Save dùng localStorage phiên bản 1 thay cho IndexedDB; có validation và export/import. Những thay đổi này được lựa chọn để build được offline và không phụ thuộc tài nguyên bên ngoài. Có thể thay renderer hoặc framework về sau mà vẫn giữ module gameplay độc lập.
 
+## Master Data V1.0.0
+- 60 danh mục JSON, 393 bản ghi seed; xem `docs/MASTER-DATA.md` để biết danh sách, đơn vị, phạm vi và 5 bảng được gộp.
+- `npm run data:validate`: validate ID, trường, kiểu, tham chiếu, miền giá trị, đối chiếu giá/tiền công, chu trình và dữ liệu map. Tự biên dịch bundle chỉ đọc dùng trong trình duyệt.
+- Bản build không phụ thuộc mạng/npm ngoài. Toàn bộ dữ liệu gameplay gốc (bản đồ, vị trí, hoạt động, cấu hình nhân vật, tốc độ và nhu cầu di chuyển) đã lấy từ Master Data. Các nhóm mở rộng chỉ là dữ liệu seed cho roadmap.
+- Mở Cài đặt → Tra cứu Master Data: lọc theo danh mục, tìm theo tên/ID, mở bản ghi JSON.
+- Giữ nguyên save key `fromzero.save.v1`, schema 1; không cần migration hoặc database.
+
 ## Kiểm thử đã thực hiện
-- `npm ci`, `npm test` (6 bài), `npm run build` và `npm run check` (qua build): thành công.
-- Smoke test Chromium với nội dung production được nạp inline, localStorage mô phỏng, Canvas fallback: new game, tìm đường, thao tác cửa hàng, tăng tiền, lưu và continue, di chuyển/điều khiển camera; mobile emulation: tạo game và hiển thị nút cảm ứng.
-- Không kiểm tra được WebGL thực tế, HTTPS, PWA/offline thực tế hoặc deploy Vercel trong môi trường này (browser navigation bị hạn chế). Chưa benchmark FPS hay kiểm thử thiết bị iOS thật.
+- `npm ci --offline`, `npm test` (18/18 bài), `npm run build` (bao gồm validator và syntax check): thành công.
+- Chromium Canvas fallback với module production nạp inline, storage mô phỏng: mở danh mục, tìm kiếm kết thúc, tạo game, lưu và tiếp tục; không lỗi JS trong smoke test.
+- Điều hướng localhost bị chặn trong môi trường kiểm thử; chưa kiểm tra HTTP browser thực tế, WebGL, PWA/offline, iOS thiết bị thật hoặc deploy Vercel.
 
 ## Phiên bản kế tiếp
-V0.2.0 — Canonical Master Data: chuẩn hóa 60 danh mục theo roadmap, schema và validator; không thay đổi save mà không có migration.
+V0.3.0 — World & City Engine: mở rộng bản đồ và phân khu, công trình, hệ thống đường, minimap, tải khu vực dựa trên Master Data.

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "IND_LABOR",
+    "name": "Lao động",
+    "description": "Việc phổ thông."
+  },
+  {
+    "id": "IND_SERVICE",
+    "name": "Dịch vụ",
+    "description": "Bán lẻ và ăn uống."
+  },
+  {
+    "id": "IND_IT",
+    "name": "Công nghệ",
+    "description": "Phần mềm và IT."
+  },
+  {
+    "id": "IND_FIN",
+    "name": "Tài chính",
+    "description": "Kế toán, ngân hàng."
+  },
+  {
+    "id": "IND_TRANSPORT",
+    "name": "Vận tải",
+    "description": "Vận chuyển."
+  },
+  {
+    "id": "IND_EDU",
+    "name": "Giáo dục",
+    "description": "Giảng dạy."
+  },
+  {
+    "id": "IND_MED",
+    "name": "Y tế",
+    "description": "Chăm sóc sức khỏe."
+  },
+  {
+    "id": "IND_BUILD",
+    "name": "Xây dựng",
+    "description": "Thi công."
+  },
+  {
+    "id": "IND_MEDIA",
+    "name": "Truyền thông",
+    "description": "Sáng tạo."
+  },
+  {
+    "id": "IND_FARM",
+    "name": "Nông nghiệp",
+    "description": "Canh tác."
+  }
+]

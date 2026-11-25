@@ -1,0 +1,44 @@
+[
+  {
+    "id": "OFF_TAX",
+    "name": "Gian lận thuế",
+    "severity": "major",
+    "penalty": "PEN_MAJOR",
+    "description": "Hành vi bất chính trong kinh doanh."
+  },
+  {
+    "id": "OFF_FRAUD",
+    "name": "Lừa đảo",
+    "severity": "serious",
+    "penalty": "PEN_SERIOUS",
+    "description": "Gây thiệt hại cho người khác."
+  },
+  {
+    "id": "OFF_FAKE",
+    "name": "Hàng giả",
+    "severity": "major",
+    "penalty": "PEN_MAJOR",
+    "description": "Vi phạm chất lượng và quyền lợi khách hàng."
+  },
+  {
+    "id": "OFF_BRIBE",
+    "name": "Hối lộ",
+    "severity": "serious",
+    "penalty": "PEN_SERIOUS",
+    "description": "Lợi ích không chính đáng."
+  },
+  {
+    "id": "OFF_SAFETY",
+    "name": "Vi phạm an toàn",
+    "severity": "major",
+    "penalty": "PEN_MAJOR",
+    "description": "Gây rủi ro lao động."
+  },
+  {
+    "id": "OFF_LICENSE",
+    "name": "Thiếu giấy phép",
+    "severity": "minor",
+    "penalty": "PEN_MINOR",
+    "description": "Không đáp ứng điều kiện giả lập."
+  }
+]

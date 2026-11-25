@@ -1,0 +1,30 @@
+[
+  {
+    "id": "INV_TECH",
+    "name": "Cổ phiếu công nghệ",
+    "type": "stock",
+    "price": 25000,
+    "risk": 65
+  },
+  {
+    "id": "INV_BANK",
+    "name": "Cổ phiếu ngân hàng",
+    "type": "stock",
+    "price": 22000,
+    "risk": 50
+  },
+  {
+    "id": "INV_GOLD",
+    "name": "Vàng giả lập",
+    "type": "gold",
+    "price": 10000000,
+    "risk": 35
+  },
+  {
+    "id": "INV_LAND",
+    "name": "Đất ngoại ô",
+    "type": "property",
+    "price": 400000000,
+    "risk": 55
+  }
+]

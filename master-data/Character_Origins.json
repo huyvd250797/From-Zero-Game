@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ORG_ZERO",
+    "name": "Từ hai bàn tay trắng",
+    "cash": 500000,
+    "description": "Không nhà, không việc ổn định.",
+    "traits": [
+      "TRA_DETERMINED"
+    ]
+  },
+  {
+    "id": "ORG_RURAL",
+    "name": "Rời quê lên phố",
+    "cash": 400000,
+    "description": "Ít kinh nghiệm, có ý chí học nghề.",
+    "traits": [
+      "TRA_CURIOUS"
+    ]
+  },
+  {
+    "id": "ORG_WORKER",
+    "name": "Gia đình lao động",
+    "cash": 700000,
+    "description": "Có kinh nghiệm phụ việc.",
+    "traits": [
+      "TRA_DISCIPLINED"
+    ]
+  }
+]
