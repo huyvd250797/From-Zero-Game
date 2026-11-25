@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "catalogs": {
     "Game_Config": {
       "prefix": "CFG",
@@ -24,7 +24,10 @@
         "criticalNeedThreshold": "pct",
         "inventoryCapacity": "positiveInt",
         "dailyWorkLimit": "positiveInt",
-        "povertyThreshold": "money"
+        "povertyThreshold": "money",
+        "dailyStudyLimit": "positiveInt",
+        "xpPerLevel": "positiveInt",
+        "initialEducation": "ref:Education_Levels"
       }
     },
     "Difficulty": {
@@ -217,7 +220,8 @@
       "prefix": "SCHL",
       "fields": {
         "district": "ref:Districts",
-        "level": "ref:Education_Levels"
+        "level": "ref:Education_Levels",
+        "building": "ref:Building_Instances"
       }
     },
     "Skills": {
@@ -234,7 +238,12 @@
         "skill": "ref:Skills",
         "fee": "money",
         "durationDays": "positiveInt",
-        "gain": "positiveInt"
+        "gain": "positiveInt",
+        "kind": "enum:certificate,degree",
+        "awardLevel": "nullable:ref:Education_Levels",
+        "requiresLevel": "ref:Education_Levels",
+        "sessions": "positiveInt",
+        "sessionMinutes": "positiveInt"
       }
     },
     "Industries": {
@@ -252,7 +261,10 @@
         "pay": "money",
         "payPeriod": "enum:shift,month",
         "shiftMinutes": "positiveInt",
-        "stress": "pct"
+        "stress": "pct",
+        "minSkillLevel": "nonnegativeInt",
+        "practiceSkill": "nullable:ref:Skills",
+        "practiceXp": "nonnegativeInt"
       }
     },
     "Employers": {

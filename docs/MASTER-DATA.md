@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V1.3.0
+# From Zero — Canonical Master Data V1.4.0
 
-Game release V0.6.0 · 60 danh mục, 545 bản ghi seed. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.7.0 · 60 danh mục, 552 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -26,12 +26,12 @@ Game release V0.6.0 · 60 danh mục, 545 bản ghi seed. Số liệu kinh tế 
 | C – Character & Social | `Relationship_Events.json` | 4 | Seed cho phiên bản sau |
 | C – Character & Social | `Family_Rules.json` | 3 | Seed cho phiên bản sau |
 | C – Character & Social | `Social_Reputation.json` | 3 | Seed cho phiên bản sau |
-| D – Education & Career | `Education_Levels.json` | 6 | Seed cho phiên bản sau |
-| D – Education & Career | `Schools.json` | 3 | Seed cho phiên bản sau |
-| D – Education & Career | `Skills.json` | 15 | Seed cho phiên bản sau |
-| D – Education & Career | `Courses.json` | 6 | Seed cho phiên bản sau |
+| D – Education & Career | `Education_Levels.json` | 6 | Runtime Education & Skills |
+| D – Education & Career | `Schools.json` | 3 | Runtime Education & Skills |
+| D – Education & Career | `Skills.json` | 15 | Runtime Education & Skills |
+| D – Education & Career | `Courses.json` | 13 | Runtime Education & Skills |
 | D – Education & Career | `Industries.json` | 10 | Seed cho phiên bản sau |
-| D – Education & Career | `Jobs.json` | 19 | Runtime Survival & Daily Activities |
+| D – Education & Career | `Jobs.json` | 19 | Runtime ca thời vụ và điều kiện đào tạo |
 | D – Education & Career | `Employers.json` | 4 | Seed cho phiên bản sau |
 | D – Education & Career | `Career_Paths.json` | 4 | Seed cho phiên bản sau |
 | E – Assets & Lifestyle | `Items.json` | 10 | Runtime Survival & Daily Activities |
@@ -84,7 +84,7 @@ Roadmap trước ghi 60 nhưng liệt kê 65 tên. Giữ 60 danh mục vật lý
 - Runtime state và schema save v1 độc lập với master schema 1.0.0. Không ghi runtime state vào JSON.
 
 ## Phạm vi phiên bản
-Các danh mục seed chưa phải bộ nội dung đầy đủ V1.3.0. NPC chưa có hành vi AI từ seed; chưa mở mua nhà/ô tô, pháp luật, kinh doanh, đầu tư, cốt truyện đa nhánh. Điều kiện kết thúc hiện là mô tả, chưa phải biểu thức được engine thực thi. Tốc độ và hình học của renderer vẫn giới hạn bản đồ prototype 96×96. Giá trị cần playtest và cân bằng trước khi đóng băng nội dung.
+Các danh mục seed chưa phải bộ nội dung đầy đủ V1.4.0. NPC chưa có hành vi AI từ seed; chưa mở mua nhà/ô tô, pháp luật, kinh doanh, đầu tư, cốt truyện đa nhánh. Điều kiện kết thúc hiện là mô tả, chưa phải biểu thức được engine thực thi. Tốc độ và hình học của renderer vẫn giới hạn bản đồ prototype 192×192. Giá trị cần playtest và cân bằng trước khi đóng băng nội dung.
 
 ## City Engine V0.3.0
 - Schema 1.1.0 bổ sung Cities.chunkSize; Districts.minX/minZ/maxX/maxZ/color; Building_Types.style; Road_Network.lanes/kind.
@@ -94,3 +94,7 @@ Các danh mục seed chưa phải bộ nội dung đầy đủ V1.3.0. NPC chưa
 
 ## V1.3.0
 Cấu hình năm bắt đầu và ngưỡng sức khỏe; thêm nhu cầu vệ sinh, lịch 22 địa điểm, 5 hoạt động hồi phục và trường hygiene/health/stress cho toàn bộ hành động. Giữ 60 catalog. Xem LIFE-SIMULATION.md.
+
+## V1.4.0
+- Schools gắn building; Courses có loại chương trình, đầu vào, văn bằng, số buổi và thời lượng mỗi buổi; thêm 7 văn bằng. Jobs có ngưỡng kỹ năng và XP thực hành; Game_Config có giới hạn học, XP mỗi cấp và trình độ xuất phát.
+- 60 danh mục, 552 bản ghi. Chi tiết runtime: `docs/EDUCATION.md`.

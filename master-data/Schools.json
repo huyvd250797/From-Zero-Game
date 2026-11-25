@@ -3,18 +3,21 @@
     "id": "SCHL_VOC",
     "name": "Trường nghề An Lạc",
     "district": "DST_EDUCATION",
-    "level": "EDU_VOC"
+    "level": "EDU_VOC",
+    "building": "BLD_SCHOOL"
   },
   {
     "id": "SCHL_UNI",
     "name": "Đại học An Lạc",
     "district": "DST_EDUCATION",
-    "level": "EDU_UNI"
+    "level": "EDU_UNI",
+    "building": "BLD_SCHOOL"
   },
   {
     "id": "SCHL_CENTER",
     "name": "Trung tâm kỹ năng",
-    "district": "DST_CENTER",
-    "level": "EDU_NONE"
+    "district": "DST_EDUCATION",
+    "level": "EDU_NONE",
+    "building": "BLD_LIBRARY"
   }
 ]

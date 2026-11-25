@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -26,7 +26,10 @@ export default {
         "criticalNeedThreshold": 15,
         "inventoryCapacity": 30,
         "dailyWorkLimit": 480,
-        "povertyThreshold": 60000
+        "povertyThreshold": 60000,
+        "dailyStudyLimit": 240,
+        "xpPerLevel": 100,
+        "initialEducation": "EDU_HIGH"
       }
     ],
     "Difficulty": [
@@ -2574,7 +2577,7 @@ export default {
         "energy": 0,
         "hunger": 0,
         "happy": 0,
-        "log": "Bạn đã ghé Trường nghề An Lạc. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
+        "log": "Bạn đã tìm hiểu các cơ hội học tập tại Trường nghề An Lạc và cụm đào tạo chung.",
         "rule": "none",
         "job": null,
         "asset": null,
@@ -2594,7 +2597,7 @@ export default {
         "energy": 0,
         "hunger": 0,
         "happy": 0,
-        "log": "Bạn đã ghé Thư viện thành phố. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
+        "log": "Bạn đã tìm hiểu các cơ hội học tập tại thư viện thành phố.",
         "rule": "none",
         "job": null,
         "asset": null,
@@ -3280,19 +3283,22 @@ export default {
         "id": "SCHL_VOC",
         "name": "Trường nghề An Lạc",
         "district": "DST_EDUCATION",
-        "level": "EDU_VOC"
+        "level": "EDU_VOC",
+        "building": "BLD_SCHOOL"
       },
       {
         "id": "SCHL_UNI",
         "name": "Đại học An Lạc",
         "district": "DST_EDUCATION",
-        "level": "EDU_UNI"
+        "level": "EDU_UNI",
+        "building": "BLD_SCHOOL"
       },
       {
         "id": "SCHL_CENTER",
         "name": "Trung tâm kỹ năng",
-        "district": "DST_CENTER",
-        "level": "EDU_NONE"
+        "district": "DST_EDUCATION",
+        "level": "EDU_NONE",
+        "building": "BLD_LIBRARY"
       }
     ],
     "Skills": [
@@ -3395,7 +3401,12 @@ export default {
         "skill": "SKL_SERVICE",
         "fee": 300000,
         "durationDays": 7,
-        "gain": 1
+        "gain": 1,
+        "kind": "certificate",
+        "awardLevel": null,
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 3,
+        "sessionMinutes": 60
       },
       {
         "id": "CRS_IT",
@@ -3404,7 +3415,12 @@ export default {
         "skill": "SKL_IT",
         "fee": 3000000,
         "durationDays": 60,
-        "gain": 2
+        "gain": 2,
+        "kind": "certificate",
+        "awardLevel": null,
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 12,
+        "sessionMinutes": 120
       },
       {
         "id": "CRS_ACCOUNT",
@@ -3413,7 +3429,12 @@ export default {
         "skill": "SKL_ACCOUNT",
         "fee": 1500000,
         "durationDays": 30,
-        "gain": 2
+        "gain": 2,
+        "kind": "certificate",
+        "awardLevel": null,
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 8,
+        "sessionMinutes": 60
       },
       {
         "id": "CRS_COOK",
@@ -3422,7 +3443,12 @@ export default {
         "skill": "SKL_COOK",
         "fee": 2000000,
         "durationDays": 45,
-        "gain": 2
+        "gain": 2,
+        "kind": "certificate",
+        "awardLevel": null,
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 10,
+        "sessionMinutes": 120
       },
       {
         "id": "CRS_MANAGE",
@@ -3431,7 +3457,12 @@ export default {
         "skill": "SKL_MANAGE",
         "fee": 12000000,
         "durationDays": 180,
-        "gain": 3
+        "gain": 3,
+        "kind": "certificate",
+        "awardLevel": null,
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 24,
+        "sessionMinutes": 120
       },
       {
         "id": "CRS_REPAIR",
@@ -3440,7 +3471,110 @@ export default {
         "skill": "SKL_REPAIR",
         "fee": 2500000,
         "durationDays": 60,
-        "gain": 2
+        "gain": 2,
+        "kind": "certificate",
+        "awardLevel": null,
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 12,
+        "sessionMinutes": 120
+      },
+      {
+        "id": "CRS_VOC_IT",
+        "name": "Chương trình nghề CNTT",
+        "school": "SCHL_VOC",
+        "skill": "SKL_IT",
+        "fee": 6000000,
+        "durationDays": 90,
+        "gain": 3,
+        "kind": "degree",
+        "awardLevel": "EDU_VOC",
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 18,
+        "sessionMinutes": 120
+      },
+      {
+        "id": "CRS_VOC_COOK",
+        "name": "Chương trình nghề đầu bếp",
+        "school": "SCHL_VOC",
+        "skill": "SKL_COOK",
+        "fee": 4500000,
+        "durationDays": 90,
+        "gain": 3,
+        "kind": "degree",
+        "awardLevel": "EDU_VOC",
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 18,
+        "sessionMinutes": 120
+      },
+      {
+        "id": "CRS_COL_ACCOUNT",
+        "name": "Cao đẳng kế toán",
+        "school": "SCHL_VOC",
+        "skill": "SKL_ACCOUNT",
+        "fee": 10000000,
+        "durationDays": 180,
+        "gain": 4,
+        "kind": "degree",
+        "awardLevel": "EDU_COLLEGE",
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 36,
+        "sessionMinutes": 120
+      },
+      {
+        "id": "CRS_UNI_MANAGE",
+        "name": "Đại học quản trị kinh doanh",
+        "school": "SCHL_UNI",
+        "skill": "SKL_MANAGE",
+        "fee": 24000000,
+        "durationDays": 365,
+        "gain": 5,
+        "kind": "degree",
+        "awardLevel": "EDU_UNI",
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 72,
+        "sessionMinutes": 120
+      },
+      {
+        "id": "CRS_UNI_TEACH",
+        "name": "Đại học sư phạm",
+        "school": "SCHL_UNI",
+        "skill": "SKL_TEACH",
+        "fee": 22000000,
+        "durationDays": 365,
+        "gain": 5,
+        "kind": "degree",
+        "awardLevel": "EDU_UNI",
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 72,
+        "sessionMinutes": 120
+      },
+      {
+        "id": "CRS_COL_MED",
+        "name": "Cao đẳng điều dưỡng",
+        "school": "SCHL_VOC",
+        "skill": "SKL_MED",
+        "fee": 14000000,
+        "durationDays": 180,
+        "gain": 4,
+        "kind": "degree",
+        "awardLevel": "EDU_COLLEGE",
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 36,
+        "sessionMinutes": 120
+      },
+      {
+        "id": "CRS_VOC_DESIGN",
+        "name": "Chương trình nghề thiết kế",
+        "school": "SCHL_VOC",
+        "skill": "SKL_DESIGN",
+        "fee": 6500000,
+        "durationDays": 90,
+        "gain": 3,
+        "kind": "degree",
+        "awardLevel": "EDU_VOC",
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 18,
+        "sessionMinutes": 120
       }
     ],
     "Industries": [
@@ -3505,7 +3639,10 @@ export default {
         "pay": 200000,
         "payPeriod": "shift",
         "shiftMinutes": 240,
-        "stress": 25
+        "stress": 25,
+        "minSkillLevel": 0,
+        "practiceSkill": "SKL_SERVICE",
+        "practiceXp": 10
       },
       {
         "id": "JOB_WORKER",
@@ -3516,7 +3653,10 @@ export default {
         "pay": 7000000,
         "payPeriod": "month",
         "shiftMinutes": 480,
-        "stress": 40
+        "stress": 40,
+        "minSkillLevel": 0,
+        "practiceSkill": null,
+        "practiceXp": 0
       },
       {
         "id": "JOB_CASHIER",
@@ -3529,7 +3669,10 @@ export default {
         "pay": 6500000,
         "payPeriod": "month",
         "shiftMinutes": 480,
-        "stress": 30
+        "stress": 30,
+        "minSkillLevel": 1,
+        "practiceSkill": null,
+        "practiceXp": 0
       },
       {
         "id": "JOB_SALES",
@@ -3542,7 +3685,10 @@ export default {
         "pay": 8000000,
         "payPeriod": "month",
         "shiftMinutes": 480,
-        "stress": 45
+        "stress": 45,
+        "minSkillLevel": 1,
+        "practiceSkill": null,
+        "practiceXp": 0
       },
       {
         "id": "JOB_COOK",
@@ -3555,7 +3701,10 @@ export default {
         "pay": 11000000,
         "payPeriod": "month",
         "shiftMinutes": 480,
-        "stress": 50
+        "stress": 50,
+        "minSkillLevel": 2,
+        "practiceSkill": null,
+        "practiceXp": 0
       },
       {
         "id": "JOB_DEV",
@@ -3568,7 +3717,10 @@ export default {
         "pay": 16000000,
         "payPeriod": "month",
         "shiftMinutes": 480,
-        "stress": 55
+        "stress": 55,
+        "minSkillLevel": 2,
+        "practiceSkill": null,
+        "practiceXp": 0
       },
       {
         "id": "JOB_LEAD",
@@ -3582,7 +3734,10 @@ export default {
         "pay": 26000000,
         "payPeriod": "month",
         "shiftMinutes": 480,
-        "stress": 65
+        "stress": 65,
+        "minSkillLevel": 3,
+        "practiceSkill": null,
+        "practiceXp": 0
       },
       {
         "id": "JOB_ACCOUNT",
@@ -3595,7 +3750,10 @@ export default {
         "pay": 11000000,
         "payPeriod": "month",
         "shiftMinutes": 480,
-        "stress": 45
+        "stress": 45,
+        "minSkillLevel": 2,
+        "practiceSkill": null,
+        "practiceXp": 0
       },
       {
         "id": "JOB_MANAGER",
@@ -3608,7 +3766,10 @@ export default {
         "pay": 18000000,
         "payPeriod": "month",
         "shiftMinutes": 480,
-        "stress": 60
+        "stress": 60,
+        "minSkillLevel": 3,
+        "practiceSkill": null,
+        "practiceXp": 0
       },
       {
         "id": "JOB_DRIVER",
@@ -3621,7 +3782,10 @@ export default {
         "pay": 10000000,
         "payPeriod": "month",
         "shiftMinutes": 480,
-        "stress": 45
+        "stress": 45,
+        "minSkillLevel": 1,
+        "practiceSkill": null,
+        "practiceXp": 0
       },
       {
         "id": "JOB_TEACHER",
@@ -3634,7 +3798,10 @@ export default {
         "pay": 12000000,
         "payPeriod": "month",
         "shiftMinutes": 480,
-        "stress": 40
+        "stress": 40,
+        "minSkillLevel": 2,
+        "practiceSkill": null,
+        "practiceXp": 0
       },
       {
         "id": "JOB_NURSE",
@@ -3647,7 +3814,10 @@ export default {
         "pay": 11000000,
         "payPeriod": "month",
         "shiftMinutes": 480,
-        "stress": 55
+        "stress": 55,
+        "minSkillLevel": 2,
+        "practiceSkill": null,
+        "practiceXp": 0
       },
       {
         "id": "JOB_BUILDER",
@@ -3660,7 +3830,10 @@ export default {
         "pay": 9000000,
         "payPeriod": "month",
         "shiftMinutes": 480,
-        "stress": 45
+        "stress": 45,
+        "minSkillLevel": 1,
+        "practiceSkill": null,
+        "practiceXp": 0
       },
       {
         "id": "JOB_DESIGNER",
@@ -3673,7 +3846,10 @@ export default {
         "pay": 12000000,
         "payPeriod": "month",
         "shiftMinutes": 480,
-        "stress": 45
+        "stress": 45,
+        "minSkillLevel": 2,
+        "practiceSkill": null,
+        "practiceXp": 0
       },
       {
         "id": "JOB_FARMER",
@@ -3686,7 +3862,10 @@ export default {
         "pay": 7000000,
         "payPeriod": "month",
         "shiftMinutes": 480,
-        "stress": 35
+        "stress": 35,
+        "minSkillLevel": 1,
+        "practiceSkill": null,
+        "practiceXp": 0
       },
       {
         "id": "JOB_CAFE_SHIFT",
@@ -3697,7 +3876,10 @@ export default {
         "pay": 95000,
         "payPeriod": "shift",
         "shiftMinutes": 120,
-        "stress": 15
+        "stress": 15,
+        "minSkillLevel": 0,
+        "practiceSkill": "SKL_SERVICE",
+        "practiceXp": 6
       },
       {
         "id": "JOB_MARKET_SHIFT",
@@ -3708,7 +3890,10 @@ export default {
         "pay": 160000,
         "payPeriod": "shift",
         "shiftMinutes": 180,
-        "stress": 20
+        "stress": 20,
+        "minSkillLevel": 0,
+        "practiceSkill": "SKL_SALES",
+        "practiceXp": 8
       },
       {
         "id": "JOB_WAREHOUSE_SHIFT",
@@ -3719,7 +3904,10 @@ export default {
         "pay": 260000,
         "payPeriod": "shift",
         "shiftMinutes": 300,
-        "stress": 35
+        "stress": 35,
+        "minSkillLevel": 0,
+        "practiceSkill": "SKL_BUILD",
+        "practiceXp": 12
       },
       {
         "id": "JOB_FARM_SHIFT",
@@ -3730,7 +3918,10 @@ export default {
         "pay": 180000,
         "payPeriod": "shift",
         "shiftMinutes": 240,
-        "stress": 25
+        "stress": 25,
+        "minSkillLevel": 0,
+        "practiceSkill": "SKL_FARM",
+        "practiceXp": 10
       }
     ],
     "Employers": [

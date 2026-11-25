@@ -22,6 +22,9 @@
     "criticalNeedThreshold": 15,
     "inventoryCapacity": 30,
     "dailyWorkLimit": 480,
-    "povertyThreshold": 60000
+    "povertyThreshold": 60000,
+    "dailyStudyLimit": 240,
+    "xpPerLevel": 100,
+    "initialEducation": "EDU_HIGH"
   }
 ]

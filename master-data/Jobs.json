@@ -8,7 +8,10 @@
     "pay": 200000,
     "payPeriod": "shift",
     "shiftMinutes": 240,
-    "stress": 25
+    "stress": 25,
+    "minSkillLevel": 0,
+    "practiceSkill": "SKL_SERVICE",
+    "practiceXp": 10
   },
   {
     "id": "JOB_WORKER",
@@ -19,7 +22,10 @@
     "pay": 7000000,
     "payPeriod": "month",
     "shiftMinutes": 480,
-    "stress": 40
+    "stress": 40,
+    "minSkillLevel": 0,
+    "practiceSkill": null,
+    "practiceXp": 0
   },
   {
     "id": "JOB_CASHIER",
@@ -32,7 +38,10 @@
     "pay": 6500000,
     "payPeriod": "month",
     "shiftMinutes": 480,
-    "stress": 30
+    "stress": 30,
+    "minSkillLevel": 1,
+    "practiceSkill": null,
+    "practiceXp": 0
   },
   {
     "id": "JOB_SALES",
@@ -45,7 +54,10 @@
     "pay": 8000000,
     "payPeriod": "month",
     "shiftMinutes": 480,
-    "stress": 45
+    "stress": 45,
+    "minSkillLevel": 1,
+    "practiceSkill": null,
+    "practiceXp": 0
   },
   {
     "id": "JOB_COOK",
@@ -58,7 +70,10 @@
     "pay": 11000000,
     "payPeriod": "month",
     "shiftMinutes": 480,
-    "stress": 50
+    "stress": 50,
+    "minSkillLevel": 2,
+    "practiceSkill": null,
+    "practiceXp": 0
   },
   {
     "id": "JOB_DEV",
@@ -71,7 +86,10 @@
     "pay": 16000000,
     "payPeriod": "month",
     "shiftMinutes": 480,
-    "stress": 55
+    "stress": 55,
+    "minSkillLevel": 2,
+    "practiceSkill": null,
+    "practiceXp": 0
   },
   {
     "id": "JOB_LEAD",
@@ -85,7 +103,10 @@
     "pay": 26000000,
     "payPeriod": "month",
     "shiftMinutes": 480,
-    "stress": 65
+    "stress": 65,
+    "minSkillLevel": 3,
+    "practiceSkill": null,
+    "practiceXp": 0
   },
   {
     "id": "JOB_ACCOUNT",
@@ -98,7 +119,10 @@
     "pay": 11000000,
     "payPeriod": "month",
     "shiftMinutes": 480,
-    "stress": 45
+    "stress": 45,
+    "minSkillLevel": 2,
+    "practiceSkill": null,
+    "practiceXp": 0
   },
   {
     "id": "JOB_MANAGER",
@@ -111,7 +135,10 @@
     "pay": 18000000,
     "payPeriod": "month",
     "shiftMinutes": 480,
-    "stress": 60
+    "stress": 60,
+    "minSkillLevel": 3,
+    "practiceSkill": null,
+    "practiceXp": 0
   },
   {
     "id": "JOB_DRIVER",
@@ -124,7 +151,10 @@
     "pay": 10000000,
     "payPeriod": "month",
     "shiftMinutes": 480,
-    "stress": 45
+    "stress": 45,
+    "minSkillLevel": 1,
+    "practiceSkill": null,
+    "practiceXp": 0
   },
   {
     "id": "JOB_TEACHER",
@@ -137,7 +167,10 @@
     "pay": 12000000,
     "payPeriod": "month",
     "shiftMinutes": 480,
-    "stress": 40
+    "stress": 40,
+    "minSkillLevel": 2,
+    "practiceSkill": null,
+    "practiceXp": 0
   },
   {
     "id": "JOB_NURSE",
@@ -150,7 +183,10 @@
     "pay": 11000000,
     "payPeriod": "month",
     "shiftMinutes": 480,
-    "stress": 55
+    "stress": 55,
+    "minSkillLevel": 2,
+    "practiceSkill": null,
+    "practiceXp": 0
   },
   {
     "id": "JOB_BUILDER",
@@ -163,7 +199,10 @@
     "pay": 9000000,
     "payPeriod": "month",
     "shiftMinutes": 480,
-    "stress": 45
+    "stress": 45,
+    "minSkillLevel": 1,
+    "practiceSkill": null,
+    "practiceXp": 0
   },
   {
     "id": "JOB_DESIGNER",
@@ -176,7 +215,10 @@
     "pay": 12000000,
     "payPeriod": "month",
     "shiftMinutes": 480,
-    "stress": 45
+    "stress": 45,
+    "minSkillLevel": 2,
+    "practiceSkill": null,
+    "practiceXp": 0
   },
   {
     "id": "JOB_FARMER",
@@ -189,7 +231,10 @@
     "pay": 7000000,
     "payPeriod": "month",
     "shiftMinutes": 480,
-    "stress": 35
+    "stress": 35,
+    "minSkillLevel": 1,
+    "practiceSkill": null,
+    "practiceXp": 0
   },
   {
     "id": "JOB_CAFE_SHIFT",
@@ -200,7 +245,10 @@
     "pay": 95000,
     "payPeriod": "shift",
     "shiftMinutes": 120,
-    "stress": 15
+    "stress": 15,
+    "minSkillLevel": 0,
+    "practiceSkill": "SKL_SERVICE",
+    "practiceXp": 6
   },
   {
     "id": "JOB_MARKET_SHIFT",
@@ -211,7 +259,10 @@
     "pay": 160000,
     "payPeriod": "shift",
     "shiftMinutes": 180,
-    "stress": 20
+    "stress": 20,
+    "minSkillLevel": 0,
+    "practiceSkill": "SKL_SALES",
+    "practiceXp": 8
   },
   {
     "id": "JOB_WAREHOUSE_SHIFT",
@@ -222,7 +273,10 @@
     "pay": 260000,
     "payPeriod": "shift",
     "shiftMinutes": 300,
-    "stress": 35
+    "stress": 35,
+    "minSkillLevel": 0,
+    "practiceSkill": "SKL_BUILD",
+    "practiceXp": 12
   },
   {
     "id": "JOB_FARM_SHIFT",
@@ -233,6 +287,9 @@
     "pay": 180000,
     "payPeriod": "shift",
     "shiftMinutes": 240,
-    "stress": 25
+    "stress": 25,
+    "minSkillLevel": 0,
+    "practiceSkill": "SKL_FARM",
+    "practiceXp": 10
   }
 ]

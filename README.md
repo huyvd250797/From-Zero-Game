@@ -1,5 +1,5 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.6.0 — Survival & Daily Activities**
+**V0.7.0 — Education & Skills**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 22 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
 
@@ -30,7 +30,14 @@ Mở http://localhost:5173. `npm run dev` cũng dùng được. Không double-cl
 - Game có 1 save slot localStorage. Autosave định kỳ 12 giây, sau hoạt động quan trọng và khi rời trang; lưu thủ công hoặc xuất JSON trong Cài đặt. Nếu xóa dữ liệu trình duyệt hoặc đổi thiết bị/domain, cần nhập bản sao lưu. Không có cloud sync.
 - WebGL là renderer chính; Canvas projection là fallback. Manifest + service worker cơ bản, offline sau khi cache thành công. Cần HTTPS (Vercel cung cấp) hoặc localhost cho service worker.
 
-## Survival & Daily Activities V0.6.0
+## Education & Skills V0.7.0
+- Mở **Học tập & kỹ năng** ở panel bên trái hoặc tương tác tại trường nghề/thư viện. 5 tab: Hồ sơ, Đào tạo, Tự học, Kỹ năng, Nghề nghiệp.
+- 13 chương trình, 6 chứng chỉ và 7 văn bằng; 3 đơn vị sử dụng 2 địa điểm hiện có. Phải đóng học phí, học đủ buổi và đủ thời gian trước khi nhận bằng. Dừng học không hoàn phí.
+- 15 kỹ năng, 100 XP/cấp, tối đa 10 cấp. Đọc thư viện miễn phí, học bằng sách/laptop đã sở hữu; giới hạn 4 giờ học/ngày. 5 ca thời vụ cấp XP thực hành.
+- Kiểm tra điều kiện học vấn và kỹ năng cho 19 nghề. Tuyển dụng và lương tháng chưa kích hoạt (V0.8.0).
+- Save cũ tự bổ sung hồ sơ THPT và XP trống, giữ tài sản. Master Data V1.4.0: 60 danh mục, 552 bản ghi. 80/80 test logic. Xem `docs/EDUCATION.md`.
+
+## Survival & Daily Activities V0.6.0 (kế thừa)
 - Túi đồ 30 đơn vị, 19 loại vật phẩm/thức ăn, mua theo số lượng 1/2/3/5, dùng hoặc bỏ; New Game có điện thoại cũ và ba lô. Save cũ bắt đầu với túi trống, không suy diễn tài sản đã sở hữu.
 - Siêu thị bán nhu yếu phẩm, nguyên liệu, đồ cá nhân; cửa hàng tiện lợi và quán cà phê có hàng phù hợp. Mua mất 5 phút, kiểm tra vị trí, giờ mở cửa, sức chứa, số dư. Thức ăn có thể dùng trực tiếp từ túi.
 - Phòng trọ có hai công thức nấu ăn: cơm trứng rau (15.000đ nguyên liệu) và mì trứng (9.000đ). Món nấu được đưa vào túi; chỉ nấu tại phòng đang thuê và còn đủ thời hạn.
@@ -93,4 +100,4 @@ Do môi trường phát triển không truy cập npm registry, phiên bản nà
 - Điều hướng HTTP bị chặn trong môi trường kiểm thử; chưa xác minh WebGL, PWA offline, thiết bị thật hay deploy Vercel.
 
 ## Phiên bản kế tiếp
-V0.6.0 — Survival & Daily Activities: mở rộng hoạt động sinh tồn, nhu yếu phẩm, nơi ở và chi phí sinh hoạt.
+V0.8.0 — Career & Employment: tuyển dụng, phỏng vấn, hợp đồng, lương, kinh nghiệm và thăng tiến.

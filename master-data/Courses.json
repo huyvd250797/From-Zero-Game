@@ -6,7 +6,12 @@
     "skill": "SKL_SERVICE",
     "fee": 300000,
     "durationDays": 7,
-    "gain": 1
+    "gain": 1,
+    "kind": "certificate",
+    "awardLevel": null,
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 3,
+    "sessionMinutes": 60
   },
   {
     "id": "CRS_IT",
@@ -15,7 +20,12 @@
     "skill": "SKL_IT",
     "fee": 3000000,
     "durationDays": 60,
-    "gain": 2
+    "gain": 2,
+    "kind": "certificate",
+    "awardLevel": null,
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 12,
+    "sessionMinutes": 120
   },
   {
     "id": "CRS_ACCOUNT",
@@ -24,7 +34,12 @@
     "skill": "SKL_ACCOUNT",
     "fee": 1500000,
     "durationDays": 30,
-    "gain": 2
+    "gain": 2,
+    "kind": "certificate",
+    "awardLevel": null,
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 8,
+    "sessionMinutes": 60
   },
   {
     "id": "CRS_COOK",
@@ -33,7 +48,12 @@
     "skill": "SKL_COOK",
     "fee": 2000000,
     "durationDays": 45,
-    "gain": 2
+    "gain": 2,
+    "kind": "certificate",
+    "awardLevel": null,
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 10,
+    "sessionMinutes": 120
   },
   {
     "id": "CRS_MANAGE",
@@ -42,7 +62,12 @@
     "skill": "SKL_MANAGE",
     "fee": 12000000,
     "durationDays": 180,
-    "gain": 3
+    "gain": 3,
+    "kind": "certificate",
+    "awardLevel": null,
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 24,
+    "sessionMinutes": 120
   },
   {
     "id": "CRS_REPAIR",
@@ -51,6 +76,109 @@
     "skill": "SKL_REPAIR",
     "fee": 2500000,
     "durationDays": 60,
-    "gain": 2
+    "gain": 2,
+    "kind": "certificate",
+    "awardLevel": null,
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 12,
+    "sessionMinutes": 120
+  },
+  {
+    "id": "CRS_VOC_IT",
+    "name": "Chương trình nghề CNTT",
+    "school": "SCHL_VOC",
+    "skill": "SKL_IT",
+    "fee": 6000000,
+    "durationDays": 90,
+    "gain": 3,
+    "kind": "degree",
+    "awardLevel": "EDU_VOC",
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 18,
+    "sessionMinutes": 120
+  },
+  {
+    "id": "CRS_VOC_COOK",
+    "name": "Chương trình nghề đầu bếp",
+    "school": "SCHL_VOC",
+    "skill": "SKL_COOK",
+    "fee": 4500000,
+    "durationDays": 90,
+    "gain": 3,
+    "kind": "degree",
+    "awardLevel": "EDU_VOC",
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 18,
+    "sessionMinutes": 120
+  },
+  {
+    "id": "CRS_COL_ACCOUNT",
+    "name": "Cao đẳng kế toán",
+    "school": "SCHL_VOC",
+    "skill": "SKL_ACCOUNT",
+    "fee": 10000000,
+    "durationDays": 180,
+    "gain": 4,
+    "kind": "degree",
+    "awardLevel": "EDU_COLLEGE",
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 36,
+    "sessionMinutes": 120
+  },
+  {
+    "id": "CRS_UNI_MANAGE",
+    "name": "Đại học quản trị kinh doanh",
+    "school": "SCHL_UNI",
+    "skill": "SKL_MANAGE",
+    "fee": 24000000,
+    "durationDays": 365,
+    "gain": 5,
+    "kind": "degree",
+    "awardLevel": "EDU_UNI",
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 72,
+    "sessionMinutes": 120
+  },
+  {
+    "id": "CRS_UNI_TEACH",
+    "name": "Đại học sư phạm",
+    "school": "SCHL_UNI",
+    "skill": "SKL_TEACH",
+    "fee": 22000000,
+    "durationDays": 365,
+    "gain": 5,
+    "kind": "degree",
+    "awardLevel": "EDU_UNI",
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 72,
+    "sessionMinutes": 120
+  },
+  {
+    "id": "CRS_COL_MED",
+    "name": "Cao đẳng điều dưỡng",
+    "school": "SCHL_VOC",
+    "skill": "SKL_MED",
+    "fee": 14000000,
+    "durationDays": 180,
+    "gain": 4,
+    "kind": "degree",
+    "awardLevel": "EDU_COLLEGE",
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 36,
+    "sessionMinutes": 120
+  },
+  {
+    "id": "CRS_VOC_DESIGN",
+    "name": "Chương trình nghề thiết kế",
+    "school": "SCHL_VOC",
+    "skill": "SKL_DESIGN",
+    "fee": 6500000,
+    "durationDays": 90,
+    "gain": 3,
+    "kind": "degree",
+    "awardLevel": "EDU_VOC",
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 18,
+    "sessionMinutes": 120
   }
 ]

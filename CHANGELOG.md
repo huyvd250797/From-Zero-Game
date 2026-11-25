@@ -1,5 +1,12 @@
 # Changelog
 
+## V0.7.0 — Education & Skills (2026-11-25)
+- 13 chương trình (6 chứng chỉ, 7 văn bằng), 3 đơn vị đào tạo dùng 2 địa điểm hiện có. Học phí, lịch học, tiến độ, nhận bằng và dừng học.
+- 15 kỹ năng, XP tự học thư viện/sách/laptop, XP từ 5 ca thời vụ, giới hạn học 4 giờ/ngày và kiểm tra nhu cầu.
+- Điều kiện học vấn/kỹ năng cho 19 nghề; chưa triển khai tuyển dụng.
+- 5 tab học tập responsive, Save schema 1 tự bổ sung hồ sơ giáo dục, giữ dữ liệu cũ.
+- Master Data V1.4.0, 60 danh mục / 552 bản ghi; 80/80 test logic và smoke test Chromium Canvas/storage mô phỏng, production build.
+
 ## V0.6.0 — Survival & Daily Activities (2026-11-25)
 - Túi đồ, mua theo số lượng, tiêu dùng, bỏ vật phẩm và hai công thức nấu ăn.
 - 5 loại ca thời vụ, giới hạn 8 giờ/ngày, đủ nước, thể dục và giải trí.
