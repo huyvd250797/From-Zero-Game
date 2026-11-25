@@ -1,5 +1,12 @@
 # Changelog
 
+## V0.17.0 — Story & Consequence Engine (2026-11-25)
+- Bộ máy 12 chương, 20 biến cố và 38 lựa chọn; kích hoạt theo hoàn cảnh, chu kỳ, tuổi và cơ hội cộng đồng xác định.
+- Hậu quả tức thời và trì hoãn 14/30/365 ngày, đạo đức, hành vi sai trái, ghi sổ tài chính, ký ức giúp đỡ NPC; bảo toàn save, không cộng trùng.
+- 4 tab, số biến cố trên HUD, nhật ký 120 mục, quyết định đã xử lý và hậu quả đang chờ được lưu riêng.
+- Master Data V2.4.0 (60 danh mục, 641 bản ghi); 248/248 tests, production build và Chromium Canvas/storage mô phỏng.
+- Pháp lý mới là ghi nhận rủi ro, chưa xét xử/án phạt; nghỉ hưu, di sản là sự kiện suy ngẫm, chưa có kết thúc.
+
 ## V0.16.0 — Dynamic City Economy (2026-11-25)
 - 5 trạng thái kinh tế, giá, lương, nhu cầu, nguồn cung, cạnh tranh, lãi suất và định giá động theo tháng 30 ngày.
 - Khóa lương/lãi suất hợp đồng, giá mua tài sản bảo đảm; bình quân giá vốn tồn kho; tương thích save schema 1.

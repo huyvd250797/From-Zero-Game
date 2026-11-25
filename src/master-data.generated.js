@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "2.3.0",
+  "version": "2.4.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -5078,6 +5078,11 @@ export default {
         "id": "INC_INVEST_SALE",
         "name": "Bán đầu tư",
         "description": "Tiền thu bán cổ phiếu hoặc vàng."
+      },
+      {
+        "id": "INC_STORY",
+        "name": "Thu từ biến cố",
+        "description": "Thu nhập phát sinh từ quyết định cốt truyện."
       }
     ],
     "Expense_Types": [
@@ -5165,6 +5170,11 @@ export default {
         "id": "EXP_BUSINESS",
         "name": "Nghĩa vụ kinh doanh",
         "description": "Thanh toán nợ vận hành từ tài chính cá nhân."
+      },
+      {
+        "id": "EXP_STORY",
+        "name": "Chi phí biến cố",
+        "description": "Chi phí phát sinh từ quyết định cốt truyện."
       }
     ],
     "Banks": [
@@ -5888,7 +5898,8 @@ export default {
         "maxAge": 18,
         "trigger": "arrival",
         "repeatable": false,
-        "description": "Tìm cách sinh sống."
+        "description": "Tìm cách sinh sống.",
+        "cooldownDays": 0
       },
       {
         "id": "EVT_SHIFT",
@@ -5898,7 +5909,8 @@ export default {
         "maxAge": 80,
         "trigger": "first_shift",
         "repeatable": false,
-        "description": "Bắt đầu tích lũy."
+        "description": "Bắt đầu tích lũy.",
+        "cooldownDays": 0
       },
       {
         "id": "EVT_FRIEND",
@@ -5908,7 +5920,8 @@ export default {
         "maxAge": 80,
         "trigger": "friend_request",
         "repeatable": false,
-        "description": "Một người bạn gặp khó khăn."
+        "description": "Một người bạn gặp khó khăn.",
+        "cooldownDays": 0
       },
       {
         "id": "EVT_CRISIS",
@@ -5918,7 +5931,8 @@ export default {
         "maxAge": 80,
         "trigger": "business_crisis",
         "repeatable": false,
-        "description": "Đối mặt đề xuất gian lận."
+        "description": "Đối mặt đề xuất gian lận.",
+        "cooldownDays": 0
       },
       {
         "id": "EVT_PARTY",
@@ -5928,7 +5942,8 @@ export default {
         "maxAge": 100,
         "trigger": "overspending",
         "repeatable": true,
-        "description": "Tài sản suy giảm do chi tiêu."
+        "description": "Tài sản suy giảm do chi tiêu.",
+        "cooldownDays": 30
       },
       {
         "id": "EVT_LEGAL",
@@ -5938,7 +5953,8 @@ export default {
         "maxAge": 120,
         "trigger": "legal_case",
         "repeatable": false,
-        "description": "Kết quả phụ thuộc quá trình xét xử."
+        "description": "Thông báo rủi ro pháp lý từ hành vi đã ghi nhận. Chưa có điều tra hay xét xử trong phiên bản này.",
+        "cooldownDays": 0
       },
       {
         "id": "EVT_RELEASE",
@@ -5948,7 +5964,8 @@ export default {
         "maxAge": 120,
         "trigger": "release",
         "repeatable": false,
-        "description": "Tái hòa nhập xã hội."
+        "description": "Tái hòa nhập xã hội.",
+        "cooldownDays": 0
       },
       {
         "id": "EVT_RETIRE",
@@ -5958,7 +5975,140 @@ export default {
         "maxAge": 120,
         "trigger": "retirement",
         "repeatable": false,
-        "description": "Tổng kết mục tiêu sống."
+        "description": "Tổng kết mục tiêu sống.",
+        "cooldownDays": 0
+      },
+      {
+        "id": "EVT_HARDSHIP",
+        "name": "Những ngày chật vật",
+        "chapter": "CHP_02",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "hardship",
+        "repeatable": false,
+        "description": "Bạn thiếu tiền và chưa có nơi ở. Hãy chọn cách đối mặt với khó khăn.",
+        "cooldownDays": 0
+      },
+      {
+        "id": "EVT_GRADUATE",
+        "name": "Một cột mốc học tập",
+        "chapter": "CHP_04",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "graduation",
+        "repeatable": false,
+        "description": "Bạn đã hoàn thành một chương trình đào tạo. Một cơ hội kết nối với người hướng dẫn xuất hiện.",
+        "cooldownDays": 0
+      },
+      {
+        "id": "EVT_MENTOR",
+        "name": "Lời hẹn với người hướng dẫn",
+        "chapter": "CHP_04",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "followup",
+        "repeatable": false,
+        "description": "Người hướng dẫn đã liên lạc lại và mời bạn tham gia một buổi chia sẻ.",
+        "cooldownDays": 0
+      },
+      {
+        "id": "EVT_JOB_LOSS",
+        "name": "Mất việc làm",
+        "chapter": "CHP_09",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "job_loss",
+        "repeatable": true,
+        "description": "Hợp đồng vừa kết thúc do kỷ luật. Bạn phải quyết định cách bắt đầu lại.",
+        "cooldownDays": 30
+      },
+      {
+        "id": "EVT_FAMILY_STRAIN",
+        "name": "Gia đình cần được lắng nghe",
+        "chapter": "CHP_05",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "family_strain",
+        "repeatable": true,
+        "description": "Cuộc sống chung đang căng thẳng. Hãy cân nhắc ưu tiên gia đình.",
+        "cooldownDays": 30
+      },
+      {
+        "id": "EVT_DEBT_PRESSURE",
+        "name": "Áp lực trả nợ",
+        "chapter": "CHP_08",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "debt_pressure",
+        "repeatable": true,
+        "description": "Một khoản vay đang quá hạn. Cần kiểm soát chi tiêu và chủ động thanh toán.",
+        "cooldownDays": 30
+      },
+      {
+        "id": "EVT_RECESSION",
+        "name": "Thành phố bước vào suy thoái",
+        "chapter": "CHP_09",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "recession",
+        "repeatable": true,
+        "description": "Nhu cầu và tuyển dụng suy giảm. Bạn phải điều chỉnh kế hoạch của mình.",
+        "cooldownDays": 990
+      },
+      {
+        "id": "EVT_ENTERPRISE",
+        "name": "Bước đầu khởi nghiệp",
+        "chapter": "CHP_06",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "enterprise",
+        "repeatable": false,
+        "description": "Bạn đã thành lập doanh nghiệp. Hãy xác định nguyên tắc kinh doanh.",
+        "cooldownDays": 0
+      },
+      {
+        "id": "EVT_COMMUNITY",
+        "name": "Cơ hội từ cộng đồng",
+        "chapter": "CHP_03",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "community",
+        "repeatable": true,
+        "description": "Một chương trình cộng đồng mời bạn chia sẻ kinh nghiệm. Bạn có thể nhận lời hoặc bỏ qua.",
+        "cooldownDays": 30
+      },
+      {
+        "id": "EVT_RECOVERY",
+        "name": "Một cơ hội làm lại",
+        "chapter": "CHP_10",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "recovery",
+        "repeatable": false,
+        "description": "Sau khó khăn, bạn đã có nơi ở và tiền dự phòng. Hãy ghi nhận nỗ lực của mình.",
+        "cooldownDays": 0
+      },
+      {
+        "id": "EVT_FRIEND_RETURN",
+        "name": "Lời cảm ơn đến muộn",
+        "chapter": "CHP_05",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "followup",
+        "repeatable": false,
+        "description": "Người bạn từng nhận hỗ trợ muốn gửi lại một phần tiền sau khi vượt qua khó khăn.",
+        "cooldownDays": 0
+      },
+      {
+        "id": "EVT_LEGACY",
+        "name": "Nhìn lại hành trình",
+        "chapter": "CHP_12",
+        "minAge": 70,
+        "maxAge": 120,
+        "trigger": "legacy",
+        "repeatable": false,
+        "description": "Bạn đã bước vào tuổi 70. Đây là lúc suy ngẫm về những điều đã đạt được.",
+        "cooldownDays": 0
       }
     ],
     "Event_Choices": [
@@ -5972,7 +6122,11 @@ export default {
         "offense": null,
         "nextEvent": "EVT_SHIFT",
         "delayDays": 0,
-        "consequence": "Mở cơ hội làm thuê."
+        "consequence": "Mở cơ hội làm thuê.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
       },
       {
         "id": "CHO_ARRIVE_REST",
@@ -5984,7 +6138,11 @@ export default {
         "offense": null,
         "nextEvent": null,
         "delayDays": 0,
-        "consequence": "Ưu tiên sức khỏe."
+        "consequence": "Ưu tiên sức khỏe.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 3,
+        "familyDelta": 0
       },
       {
         "id": "CHO_SHIFT_SAVE",
@@ -5996,7 +6154,11 @@ export default {
         "offense": null,
         "nextEvent": null,
         "delayDays": 0,
-        "consequence": "Giữ lại thu nhập."
+        "consequence": "Giữ lại thu nhập.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
       },
       {
         "id": "CHO_SHIFT_FUN",
@@ -6008,7 +6170,11 @@ export default {
         "offense": null,
         "nextEvent": null,
         "delayDays": 0,
-        "consequence": "Tăng vui vẻ, giảm tiền."
+        "consequence": "Tăng vui vẻ, giảm tiền.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
       },
       {
         "id": "CHO_FRIEND_HELP",
@@ -6018,9 +6184,13 @@ export default {
         "happyDelta": 5,
         "reputationDelta": 5,
         "offense": null,
-        "nextEvent": null,
-        "delayDays": 0,
-        "consequence": "Củng cố tình bạn."
+        "nextEvent": "EVT_FRIEND_RETURN",
+        "delayDays": 14,
+        "consequence": "Hỗ trợ bạn; một lời cảm ơn có thể đến sau 14 ngày.",
+        "ethicsDelta": 5,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
       },
       {
         "id": "CHO_FRIEND_NO",
@@ -6032,11 +6202,15 @@ export default {
         "offense": null,
         "nextEvent": null,
         "delayDays": 0,
-        "consequence": "Giữ tài chính."
+        "consequence": "Giữ tài chính.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
       },
       {
         "id": "CHO_CRISIS_REFORM",
-        "name": "Tái cấu trúc",
+        "name": "Thuê tư vấn tái cấu trúc",
         "event": "EVT_CRISIS",
         "cashDelta": -5000000,
         "happyDelta": -5,
@@ -6044,7 +6218,11 @@ export default {
         "offense": null,
         "nextEvent": null,
         "delayDays": 0,
-        "consequence": "Giảm quy mô và tìm cơ hội phục hồi."
+        "consequence": "Chi phí tư vấn cải tổ; tăng uy tín. Bạn vẫn phải tự điều chỉnh vận hành.",
+        "ethicsDelta": 8,
+        "stressDelta": 3,
+        "healthDelta": 0,
+        "familyDelta": 0
       },
       {
         "id": "CHO_CRISIS_FRAUD",
@@ -6056,7 +6234,11 @@ export default {
         "offense": "OFF_TAX",
         "nextEvent": "EVT_LEGAL",
         "delayDays": 365,
-        "consequence": "Ghi nhận hành vi; có nguy cơ điều tra về sau."
+        "consequence": "Lợi ích trước mắt, ghi nhận hành vi sai trái; thông báo rủi ro pháp lý sau 365 ngày.",
+        "ethicsDelta": -20,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
       },
       {
         "id": "CHO_PARTY_STOP",
@@ -6068,7 +6250,11 @@ export default {
         "offense": null,
         "nextEvent": null,
         "delayDays": 0,
-        "consequence": "Bắt đầu phục hồi."
+        "consequence": "Bắt đầu phục hồi.",
+        "ethicsDelta": 0,
+        "stressDelta": -3,
+        "healthDelta": 0,
+        "familyDelta": 0
       },
       {
         "id": "CHO_PARTY_MORE",
@@ -6080,7 +6266,11 @@ export default {
         "offense": null,
         "nextEvent": null,
         "delayDays": 0,
-        "consequence": "Tài sản giảm."
+        "consequence": "Tài sản giảm.",
+        "ethicsDelta": 0,
+        "stressDelta": 5,
+        "healthDelta": 0,
+        "familyDelta": 0
       },
       {
         "id": "CHO_LEGAL_COOPERATE",
@@ -6092,7 +6282,11 @@ export default {
         "offense": null,
         "nextEvent": null,
         "delayDays": 0,
-        "consequence": "Giải quyết theo kết quả giả lập."
+        "consequence": "Ghi nhận thái độ hợp tác. Chưa có phán quyết hay án phạt ở phiên bản này.",
+        "ethicsDelta": 4,
+        "stressDelta": -5,
+        "healthDelta": 0,
+        "familyDelta": 0
       },
       {
         "id": "CHO_RELEASE_WORK",
@@ -6104,7 +6298,11 @@ export default {
         "offense": null,
         "nextEvent": null,
         "delayDays": 0,
-        "consequence": "Bắt đầu lại."
+        "consequence": "Bắt đầu lại.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
       },
       {
         "id": "CHO_RETIRE_FAMILY",
@@ -6116,7 +6314,411 @@ export default {
         "offense": null,
         "nextEvent": null,
         "delayDays": 0,
-        "consequence": "Tận hưởng tuổi già."
+        "consequence": "Nhìn lại cuộc đời; không tự động chấm dứt hợp đồng.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 5
+      },
+      {
+        "id": "CHO_HARDSHIP_REST",
+        "name": "Ưu tiên hồi phục",
+        "event": "EVT_HARDSHIP",
+        "cashDelta": 0,
+        "happyDelta": 3,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Tự nhắc mình giữ sức khỏe; tiếp tục tìm hỗ trợ.",
+        "ethicsDelta": 0,
+        "stressDelta": -5,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_HARDSHIP_PLAN",
+        "name": "Lập kế hoạch kiếm sống",
+        "event": "EVT_HARDSHIP",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Giữ tiền; giảm căng thẳng và tiếp tục tìm việc.",
+        "ethicsDelta": 1,
+        "stressDelta": -3,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_GRADUATE_MENTOR",
+        "name": "Tham gia kết nối",
+        "event": "EVT_GRADUATE",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": "EVT_MENTOR",
+        "delayDays": 30,
+        "consequence": "Sau 30 ngày nhận sự kiện gặp người hướng dẫn.",
+        "ethicsDelta": 2,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_GRADUATE_SELF",
+        "name": "Tự phát triển",
+        "event": "EVT_GRADUATE",
+        "cashDelta": 0,
+        "happyDelta": 5,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Tự tin hơn, không nhận lời hẹn.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_MENTOR_ACCEPT",
+        "name": "Nhận hỗ trợ học tập",
+        "event": "EVT_MENTOR",
+        "cashDelta": 150000,
+        "happyDelta": 4,
+        "reputationDelta": 3,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Nhận hỗ trợ 150.000đ và tăng uy tín.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_MENTOR_DECLINE",
+        "name": "Từ chối lịch sự",
+        "event": "EVT_MENTOR",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 1,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Giữ quyền lựa chọn của mình.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_JOB_LOSS_RECOVER",
+        "name": "Bình tĩnh tìm việc mới",
+        "event": "EVT_JOB_LOSS",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Giảm căng thẳng; không tự động có việc làm.",
+        "ethicsDelta": 2,
+        "stressDelta": -8,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_JOB_LOSS_REST",
+        "name": "Dành thời gian hồi phục",
+        "event": "EVT_JOB_LOSS",
+        "cashDelta": 0,
+        "happyDelta": 5,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Tăng sức khỏe và hạnh phúc.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 5,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_FAMILY_LISTEN",
+        "name": "Cam kết lắng nghe",
+        "event": "EVT_FAMILY_STRAIN",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Tăng hạnh phúc gia đình và giảm căng thẳng.",
+        "ethicsDelta": 2,
+        "stressDelta": -4,
+        "healthDelta": 0,
+        "familyDelta": 8
+      },
+      {
+        "id": "CHO_FAMILY_POSTPONE",
+        "name": "Chưa thể dành thời gian",
+        "event": "EVT_FAMILY_STRAIN",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Hạnh phúc gia đình giảm nhẹ.",
+        "ethicsDelta": 0,
+        "stressDelta": 3,
+        "healthDelta": 0,
+        "familyDelta": -5
+      },
+      {
+        "id": "CHO_DEBT_PLAN",
+        "name": "Lập kế hoạch trả nợ",
+        "event": "EVT_DEBT_PRESSURE",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Giảm căng thẳng; khoản nợ vẫn phải trả tại ngân hàng.",
+        "ethicsDelta": 2,
+        "stressDelta": -5,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_DEBT_IGNORE",
+        "name": "Trì hoãn đối diện",
+        "event": "EVT_DEBT_PRESSURE",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Căng thẳng tăng; không xóa nghĩa vụ nợ.",
+        "ethicsDelta": 0,
+        "stressDelta": 8,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_RECESSION_PRUDENT",
+        "name": "Giữ quỹ dự phòng",
+        "event": "EVT_RECESSION",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Tăng sự bình tĩnh; không tự bán tài sản.",
+        "ethicsDelta": 1,
+        "stressDelta": -4,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_RECESSION_LEARN",
+        "name": "Tìm cơ hội nâng kỹ năng",
+        "event": "EVT_RECESSION",
+        "cashDelta": 0,
+        "happyDelta": 4,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Tăng động lực học tập.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_ENTERPRISE_FAIR",
+        "name": "Ưu tiên chất lượng",
+        "event": "EVT_ENTERPRISE",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 3,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Tăng đạo đức và uy tín.",
+        "ethicsDelta": 5,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_ENTERPRISE_GROW",
+        "name": "Ưu tiên mở rộng",
+        "event": "EVT_ENTERPRISE",
+        "cashDelta": 0,
+        "happyDelta": 5,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Tăng động lực nhưng tăng áp lực.",
+        "ethicsDelta": 0,
+        "stressDelta": 3,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_COMMUNITY_JOIN",
+        "name": "Tham gia chia sẻ",
+        "event": "EVT_COMMUNITY",
+        "cashDelta": 50000,
+        "happyDelta": 0,
+        "reputationDelta": 2,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Nhận hỗ trợ 50.000đ và tăng uy tín.",
+        "ethicsDelta": 2,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_COMMUNITY_SKIP",
+        "name": "Không tham gia",
+        "event": "EVT_COMMUNITY",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Không phát sinh thay đổi.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_RECOVERY_CONTINUE",
+        "name": "Tiếp tục xây dựng cuộc sống",
+        "event": "EVT_RECOVERY",
+        "cashDelta": 0,
+        "happyDelta": 8,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Tăng hạnh phúc và giảm áp lực.",
+        "ethicsDelta": 0,
+        "stressDelta": -5,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_RECOVERY_REFLECT",
+        "name": "Nhìn lại bài học",
+        "event": "EVT_RECOVERY",
+        "cashDelta": 0,
+        "happyDelta": 4,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Tăng đạo đức và hạnh phúc.",
+        "ethicsDelta": 3,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_FRIEND_RETURN_ACCEPT",
+        "name": "Nhận lại một phần",
+        "event": "EVT_FRIEND_RETURN",
+        "cashDelta": 300000,
+        "happyDelta": 5,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Nhận 300.000đ; không phải khoản vay.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_FRIEND_RETURN_GIVE",
+        "name": "Không cần hoàn lại",
+        "event": "EVT_FRIEND_RETURN",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 3,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Tăng đạo đức và uy tín.",
+        "ethicsDelta": 4,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_LEGACY_FAMILY",
+        "name": "Trân trọng gia đình",
+        "event": "EVT_LEGACY",
+        "cashDelta": 0,
+        "happyDelta": 5,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Tăng hạnh phúc gia đình nếu đang có gia đình.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 5
+      },
+      {
+        "id": "CHO_LEGACY_COMMUNITY",
+        "name": "Trân trọng đóng góp xã hội",
+        "event": "EVT_LEGACY",
+        "cashDelta": 0,
+        "happyDelta": 5,
+        "reputationDelta": 3,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Tăng uy tín và hạnh phúc.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_CRISIS_DECLINE",
+        "name": "Từ chối đề xuất sai trái",
+        "event": "EVT_CRISIS",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 1,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Không nhận lợi ích bất chính; giữ nghĩa vụ hiện tại và tự tìm cách xử lý.",
+        "ethicsDelta": 3,
+        "stressDelta": 3,
+        "healthDelta": 0,
+        "familyDelta": 0
       }
     ],
     "Achievements": [

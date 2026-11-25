@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V2.3.0
+# From Zero — Canonical Master Data V2.4.0
 
-Game release V0.16.0 · 60 danh mục, 602 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.17.0 · 60 danh mục, 641 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -41,8 +41,8 @@ Game release V0.16.0 · 60 danh mục, 602 bản ghi. Số liệu kinh tế và 
 | E – Assets & Lifestyle | `Vehicles.json` | 6 | Runtime prototype |
 | E – Assets & Lifestyle | `Furniture.json` | 5 | Runtime Housing & Interior |
 | E – Assets & Lifestyle | `Maintenance.json` | 4 | Seed cho phiên bản sau |
-| F – Finance & Economy | `Income_Types.json` | 11 | Lương/thưởng/thời vụ và thu lịch sử runtime, các nguồn khác seed |
-| F – Finance & Economy | `Expense_Types.json` | 17 | Runtime Survival & Daily Activities |
+| F – Finance & Economy | `Income_Types.json` | 12 | Lương/thưởng/thời vụ và thu lịch sử runtime, các nguồn khác seed |
+| F – Finance & Economy | `Expense_Types.json` | 18 | Runtime Survival & Daily Activities |
 | F – Finance & Economy | `Banks.json` | 2 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Loan_Products.json` | 4 | Runtime Banking & Business |
 | F – Finance & Economy | `Saving_Products.json` | 2 | Seed cho phiên bản sau |
@@ -60,9 +60,9 @@ Game release V0.16.0 · 60 danh mục, 602 bản ghi. Số liệu kinh tế và 
 | H – Health, Lifestyle & Law | `Legal_Proceedings.json` | 5 | Seed cho phiên bản sau |
 | H – Health, Lifestyle & Law | `Penalties.json` | 3 | Seed cho phiên bản sau |
 | H – Health, Lifestyle & Law | `Prison_Rehabilitation.json` | 4 | Seed cho phiên bản sau |
-| I – Story & Events | `Story_Chapters.json` | 12 | Seed cho phiên bản sau |
-| I – Story & Events | `Story_Events.json` | 8 | Seed cho phiên bản sau |
-| I – Story & Events | `Event_Choices.json` | 13 | Seed cho phiên bản sau |
+| I – Story & Events | `Story_Chapters.json` | 12 | Runtime Story Engine |
+| I – Story & Events | `Story_Events.json` | 20 | Runtime (19 hoạt động, RELEASE dữ liệu nền) |
+| I – Story & Events | `Event_Choices.json` | 38 | Runtime Story Engine |
 | J – Endgame | `Achievements.json` | 7 | Seed cho phiên bản sau |
 | J – Endgame | `Life_Endings.json` | 40 | Seed cho phiên bản sau |
 | J – Endgame | `Legacy_Rules.json` | 2 | Seed cho phiên bản sau |
@@ -128,3 +128,6 @@ Vehicles bổ sung capacity, consumption, unitPrice; tên BLD_BIKE đổi thành
 ## V2.3.0
 - Economy_Events thêm ECO_STABLE và ECO_RECOVERY; năm cấu hình có chỉ số hoạt động, thất nghiệp, nhu cầu, nguồn cung, lãi suất (basis points), giá nhà/xe, cạnh tranh, nhiên liệu.
 - Giá gốc trong các danh mục khác được giữ nguyên. Economy Engine tính báo giá runtime, không sửa Master Data.
+
+## V2.4.0
+Story_Events bổ sung cooldownDays và trigger, Event_Choices bổ sung ethicsDelta, stressDelta, healthDelta, familyDelta. Thêm 12 biến cố, 25 lựa chọn, INC_STORY và EXP_STORY. Giữ nguyên 60 danh mục.

@@ -7,7 +7,8 @@
     "maxAge": 18,
     "trigger": "arrival",
     "repeatable": false,
-    "description": "Tìm cách sinh sống."
+    "description": "Tìm cách sinh sống.",
+    "cooldownDays": 0
   },
   {
     "id": "EVT_SHIFT",
@@ -17,7 +18,8 @@
     "maxAge": 80,
     "trigger": "first_shift",
     "repeatable": false,
-    "description": "Bắt đầu tích lũy."
+    "description": "Bắt đầu tích lũy.",
+    "cooldownDays": 0
   },
   {
     "id": "EVT_FRIEND",
@@ -27,7 +29,8 @@
     "maxAge": 80,
     "trigger": "friend_request",
     "repeatable": false,
-    "description": "Một người bạn gặp khó khăn."
+    "description": "Một người bạn gặp khó khăn.",
+    "cooldownDays": 0
   },
   {
     "id": "EVT_CRISIS",
@@ -37,7 +40,8 @@
     "maxAge": 80,
     "trigger": "business_crisis",
     "repeatable": false,
-    "description": "Đối mặt đề xuất gian lận."
+    "description": "Đối mặt đề xuất gian lận.",
+    "cooldownDays": 0
   },
   {
     "id": "EVT_PARTY",
@@ -47,7 +51,8 @@
     "maxAge": 100,
     "trigger": "overspending",
     "repeatable": true,
-    "description": "Tài sản suy giảm do chi tiêu."
+    "description": "Tài sản suy giảm do chi tiêu.",
+    "cooldownDays": 30
   },
   {
     "id": "EVT_LEGAL",
@@ -57,7 +62,8 @@
     "maxAge": 120,
     "trigger": "legal_case",
     "repeatable": false,
-    "description": "Kết quả phụ thuộc quá trình xét xử."
+    "description": "Thông báo rủi ro pháp lý từ hành vi đã ghi nhận. Chưa có điều tra hay xét xử trong phiên bản này.",
+    "cooldownDays": 0
   },
   {
     "id": "EVT_RELEASE",
@@ -67,7 +73,8 @@
     "maxAge": 120,
     "trigger": "release",
     "repeatable": false,
-    "description": "Tái hòa nhập xã hội."
+    "description": "Tái hòa nhập xã hội.",
+    "cooldownDays": 0
   },
   {
     "id": "EVT_RETIRE",
@@ -77,6 +84,139 @@
     "maxAge": 120,
     "trigger": "retirement",
     "repeatable": false,
-    "description": "Tổng kết mục tiêu sống."
+    "description": "Tổng kết mục tiêu sống.",
+    "cooldownDays": 0
+  },
+  {
+    "id": "EVT_HARDSHIP",
+    "name": "Những ngày chật vật",
+    "chapter": "CHP_02",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "hardship",
+    "repeatable": false,
+    "description": "Bạn thiếu tiền và chưa có nơi ở. Hãy chọn cách đối mặt với khó khăn.",
+    "cooldownDays": 0
+  },
+  {
+    "id": "EVT_GRADUATE",
+    "name": "Một cột mốc học tập",
+    "chapter": "CHP_04",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "graduation",
+    "repeatable": false,
+    "description": "Bạn đã hoàn thành một chương trình đào tạo. Một cơ hội kết nối với người hướng dẫn xuất hiện.",
+    "cooldownDays": 0
+  },
+  {
+    "id": "EVT_MENTOR",
+    "name": "Lời hẹn với người hướng dẫn",
+    "chapter": "CHP_04",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "followup",
+    "repeatable": false,
+    "description": "Người hướng dẫn đã liên lạc lại và mời bạn tham gia một buổi chia sẻ.",
+    "cooldownDays": 0
+  },
+  {
+    "id": "EVT_JOB_LOSS",
+    "name": "Mất việc làm",
+    "chapter": "CHP_09",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "job_loss",
+    "repeatable": true,
+    "description": "Hợp đồng vừa kết thúc do kỷ luật. Bạn phải quyết định cách bắt đầu lại.",
+    "cooldownDays": 30
+  },
+  {
+    "id": "EVT_FAMILY_STRAIN",
+    "name": "Gia đình cần được lắng nghe",
+    "chapter": "CHP_05",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "family_strain",
+    "repeatable": true,
+    "description": "Cuộc sống chung đang căng thẳng. Hãy cân nhắc ưu tiên gia đình.",
+    "cooldownDays": 30
+  },
+  {
+    "id": "EVT_DEBT_PRESSURE",
+    "name": "Áp lực trả nợ",
+    "chapter": "CHP_08",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "debt_pressure",
+    "repeatable": true,
+    "description": "Một khoản vay đang quá hạn. Cần kiểm soát chi tiêu và chủ động thanh toán.",
+    "cooldownDays": 30
+  },
+  {
+    "id": "EVT_RECESSION",
+    "name": "Thành phố bước vào suy thoái",
+    "chapter": "CHP_09",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "recession",
+    "repeatable": true,
+    "description": "Nhu cầu và tuyển dụng suy giảm. Bạn phải điều chỉnh kế hoạch của mình.",
+    "cooldownDays": 990
+  },
+  {
+    "id": "EVT_ENTERPRISE",
+    "name": "Bước đầu khởi nghiệp",
+    "chapter": "CHP_06",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "enterprise",
+    "repeatable": false,
+    "description": "Bạn đã thành lập doanh nghiệp. Hãy xác định nguyên tắc kinh doanh.",
+    "cooldownDays": 0
+  },
+  {
+    "id": "EVT_COMMUNITY",
+    "name": "Cơ hội từ cộng đồng",
+    "chapter": "CHP_03",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "community",
+    "repeatable": true,
+    "description": "Một chương trình cộng đồng mời bạn chia sẻ kinh nghiệm. Bạn có thể nhận lời hoặc bỏ qua.",
+    "cooldownDays": 30
+  },
+  {
+    "id": "EVT_RECOVERY",
+    "name": "Một cơ hội làm lại",
+    "chapter": "CHP_10",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "recovery",
+    "repeatable": false,
+    "description": "Sau khó khăn, bạn đã có nơi ở và tiền dự phòng. Hãy ghi nhận nỗ lực của mình.",
+    "cooldownDays": 0
+  },
+  {
+    "id": "EVT_FRIEND_RETURN",
+    "name": "Lời cảm ơn đến muộn",
+    "chapter": "CHP_05",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "followup",
+    "repeatable": false,
+    "description": "Người bạn từng nhận hỗ trợ muốn gửi lại một phần tiền sau khi vượt qua khó khăn.",
+    "cooldownDays": 0
+  },
+  {
+    "id": "EVT_LEGACY",
+    "name": "Nhìn lại hành trình",
+    "chapter": "CHP_12",
+    "minAge": 70,
+    "maxAge": 120,
+    "trigger": "legacy",
+    "repeatable": false,
+    "description": "Bạn đã bước vào tuổi 70. Đây là lúc suy ngẫm về những điều đã đạt được.",
+    "cooldownDays": 0
   }
 ]

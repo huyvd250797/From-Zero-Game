@@ -53,5 +53,10 @@
     "id": "INC_INVEST_SALE",
     "name": "Bán đầu tư",
     "description": "Tiền thu bán cổ phiếu hoặc vàng."
+  },
+  {
+    "id": "INC_STORY",
+    "name": "Thu từ biến cố",
+    "description": "Thu nhập phát sinh từ quyết định cốt truyện."
   }
 ]

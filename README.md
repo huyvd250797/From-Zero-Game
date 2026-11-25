@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.16.0 — Dynamic City Economy**
+**V0.17.0 — Story & Consequence Engine**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 25 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.17.0 — Story & Consequence Engine
+- 12 chương không tuyến tính, 20 biến cố (19 có thể kích hoạt, 1 dữ liệu nền cho tái hòa nhập sau này), 38 lựa chọn. Điều kiện dựa trên nghề nghiệp, học tập, bạn bè, gia đình, tài chính, doanh nghiệp, tuổi và kinh tế; cơ hội cộng đồng giả ngẫu nhiên xác định theo ngày/tên nhân vật, không đổi khi tải lại.
+- 4 tab Câu chuyện cuộc đời: Biến cố, Chương cuộc đời, Hậu quả, Nhật ký. Nút HUD hiển thị số biến cố chờ quyết định, không ép mở modal. Tối đa 8 biến cố thường chờ; hậu quả đến hạn ưu tiên, không bị chặn bởi hàng đợi thường.
+- Lựa chọn thay đổi tiền, hạnh phúc, sức khỏe, căng thẳng, uy tín, đạo đức, hạnh phúc gia đình (nếu có) và tin tưởng NPC ở nhánh giúp bạn. Điểm đạo đức bắt đầu 50/100. Giao dịch ghi đúng sổ tài chính, không nhận lặp.
+- Hậu quả trì hoãn: lời cảm ơn sau 14 ngày, cơ hội người hướng dẫn sau 30 ngày, thông báo rủi ro pháp lý sau 365 ngày (−8 uy tín, +10 căng thẳng khi đến hạn). Có lựa chọn hợp pháp miễn phí trong biến cố kinh doanh; không hướng dẫn hành vi sai trái. Chưa có điều tra, xét xử, phạt, tù, kết thúc cuộc đời hoặc nghỉ hưu tự động.
+- Master Data V2.4.0: 60 danh mục, 641 bản ghi. Save schema 1 giữ nguyên; save cũ bổ sung cốt truyện, không hồi tố các quyết định, không phát lại biến cố đến thành phố hoặc ca đầu đã làm. 248/248 test (226 hồi quy + 22 mới), production build, UI Chromium Canvas/storage mô phỏng. Xem docs/STORY.md. Chưa xác minh Vercel thực tế, WebGL hoặc offline PWA.
 
 ## V0.16.0 — Dynamic City Economy
 - Kinh tế An Lạc có 5 trạng thái: ổn định 1 tháng đầu, sau đó lặp chu kỳ tăng trưởng 12 tháng, lạm phát 12 tháng, suy thoái 6 tháng và phục hồi 3 tháng. Mỗi tháng kinh tế = 30 ngày game. Giá gốc giữ trong tháng đầu; xu hướng dài hạn bị giới hạn, không có giá ngẫu nhiên sau khi tải save.

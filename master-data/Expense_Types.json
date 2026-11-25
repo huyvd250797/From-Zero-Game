@@ -83,5 +83,10 @@
     "id": "EXP_BUSINESS",
     "name": "Nghĩa vụ kinh doanh",
     "description": "Thanh toán nợ vận hành từ tài chính cá nhân."
+  },
+  {
+    "id": "EXP_STORY",
+    "name": "Chi phí biến cố",
+    "description": "Chi phí phát sinh từ quyết định cốt truyện."
   }
 ]
