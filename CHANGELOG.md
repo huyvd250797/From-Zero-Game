@@ -1,5 +1,13 @@
 # Changelog
 
+## V0.4.0 — Character & Navigation (2026-11-25)
+- Low-poly avatar có khớp tay/chân, hướng quay và animation idle/walk/run/ride.
+- Shift chạy, joystick analog với dead zone và nút chạy, tự reset khi mất input.
+- Direct line-of-sight + A* + rút gọn đường, kiểm tra collision liên tục, slide và replan giới hạn.
+- Route ribbon, marker đích, khoảng cách còn lại, hủy tuyến; tự mở tương tác khi đến cửa địa điểm.
+- Camera follow exponential damping. Giữ 192×192, 22 địa điểm, toàn bộ 60 danh mục/499 bản ghi và save schema 1.
+- Cập nhật service worker cache và build version, thêm 9 test; tổng 34/34 đạt.
+
 ## V0.3.0 — World & City Engine (2026-11-25)
 - Thành phố 192×192, 10 phân khu, 79 công trình/khu chức năng, 24 loại, 12 trục đường, 22 điểm tương tác.
 - Công trình theo kiểu kiến trúc Master Data, đường 2/4 làn, vạch qua đường, cảnh quan, giao thông nền.

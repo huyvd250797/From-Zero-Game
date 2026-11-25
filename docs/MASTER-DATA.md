@@ -1,6 +1,6 @@
 # From Zero — Canonical Master Data V1.1.0
 
-Game release V0.3.0 · 60 danh mục, 499 bản ghi seed. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.4.0 (dữ liệu giữ nguyên V0.3.0) · 60 danh mục, 499 bản ghi seed. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 

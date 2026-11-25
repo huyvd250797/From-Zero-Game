@@ -1,5 +1,5 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.3.0 — World & City Engine**
+**V0.4.0 — Character & Navigation**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 22 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
 
@@ -22,15 +22,25 @@ Mở http://localhost:5173. `npm run dev` cũng dùng được. Không double-cl
 
 ## Chơi
 - New Game → đặt tên. Nhân vật bắt đầu ở khu dân cư An Lạc.
-- WASD hoặc mũi tên để đi bộ, click/chạm bản đồ hoặc nhãn địa điểm để tự tìm đường A*; không đi xuyên công trình. Chọn địa điểm từ danh sách ở PC hoặc nút Địa điểm trên mobile.
-- Nhấn E khi đứng gần cửa, hoặc nút Tương tác. Cửa hàng tiện lợi: làm thời vụ +200.000đ/4 giờ hoặc mua cơm. Khu phòng trọ: thuê 120.000đ/24 giờ, ngủ khi còn đủ thời hạn. Công viên: nghỉ miễn phí. Quán cà phê: mua cà phê.
+- WASD hoặc mũi tên để đi bộ, giữ Shift để chạy (nhanh gấp 1,65 lần khi đủ năng lượng); click/chạm bản đồ hoặc nhãn địa điểm để tự tìm đường. Esc hoặc Hủy tuyến đường để dừng; điều khiển tay cũng hủy tuyến. Chọn địa điểm từ danh sách ở PC hoặc nút Địa điểm trên mobile.
+- Chọn địa điểm để tự đi tới cửa và tự mở bảng tương tác. Nhấn E khi đứng gần cửa, hoặc nút Tương tác, để mở thủ công. Cửa hàng tiện lợi: làm thời vụ +200.000đ/4 giờ hoặc mua cơm. Khu phòng trọ: thuê 120.000đ/24 giờ, ngủ khi còn đủ thời hạn. Công viên: nghỉ miễn phí. Quán cà phê: mua cà phê.
 - Cửa hàng xe đạp: mua 350.000đ và dùng ngay. B / nút Lên xuống xe để đổi chế độ di chuyển; xe đạp prototype đi theo nhân vật, chưa có chỗ đỗ độc lập. Xe đạp nhanh hơn đi bộ.
-- Cuộn chuột hoặc nút +/- để zoom, Z/X hoặc ↶/↷ để xoay, kéo bản đồ để dịch camera, F để bám nhân vật. Mobile: nút hướng, chạm bản đồ, pinch zoom và xoay hai ngón.
+- Cuộn chuột hoặc nút +/- để zoom, Z/X hoặc ↶/↷ để xoay, kéo bản đồ để dịch camera, F để bám nhân vật. Mobile: joystick analog 360° (độ nghiêng điều chỉnh tốc độ), nút CHẠY bật/tắt, chạm bản đồ, pinch zoom và xoay hai ngón.
 - Space / nút Pause để tạm dừng; thời gian tăng khi di chuyển và thực hiện hoạt động, không tự tăng khi đứng yên trong bản prototype.
 - Game có 1 save slot localStorage. Autosave định kỳ 12 giây, sau hoạt động quan trọng và khi rời trang; lưu thủ công hoặc xuất JSON trong Cài đặt. Nếu xóa dữ liệu trình duyệt hoặc đổi thiết bị/domain, cần nhập bản sao lưu. Không có cloud sync.
 - WebGL là renderer chính; Canvas projection là fallback. Manifest + service worker cơ bản, offline sau khi cache thành công. Cần HTTPS (Vercel cung cấp) hoặc localhost cho service worker.
 
-## City Engine V0.3.0
+## Character & Navigation V0.4.0
+- Avatar low-poly có tóc, khuôn mặt, balo, tay chân riêng, xoay theo hướng vận tốc thực tế; idle/đi/chạy/đạp xe, tay chân vung theo quãng đường, chuyển động đứng yên nhẹ. Không cần tải model ngoài.
+- Tìm đường dùng kiểm tra đoạn thẳng với footprint công trình + khoảng hở 0,65; nếu đường thẳng bị chặn, tìm điểm nối lưới hợp lệ, chạy A* và rút gọn waypoint bằng line-of-sight. Kiểm thử 462 tuyến cửa-đến-cửa: tổng chiều dài 57.108 → 52.588,9 đơn vị (giảm ~7,9%), không phải benchmark tốc độ xử lý.
+- Swept movement kiểm tra từng đoạn nhỏ, đi trượt theo trục còn trống khi điều khiển tay; tự tìm lại tuyến tối đa một lần nếu bị chặn. Không tránh động NPC/xe/cây trang trí, chưa mô phỏng giao thông thực tế.
+- Tuyến màu vàng liên tục, vòng điểm đến, khoảng cách còn lại (1 đơn vị mô phỏng hiển thị như 1 m), trạng thái chuyển động và nút hủy. Tuyến đồng bộ minimap và bản đồ lớn.
+- Chọn nhãn/danh sách địa điểm: tự mở modal khi đến cửa. Chọn vị trí bất kỳ: chỉ di chuyển, không tự mở modal. Điều khiển tay hủy tuyến. Pause/modal/blur/ẩn tab dừng input, joystick tự trở tâm khi thả.
+- Camera follow dùng exponential damping độc lập tốc độ khung hình; F chuyển về theo dõi mượt mà. Giữ nguyên zoom/xoay và bản đồ V0.3.0.
+- 60 danh mục, 499 bản ghi, save schema 1 và khóa localStorage không đổi; các trạng thái route/animation chỉ tồn tại trong phiên chơi, không cần migration. Xe đạp vẫn đi theo nhân vật theo thiết kế prototype.
+- Đã kiểm thử 34 unit tests và trình duyệt Chromium headless (Canvas fallback, ES module qua blob, localStorage mô phỏng); chưa xác minh WebGL, thiết bị thật, PWA offline hay Vercel thực tế.
+
+## City Engine V0.3.0 (kế thừa)
 - 192×192 đơn vị, diện tích gấp 4 bản cũ; 10 phân khu, 79 khu/công trình, 24 loại và 22 địa điểm tương tác. 12 trục đường, đường 2/4 làn, vạch đường, cây xanh, xe và người đi bộ trang trí.
 - Chọn phân khu từ bộ lọc địa điểm. Nút ▧ để xem toàn cảnh, F để quay lại nhân vật. Mở bản đồ lớn từ minimap hoặc nút ▤ trên mobile; đổi chế độ xem khu vực/đi đến điểm. Màu phân khu, chấm địa điểm, tuyến A*, vị trí nhân vật và khung camera đồng bộ.
 - 36 chunk, geometry tạo theo nhu cầu, culling theo camera, LOD theo zoom/chất lượng, cache LRU; minimap tĩnh cache riêng. A* dùng priority heap và lưới collision. Xe/NPC là hiệu ứng nền, không phải engine giao thông đầy đủ.
@@ -43,6 +53,8 @@ Mở http://localhost:5173. `npm run dev` cũng dùng được. Không double-cl
 - `src/renderer.js`: geometry 3D, orthographic camera, WebGL/Canvas fallback.
 - `src/city-map.js`: minimap, bản đồ lớn, lớp nền cache.
 - `src/main.js`: UI, input, simulation loop, save, interaction.
+- `src/navigation.js`: lập tuyến, swept collision, joystick, motion state và camera damping.
+- `src/character.js`: geometry nhân vật có khớp, tuyến đường và marker.
 - `public/`: manifest, icon, offline worker.
 - `scripts/`: build tĩnh, HTTP dev server, syntax checks.
 - `tests/`: kiểm thử Node.js built-in.
