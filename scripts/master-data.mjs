@@ -12,7 +12,7 @@ export async function loadMaster(root=path.join(base,'master-data')){
 }
 export function validateMaster(schema,data){
  const errors=[],err=(p,m)=>errors.push(`${p}: ${m}`), ids=new Map();
- if(schema?.version!=='1.1.0'||!schema.catalogs||Object.keys(schema.catalogs).length!==60){return ['Schema phải là 1.1.0 và có 60 danh mục'];}
+ if(schema?.version!=='1.2.0'||!schema.catalogs||Object.keys(schema.catalogs).length!==60){return ['Schema phải là 1.2.0 và có 60 danh mục'];}
  for(const k of Object.keys(data))if(!Object.hasOwn(schema.catalogs,k))err(k,'Danh mục ngoài schema');
  for(const [key,s] of Object.entries(schema.catalogs)){
   if(!/^[A-Z][A-Z0-9]*$/.test(s.prefix)||!s.fields||typeof s.fields!=='object'){err(key,'Schema không hợp lệ');continue}
@@ -46,7 +46,7 @@ export function validateMaster(schema,data){
  each('Character_Attributes',(r,p)=>{if(r.min>r.initial||r.initial>r.max)err(p,'min ≤ initial ≤ max')});
  for(const k of ['Life_Stages','Story_Events'])each(k,(r,p)=>{if(r.minAge>r.maxAge)err(p,'Khoảng tuổi đảo ngược')});
  each('Social_Reputation',(r,p)=>{if(r.min>r.max)err(p,'Khoảng điểm đảo ngược')});
- each('World_Schedules',(r,p)=>{if(r.opens>=r.closes)err(p,'Giờ đóng phải sau giờ mở')});
+ unique('World_Schedules','building');unique('Needs_Rules','attribute');each('World_Schedules',(r,p)=>{if(r.opens>=r.closes)err(p,'Giờ đóng phải sau giờ mở');if(!get('Building_Instances',r.building).interactive)err(p,'Lịch của công trình không tương tác')});each('Building_Instances',(r,p)=>{if(r.interactive&&!data.World_Schedules.some(s=>s.building===r.id))err(p,'Thiếu lịch mở cửa')});
  each('Courses',(r,p)=>{if(r.gain>get('Skills',r.skill).maxLevel)err(p,'Vượt cấp kỹ năng')});
  const cfg=get('Game_Config','CFG_DEFAULT'),city=get('Cities','CTY_ANLAC');
  if(!cfg||!city)err('Foundation','Thiếu CFG_DEFAULT hoặc CTY_ANLAC');

@@ -13,7 +13,10 @@
     "log": "Hoàn thành ca làm việc thời vụ.",
     "rule": "work",
     "job": "JOB_TEMP",
-    "asset": null
+    "asset": null,
+    "hygiene": -5,
+    "health": 0,
+    "stress": 8
   },
   {
     "id": "ACT_MEAL",
@@ -29,7 +32,10 @@
     "log": "Ăn một bữa cơm hộp.",
     "rule": "none",
     "job": null,
-    "asset": "FOOD_MEAL"
+    "asset": "FOOD_MEAL",
+    "hygiene": 0,
+    "health": 3,
+    "stress": 0
   },
   {
     "id": "ACT_RENT",
@@ -45,7 +51,10 @@
     "log": "Thuê phòng trọ trong 24 giờ.",
     "rule": "rent",
     "job": null,
-    "asset": "PROP_ROOM"
+    "asset": "PROP_ROOM",
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_SLEEP",
@@ -56,12 +65,15 @@
     "cash": 0,
     "time": 480,
     "energy": 100,
-    "hunger": -20,
+    "hunger": -5,
     "happy": 5,
     "log": "Nghỉ ngơi trong phòng trọ.",
     "rule": "sleep",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 8,
+    "stress": -20
   },
   {
     "id": "ACT_COFFEE",
@@ -77,7 +89,10 @@
     "log": "Thư giãn tại quán cà phê.",
     "rule": "none",
     "job": null,
-    "asset": "FOOD_COFFEE"
+    "asset": "FOOD_COFFEE",
+    "hygiene": 0,
+    "health": 0,
+    "stress": -5
   },
   {
     "id": "ACT_REST",
@@ -93,7 +108,10 @@
     "log": "Nghỉ ngơi tại công viên.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 5,
+    "stress": -10
   },
   {
     "id": "ACT_ASK",
@@ -109,7 +127,10 @@
     "log": "Công ty yêu cầu bằng cấp hoặc kinh nghiệm. Hệ nghề nghiệp sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_BANKINFO",
@@ -125,7 +146,10 @@
     "log": "Tìm hiểu ngân hàng. Giao dịch sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_BUYBIKE",
@@ -141,7 +165,10 @@
     "log": "Mua chiếc xe đạp đầu tiên.",
     "rule": "buybike",
     "job": null,
-    "asset": "VEH_BIKE"
+    "asset": "VEH_BIKE",
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_RIDE",
@@ -157,7 +184,10 @@
     "log": "Đổi phương tiện di chuyển.",
     "rule": "ride",
     "job": null,
-    "asset": "VEH_BIKE"
+    "asset": "VEH_BIKE",
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_CLINICINFO",
@@ -173,7 +203,10 @@
     "log": "Phòng khám sẽ hỗ trợ điều trị trong phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_VISIT_MALL",
@@ -189,7 +222,10 @@
     "log": "Bạn đã ghé Trung tâm thương mại Ánh Dương. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_VISIT_MARKET",
@@ -205,7 +241,10 @@
     "log": "Bạn đã ghé Siêu thị An Lạc. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_VISIT_FACTORY",
@@ -221,7 +260,10 @@
     "log": "Bạn đã ghé Nhà máy Đông An. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_VISIT_WAREHOUSE",
@@ -237,7 +279,10 @@
     "log": "Bạn đã ghé Kho logistics. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_VISIT_SCHOOL",
@@ -253,7 +298,10 @@
     "log": "Bạn đã ghé Trường nghề An Lạc. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_VISIT_LIBRARY",
@@ -269,7 +317,10 @@
     "log": "Bạn đã ghé Thư viện thành phố. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_VISIT_FARM",
@@ -285,7 +336,10 @@
     "log": "Bạn đã ghé Nông trại Bình An. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_VISIT_SPORT",
@@ -301,7 +355,10 @@
     "log": "Bạn đã ghé Sân thể thao. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_VISIT_CITYHALL",
@@ -317,7 +374,10 @@
     "log": "Bạn đã ghé Trung tâm hành chính. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_VISIT_COURT",
@@ -333,7 +393,10 @@
     "log": "Bạn đã ghé Tòa án An Lạc. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_VISIT_HOSPITAL",
@@ -349,7 +412,10 @@
     "log": "Bạn đã ghé Bệnh viện An Lạc. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_VISIT_APARTMENT",
@@ -365,7 +431,10 @@
     "log": "Bạn đã ghé Chung cư Bình Minh. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_VISIT_PARK_EAST",
@@ -381,7 +450,10 @@
     "log": "Bạn đã ghé Công viên phía Đông. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
   },
   {
     "id": "ACT_VISIT_POLICE",
@@ -395,6 +467,104 @@
     "hunger": 0,
     "happy": 0,
     "log": "Bạn đã ghé Công an thành phố. Các dịch vụ chuyên sâu sẽ mở ở phiên bản sau.",
+    "rule": "none",
+    "job": null,
+    "asset": null,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0
+  },
+  {
+    "id": "ACT_SHOWER",
+    "name": "Tắm rửa trong phòng",
+    "legacyId": "shower",
+    "building": "BLD_ROOM",
+    "detail": "20 phút · phục hồi vệ sinh",
+    "cash": 0,
+    "time": 20,
+    "energy": 0,
+    "hunger": 0,
+    "happy": 3,
+    "hygiene": 100,
+    "health": 2,
+    "stress": -5,
+    "log": "Tắm rửa trong phòng.",
+    "rule": "room",
+    "job": null,
+    "asset": null
+  },
+  {
+    "id": "ACT_WASH",
+    "name": "Rửa mặt tại công viên",
+    "legacyId": "wash",
+    "building": "BLD_PARK",
+    "detail": "15 phút · miễn phí",
+    "cash": 0,
+    "time": 15,
+    "energy": 0,
+    "hunger": 0,
+    "happy": 0,
+    "hygiene": 35,
+    "health": 0,
+    "stress": -2,
+    "log": "Rửa mặt tại công viên.",
+    "rule": "none",
+    "job": null,
+    "asset": null
+  },
+  {
+    "id": "ACT_AID",
+    "name": "Nhận suất ăn hỗ trợ",
+    "legacyId": "aid",
+    "building": "BLD_PARK",
+    "detail": "30 phút · chỉ khi thiếu tiền hoặc quá đói",
+    "cash": 0,
+    "time": 30,
+    "energy": 0,
+    "hunger": 35,
+    "happy": 2,
+    "hygiene": 0,
+    "health": 5,
+    "stress": -3,
+    "log": "Nhận suất ăn hỗ trợ.",
+    "rule": "aid",
+    "job": null,
+    "asset": null
+  },
+  {
+    "id": "ACT_NAP",
+    "name": "Chợp mắt tại công viên",
+    "legacyId": "nap",
+    "building": "BLD_PARK",
+    "detail": "2 giờ · nghỉ tạm miễn phí",
+    "cash": 0,
+    "time": 120,
+    "energy": 25,
+    "hunger": 0,
+    "happy": 0,
+    "hygiene": 0,
+    "health": 5,
+    "stress": -5,
+    "log": "Chợp mắt tại công viên.",
+    "rule": "none",
+    "job": null,
+    "asset": null
+  },
+  {
+    "id": "ACT_TREATMENT",
+    "name": "Khám và nghỉ phục hồi",
+    "legacyId": "treatment",
+    "building": "BLD_CLINIC",
+    "detail": "1 giờ · 50.000đ",
+    "cash": -50000,
+    "time": 60,
+    "energy": 10,
+    "hunger": 0,
+    "happy": 0,
+    "hygiene": 0,
+    "health": 30,
+    "stress": -10,
+    "log": "Khám và nghỉ phục hồi.",
     "rule": "none",
     "job": null,
     "asset": null

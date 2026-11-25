@@ -1,18 +1,26 @@
 import {catalogs,record,config,city} from './master-data.js';
-import {spawn,clamp,walkable,nearestWalkable} from './world.js';
+import {spawn,clamp,walkable} from './world.js';
+import {LIFE_FIELDS,MAX_MINUTES,lifeDefaults,advanceTime,day,hhmm,isOpen,scheduleLabel,settleDebt,log} from './life.js';
+export {day};
 export const SAVE_KEY='fromzero.save.v1';
 export const PREF_KEY='fromzero.prefs.v1';
-export const fresh=(name='Minh')=>({schema:1,name:String(name).trim().slice(0,24)||'Minh',pos:{...spawn},cash:config.cash,minutes:config.minutes,energy:config.energy,hunger:config.hunger,happy:config.happy,rentUntil:0,bike:false,riding:false,shifts:0,journal:[`Bạn đến thành phố ${city.name} với ${config.cash.toLocaleString('vi-VN')}đ.`]});
-export function validate(s){if(!s||s.schema!==1||typeof s.name!=='string'||!s.name.trim()||s.name.length>24||!s.pos||!Number.isFinite(s.pos.x)||!Number.isFinite(s.pos.z)||!walkable(s.pos.x,s.pos.z)||!Number.isSafeInteger(s.cash)||s.cash<0||!Number.isSafeInteger(s.minutes)||s.minutes<0||!['energy','hunger','happy'].every(k=>Number.isFinite(s[k])&&s[k]>=0&&s[k]<=100)||!Number.isSafeInteger(s.rentUntil)||s.rentUntil<0||!Number.isSafeInteger(s.shifts)||s.shifts<0||typeof s.bike!=='boolean'||typeof s.riding!=='boolean'||s.riding&&!s.bike||!Array.isArray(s.journal)||s.journal.length>40||!s.journal.every(x=>typeof x==='string'&&x.length<=300))return null;return structuredClone(s)}
+export const fresh=(name='Minh')=>({schema:1,name:String(name).trim().slice(0,24)||'Minh',pos:{...spawn},cash:config.cash,minutes:config.minutes,energy:config.energy,hunger:config.hunger,happy:config.happy,rentUntil:0,bike:false,riding:false,shifts:0,journal:[`Bạn đến thành phố ${city.name} với ${config.cash.toLocaleString('vi-VN')}đ.`],...lifeDefaults({bike:false,minutes:config.minutes},true)});
+export function validate(s){if(!s||s.schema!==1||typeof s.name!=='string'||!s.name.trim()||s.name.length>24||!s.pos||!Number.isFinite(s.pos.x)||!Number.isFinite(s.pos.z)||!walkable(s.pos.x,s.pos.z)||!Number.isSafeInteger(s.cash)||s.cash<0||!Number.isSafeInteger(s.minutes)||s.minutes<0||s.minutes>MAX_MINUTES||!['energy','hunger','happy'].every(k=>Number.isFinite(s[k])&&s[k]>=0&&s[k]<=100)||!Number.isSafeInteger(s.rentUntil)||s.rentUntil<0||!Number.isSafeInteger(s.shifts)||s.shifts<0||typeof s.bike!=='boolean'||typeof s.riding!=='boolean'||s.riding&&!s.bike||!Array.isArray(s.journal)||s.journal.length>40||!s.journal.every(x=>typeof x==='string'&&x.length<=300))return null;
+ const migrated={...lifeDefaults(s),...s};if(!LIFE_FIELDS.every(k=>Number.isFinite(migrated[k])&&migrated[k]>=0&&migrated[k]<=100)||typeof migrated.autoRent!=='boolean'||!['bikeDue','maintenanceDebt','aidDay'].every(k=>Number.isSafeInteger(migrated[k])&&migrated[k]>=0)||migrated.aidDay>day(s)||(!s.bike&&(migrated.bikeDue!==0||migrated.maintenanceDebt!==0))||(s.bike&&migrated.bikeDue<=s.minutes))return null;return structuredClone(migrated)}
 export function readSave(storage){try{const raw=storage.getItem(SAVE_KEY);if(!raw)return null;return validate(JSON.parse(raw))}catch{return null}}
-export function writeSave(storage,s){try{if(!validate(s))return false;storage.setItem(SAVE_KEY,JSON.stringify(s));return true}catch{return false}}
-export function day(s){return Math.floor(s.minutes/config.dayMinutes)+1}
-export function clock(s){const m=s.minutes%config.dayMinutes;return `Ngày ${day(s)} · ${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`}
+export function writeSave(storage,s){try{const checked=validate(s);if(!checked)return false;storage.setItem(SAVE_KEY,JSON.stringify(checked));return true}catch{return false}}
+export function clock(s){return `Ngày ${day(s)} · ${hhmm(s.minutes%config.dayMinutes)}`}
 export const money=n=>n.toLocaleString('vi-VN')+' đ';
 export const hasRoom=s=>s.rentUntil>s.minutes;
-const checks={work:(s,a)=>s.energy>=-a.energy&&s.hunger>=-a.hunger,rent:s=>!hasRoom(s),sleep:(s,a)=>hasRoom(s)&&s.rentUntil>=s.minutes+a.time,buybike:s=>!s.bike,ride:s=>s.bike};
+const checks={work:(s,a)=>s.energy>=-a.energy&&s.hunger>=-a.hunger&&s.health>=config.criticalHealthThreshold,rent:s=>!hasRoom(s),sleep:(s,a)=>hasRoom(s)&&s.rentUntil>=s.minutes+a.time,room:(s,a)=>hasRoom(s)&&s.rentUntil>=s.minutes+a.time,buybike:s=>!s.bike,ride:s=>s.bike,aid:s=>s.aidDay!==day(s)&&(s.cash<30000||s.hunger<20)};
 export const activities=Object.create(null);
-for(const row of catalogs.Location_Actions){const building=record(row.building);const action={...row,id:row.legacyId,masterId:row.id,label:row.name};if(checks[row.rule])action.check=s=>checks[row.rule](s,action);(activities[building.legacyId]??=[]).push(Object.freeze(action));}
+for(const row of catalogs.Location_Actions){const building=record(row.building);const action={...row,id:row.legacyId,masterId:row.id,label:row.name,place:building.legacyId};if(checks[row.rule])action.check=s=>checks[row.rule](s,action);(activities[building.legacyId]??=[]).push(Object.freeze(action));}
 for(const list of Object.values(activities))Object.freeze(list);Object.freeze(activities);
-export function available(s,a){return !!a&&s.cash+a.cash>=0&&(!a.check||a.check(s))}
-export function perform(s,place,id){const a=activities[place]?.find(a=>a.id===id);if(!available(s,a))return false;s.cash+=a.cash;s.minutes+=a.time;for(const k of ['energy','hunger','happy'])s[k]=clamp(s[k]+(a[k]??0),0,100);if(id==='work')s.shifts++;if(id==='rent')s.rentUntil=s.minutes+config.rentMinutes;if(id==='buybike'){s.bike=true;s.riding=true}if(id==='ride')s.riding=!s.riding;s.journal.unshift(`Ngày ${day(s)}: ${a.log}`);s.journal=s.journal.slice(0,20);return true}
+export function unavailableReason(s,a){if(!a)return 'Hoạt động không tồn tại';if(!isOpen(a.place,s.minutes,a.time))return `Ngoài giờ phục vụ (${scheduleLabel(a.place)}) hoặc không đủ thời gian trước khi đóng cửa.`;if(s.minutes+a.time>MAX_MINUTES)return 'Đã đạt giới hạn mô phỏng.';if(s.cash+a.cash<0)return 'Không đủ tiền.';if(a.check&&!a.check(s))return a.rule==='work'?'Cần đủ sức khỏe, năng lượng và độ no.':a.rule==='aid'?'Chỉ hỗ trợ một lần/ngày khi thiếu tiền hoặc quá đói.':'Chưa đủ điều kiện (quyền sở hữu hoặc thời hạn thuê phòng).';return '';}
+export const available=(s,a)=>!unavailableReason(s,a);
+export function perform(s,place,id){const a=activities[place]?.find(a=>a.id===id);if(!available(s,a))return false;
+ if(a.cash<0)s.cash+=a.cash;if(id==='aid')s.aidDay=day(s);
+ advanceTime(s,a.time,{resting:id==='sleep'||id==='nap'||id==='rest'});
+ if(a.cash>0)s.cash+=a.cash;
+ for(const k of LIFE_FIELDS)s[k]=clamp(s[k]+(a[k]??0),0,100);
+ if(id==='work')s.shifts++;if(id==='rent')s.rentUntil=s.minutes+config.rentMinutes;if(id==='buybike'){s.bike=true;s.riding=true;s.bikeDue=s.minutes+record('MNT_BIKE').intervalDays*1440;}if(id==='ride')s.riding=!s.riding;settleDebt(s);log(s,a.log);return true;}

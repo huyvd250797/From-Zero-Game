@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "catalogs": {
     "Game_Config": {
       "prefix": "CFG",
@@ -18,7 +18,10 @@
         "lowEnergyMultiplier": "ratio",
         "movementDecayInterval": "positiveInt",
         "rentMinutes": "positiveInt",
-        "spawn": "ref:Navigation_Nodes"
+        "spawn": "ref:Navigation_Nodes",
+        "startYear": "int:1900:2100",
+        "criticalHealthThreshold": "pct",
+        "criticalNeedThreshold": "pct"
       }
     },
     "Difficulty": {
@@ -152,9 +155,12 @@
         "hunger": "int:-100:100",
         "happy": "int:-100:100",
         "log": "text",
-        "rule": "enum:none,work,rent,sleep,buybike,ride",
+        "rule": "enum:none,work,rent,sleep,buybike,ride,room,aid",
         "job": "nullable:ref:Jobs",
-        "asset": "nullable:refAny:Food_Drinks,Properties,Vehicles"
+        "asset": "nullable:refAny:Food_Drinks,Properties,Vehicles",
+        "hygiene": "int:-100:100",
+        "health": "int:-100:100",
+        "stress": "int:-100:100"
       }
     },
     "NPC_Master": {

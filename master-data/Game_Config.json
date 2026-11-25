@@ -16,6 +16,9 @@
     "lowEnergyMultiplier": 0.55,
     "movementDecayInterval": 15,
     "rentMinutes": 1440,
-    "spawn": "NAV_SPAWN"
+    "spawn": "NAV_SPAWN",
+    "startYear": 2026,
+    "criticalHealthThreshold": 20,
+    "criticalNeedThreshold": 15
   }
 ]

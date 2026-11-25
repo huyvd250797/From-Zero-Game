@@ -17,8 +17,8 @@
     "id": "SCH_CAFE",
     "name": "Quán cà phê",
     "building": "BLD_CAFE",
-    "opens": 0,
-    "closes": 1440
+    "opens": 360,
+    "closes": 1320
   },
   {
     "id": "SCH_PARK",
@@ -31,27 +31,125 @@
     "id": "SCH_OFFICE",
     "name": "Công ty An Phát",
     "building": "BLD_OFFICE",
-    "opens": 0,
-    "closes": 1440
+    "opens": 480,
+    "closes": 1020
   },
   {
     "id": "SCH_BANK",
     "name": "Ngân hàng",
     "building": "BLD_BANK",
-    "opens": 0,
-    "closes": 1440
+    "opens": 480,
+    "closes": 1020
   },
   {
     "id": "SCH_BIKE",
     "name": "Cửa hàng xe đạp",
     "building": "BLD_BIKE",
-    "opens": 0,
-    "closes": 1440
+    "opens": 480,
+    "closes": 1200
   },
   {
     "id": "SCH_CLINIC",
     "name": "Phòng khám",
     "building": "BLD_CLINIC",
+    "opens": 420,
+    "closes": 1260
+  },
+  {
+    "id": "SCH_MALL",
+    "name": "Trung tâm thương mại Ánh Dương",
+    "building": "BLD_MALL",
+    "opens": 540,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_MARKET",
+    "name": "Siêu thị An Lạc",
+    "building": "BLD_MARKET",
+    "opens": 420,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_FACTORY",
+    "name": "Nhà máy Đông An",
+    "building": "BLD_FACTORY",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_WAREHOUSE",
+    "name": "Kho logistics",
+    "building": "BLD_WAREHOUSE",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_SCHOOL",
+    "name": "Trường nghề An Lạc",
+    "building": "BLD_SCHOOL",
+    "opens": 420,
+    "closes": 1080
+  },
+  {
+    "id": "SCH_LIBRARY",
+    "name": "Thư viện thành phố",
+    "building": "BLD_LIBRARY",
+    "opens": 480,
+    "closes": 1200
+  },
+  {
+    "id": "SCH_FARM",
+    "name": "Nông trại Bình An",
+    "building": "BLD_FARM",
+    "opens": 360,
+    "closes": 1080
+  },
+  {
+    "id": "SCH_SPORT",
+    "name": "Sân thể thao",
+    "building": "BLD_SPORT",
+    "opens": 300,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_CITYHALL",
+    "name": "Trung tâm hành chính",
+    "building": "BLD_CITYHALL",
+    "opens": 480,
+    "closes": 1020
+  },
+  {
+    "id": "SCH_COURT",
+    "name": "Tòa án An Lạc",
+    "building": "BLD_COURT",
+    "opens": 480,
+    "closes": 1020
+  },
+  {
+    "id": "SCH_HOSPITAL",
+    "name": "Bệnh viện An Lạc",
+    "building": "BLD_HOSPITAL",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_APARTMENT",
+    "name": "Chung cư Bình Minh",
+    "building": "BLD_APARTMENT",
+    "opens": 480,
+    "closes": 1200
+  },
+  {
+    "id": "SCH_PARK_EAST",
+    "name": "Công viên phía Đông",
+    "building": "BLD_PARK_EAST",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_POLICE",
+    "name": "Công an thành phố",
+    "building": "BLD_POLICE",
     "opens": 0,
     "closes": 1440
   }

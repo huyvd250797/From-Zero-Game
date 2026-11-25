@@ -1,5 +1,5 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.4.0 — Character & Navigation**
+**V0.5.0 — Time & Life Simulation**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 22 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
 
@@ -26,18 +26,23 @@ Mở http://localhost:5173. `npm run dev` cũng dùng được. Không double-cl
 - Chọn địa điểm để tự đi tới cửa và tự mở bảng tương tác. Nhấn E khi đứng gần cửa, hoặc nút Tương tác, để mở thủ công. Cửa hàng tiện lợi: làm thời vụ +200.000đ/4 giờ hoặc mua cơm. Khu phòng trọ: thuê 120.000đ/24 giờ, ngủ khi còn đủ thời hạn. Công viên: nghỉ miễn phí. Quán cà phê: mua cà phê.
 - Cửa hàng xe đạp: mua 350.000đ và dùng ngay. B / nút Lên xuống xe để đổi chế độ di chuyển; xe đạp prototype đi theo nhân vật, chưa có chỗ đỗ độc lập. Xe đạp nhanh hơn đi bộ.
 - Cuộn chuột hoặc nút +/- để zoom, Z/X hoặc ↶/↷ để xoay, kéo bản đồ để dịch camera, F để bám nhân vật. Mobile: joystick analog 360° (độ nghiêng điều chỉnh tốc độ), nút CHẠY bật/tắt, chạm bản đồ, pinch zoom và xoay hai ngón.
-- Space / nút Pause để tạm dừng; thời gian tăng khi di chuyển và thực hiện hoạt động, không tự tăng khi đứng yên trong bản prototype.
+- Space / nút Pause để tạm dừng; thời gian chạy liên tục cả khi đứng yên. Chọn ×1/2/4/8/16 trên HUD; tạm dừng khi mở modal hoặc ẩn tab. Làm việc/ngủ/chờ mở cửa tua nhanh ngay, tính đầy đủ nhu cầu và phí.
 - Game có 1 save slot localStorage. Autosave định kỳ 12 giây, sau hoạt động quan trọng và khi rời trang; lưu thủ công hoặc xuất JSON trong Cài đặt. Nếu xóa dữ liệu trình duyệt hoặc đổi thiết bị/domain, cần nhập bản sao lưu. Không có cloud sync.
 - WebGL là renderer chính; Canvas projection là fallback. Manifest + service worker cơ bản, offline sau khi cache thành công. Cần HTTPS (Vercel cung cấp) hoặc localhost cho service worker.
 
-## Character & Navigation V0.4.0
+## Time & Life Simulation V0.5.0
+- Lịch Gregorian, tuổi tác, ngày đêm, 5 tốc độ, 6 chỉ số cuộc sống, lịch phục vụ 22 địa điểm.
+- Tự gia hạn phòng trọ, phí bảo dưỡng xe đạp, cảnh báo nhu cầu, hành động hồi phục và hỗ trợ khi thiếu tiền.
+- Chi tiết quy tắc và migration tương thích xem `docs/LIFE-SIMULATION.md`.
+
+## Character & Navigation V0.4.0 (kế thừa)
 - Avatar low-poly có tóc, khuôn mặt, balo, tay chân riêng, xoay theo hướng vận tốc thực tế; idle/đi/chạy/đạp xe, tay chân vung theo quãng đường, chuyển động đứng yên nhẹ. Không cần tải model ngoài.
 - Tìm đường dùng kiểm tra đoạn thẳng với footprint công trình + khoảng hở 0,65; nếu đường thẳng bị chặn, tìm điểm nối lưới hợp lệ, chạy A* và rút gọn waypoint bằng line-of-sight. Kiểm thử 462 tuyến cửa-đến-cửa: tổng chiều dài 57.108 → 52.588,9 đơn vị (giảm ~7,9%), không phải benchmark tốc độ xử lý.
 - Swept movement kiểm tra từng đoạn nhỏ, đi trượt theo trục còn trống khi điều khiển tay; tự tìm lại tuyến tối đa một lần nếu bị chặn. Không tránh động NPC/xe/cây trang trí, chưa mô phỏng giao thông thực tế.
 - Tuyến màu vàng liên tục, vòng điểm đến, khoảng cách còn lại (1 đơn vị mô phỏng hiển thị như 1 m), trạng thái chuyển động và nút hủy. Tuyến đồng bộ minimap và bản đồ lớn.
 - Chọn nhãn/danh sách địa điểm: tự mở modal khi đến cửa. Chọn vị trí bất kỳ: chỉ di chuyển, không tự mở modal. Điều khiển tay hủy tuyến. Pause/modal/blur/ẩn tab dừng input, joystick tự trở tâm khi thả.
 - Camera follow dùng exponential damping độc lập tốc độ khung hình; F chuyển về theo dõi mượt mà. Giữ nguyên zoom/xoay và bản đồ V0.3.0.
-- 60 danh mục, 499 bản ghi, save schema 1 và khóa localStorage không đổi; các trạng thái route/animation chỉ tồn tại trong phiên chơi, không cần migration. Xe đạp vẫn đi theo nhân vật theo thiết kế prototype.
+- 60 danh mục, 499 bản ghi tại V0.4.0, save schema 1 và khóa localStorage không đổi; các trạng thái route/animation chỉ tồn tại trong phiên chơi, không cần migration. Xe đạp vẫn đi theo nhân vật theo thiết kế prototype.
 - Đã kiểm thử 34 unit tests và trình duyệt Chromium headless (Canvas fallback, ES module qua blob, localStorage mô phỏng); chưa xác minh WebGL, thiết bị thật, PWA offline hay Vercel thực tế.
 
 ## City Engine V0.3.0 (kế thừa)
@@ -49,6 +54,7 @@ Mở http://localhost:5173. `npm run dev` cũng dùng được. Không double-cl
 
 ## Kiến trúc
 - `src/world.js`: dữ liệu khu phố, địa điểm, collision, A*.
+- `src/life.js`: đồng hồ, lịch, nhu cầu, giờ phục vụ, phí định kỳ.
 - `src/game.js`: trạng thái nhân vật, quy tắc hoạt động, save validation.
 - `src/renderer.js`: geometry 3D, orthographic camera, WebGL/Canvas fallback.
 - `src/city-map.js`: minimap, bản đồ lớn, lớp nền cache.
@@ -60,21 +66,21 @@ Mở http://localhost:5173. `npm run dev` cũng dùng được. Không double-cl
 - `tests/`: kiểm thử Node.js built-in.
 
 ## Phạm vi và giới hạn
-Đây là prototype nền tảng, không phải toàn bộ roadmap. Chưa có mua nhà/ô tô, nội thất 3D có thể bước vào, đỗ xe, nghề nghiệp đầy đủ, kinh doanh, NPC có AI, pháp luật, nhà tù, lão hóa và các kết thúc. NPC trang trí đơn giản; xe đường phố trang trí. Văn phòng/ngân hàng/phòng khám có tương tác thông tin, chưa có hệ nghiệp vụ. Đồ họa dùng geometry lập trình, không phải bản concept minh họa trước đó.
+Đây là prototype nền tảng, không phải toàn bộ roadmap. Chưa có mua nhà/ô tô, nội thất 3D có thể bước vào, đỗ xe, nghề nghiệp đầy đủ, kinh doanh, NPC có AI, pháp luật, nhà tù, lão hóa thể chất và các kết thúc. NPC trang trí đơn giản; xe đường phố trang trí. Văn phòng/ngân hàng có tương tác thông tin; phòng khám có hành động hồi phục cơ bản, chưa có hệ nghiệp vụ đầy đủ. Đồ họa dùng geometry lập trình, không phải bản concept minh họa trước đó.
 
 Do môi trường phát triển không truy cập npm registry, phiên bản này dùng ES module JavaScript + WebGL/Canvas + Node build không dependency, thay cho Vite/React/Three.js/TypeScript. Save dùng localStorage phiên bản 1 thay cho IndexedDB; có validation và export/import. Những thay đổi này được lựa chọn để build được offline và không phụ thuộc tài nguyên bên ngoài. Có thể thay renderer hoặc framework về sau mà vẫn giữ module gameplay độc lập.
 
-## Master Data V1.1.0
-- 60 danh mục JSON, 499 bản ghi seed; xem `docs/MASTER-DATA.md` để biết danh sách, đơn vị, phạm vi và 5 bảng được gộp.
+## Master Data V1.2.0
+- 60 danh mục JSON, 519 bản ghi seed; xem `docs/MASTER-DATA.md` để biết danh sách, đơn vị, phạm vi và 5 bảng được gộp.
 - `npm run data:validate`: validate ID, trường, kiểu, tham chiếu, miền giá trị, đối chiếu giá/tiền công, chu trình và dữ liệu map. Tự biên dịch bundle chỉ đọc dùng trong trình duyệt.
-- Bản build không phụ thuộc mạng/npm ngoài. Toàn bộ dữ liệu gameplay gốc (bản đồ, vị trí, hoạt động, cấu hình nhân vật, tốc độ và nhu cầu di chuyển) đã lấy từ Master Data. Các nhóm mở rộng chỉ là dữ liệu seed cho roadmap.
+- Bản build không phụ thuộc mạng/npm ngoài. Toàn bộ dữ liệu gameplay gốc (bản đồ, vị trí, hoạt động, cấu hình nhân vật, tốc độ, nhu cầu liên tục và lịch mở cửa) đã lấy từ Master Data. Các nhóm mở rộng chỉ là dữ liệu seed cho roadmap.
 - Mở Cài đặt → Tra cứu Master Data: lọc theo danh mục, tìm theo tên/ID, mở bản ghi JSON.
-- Giữ nguyên save key `fromzero.save.v1`, schema 1; không cần migration hoặc database.
+- Giữ nguyên save key `fromzero.save.v1`, schema 1; tự bổ sung các trường mới khi đọc save cũ, không cần database hay migration thủ công.
 
 ## Kiểm thử đã thực hiện
-- `npm ci --offline`, `npm test` (25/25 bài), `npm run build` (bao gồm validator và syntax check): thành công.
-- Chromium Canvas fallback với module production nạp inline, storage mô phỏng: tạo game, lọc phân khu, mở bản đồ lớn, xem toàn cảnh, tiếp tục save, đi đến siêu thị mới, tương tác và lưu game; không lỗi JS trong smoke test.
-- Điều hướng localhost bị chặn trong môi trường kiểm thử; chưa kiểm tra HTTP browser thực tế, WebGL, PWA/offline, iOS thiết bị thật hoặc deploy Vercel.
+- `npm ci --offline`, `npm test` (47/47 bài), `npm run build` (validator và syntax check): thành công.
+- Chromium headless Canvas fallback, module production qua blob, storage mô phỏng: đồng hồ liên tục, ×16, Pause, tua ca làm việc, load save, ngày/đêm, đóng cửa/chờ mở, mobile speed control. Không lỗi JS trong smoke test.
+- Điều hướng HTTP bị chặn trong môi trường kiểm thử; chưa xác minh WebGL, PWA offline, thiết bị thật hay deploy Vercel.
 
 ## Phiên bản kế tiếp
-V0.4.0 — Character & Navigation: cải thiện điều khiển, đường đi và tương tác nhân vật.
+V0.6.0 — Survival & Daily Activities: mở rộng hoạt động sinh tồn, nhu yếu phẩm, nơi ở và chi phí sinh hoạt.

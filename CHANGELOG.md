@@ -1,5 +1,14 @@
 # Changelog
 
+## V0.5.0 — Time & Life Simulation (2026-11-25)
+- Đồng hồ chạy liên tục, ×1/2/4/8/16, lịch Gregorian và sinh nhật; pause/modal/ẩn tab dừng mô phỏng.
+- Ngày đêm chuyển màu liên tục ở cả WebGL và Canvas; giao thông nền theo thời gian game.
+- Sáu chỉ số cuộc sống, hao hụt nhu cầu, hậu quả sức khỏe, stress, cảnh báo và 5 hoạt động hồi phục.
+- Lịch mở/đóng 22 địa điểm, điều kiện thời lượng hoạt động và nút chờ mở cửa.
+- Gia hạn phòng 120.000đ/24h có thể tắt; phí xe đạp 10.000đ/30 ngày và ghi nợ khi thiếu tiền.
+- Save cũ tự bổ sung trường mới; giữ map và navigation, 60 catalog / 519 bản ghi, Master Data V1.2.0.
+- 47/47 unit tests, build offline; smoke test Chromium Canvas với storage mô phỏng. Không xác minh deploy thật.
+
 ## V0.4.0 — Character & Navigation (2026-11-25)
 - Low-poly avatar có khớp tay/chân, hướng quay và animation idle/walk/run/ride.
 - Shift chạy, joystick analog với dead zone và nút chạy, tự reset khi mất input.
