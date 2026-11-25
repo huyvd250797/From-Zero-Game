@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "2.1.0",
+  "version": "2.2.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -5160,6 +5160,11 @@ export default {
         "id": "EXP_INVEST",
         "name": "Mua đầu tư",
         "description": "Chi mua cổ phiếu hoặc vàng."
+      },
+      {
+        "id": "EXP_BUSINESS",
+        "name": "Nghĩa vụ kinh doanh",
+        "description": "Thanh toán nợ vận hành từ tài chính cá nhân."
       }
     ],
     "Banks": [
@@ -5288,42 +5293,90 @@ export default {
         "name": "Quầy hàng",
         "industry": "IND_SERVICE",
         "capital": 5000000,
-        "maxStaff": 2
+        "maxStaff": 2,
+        "building": "BLD_MARKET",
+        "skill": "SKL_SALES",
+        "minSkill": 0,
+        "staffRole": "BROL_SELLER",
+        "baseDemand": 22,
+        "staffDemand": 20,
+        "staffPerLevel": 1,
+        "marketingCost": 100000
       },
       {
         "id": "BIZ_CAFE",
         "name": "Quán cà phê",
         "industry": "IND_SERVICE",
         "capital": 80000000,
-        "maxStaff": 8
+        "maxStaff": 8,
+        "building": "BLD_CAFE",
+        "skill": "SKL_COOK",
+        "minSkill": 1,
+        "staffRole": "BROL_SELLER",
+        "baseDemand": 70,
+        "staffDemand": 30,
+        "staffPerLevel": 3,
+        "marketingCost": 500000
       },
       {
         "id": "BIZ_SHOP",
         "name": "Cửa hàng bán lẻ",
         "industry": "IND_SERVICE",
         "capital": 150000000,
-        "maxStaff": 12
+        "maxStaff": 12,
+        "building": "BLD_MALL",
+        "skill": "SKL_SALES",
+        "minSkill": 2,
+        "staffRole": "BROL_SELLER",
+        "baseDemand": 55,
+        "staffDemand": 25,
+        "staffPerLevel": 4,
+        "marketingCost": 800000
       },
       {
         "id": "BIZ_SOFT",
         "name": "Công ty phần mềm",
         "industry": "IND_IT",
         "capital": 200000000,
-        "maxStaff": 50
+        "maxStaff": 50,
+        "building": "BLD_OFFICE",
+        "skill": "SKL_IT",
+        "minSkill": 2,
+        "staffRole": "BROL_DEV",
+        "baseDemand": 2,
+        "staffDemand": 1,
+        "staffPerLevel": 8,
+        "marketingCost": 1500000
       },
       {
         "id": "BIZ_FACTORY",
         "name": "Nhà máy",
         "industry": "IND_BUILD",
         "capital": 1000000000,
-        "maxStaff": 100
+        "maxStaff": 100,
+        "building": "BLD_FACTORY",
+        "skill": "SKL_BUILD",
+        "minSkill": 3,
+        "staffRole": "BROL_SELLER",
+        "baseDemand": 130,
+        "staffDemand": 45,
+        "staffPerLevel": 15,
+        "marketingCost": 3000000
       },
       {
         "id": "BIZ_FARM",
         "name": "Trang trại",
         "industry": "IND_FARM",
         "capital": 300000000,
-        "maxStaff": 20
+        "maxStaff": 20,
+        "building": "BLD_FARM",
+        "skill": "SKL_FARM",
+        "minSkill": 2,
+        "staffRole": "BROL_SELLER",
+        "baseDemand": 85,
+        "staffDemand": 35,
+        "staffPerLevel": 5,
+        "marketingCost": 700000
       }
     ],
     "Business_Products": [
@@ -5361,6 +5414,13 @@ export default {
         "business": "BIZ_FARM",
         "unitCost": 15000,
         "salePrice": 25000
+      },
+      {
+        "id": "PRD_FACTORY",
+        "name": "Hàng sản xuất",
+        "business": "BIZ_FACTORY",
+        "unitCost": 55000,
+        "salePrice": 100000
       }
     ],
     "Business_Roles": [

@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.14.0 — Banking & Investment**
+**V0.15.0 — Business & Entrepreneurship**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 25 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.15.0 — Business & Entrepreneurship
+- 6 loại hình khởi nghiệp tại 6 công trình có sẵn; một doanh nghiệp đồng thời. Tên riêng, vị trí, nhãn bản đồ/minimap, điều kiện vốn và kỹ năng. 20% vốn thành lập là chi phí, 80% chuyển vào vốn lưu động.
+- 5 tab: Tổng quan, Khởi nghiệp, Vận hành, Tài chính, Lịch sử. Kho hàng riêng, giá bán 70–150% giá tham chiếu, nhân viên, marketing 7 ngày, mở rộng 3 cấp. Ca vận hành tại mặt bằng 4 giờ, tối đa 1 lần/ngày, dùng chung giới hạn 8 giờ làm việc và cộng XP kỹ năng.
+- Nhu cầu giả lập theo ngày, giá, nhân viên, cấp doanh nghiệp, marketing và kỹ năng quản lý. Không có doanh thu nếu không vận hành; doanh thu giới hạn theo tồn kho. Chi phí cố định và lương phát sinh mỗi ngày, kể cả không bán; nợ vận hành chặn ca mới.
+- Góp vốn, rút lợi nhuận đã thực hiện, thanh lý tồn kho 70% giá vốn; giữ nợ vận hành và khoản vay khi đóng cửa. Giá trị doanh nghiệp bằng tiền + tồn kho theo giá vốn, trừ nợ trong tổng tài sản ròng. Kích hoạt LOAN_BIZ (500 triệu, 11%/năm, 60 kỳ) cho chủ doanh nghiệp đang có hợp đồng chính thức và đủ tín dụng.
+- Master Data V2.2.0 (60 danh mục, 600 bản ghi); save schema 1 tự bổ sung business. Không cần database/SQL/env. 212/212 tests, production build và UI Chromium Canvas/storage mô phỏng. Chưa xác minh WebGL/PWA offline/deploy thực tế. Xem docs/BUSINESS.md.
 
 ## V0.14.0 — Banking & Investment
 - Ngân hàng & đầu tư: tổng quan, tiết kiệm, khoản vay, thị trường, danh mục. Hai ngân hàng, chung quầy An Lạc 08:00–17:00; giao dịch tài khoản thanh toán giữ nguyên V0.9.0.

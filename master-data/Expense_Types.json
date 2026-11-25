@@ -78,5 +78,10 @@
     "id": "EXP_INVEST",
     "name": "Mua đầu tư",
     "description": "Chi mua cổ phiếu hoặc vàng."
+  },
+  {
+    "id": "EXP_BUSINESS",
+    "name": "Nghĩa vụ kinh doanh",
+    "description": "Thanh toán nợ vận hành từ tài chính cá nhân."
   }
 ]

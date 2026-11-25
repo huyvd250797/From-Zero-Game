@@ -33,5 +33,12 @@
     "business": "BIZ_FARM",
     "unitCost": 15000,
     "salePrice": 25000
+  },
+  {
+    "id": "PRD_FACTORY",
+    "name": "Hàng sản xuất",
+    "business": "BIZ_FACTORY",
+    "unitCost": 55000,
+    "salePrice": 100000
   }
 ]

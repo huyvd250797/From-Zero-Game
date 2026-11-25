@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V2.1.0
+# From Zero — Canonical Master Data V2.2.0
 
-Game release V0.14.0 · 60 danh mục, 598 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.15.0 · 60 danh mục, 600 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -42,16 +42,16 @@ Game release V0.14.0 · 60 danh mục, 598 bản ghi. Số liệu kinh tế và 
 | E – Assets & Lifestyle | `Furniture.json` | 5 | Runtime Housing & Interior |
 | E – Assets & Lifestyle | `Maintenance.json` | 4 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Income_Types.json` | 11 | Lương/thưởng/thời vụ và thu lịch sử runtime, các nguồn khác seed |
-| F – Finance & Economy | `Expense_Types.json` | 16 | Runtime Survival & Daily Activities |
+| F – Finance & Economy | `Expense_Types.json` | 17 | Runtime Survival & Daily Activities |
 | F – Finance & Economy | `Banks.json` | 2 | Seed cho phiên bản sau |
-| F – Finance & Economy | `Loan_Products.json` | 4 | Seed cho phiên bản sau |
+| F – Finance & Economy | `Loan_Products.json` | 4 | Runtime Banking & Business |
 | F – Finance & Economy | `Saving_Products.json` | 2 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Investment_Assets.json` | 4 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Economy_Events.json` | 3 | Seed cho phiên bản sau |
-| G – Business | `Business_Types.json` | 6 | Seed cho phiên bản sau |
-| G – Business | `Business_Products.json` | 5 | Seed cho phiên bản sau |
-| G – Business | `Business_Roles.json` | 5 | Seed cho phiên bản sau |
-| G – Business | `Business_Operations.json` | 6 | Seed cho phiên bản sau |
+| G – Business | `Business_Types.json` | 6 | Runtime Business |
+| G – Business | `Business_Products.json` | 6 | Runtime Business |
+| G – Business | `Business_Roles.json` | 5 | Vai trò bán hàng/lập trình runtime; còn lại dữ liệu nền |
+| G – Business | `Business_Operations.json` | 6 | Runtime Business |
 | H – Health, Lifestyle & Law | `Diseases.json` | 3 | Seed cho phiên bản sau |
 | H – Health, Lifestyle & Law | `Treatments.json` | 3 | Seed cho phiên bản sau |
 | H – Health, Lifestyle & Law | `Lifestyle_Habits.json` | 5 | Seed cho phiên bản sau |
@@ -121,3 +121,6 @@ Vehicles bổ sung capacity, consumption, unitPrice; tên BLD_BIKE đổi thành
 
 ## V2.1.0
 - LOAN_VEHICLE, INC_INVEST_SALE, EXP_INVEST. Hai ngân hàng, hai sản phẩm tiết kiệm và ba sản phẩm vay hoạt động; hai cổ phiếu và vàng hoạt động. LOAN_BIZ và INV_LAND vẫn là dữ liệu nền.
+
+## V2.2.0
+- Business_Types bổ sung building, skill, minSkill, staffRole, baseDemand, staffDemand, staffPerLevel, marketingCost; giữ nguyên ID, vốn và phí cố định. Thêm PRD_FACTORY và EXP_BUSINESS. Kích hoạt LOAN_BIZ; kiểm tra liên kết mặt bằng, lịch hoạt động, sản phẩm và kỹ năng.

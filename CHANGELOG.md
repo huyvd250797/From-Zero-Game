@@ -1,5 +1,12 @@
 # Changelog
 
+## V0.15.0 — Business & Entrepreneurship (2026-11-25)
+- Kích hoạt 6 mô hình kinh doanh, sản phẩm, địa điểm, tên và nhãn bản đồ, điều kiện vốn/kỹ năng.
+- Vốn lưu động, kho, giá bán, nhân viên, marketing, ca vận hành và kinh nghiệm, 3 cấp mở rộng.
+- Chi phí mỗi ngày, nợ, lợi nhuận, góp vốn, thanh lý, lịch sử, tài sản ròng; vay kinh doanh.
+- Master Data V2.2.0 (60 danh mục, 600 bản ghi), save migration tự động; 212/212 tests, build và UI Chromium Canvas/storage mô phỏng.
+- Chưa có khách hàng/nhân viên AI riêng, nhiều doanh nghiệp, thuế kinh doanh, thị trường động hoặc deploy thật.
+
 ## V0.14.0 — Banking & Investment (2026-11-25)
 - Tiết kiệm kỳ hạn, tín dụng, vay tiêu dùng và mua nhà/xe trả góp, lịch trả nợ, quá hạn và tất toán.
 - Thị trường cổ phiếu/vàng giả lập, cổ tức, danh mục và lãi/lỗ. Tích hợp ledger và tài sản ròng, khóa tài sản bảo đảm.

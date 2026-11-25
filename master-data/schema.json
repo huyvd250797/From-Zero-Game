@@ -1,5 +1,5 @@
 {
-  "version": "2.1.0",
+  "version": "2.2.0",
   "catalogs": {
     "Game_Config": {
       "prefix": "CFG",
@@ -428,7 +428,15 @@
       "fields": {
         "industry": "ref:Industries",
         "capital": "money",
-        "maxStaff": "positiveInt"
+        "maxStaff": "positiveInt",
+        "building": "ref:Building_Instances",
+        "skill": "ref:Skills",
+        "minSkill": "nonnegativeInt",
+        "staffRole": "ref:Business_Roles",
+        "baseDemand": "positiveInt",
+        "staffDemand": "positiveInt",
+        "staffPerLevel": "positiveInt",
+        "marketingCost": "money"
       }
     },
     "Business_Products": {

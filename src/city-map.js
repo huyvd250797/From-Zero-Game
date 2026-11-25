@@ -1,3 +1,4 @@
+import {businessPlace} from './business-state.js';
 import {npcWorld} from './social.js';
 import {parkedVehicles} from './transport-state.js';
 import {currentHomePlace} from './housing-state.js';
@@ -8,6 +9,7 @@ export function drawCityMap(c,state,path,renderer,selected=''){const g=c.getCont
  if(renderer.unit>0){const corners=[[0,0],[renderer.width,0],[renderer.width,renderer.height],[0,renderer.height]].map(([x,y])=>renderer.unproject(x,y));g.strokeStyle='#ffffffbb';g.lineWidth=1;g.beginPath();corners.forEach((p,i)=>i?g.lineTo(p.x*sx,p.z*sz):g.moveTo(p.x*sx,p.z*sz));g.closePath();g.stroke()}
  for(const p of places){g.fillStyle='#f8d884';g.strokeStyle='#3e5149';g.lineWidth=.75;g.beginPath();g.arc(p.x*sx,p.z*sz,w>=300?3:1.8,0,Math.PI*2);g.fill();g.stroke()}
  const home=places.find(p=>p.id===currentHomePlace(state));if(home){g.beginPath();g.arc(home.x*sx,home.z*sz,w>=300?7:4,0,Math.PI*2);g.fillStyle='#137d53';g.fill();g.strokeStyle='#fff';g.lineWidth=1.5;g.stroke();if(w>=300){g.fillStyle='#fff';g.font='bold 10px system-ui';g.textAlign='center';g.fillText('⌂',home.x*sx,home.z*sz+3);}}
+ const biz=state.business?.active,venue=biz&&places.find(p=>p.id===businessPlace(biz.type));if(venue){const size=w>=300?12:7,x=venue.x*sx-size/2,z=venue.z*sz-size/2;g.fillStyle='#9d5d1d';g.strokeStyle='#fff';g.lineWidth=1.5;g.fillRect(x,z,size,size);g.strokeRect(x,z,size,size);}
  for(const v of parkedVehicles(state)){g.fillStyle='#45c7f4';g.strokeStyle='#173f58';g.lineWidth=1;g.fillRect(v.pos.x*sx-2,v.pos.z*sz-2,5,5);g.strokeRect(v.pos.x*sx-2,v.pos.z*sz-2,5,5);}
  for(const n of npcWorld(state.minutes,state)){g.beginPath();g.arc(n.pos.x*sx,n.pos.z*sz,w>=300?3:1.8,0,Math.PI*2);g.fillStyle=state.social?.contacts[n.id]?'#d9a4ff':'#a58bd2';g.fill();g.strokeStyle='#514164';g.lineWidth=.7;g.stroke();}
  if(path.length){g.strokeStyle='#ffe798';g.lineWidth=w>=300?2.2:1.3;g.beginPath();g.moveTo(state.pos.x*sx,state.pos.z*sz);for(const p of path)g.lineTo(p.x*sx,p.z*sz);g.stroke();const p=path.at(-1);g.fillStyle='#ffdc86';g.beginPath();g.arc(p.x*sx,p.z*sz,3,0,Math.PI*2);g.fill()}
