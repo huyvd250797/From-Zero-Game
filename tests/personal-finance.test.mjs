@@ -7,7 +7,8 @@ import {buyItem} from '../src/survival.js';
 import {apply,interview,accept,workShift,scheduledDay} from '../src/career.js';
 import {DETAIL_LIMIT,transfer,accountAvailable,reserved,createGoal,changeGoal,removeGoal,setBudget,budgetStatus,report,balanceSheet,recurring,financialWarnings,monthKey} from '../src/personal-finance.js';
 const at=(s,id)=>{const p=places.find(p=>p.id===id);s.pos={x:p.door[0],z:p.door[1]};return s};
-const restore=s=>Object.assign(s,{energy:100,hunger:100,hydration:100,hygiene:100,health:100,happy:100,stress:0});
+// Fully rested employee fixture: isolate payroll from the new long-term wellness penalties.
+const restore=s=>{Object.assign(s,{energy:100,hunger:100,hydration:100,hygiene:100,health:100,happy:100,stress:0});Object.assign(s.wellness,{sleepDebt:0,mental:100,nutrition:75,fitness:50,poorDays:0,stressDays:0,conditions:[]});return s;};
 const until=(s,m)=>{while(s.minutes<m)advanceTime(s,Math.min(10080,m-s.minutes));};
 test('new game starts with 500k cash, no account and no artificial income',()=>{const s=fresh();assert.equal(s.cash,500000);assert.equal(s.personalFinance.account,0);assert.equal(report(s).income,0);assert.equal(balanceSheet(s).net,1150000);assert(validate(s));});
 test('transfer conserves money and excludes both directions from income and expenses',()=>{const s=fresh();assert(transfer(s,'deposit',200000));assert.equal(s.cash,300000);assert.equal(s.personalFinance.account,200000);assert(transfer(s,'withdraw',50000));assert.equal(s.cash,350000);assert.equal(s.personalFinance.account,150000);assert.equal(report(s).net,0);assert.equal(financeSummary(s).income,0);assert.equal(s.personalFinance.transactions.length,2);assert(validate(s));});

@@ -12,5 +12,19 @@
     "habit": "HAB_DRINK",
     "threshold": 65,
     "description": "Tác động sức khỏe và quan hệ, có nhánh hỗ trợ."
+  },
+  {
+    "id": "ADD_SMOKE",
+    "name": "Lệ thuộc thuốc lá",
+    "habit": "HAB_SMOKE",
+    "threshold": 65,
+    "description": "Suy giảm thể lực; có thể tìm hỗ trợ phục hồi."
+  },
+  {
+    "id": "ADD_GAMBLE",
+    "name": "Lệ thuộc cờ bạc",
+    "habit": "HAB_GAMBLE",
+    "threshold": 65,
+    "description": "Thất thoát tiền và áp lực gia đình; không mô phỏng đặt cược."
   }
 ]

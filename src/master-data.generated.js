@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "2.4.0",
+  "version": "2.5.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -2519,7 +2519,7 @@ export default {
         "energy": 0,
         "hunger": 0,
         "happy": 0,
-        "log": "Phòng khám sẽ hỗ trợ điều trị trong phiên bản sau.",
+        "log": "Phòng khám hỗ trợ khám bệnh và phục hồi. Mở Sức khỏe để xem hồ sơ.",
         "rule": "none",
         "job": null,
         "asset": null,
@@ -5654,6 +5654,20 @@ export default {
         "weeklyCost": 0,
         "healthDelta": -5,
         "disciplineDelta": -1
+      },
+      {
+        "id": "HAB_SMOKE",
+        "name": "Thuốc lá",
+        "weeklyCost": 210000,
+        "healthDelta": -5,
+        "disciplineDelta": -3
+      },
+      {
+        "id": "HAB_GAMBLE",
+        "name": "Chi tiêu cờ bạc",
+        "weeklyCost": 700000,
+        "healthDelta": -2,
+        "disciplineDelta": -5
       }
     ],
     "Addiction_Rules": [
@@ -5670,6 +5684,20 @@ export default {
         "habit": "HAB_DRINK",
         "threshold": 65,
         "description": "Tác động sức khỏe và quan hệ, có nhánh hỗ trợ."
+      },
+      {
+        "id": "ADD_SMOKE",
+        "name": "Lệ thuộc thuốc lá",
+        "habit": "HAB_SMOKE",
+        "threshold": 65,
+        "description": "Suy giảm thể lực; có thể tìm hỗ trợ phục hồi."
+      },
+      {
+        "id": "ADD_GAMBLE",
+        "name": "Lệ thuộc cờ bạc",
+        "habit": "HAB_GAMBLE",
+        "threshold": 65,
+        "description": "Thất thoát tiền và áp lực gia đình; không mô phỏng đặt cược."
       }
     ],
     "Legal_Offenses": [
@@ -6109,6 +6137,28 @@ export default {
         "repeatable": false,
         "description": "Bạn đã bước vào tuổi 70. Đây là lúc suy ngẫm về những điều đã đạt được.",
         "cooldownDays": 0
+      },
+      {
+        "id": "EVT_HEALTH_CRISIS",
+        "name": "Sức khỏe cần được quan tâm",
+        "chapter": "CHP_09",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "health_crisis",
+        "repeatable": true,
+        "description": "Sức khỏe suy giảm kéo dài. Hãy cân nhắc nghỉ ngơi, khám bệnh và thay đổi lịch sinh hoạt.",
+        "cooldownDays": 30
+      },
+      {
+        "id": "EVT_HABIT_RECOVERY",
+        "name": "Cơ hội thay đổi thói quen",
+        "chapter": "CHP_10",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "habit_recovery",
+        "repeatable": true,
+        "description": "Một thói quen đã gây lệ thuộc. Bạn có thể tìm hỗ trợ hoặc tiếp tục tự quản lý.",
+        "cooldownDays": 30
       }
     ],
     "Event_Choices": [
@@ -6717,6 +6767,70 @@ export default {
         "consequence": "Không nhận lợi ích bất chính; giữ nghĩa vụ hiện tại và tự tìm cách xử lý.",
         "ethicsDelta": 3,
         "stressDelta": 3,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_HEALTH_PLAN",
+        "name": "Lập kế hoạch nghỉ ngơi",
+        "event": "EVT_HEALTH_CRISIS",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Giảm căng thẳng. Cần thực hiện nghỉ ngơi và điều trị tại nơi phù hợp.",
+        "ethicsDelta": 1,
+        "stressDelta": -5,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_HEALTH_LATER",
+        "name": "Chưa thể nghỉ",
+        "event": "EVT_HEALTH_CRISIS",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Căng thẳng tăng; bệnh không tự được điều trị bởi lựa chọn này.",
+        "ethicsDelta": 0,
+        "stressDelta": 3,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_HABIT_SUPPORT",
+        "name": "Tìm hỗ trợ",
+        "event": "EVT_HABIT_RECOVERY",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Giảm căng thẳng; đến phòng khám hoặc công viên để bắt đầu phục hồi.",
+        "ethicsDelta": 2,
+        "stressDelta": -5,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_HABIT_LATER",
+        "name": "Cân nhắc thêm",
+        "event": "EVT_HABIT_RECOVERY",
+        "cashDelta": 0,
+        "happyDelta": 0,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Chưa thay đổi mức lệ thuộc.",
+        "ethicsDelta": 0,
+        "stressDelta": 2,
         "healthDelta": 0,
         "familyDelta": 0
       }

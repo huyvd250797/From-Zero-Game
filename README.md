@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.17.0 — Story & Consequence Engine**
+**V0.18.0 — Health, Habits & Addiction**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 25 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.18.0 — Health, Habits & Addiction
+- Bốn tab Sức khỏe & thói quen: Tổng quan, Thói quen, Điều trị, Lịch sử. Theo dõi dinh dưỡng, thể lực, tinh thần, kỷ luật, nợ ngủ; số phút ngủ thực tế chia qua nửa đêm, điểm món ăn và vận động theo ngày.
+- Ba tình trạng bệnh giả lập với ngưỡng rủi ro tích lũy, khám/điều trị tại phòng khám hoặc bệnh viện, phục hồi theo đồng hồ game; điều trị không xóa các nguyên nhân lối sống. Hỗ trợ miễn phí ở công viên hoặc tư vấn tại phòng khám.
+- 7 thói quen, 4 dạng lệ thuộc, hậu quả sức khỏe, chi tiêu, tinh thần và gia đình; giảm thói quen khi tránh hành vi và nhận hỗ trợ. Chi tiêu cờ bạc chỉ là mô phỏng tổn thất, không có đặt cược/thưởng tiền.
+- Liên kết hiệu suất ca chính thức, nhu cầu kinh doanh, tài chính, gia đình và hai biến cố sức khỏe. Giữ save schema 1; không hồi tố lịch sử cũ. Dữ liệu sức khỏe đều là giả lập, không mô phỏng thuốc/liều lâm sàng hay tử vong.
+- Master Data V2.5.0 (60 danh mục, 651 bản ghi); 269/269 test (248 kế thừa + 21 mới), production build, UI Chromium Canvas/storage mô phỏng. Xem docs/HEALTH.md. Chưa xác minh WebGL, PWA offline, deploy Vercel thực tế.
 
 ## V0.17.0 — Story & Consequence Engine
 - 12 chương không tuyến tính, 20 biến cố (19 có thể kích hoạt, 1 dữ liệu nền cho tái hòa nhập sau này), 38 lựa chọn. Điều kiện dựa trên nghề nghiệp, học tập, bạn bè, gia đình, tài chính, doanh nghiệp, tuổi và kinh tế; cơ hội cộng đồng giả ngẫu nhiên xác định theo ngày/tên nhân vật, không đổi khi tải lại.

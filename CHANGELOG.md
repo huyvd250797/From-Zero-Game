@@ -1,5 +1,11 @@
 # Changelog
 
+## V0.18.0 — Health, Habits & Addiction (2026-11-26)
+- Wellness state: dinh dưỡng, thể lực, tinh thần, kỷ luật, nợ ngủ, nhật ký ngày. Kết nối ngủ, ăn, vận động, công việc và tiết kiệm.
+- 3 tình trạng bệnh, 3 dịch vụ điều trị, 7 thói quen, 4 dạng lệ thuộc, 2 phương án hỗ trợ. Chi phí động và phục hồi theo thời gian.
+- Tác động tới hiệu suất nghề, doanh nghiệp, hạnh phúc gia đình; 2 biến cố cốt truyện mới. 4 tab UI và cảnh báo HUD.
+- Master Data 2.5.0 (651 records), 269/269 tests và production build. Tương thích schema 1, không hồi tố. Xem docs/HEALTH.md.
+
 ## V0.17.0 — Story & Consequence Engine (2026-11-25)
 - Bộ máy 12 chương, 20 biến cố và 38 lựa chọn; kích hoạt theo hoàn cảnh, chu kỳ, tuổi và cơ hội cộng đồng xác định.
 - Hậu quả tức thời và trì hoãn 14/30/365 ngày, đạo đức, hành vi sai trái, ghi sổ tài chính, ký ức giúp đỡ NPC; bảo toàn save, không cộng trùng.

@@ -33,5 +33,19 @@
     "weeklyCost": 0,
     "healthDelta": -5,
     "disciplineDelta": -1
+  },
+  {
+    "id": "HAB_SMOKE",
+    "name": "Thuốc lá",
+    "weeklyCost": 210000,
+    "healthDelta": -5,
+    "disciplineDelta": -3
+  },
+  {
+    "id": "HAB_GAMBLE",
+    "name": "Chi tiêu cờ bạc",
+    "weeklyCost": 700000,
+    "healthDelta": -2,
+    "disciplineDelta": -5
   }
 ]

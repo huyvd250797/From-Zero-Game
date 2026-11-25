@@ -218,5 +218,27 @@
     "repeatable": false,
     "description": "Bạn đã bước vào tuổi 70. Đây là lúc suy ngẫm về những điều đã đạt được.",
     "cooldownDays": 0
+  },
+  {
+    "id": "EVT_HEALTH_CRISIS",
+    "name": "Sức khỏe cần được quan tâm",
+    "chapter": "CHP_09",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "health_crisis",
+    "repeatable": true,
+    "description": "Sức khỏe suy giảm kéo dài. Hãy cân nhắc nghỉ ngơi, khám bệnh và thay đổi lịch sinh hoạt.",
+    "cooldownDays": 30
+  },
+  {
+    "id": "EVT_HABIT_RECOVERY",
+    "name": "Cơ hội thay đổi thói quen",
+    "chapter": "CHP_10",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "habit_recovery",
+    "repeatable": true,
+    "description": "Một thói quen đã gây lệ thuộc. Bạn có thể tìm hỗ trợ hoặc tiếp tục tự quản lý.",
+    "cooldownDays": 30
   }
 ]

@@ -1,3 +1,4 @@
+import {healthMinute,healthWarnings} from './health-state.js';
 import {storyTick} from './story.js';
 import {quote,goodsPrice,assetPrice,wageQuote,rateQuote,actionCash,economyAt,vacancyOpen} from './economy.js';
 import {businessTick} from './business.js';
@@ -32,10 +33,10 @@ export function scheduleLabel(place){const r=schedule(place);return !r?'Chưa c�
 export function untilOpen(place,minutes){const r=schedule(place);if(!r||isOpen(place,minutes))return 0;const m=minutes%1440;return (r.opens-m+1440)%1440;}
 export function settleDebt(s){if(s.maintenanceDebt>0&&s.cash>=s.maintenanceDebt){if(!cashChange(s,-s.maintenanceDebt,'EXP_TRANSPORT','Thanh toán bảo dưỡng xe đạp'))return;log(s,`Đã thanh toán phí bảo dưỡng ${s.maintenanceDebt.toLocaleString('vi-VN')}đ.`);s.maintenanceDebt=0;}}
 const needKeys={ATR_ENERGY:'energy',ATR_HUNGER:'hunger',ATR_HYGIENE:'hygiene',ATR_HYDRATION:'hydration'};
-export function advanceTime(s,minutes,{resting=false}={}){
+export function advanceTime(s,minutes,{resting=false,sleeping=false}={}){
  if(!Number.isSafeInteger(minutes)||minutes<0||minutes>10080)throw RangeError('Thời lượng không hợp lệ');
  const end=Math.min(MAX_MINUTES,s.minutes+minutes);
- while(s.minutes<end){s.minutes++;
+ while(s.minutes<end){healthMinute(s,sleeping);s.minutes++;
   if(s.minutes%1440===0)careerMidnight(s);if(s.minutes%43200===0){const e=economyAt(s.minutes);log(s,`Kinh tế tháng ${e.month+1}: ${e.name}, chỉ số giá ${Math.round(e.cpi*100)}.`);} 
   for(const r of catalogs.Needs_Rules){const k=needKeys[r.attribute];if(k&&s.minutes%r.intervalMinutes===0&&!(resting&&k==='energy'))s[k]=clamp(s[k]+r.delta);}
   if(s.minutes%60===0){const critical=['energy','hunger','hygiene','hydration'].filter(k=>s[k]<config.criticalNeedThreshold).length;if(critical){s.health=clamp(s.health-critical*2);s.happy=clamp(s.happy-critical);s.stress=clamp(s.stress+critical*2);}else if(s.hunger>=45&&s.energy>=40&&s.hygiene>=40){s.stress=clamp(s.stress-1);if(resting)s.health=clamp(s.health+1);}if(s.stress>=85){s.health=clamp(s.health-1);s.happy=clamp(s.happy-1);}}
@@ -48,6 +49,6 @@ export function advanceTime(s,minutes,{resting=false}={}){
  }
  return s;
 }
-export function warnings(s){const list=[];if(s.health<config.criticalHealthThreshold)list.push('Sức khỏe nguy kịch – cần nghỉ hoặc điều trị, chưa thể làm việc.');for(const [k,n] of [['hunger','Đói'],['energy','Kiệt sức'],['hygiene','Vệ sinh thấp'],['hydration','Thiếu nước']])if(s[k]<config.criticalNeedThreshold)list.push(n+' – ảnh hưởng sức khỏe.');if(s.stress>=85)list.push('Căng thẳng cao.');if(s.maintenanceDebt)list.push('Có phí bảo dưỡng chưa thanh toán.');if(s.family?.debt)list.push('Có nợ sinh hoạt gia đình.');if(familySize(s)>1&&!familyHousingOK(s))list.push('Gia đình thiếu chỗ ở phù hợp.');if(s.family?.children.some(c=>childAge(s,c)<18&&c.care<25))list.push('Con cần được chăm sóc.');return list;}
+export function warnings(s){const list=healthWarnings(s);if(s.health<config.criticalHealthThreshold)list.push('Sức khỏe nguy kịch – cần nghỉ hoặc điều trị, chưa thể làm việc.');for(const [k,n] of [['hunger','Đói'],['energy','Kiệt sức'],['hygiene','Vệ sinh thấp'],['hydration','Thiếu nước']])if(s[k]<config.criticalNeedThreshold)list.push(n+' – ảnh hưởng sức khỏe.');if(s.stress>=85)list.push('Căng thẳng cao.');if(s.maintenanceDebt)list.push('Có phí bảo dưỡng chưa thanh toán.');if(s.family?.debt)list.push('Có nợ sinh hoạt gia đình.');if(familySize(s)>1&&!familyHousingOK(s))list.push('Gia đình thiếu chỗ ở phù hợp.');if(s.family?.children.some(c=>childAge(s,c)<18&&c.care<25))list.push('Con cần được chăm sóc.');return list;}
 // The accumulator is runtime-only; simulation speed affects the calendar, not physical movement.
 export function tickClock(s,remainder,seconds,speed){if(!SPEEDS.includes(speed)||!Number.isFinite(seconds)||seconds<0||!Number.isFinite(remainder)||remainder<0)throw RangeError('Đồng hồ không hợp lệ');const total=remainder+seconds*speed/config.realSecondsPerMinute;const whole=Math.floor(total+1e-9);if(whole)advanceTime(s,whole);return Math.max(0,total-whole);}

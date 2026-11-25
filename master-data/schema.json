@@ -1,5 +1,5 @@
 {
-  "version": "2.4.0",
+  "version": "2.5.0",
   "catalogs": {
     "Game_Config": {
       "prefix": "CFG",
@@ -548,7 +548,7 @@
         "chapter": "ref:Story_Chapters",
         "minAge": "int:18:120",
         "maxAge": "int:18:120",
-        "trigger": "enum:arrival,first_shift,friend_request,business_crisis,overspending,legal_case,release,retirement,hardship,graduation,job_loss,family_strain,debt_pressure,recession,enterprise,community,recovery,legacy,followup",
+        "trigger": "enum:arrival,first_shift,friend_request,business_crisis,overspending,legal_case,release,retirement,hardship,graduation,job_loss,family_strain,debt_pressure,recession,enterprise,community,recovery,legacy,followup,health_crisis,habit_recovery",
         "repeatable": "bool",
         "description": "text",
         "cooldownDays": "nonnegativeInt"

@@ -34,6 +34,8 @@ function match(s,e){const d=Math.floor(s.minutes/DAY)+1,p=s.story;switch(e.trigg
  case 'recession':return economyAt(s.minutes).phase==='ECO_RECESSION';
  case 'community':{let h=(d^0x9e3779b9)>>>0;for(const ch of s.name)h=Math.imul(h^ch.charCodeAt(0),16777619)>>>0;h=Math.imul(h^(h>>>16),0x85ebca6b)>>>0;return d>=7&&h%11===0&&s.social.reputation>=40;}
  case 'recovery':return !!(p.resolved.EVT_HARDSHIP||p.resolved.EVT_JOB_LOSS)&&liquid(s)>=300000&&!!residence(s);
+ case 'health_crisis':return !!s.wellness?.conditions.length;
+ case 'habit_recovery':return !!s.wellness?.dependent.length;
  case 'retirement':return age(s)>=60;
  case 'legacy':return age(s)>=70;
  default:return false;

@@ -5,7 +5,8 @@ import {places} from '../src/world.js';
 import {financeSummary,workMinutesToday} from '../src/survival-state.js';
 import {vacancies,careerRequirements,apply,interview,accept,shiftReason,workShift,skipShift,scheduledDay,monthlySalary,requestRaise,promote,resign,workdaysInMonth,currentJob} from '../src/career.js';
 const at=(s,id)=>{const p=places.find(p=>p.id===id);s.pos={x:p.door[0],z:p.door[1]};return s};
-const restore=s=>Object.assign(s,{energy:100,hunger:100,hydration:100,hygiene:100,health:100,happy:100,stress:0});
+// This fixture models a fully recovered employee before each shift, including V0.18 wellness.
+const restore=s=>{Object.assign(s,{energy:100,hunger:100,hydration:100,hygiene:100,health:100,happy:100,stress:0});Object.assign(s.wellness,{sleepDebt:0,mental:100,nutrition:75,fitness:50,poorDays:0,stressDays:0,conditions:[]});return s;};
 const time=(d,h=8,min=0)=> (d-1)*1440+h*60+min;
 function until(s,m){while(s.minutes<m)advanceTime(s,Math.min(10080,m-s.minutes));return s}
 const cashier='EMP_SHOP:JOB_CASHIER',worker='EMP_FACTORY:JOB_WORKER',sales='EMP_SHOP:JOB_SALES';

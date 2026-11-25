@@ -1,3 +1,4 @@
+import {recordHabit} from './health-state.js';
 import {quote,goodsPrice,assetPrice,wageQuote,rateQuote,actionCash,economyAt,vacancyOpen} from './economy.js';
 import {businessValue,businessDebt,businessMonthlyCost} from './business-state.js';
 import {BANK_TRANSFERS,bankDebt,savingValue,portfolio,loanDue,nextPayment} from './banking-state.js';
@@ -22,7 +23,7 @@ export function pruneDetails(s){const p=s.personalFinance,cutoff=s.minutes-365*D
 export const reserved=s=>s.personalFinance.goals.reduce((n,g)=>n+g.saved,0);
 export const accountAvailable=s=>s.personalFinance.account-reserved(s);
 export const liquid=s=>s.cash+(s.personalFinance?.account||0);
-export function transfer(s,direction,amount){const p=s.personalFinance;if(!int(amount,1)||!['deposit','withdraw'].includes(direction)||!int(liquid(s)))return false;if(direction==='deposit'?amount>s.cash:amount>accountAvailable(s))return false;if(!canRecord(s,'transfer',direction,amount))return false;const delta=direction==='deposit'?amount:-amount;s.cash-=delta;p.account+=delta;recordTransaction(s,'transfer',direction,amount,direction==='deposit'?'Chuyển tiền mặt vào tài khoản':'Rút từ tài khoản về tiền mặt');return true;}
+export function transfer(s,direction,amount){const p=s.personalFinance;if(!int(amount,1)||!['deposit','withdraw'].includes(direction)||!int(liquid(s)))return false;if(direction==='deposit'?amount>s.cash:amount>accountAvailable(s))return false;if(!canRecord(s,'transfer',direction,amount))return false;const delta=direction==='deposit'?amount:-amount;s.cash-=delta;p.account+=delta;recordTransaction(s,'transfer',direction,amount,direction==='deposit'?'Chuyển tiền mặt vào tài khoản':'Rút từ tài khoản về tiền mặt');if(direction==='deposit')recordHabit(s,'HAB_SAVING');return true;}
 export function setBudget(s,id,amount){if(!expenseIds.has(id)||!int(amount))return false;if(amount===0)delete s.personalFinance.budgets[id];else s.personalFinance.budgets[id]=amount;return true;}
 export function createGoal(s,name,target){const p=s.personalFinance;name=String(name).trim();if(!name||name.length>48||!int(target,1)||p.goals.length>=GOAL_LIMIT||!int(p.nextId,1,Number.MAX_SAFE_INTEGER-1))return false;p.goals.push({id:p.nextId++,name,target,saved:0});return true;}
 export function changeGoal(s,id,delta){const g=s.personalFinance.goals.find(g=>g.id===id);if(!g||!Number.isSafeInteger(delta)||!delta||!int(g.saved+delta,0,g.target)||delta>accountAvailable(s))return false;g.saved+=delta;return true;}

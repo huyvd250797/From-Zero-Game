@@ -1,0 +1,34 @@
+import {catalogs,record} from './master-data.js';
+const DAY=1440,cap=n=>Math.max(0,Math.min(100,Math.round(n))),day=m=>Math.floor(m/DAY)+1;
+const habits=catalogs.Lifestyle_Habits.map(h=>h.id),rules=catalogs.Addiction_Rules;
+const empty=d=>({day:d,sleep:0,food:0,exercise:0,work:0,rest:0,used:[],support:false});
+export const healthDefaults=s=>({wellness:{nutrition:75,fitness:50,mental:75,discipline:50,sleepDebt:0,poorDays:0,stressDays:0,habits:Object.fromEntries(habits.map(id=>[id,0])),dependent:[],conditions:[],daily:empty(day(s.minutes)),history:[],journal:[]}});
+const int=(v,a=0,b=100)=>Number.isSafeInteger(v)&&v>=a&&v<=b;
+const plain=o=>o&&typeof o==='object'&&!Array.isArray(o);
+export function validateHealth(s){const w=s.wellness,d=day(s.minutes);if(!plain(w)||!['nutrition','fitness','mental','discipline'].every(k=>int(w[k]))||!int(w.sleepDebt,0,1440)||!int(w.poorDays,0,365)||!int(w.stressDays,0,365)||!plain(w.habits)||Object.keys(w.habits).length!==habits.length||!habits.every(id=>int(w.habits[id])))return false;
+ const daily=x=>plain(x)&&int(x.day,1,d)&&['sleep','exercise','work','rest'].every(k=>int(x[k],0,1440))&&int(x.food,0,100)&&Array.isArray(x.used)&&new Set(x.used).size===x.used.length&&x.used.every(id=>habits.includes(id))&&typeof x.support==='boolean';
+ if(!daily(w.daily)||!Array.isArray(w.history)||w.history.length>30||!w.history.every((r,i)=>daily(r)&&r.day<w.daily.day&&(!i||r.day<w.history[i-1].day)))return false;
+ if(!Array.isArray(w.dependent)||new Set(w.dependent).size!==w.dependent.length||!w.dependent.every(id=>rules.some(r=>r.habit===id)&&w.habits[id]>=20)||rules.some(r=>w.habits[r.habit]>=r.threshold&&!w.dependent.includes(r.habit)))return false;
+ if(!Array.isArray(w.conditions)||w.conditions.length>catalogs.Diseases.length||new Set(w.conditions.map(c=>c?.id)).size!==w.conditions.length||!w.conditions.every(c=>plain(c)&&catalogs.Diseases.some(r=>r.id===c.id)&&int(c.onset,0,s.minutes)&&int(c.until,c.onset+1,200*366*DAY+30*DAY)&&typeof c.treated==='boolean'))return false;
+ return Array.isArray(w.journal)&&w.journal.length<=60&&w.journal.every((r,i)=>plain(r)&&int(r.at,0,s.minutes)&&(!i||r.at<=w.journal[i-1].at)&&typeof r.text==='string'&&r.text.length<=180);
+}
+export function healthNote(s,text){const w=s.wellness;if(!w)return;w.journal.unshift({at:s.minutes,text});w.journal=w.journal.slice(0,60);}
+function sync(s){const w=s.wellness;if(!w)return null;const d=day(s.minutes);if(w.daily.day!==d)w.daily=empty(d);return w;}
+export function recordFood(s,id){const w=sync(s);if(!w)return;const quality={FOOD_MEAL:25,FOOD_NOODLES:8,FOOD_FRUIT:18,FOOD_BREAD:10,FOOD_MILK:16,FOOD_HOME_RICE:35,FOOD_HOME_NOODLES:18}[id]||0;w.daily.food=Math.min(100,w.daily.food+quality);}
+export function recordHealthAction(s,id,time){const w=sync(s);if(!w)return;if(['exercise','walk_park'].includes(id))w.daily.exercise=Math.min(DAY,w.daily.exercise+time);if(['rest','relax','coffee'].includes(id))w.daily.rest=Math.min(DAY,w.daily.rest+time);}
+export function recordHabit(s,id){const w=sync(s);if(!w||!habits.includes(id)||w.daily.used.includes(id))return false;w.daily.used.push(id);if(rules.some(r=>r.habit===id))w.habits[id]=cap(w.habits[id]+(id==='HAB_PARTY'?18:15));const rule=rules.find(r=>r.habit===id);if(rule&&w.habits[id]>=rule.threshold&&!w.dependent.includes(id)){w.dependent.push(id);healthNote(s,'Phát hiện '+rule.name.toLowerCase()+'. Có thể tìm hỗ trợ.');}return true;}
+function onset(s,id,at){const w=s.wellness;if(w.conditions.some(c=>c.id===id))return;const r=record(id);w.conditions.push({id,onset:at,until:at+r.durationDays*DAY,treated:false});s.health=cap(s.health+r.healthDelta);healthNote(s,'Phát sinh '+r.name.toLowerCase()+'.');}
+export function healthPenalty(s){const w=s.wellness;if(!w)return 0;return Math.min(30,w.conditions.length*6+Math.floor(w.sleepDebt/120)+w.dependent.length*3+Math.max(0,Math.floor((50-w.mental)/5))+Math.max(0,Math.floor((40-w.nutrition)/10))+Math.max(0,Math.floor((30-w.fitness)/10)));}
+export function healthWarnings(s){const w=s.wellness;if(!w)return [];return [...(w.conditions.length?['Có tình trạng sức khỏe cần theo dõi.']:[]),...(w.sleepDebt>=240?['Thiếu ngủ tích lũy.']:[]),...(w.mental<35?['Sức khỏe tinh thần thấp.']:[]),...(w.dependent.length?['Có thói quen lệ thuộc – hãy tìm hỗ trợ.']:[])];}
+// Evaluate only observed days. Sleep minutes split across midnight, not credited twice.
+export function healthMinute(s,sleeping){const w=sync(s);if(!w)return;if(sleeping)w.daily.sleep=Math.min(DAY,w.daily.sleep+1);const next=s.minutes+1;
+ for(const c of w.conditions){if(next>=c.until&&(c.treated||c.id!=='DIS_CHRONIC')){w.conditions=w.conditions.filter(x=>x!==c);if(c.treated){w.poorDays=0;w.stressDays=0;}healthNote(s,'Kết thúc đợt theo dõi '+record(c.id).name+'.');}}
+ if(next%DAY!==0)return;
+ const d=w.daily;d.work=s.workDay===d.day?Math.min(DAY,s.workMinutes):0;
+ w.sleepDebt=Math.max(0,Math.min(1440,w.sleepDebt+420-d.sleep));w.nutrition=cap(w.nutrition+(d.food>=50?4:d.food>=25?0:-5));w.fitness=cap(w.fitness+(d.exercise>=30?3:-1));w.mental=cap(w.mental+(s.stress>=75?-6:s.stress<40?2:0)+(d.rest>=30?3:0));
+ const poor=w.nutrition<40||w.sleepDebt>=720||s.hygiene<20;w.poorDays=poor?Math.min(365,w.poorDays+1):0;w.stressDays=s.stress>=75?Math.min(365,w.stressDays+1):0;
+ for(const id of habits){const harmful=rules.some(r=>r.habit===id),used=d.used.includes(id);if(harmful){if(!used)w.habits[id]=cap(w.habits[id]-(d.support?12:4));if(w.dependent.includes(id)){if(w.habits[id]<20){w.dependent=w.dependent.filter(x=>x!==id);healthNote(s,'Tiến triển phục hồi: '+record(id).name+'.');}else{s.health=cap(s.health-2);w.mental=cap(w.mental-2);s.stress=cap(s.stress+2);if(s.family?.partner?.stage==='married')s.family.happiness=cap(s.family.happiness-2);}}}else{const good=id==='HAB_EXERCISE'?d.exercise>=30:id==='HAB_OVERWORK'?d.work>=480&&d.sleep<360:id==='HAB_SAVING'?used:false;w.habits[id]=cap(w.habits[id]+(good?8:-4));if(good){w.discipline=cap(w.discipline+record(id).disciplineDelta);if(id==='HAB_OVERWORK'&&w.habits[id]>=40)s.health=cap(s.health-2);}}}
+ for(const c of w.conditions)if(!c.treated)s.health=cap(s.health-(c.id==='DIS_CHRONIC'?3:1));if(w.mental<35)s.happy=cap(s.happy-2);
+ if(w.poorDays>=3&&s.hygiene<25)onset(s,'DIS_COLD',s.minutes);if(w.sleepDebt>=840&&w.stressDays>=3)onset(s,'DIS_FATIGUE',s.minutes);if(w.poorDays>=10||w.dependent.length&&w.stressDays>=10)onset(s,'DIS_CHRONIC',s.minutes);
+ w.history.unshift({...d,used:[...d.used]});w.history=w.history.slice(0,30);w.daily=empty(day(next));
+}

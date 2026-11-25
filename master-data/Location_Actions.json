@@ -210,7 +210,7 @@
     "energy": 0,
     "hunger": 0,
     "happy": 0,
-    "log": "Phòng khám sẽ hỗ trợ điều trị trong phiên bản sau.",
+    "log": "Phòng khám hỗ trợ khám bệnh và phục hồi. Mở Sức khỏe để xem hồ sơ.",
     "rule": "none",
     "job": null,
     "asset": null,
