@@ -73,5 +73,10 @@
     "id": "EXP_FAMILY",
     "name": "Gia đình",
     "description": "Đám cưới, hẹn hò, nuôi con và sinh hoạt gia đình."
+  },
+  {
+    "id": "EXP_INVEST",
+    "name": "Mua đầu tư",
+    "description": "Chi mua cổ phiếu hoặc vàng."
   }
 ]

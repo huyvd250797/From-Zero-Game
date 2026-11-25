@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -5073,6 +5073,11 @@ export default {
         "id": "INC_VEHICLE_SALE",
         "name": "Bán phương tiện",
         "description": "Tiền thu thanh lý xe."
+      },
+      {
+        "id": "INC_INVEST_SALE",
+        "name": "Bán đầu tư",
+        "description": "Tiền thu bán cổ phiếu hoặc vàng."
       }
     ],
     "Expense_Types": [
@@ -5150,6 +5155,11 @@ export default {
         "id": "EXP_FAMILY",
         "name": "Gia đình",
         "description": "Đám cưới, hẹn hò, nuôi con và sinh hoạt gia đình."
+      },
+      {
+        "id": "EXP_INVEST",
+        "name": "Mua đầu tư",
+        "description": "Chi mua cổ phiếu hoặc vàng."
       }
     ],
     "Banks": [
@@ -5187,6 +5197,14 @@ export default {
         "bank": "BNK_THINHVUONG",
         "annualRate": 0.11,
         "maxPrincipal": 500000000,
+        "months": 60
+      },
+      {
+        "id": "LOAN_VEHICLE",
+        "name": "Vay mua xe",
+        "bank": "BNK_ANLAC",
+        "annualRate": 0.11,
+        "maxPrincipal": 1200000000,
         "months": 60
       }
     ],

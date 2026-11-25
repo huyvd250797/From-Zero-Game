@@ -48,5 +48,10 @@
     "id": "INC_VEHICLE_SALE",
     "name": "Bán phương tiện",
     "description": "Tiền thu thanh lý xe."
+  },
+  {
+    "id": "INC_INVEST_SALE",
+    "name": "Bán đầu tư",
+    "description": "Tiền thu bán cổ phiếu hoặc vàng."
   }
 ]

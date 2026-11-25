@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V2.0.0
+# From Zero — Canonical Master Data V2.1.0
 
-Game release V0.13.0 · 60 danh mục, 595 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.14.0 · 60 danh mục, 598 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -41,10 +41,10 @@ Game release V0.13.0 · 60 danh mục, 595 bản ghi. Số liệu kinh tế và 
 | E – Assets & Lifestyle | `Vehicles.json` | 6 | Runtime prototype |
 | E – Assets & Lifestyle | `Furniture.json` | 5 | Runtime Housing & Interior |
 | E – Assets & Lifestyle | `Maintenance.json` | 4 | Seed cho phiên bản sau |
-| F – Finance & Economy | `Income_Types.json` | 10 | Lương/thưởng/thời vụ và thu lịch sử runtime, các nguồn khác seed |
-| F – Finance & Economy | `Expense_Types.json` | 14 | Runtime Survival & Daily Activities |
+| F – Finance & Economy | `Income_Types.json` | 11 | Lương/thưởng/thời vụ và thu lịch sử runtime, các nguồn khác seed |
+| F – Finance & Economy | `Expense_Types.json` | 16 | Runtime Survival & Daily Activities |
 | F – Finance & Economy | `Banks.json` | 2 | Seed cho phiên bản sau |
-| F – Finance & Economy | `Loan_Products.json` | 3 | Seed cho phiên bản sau |
+| F – Finance & Economy | `Loan_Products.json` | 4 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Saving_Products.json` | 2 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Investment_Assets.json` | 4 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Economy_Events.json` | 3 | Seed cho phiên bản sau |
@@ -118,3 +118,6 @@ Vehicles bổ sung capacity, consumption, unitPrice; tên BLD_BIKE đổi thành
 ## V2.0.0
 - Mở rộng Family_Rules với điều kiện tình cảm, thời gian, phí và chi phí hằng ngày; thêm 11 quy tắc, giữ ID cũ.
 - EXP_FAMILY là danh mục chi tiêu mới. 60 danh mục, 595 bản ghi.
+
+## V2.1.0
+- LOAN_VEHICLE, INC_INVEST_SALE, EXP_INVEST. Hai ngân hàng, hai sản phẩm tiết kiệm và ba sản phẩm vay hoạt động; hai cổ phiếu và vàng hoạt động. LOAN_BIZ và INV_LAND vẫn là dữ liệu nền.

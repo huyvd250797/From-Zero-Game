@@ -1,7 +1,15 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.13.0 — Love, Marriage & Family**
+**V0.14.0 — Banking & Investment**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 25 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.14.0 — Banking & Investment
+- Ngân hàng & đầu tư: tổng quan, tiết kiệm, khoản vay, thị trường, danh mục. Hai ngân hàng, chung quầy An Lạc 08:00–17:00; giao dịch tài khoản thanh toán giữ nguyên V0.9.0.
+- Gửi kỳ hạn 90/360 ngày, 4%/5,5% năm; gốc từ tài khoản khả dụng, đáo hạn gốc về tài khoản, lãi về tiền mặt, tất toán sớm không lãi.
+- Vay tiêu dùng, vay mua nhà/xe; tối đa 70% giá tài sản, gốc đều, lãi theo dư nợ, kỳ 30 ngày, tự trừ tiền mặt. Tín dụng 300–850, điều kiện lương và kinh nghiệm. Khóa bán tài sản bảo đảm cho đến khi trả hết. Lịch dự kiến từng kỳ; không thu lãi trước hạn chưa phát sinh.
+- 2 cổ phiếu và vàng giả lập, giá theo ngày, cổ tức mỗi 90 ngày nếu đủ thời gian nắm giữ, danh mục và giá vốn bình quân. Đất ngoại ô, vay kinh doanh vẫn là dữ liệu nền.
+- Sổ giao dịch phân biệt chuyển gốc và chi phí lãi, cập nhật tài sản ròng; tiền đầu tư mua/bán ghi theo dòng tiền. Tự bổ sung banking vào save schema 1. Master Data V2.1.0, 60 danh mục, 598 bản ghi.
+- 195/195 tests, build thành công. Kiểm thử UI trên Chromium Canvas với storage mô phỏng. Xem docs/BANKING.md. Chưa xác minh WebGL, PWA offline, Vercel thực tế; toàn bộ giá, lãi suất và điều kiện là giả lập.
 
 ## V0.13.0 — Love, Marriage & Family
 - Nút Tình yêu & gia đình: Gia đình, Tình cảm, Con cái, Nhật ký; từ hồ sơ NPC có thể mở thẳng tình cảm. Một mối quan hệ tại một thời điểm, tình cảm riêng với tin tưởng; quan tâm, hẹn hò, quà, tỏ tình, đính hôn, kết hôn, mâu thuẫn, hòa giải, ly hôn.

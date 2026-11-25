@@ -1,5 +1,11 @@
 # Changelog
 
+## V0.14.0 — Banking & Investment (2026-11-25)
+- Tiết kiệm kỳ hạn, tín dụng, vay tiêu dùng và mua nhà/xe trả góp, lịch trả nợ, quá hạn và tất toán.
+- Thị trường cổ phiếu/vàng giả lập, cổ tức, danh mục và lãi/lỗ. Tích hợp ledger và tài sản ròng, khóa tài sản bảo đảm.
+- Save migration tự động, Master Data V2.1.0 (598 bản ghi), 195/195 tests, production build.
+- Kiểm thử Chromium Canvas/storage mô phỏng; chưa xác minh WebGL/PWA/deploy thật.
+
 ## V0.13.0 — Love, Marriage & Family (2026-11-25)
 - Tình cảm riêng với tin tưởng; hẹn hò, quà, tỏ tình, đính hôn, kết hôn, hòa giải, ly hôn.
 - Vợ/chồng đổi lịch về nhà; thành viên hiển thị trong nội thất. Kế hoạch đón con 270 ngày, hồ sơ, chăm sóc và tuổi tác.

@@ -22,5 +22,13 @@
     "annualRate": 0.11,
     "maxPrincipal": 500000000,
     "months": 60
+  },
+  {
+    "id": "LOAN_VEHICLE",
+    "name": "Vay mua xe",
+    "bank": "BNK_ANLAC",
+    "annualRate": 0.11,
+    "maxPrincipal": 1200000000,
+    "months": 60
   }
 ]
