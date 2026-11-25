@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V1.7.0
+# From Zero — Canonical Master Data V1.8.0
 
-Game release V0.10.0 · 60 danh mục, 573 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.11.0 · 60 danh mục, 574 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -41,7 +41,7 @@ Game release V0.10.0 · 60 danh mục, 573 bản ghi. Số liệu kinh tế và 
 | E – Assets & Lifestyle | `Vehicles.json` | 6 | Runtime prototype |
 | E – Assets & Lifestyle | `Furniture.json` | 5 | Runtime Housing & Interior |
 | E – Assets & Lifestyle | `Maintenance.json` | 4 | Seed cho phiên bản sau |
-| F – Finance & Economy | `Income_Types.json` | 9 | Lương/thưởng/thời vụ và thu lịch sử runtime, các nguồn khác seed |
+| F – Finance & Economy | `Income_Types.json` | 10 | Lương/thưởng/thời vụ và thu lịch sử runtime, các nguồn khác seed |
 | F – Finance & Economy | `Expense_Types.json` | 13 | Runtime Survival & Daily Activities |
 | F – Finance & Economy | `Banks.json` | 2 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Loan_Products.json` | 3 | Seed cho phiên bản sau |
@@ -107,3 +107,6 @@ Bổ sung 6 nhà tuyển dụng, mở rộng vị trí tại các nhà tuyển d
 
 ## V1.7.0
 Gắn mỗi Properties với Building_Instances và phí utilitiesMonthly; kích hoạt ba địa điểm nhà, bổ sung ba cửa/lịch/hành động, 1 nguồn thu bán nhà và 3 danh mục chi. Giữ 60 danh mục. Xem HOUSING.md.
+
+## V1.8.0
+Vehicles bổ sung capacity, consumption, unitPrice; tên BLD_BIKE đổi thành Cửa hàng phương tiện (giữ ID và tọa độ); Income_Types thêm INC_VEHICLE_SALE. Quy tắc nhiên liệu được kiểm tra khi build.

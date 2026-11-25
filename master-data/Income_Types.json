@@ -43,5 +43,10 @@
     "id": "INC_PROPERTY_SALE",
     "name": "Bán nhà",
     "description": "Tiền thu từ thanh lý bất động sản."
+  },
+  {
+    "id": "INC_VEHICLE_SALE",
+    "name": "Bán phương tiện",
+    "description": "Tiền thu thanh lý xe."
   }
 ]

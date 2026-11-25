@@ -1,5 +1,5 @@
 {
-  "version": "1.7.0",
+  "version": "1.8.0",
   "catalogs": {
     "Game_Config": {
       "prefix": "CFG",
@@ -334,7 +334,10 @@
         "speed": "positive",
         "energyType": "enum:none,petrol,electric",
         "maintenanceMonthly": "money",
-        "seats": "positiveInt"
+        "seats": "positiveInt",
+        "capacity": "nonnegative",
+        "consumption": "nonnegative",
+        "unitPrice": "money"
       }
     },
     "Furniture": {

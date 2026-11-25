@@ -1,5 +1,12 @@
 # Changelog
 
+## V0.11.0 — Vehicles & Transportation (2026-11-25)
+- 6 mẫu phương tiện, gara, mua/bán, lưu vị trí riêng, lên/xuống, điều khiển và tuyến tự động ưu tiên đường.
+- Nhiên liệu/pin, cứu hộ, bảo dưỡng định kỳ, nợ và giá trị giảm theo quãng đường; tích hợp sổ thu chi và tài sản ròng.
+- Xe buýt 6 điểm dừng, taxi, thanh toán trước và di chuyển trực tiếp.
+- Master Data V1.8.0 (60 danh mục, 574 bản ghi); tự bổ sung save cũ.
+- 143/143 tests, build và kiểm thử Chromium Canvas/storage mô phỏng; chưa xác minh WebGL, offline hoặc Vercel thật.
+
 ## V0.10.0 — Housing & Interior (2026-11-25)
 - Thị trường 5 loại nhà, thuê/mua/bán/trả nhà, đánh dấu nhà trên bản đồ.
 - Nội thất 2D top-down, đường đi trong phòng, ngủ, tắm, thư giãn, nấu ăn và tự học. 5 loại nội thất có thể mua.

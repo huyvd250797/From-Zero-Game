@@ -97,7 +97,7 @@
   },
   {
     "id": "BLD_BIKE",
-    "name": "Cửa hàng xe đạp",
+    "name": "Cửa hàng phương tiện",
     "legacyId": "bike",
     "type": "BTY_BIKE",
     "district": "DST_SERVICE",

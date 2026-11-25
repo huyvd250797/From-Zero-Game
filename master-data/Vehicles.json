@@ -6,7 +6,10 @@
     "speed": 12,
     "energyType": "none",
     "maintenanceMonthly": 10000,
-    "seats": 1
+    "seats": 1,
+    "capacity": 0,
+    "consumption": 0,
+    "unitPrice": 0
   },
   {
     "id": "VEH_MOTO",
@@ -15,7 +18,10 @@
     "speed": 20,
     "energyType": "petrol",
     "maintenanceMonthly": 200000,
-    "seats": 2
+    "seats": 2,
+    "capacity": 5,
+    "consumption": 0.003,
+    "unitPrice": 23000
   },
   {
     "id": "VEH_CAR",
@@ -24,7 +30,10 @@
     "speed": 30,
     "energyType": "petrol",
     "maintenanceMonthly": 1800000,
-    "seats": 5
+    "seats": 5,
+    "capacity": 45,
+    "consumption": 0.025,
+    "unitPrice": 23000
   },
   {
     "id": "VEH_EV",
@@ -33,7 +42,10 @@
     "speed": 30,
     "energyType": "electric",
     "maintenanceMonthly": 1500000,
-    "seats": 5
+    "seats": 5,
+    "capacity": 55,
+    "consumption": 0.035,
+    "unitPrice": 3500
   },
   {
     "id": "VEH_LUX",
@@ -42,7 +54,10 @@
     "speed": 32,
     "energyType": "petrol",
     "maintenanceMonthly": 4500000,
-    "seats": 5
+    "seats": 5,
+    "capacity": 60,
+    "consumption": 0.035,
+    "unitPrice": 23000
   },
   {
     "id": "VEH_TRUCK",
@@ -51,6 +66,9 @@
     "speed": 22,
     "energyType": "petrol",
     "maintenanceMonthly": 3000000,
-    "seats": 2
+    "seats": 2,
+    "capacity": 80,
+    "consumption": 0.05,
+    "unitPrice": 23000
   }
 ]

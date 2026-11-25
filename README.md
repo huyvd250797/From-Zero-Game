@@ -1,7 +1,17 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.10.0 — Housing & Interior**
+**V0.11.0 — Vehicles & Transportation**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 25 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.11.0 — Phương tiện & giao thông
+- Nút Phương tiện: Gara, Mua xe, Bảo dưỡng & năng lượng, Xe buýt / Taxi. 6 mẫu xe có thể mua, sở hữu tối đa một xe mỗi mẫu. Mua/bán tại cửa hàng phương tiện (địa chỉ cũ cửa hàng xe đạp), dùng tiền mặt. Xe mới đỗ tại cửa hàng; vị trí xe được lưu riêng với nhân vật.
+- Đến gần xe trong 2,5 đơn vị và chọn Lên xe hoặc phím B; B để đỗ và xuống xe. Nhấn WASD/joystick để lái; chọn địa điểm để tự đi ưu tiên mạng đường, khi đến công trình tự đỗ và mở tương tác. Marker xe và minimap cho biết vị trí đỗ. Có thể tự tìm đường đến xe từ gara.
+- Xe đạp không dùng nhiên liệu; xe máy, ô tô và xe tải dùng xăng; xe điện dùng pin. Tiêu hao theo quãng đường thực di chuyển. Trạm xăng ở kho logistics, trạm sạc tại trung tâm thương mại; nạp đầy tính tiền theo năng lượng còn thiếu. Hết năng lượng tự đỗ; cứu hộ tại chỗ khi dưới 10%, phí 30.000đ, nạp tới 15% sau 15 phút game.
+- Bảo dưỡng mỗi 30 ngày, phát sinh nợ nếu thiếu tiền. Giá trị xe cơ giới giảm theo quãng đường (tối thiểu 45% giá gốc); bán 90% giá trị hiện tại. Xe đạp giữ định giá cũ. Nợ không mất khi bán xe. Ghi sổ thu chi và tài sản ròng.
+- Xe buýt đi trực tiếp giữa 6 điểm dừng, 7.000đ/lượt; taxi giữa các địa điểm tương tác, 12.000đ + 120đ/đơn vị quãng đường. Di chuyển trên bản đồ; hủy chuyến không hoàn phí; tải lại giữa chuyến giữ vị trí cuối và không khôi phục hành trình đang chạy.
+- Save schema 1 tự bổ sung transport; xe đạp cũ chưa lưu vị trí được đặt tại vị trí nhân vật trong save. Không cần SQL. Xuất save trước cập nhật; rollback dùng bản lưu trước V0.11.0.
+- Master Data V1.8.0: 60 danh mục, 574 bản ghi. 143/143 test. Chi tiết tại docs/TRANSPORT.md.
+- Giới hạn: giao thông arcade, dùng va chạm điểm trung tâm với công trình; điều khiển tay chưa bắt buộc bám làn đường, chưa có va chạm xe/NPC, ô đỗ chuyên dụng, bằng lái, giao thông đèn tín hiệu, lịch tuyến buýt nhiều chặng hay hư hỏng từng bộ phận. Cơ sở tiếp năng lượng dùng công trình hiện có. Kiểm thử Chromium Canvas + storage mô phỏng; chưa xác minh WebGL thiết bị thật, offline, Vercel thực tế.
 
 ## V0.10.0 — Nhà ở & nội thất
 - Nút Nhà ở: Thị trường, Nơi ở của tôi, Nội thất. 5 loại nhà, 5 địa chỉ thực, 3 công trình nền được kích hoạt; giữ nguyên tọa độ và hình học thành phố.

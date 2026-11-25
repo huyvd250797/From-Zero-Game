@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "1.7.0",
+  "version": "1.8.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -657,7 +657,7 @@ export default {
       },
       {
         "id": "BLD_BIKE",
-        "name": "Cửa hàng xe đạp",
+        "name": "Cửa hàng phương tiện",
         "legacyId": "bike",
         "type": "BTY_BIKE",
         "district": "DST_SERVICE",
@@ -4516,7 +4516,10 @@ export default {
         "speed": 12,
         "energyType": "none",
         "maintenanceMonthly": 10000,
-        "seats": 1
+        "seats": 1,
+        "capacity": 0,
+        "consumption": 0,
+        "unitPrice": 0
       },
       {
         "id": "VEH_MOTO",
@@ -4525,7 +4528,10 @@ export default {
         "speed": 20,
         "energyType": "petrol",
         "maintenanceMonthly": 200000,
-        "seats": 2
+        "seats": 2,
+        "capacity": 5,
+        "consumption": 0.003,
+        "unitPrice": 23000
       },
       {
         "id": "VEH_CAR",
@@ -4534,7 +4540,10 @@ export default {
         "speed": 30,
         "energyType": "petrol",
         "maintenanceMonthly": 1800000,
-        "seats": 5
+        "seats": 5,
+        "capacity": 45,
+        "consumption": 0.025,
+        "unitPrice": 23000
       },
       {
         "id": "VEH_EV",
@@ -4543,7 +4552,10 @@ export default {
         "speed": 30,
         "energyType": "electric",
         "maintenanceMonthly": 1500000,
-        "seats": 5
+        "seats": 5,
+        "capacity": 55,
+        "consumption": 0.035,
+        "unitPrice": 3500
       },
       {
         "id": "VEH_LUX",
@@ -4552,7 +4564,10 @@ export default {
         "speed": 32,
         "energyType": "petrol",
         "maintenanceMonthly": 4500000,
-        "seats": 5
+        "seats": 5,
+        "capacity": 60,
+        "consumption": 0.035,
+        "unitPrice": 23000
       },
       {
         "id": "VEH_TRUCK",
@@ -4561,7 +4576,10 @@ export default {
         "speed": 22,
         "energyType": "petrol",
         "maintenanceMonthly": 3000000,
-        "seats": 2
+        "seats": 2,
+        "capacity": 80,
+        "consumption": 0.05,
+        "unitPrice": 23000
       }
     ],
     "Furniture": [
@@ -4671,6 +4689,11 @@ export default {
         "id": "INC_PROPERTY_SALE",
         "name": "Bán nhà",
         "description": "Tiền thu từ thanh lý bất động sản."
+      },
+      {
+        "id": "INC_VEHICLE_SALE",
+        "name": "Bán phương tiện",
+        "description": "Tiền thu thanh lý xe."
       }
     ],
     "Expense_Types": [
