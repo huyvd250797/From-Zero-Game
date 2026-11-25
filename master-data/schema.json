@@ -1,5 +1,5 @@
 {
-  "version": "1.9.0",
+  "version": "2.0.0",
   "catalogs": {
     "Game_Config": {
       "prefix": "CFG",
@@ -210,7 +210,12 @@
       "fields": {
         "minAge": "int:18:120",
         "minTrust": "pct",
-        "description": "text"
+        "description": "text",
+        "minAffection": "pct",
+        "minDays": "nonnegativeInt",
+        "minutes": "nonnegativeInt",
+        "cost": "money",
+        "dailyCost": "money"
       }
     },
     "Social_Reputation": {

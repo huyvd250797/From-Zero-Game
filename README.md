@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.12.0 — NPC & Social World**
+**V0.13.0 — Love, Marriage & Family**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 25 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.13.0 — Love, Marriage & Family
+- Nút Tình yêu & gia đình: Gia đình, Tình cảm, Con cái, Nhật ký; từ hồ sơ NPC có thể mở thẳng tình cảm. Một mối quan hệ tại một thời điểm, tình cảm riêng với tin tưởng; quan tâm, hẹn hò, quà, tỏ tình, đính hôn, kết hôn, mâu thuẫn, hòa giải, ly hôn.
+- Cần đồng thuận theo điểm tin tưởng/tình cảm, thời gian và nhà đủ sức chứa. Vợ/chồng dùng NPC hiện có, lịch về nhà đổi theo nơi ở của người chơi. Thành viên hiển thị trong nội thất 2D.
+- Kế hoạch đón con 270 ngày, tối đa 3 con; ID, tên, tuổi, chăm sóc, sức khỏe và chi phí. Chăm sóc tại nhà hoặc công viên hỗ trợ. Nợ và con vẫn giữ sau ly hôn; không tự mất quyền sở hữu nhà hay con.
+- Chi phí mỗi ngày, nợ gia đình, cảnh báo, EXP_FAMILY, tài sản ròng. Hạnh phúc gia đình và hậu quả bỏ bê. Master Data V2.0.0 (60 danh mục, 595 bản ghi); save schema 1 tự thêm family. Xem docs/FAMILY.md.
+- 177/177 tests, Chromium Canvas/storage mô phỏng, production build. Chưa xác minh WebGL, offline hoặc deploy thật; chưa có thu nhập riêng của vợ/chồng, phân chia tài sản khi ly hôn, AI trẻ em ngoài nhà hoặc giáo dục con. Mọi quy tắc kinh tế, gia đình là mô phỏng hư cấu.
 
 ## V0.12.0 — NPC & Social World
 - 16 NPC định danh, 6 tính cách, tên đầy đủ, tuổi, nghề, nhà, nơi làm/học, nơi thư giãn, màu áo riêng; lịch 24 giờ lặp mỗi ngày. Tìm đường A* cho 48 chặng, vị trí xác định theo thời gian game, không lưu đường đi rời rạc. NPC xuất hiện ở điểm công cộng bên ngoài công trình, không vào nội thất riêng.

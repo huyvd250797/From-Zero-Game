@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V1.9.0
+# From Zero — Canonical Master Data V2.0.0
 
-Game release V0.12.0 · 60 danh mục, 583 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.13.0 · 60 danh mục, 595 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -114,3 +114,7 @@ Vehicles bổ sung capacity, consumption, unitPrice; tên BLD_BIKE đổi thành
 ## V1.9.0
 - 16 NPC, thêm hồ sơ và lịch/địa điểm. Kiểm tra nơi ở, phân khu, giờ hoạt động và tham chiếu.
 - EXP_SOCIAL cho chi phí xã hội; 60 danh mục, 583 bản ghi.
+
+## V2.0.0
+- Mở rộng Family_Rules với điều kiện tình cảm, thời gian, phí và chi phí hằng ngày; thêm 11 quy tắc, giữ ID cũ.
+- EXP_FAMILY là danh mục chi tiêu mới. 60 danh mục, 595 bản ghi.

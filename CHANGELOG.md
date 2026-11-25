@@ -1,5 +1,12 @@
 # Changelog
 
+## V0.13.0 — Love, Marriage & Family (2026-11-25)
+- Tình cảm riêng với tin tưởng; hẹn hò, quà, tỏ tình, đính hôn, kết hôn, hòa giải, ly hôn.
+- Vợ/chồng đổi lịch về nhà; thành viên hiển thị trong nội thất. Kế hoạch đón con 270 ngày, hồ sơ, chăm sóc và tuổi tác.
+- Hạnh phúc, hậu quả bỏ bê, chi phí/nợ gia đình, EXP_FAMILY, báo cáo tài sản ròng; tự bổ sung save cũ.
+- Master Data V2.0.0 (60 danh mục, 595 bản ghi), 177/177 tests, build, kiểm thử Chromium Canvas/storage mô phỏng.
+- Chưa xác minh WebGL, PWA offline hay deploy Vercel thực tế.
+
 ## V0.12.0 — NPC & Social World (2026-11-25)
 - 16 NPC với hồ sơ, lịch sinh hoạt, tuyến đi lại, mô hình low-poly, nhãn bản đồ và chấm minimap.
 - Danh bạ, tìm/lọc, hồ sơ, gặp mặt, hội thoại theo ký ức, tin tưởng, uy tín, giúp đỡ, mâu thuẫn và hòa giải; nhận diện đồng nghiệp theo hợp đồng.

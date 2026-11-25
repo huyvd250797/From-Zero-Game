@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "1.9.0",
+  "version": "2.0.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -3354,7 +3354,7 @@ export default {
         "home": "BLD_DECOR_12",
         "homeDistrict": "DST_SERVICE",
         "workplace": "BLD_MARKET",
-        "leisure": "BLD_CAFE",
+        "leisure": "BLD_MALL",
         "workStart": 480,
         "workEnd": 960,
         "color": "#b9678b",
@@ -3543,21 +3543,168 @@ export default {
         "name": "Kết hôn",
         "minAge": 18,
         "minTrust": 75,
-        "description": "Hai NPC trưởng thành đồng thuận trong game."
+        "description": "Hai nhân vật trưởng thành đồng thuận, đã đính hôn và có nhà đủ sức chứa.",
+        "minAffection": 80,
+        "minDays": 7,
+        "minutes": 120,
+        "cost": 5000000,
+        "dailyCost": 45000
       },
       {
         "id": "FAM_CHILD",
         "name": "Nuôi con",
         "minAge": 18,
-        "minTrust": 0,
-        "description": "Phát sinh trách nhiệm chăm sóc."
+        "minTrust": 75,
+        "description": "Kế hoạch đón con tự nguyện; 270 ngày mô phỏng, cần nơi ở đủ sức chứa.",
+        "minAffection": 75,
+        "minDays": 270,
+        "minutes": 30,
+        "cost": 1000000,
+        "dailyCost": 35000
       },
       {
         "id": "FAM_SEPARATION",
         "name": "Chia tay",
         "minAge": 18,
         "minTrust": 0,
-        "description": "Giải quyết quan hệ và nghĩa vụ."
+        "description": "Chấm dứt quan hệ; con và nghĩa vụ chi phí vẫn được giữ.",
+        "minAffection": 0,
+        "minDays": 0,
+        "minutes": 30,
+        "cost": 0,
+        "dailyCost": 0
+      },
+      {
+        "id": "FAM_FLIRT",
+        "name": "Bày tỏ sự quan tâm",
+        "minAge": 18,
+        "minTrust": 30,
+        "minAffection": 0,
+        "minDays": 0,
+        "minutes": 15,
+        "cost": 0,
+        "dailyCost": 0,
+        "description": "Tăng tình cảm với một NPC đã quen."
+      },
+      {
+        "id": "FAM_DATE",
+        "name": "Hẹn hò đi dạo",
+        "minAge": 18,
+        "minTrust": 30,
+        "minAffection": 0,
+        "minDays": 0,
+        "minutes": 60,
+        "cost": 0,
+        "dailyCost": 0,
+        "description": "Đi dạo cùng người đang tìm hiểu tại vị trí gặp mặt."
+      },
+      {
+        "id": "FAM_GIFT",
+        "name": "Tặng quà",
+        "minAge": 18,
+        "minTrust": 30,
+        "minAffection": 0,
+        "minDays": 0,
+        "minutes": 10,
+        "cost": 100000,
+        "dailyCost": 0,
+        "description": "Mua và tặng quà trực tiếp."
+      },
+      {
+        "id": "FAM_CONFESS",
+        "name": "Tỏ tình",
+        "minAge": 18,
+        "minTrust": 50,
+        "minAffection": 45,
+        "minDays": 2,
+        "minutes": 15,
+        "cost": 0,
+        "dailyCost": 0,
+        "description": "NPC đồng ý khi đủ điều kiện."
+      },
+      {
+        "id": "FAM_PROPOSE",
+        "name": "Cầu hôn",
+        "minAge": 18,
+        "minTrust": 75,
+        "minAffection": 80,
+        "minDays": 7,
+        "minutes": 30,
+        "cost": 500000,
+        "dailyCost": 0,
+        "description": "Đính hôn nếu đủ điều kiện."
+      },
+      {
+        "id": "FAM_TIME",
+        "name": "Dành thời gian cho gia đình",
+        "minAge": 18,
+        "minTrust": 0,
+        "minAffection": 0,
+        "minDays": 0,
+        "minutes": 60,
+        "cost": 0,
+        "dailyCost": 0,
+        "description": "Sinh hoạt chung tại nhà."
+      },
+      {
+        "id": "FAM_ARGUMENT",
+        "name": "Cãi vã",
+        "minAge": 18,
+        "minTrust": 0,
+        "minAffection": 0,
+        "minDays": 0,
+        "minutes": 10,
+        "cost": 0,
+        "dailyCost": 0,
+        "description": "Mâu thuẫn ảnh hưởng tình cảm."
+      },
+      {
+        "id": "FAM_RECONCILE",
+        "name": "Hòa giải",
+        "minAge": 18,
+        "minTrust": 0,
+        "minAffection": 0,
+        "minDays": 0,
+        "minutes": 30,
+        "cost": 0,
+        "dailyCost": 0,
+        "description": "Giải quyết mâu thuẫn."
+      },
+      {
+        "id": "FAM_CARE",
+        "name": "Chăm sóc con",
+        "minAge": 18,
+        "minTrust": 0,
+        "minAffection": 0,
+        "minDays": 0,
+        "minutes": 45,
+        "cost": 0,
+        "dailyCost": 0,
+        "description": "Chăm sóc tại nhà hoặc khu hỗ trợ."
+      },
+      {
+        "id": "FAM_DATE_CAFE",
+        "name": "Hẹn hò tại quán cà phê",
+        "minAge": 18,
+        "minTrust": 30,
+        "minAffection": 0,
+        "minDays": 0,
+        "minutes": 60,
+        "cost": 70000,
+        "dailyCost": 0,
+        "description": "Cả hai có mặt gần địa điểm, đủ giờ phục vụ."
+      },
+      {
+        "id": "FAM_DATE_CINEMA",
+        "name": "Hẹn hò xem phim",
+        "minAge": 18,
+        "minTrust": 30,
+        "minAffection": 0,
+        "minDays": 0,
+        "minutes": 120,
+        "cost": 200000,
+        "dailyCost": 0,
+        "description": "Cả hai có mặt gần địa điểm, đủ giờ phục vụ."
       }
     ],
     "Social_Reputation": [
@@ -4998,6 +5145,11 @@ export default {
         "id": "EXP_SOCIAL",
         "name": "Quan hệ xã hội",
         "description": "Chi phí giúp đỡ và giao lưu xã hội."
+      },
+      {
+        "id": "EXP_FAMILY",
+        "name": "Gia đình",
+        "description": "Đám cưới, hẹn hò, nuôi con và sinh hoạt gia đình."
       }
     ],
     "Banks": [

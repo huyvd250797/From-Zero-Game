@@ -183,7 +183,7 @@
     "home": "BLD_DECOR_12",
     "homeDistrict": "DST_SERVICE",
     "workplace": "BLD_MARKET",
-    "leisure": "BLD_CAFE",
+    "leisure": "BLD_MALL",
     "workStart": 480,
     "workEnd": 960,
     "color": "#b9678b",
