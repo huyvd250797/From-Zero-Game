@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "catalogs": {
     "Game_Config": {
       "prefix": "CFG",
@@ -73,20 +73,27 @@
       "fields": {
         "size": "positiveInt",
         "currency": "enum:VND",
-        "description": "text"
+        "description": "text",
+        "chunkSize": "positiveInt"
       }
     },
     "Districts": {
       "prefix": "DST",
       "fields": {
         "city": "ref:Cities",
-        "description": "text"
+        "description": "text",
+        "minX": "nonnegative",
+        "minZ": "nonnegative",
+        "maxX": "nonnegative",
+        "maxZ": "nonnegative",
+        "color": "color"
       }
     },
     "Building_Types": {
       "prefix": "BTY",
       "fields": {
-        "description": "text"
+        "description": "text",
+        "style": "enum:retail,rowhouse,park,tower,civic,medical,school,industrial,house,farm,sport,parking"
       }
     },
     "Building_Instances": {
@@ -112,7 +119,9 @@
         "city": "ref:Cities",
         "axis": "enum:x,z",
         "center": "positive",
-        "width": "positive"
+        "width": "positive",
+        "lanes": "positiveInt",
+        "kind": "enum:local,avenue"
       }
     },
     "Navigation_Nodes": {

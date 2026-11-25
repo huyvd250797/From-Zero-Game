@@ -2,71 +2,145 @@
   {
     "id": "BTY_SHOP",
     "name": "Cửa hàng",
-    "description": "Nhu yếu phẩm và việc làm."
+    "description": "Nhu yếu phẩm và việc làm.",
+    "style": "retail"
   },
   {
     "id": "BTY_ROOM",
     "name": "Phòng trọ",
-    "description": "Nơi nghỉ ngơi."
+    "description": "Nơi nghỉ ngơi.",
+    "style": "rowhouse"
   },
   {
     "id": "BTY_CAFE",
     "name": "Cà phê",
-    "description": "Gặp gỡ và giải trí."
+    "description": "Gặp gỡ và giải trí.",
+    "style": "retail"
   },
   {
     "id": "BTY_PARK",
     "name": "Công viên",
-    "description": "Không gian công cộng."
+    "description": "Không gian công cộng.",
+    "style": "park"
   },
   {
     "id": "BTY_OFFICE",
     "name": "Văn phòng",
-    "description": "Nơi làm việc."
+    "description": "Nơi làm việc.",
+    "style": "tower"
   },
   {
     "id": "BTY_BANK",
     "name": "Ngân hàng",
-    "description": "Dịch vụ tài chính."
+    "description": "Dịch vụ tài chính.",
+    "style": "civic"
   },
   {
     "id": "BTY_BIKE",
     "name": "Cửa hàng xe",
-    "description": "Mua phương tiện."
+    "description": "Mua phương tiện.",
+    "style": "retail"
   },
   {
     "id": "BTY_CLINIC",
     "name": "Phòng khám",
-    "description": "Chăm sóc sức khỏe."
+    "description": "Chăm sóc sức khỏe.",
+    "style": "medical"
   },
   {
     "id": "BTY_DECOR",
     "name": "Công trình nền",
-    "description": "Trang trí thành phố."
+    "description": "Trang trí thành phố.",
+    "style": "rowhouse"
   },
   {
     "id": "BTY_SCHOOL",
     "name": "Trường học",
-    "description": "Đào tạo."
+    "description": "Đào tạo.",
+    "style": "school"
   },
   {
     "id": "BTY_COURT",
     "name": "Tòa án",
-    "description": "Xét xử."
+    "description": "Xét xử.",
+    "style": "civic"
   },
   {
     "id": "BTY_PRISON",
     "name": "Nhà tù",
-    "description": "Thi hành án."
+    "description": "Thi hành án.",
+    "style": "industrial"
   },
   {
     "id": "BTY_HOUSE",
     "name": "Nhà ở",
-    "description": "Nhà có thể sở hữu."
+    "description": "Nhà có thể sở hữu.",
+    "style": "house"
   },
   {
     "id": "BTY_FACTORY",
     "name": "Nhà máy",
-    "description": "Sản xuất."
+    "description": "Sản xuất.",
+    "style": "industrial"
+  },
+  {
+    "id": "BTY_MALL",
+    "name": "Trung tâm thương mại",
+    "description": "Mua sắm và dịch vụ.",
+    "style": "retail"
+  },
+  {
+    "id": "BTY_APARTMENT",
+    "name": "Chung cư",
+    "description": "Nhà ở cao tầng.",
+    "style": "tower"
+  },
+  {
+    "id": "BTY_WAREHOUSE",
+    "name": "Kho hàng",
+    "description": "Logistics.",
+    "style": "industrial"
+  },
+  {
+    "id": "BTY_LIBRARY",
+    "name": "Thư viện",
+    "description": "Đọc và học tập.",
+    "style": "school"
+  },
+  {
+    "id": "BTY_HOSPITAL",
+    "name": "Bệnh viện",
+    "description": "Chăm sóc y tế.",
+    "style": "medical"
+  },
+  {
+    "id": "BTY_POLICE",
+    "name": "Công an",
+    "description": "Dịch vụ công.",
+    "style": "civic"
+  },
+  {
+    "id": "BTY_FARM",
+    "name": "Nông trại",
+    "description": "Sản xuất nông nghiệp.",
+    "style": "farm"
+  },
+  {
+    "id": "BTY_SPORT",
+    "name": "Thể thao",
+    "description": "Rèn luyện thể chất.",
+    "style": "sport"
+  },
+  {
+    "id": "BTY_CITYHALL",
+    "name": "Trung tâm hành chính",
+    "description": "Dịch vụ công.",
+    "style": "civic"
+  },
+  {
+    "id": "BTY_GARAGE",
+    "name": "Bãi đỗ xe",
+    "description": "Đỗ phương tiện.",
+    "style": "parking"
   }
 ]

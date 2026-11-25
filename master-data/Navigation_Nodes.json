@@ -61,5 +61,103 @@
     "city": "CTY_ANLAC",
     "x": 70,
     "z": 64
+  },
+  {
+    "id": "NAV_MALL",
+    "name": "Lối vào Trung tâm thương mại Ánh Dương",
+    "city": "CTY_ANLAC",
+    "x": 128,
+    "z": 42
+  },
+  {
+    "id": "NAV_MARKET",
+    "name": "Lối vào Siêu thị An Lạc",
+    "city": "CTY_ANLAC",
+    "x": 128,
+    "z": 73
+  },
+  {
+    "id": "NAV_FACTORY",
+    "name": "Lối vào Nhà máy Đông An",
+    "city": "CTY_ANLAC",
+    "x": 160,
+    "z": 42
+  },
+  {
+    "id": "NAV_WAREHOUSE",
+    "name": "Lối vào Kho logistics",
+    "city": "CTY_ANLAC",
+    "x": 160,
+    "z": 74
+  },
+  {
+    "id": "NAV_SCHOOL",
+    "name": "Lối vào Trường nghề An Lạc",
+    "city": "CTY_ANLAC",
+    "x": 32,
+    "z": 138
+  },
+  {
+    "id": "NAV_LIBRARY",
+    "name": "Lối vào Thư viện thành phố",
+    "city": "CTY_ANLAC",
+    "x": 64,
+    "z": 137
+  },
+  {
+    "id": "NAV_FARM",
+    "name": "Lối vào Nông trại Bình An",
+    "city": "CTY_ANLAC",
+    "x": 32,
+    "z": 170
+  },
+  {
+    "id": "NAV_SPORT",
+    "name": "Lối vào Sân thể thao",
+    "city": "CTY_ANLAC",
+    "x": 64,
+    "z": 170
+  },
+  {
+    "id": "NAV_CITYHALL",
+    "name": "Lối vào Trung tâm hành chính",
+    "city": "CTY_ANLAC",
+    "x": 128,
+    "z": 138
+  },
+  {
+    "id": "NAV_COURT",
+    "name": "Lối vào Tòa án An Lạc",
+    "city": "CTY_ANLAC",
+    "x": 128,
+    "z": 169
+  },
+  {
+    "id": "NAV_HOSPITAL",
+    "name": "Lối vào Bệnh viện An Lạc",
+    "city": "CTY_ANLAC",
+    "x": 160,
+    "z": 138
+  },
+  {
+    "id": "NAV_APARTMENT",
+    "name": "Lối vào Chung cư Bình Minh",
+    "city": "CTY_ANLAC",
+    "x": 160,
+    "z": 170
+  },
+  {
+    "id": "NAV_PARK_EAST",
+    "name": "Lối vào Công viên phía Đông",
+    "city": "CTY_ANLAC",
+    "x": 160,
+    "z": 105
+  },
+  {
+    "id": "NAV_POLICE",
+    "name": "Lối vào Công an thành phố",
+    "city": "CTY_ANLAC",
+    "x": 128,
+    "z": 105
   }
 ]

@@ -5,7 +5,9 @@
     "city": "CTY_ANLAC",
     "axis": "x",
     "center": 16,
-    "width": 7
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
   },
   {
     "id": "ROD_X_48",
@@ -13,7 +15,9 @@
     "city": "CTY_ANLAC",
     "axis": "x",
     "center": 48,
-    "width": 7
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
   },
   {
     "id": "ROD_X_80",
@@ -21,7 +25,9 @@
     "city": "CTY_ANLAC",
     "axis": "x",
     "center": 80,
-    "width": 7
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
   },
   {
     "id": "ROD_Z_16",
@@ -29,7 +35,9 @@
     "city": "CTY_ANLAC",
     "axis": "z",
     "center": 16,
-    "width": 7
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
   },
   {
     "id": "ROD_Z_48",
@@ -37,7 +45,9 @@
     "city": "CTY_ANLAC",
     "axis": "z",
     "center": 48,
-    "width": 7
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
   },
   {
     "id": "ROD_Z_80",
@@ -45,6 +55,68 @@
     "city": "CTY_ANLAC",
     "axis": "z",
     "center": 80,
-    "width": 7
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
+  },
+  {
+    "id": "ROD_X_112",
+    "name": "Đại lộ X 112",
+    "city": "CTY_ANLAC",
+    "axis": "x",
+    "center": 112,
+    "width": 9,
+    "lanes": 4,
+    "kind": "avenue"
+  },
+  {
+    "id": "ROD_X_144",
+    "name": "Đại lộ X 144",
+    "city": "CTY_ANLAC",
+    "axis": "x",
+    "center": 144,
+    "width": 11,
+    "lanes": 4,
+    "kind": "avenue"
+  },
+  {
+    "id": "ROD_X_176",
+    "name": "Đường X 176",
+    "city": "CTY_ANLAC",
+    "axis": "x",
+    "center": 176,
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
+  },
+  {
+    "id": "ROD_Z_112",
+    "name": "Đại lộ Z 112",
+    "city": "CTY_ANLAC",
+    "axis": "z",
+    "center": 112,
+    "width": 9,
+    "lanes": 4,
+    "kind": "avenue"
+  },
+  {
+    "id": "ROD_Z_144",
+    "name": "Đại lộ Z 144",
+    "city": "CTY_ANLAC",
+    "axis": "z",
+    "center": 144,
+    "width": 11,
+    "lanes": 4,
+    "kind": "avenue"
+  },
+  {
+    "id": "ROD_Z_176",
+    "name": "Đường Z 176",
+    "city": "CTY_ANLAC",
+    "axis": "z",
+    "center": 176,
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
   }
 ]

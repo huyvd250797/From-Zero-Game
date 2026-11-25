@@ -2,8 +2,9 @@
   {
     "id": "CTY_ANLAC",
     "name": "An Lạc",
-    "size": 96,
+    "size": 192,
     "currency": "VND",
-    "description": "Thành phố Việt Nam giả tưởng."
+    "description": "Thành phố An Lạc mở rộng, gồm 10 khu chức năng.",
+    "chunkSize": 32
   }
 ]

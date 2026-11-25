@@ -1,38 +1,112 @@
 [
   {
-    "id": "DST_CENTER",
-    "name": "Trung tâm",
-    "city": "CTY_ANLAC",
-    "description": "Khu thử nghiệm hiện tại."
-  },
-  {
     "id": "DST_RESIDENTIAL",
     "name": "Dân cư",
     "city": "CTY_ANLAC",
-    "description": "Nhà ở và dịch vụ."
+    "description": "Nhà trọ, nhà phố và sinh hoạt.",
+    "minX": 0,
+    "minZ": 0,
+    "maxX": 48,
+    "maxZ": 48,
+    "color": "#a6bc92"
+  },
+  {
+    "id": "DST_CENTER",
+    "name": "Trung tâm",
+    "city": "CTY_ANLAC",
+    "description": "Văn phòng và ngân hàng.",
+    "minX": 48,
+    "minZ": 0,
+    "maxX": 96,
+    "maxZ": 48,
+    "color": "#a9bec1"
+  },
+  {
+    "id": "DST_LEISURE",
+    "name": "Giải trí",
+    "city": "CTY_ANLAC",
+    "description": "Công viên và khu vui chơi.",
+    "minX": 0,
+    "minZ": 48,
+    "maxX": 48,
+    "maxZ": 96,
+    "color": "#8fb485"
+  },
+  {
+    "id": "DST_SERVICE",
+    "name": "Dịch vụ",
+    "city": "CTY_ANLAC",
+    "description": "Cửa hàng và phòng khám.",
+    "minX": 48,
+    "minZ": 48,
+    "maxX": 96,
+    "maxZ": 96,
+    "color": "#bcb99e"
+  },
+  {
+    "id": "DST_COMMERCIAL",
+    "name": "Thương mại",
+    "city": "CTY_ANLAC",
+    "description": "Siêu thị, thương mại và văn phòng.",
+    "minX": 96,
+    "minZ": 0,
+    "maxX": 144,
+    "maxZ": 96,
+    "color": "#c8bd9e"
   },
   {
     "id": "DST_INDUSTRIAL",
     "name": "Công nghiệp",
     "city": "CTY_ANLAC",
-    "description": "Nhà máy và kho."
+    "description": "Nhà máy, kho và logistics.",
+    "minX": 144,
+    "minZ": 0,
+    "maxX": 192,
+    "maxZ": 96,
+    "color": "#b5b3a4"
   },
   {
     "id": "DST_EDUCATION",
     "name": "Giáo dục",
     "city": "CTY_ANLAC",
-    "description": "Trường và trung tâm."
+    "description": "Trường học, thư viện và đào tạo.",
+    "minX": 0,
+    "minZ": 96,
+    "maxX": 96,
+    "maxZ": 144,
+    "color": "#b1b8c7"
   },
   {
     "id": "DST_OUTSKIRTS",
     "name": "Ngoại ô",
     "city": "CTY_ANLAC",
-    "description": "Đất và nông trại."
+    "description": "Nông trại, nhà vườn và không gian xanh.",
+    "minX": 0,
+    "minZ": 144,
+    "maxX": 96,
+    "maxZ": 192,
+    "color": "#9dbd83"
   },
   {
     "id": "DST_CIVIC",
     "name": "Hành chính",
     "city": "CTY_ANLAC",
-    "description": "Tòa án và dịch vụ công."
+    "description": "Tòa án, hành chính, công an và nhà tù.",
+    "minX": 96,
+    "minZ": 96,
+    "maxX": 144,
+    "maxZ": 192,
+    "color": "#b4b9be"
+  },
+  {
+    "id": "DST_HEALTH",
+    "name": "Y tế & dân cư mới",
+    "city": "CTY_ANLAC",
+    "description": "Bệnh viện và khu căn hộ mới.",
+    "minX": 144,
+    "minZ": 96,
+    "maxX": 192,
+    "maxZ": 192,
+    "color": "#a8c4b6"
   }
 ]

@@ -12,7 +12,7 @@ export async function loadMaster(root=path.join(base,'master-data')){
 }
 export function validateMaster(schema,data){
  const errors=[],err=(p,m)=>errors.push(`${p}: ${m}`), ids=new Map();
- if(schema?.version!=='1.0.0'||!schema.catalogs||Object.keys(schema.catalogs).length!==60){return ['Schema phải là 1.0.0 và có 60 danh mục'];}
+ if(schema?.version!=='1.1.0'||!schema.catalogs||Object.keys(schema.catalogs).length!==60){return ['Schema phải là 1.1.0 và có 60 danh mục'];}
  for(const k of Object.keys(data))if(!Object.hasOwn(schema.catalogs,k))err(k,'Danh mục ngoài schema');
  for(const [key,s] of Object.entries(schema.catalogs)){
   if(!/^[A-Z][A-Z0-9]*$/.test(s.prefix)||!s.fields||typeof s.fields!=='object'){err(key,'Schema không hợp lệ');continue}
@@ -51,14 +51,21 @@ export function validateMaster(schema,data){
  const cfg=get('Game_Config','CFG_DEFAULT'),city=get('Cities','CTY_ANLAC');
  if(!cfg||!city)err('Foundation','Thiếu CFG_DEFAULT hoặc CTY_ANLAC');
  if(cfg&&city){
-  if(city.size!==96)err('Cities','Renderer prototype hiện hỗ trợ kích thước 96');
-  each('Road_Network',(r,p)=>{if(r.width!==7)err(p,'Renderer prototype hiện hỗ trợ đường rộng 7')});
+  if(city.size>512||city.size%city.chunkSize||city.chunkSize<16||city.chunkSize>64)err('Cities','Kích thước thành phố/chunk không hợp lệ');
+  each('Road_Network',(r,p)=>{if(r.width<4||r.width>16||r.center-r.width/2<0||r.center+r.width/2>city.size||r.lanes!==(r.kind==='avenue'?4:2))err(p,'Hình học hoặc loại đường không hợp lệ')});
+  const districts=data.Districts.filter(r=>r.city===city.id);let area=0;
+  for(const d of districts){if(d.minX>=d.maxX||d.minZ>=d.maxZ||d.maxX>city.size||d.maxZ>city.size)err(d.id,'Ranh giới phân khu sai');area+=(d.maxX-d.minX)*(d.maxZ-d.minZ);for(const q of districts)if(q.id!==d.id&&d.minX<q.maxX&&d.maxX>q.minX&&d.minZ<q.maxZ&&d.maxZ>q.minZ)err(d.id,'Phân khu chồng lấn');}
+  if(area!==city.size**2)err('Districts','Phân khu chưa phủ kín thành phố');
   for(const f of ['energy','hunger','happy'])if(cfg[f]!==get('Character_Attributes','ATR_'+f.toUpperCase())?.initial)err('Game_Config',`Chỉ số ${f} không đồng nhất`);
   if(cfg.bikeSpeed!==get('Vehicles','VEH_BIKE')?.speed)err('Game_Config','Tốc độ xe đạp không đồng nhất');
   const solid=data.Building_Instances.filter(b=>b.h>0);const walk=(x,z)=>x>=1&&z>=1&&x<=city.size-1&&z<=city.size-1&&!solid.some(b=>Math.abs(x-b.x)<b.w/2+.65&&Math.abs(z-b.z)<b.d/2+.65);
   each('Navigation_Nodes',(r,p)=>{if(r.city===city.id&&!walk(r.x,r.z))err(p,'Điểm điều hướng nằm ngoài vùng đi bộ')});
   each('Building_Instances',(r,p)=>{if(r.x-r.w/2<0||r.z-r.d/2<0||r.x+r.w/2>city.size||r.z+r.d/2>city.size)err(p,'Ngoài bản đồ');if(r.interactive!==!!r.door)err(p,'Điểm cửa không phù hợp');if(r.interactive&&!data.Location_Actions.some(a=>a.building===r.id))err(p,'Thiếu hành động');});
-  const x=data.Road_Network.filter(r=>r.axis==='x').map(r=>r.center).sort((a,b)=>a-b),z=data.Road_Network.filter(r=>r.axis==='z').map(r=>r.center).sort((a,b)=>a-b);if(JSON.stringify(x)!==JSON.stringify(z)||new Set(x).size!==x.length||x.some(n=>n>=city.size))err('Road_Network','Renderer prototype yêu cầu trục đối xứng, không trùng và nằm trong bản đồ');
+  const roadRows=data.Road_Network.filter(r=>r.city===city.id);
+  for(const axis of ['x','z']){const lines=roadRows.filter(r=>r.axis===axis).sort((a,b)=>a.center-b.center);if(!lines.length)err('Road_Network','Thiếu trục đường');for(let i=1;i<lines.length;i++)if(lines[i].center-lines[i-1].center<(lines[i].width+lines[i-1].width)/2+2)err('Road_Network','Đường cùng trục chồng lấn');}
+  each('Building_Instances',(r,p)=>{const d=get('Districts',r.district);if(d.city!==city.id||r.x<d.minX||r.x>=d.maxX||r.z<d.minZ||r.z>=d.maxZ)err(p,'Sai phân khu');if(r.h>40||r.w>32||r.d>32)err(p,'Kích thước công trình vượt giới hạn renderer');if(roadRows.some(q=>Math.abs((q.axis==='x'?r.x:r.z)-q.center)<q.width/2+(q.axis==='x'?r.w:r.d)/2))err(p,'Công trình lấn đường');if(r.door){const n=get('Navigation_Nodes',r.door);if(n.city!==d.city||Math.hypot(n.x-r.x,n.z-r.z)>Math.hypot(r.w,r.d)/2+5)err(p,'Lối vào không hợp lệ');}});
+  for(let i=0;i<data.Building_Instances.length;i++)for(let j=i+1;j<data.Building_Instances.length;j++){const a=data.Building_Instances[i],b=data.Building_Instances[j];if(Math.abs(a.x-b.x)<(a.w+b.w)/2&&Math.abs(a.z-b.z)<(a.d+b.d)/2)err(a.id,'Công trình chồng lấn '+b.id);}
+
  }
  each('Location_Actions',(r,p)=>{
   if(!get('Building_Instances',r.building).interactive)err(p,'Không thể tương tác công trình nền');

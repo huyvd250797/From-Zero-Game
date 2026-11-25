@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V1.0.0
+# From Zero — Canonical Master Data V1.1.0
 
-Game release V0.2.0 · 60 danh mục, 393 bản ghi seed. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.3.0 · 60 danh mục, 499 bản ghi seed. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -14,13 +14,13 @@ Game release V0.2.0 · 60 danh mục, 393 bản ghi seed. Số liệu kinh tế 
 | A – Foundation | `Life_Stages.json` | 4 | Seed cho phiên bản sau |
 | A – Foundation | `Needs_Rules.json` | 2 | Runtime prototype |
 | B – World & City | `Cities.json` | 1 | Runtime prototype |
-| B – World & City | `Districts.json` | 6 | Tham chiếu/kiểm tra |
-| B – World & City | `Building_Types.json` | 14 | Tham chiếu/kiểm tra |
-| B – World & City | `Building_Instances.json` | 21 | Runtime prototype |
-| B – World & City | `Road_Network.json` | 6 | Runtime prototype |
-| B – World & City | `Navigation_Nodes.json` | 9 | Runtime prototype |
+| B – World & City | `Districts.json` | 10 | Runtime City Engine |
+| B – World & City | `Building_Types.json` | 24 | Runtime City Engine |
+| B – World & City | `Building_Instances.json` | 79 | Runtime City Engine |
+| B – World & City | `Road_Network.json` | 12 | Runtime City Engine |
+| B – World & City | `Navigation_Nodes.json` | 23 | Runtime City Engine |
 | B – World & City | `World_Schedules.json` | 8 | Seed cho phiên bản sau |
-| B – World & City | `Location_Actions.json` | 11 | Runtime prototype |
+| B – World & City | `Location_Actions.json` | 25 | Runtime City Engine |
 | C – Character & Social | `NPC_Master.json` | 8 | Seed cho phiên bản sau |
 | C – Character & Social | `Relationships.json` | 5 | Seed cho phiên bản sau |
 | C – Character & Social | `Relationship_Events.json` | 4 | Seed cho phiên bản sau |
@@ -84,4 +84,10 @@ Roadmap trước ghi 60 nhưng liệt kê 65 tên. Giữ 60 danh mục vật lý
 - Runtime state và schema save v1 độc lập với master schema 1.0.0. Không ghi runtime state vào JSON.
 
 ## Phạm vi phiên bản
-Các danh mục seed chưa phải bộ nội dung đầy đủ V1.0.0. NPC chưa có hành vi AI từ seed; chưa mở mua nhà/ô tô, pháp luật, kinh doanh, đầu tư, cốt truyện đa nhánh. Điều kiện kết thúc hiện là mô tả, chưa phải biểu thức được engine thực thi. Tốc độ và hình học của renderer vẫn giới hạn bản đồ prototype 96×96. Giá trị cần playtest và cân bằng trước khi đóng băng nội dung.
+Các danh mục seed chưa phải bộ nội dung đầy đủ V1.1.0. NPC chưa có hành vi AI từ seed; chưa mở mua nhà/ô tô, pháp luật, kinh doanh, đầu tư, cốt truyện đa nhánh. Điều kiện kết thúc hiện là mô tả, chưa phải biểu thức được engine thực thi. Tốc độ và hình học của renderer vẫn giới hạn bản đồ prototype 96×96. Giá trị cần playtest và cân bằng trước khi đóng băng nội dung.
+
+## City Engine V0.3.0
+- Schema 1.1.0 bổ sung Cities.chunkSize; Districts.minX/minZ/maxX/maxZ/color; Building_Types.style; Road_Network.lanes/kind.
+- Kích thước 192×192; chunk 32×32; 10 phân khu phủ kín bản đồ. 79 khu/công trình (62 có chiều cao), 24 loại, 12 đường, 23 điểm điều hướng, 25 hoạt động.
+- Giữ ID, cửa và vị trí của các địa điểm V0.2.0; thu chiều sâu BLD_DECOR_03 từ 12 xuống 11 để không lấn đường.
+- Các hành động mới chỉ tham quan, chưa có hệ thống nghiệp vụ đầy đủ.
