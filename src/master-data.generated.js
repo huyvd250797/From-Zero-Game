@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "1.6.0",
+  "version": "1.7.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -1377,35 +1377,35 @@ export default {
       },
       {
         "id": "BLD_LOT_36_100",
-        "name": "Nhà ở 36-100",
+        "name": "Nhà nhỏ An Bình",
         "legacyId": "lot_36_100",
         "type": "BTY_HOUSE",
         "district": "DST_EDUCATION",
-        "icon": "",
+        "icon": "⌂",
         "x": 36,
         "z": 100,
         "w": 6,
         "d": 6,
         "h": 3,
         "color": "#dfc3a4",
-        "door": null,
-        "interactive": false
+        "door": "NAV_HOME_SMALL",
+        "interactive": true
       },
       {
         "id": "BLD_LOT_60_100",
-        "name": "Nhà ở 60-100",
+        "name": "Nhà phố Hòa Phát",
         "legacyId": "lot_60_100",
         "type": "BTY_HOUSE",
         "district": "DST_EDUCATION",
-        "icon": "",
+        "icon": "⌂",
         "x": 60,
         "z": 100,
         "w": 5,
         "d": 5,
         "h": 6,
         "color": "#dfc3a4",
-        "door": null,
-        "interactive": false
+        "door": "NAV_HOME_TOWN",
+        "interactive": true
       },
       {
         "id": "BLD_LOT_68_100",
@@ -1713,19 +1713,19 @@ export default {
       },
       {
         "id": "BLD_LOT_60_188",
-        "name": "Nhà ở 60-188",
+        "name": "Biệt thự Vườn Xanh",
         "legacyId": "lot_60_188",
         "type": "BTY_HOUSE",
         "district": "DST_OUTSKIRTS",
-        "icon": "",
+        "icon": "⌂",
         "x": 60,
         "z": 188,
         "w": 6,
         "d": 5,
         "h": 4,
         "color": "#dfc3a4",
-        "door": null,
-        "interactive": false
+        "door": "NAV_HOME_VILLA",
+        "interactive": true
       },
       {
         "id": "BLD_LOT_68_188",
@@ -2107,6 +2107,27 @@ export default {
         "city": "CTY_ANLAC",
         "x": 128,
         "z": 105
+      },
+      {
+        "id": "NAV_HOME_SMALL",
+        "name": "Lối vào Nhà nhỏ An Bình",
+        "city": "CTY_ANLAC",
+        "x": 36,
+        "z": 105
+      },
+      {
+        "id": "NAV_HOME_TOWN",
+        "name": "Lối vào Nhà phố Hòa Phát",
+        "city": "CTY_ANLAC",
+        "x": 60,
+        "z": 105
+      },
+      {
+        "id": "NAV_HOME_VILLA",
+        "name": "Lối vào Biệt thự Vườn Xanh",
+        "city": "CTY_ANLAC",
+        "x": 60,
+        "z": 183
       }
     ],
     "World_Schedules": [
@@ -2261,6 +2282,27 @@ export default {
         "id": "SCH_POLICE",
         "name": "Công an thành phố",
         "building": "BLD_POLICE",
+        "opens": 0,
+        "closes": 1440
+      },
+      {
+        "id": "SCH_HOME_SMALL",
+        "name": "Nhà nhỏ An Bình",
+        "building": "BLD_LOT_36_100",
+        "opens": 0,
+        "closes": 1440
+      },
+      {
+        "id": "SCH_HOME_TOWN",
+        "name": "Nhà phố Hòa Phát",
+        "building": "BLD_LOT_60_100",
+        "opens": 0,
+        "closes": 1440
+      },
+      {
+        "id": "SCH_HOME_VILLA",
+        "name": "Biệt thự Vườn Xanh",
+        "building": "BLD_LOT_60_188",
         "opens": 0,
         "closes": 1440
       }
@@ -3064,6 +3106,66 @@ export default {
         "hygiene": 0,
         "health": 35,
         "stress": -10,
+        "hydration": 0
+      },
+      {
+        "id": "ACT_HOME_SMALL",
+        "legacyId": "visit_home_small",
+        "name": "Xem khu nhà",
+        "building": "BLD_LOT_36_100",
+        "detail": "5 phút · tham quan bên ngoài",
+        "cash": 0,
+        "time": 5,
+        "rule": "none",
+        "job": null,
+        "asset": null,
+        "log": "Tham quan Nhà nhỏ An Bình.",
+        "energy": 0,
+        "hunger": 0,
+        "happy": 0,
+        "hygiene": 0,
+        "health": 0,
+        "stress": 0,
+        "hydration": 0
+      },
+      {
+        "id": "ACT_HOME_TOWN",
+        "legacyId": "visit_home_town",
+        "name": "Xem khu nhà",
+        "building": "BLD_LOT_60_100",
+        "detail": "5 phút · tham quan bên ngoài",
+        "cash": 0,
+        "time": 5,
+        "rule": "none",
+        "job": null,
+        "asset": null,
+        "log": "Tham quan Nhà phố Hòa Phát.",
+        "energy": 0,
+        "hunger": 0,
+        "happy": 0,
+        "hygiene": 0,
+        "health": 0,
+        "stress": 0,
+        "hydration": 0
+      },
+      {
+        "id": "ACT_HOME_VILLA",
+        "legacyId": "visit_home_villa",
+        "name": "Xem khu nhà",
+        "building": "BLD_LOT_60_188",
+        "detail": "5 phút · tham quan bên ngoài",
+        "cash": 0,
+        "time": 5,
+        "rule": "none",
+        "job": null,
+        "asset": null,
+        "log": "Tham quan Biệt thự Vườn Xanh.",
+        "energy": 0,
+        "hunger": 0,
+        "happy": 0,
+        "hygiene": 0,
+        "health": 0,
+        "stress": 0,
         "hydration": 0
       }
     ],
@@ -4357,7 +4459,9 @@ export default {
         "price": 0,
         "rentDaily": 120000,
         "maintenanceMonthly": 0,
-        "capacity": 1
+        "capacity": 1,
+        "building": "BLD_ROOM",
+        "utilitiesMonthly": 0
       },
       {
         "id": "PROP_SMALL",
@@ -4366,16 +4470,20 @@ export default {
         "price": 500000000,
         "rentDaily": 250000,
         "maintenanceMonthly": 600000,
-        "capacity": 2
+        "capacity": 2,
+        "building": "BLD_LOT_36_100",
+        "utilitiesMonthly": 200000
       },
       {
         "id": "PROP_APT",
         "name": "Căn hộ",
-        "type": "BTY_HOUSE",
+        "type": "BTY_APARTMENT",
         "price": 1500000000,
         "rentDaily": 450000,
         "maintenanceMonthly": 1500000,
-        "capacity": 4
+        "capacity": 4,
+        "building": "BLD_APARTMENT",
+        "utilitiesMonthly": 350000
       },
       {
         "id": "PROP_TOWN",
@@ -4384,7 +4492,9 @@ export default {
         "price": 3000000000,
         "rentDaily": 800000,
         "maintenanceMonthly": 2500000,
-        "capacity": 5
+        "capacity": 5,
+        "building": "BLD_LOT_60_100",
+        "utilitiesMonthly": 500000
       },
       {
         "id": "PROP_VILLA",
@@ -4393,7 +4503,9 @@ export default {
         "price": 10000000000,
         "rentDaily": 2000000,
         "maintenanceMonthly": 8000000,
-        "capacity": 8
+        "capacity": 8,
+        "building": "BLD_LOT_60_188",
+        "utilitiesMonthly": 1000000
       }
     ],
     "Vehicles": [
@@ -4554,6 +4666,11 @@ export default {
         "id": "INC_LEGACY",
         "name": "Thu nhập lịch sử chưa phân loại",
         "description": "Tổng thu theo ngày được chuyển từ save cũ, không suy đoán nguồn."
+      },
+      {
+        "id": "INC_PROPERTY_SALE",
+        "name": "Bán nhà",
+        "description": "Tiền thu từ thanh lý bất động sản."
       }
     ],
     "Expense_Types": [
@@ -4606,6 +4723,21 @@ export default {
         "id": "EXP_SUPPLIES",
         "name": "Nhu yếu phẩm",
         "description": "Vật phẩm và đồ dùng cá nhân."
+      },
+      {
+        "id": "EXP_PROPERTY",
+        "name": "Mua nhà",
+        "description": "Chi mua bất động sản."
+      },
+      {
+        "id": "EXP_HOME",
+        "name": "Điện nước & bảo trì",
+        "description": "Chi phí nhà ở."
+      },
+      {
+        "id": "EXP_FURNITURE",
+        "name": "Nội thất",
+        "description": "Mua nội thất."
       }
     ],
     "Banks": [

@@ -1,5 +1,5 @@
 {
-  "version": "1.6.0",
+  "version": "1.7.0",
   "catalogs": {
     "Game_Config": {
       "prefix": "CFG",
@@ -322,7 +322,9 @@
         "price": "money",
         "rentDaily": "money",
         "maintenanceMonthly": "money",
-        "capacity": "positiveInt"
+        "capacity": "positiveInt",
+        "building": "ref:Building_Instances",
+        "utilitiesMonthly": "money"
       }
     },
     "Vehicles": {

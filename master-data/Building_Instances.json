@@ -817,35 +817,35 @@
   },
   {
     "id": "BLD_LOT_36_100",
-    "name": "Nhà ở 36-100",
+    "name": "Nhà nhỏ An Bình",
     "legacyId": "lot_36_100",
     "type": "BTY_HOUSE",
     "district": "DST_EDUCATION",
-    "icon": "",
+    "icon": "⌂",
     "x": 36,
     "z": 100,
     "w": 6,
     "d": 6,
     "h": 3,
     "color": "#dfc3a4",
-    "door": null,
-    "interactive": false
+    "door": "NAV_HOME_SMALL",
+    "interactive": true
   },
   {
     "id": "BLD_LOT_60_100",
-    "name": "Nhà ở 60-100",
+    "name": "Nhà phố Hòa Phát",
     "legacyId": "lot_60_100",
     "type": "BTY_HOUSE",
     "district": "DST_EDUCATION",
-    "icon": "",
+    "icon": "⌂",
     "x": 60,
     "z": 100,
     "w": 5,
     "d": 5,
     "h": 6,
     "color": "#dfc3a4",
-    "door": null,
-    "interactive": false
+    "door": "NAV_HOME_TOWN",
+    "interactive": true
   },
   {
     "id": "BLD_LOT_68_100",
@@ -1153,19 +1153,19 @@
   },
   {
     "id": "BLD_LOT_60_188",
-    "name": "Nhà ở 60-188",
+    "name": "Biệt thự Vườn Xanh",
     "legacyId": "lot_60_188",
     "type": "BTY_HOUSE",
     "district": "DST_OUTSKIRTS",
-    "icon": "",
+    "icon": "⌂",
     "x": 60,
     "z": 188,
     "w": 6,
     "d": 5,
     "h": 4,
     "color": "#dfc3a4",
-    "door": null,
-    "interactive": false
+    "door": "NAV_HOME_VILLA",
+    "interactive": true
   },
   {
     "id": "BLD_LOT_68_188",

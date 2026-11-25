@@ -1,7 +1,15 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.9.0 — Personal Finance**
+**V0.10.0 — Housing & Interior**
 
-Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 22 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 25 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.10.0 — Nhà ở & nội thất
+- Nút Nhà ở: Thị trường, Nơi ở của tôi, Nội thất. 5 loại nhà, 5 địa chỉ thực, 3 công trình nền được kích hoạt; giữ nguyên tọa độ và hình học thành phố.
+- Một nơi ở chính: thuê theo 24 giờ hoặc mua bằng tiền mặt. Đến nhà để giao dịch; trả nhà không hoàn tiền thuê; bán nhà nhận 90% giá Master Data. Nội thất và nợ vẫn giữ khi chuyển nhà.
+- Nhà thuê tự gia hạn nếu bật và đủ tiền mặt; nhà sở hữu tính điện nước và bảo trì mỗi 30 ngày, phí chưa thanh toán thành nợ, chưa có tịch thu nhà. Phòng trọ cũ giữ nguyên logic và save.
+- Nhân vật vào nội thất bằng màn hình top-down 2D, chạm sàn hoặc nội thất để tự đi theo lưới có tránh vật cản. Ngủ, tắm, thư giãn, nấu ăn, tự học kết nối gameplay hiện có; mua 5 loại nội thất tại trung tâm thương mại để nâng tiện nghi. Các nhà dùng một sơ đồ cơ sở với màu sàn/tiện nghi khác nhau, chưa có tùy chỉnh bố trí hoặc nội thất 3D.
+- Tích hợp sổ thu chi, giá trị nhà/nội thất, nợ nhà ở, HUD, bản đồ, minimap, lịch sinh hoạt. Master Data V1.7.0 (60 danh mục, 573 bản ghi). 130/130 bài test. Xem docs/HOUSING.md.
+- Save schema 1 bổ sung housing tự động, không cần SQL. Xuất save trước cập nhật; rollback nên dùng bản lưu trước V0.10.0.
 
 ## V0.9.0 — Tài chính cá nhân
 - Mở nút Tài chính hoặc tới ngân hàng: Tổng quan, Tài khoản, Giao dịch, Ngân sách, Mục tiêu, Báo cáo. HUD hiển thị tiền mặt và số dư tài khoản.

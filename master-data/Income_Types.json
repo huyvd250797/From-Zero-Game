@@ -38,5 +38,10 @@
     "id": "INC_LEGACY",
     "name": "Thu nhập lịch sử chưa phân loại",
     "description": "Tổng thu theo ngày được chuyển từ save cũ, không suy đoán nguồn."
+  },
+  {
+    "id": "INC_PROPERTY_SALE",
+    "name": "Bán nhà",
+    "description": "Tiền thu từ thanh lý bất động sản."
   }
 ]

@@ -1,3 +1,4 @@
+import {residence} from './housing-state.js';
 import {canRecord,recordTransaction,liquid} from './personal-finance.js';
 import {catalogs,config,record} from './master-data.js';
 export const survivalDay=s=>Math.floor(s.minutes/1440)+1;
@@ -14,5 +15,5 @@ export function financeSummary(s,days=1){const min=survivalDay(s)-days+1;const r
 export function completeRoutine(s,...tasks){const d=survivalDay(s);if(s.routineDay!==d){s.routineDay=d;s.completed=[]}for(const id of tasks)if(ids.includes(id)&&!s.completed.includes(id))s.completed.push(id);}
 export function routineStatus(s){const d=survivalDay(s),now=s.minutes%1440;return s.routine.map(r=>{const c=s.career?.contract,formal=r.id==='work'&&c;const dow=new Date(Date.UTC(config.startYear,0,d)).getUTCDay(),scheduled=formal&&d>=c.firstDay&&dow!==0&&dow!==6;const done=formal?c.lastShiftDay===d:s.routineDay===d&&s.completed.includes(r.id);const enabled=r.enabled&&(!formal||scheduled);const minute=formal?480:r.minute;return {...ROUTINES.find(t=>t.id===r.id),...r,minute,enabled,done,due:enabled&&minute<=now&&!done&&(!formal||c.lastHandledDay!==d),formal:!!formal};});}
 export const workMinutesToday=s=>s.workDay===survivalDay(s)?s.workMinutes:0;
-export function housingStatus(s){return s.rentUntil>s.minutes?'Có chỗ ở':s.rentUntil>0?'Đã mất chỗ ở':'Chưa có chỗ ở';}
-export function povertyStatus(s){return liquid(s)<config.povertyThreshold?(s.rentUntil>s.minutes?'Khó khăn tài chính':'Thiếu tiền và chỗ ở'):'Tạm ổn';}
+export function housingStatus(s){return residence(s)?'Có chỗ ở':(s.rentUntil>0||s.housing?.ever)?'Đã mất chỗ ở':'Chưa có chỗ ở';}
+export function povertyStatus(s){return liquid(s)<config.povertyThreshold?(residence(s)?'Khó khăn tài chính':'Thiếu tiền và chỗ ở'):'Tạm ổn';}

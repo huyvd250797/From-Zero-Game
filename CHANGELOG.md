@@ -1,5 +1,12 @@
 # Changelog
 
+## V0.10.0 — Housing & Interior (2026-11-25)
+- Thị trường 5 loại nhà, thuê/mua/bán/trả nhà, đánh dấu nhà trên bản đồ.
+- Nội thất 2D top-down, đường đi trong phòng, ngủ, tắm, thư giãn, nấu ăn và tự học. 5 loại nội thất có thể mua.
+- Tích hợp tài chính, tiền thuê, phí điện nước/bảo trì, nợ và tài sản ròng.
+- Save cũ tương thích; Master Data V1.7.0 (60 danh mục, 573 bản ghi).
+- 130/130 test, kiểm thử giao diện Chromium Canvas với storage mô phỏng, production build. Chưa kiểm thử WebGL, offline hoặc deploy Vercel thực tế.
+
 ## V0.9.0 — Personal Finance (2026-11-25)
 - Tài chính 6 tab: tổng quan, tài khoản nội bộ, giao dịch, ngân sách, mục tiêu, báo cáo. HUD có số dư tài khoản.
 - Tách lương, thưởng, thời vụ; lịch sử chi tiết có loại/danh mục/thời gian, giữ tổng hợp tháng/năm và sổ 1/7/30 ngày.

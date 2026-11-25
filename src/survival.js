@@ -1,3 +1,4 @@
+import {homeAccess} from './housing-state.js';
 import {catalogs,record,config} from './master-data.js';
 import {places} from './world.js';
 import {advanceTime,isOpen,MAX_MINUTES,log,settleDebt} from './life.js';
@@ -14,5 +15,5 @@ const clamp=v=>Math.max(0,Math.min(100,v));
 export function useReason(s,id){const r=byId.get(id);if(!r||!(s.inventory[id]>0))return 'Không có vật phẩm.';if(!r.useMinutes)return 'Vật phẩm không dùng trực tiếp.';if(!fitsTime(s,r.useMinutes))return 'Đã đạt giới hạn mô phỏng.';return '';}
 export function useItem(s,id){if(useReason(s,id))return false;const r=byId.get(id);remove(s,id);advanceTime(s,r.useMinutes);for(const k of ['hunger','energy','happy','hydration','hygiene'])s[k]=clamp(s[k]+(r[k]||0));if(r.hunger>0)completeRoutine(s,'eat');if(r.hydration>=15)completeRoutine(s,'drink');if(r.hygiene>0)completeRoutine(s,'wash');log(s,`Sử dụng ${r.name}.`);return true;}
 export function discardItem(s,id){if(!byId.has(id)||!(s.inventory[id]>0))return false;remove(s,id);log(s,`Bỏ 1 ${byId.get(id).name}.`);return true;}
-export function cookReason(s,id){const r=recipes.find(r=>r.id===id);if(!r)return 'Không có công thức.';if(!near(s,'room')||s.rentUntil<=s.minutes)return 'Cần đến phòng trọ đang thuê.';if(s.rentUntil<s.minutes+r.cookMinutes)return 'Thời hạn thuê không đủ để nấu.';if(!fitsTime(s,r.cookMinutes))return 'Đã đạt giới hạn mô phỏng.';if(r.ingredients.some(id=>!s.inventory[id]))return 'Thiếu nguyên liệu.';return '';}
+export function cookReason(s,id){const r=recipes.find(r=>r.id===id);if(!r)return 'Không có công thức.';if(!homeAccess(s))return 'Cần đến nơi ở đang sử dụng.';if(!homeAccess(s,r.cookMinutes))return 'Thời hạn thuê không đủ để nấu.';if(!fitsTime(s,r.cookMinutes))return 'Đã đạt giới hạn mô phỏng.';if(r.ingredients.some(id=>!s.inventory[id]))return 'Thiếu nguyên liệu.';return '';}
 export function cookItem(s,id){if(cookReason(s,id))return false;const r=byId.get(id);for(const i of r.ingredients)remove(s,i);advanceTime(s,r.cookMinutes);s.inventory[id]=(s.inventory[id]||0)+1;log(s,`Nấu xong ${r.name}. Món ăn đã vào túi đồ.`);return true;}

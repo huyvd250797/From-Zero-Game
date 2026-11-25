@@ -152,5 +152,26 @@
     "building": "BLD_POLICE",
     "opens": 0,
     "closes": 1440
+  },
+  {
+    "id": "SCH_HOME_SMALL",
+    "name": "Nhà nhỏ An Bình",
+    "building": "BLD_LOT_36_100",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_HOME_TOWN",
+    "name": "Nhà phố Hòa Phát",
+    "building": "BLD_LOT_60_100",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_HOME_VILLA",
+    "name": "Biệt thự Vườn Xanh",
+    "building": "BLD_LOT_60_188",
+    "opens": 0,
+    "closes": 1440
   }
 ]

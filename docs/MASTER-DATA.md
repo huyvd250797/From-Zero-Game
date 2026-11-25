@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V1.6.0
+# From Zero — Canonical Master Data V1.7.0
 
-Game release V0.9.0 · 60 danh mục, 560 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.10.0 · 60 danh mục, 573 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -18,9 +18,9 @@ Game release V0.9.0 · 60 danh mục, 560 bản ghi. Số liệu kinh tế và p
 | B – World & City | `Building_Types.json` | 24 | Runtime City Engine |
 | B – World & City | `Building_Instances.json` | 79 | Runtime City Engine |
 | B – World & City | `Road_Network.json` | 12 | Runtime City Engine |
-| B – World & City | `Navigation_Nodes.json` | 23 | Runtime City Engine |
-| B – World & City | `World_Schedules.json` | 22 | Runtime Life Simulation |
-| B – World & City | `Location_Actions.json` | 40 | Runtime Survival & Daily Activities |
+| B – World & City | `Navigation_Nodes.json` | 26 | Runtime City Engine |
+| B – World & City | `World_Schedules.json` | 25 | Runtime Life Simulation |
+| B – World & City | `Location_Actions.json` | 43 | Runtime Survival & Daily Activities |
 | C – Character & Social | `NPC_Master.json` | 8 | Seed cho phiên bản sau |
 | C – Character & Social | `Relationships.json` | 5 | Seed cho phiên bản sau |
 | C – Character & Social | `Relationship_Events.json` | 4 | Seed cho phiên bản sau |
@@ -37,12 +37,12 @@ Game release V0.9.0 · 60 danh mục, 560 bản ghi. Số liệu kinh tế và p
 | E – Assets & Lifestyle | `Items.json` | 10 | Runtime Survival & Daily Activities |
 | E – Assets & Lifestyle | `Food_Drinks.json` | 9 | Runtime Survival & Daily Activities |
 | E – Assets & Lifestyle | `Activities.json` | 5 | Seed cho phiên bản sau |
-| E – Assets & Lifestyle | `Properties.json` | 5 | Tham chiếu/kiểm tra |
+| E – Assets & Lifestyle | `Properties.json` | 5 | Runtime Housing & Interior |
 | E – Assets & Lifestyle | `Vehicles.json` | 6 | Runtime prototype |
-| E – Assets & Lifestyle | `Furniture.json` | 5 | Seed cho phiên bản sau |
+| E – Assets & Lifestyle | `Furniture.json` | 5 | Runtime Housing & Interior |
 | E – Assets & Lifestyle | `Maintenance.json` | 4 | Seed cho phiên bản sau |
-| F – Finance & Economy | `Income_Types.json` | 8 | Lương/thưởng/thời vụ và thu lịch sử runtime, các nguồn khác seed |
-| F – Finance & Economy | `Expense_Types.json` | 10 | Runtime Survival & Daily Activities |
+| F – Finance & Economy | `Income_Types.json` | 9 | Lương/thưởng/thời vụ và thu lịch sử runtime, các nguồn khác seed |
+| F – Finance & Economy | `Expense_Types.json` | 13 | Runtime Survival & Daily Activities |
 | F – Finance & Economy | `Banks.json` | 2 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Loan_Products.json` | 3 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Saving_Products.json` | 2 | Seed cho phiên bản sau |
@@ -104,3 +104,6 @@ Bổ sung 6 nhà tuyển dụng, mở rộng vị trí tại các nhà tuyển d
 
 ## V1.6.0
 - Thêm `INC_LEGACY` cho thu nhập tổng ngày từ save cũ; không suy đoán nguồn. Kích hoạt phân loại lương, thưởng, thời vụ trong Personal Finance. Không thay đổi danh mục hay vị trí thành phố.
+
+## V1.7.0
+Gắn mỗi Properties với Building_Instances và phí utilitiesMonthly; kích hoạt ba địa điểm nhà, bổ sung ba cửa/lịch/hành động, 1 nguồn thu bán nhà và 3 danh mục chi. Giữ 60 danh mục. Xem HOUSING.md.

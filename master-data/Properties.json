@@ -6,7 +6,9 @@
     "price": 0,
     "rentDaily": 120000,
     "maintenanceMonthly": 0,
-    "capacity": 1
+    "capacity": 1,
+    "building": "BLD_ROOM",
+    "utilitiesMonthly": 0
   },
   {
     "id": "PROP_SMALL",
@@ -15,16 +17,20 @@
     "price": 500000000,
     "rentDaily": 250000,
     "maintenanceMonthly": 600000,
-    "capacity": 2
+    "capacity": 2,
+    "building": "BLD_LOT_36_100",
+    "utilitiesMonthly": 200000
   },
   {
     "id": "PROP_APT",
     "name": "Căn hộ",
-    "type": "BTY_HOUSE",
+    "type": "BTY_APARTMENT",
     "price": 1500000000,
     "rentDaily": 450000,
     "maintenanceMonthly": 1500000,
-    "capacity": 4
+    "capacity": 4,
+    "building": "BLD_APARTMENT",
+    "utilitiesMonthly": 350000
   },
   {
     "id": "PROP_TOWN",
@@ -33,7 +39,9 @@
     "price": 3000000000,
     "rentDaily": 800000,
     "maintenanceMonthly": 2500000,
-    "capacity": 5
+    "capacity": 5,
+    "building": "BLD_LOT_60_100",
+    "utilitiesMonthly": 500000
   },
   {
     "id": "PROP_VILLA",
@@ -42,6 +50,8 @@
     "price": 10000000000,
     "rentDaily": 2000000,
     "maintenanceMonthly": 8000000,
-    "capacity": 8
+    "capacity": 8,
+    "building": "BLD_LOT_60_188",
+    "utilitiesMonthly": 1000000
   }
 ]

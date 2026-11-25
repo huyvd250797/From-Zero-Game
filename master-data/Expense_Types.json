@@ -48,5 +48,20 @@
     "id": "EXP_SUPPLIES",
     "name": "Nhu yếu phẩm",
     "description": "Vật phẩm và đồ dùng cá nhân."
+  },
+  {
+    "id": "EXP_PROPERTY",
+    "name": "Mua nhà",
+    "description": "Chi mua bất động sản."
+  },
+  {
+    "id": "EXP_HOME",
+    "name": "Điện nước & bảo trì",
+    "description": "Chi phí nhà ở."
+  },
+  {
+    "id": "EXP_FURNITURE",
+    "name": "Nội thất",
+    "description": "Mua nội thất."
   }
 ]

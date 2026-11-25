@@ -1,3 +1,4 @@
+import {housingTick} from './housing.js';
 import {pruneDetails} from './personal-finance.js';
 import {careerMidnight} from './career.js';
 import {cashChange,pruneFinance} from './survival-state.js';
@@ -33,6 +34,7 @@ export function advanceTime(s,minutes,{resting=false}={}){
   for(const r of catalogs.Needs_Rules){const k=needKeys[r.attribute];if(k&&s.minutes%r.intervalMinutes===0&&!(resting&&k==='energy'))s[k]=clamp(s[k]+r.delta);}
   if(s.minutes%60===0){const critical=['energy','hunger','hygiene','hydration'].filter(k=>s[k]<config.criticalNeedThreshold).length;if(critical){s.health=clamp(s.health-critical*2);s.happy=clamp(s.happy-critical);s.stress=clamp(s.stress+critical*2);}else if(s.hunger>=45&&s.energy>=40&&s.hygiene>=40){s.stress=clamp(s.stress-1);if(resting)s.health=clamp(s.health+1);}if(s.stress>=85){s.health=clamp(s.health-1);s.happy=clamp(s.happy-1);}}
   if(s.rentUntil&&s.minutes===s.rentUntil){if(s.autoRent&&s.cash>=rent&&cashChange(s,-rent,'EXP_RENT','Gia hạn phòng trọ')){s.rentUntil+=config.rentMinutes;log(s,`Gia hạn phòng trọ: −${rent.toLocaleString('vi-VN')}đ.`);}else{log(s,s.autoRent?'Không đủ tiền gia hạn phòng trọ. Bạn đã mất chỗ ở.':'Hết hạn phòng trọ.');}}
+  housingTick(s);
   if(s.bike&&s.bikeDue>0&&s.minutes===s.bikeDue){s.bikeDue+=bikeMaintenance.intervalDays*1440;s.maintenanceDebt+=bikeMaintenance.cost;log(s,`Đến hạn bảo dưỡng xe đạp: ${bikeMaintenance.cost.toLocaleString('vi-VN')}đ.`);settleDebt(s);}
   if(s.minutes%1440===0){pruneFinance(s);pruneDetails(s);}
   if(s.minutes%1440===0&&calendar(s).month===1&&calendar(s).date===1)log(s,`Chúc mừng sinh nhật ${calendar(s).age} tuổi!`);
