@@ -1,7 +1,16 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.8.0 — Career & Employment**
+**V0.9.0 — Personal Finance**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 22 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.9.0 — Tài chính cá nhân
+- Mở nút Tài chính hoặc tới ngân hàng: Tổng quan, Tài khoản, Giao dịch, Ngân sách, Mục tiêu, Báo cáo. HUD hiển thị tiền mặt và số dư tài khoản.
+- Nạp/rút tài khoản giả lập không mất phí, không phát sinh thu chi. Mọi lương/thưởng/thời vụ nhận tiền mặt; mua sắm, học phí, chi phí tự động dùng tiền mặt. Chưa có ngân hàng sinh lãi, thẻ, khoản vay hoặc đầu tư (V0.14.0).
+- Sổ tài chính theo giao dịch: thời điểm, loại, danh mục, số tiền, mô tả; lọc kỳ tháng/năm, loại, danh mục; 20 dòng/trang. Giữ tối đa 2.000 dòng chi tiết trong 365 ngày, lưu tổng tháng/năm theo toàn bộ thời gian mô phỏng. Giữ báo cáo 1/7/30 ngày.
+- Lương, thưởng, thời vụ phân loại riêng. Báo cáo theo tiền thực nhận/chi; lương chưa nhận được trình bày là khoản phải thu. Tài sản ròng = tiền mặt + tài khoản + giá trị đồ dùng bền/xe + lương chưa nhận − nợ bảo dưỡng. Giá Master Data, không khấu hao, không cộng trùng tiền dành cho mục tiêu.
+- Ngân sách theo danh mục lặp hằng tháng, nhắc từ 80%, vượt 100% không khóa chi tiêu. Tối đa 12 mục tiêu; dành tiền từ tài khoản, chỉ rút phần chưa dành. Có thể giải phóng hoặc xóa mục tiêu, không tạo thu chi.
+- Save schema 1: tự chuyển tổng thu/chi theo ngày còn giữ ở V0.8.0 (tối đa 30 ngày), thu nhập cũ gắn nhãn chưa phân loại, không suy đoán dữ liệu đã mất hoặc hồi tố lương. Giữ nguyên số dư và tài sản. Nên xuất file save trước khi cập nhật; rollback bản cũ không có khả năng quản lý tiền tài khoản/mục tiêu.
+- Master Data V1.6.0: 60 danh mục, 560 bản ghi. Xem docs/PERSONAL-FINANCE.md. Không đổi stack, không cần SQL/biến môi trường.
 
 ## V0.8.0 — Sự nghiệp & việc làm
 - Mở Sự nghiệp & việc làm: Hợp đồng, Tuyển dụng, Hồ sơ, Lương & thưởng, Lịch sử. 19 vị trí, 14 nghề chính thức, 10 nhà tuyển dụng. Đến nơi để phỏng vấn, ký và làm việc.

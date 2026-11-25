@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V1.5.0
+# From Zero — Canonical Master Data V1.6.0
 
-Game release V0.8.0 · 60 danh mục, 559 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.9.0 · 60 danh mục, 560 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -41,7 +41,7 @@ Game release V0.8.0 · 60 danh mục, 559 bản ghi. Số liệu kinh tế và p
 | E – Assets & Lifestyle | `Vehicles.json` | 6 | Runtime prototype |
 | E – Assets & Lifestyle | `Furniture.json` | 5 | Seed cho phiên bản sau |
 | E – Assets & Lifestyle | `Maintenance.json` | 4 | Seed cho phiên bản sau |
-| F – Finance & Economy | `Income_Types.json` | 7 | Lương/thưởng runtime, các nguồn khác seed |
+| F – Finance & Economy | `Income_Types.json` | 8 | Lương/thưởng/thời vụ và thu lịch sử runtime, các nguồn khác seed |
 | F – Finance & Economy | `Expense_Types.json` | 10 | Runtime Survival & Daily Activities |
 | F – Finance & Economy | `Banks.json` | 2 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Loan_Products.json` | 3 | Seed cho phiên bản sau |
@@ -101,3 +101,6 @@ Cấu hình năm bắt đầu và ngưỡng sức khỏe; thêm nhu cầu vệ s
 
 ## V1.5.0
 Bổ sung 6 nhà tuyển dụng, mở rộng vị trí tại các nhà tuyển dụng cũ, thêm INC_BONUS. 19 vị trí lương tháng, 14 nghề chính thức. Kiểm tra ca làm phù hợp giờ công trình.
+
+## V1.6.0
+- Thêm `INC_LEGACY` cho thu nhập tổng ngày từ save cũ; không suy đoán nguồn. Kích hoạt phân loại lương, thưởng, thời vụ trong Personal Finance. Không thay đổi danh mục hay vị trí thành phố.

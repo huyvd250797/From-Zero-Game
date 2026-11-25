@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "1.5.0",
+  "version": "1.6.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -4549,6 +4549,11 @@ export default {
         "id": "INC_BONUS",
         "name": "Thưởng hiệu suất",
         "description": "Thưởng theo kỳ lương chính thức."
+      },
+      {
+        "id": "INC_LEGACY",
+        "name": "Thu nhập lịch sử chưa phân loại",
+        "description": "Tổng thu theo ngày được chuyển từ save cũ, không suy đoán nguồn."
       }
     ],
     "Expense_Types": [

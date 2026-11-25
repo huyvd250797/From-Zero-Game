@@ -1,5 +1,12 @@
 # Changelog
 
+## V0.9.0 — Personal Finance (2026-11-25)
+- Tài chính 6 tab: tổng quan, tài khoản nội bộ, giao dịch, ngân sách, mục tiêu, báo cáo. HUD có số dư tài khoản.
+- Tách lương, thưởng, thời vụ; lịch sử chi tiết có loại/danh mục/thời gian, giữ tổng hợp tháng/năm và sổ 1/7/30 ngày.
+- Theo dõi giá trị tài sản hữu hình, lương phải thu, nợ, chi phí định kỳ; ngân sách cảnh báo; mục tiêu dành tiền không cộng trùng.
+- Migration save cũ tự động, không hồi tố giao dịch thiếu. Master Data V1.6.0, 60 danh mục / 560 bản ghi.
+- 114/114 bài test logic; kiểm thử Chromium Canvas/storage mô phỏng; production build. Chưa deploy Vercel, chưa kiểm thử WebGL, PWA offline thực tế.
+
 ## V0.8.0 — Career & Employment (2026-11-25)
 - 19 vị trí tại 10 nhà tuyển dụng, CV tự sinh, lọc việc, nộp hồ sơ, phỏng vấn, ký hợp đồng.
 - Lịch ca chính thức, lương tích lũy, thưởng, hiệu suất, XP nghề, tăng lương, thăng chức, nghỉ việc, chuyển việc, sa thải và tái ứng tuyển.
