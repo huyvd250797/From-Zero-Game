@@ -1,5 +1,12 @@
 # Changelog
 
+## V0.16.0 — Dynamic City Economy (2026-11-25)
+- 5 trạng thái kinh tế, giá, lương, nhu cầu, nguồn cung, cạnh tranh, lãi suất và định giá động theo tháng 30 ngày.
+- Khóa lương/lãi suất hợp đồng, giá mua tài sản bảo đảm; bình quân giá vốn tồn kho; tương thích save schema 1.
+- Dashboard 4 tab, báo giá hiện tại và biểu đồ 12 tháng, nhật ký chuyển chu kỳ.
+- Master Data V2.3.0 (60 danh mục, 602 bản ghi); 226/226 test và build, UI Chromium Canvas/storage mô phỏng.
+- Chưa có kinh tế cân bằng theo giao dịch NPC, thất nghiệp thực tế từng NPC, thuế doanh nghiệp, deploy hoặc PWA offline kiểm chứng.
+
 ## V0.15.0 — Business & Entrepreneurship (2026-11-25)
 - Kích hoạt 6 mô hình kinh doanh, sản phẩm, địa điểm, tên và nhãn bản đồ, điều kiện vốn/kỹ năng.
 - Vốn lưu động, kho, giá bán, nhân viên, marketing, ca vận hành và kinh nghiệm, 3 cấp mở rộng.

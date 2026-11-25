@@ -12,7 +12,7 @@ export async function loadMaster(root=path.join(base,'master-data')){
 }
 export function validateMaster(schema,data){
  const errors=[],err=(p,m)=>errors.push(`${p}: ${m}`), ids=new Map();
- if(schema?.version!=='2.2.0'||!schema.catalogs||Object.keys(schema.catalogs).length!==60){return ['Schema phải là 2.2.0 và có 60 danh mục'];}
+ if(schema?.version!=='2.3.0'||!schema.catalogs||Object.keys(schema.catalogs).length!==60){return ['Schema phải là 2.3.0 và có 60 danh mục'];}
  for(const k of Object.keys(data))if(!Object.hasOwn(schema.catalogs,k))err(k,'Danh mục ngoài schema');
  for(const [key,s] of Object.entries(schema.catalogs)){
   if(!/^[A-Z][A-Z0-9]*$/.test(s.prefix)||!s.fields||typeof s.fields!=='object'){err(key,'Schema không hợp lệ');continue}
@@ -25,6 +25,7 @@ export function validateMaster(schema,data){
    for(const k of Object.keys(row))if(k!=='id'&&k!=='name'&&!Object.hasOwn(s.fields,k))err(p,`Trường không khai báo ${k}`);
   }
  }
+ const phases=data.Economy_Events||[];for(const id of ['ECO_STABLE','ECO_BOOM','ECO_INFLATION','ECO_RECESSION','ECO_RECOVERY'])if(!phases.some(p=>p.id===id))err('Economy_Events','Thiếu giai đoạn '+id);for(const p of phases){for(const k of ['priceMultiplier','wageMultiplier','activity','demand','supply','property','vehicle','competition','fuelMultiplier'])if(!(p[k]>=.5&&p[k]<=2))err(p.id,k+' ngoài giới hạn cân bằng 0.5–2');if(p.durationMonths>60)err(p.id,'Thời lượng kinh tế vượt 60 tháng');}
  const valid=(v,t)=>{
   if(t.startsWith('nullable:'))return v===null||valid(v,t.slice(9));
   const [kind,a,b]=t.split(':');

@@ -1,3 +1,4 @@
+import {quote,goodsPrice,assetPrice,wageQuote,rateQuote,actionCash,economyAt,vacancyOpen} from './economy.js';
 import {homeAccess} from './housing-state.js';
 import {catalogs,record,config} from './master-data.js';
 import {places} from './world.js';
@@ -8,8 +9,8 @@ export const recipes=Object.freeze(catalogs.Food_Drinks.filter(r=>r.ingredients.
 export const goodsAt=place=>goods.filter(r=>r.shops.some(id=>record(id).legacyId===place));
 const near=(s,place)=>{const p=places.find(p=>p.id===place);return !!p&&Math.hypot(s.pos.x-p.door[0],s.pos.z-p.door[1])<=2.5};
 const fitsTime=(s,time)=>s.minutes+time<=MAX_MINUTES;
-export function buyReason(s,place,id,qty=1){const r=byId.get(id);if(!r||!goodsAt(place).includes(r))return 'Không bán tại địa điểm này.';if(!Number.isSafeInteger(qty)||qty<1||qty>config.inventoryCapacity)return 'Số lượng không hợp lệ.';if(!near(s,place))return 'Cần đến cửa hàng.';if(!fitsTime(s,5)||!isOpen(place,s.minutes,5))return 'Cửa hàng đã đóng hoặc sắp đóng cửa.';if(itemCount(s)+qty>config.inventoryCapacity)return 'Túi đồ đã đầy.';if(s.cash<r.price*qty)return 'Không đủ tiền.';return '';}
-export function buyItem(s,place,id,qty=1){if(buyReason(s,place,id,qty))return false;const r=byId.get(id);if(!cashChange(s,-r.price*qty,id.startsWith('FOOD_')||r.category==='ingredient'?'EXP_FOOD':'EXP_SUPPLIES',`Mua ${qty} × ${r.name}`))return false;s.inventory[id]=(s.inventory[id]||0)+qty;advanceTime(s,5);log(s,`Mua ${qty} × ${r.name}.`);return true;}
+export function buyReason(s,place,id,qty=1){const r=byId.get(id);if(!r||!goodsAt(place).includes(r))return 'Không bán tại địa điểm này.';if(!Number.isSafeInteger(qty)||qty<1||qty>config.inventoryCapacity)return 'Số lượng không hợp lệ.';if(!near(s,place))return 'Cần đến cửa hàng.';if(!fitsTime(s,5)||!isOpen(place,s.minutes,5))return 'Cửa hàng đã đóng hoặc sắp đóng cửa.';if(itemCount(s)+qty>config.inventoryCapacity)return 'Túi đồ đã đầy.';if(s.cash<goodsPrice(s,r)*qty)return 'Không đủ tiền.';return '';}
+export function buyItem(s,place,id,qty=1){if(buyReason(s,place,id,qty))return false;const r=byId.get(id);if(!cashChange(s,-goodsPrice(s,r)*qty,id.startsWith('FOOD_')||r.category==='ingredient'?'EXP_FOOD':'EXP_SUPPLIES',`Mua ${qty} × ${r.name}`))return false;s.inventory[id]=(s.inventory[id]||0)+qty;advanceTime(s,5);log(s,`Mua ${qty} × ${r.name}.`);return true;}
 function remove(s,id,qty=1){s.inventory[id]-=qty;if(!s.inventory[id])delete s.inventory[id];}
 const clamp=v=>Math.max(0,Math.min(100,v));
 export function useReason(s,id){const r=byId.get(id);if(!r||!(s.inventory[id]>0))return 'Không có vật phẩm.';if(!r.useMinutes)return 'Vật phẩm không dùng trực tiếp.';if(!fitsTime(s,r.useMinutes))return 'Đã đạt giới hạn mô phỏng.';return '';}

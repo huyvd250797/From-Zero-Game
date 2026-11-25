@@ -1,5 +1,5 @@
 {
-  "version": "2.2.0",
+  "version": "2.3.0",
   "catalogs": {
     "Game_Config": {
       "prefix": "CFG",
@@ -420,7 +420,16 @@
         "durationMonths": "positiveInt",
         "priceMultiplier": "positive",
         "wageMultiplier": "positive",
-        "description": "text"
+        "description": "text",
+        "activity": "positive",
+        "unemployment": "pct",
+        "demand": "positive",
+        "supply": "positive",
+        "rateBps": "int:-500:500",
+        "property": "positive",
+        "vehicle": "positive",
+        "competition": "positive",
+        "fuelMultiplier": "positive"
       }
     },
     "Business_Types": {

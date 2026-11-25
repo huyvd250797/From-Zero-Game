@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "2.2.0",
+  "version": "2.3.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -5268,7 +5268,16 @@ export default {
         "durationMonths": 12,
         "priceMultiplier": 1.1,
         "wageMultiplier": 1.02,
-        "description": "Chi phí sinh hoạt tăng."
+        "description": "Chi phí sinh hoạt tăng.",
+        "activity": 1.04,
+        "unemployment": 5.5,
+        "demand": 0.94,
+        "supply": 0.89,
+        "rateBps": 200,
+        "property": 1.08,
+        "vehicle": 1.1,
+        "competition": 1.02,
+        "fuelMultiplier": 1.15
       },
       {
         "id": "ECO_RECESSION",
@@ -5276,7 +5285,16 @@ export default {
         "durationMonths": 6,
         "priceMultiplier": 1.02,
         "wageMultiplier": 0.9,
-        "description": "Cơ hội việc làm giảm."
+        "description": "Cơ hội việc làm giảm.",
+        "activity": 0.78,
+        "unemployment": 12,
+        "demand": 0.72,
+        "supply": 1.05,
+        "rateBps": 100,
+        "property": 0.83,
+        "vehicle": 0.9,
+        "competition": 1.12,
+        "fuelMultiplier": 1
       },
       {
         "id": "ECO_BOOM",
@@ -5284,7 +5302,50 @@ export default {
         "durationMonths": 12,
         "priceMultiplier": 1.04,
         "wageMultiplier": 1.1,
-        "description": "Nhu cầu lao động tăng."
+        "description": "Nhu cầu lao động tăng.",
+        "activity": 1.16,
+        "unemployment": 3.5,
+        "demand": 1.18,
+        "supply": 1.08,
+        "rateBps": -50,
+        "property": 1.12,
+        "vehicle": 1.05,
+        "competition": 1.08,
+        "fuelMultiplier": 1
+      },
+      {
+        "id": "ECO_RECOVERY",
+        "name": "Phục hồi",
+        "durationMonths": 3,
+        "priceMultiplier": 1.01,
+        "wageMultiplier": 1,
+        "description": "Nhu cầu phục hồi, lãi suất hạ.",
+        "activity": 0.96,
+        "unemployment": 7,
+        "demand": 0.95,
+        "supply": 1.02,
+        "rateBps": -50,
+        "property": 0.96,
+        "vehicle": 0.98,
+        "competition": 0.96,
+        "fuelMultiplier": 1
+      },
+      {
+        "id": "ECO_STABLE",
+        "name": "Ổn định",
+        "durationMonths": 1,
+        "priceMultiplier": 1,
+        "wageMultiplier": 1,
+        "description": "Tháng đầu giữ giá gốc.",
+        "activity": 1,
+        "unemployment": 5,
+        "demand": 1,
+        "supply": 1,
+        "rateBps": 0,
+        "property": 1,
+        "vehicle": 1,
+        "competition": 1,
+        "fuelMultiplier": 1
       }
     ],
     "Business_Types": [

@@ -1,7 +1,15 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.15.0 — Business & Entrepreneurship**
+**V0.16.0 — Dynamic City Economy**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 25 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.16.0 — Dynamic City Economy
+- Kinh tế An Lạc có 5 trạng thái: ổn định 1 tháng đầu, sau đó lặp chu kỳ tăng trưởng 12 tháng, lạm phát 12 tháng, suy thoái 6 tháng và phục hồi 3 tháng. Mỗi tháng kinh tế = 30 ngày game. Giá gốc giữ trong tháng đầu; xu hướng dài hạn bị giới hạn, không có giá ngẫu nhiên sau khi tải save.
+- Giá thức ăn/vật phẩm, hoạt động mất phí, tiền thuê, phí nhà, bảo dưỡng, nhiên liệu, vé xe, chi phí gia đình, giá nhà/xe và định giá tài sản thay đổi. Lương thời vụ và lương hợp đồng mới thay đổi; một số vị trí tạm ngừng tuyển khi suy thoái. Lương hợp đồng hiện tại không bị đổi.
+- Lãi suất tiết kiệm và vay mới biến động; sổ/khoản vay khóa lãi suất lúc ký, kể cả save cũ. Khoản vay mua nhà/xe sử dụng giá mua thị trường, vẫn giới hạn LTV 70% tại thời điểm ký. Cổ phiếu gắn với hoạt động kinh tế, vàng gắn với chỉ số giá; giữ quy tắc cổ tức trước đây.
+- Vốn khởi nghiệp, giá nhập, giá bán tham chiếu, phí vận hành, lương nhân sự, marketing và mở rộng doanh nghiệp dùng giá động. Nhu cầu có hệ số kinh tế và cạnh tranh. Tồn kho lưu giá vốn lịch sử, xuất kho theo bình quân gia quyền, không tự định giá lại.
+- 4 tab Kinh tế thành phố: Tổng quan, Giá thị trường, Việc làm & vốn, Lịch sử 12 tháng. Chỉ số thất nghiệp và nguồn cung là chỉ số mô phỏng, chưa phải số liệu từ từng NPC hoặc thị trường cung cầu tự cân bằng. Học phí, một số phí sự kiện xã hội/gia đình, cứu hộ và trợ giúp vẫn dùng giá nền.
+- Master Data V2.3.0: 60 danh mục, 602 bản ghi, 5 cấu hình kinh tế. Save schema 1 giữ nguyên. 226/226 test (212 ca cũ, cập nhật 8 kỳ vọng giá động, 14 ca mới), build và UI Chromium Canvas/storage mô phỏng. Xem docs/ECONOMY.md. Không cần database/SQL/env; chưa xác minh deploy thật, WebGL hoặc offline PWA.
 
 ## V0.15.0 — Business & Entrepreneurship
 - 6 loại hình khởi nghiệp tại 6 công trình có sẵn; một doanh nghiệp đồng thời. Tên riêng, vị trí, nhãn bản đồ/minimap, điều kiện vốn và kỹ năng. 20% vốn thành lập là chi phí, 80% chuyển vào vốn lưu động.

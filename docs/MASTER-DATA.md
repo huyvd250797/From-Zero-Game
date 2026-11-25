@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V2.2.0
+# From Zero — Canonical Master Data V2.3.0
 
-Game release V0.15.0 · 60 danh mục, 600 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.16.0 · 60 danh mục, 602 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -124,3 +124,7 @@ Vehicles bổ sung capacity, consumption, unitPrice; tên BLD_BIKE đổi thành
 
 ## V2.2.0
 - Business_Types bổ sung building, skill, minSkill, staffRole, baseDemand, staffDemand, staffPerLevel, marketingCost; giữ nguyên ID, vốn và phí cố định. Thêm PRD_FACTORY và EXP_BUSINESS. Kích hoạt LOAN_BIZ; kiểm tra liên kết mặt bằng, lịch hoạt động, sản phẩm và kỹ năng.
+
+## V2.3.0
+- Economy_Events thêm ECO_STABLE và ECO_RECOVERY; năm cấu hình có chỉ số hoạt động, thất nghiệp, nhu cầu, nguồn cung, lãi suất (basis points), giá nhà/xe, cạnh tranh, nhiên liệu.
+- Giá gốc trong các danh mục khác được giữ nguyên. Economy Engine tính báo giá runtime, không sửa Master Data.
