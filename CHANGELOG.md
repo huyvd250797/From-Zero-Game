@@ -1,5 +1,12 @@
 # Changelog
 
+## V0.6.0 — Survival & Daily Activities (2026-11-25)
+- Túi đồ, mua theo số lượng, tiêu dùng, bỏ vật phẩm và hai công thức nấu ăn.
+- 5 loại ca thời vụ, giới hạn 8 giờ/ngày, đủ nước, thể dục và giải trí.
+- Lịch ngày lặp lại, ghi nhận hoạt động, sổ thu chi 30 ngày, hỗ trợ nghèo khó và mất chỗ ở.
+- Master Data V1.3.0, 60 danh mục / 545 bản ghi; tự bổ sung trường mới cho save cũ.
+- 62 bài kiểm thử logic, build offline, kiểm thử giao diện Chromium Canvas và storage mô phỏng.
+
 ## V0.5.0 — Time & Life Simulation (2026-11-25)
 - Đồng hồ chạy liên tục, ×1/2/4/8/16, lịch Gregorian và sinh nhật; pause/modal/ẩn tab dừng mô phỏng.
 - Ngày đêm chuyển màu liên tục ở cả WebGL và Canvas; giao thông nền theo thời gian game.

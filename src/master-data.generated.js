@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -23,7 +23,10 @@ export default {
         "spawn": "NAV_SPAWN",
         "startYear": 2026,
         "criticalHealthThreshold": 20,
-        "criticalNeedThreshold": 15
+        "criticalNeedThreshold": 15,
+        "inventoryCapacity": 30,
+        "dailyWorkLimit": 480,
+        "povertyThreshold": 60000
       }
     ],
     "Difficulty": [
@@ -214,6 +217,14 @@ export default {
         "max": 1000000,
         "initial": 0,
         "unit": "xp"
+      },
+      {
+        "id": "ATR_HYDRATION",
+        "name": "Đủ nước",
+        "min": 0,
+        "max": 100,
+        "initial": 85,
+        "unit": "score"
       }
     ],
     "Life_Stages": [
@@ -265,6 +276,14 @@ export default {
         "attribute": "ATR_HYGIENE",
         "intervalMinutes": 45,
         "delta": -1,
+        "warningBelow": 20
+      },
+      {
+        "id": "NEE_HYDRATION",
+        "name": "Tiêu hao nước",
+        "attribute": "ATR_HYDRATION",
+        "intervalMinutes": 45,
+        "delta": -2,
         "warningBelow": 20
       }
     ],
@@ -2261,7 +2280,8 @@ export default {
         "asset": null,
         "hygiene": -5,
         "health": 0,
-        "stress": 8
+        "stress": 8,
+        "hydration": -5
       },
       {
         "id": "ACT_MEAL",
@@ -2280,7 +2300,8 @@ export default {
         "asset": "FOOD_MEAL",
         "hygiene": 0,
         "health": 3,
-        "stress": 0
+        "stress": 0,
+        "hydration": 5
       },
       {
         "id": "ACT_RENT",
@@ -2299,7 +2320,8 @@ export default {
         "asset": "PROP_ROOM",
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_SLEEP",
@@ -2318,7 +2340,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 8,
-        "stress": -20
+        "stress": -20,
+        "hydration": 0
       },
       {
         "id": "ACT_COFFEE",
@@ -2337,7 +2360,8 @@ export default {
         "asset": "FOOD_COFFEE",
         "hygiene": 0,
         "health": 0,
-        "stress": -5
+        "stress": -5,
+        "hydration": 10
       },
       {
         "id": "ACT_REST",
@@ -2356,7 +2380,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 5,
-        "stress": -10
+        "stress": -10,
+        "hydration": 0
       },
       {
         "id": "ACT_ASK",
@@ -2375,7 +2400,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_BANKINFO",
@@ -2394,7 +2420,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_BUYBIKE",
@@ -2413,7 +2440,8 @@ export default {
         "asset": "VEH_BIKE",
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_RIDE",
@@ -2432,7 +2460,8 @@ export default {
         "asset": "VEH_BIKE",
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_CLINICINFO",
@@ -2451,7 +2480,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_VISIT_MALL",
@@ -2470,7 +2500,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_VISIT_MARKET",
@@ -2489,7 +2520,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_VISIT_FACTORY",
@@ -2508,7 +2540,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_VISIT_WAREHOUSE",
@@ -2527,7 +2560,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_VISIT_SCHOOL",
@@ -2546,7 +2580,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_VISIT_LIBRARY",
@@ -2565,7 +2600,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_VISIT_FARM",
@@ -2584,7 +2620,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_VISIT_SPORT",
@@ -2603,7 +2640,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_VISIT_CITYHALL",
@@ -2622,7 +2660,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_VISIT_COURT",
@@ -2641,7 +2680,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_VISIT_HOSPITAL",
@@ -2660,7 +2700,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_VISIT_APARTMENT",
@@ -2679,7 +2720,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_VISIT_PARK_EAST",
@@ -2698,7 +2740,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_VISIT_POLICE",
@@ -2717,7 +2760,8 @@ export default {
         "asset": null,
         "hygiene": 0,
         "health": 0,
-        "stress": 0
+        "stress": 0,
+        "hydration": 0
       },
       {
         "id": "ACT_SHOWER",
@@ -2736,7 +2780,8 @@ export default {
         "log": "Tắm rửa trong phòng.",
         "rule": "room",
         "job": null,
-        "asset": null
+        "asset": null,
+        "hydration": 0
       },
       {
         "id": "ACT_WASH",
@@ -2755,7 +2800,8 @@ export default {
         "log": "Rửa mặt tại công viên.",
         "rule": "none",
         "job": null,
-        "asset": null
+        "asset": null,
+        "hydration": 0
       },
       {
         "id": "ACT_AID",
@@ -2774,7 +2820,8 @@ export default {
         "log": "Nhận suất ăn hỗ trợ.",
         "rule": "aid",
         "job": null,
-        "asset": null
+        "asset": null,
+        "hydration": 15
       },
       {
         "id": "ACT_NAP",
@@ -2793,7 +2840,8 @@ export default {
         "log": "Chợp mắt tại công viên.",
         "rule": "none",
         "job": null,
-        "asset": null
+        "asset": null,
+        "hydration": 0
       },
       {
         "id": "ACT_TREATMENT",
@@ -2812,7 +2860,208 @@ export default {
         "log": "Khám và nghỉ phục hồi.",
         "rule": "none",
         "job": null,
-        "asset": null
+        "asset": null,
+        "hydration": 0
+      },
+      {
+        "id": "ACT_CAFE_SHIFT",
+        "legacyId": "cafe_shift",
+        "name": "Phụ quán cà phê",
+        "building": "BLD_CAFE",
+        "detail": "2 giờ · +95.000đ",
+        "cash": 95000,
+        "time": 120,
+        "rule": "work",
+        "job": "JOB_CAFE_SHIFT",
+        "asset": null,
+        "log": "Phụ quán cà phê.",
+        "energy": -12,
+        "hunger": -10,
+        "happy": -2,
+        "hygiene": -2,
+        "health": 0,
+        "stress": 4,
+        "hydration": -6
+      },
+      {
+        "id": "ACT_MARKET_SHIFT",
+        "legacyId": "market_shift",
+        "name": "Xếp hàng siêu thị",
+        "building": "BLD_MARKET",
+        "detail": "3 giờ · +160.000đ",
+        "cash": 160000,
+        "time": 180,
+        "rule": "work",
+        "job": "JOB_MARKET_SHIFT",
+        "asset": null,
+        "log": "Xếp hàng siêu thị.",
+        "energy": -18,
+        "hunger": -14,
+        "happy": -2,
+        "hygiene": -4,
+        "health": 0,
+        "stress": 6,
+        "hydration": -6
+      },
+      {
+        "id": "ACT_WAREHOUSE_SHIFT",
+        "legacyId": "warehouse_shift",
+        "name": "Bốc xếp kho",
+        "building": "BLD_WAREHOUSE",
+        "detail": "5 giờ · +260.000đ",
+        "cash": 260000,
+        "time": 300,
+        "rule": "work",
+        "job": "JOB_WAREHOUSE_SHIFT",
+        "asset": null,
+        "log": "Bốc xếp kho.",
+        "energy": -35,
+        "hunger": -25,
+        "happy": -2,
+        "hygiene": -10,
+        "health": 0,
+        "stress": 12,
+        "hydration": -6
+      },
+      {
+        "id": "ACT_FARM_SHIFT",
+        "legacyId": "farm_shift",
+        "name": "Phụ việc nông trại",
+        "building": "BLD_FARM",
+        "detail": "4 giờ · +180.000đ",
+        "cash": 180000,
+        "time": 240,
+        "rule": "work",
+        "job": "JOB_FARM_SHIFT",
+        "asset": null,
+        "log": "Phụ việc nông trại.",
+        "energy": -25,
+        "hunger": -20,
+        "happy": -2,
+        "hygiene": -8,
+        "health": 0,
+        "stress": 6,
+        "hydration": -6
+      },
+      {
+        "id": "ACT_EXERCISE",
+        "legacyId": "exercise",
+        "name": "Tập thể dục ngoài trời",
+        "building": "BLD_SPORT",
+        "detail": "45 phút · miễn phí",
+        "cash": 0,
+        "time": 45,
+        "rule": "none",
+        "job": null,
+        "asset": null,
+        "log": "Tập thể dục ngoài trời.",
+        "energy": -12,
+        "hunger": -8,
+        "happy": 8,
+        "hygiene": -5,
+        "health": 6,
+        "stress": -10,
+        "hydration": -10
+      },
+      {
+        "id": "ACT_WALK_PARK",
+        "legacyId": "walk_park",
+        "name": "Đi dạo công viên",
+        "building": "BLD_PARK_EAST",
+        "detail": "30 phút · miễn phí",
+        "cash": 0,
+        "time": 30,
+        "rule": "none",
+        "job": null,
+        "asset": null,
+        "log": "Đi dạo công viên.",
+        "energy": -3,
+        "hunger": 0,
+        "happy": 9,
+        "hygiene": 0,
+        "health": 0,
+        "stress": -8,
+        "hydration": 0
+      },
+      {
+        "id": "ACT_CINEMA",
+        "legacyId": "cinema",
+        "name": "Xem phim",
+        "building": "BLD_MALL",
+        "detail": "2 giờ · 100.000đ",
+        "cash": -100000,
+        "time": 120,
+        "rule": "none",
+        "job": null,
+        "asset": null,
+        "log": "Xem phim.",
+        "energy": 0,
+        "hunger": 0,
+        "happy": 25,
+        "hygiene": 0,
+        "health": 0,
+        "stress": -15,
+        "hydration": 0
+      },
+      {
+        "id": "ACT_FREE_WATER",
+        "legacyId": "free_water",
+        "name": "Uống nước tại vòi công cộng",
+        "building": "BLD_PARK",
+        "detail": "5 phút · miễn phí",
+        "cash": 0,
+        "time": 5,
+        "rule": "none",
+        "job": null,
+        "asset": null,
+        "log": "Uống nước tại vòi công cộng.",
+        "energy": 0,
+        "hunger": 0,
+        "happy": 0,
+        "hygiene": 0,
+        "health": 0,
+        "stress": 0,
+        "hydration": 40
+      },
+      {
+        "id": "ACT_SHELTER",
+        "legacyId": "shelter",
+        "name": "Nghỉ đêm tại khu hỗ trợ",
+        "building": "BLD_PARK",
+        "detail": "6 giờ · miễn phí, phục hồi một phần",
+        "cash": 0,
+        "time": 360,
+        "rule": "none",
+        "job": null,
+        "asset": null,
+        "log": "Nghỉ đêm tại khu hỗ trợ.",
+        "energy": 70,
+        "hunger": 0,
+        "happy": -2,
+        "hygiene": -10,
+        "health": 8,
+        "stress": -8,
+        "hydration": 0
+      },
+      {
+        "id": "ACT_RELIEF",
+        "legacyId": "relief",
+        "name": "Khám hỗ trợ khó khăn",
+        "building": "BLD_CLINIC",
+        "detail": "30 phút · miễn phí nếu nguy kịch và thiếu tiền",
+        "cash": 0,
+        "time": 30,
+        "rule": "relief",
+        "job": null,
+        "asset": null,
+        "log": "Khám hỗ trợ khó khăn.",
+        "energy": 12,
+        "hunger": 0,
+        "happy": 0,
+        "hygiene": 0,
+        "health": 35,
+        "stress": -10,
+        "hydration": 0
       }
     ],
     "NPC_Master": [
@@ -3438,6 +3687,50 @@ export default {
         "payPeriod": "month",
         "shiftMinutes": 480,
         "stress": 35
+      },
+      {
+        "id": "JOB_CAFE_SHIFT",
+        "name": "Phụ quán cà phê",
+        "industry": "IND_LABOR",
+        "education": "EDU_NONE",
+        "skills": [],
+        "pay": 95000,
+        "payPeriod": "shift",
+        "shiftMinutes": 120,
+        "stress": 15
+      },
+      {
+        "id": "JOB_MARKET_SHIFT",
+        "name": "Xếp hàng siêu thị",
+        "industry": "IND_LABOR",
+        "education": "EDU_NONE",
+        "skills": [],
+        "pay": 160000,
+        "payPeriod": "shift",
+        "shiftMinutes": 180,
+        "stress": 20
+      },
+      {
+        "id": "JOB_WAREHOUSE_SHIFT",
+        "name": "Bốc xếp kho",
+        "industry": "IND_LABOR",
+        "education": "EDU_NONE",
+        "skills": [],
+        "pay": 260000,
+        "payPeriod": "shift",
+        "shiftMinutes": 300,
+        "stress": 35
+      },
+      {
+        "id": "JOB_FARM_SHIFT",
+        "name": "Phụ việc nông trại",
+        "industry": "IND_LABOR",
+        "education": "EDU_NONE",
+        "skills": [],
+        "pay": 180000,
+        "payPeriod": "shift",
+        "shiftMinutes": 240,
+        "stress": 25
       }
     ],
     "Employers": [
@@ -3515,31 +3808,113 @@ export default {
         "id": "ITM_PHONE",
         "name": "Điện thoại cũ",
         "price": 500000,
-        "category": "personal"
+        "category": "personal",
+        "shops": [
+          "BLD_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
       },
       {
         "id": "ITM_BAG",
         "name": "Ba lô",
         "price": 150000,
-        "category": "personal"
+        "category": "personal",
+        "shops": [
+          "BLD_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
       },
       {
         "id": "ITM_BOOK",
         "name": "Sách học nghề",
         "price": 80000,
-        "category": "study"
+        "category": "study",
+        "shops": [
+          "BLD_LIBRARY",
+          "BLD_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
       },
       {
         "id": "ITM_LAPTOP",
         "name": "Laptop cơ bản",
         "price": 7000000,
-        "category": "study"
+        "category": "study",
+        "shops": [
+          "BLD_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
       },
       {
         "id": "ITM_HELMET",
         "name": "Mũ bảo hiểm",
         "price": 250000,
-        "category": "utility"
+        "category": "utility",
+        "shops": [
+          "BLD_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
+      },
+      {
+        "id": "ITM_RICE",
+        "name": "Gạo (1 phần)",
+        "price": 6000,
+        "category": "ingredient",
+        "shops": [
+          "BLD_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
+      },
+      {
+        "id": "ITM_EGG",
+        "name": "Trứng (1 quả)",
+        "price": 4000,
+        "category": "ingredient",
+        "shops": [
+          "BLD_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
+      },
+      {
+        "id": "ITM_VEG",
+        "name": "Rau (1 phần)",
+        "price": 5000,
+        "category": "ingredient",
+        "shops": [
+          "BLD_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
+      },
+      {
+        "id": "ITM_DRY_NOODLE",
+        "name": "Mì gói chưa nấu",
+        "price": 5000,
+        "category": "ingredient",
+        "shops": [
+          "BLD_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
+      },
+      {
+        "id": "ITM_WIPES",
+        "name": "Khăn ướt",
+        "price": 8000,
+        "category": "utility",
+        "shops": [
+          "BLD_MARKET",
+          "BLD_SHOP"
+        ],
+        "useMinutes": 5,
+        "hygiene": 25
       }
     ],
     "Food_Drinks": [
@@ -3549,7 +3924,15 @@ export default {
         "price": 30000,
         "hunger": 35,
         "energy": 2,
-        "happy": 3
+        "happy": 3,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET"
+        ],
+        "useMinutes": 15,
+        "hydration": 5,
+        "ingredients": [],
+        "cookMinutes": 0
       },
       {
         "id": "FOOD_COFFEE",
@@ -3557,7 +3940,14 @@ export default {
         "price": 35000,
         "hunger": -3,
         "energy": 15,
-        "happy": 8
+        "happy": 8,
+        "shops": [
+          "BLD_CAFE"
+        ],
+        "useMinutes": 5,
+        "hydration": 10,
+        "ingredients": [],
+        "cookMinutes": 0
       },
       {
         "id": "FOOD_WATER",
@@ -3565,7 +3955,15 @@ export default {
         "price": 10000,
         "hunger": 0,
         "energy": 2,
-        "happy": 0
+        "happy": 0,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET"
+        ],
+        "useMinutes": 5,
+        "hydration": 40,
+        "ingredients": [],
+        "cookMinutes": 0
       },
       {
         "id": "FOOD_NOODLES",
@@ -3573,7 +3971,15 @@ export default {
         "price": 25000,
         "hunger": 25,
         "energy": 1,
-        "happy": 2
+        "happy": 2,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET"
+        ],
+        "useMinutes": 15,
+        "hydration": 5,
+        "ingredients": [],
+        "cookMinutes": 0
       },
       {
         "id": "FOOD_FRUIT",
@@ -3581,7 +3987,80 @@ export default {
         "price": 20000,
         "hunger": 15,
         "energy": 2,
-        "happy": 2
+        "happy": 2,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET"
+        ],
+        "useMinutes": 15,
+        "hydration": 10,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_BREAD",
+        "name": "Bánh mì",
+        "price": 12000,
+        "hunger": 23,
+        "energy": 2,
+        "happy": 2,
+        "hydration": 0,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET"
+        ],
+        "useMinutes": 15,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_MILK",
+        "name": "Sữa hộp",
+        "price": 15000,
+        "hunger": 12,
+        "energy": 5,
+        "happy": 3,
+        "hydration": 20,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET"
+        ],
+        "useMinutes": 15,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_HOME_RICE",
+        "name": "Cơm trứng rau tự nấu",
+        "price": 25000,
+        "hunger": 50,
+        "energy": 4,
+        "happy": 6,
+        "hydration": 8,
+        "shops": [],
+        "useMinutes": 15,
+        "ingredients": [
+          "ITM_RICE",
+          "ITM_EGG",
+          "ITM_VEG"
+        ],
+        "cookMinutes": 35
+      },
+      {
+        "id": "FOOD_HOME_NOODLES",
+        "name": "Mì trứng tự nấu",
+        "price": 18000,
+        "hunger": 38,
+        "energy": 3,
+        "happy": 4,
+        "hydration": 12,
+        "shops": [],
+        "useMinutes": 15,
+        "ingredients": [
+          "ITM_DRY_NOODLE",
+          "ITM_EGG"
+        ],
+        "cookMinutes": 20
       }
     ],
     "Activities": [
@@ -3868,6 +4347,11 @@ export default {
         "id": "EXP_PENALTY",
         "name": "Tiền phạt",
         "description": "Hậu quả pháp lý."
+      },
+      {
+        "id": "EXP_SUPPLIES",
+        "name": "Nhu yếu phẩm",
+        "description": "Vật phẩm và đồ dùng cá nhân."
       }
     ],
     "Banks": [

@@ -102,5 +102,13 @@
     "max": 1000000,
     "initial": 0,
     "unit": "xp"
+  },
+  {
+    "id": "ATR_HYDRATION",
+    "name": "Đủ nước",
+    "min": 0,
+    "max": 100,
+    "initial": 85,
+    "unit": "score"
   }
 ]

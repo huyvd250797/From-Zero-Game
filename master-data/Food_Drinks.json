@@ -5,7 +5,15 @@
     "price": 30000,
     "hunger": 35,
     "energy": 2,
-    "happy": 3
+    "happy": 3,
+    "shops": [
+      "BLD_SHOP",
+      "BLD_MARKET"
+    ],
+    "useMinutes": 15,
+    "hydration": 5,
+    "ingredients": [],
+    "cookMinutes": 0
   },
   {
     "id": "FOOD_COFFEE",
@@ -13,7 +21,14 @@
     "price": 35000,
     "hunger": -3,
     "energy": 15,
-    "happy": 8
+    "happy": 8,
+    "shops": [
+      "BLD_CAFE"
+    ],
+    "useMinutes": 5,
+    "hydration": 10,
+    "ingredients": [],
+    "cookMinutes": 0
   },
   {
     "id": "FOOD_WATER",
@@ -21,7 +36,15 @@
     "price": 10000,
     "hunger": 0,
     "energy": 2,
-    "happy": 0
+    "happy": 0,
+    "shops": [
+      "BLD_SHOP",
+      "BLD_MARKET"
+    ],
+    "useMinutes": 5,
+    "hydration": 40,
+    "ingredients": [],
+    "cookMinutes": 0
   },
   {
     "id": "FOOD_NOODLES",
@@ -29,7 +52,15 @@
     "price": 25000,
     "hunger": 25,
     "energy": 1,
-    "happy": 2
+    "happy": 2,
+    "shops": [
+      "BLD_SHOP",
+      "BLD_MARKET"
+    ],
+    "useMinutes": 15,
+    "hydration": 5,
+    "ingredients": [],
+    "cookMinutes": 0
   },
   {
     "id": "FOOD_FRUIT",
@@ -37,6 +68,79 @@
     "price": 20000,
     "hunger": 15,
     "energy": 2,
-    "happy": 2
+    "happy": 2,
+    "shops": [
+      "BLD_SHOP",
+      "BLD_MARKET"
+    ],
+    "useMinutes": 15,
+    "hydration": 10,
+    "ingredients": [],
+    "cookMinutes": 0
+  },
+  {
+    "id": "FOOD_BREAD",
+    "name": "Bánh mì",
+    "price": 12000,
+    "hunger": 23,
+    "energy": 2,
+    "happy": 2,
+    "hydration": 0,
+    "shops": [
+      "BLD_SHOP",
+      "BLD_MARKET"
+    ],
+    "useMinutes": 15,
+    "ingredients": [],
+    "cookMinutes": 0
+  },
+  {
+    "id": "FOOD_MILK",
+    "name": "Sữa hộp",
+    "price": 15000,
+    "hunger": 12,
+    "energy": 5,
+    "happy": 3,
+    "hydration": 20,
+    "shops": [
+      "BLD_SHOP",
+      "BLD_MARKET"
+    ],
+    "useMinutes": 15,
+    "ingredients": [],
+    "cookMinutes": 0
+  },
+  {
+    "id": "FOOD_HOME_RICE",
+    "name": "Cơm trứng rau tự nấu",
+    "price": 25000,
+    "hunger": 50,
+    "energy": 4,
+    "happy": 6,
+    "hydration": 8,
+    "shops": [],
+    "useMinutes": 15,
+    "ingredients": [
+      "ITM_RICE",
+      "ITM_EGG",
+      "ITM_VEG"
+    ],
+    "cookMinutes": 35
+  },
+  {
+    "id": "FOOD_HOME_NOODLES",
+    "name": "Mì trứng tự nấu",
+    "price": 18000,
+    "hunger": 38,
+    "energy": 3,
+    "happy": 4,
+    "hydration": 12,
+    "shops": [],
+    "useMinutes": 15,
+    "ingredients": [
+      "ITM_DRY_NOODLE",
+      "ITM_EGG"
+    ],
+    "cookMinutes": 20
   }
 ]

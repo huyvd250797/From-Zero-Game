@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V1.2.0
+# From Zero — Canonical Master Data V1.3.0
 
-Game release V0.5.0 · 60 danh mục, 519 bản ghi seed. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.6.0 · 60 danh mục, 545 bản ghi seed. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -10,9 +10,9 @@ Game release V0.5.0 · 60 danh mục, 519 bản ghi seed. Số liệu kinh tế 
 | A – Foundation | `Difficulty.json` | 3 | Seed cho phiên bản sau |
 | A – Foundation | `Character_Origins.json` | 3 | Seed cho phiên bản sau |
 | A – Foundation | `Character_Traits.json` | 6 | Seed cho phiên bản sau |
-| A – Foundation | `Character_Attributes.json` | 13 | Tham chiếu/kiểm tra |
+| A – Foundation | `Character_Attributes.json` | 14 | Runtime Survival & Daily Activities |
 | A – Foundation | `Life_Stages.json` | 4 | Seed cho phiên bản sau |
-| A – Foundation | `Needs_Rules.json` | 3 | Runtime Life Simulation |
+| A – Foundation | `Needs_Rules.json` | 4 | Runtime Survival & Daily Activities |
 | B – World & City | `Cities.json` | 1 | Runtime prototype |
 | B – World & City | `Districts.json` | 10 | Runtime City Engine |
 | B – World & City | `Building_Types.json` | 24 | Runtime City Engine |
@@ -20,7 +20,7 @@ Game release V0.5.0 · 60 danh mục, 519 bản ghi seed. Số liệu kinh tế 
 | B – World & City | `Road_Network.json` | 12 | Runtime City Engine |
 | B – World & City | `Navigation_Nodes.json` | 23 | Runtime City Engine |
 | B – World & City | `World_Schedules.json` | 22 | Runtime Life Simulation |
-| B – World & City | `Location_Actions.json` | 30 | Runtime Life Simulation |
+| B – World & City | `Location_Actions.json` | 40 | Runtime Survival & Daily Activities |
 | C – Character & Social | `NPC_Master.json` | 8 | Seed cho phiên bản sau |
 | C – Character & Social | `Relationships.json` | 5 | Seed cho phiên bản sau |
 | C – Character & Social | `Relationship_Events.json` | 4 | Seed cho phiên bản sau |
@@ -31,18 +31,18 @@ Game release V0.5.0 · 60 danh mục, 519 bản ghi seed. Số liệu kinh tế 
 | D – Education & Career | `Skills.json` | 15 | Seed cho phiên bản sau |
 | D – Education & Career | `Courses.json` | 6 | Seed cho phiên bản sau |
 | D – Education & Career | `Industries.json` | 10 | Seed cho phiên bản sau |
-| D – Education & Career | `Jobs.json` | 15 | Tham chiếu/kiểm tra |
+| D – Education & Career | `Jobs.json` | 19 | Runtime Survival & Daily Activities |
 | D – Education & Career | `Employers.json` | 4 | Seed cho phiên bản sau |
 | D – Education & Career | `Career_Paths.json` | 4 | Seed cho phiên bản sau |
-| E – Assets & Lifestyle | `Items.json` | 5 | Seed cho phiên bản sau |
-| E – Assets & Lifestyle | `Food_Drinks.json` | 5 | Tham chiếu/kiểm tra |
+| E – Assets & Lifestyle | `Items.json` | 10 | Runtime Survival & Daily Activities |
+| E – Assets & Lifestyle | `Food_Drinks.json` | 9 | Runtime Survival & Daily Activities |
 | E – Assets & Lifestyle | `Activities.json` | 5 | Seed cho phiên bản sau |
 | E – Assets & Lifestyle | `Properties.json` | 5 | Tham chiếu/kiểm tra |
 | E – Assets & Lifestyle | `Vehicles.json` | 6 | Runtime prototype |
 | E – Assets & Lifestyle | `Furniture.json` | 5 | Seed cho phiên bản sau |
 | E – Assets & Lifestyle | `Maintenance.json` | 4 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Income_Types.json` | 6 | Seed cho phiên bản sau |
-| F – Finance & Economy | `Expense_Types.json` | 9 | Seed cho phiên bản sau |
+| F – Finance & Economy | `Expense_Types.json` | 10 | Runtime Survival & Daily Activities |
 | F – Finance & Economy | `Banks.json` | 2 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Loan_Products.json` | 3 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Saving_Products.json` | 2 | Seed cho phiên bản sau |
@@ -84,7 +84,7 @@ Roadmap trước ghi 60 nhưng liệt kê 65 tên. Giữ 60 danh mục vật lý
 - Runtime state và schema save v1 độc lập với master schema 1.0.0. Không ghi runtime state vào JSON.
 
 ## Phạm vi phiên bản
-Các danh mục seed chưa phải bộ nội dung đầy đủ V1.2.0. NPC chưa có hành vi AI từ seed; chưa mở mua nhà/ô tô, pháp luật, kinh doanh, đầu tư, cốt truyện đa nhánh. Điều kiện kết thúc hiện là mô tả, chưa phải biểu thức được engine thực thi. Tốc độ và hình học của renderer vẫn giới hạn bản đồ prototype 96×96. Giá trị cần playtest và cân bằng trước khi đóng băng nội dung.
+Các danh mục seed chưa phải bộ nội dung đầy đủ V1.3.0. NPC chưa có hành vi AI từ seed; chưa mở mua nhà/ô tô, pháp luật, kinh doanh, đầu tư, cốt truyện đa nhánh. Điều kiện kết thúc hiện là mô tả, chưa phải biểu thức được engine thực thi. Tốc độ và hình học của renderer vẫn giới hạn bản đồ prototype 96×96. Giá trị cần playtest và cân bằng trước khi đóng băng nội dung.
 
 ## City Engine V0.3.0
 - Schema 1.1.0 bổ sung Cities.chunkSize; Districts.minX/minZ/maxX/maxZ/color; Building_Types.style; Road_Network.lanes/kind.
@@ -92,5 +92,5 @@ Các danh mục seed chưa phải bộ nội dung đầy đủ V1.2.0. NPC chưa
 - Giữ ID, cửa và vị trí của các địa điểm V0.2.0; thu chiều sâu BLD_DECOR_03 từ 12 xuống 11 để không lấn đường.
 - Các hành động mới chỉ tham quan, chưa có hệ thống nghiệp vụ đầy đủ.
 
-## V1.2.0
+## V1.3.0
 Cấu hình năm bắt đầu và ngưỡng sức khỏe; thêm nhu cầu vệ sinh, lịch 22 địa điểm, 5 hoạt động hồi phục và trường hygiene/health/stress cho toàn bộ hành động. Giữ 60 catalog. Xem LIFE-SIMULATION.md.

@@ -22,5 +22,13 @@
     "intervalMinutes": 45,
     "delta": -1,
     "warningBelow": 20
+  },
+  {
+    "id": "NEE_HYDRATION",
+    "name": "Tiêu hao nước",
+    "attribute": "ATR_HYDRATION",
+    "intervalMinutes": 45,
+    "delta": -2,
+    "warningBelow": 20
   }
 ]

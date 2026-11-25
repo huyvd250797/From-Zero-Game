@@ -3,30 +3,112 @@
     "id": "ITM_PHONE",
     "name": "Điện thoại cũ",
     "price": 500000,
-    "category": "personal"
+    "category": "personal",
+    "shops": [
+      "BLD_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
   },
   {
     "id": "ITM_BAG",
     "name": "Ba lô",
     "price": 150000,
-    "category": "personal"
+    "category": "personal",
+    "shops": [
+      "BLD_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
   },
   {
     "id": "ITM_BOOK",
     "name": "Sách học nghề",
     "price": 80000,
-    "category": "study"
+    "category": "study",
+    "shops": [
+      "BLD_LIBRARY",
+      "BLD_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
   },
   {
     "id": "ITM_LAPTOP",
     "name": "Laptop cơ bản",
     "price": 7000000,
-    "category": "study"
+    "category": "study",
+    "shops": [
+      "BLD_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
   },
   {
     "id": "ITM_HELMET",
     "name": "Mũ bảo hiểm",
     "price": 250000,
-    "category": "utility"
+    "category": "utility",
+    "shops": [
+      "BLD_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
+  },
+  {
+    "id": "ITM_RICE",
+    "name": "Gạo (1 phần)",
+    "price": 6000,
+    "category": "ingredient",
+    "shops": [
+      "BLD_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
+  },
+  {
+    "id": "ITM_EGG",
+    "name": "Trứng (1 quả)",
+    "price": 4000,
+    "category": "ingredient",
+    "shops": [
+      "BLD_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
+  },
+  {
+    "id": "ITM_VEG",
+    "name": "Rau (1 phần)",
+    "price": 5000,
+    "category": "ingredient",
+    "shops": [
+      "BLD_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
+  },
+  {
+    "id": "ITM_DRY_NOODLE",
+    "name": "Mì gói chưa nấu",
+    "price": 5000,
+    "category": "ingredient",
+    "shops": [
+      "BLD_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
+  },
+  {
+    "id": "ITM_WIPES",
+    "name": "Khăn ướt",
+    "price": 8000,
+    "category": "utility",
+    "shops": [
+      "BLD_MARKET",
+      "BLD_SHOP"
+    ],
+    "useMinutes": 5,
+    "hygiene": 25
   }
 ]

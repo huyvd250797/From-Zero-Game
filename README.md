@@ -1,5 +1,5 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.5.0 — Time & Life Simulation**
+**V0.6.0 — Survival & Daily Activities**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 22 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
 
@@ -30,7 +30,17 @@ Mở http://localhost:5173. `npm run dev` cũng dùng được. Không double-cl
 - Game có 1 save slot localStorage. Autosave định kỳ 12 giây, sau hoạt động quan trọng và khi rời trang; lưu thủ công hoặc xuất JSON trong Cài đặt. Nếu xóa dữ liệu trình duyệt hoặc đổi thiết bị/domain, cần nhập bản sao lưu. Không có cloud sync.
 - WebGL là renderer chính; Canvas projection là fallback. Manifest + service worker cơ bản, offline sau khi cache thành công. Cần HTTPS (Vercel cung cấp) hoặc localhost cho service worker.
 
-## Time & Life Simulation V0.5.0
+## Survival & Daily Activities V0.6.0
+- Túi đồ 30 đơn vị, 19 loại vật phẩm/thức ăn, mua theo số lượng 1/2/3/5, dùng hoặc bỏ; New Game có điện thoại cũ và ba lô. Save cũ bắt đầu với túi trống, không suy diễn tài sản đã sở hữu.
+- Siêu thị bán nhu yếu phẩm, nguyên liệu, đồ cá nhân; cửa hàng tiện lợi và quán cà phê có hàng phù hợp. Mua mất 5 phút, kiểm tra vị trí, giờ mở cửa, sức chứa, số dư. Thức ăn có thể dùng trực tiếp từ túi.
+- Phòng trọ có hai công thức nấu ăn: cơm trứng rau (15.000đ nguyên liệu) và mì trứng (9.000đ). Món nấu được đưa vào túi; chỉ nấu tại phòng đang thuê và còn đủ thời hạn.
+- 5 ca thời vụ: cửa hàng 200.000đ/4h, cà phê 95.000đ/2h, siêu thị 160.000đ/3h, kho 260.000đ/5h, nông trại 180.000đ/4h. Giới hạn 8 giờ/ngày, kết thúc trước nửa đêm.
+- Chỉ số đủ nước, nước miễn phí, tập thể dục, đi dạo, xem phim, nghỉ đêm hỗ trợ, khám hỗ trợ miễn phí nếu nguy kịch và thiếu tiền.
+- Lịch ngày gồm 6 hoạt động; tùy chỉnh giờ, bật/tắt nhắc, tự ghi nhận khi thực hiện. Không tự chạy lịch hay phát thông báo nền.
+- Sổ thu chi hôm nay/7/30 ngày, nhóm chi tiêu, bao gồm gia hạn phòng và bảo dưỡng. Chỉ ghi nhận giao dịch từ bản này, không dựng lại giao dịch cũ.
+- Master Data V1.3.0: 60 danh mục, 545 bản ghi. Save schema 1 tự bổ sung trường mới; không cần SQL migration. Xem `docs/SURVIVAL.md`.
+
+## Time & Life Simulation V0.5.0 (kế thừa)
 - Lịch Gregorian, tuổi tác, ngày đêm, 5 tốc độ, 6 chỉ số cuộc sống, lịch phục vụ 22 địa điểm.
 - Tự gia hạn phòng trọ, phí bảo dưỡng xe đạp, cảnh báo nhu cầu, hành động hồi phục và hỗ trợ khi thiếu tiền.
 - Chi tiết quy tắc và migration tương thích xem `docs/LIFE-SIMULATION.md`.

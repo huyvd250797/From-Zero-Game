@@ -19,6 +19,9 @@
     "spawn": "NAV_SPAWN",
     "startYear": 2026,
     "criticalHealthThreshold": 20,
-    "criticalNeedThreshold": 15
+    "criticalNeedThreshold": 15,
+    "inventoryCapacity": 30,
+    "dailyWorkLimit": 480,
+    "povertyThreshold": 60000
   }
 ]

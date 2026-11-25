@@ -16,7 +16,8 @@
     "asset": null,
     "hygiene": -5,
     "health": 0,
-    "stress": 8
+    "stress": 8,
+    "hydration": -5
   },
   {
     "id": "ACT_MEAL",
@@ -35,7 +36,8 @@
     "asset": "FOOD_MEAL",
     "hygiene": 0,
     "health": 3,
-    "stress": 0
+    "stress": 0,
+    "hydration": 5
   },
   {
     "id": "ACT_RENT",
@@ -54,7 +56,8 @@
     "asset": "PROP_ROOM",
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_SLEEP",
@@ -73,7 +76,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 8,
-    "stress": -20
+    "stress": -20,
+    "hydration": 0
   },
   {
     "id": "ACT_COFFEE",
@@ -92,7 +96,8 @@
     "asset": "FOOD_COFFEE",
     "hygiene": 0,
     "health": 0,
-    "stress": -5
+    "stress": -5,
+    "hydration": 10
   },
   {
     "id": "ACT_REST",
@@ -111,7 +116,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 5,
-    "stress": -10
+    "stress": -10,
+    "hydration": 0
   },
   {
     "id": "ACT_ASK",
@@ -130,7 +136,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_BANKINFO",
@@ -149,7 +156,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_BUYBIKE",
@@ -168,7 +176,8 @@
     "asset": "VEH_BIKE",
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_RIDE",
@@ -187,7 +196,8 @@
     "asset": "VEH_BIKE",
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_CLINICINFO",
@@ -206,7 +216,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_VISIT_MALL",
@@ -225,7 +236,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_VISIT_MARKET",
@@ -244,7 +256,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_VISIT_FACTORY",
@@ -263,7 +276,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_VISIT_WAREHOUSE",
@@ -282,7 +296,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_VISIT_SCHOOL",
@@ -301,7 +316,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_VISIT_LIBRARY",
@@ -320,7 +336,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_VISIT_FARM",
@@ -339,7 +356,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_VISIT_SPORT",
@@ -358,7 +376,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_VISIT_CITYHALL",
@@ -377,7 +396,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_VISIT_COURT",
@@ -396,7 +416,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_VISIT_HOSPITAL",
@@ -415,7 +436,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_VISIT_APARTMENT",
@@ -434,7 +456,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_VISIT_PARK_EAST",
@@ -453,7 +476,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_VISIT_POLICE",
@@ -472,7 +496,8 @@
     "asset": null,
     "hygiene": 0,
     "health": 0,
-    "stress": 0
+    "stress": 0,
+    "hydration": 0
   },
   {
     "id": "ACT_SHOWER",
@@ -491,7 +516,8 @@
     "log": "Tắm rửa trong phòng.",
     "rule": "room",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hydration": 0
   },
   {
     "id": "ACT_WASH",
@@ -510,7 +536,8 @@
     "log": "Rửa mặt tại công viên.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hydration": 0
   },
   {
     "id": "ACT_AID",
@@ -529,7 +556,8 @@
     "log": "Nhận suất ăn hỗ trợ.",
     "rule": "aid",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hydration": 15
   },
   {
     "id": "ACT_NAP",
@@ -548,7 +576,8 @@
     "log": "Chợp mắt tại công viên.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hydration": 0
   },
   {
     "id": "ACT_TREATMENT",
@@ -567,6 +596,207 @@
     "log": "Khám và nghỉ phục hồi.",
     "rule": "none",
     "job": null,
-    "asset": null
+    "asset": null,
+    "hydration": 0
+  },
+  {
+    "id": "ACT_CAFE_SHIFT",
+    "legacyId": "cafe_shift",
+    "name": "Phụ quán cà phê",
+    "building": "BLD_CAFE",
+    "detail": "2 giờ · +95.000đ",
+    "cash": 95000,
+    "time": 120,
+    "rule": "work",
+    "job": "JOB_CAFE_SHIFT",
+    "asset": null,
+    "log": "Phụ quán cà phê.",
+    "energy": -12,
+    "hunger": -10,
+    "happy": -2,
+    "hygiene": -2,
+    "health": 0,
+    "stress": 4,
+    "hydration": -6
+  },
+  {
+    "id": "ACT_MARKET_SHIFT",
+    "legacyId": "market_shift",
+    "name": "Xếp hàng siêu thị",
+    "building": "BLD_MARKET",
+    "detail": "3 giờ · +160.000đ",
+    "cash": 160000,
+    "time": 180,
+    "rule": "work",
+    "job": "JOB_MARKET_SHIFT",
+    "asset": null,
+    "log": "Xếp hàng siêu thị.",
+    "energy": -18,
+    "hunger": -14,
+    "happy": -2,
+    "hygiene": -4,
+    "health": 0,
+    "stress": 6,
+    "hydration": -6
+  },
+  {
+    "id": "ACT_WAREHOUSE_SHIFT",
+    "legacyId": "warehouse_shift",
+    "name": "Bốc xếp kho",
+    "building": "BLD_WAREHOUSE",
+    "detail": "5 giờ · +260.000đ",
+    "cash": 260000,
+    "time": 300,
+    "rule": "work",
+    "job": "JOB_WAREHOUSE_SHIFT",
+    "asset": null,
+    "log": "Bốc xếp kho.",
+    "energy": -35,
+    "hunger": -25,
+    "happy": -2,
+    "hygiene": -10,
+    "health": 0,
+    "stress": 12,
+    "hydration": -6
+  },
+  {
+    "id": "ACT_FARM_SHIFT",
+    "legacyId": "farm_shift",
+    "name": "Phụ việc nông trại",
+    "building": "BLD_FARM",
+    "detail": "4 giờ · +180.000đ",
+    "cash": 180000,
+    "time": 240,
+    "rule": "work",
+    "job": "JOB_FARM_SHIFT",
+    "asset": null,
+    "log": "Phụ việc nông trại.",
+    "energy": -25,
+    "hunger": -20,
+    "happy": -2,
+    "hygiene": -8,
+    "health": 0,
+    "stress": 6,
+    "hydration": -6
+  },
+  {
+    "id": "ACT_EXERCISE",
+    "legacyId": "exercise",
+    "name": "Tập thể dục ngoài trời",
+    "building": "BLD_SPORT",
+    "detail": "45 phút · miễn phí",
+    "cash": 0,
+    "time": 45,
+    "rule": "none",
+    "job": null,
+    "asset": null,
+    "log": "Tập thể dục ngoài trời.",
+    "energy": -12,
+    "hunger": -8,
+    "happy": 8,
+    "hygiene": -5,
+    "health": 6,
+    "stress": -10,
+    "hydration": -10
+  },
+  {
+    "id": "ACT_WALK_PARK",
+    "legacyId": "walk_park",
+    "name": "Đi dạo công viên",
+    "building": "BLD_PARK_EAST",
+    "detail": "30 phút · miễn phí",
+    "cash": 0,
+    "time": 30,
+    "rule": "none",
+    "job": null,
+    "asset": null,
+    "log": "Đi dạo công viên.",
+    "energy": -3,
+    "hunger": 0,
+    "happy": 9,
+    "hygiene": 0,
+    "health": 0,
+    "stress": -8,
+    "hydration": 0
+  },
+  {
+    "id": "ACT_CINEMA",
+    "legacyId": "cinema",
+    "name": "Xem phim",
+    "building": "BLD_MALL",
+    "detail": "2 giờ · 100.000đ",
+    "cash": -100000,
+    "time": 120,
+    "rule": "none",
+    "job": null,
+    "asset": null,
+    "log": "Xem phim.",
+    "energy": 0,
+    "hunger": 0,
+    "happy": 25,
+    "hygiene": 0,
+    "health": 0,
+    "stress": -15,
+    "hydration": 0
+  },
+  {
+    "id": "ACT_FREE_WATER",
+    "legacyId": "free_water",
+    "name": "Uống nước tại vòi công cộng",
+    "building": "BLD_PARK",
+    "detail": "5 phút · miễn phí",
+    "cash": 0,
+    "time": 5,
+    "rule": "none",
+    "job": null,
+    "asset": null,
+    "log": "Uống nước tại vòi công cộng.",
+    "energy": 0,
+    "hunger": 0,
+    "happy": 0,
+    "hygiene": 0,
+    "health": 0,
+    "stress": 0,
+    "hydration": 40
+  },
+  {
+    "id": "ACT_SHELTER",
+    "legacyId": "shelter",
+    "name": "Nghỉ đêm tại khu hỗ trợ",
+    "building": "BLD_PARK",
+    "detail": "6 giờ · miễn phí, phục hồi một phần",
+    "cash": 0,
+    "time": 360,
+    "rule": "none",
+    "job": null,
+    "asset": null,
+    "log": "Nghỉ đêm tại khu hỗ trợ.",
+    "energy": 70,
+    "hunger": 0,
+    "happy": -2,
+    "hygiene": -10,
+    "health": 8,
+    "stress": -8,
+    "hydration": 0
+  },
+  {
+    "id": "ACT_RELIEF",
+    "legacyId": "relief",
+    "name": "Khám hỗ trợ khó khăn",
+    "building": "BLD_CLINIC",
+    "detail": "30 phút · miễn phí nếu nguy kịch và thiếu tiền",
+    "cash": 0,
+    "time": 30,
+    "rule": "relief",
+    "job": null,
+    "asset": null,
+    "log": "Khám hỗ trợ khó khăn.",
+    "energy": 12,
+    "hunger": 0,
+    "happy": 0,
+    "hygiene": 0,
+    "health": 35,
+    "stress": -10,
+    "hydration": 0
   }
 ]

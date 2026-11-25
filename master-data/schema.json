@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "catalogs": {
     "Game_Config": {
       "prefix": "CFG",
@@ -21,7 +21,10 @@
         "spawn": "ref:Navigation_Nodes",
         "startYear": "int:1900:2100",
         "criticalHealthThreshold": "pct",
-        "criticalNeedThreshold": "pct"
+        "criticalNeedThreshold": "pct",
+        "inventoryCapacity": "positiveInt",
+        "dailyWorkLimit": "positiveInt",
+        "povertyThreshold": "money"
       }
     },
     "Difficulty": {
@@ -155,12 +158,13 @@
         "hunger": "int:-100:100",
         "happy": "int:-100:100",
         "log": "text",
-        "rule": "enum:none,work,rent,sleep,buybike,ride,room,aid",
+        "rule": "enum:none,work,rent,sleep,buybike,ride,room,aid,relief",
         "job": "nullable:ref:Jobs",
         "asset": "nullable:refAny:Food_Drinks,Properties,Vehicles",
         "hygiene": "int:-100:100",
         "health": "int:-100:100",
-        "stress": "int:-100:100"
+        "stress": "int:-100:100",
+        "hydration": "int:-100:100"
       }
     },
     "NPC_Master": {
@@ -270,7 +274,10 @@
       "prefix": "ITM",
       "fields": {
         "price": "money",
-        "category": "enum:personal,study,utility"
+        "category": "enum:personal,study,utility,ingredient",
+        "shops": "refs:Building_Instances",
+        "useMinutes": "nonnegativeInt",
+        "hygiene": "int:0:100"
       }
     },
     "Food_Drinks": {
@@ -279,7 +286,12 @@
         "price": "money",
         "hunger": "int:-100:100",
         "energy": "int:-100:100",
-        "happy": "int:-100:100"
+        "happy": "int:-100:100",
+        "shops": "refs:Building_Instances",
+        "useMinutes": "positiveInt",
+        "hydration": "int:-100:100",
+        "ingredients": "refs:Items",
+        "cookMinutes": "nonnegativeInt"
       }
     },
     "Activities": {

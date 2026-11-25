@@ -190,5 +190,49 @@
     "payPeriod": "month",
     "shiftMinutes": 480,
     "stress": 35
+  },
+  {
+    "id": "JOB_CAFE_SHIFT",
+    "name": "Phụ quán cà phê",
+    "industry": "IND_LABOR",
+    "education": "EDU_NONE",
+    "skills": [],
+    "pay": 95000,
+    "payPeriod": "shift",
+    "shiftMinutes": 120,
+    "stress": 15
+  },
+  {
+    "id": "JOB_MARKET_SHIFT",
+    "name": "Xếp hàng siêu thị",
+    "industry": "IND_LABOR",
+    "education": "EDU_NONE",
+    "skills": [],
+    "pay": 160000,
+    "payPeriod": "shift",
+    "shiftMinutes": 180,
+    "stress": 20
+  },
+  {
+    "id": "JOB_WAREHOUSE_SHIFT",
+    "name": "Bốc xếp kho",
+    "industry": "IND_LABOR",
+    "education": "EDU_NONE",
+    "skills": [],
+    "pay": 260000,
+    "payPeriod": "shift",
+    "shiftMinutes": 300,
+    "stress": 35
+  },
+  {
+    "id": "JOB_FARM_SHIFT",
+    "name": "Phụ việc nông trại",
+    "industry": "IND_LABOR",
+    "education": "EDU_NONE",
+    "skills": [],
+    "pay": 180000,
+    "payPeriod": "shift",
+    "shiftMinutes": 240,
+    "stress": 25
   }
 ]

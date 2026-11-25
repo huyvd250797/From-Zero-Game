@@ -12,7 +12,7 @@ export async function loadMaster(root=path.join(base,'master-data')){
 }
 export function validateMaster(schema,data){
  const errors=[],err=(p,m)=>errors.push(`${p}: ${m}`), ids=new Map();
- if(schema?.version!=='1.2.0'||!schema.catalogs||Object.keys(schema.catalogs).length!==60){return ['Schema phải là 1.2.0 và có 60 danh mục'];}
+ if(schema?.version!=='1.3.0'||!schema.catalogs||Object.keys(schema.catalogs).length!==60){return ['Schema phải là 1.3.0 và có 60 danh mục'];}
  for(const k of Object.keys(data))if(!Object.hasOwn(schema.catalogs,k))err(k,'Danh mục ngoài schema');
  for(const [key,s] of Object.entries(schema.catalogs)){
   if(!/^[A-Z][A-Z0-9]*$/.test(s.prefix)||!s.fields||typeof s.fields!=='object'){err(key,'Schema không hợp lệ');continue}
@@ -67,6 +67,8 @@ export function validateMaster(schema,data){
   for(let i=0;i<data.Building_Instances.length;i++)for(let j=i+1;j<data.Building_Instances.length;j++){const a=data.Building_Instances[i],b=data.Building_Instances[j];if(Math.abs(a.x-b.x)<(a.w+b.w)/2&&Math.abs(a.z-b.z)<(a.d+b.d)/2)err(a.id,'Công trình chồng lấn '+b.id);}
 
  }
+ for(const key of ['Items','Food_Drinks'])each(key,(r,p)=>{if(r.shops.some(id=>!get('Building_Instances',id).interactive))err(p,'Cửa hàng không tương tác');if(r.useMinutes>1440)err(p,'Thời gian sử dụng quá lớn');});
+ each('Food_Drinks',(r,p)=>{if(Boolean(r.ingredients.length)!==Boolean(r.cookMinutes)||r.cookMinutes>1440||r.ingredients.some(id=>get('Items',id).category!=='ingredient')||(r.ingredients.length&&r.shops.length))err(p,'Công thức nấu không hợp lệ');});
  each('Location_Actions',(r,p)=>{
   if(!get('Building_Instances',r.building).interactive)err(p,'Không thể tương tác công trình nền');
   if(r.rule==='work'){const j=get('Jobs',r.job);if(!j||j.payPeriod!=='shift'||r.cash!==j.pay||r.time!==j.shiftMinutes)err(p,'Tiền công/giờ làm không khớp nghề');}

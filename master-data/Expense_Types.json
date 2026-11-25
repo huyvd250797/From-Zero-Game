@@ -43,5 +43,10 @@
     "id": "EXP_PENALTY",
     "name": "Tiền phạt",
     "description": "Hậu quả pháp lý."
+  },
+  {
+    "id": "EXP_SUPPLIES",
+    "name": "Nhu yếu phẩm",
+    "description": "Vật phẩm và đồ dùng cá nhân."
   }
 ]
