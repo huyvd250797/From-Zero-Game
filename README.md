@@ -1,7 +1,16 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.7.0 — Education & Skills**
+**V0.8.0 — Career & Employment**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 22 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.8.0 — Sự nghiệp & việc làm
+- Mở Sự nghiệp & việc làm: Hợp đồng, Tuyển dụng, Hồ sơ, Lương & thưởng, Lịch sử. 19 vị trí, 14 nghề chính thức, 10 nhà tuyển dụng. Đến nơi để phỏng vấn, ký và làm việc.
+- Ca thứ Hai–thứ Sáu, bắt đầu 08:00–09:00, sau 08:15 tính đi muộn. Hợp đồng mới bắt đầu từ ngày kế tiếp có lịch làm. Tối đa 8 giờ làm/ngày chung với thời vụ.
+- Lương tính theo ngày làm thực tế, thanh toán đầu tháng sau; thưởng 10% nếu đủ 10 ca, điểm ca trung bình ≥80, không bỏ ca. Khi kết thúc hợp đồng, quyết toán lương đã tích lũy, không thưởng chưa đến kỳ.
+- Ba cảnh báo liên tiếp do bỏ ca, đi muộn hoặc điểm ca dưới 55 dẫn đến sa thải. Ca tốt xóa chuỗi cảnh báo. Có thể ứng tuyển khi còn hợp đồng, xin nghỉ ngay hoặc chuyển công tác khi ký hợp đồng mới.
+- Tăng lương 10% lương gốc mỗi lần (tối đa 3), cần 20 ca kể từ lần xét, hiệu suất ≥80 và không cảnh báo. Thăng chức theo Career_Paths, học vấn, kỹ năng và kinh nghiệm tích lũy.
+- Save cũ tự thêm career, giữ dữ liệu và schema 1. Không cần SQL. Master Data V1.5.0 (60 danh mục, 559 bản ghi). Xem docs/CAREER.md.
+- Quy tắc lao động và mức lương hoàn toàn giả lập; chưa có thuế, bảo hiểm, phép năm, thời gian báo trước hoặc thị trường tuyển dụng động. Nên tích lũy tiền sinh hoạt trước khi nhận việc tháng.
 
 ## Deploy GitHub → Vercel
 1. Giải nén ZIP. Đưa **nội dung bên trong** (package.json, package-lock.json, src/, master-data/, public/, scripts/, index.html, vercel.json...) vào thư mục gốc repository GitHub.

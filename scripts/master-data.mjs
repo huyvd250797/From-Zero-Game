@@ -12,7 +12,7 @@ export async function loadMaster(root=path.join(base,'master-data')){
 }
 export function validateMaster(schema,data){
  const errors=[],err=(p,m)=>errors.push(`${p}: ${m}`), ids=new Map();
- if(schema?.version!=='1.4.0'||!schema.catalogs||Object.keys(schema.catalogs).length!==60){return ['Schema phải là 1.4.0 và có 60 danh mục'];}
+ if(schema?.version!=='1.5.0'||!schema.catalogs||Object.keys(schema.catalogs).length!==60){return ['Schema phải là 1.5.0 và có 60 danh mục'];}
  for(const k of Object.keys(data))if(!Object.hasOwn(schema.catalogs,k))err(k,'Danh mục ngoài schema');
  for(const [key,s] of Object.entries(schema.catalogs)){
   if(!/^[A-Z][A-Z0-9]*$/.test(s.prefix)||!s.fields||typeof s.fields!=='object'){err(key,'Schema không hợp lệ');continue}
@@ -81,6 +81,7 @@ export function validateMaster(schema,data){
  for(const id of ['work','meal','rent','sleep','coffee','rest','ask','bankinfo','buybike','ride','clinicinfo'])if(!data.Location_Actions.some(r=>r.legacyId===id))err('Location_Actions',`Thiếu hành động tương thích ${id}`);
  each('Story_Events',(r,p)=>{if(!data.Event_Choices.some(c=>c.event===r.id))err(p,'Sự kiện không có lựa chọn')});
  each('Event_Choices',(r,p)=>{if(r.delayDays>0&&!r.nextEvent)err(p,'Hậu quả trì hoãn thiếu sự kiện đích');});
+ each('Employers',(r,p)=>{const hours=data.World_Schedules.find(s=>s.building===r.building);if(!hours||new Set(r.jobs).size!==r.jobs.length)err(p,'Nhà tuyển dụng không hợp lệ');for(const id of r.jobs){const j=get('Jobs',id);if(j?.payPeriod==='month'&&(!hours||hours.opens>480||hours.closes<540+j.shiftMinutes))err(p,'Ca làm không phù hợp giờ công trình');}});
  each('Career_Paths',(r,p)=>{if(r.from===r.to)err(p,'Lộ trình tự tham chiếu')});
  const cycle=(rows,edges,label)=>{const active=new Set(),done=new Set();function visit(id){if(active.has(id)){err(label,`Chu trình ${id}`);return}if(done.has(id))return;active.add(id);for(const next of edges(id))visit(next);active.delete(id);done.add(id)}for(const id of rows)visit(id)};
  cycle(data.Jobs.map(r=>r.id),id=>data.Career_Paths.filter(r=>r.from===id).map(r=>r.to),'Career_Paths');

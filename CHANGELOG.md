@@ -1,5 +1,11 @@
 # Changelog
 
+## V0.8.0 — Career & Employment (2026-11-25)
+- 19 vị trí tại 10 nhà tuyển dụng, CV tự sinh, lọc việc, nộp hồ sơ, phỏng vấn, ký hợp đồng.
+- Lịch ca chính thức, lương tích lũy, thưởng, hiệu suất, XP nghề, tăng lương, thăng chức, nghỉ việc, chuyển việc, sa thải và tái ứng tuyển.
+- Tích hợp sổ thu chi, lịch ngày, giới hạn giờ làm, save cũ; Master Data V1.5.0, 60 danh mục / 559 bản ghi.
+- Giữ nguyên bản đồ, renderer và kiến trúc deploy tĩnh.
+
 ## V0.7.0 — Education & Skills (2026-11-25)
 - 13 chương trình (6 chứng chỉ, 7 văn bằng), 3 đơn vị đào tạo dùng 2 địa điểm hiện có. Học phí, lịch học, tiến độ, nhận bằng và dừng học.
 - 15 kỹ năng, XP tự học thư viện/sách/laptop, XP từ 5 ca thời vụ, giới hạn học 4 giờ/ngày và kiểm tra nhu cầu.

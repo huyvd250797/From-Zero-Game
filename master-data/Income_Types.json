@@ -28,5 +28,10 @@
     "id": "INC_RENT",
     "name": "Cho thuê",
     "description": "Thu nhập tài sản."
+  },
+  {
+    "id": "INC_BONUS",
+    "name": "Thưởng hiệu suất",
+    "description": "Thưởng theo kỳ lương chính thức."
   }
 ]

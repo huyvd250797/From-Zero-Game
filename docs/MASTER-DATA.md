@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V1.4.0
+# From Zero — Canonical Master Data V1.5.0
 
-Game release V0.7.0 · 60 danh mục, 552 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.8.0 · 60 danh mục, 559 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -32,8 +32,8 @@ Game release V0.7.0 · 60 danh mục, 552 bản ghi. Số liệu kinh tế và p
 | D – Education & Career | `Courses.json` | 13 | Runtime Education & Skills |
 | D – Education & Career | `Industries.json` | 10 | Seed cho phiên bản sau |
 | D – Education & Career | `Jobs.json` | 19 | Runtime ca thời vụ và điều kiện đào tạo |
-| D – Education & Career | `Employers.json` | 4 | Seed cho phiên bản sau |
-| D – Education & Career | `Career_Paths.json` | 4 | Seed cho phiên bản sau |
+| D – Education & Career | `Employers.json` | 10 | Runtime Career & Employment |
+| D – Education & Career | `Career_Paths.json` | 4 | Lộ trình nghề; 3 nhánh thăng chức chính thức |
 | E – Assets & Lifestyle | `Items.json` | 10 | Runtime Survival & Daily Activities |
 | E – Assets & Lifestyle | `Food_Drinks.json` | 9 | Runtime Survival & Daily Activities |
 | E – Assets & Lifestyle | `Activities.json` | 5 | Seed cho phiên bản sau |
@@ -41,7 +41,7 @@ Game release V0.7.0 · 60 danh mục, 552 bản ghi. Số liệu kinh tế và p
 | E – Assets & Lifestyle | `Vehicles.json` | 6 | Runtime prototype |
 | E – Assets & Lifestyle | `Furniture.json` | 5 | Seed cho phiên bản sau |
 | E – Assets & Lifestyle | `Maintenance.json` | 4 | Seed cho phiên bản sau |
-| F – Finance & Economy | `Income_Types.json` | 6 | Seed cho phiên bản sau |
+| F – Finance & Economy | `Income_Types.json` | 7 | Lương/thưởng runtime, các nguồn khác seed |
 | F – Finance & Economy | `Expense_Types.json` | 10 | Runtime Survival & Daily Activities |
 | F – Finance & Economy | `Banks.json` | 2 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Loan_Products.json` | 3 | Seed cho phiên bản sau |
@@ -98,3 +98,6 @@ Cấu hình năm bắt đầu và ngưỡng sức khỏe; thêm nhu cầu vệ s
 ## V1.4.0
 - Schools gắn building; Courses có loại chương trình, đầu vào, văn bằng, số buổi và thời lượng mỗi buổi; thêm 7 văn bằng. Jobs có ngưỡng kỹ năng và XP thực hành; Game_Config có giới hạn học, XP mỗi cấp và trình độ xuất phát.
 - 60 danh mục, 552 bản ghi. Chi tiết runtime: `docs/EDUCATION.md`.
+
+## V1.5.0
+Bổ sung 6 nhà tuyển dụng, mở rộng vị trí tại các nhà tuyển dụng cũ, thêm INC_BONUS. 19 vị trí lương tháng, 14 nghề chính thức. Kiểm tra ca làm phù hợp giờ công trình.

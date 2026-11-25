@@ -6,7 +6,8 @@
     "jobs": [
       "JOB_TEMP",
       "JOB_CASHIER",
-      "JOB_SALES"
+      "JOB_SALES",
+      "JOB_MANAGER"
     ]
   },
   {
@@ -17,7 +18,8 @@
       "JOB_DEV",
       "JOB_LEAD",
       "JOB_ACCOUNT",
-      "JOB_MANAGER"
+      "JOB_MANAGER",
+      "JOB_DESIGNER"
     ]
   },
   {
@@ -33,6 +35,57 @@
     "id": "EMP_CLINIC",
     "name": "Phòng khám An Lạc",
     "building": "BLD_CLINIC",
+    "jobs": [
+      "JOB_NURSE"
+    ]
+  },
+  {
+    "id": "EMP_FACTORY",
+    "name": "Nhà máy Đông An",
+    "building": "BLD_FACTORY",
+    "jobs": [
+      "JOB_WORKER",
+      "JOB_BUILDER"
+    ]
+  },
+  {
+    "id": "EMP_LOGISTICS",
+    "name": "Kho logistics",
+    "building": "BLD_WAREHOUSE",
+    "jobs": [
+      "JOB_DRIVER"
+    ]
+  },
+  {
+    "id": "EMP_SCHOOL",
+    "name": "Trường nghề An Lạc",
+    "building": "BLD_SCHOOL",
+    "jobs": [
+      "JOB_TEACHER"
+    ]
+  },
+  {
+    "id": "EMP_FARM",
+    "name": "Nông trại Bình An",
+    "building": "BLD_FARM",
+    "jobs": [
+      "JOB_FARMER"
+    ]
+  },
+  {
+    "id": "EMP_MARKET",
+    "name": "Siêu thị An Lạc",
+    "building": "BLD_MARKET",
+    "jobs": [
+      "JOB_CASHIER",
+      "JOB_SALES",
+      "JOB_MANAGER"
+    ]
+  },
+  {
+    "id": "EMP_HOSPITAL",
+    "name": "Bệnh viện An Lạc",
+    "building": "BLD_HOSPITAL",
     "jobs": [
       "JOB_NURSE"
     ]

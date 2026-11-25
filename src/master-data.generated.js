@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "1.4.0",
+  "version": "1.5.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -3932,7 +3932,8 @@ export default {
         "jobs": [
           "JOB_TEMP",
           "JOB_CASHIER",
-          "JOB_SALES"
+          "JOB_SALES",
+          "JOB_MANAGER"
         ]
       },
       {
@@ -3943,7 +3944,8 @@ export default {
           "JOB_DEV",
           "JOB_LEAD",
           "JOB_ACCOUNT",
-          "JOB_MANAGER"
+          "JOB_MANAGER",
+          "JOB_DESIGNER"
         ]
       },
       {
@@ -3959,6 +3961,57 @@ export default {
         "id": "EMP_CLINIC",
         "name": "Phòng khám An Lạc",
         "building": "BLD_CLINIC",
+        "jobs": [
+          "JOB_NURSE"
+        ]
+      },
+      {
+        "id": "EMP_FACTORY",
+        "name": "Nhà máy Đông An",
+        "building": "BLD_FACTORY",
+        "jobs": [
+          "JOB_WORKER",
+          "JOB_BUILDER"
+        ]
+      },
+      {
+        "id": "EMP_LOGISTICS",
+        "name": "Kho logistics",
+        "building": "BLD_WAREHOUSE",
+        "jobs": [
+          "JOB_DRIVER"
+        ]
+      },
+      {
+        "id": "EMP_SCHOOL",
+        "name": "Trường nghề An Lạc",
+        "building": "BLD_SCHOOL",
+        "jobs": [
+          "JOB_TEACHER"
+        ]
+      },
+      {
+        "id": "EMP_FARM",
+        "name": "Nông trại Bình An",
+        "building": "BLD_FARM",
+        "jobs": [
+          "JOB_FARMER"
+        ]
+      },
+      {
+        "id": "EMP_MARKET",
+        "name": "Siêu thị An Lạc",
+        "building": "BLD_MARKET",
+        "jobs": [
+          "JOB_CASHIER",
+          "JOB_SALES",
+          "JOB_MANAGER"
+        ]
+      },
+      {
+        "id": "EMP_HOSPITAL",
+        "name": "Bệnh viện An Lạc",
+        "building": "BLD_HOSPITAL",
         "jobs": [
           "JOB_NURSE"
         ]
@@ -4491,6 +4544,11 @@ export default {
         "id": "INC_RENT",
         "name": "Cho thuê",
         "description": "Thu nhập tài sản."
+      },
+      {
+        "id": "INC_BONUS",
+        "name": "Thưởng hiệu suất",
+        "description": "Thưởng theo kỳ lương chính thức."
       }
     ],
     "Expense_Types": [

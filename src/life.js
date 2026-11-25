@@ -1,3 +1,4 @@
+import {careerMidnight} from './career.js';
 import {cashChange,pruneFinance} from './survival-state.js';
 import {catalogs,config,record} from './master-data.js';
 export const SPEEDS=Object.freeze([1,2,4,8,16]);
@@ -27,6 +28,7 @@ export function advanceTime(s,minutes,{resting=false}={}){
  if(!Number.isSafeInteger(minutes)||minutes<0||minutes>10080)throw RangeError('Thời lượng không hợp lệ');
  const end=Math.min(MAX_MINUTES,s.minutes+minutes);
  while(s.minutes<end){s.minutes++;
+  if(s.minutes%1440===0)careerMidnight(s);
   for(const r of catalogs.Needs_Rules){const k=needKeys[r.attribute];if(k&&s.minutes%r.intervalMinutes===0&&!(resting&&k==='energy'))s[k]=clamp(s[k]+r.delta);}
   if(s.minutes%60===0){const critical=['energy','hunger','hygiene','hydration'].filter(k=>s[k]<config.criticalNeedThreshold).length;if(critical){s.health=clamp(s.health-critical*2);s.happy=clamp(s.happy-critical);s.stress=clamp(s.stress+critical*2);}else if(s.hunger>=45&&s.energy>=40&&s.hygiene>=40){s.stress=clamp(s.stress-1);if(resting)s.health=clamp(s.health+1);}if(s.stress>=85){s.health=clamp(s.health-1);s.happy=clamp(s.happy-1);}}
   if(s.rentUntil&&s.minutes===s.rentUntil){if(s.autoRent&&s.cash>=rent){cashChange(s,-rent,'EXP_RENT');s.rentUntil+=config.rentMinutes;log(s,`Gia hạn phòng trọ: −${rent.toLocaleString('vi-VN')}đ.`);}else{log(s,s.autoRent?'Không đủ tiền gia hạn phòng trọ. Bạn đã mất chỗ ở.':'Hết hạn phòng trọ.');}}
