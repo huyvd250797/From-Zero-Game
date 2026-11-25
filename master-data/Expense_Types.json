@@ -63,5 +63,10 @@
     "id": "EXP_FURNITURE",
     "name": "Nội thất",
     "description": "Mua nội thất."
+  },
+  {
+    "id": "EXP_SOCIAL",
+    "name": "Quan hệ xã hội",
+    "description": "Chi phí giúp đỡ và giao lưu xã hội."
   }
 ]

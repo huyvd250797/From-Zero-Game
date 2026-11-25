@@ -1,5 +1,11 @@
 # Changelog
 
+## V0.12.0 — NPC & Social World (2026-11-25)
+- 16 NPC với hồ sơ, lịch sinh hoạt, tuyến đi lại, mô hình low-poly, nhãn bản đồ và chấm minimap.
+- Danh bạ, tìm/lọc, hồ sơ, gặp mặt, hội thoại theo ký ức, tin tưởng, uy tín, giúp đỡ, mâu thuẫn và hòa giải; nhận diện đồng nghiệp theo hợp đồng.
+- Master Data V1.9.0 (60 danh mục, 583 bản ghi), thêm EXP_SOCIAL và migration save tự động.
+- 158/158 tests, build và kiểm thử Chromium Canvas/storage mô phỏng; chưa xác minh WebGL, offline hoặc Vercel thật.
+
 ## V0.11.0 — Vehicles & Transportation (2026-11-25)
 - 6 mẫu phương tiện, gara, mua/bán, lưu vị trí riêng, lên/xuống, điều khiển và tuyến tự động ưu tiên đường.
 - Nhiên liệu/pin, cứu hộ, bảo dưỡng định kỳ, nợ và giá trị giảm theo quãng đường; tích hợp sổ thu chi và tài sản ròng.

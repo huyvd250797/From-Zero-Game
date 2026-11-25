@@ -1,5 +1,5 @@
 {
-  "version": "1.8.0",
+  "version": "1.9.0",
   "catalogs": {
     "Game_Config": {
       "prefix": "CFG",
@@ -177,7 +177,17 @@
         "behavior": "enum:work,study,visit,service",
         "homeDistrict": "ref:Districts",
         "workplace": "nullable:ref:Building_Instances",
-        "description": "text"
+        "description": "text",
+        "fullName": "text",
+        "age": "int:18:100",
+        "gender": "enum:male,female",
+        "occupation": "text",
+        "home": "ref:Building_Instances",
+        "leisure": "ref:Building_Instances",
+        "workStart": "int:360:720",
+        "workEnd": "int:780:1080",
+        "color": "color",
+        "dialogue": "text"
       }
     },
     "Relationships": {

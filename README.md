@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.11.0 — Vehicles & Transportation**
+**V0.12.0 — NPC & Social World**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 25 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.12.0 — NPC & Social World
+- 16 NPC định danh, 6 tính cách, tên đầy đủ, tuổi, nghề, nhà, nơi làm/học, nơi thư giãn, màu áo riêng; lịch 24 giờ lặp mỗi ngày. Tìm đường A* cho 48 chặng, vị trí xác định theo thời gian game, không lưu đường đi rời rạc. NPC xuất hiện ở điểm công cộng bên ngoài công trình, không vào nội thất riêng.
+- Quan hệ xã hội: Mọi người, Danh bạ, Gần đây, Uy tín. Tìm theo tên/nghề (không dấu), lọc bạn bè, đồng nghiệp, người lạ; xem hồ sơ, lịch, ký ức; chọn Đi đến để tự bám vị trí NPC; cần đứng gần (3 đơn vị, không bị công trình chắn), xuống xe. Chấm tím trên minimap và nhãn NPC trên bản đồ.
+- Chào hỏi, trò chuyện, hỗ trợ 30.000đ một lần/NPC khi đủ tin tưởng, bất đồng, xin lỗi; mỗi hành động tối đa một lần/ngày/NPC. Tính cách hòa đồng và đồng nghiệp có thưởng khi trò chuyện. Ký ức 24 hành động gần nhất/NPC; cờ hỗ trợ/mâu thuẫn lưu riêng. Tin tưởng 0–100, quen biết/bạn bè từ 30/bạn thân từ 70; giảm 1 điểm mỗi tuần hoàn chỉnh sau 7 ngày không tương tác. Uy tín khởi đầu 50, thay đổi theo hành động, chưa tác động tuyển dụng.
+- Save schema 1 tự bổ sung social. Giao dịch giúp đỡ dùng EXP_SOCIAL, không tạo tiền; giữ nguyên tài sản, thời gian, tiến trình cũ. Không cần database, SQL hoặc env. Master Data V1.9.0 (60 danh mục, 583 bản ghi). Xem docs/SOCIAL.md.
+- 158/158 tests, kiểm thử Chromium Canvas + storage mô phỏng, production build. Chưa xác minh WebGL, offline, Vercel thực tế. NPC không có va chạm động, lịch ngày nghỉ, nhà riêng bên trong, hành vi tự quyết định hoặc hội thoại AI; tình yêu/hôn nhân thuộc V0.13.0.
 
 ## V0.11.0 — Phương tiện & giao thông
 - Nút Phương tiện: Gara, Mua xe, Bảo dưỡng & năng lượng, Xe buýt / Taxi. 6 mẫu xe có thể mua, sở hữu tối đa một xe mỗi mẫu. Mua/bán tại cửa hàng phương tiện (địa chỉ cũ cửa hàng xe đạp), dùng tiền mặt. Xe mới đỗ tại cửa hàng; vị trí xe được lưu riêng với nhân vật.

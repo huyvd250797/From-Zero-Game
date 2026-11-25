@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V1.8.0
+# From Zero — Canonical Master Data V1.9.0
 
-Game release V0.11.0 · 60 danh mục, 574 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.12.0 · 60 danh mục, 583 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -21,11 +21,11 @@ Game release V0.11.0 · 60 danh mục, 574 bản ghi. Số liệu kinh tế và 
 | B – World & City | `Navigation_Nodes.json` | 26 | Runtime City Engine |
 | B – World & City | `World_Schedules.json` | 25 | Runtime Life Simulation |
 | B – World & City | `Location_Actions.json` | 43 | Runtime Survival & Daily Activities |
-| C – Character & Social | `NPC_Master.json` | 8 | Seed cho phiên bản sau |
-| C – Character & Social | `Relationships.json` | 5 | Seed cho phiên bản sau |
-| C – Character & Social | `Relationship_Events.json` | 4 | Seed cho phiên bản sau |
+| C – Character & Social | `NPC_Master.json` | 16 | Runtime NPC & Social World |
+| C – Character & Social | `Relationships.json` | 5 | Runtime tình bạn; đối tác/vợ chồng là seed |
+| C – Character & Social | `Relationship_Events.json` | 4 | Runtime giúp đỡ/mâu thuẫn; còn lại là seed |
 | C – Character & Social | `Family_Rules.json` | 3 | Seed cho phiên bản sau |
-| C – Character & Social | `Social_Reputation.json` | 3 | Seed cho phiên bản sau |
+| C – Character & Social | `Social_Reputation.json` | 3 | Runtime uy tín |
 | D – Education & Career | `Education_Levels.json` | 6 | Runtime Education & Skills |
 | D – Education & Career | `Schools.json` | 3 | Runtime Education & Skills |
 | D – Education & Career | `Skills.json` | 15 | Runtime Education & Skills |
@@ -42,7 +42,7 @@ Game release V0.11.0 · 60 danh mục, 574 bản ghi. Số liệu kinh tế và 
 | E – Assets & Lifestyle | `Furniture.json` | 5 | Runtime Housing & Interior |
 | E – Assets & Lifestyle | `Maintenance.json` | 4 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Income_Types.json` | 10 | Lương/thưởng/thời vụ và thu lịch sử runtime, các nguồn khác seed |
-| F – Finance & Economy | `Expense_Types.json` | 13 | Runtime Survival & Daily Activities |
+| F – Finance & Economy | `Expense_Types.json` | 14 | Runtime Survival & Daily Activities |
 | F – Finance & Economy | `Banks.json` | 2 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Loan_Products.json` | 3 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Saving_Products.json` | 2 | Seed cho phiên bản sau |
@@ -110,3 +110,7 @@ Gắn mỗi Properties với Building_Instances và phí utilitiesMonthly; kích
 
 ## V1.8.0
 Vehicles bổ sung capacity, consumption, unitPrice; tên BLD_BIKE đổi thành Cửa hàng phương tiện (giữ ID và tọa độ); Income_Types thêm INC_VEHICLE_SALE. Quy tắc nhiên liệu được kiểm tra khi build.
+
+## V1.9.0
+- 16 NPC, thêm hồ sơ và lịch/địa điểm. Kiểm tra nơi ở, phân khu, giờ hoạt động và tham chiếu.
+- EXP_SOCIAL cho chi phí xã hội; 60 danh mục, 583 bản ghi.
