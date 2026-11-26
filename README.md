@@ -1,7 +1,15 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.9.0 — Life Planning & Automation** · 26/11/2026
+**V2.10.0 — Advanced Careers & Education** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.10.0 — Advanced Careers & Education
+- Thị trường lao động theo ngày: hồ sơ ứng viên mô phỏng được tạo xác định từ danh tính cư dân và chỉ số sẵn sàng, có ngưỡng cạnh tranh riêng từng vị trí; vẫn giữ quy định mở/đóng tuyển dụng theo chu kỳ kinh tế. Không thay đổi nghề nghiệp của NPC hoặc chiếm suất tuyển dụng thực tế.
+- Lương đề nghị dựa trên lương thị trường, kỹ năng vượt yêu cầu, kinh nghiệm cùng nghề và chứng chỉ liên quan (tối đa +30%); chốt lương khi phỏng vấn thành công. Hợp đồng cũ, lương đã tích lũy, thưởng, lịch làm và giới hạn ca không bị thay đổi.
+- Mức hài lòng cập nhật theo hiệu suất, đi muộn, vắng mặt. Xem tiến độ thăng chức và khuyến nghị phát triển; người chơi vẫn chủ động nghỉ việc, chuyển việc hoặc ký hợp đồng.
+- Tab Mục tiêu trong Sự nghiệp & việc làm: chọn 14 nghề chính thức, xem yêu cầu bằng cấp, cấp kỹ năng, số XP thiếu, kinh nghiệm, lương dự kiến, khóa học và nhà tuyển dụng. Lọc tuyển dụng theo mục tiêu. Kỹ năng có cấp độ chuyên môn và chứng chỉ liên quan.
+- Tự học trong lịch tự động có thể chọn kỹ năng cụ thể hoặc theo mục tiêu nghề nghiệp. Tự bỏ qua khi các kỹ năng tối thiểu đã đạt; không tự mua khóa học hoặc cấp văn bằng. Lịch cũ vẫn học lập trình mặc định.
+- 621 unit tests, Native QA 94 tài nguyên; Three.js production cần npm ci với registry access và nghiệm thu GPU. Save schema 1 mở rộng tùy chọn, không SQL.
 
 ## V2.9.0 — Life Planning & Automation
 - Menu → Kế hoạch & tự động hóa (also available in Lịch sinh hoạt). Separate opt-in schedule of up to 24 activities with daily, weekly, monthly and one-time recurrence; daily / 7-day / 30-day previews, editable time/window, mode, condition; three templates.

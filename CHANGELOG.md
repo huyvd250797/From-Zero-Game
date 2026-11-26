@@ -1,3 +1,9 @@
+## V2.10.0 — Advanced Careers & Education (26/11/2026)
+- Labor market: daily deterministic simulated applicants, competitive interview thresholds and offer salary snapshots; existing contracts remain fixed.
+- Career goal planner, qualification/XP/experience gaps, training suggestions and goal vacancy filter; salary premium up to 30%; job satisfaction, specialization labels and credential counts.
+- Automation supports explicit or goal-directed study skill selection, stops studying automatically when all minimum skills are met; preserves legacy default.
+- 621/621 unit tests; Native QA 94 assets, desktop/mobile UI flow verified in Chromium Canvas fallback. Three.js production unavailable in current environment.
+
 ## V2.9.0 — Life Planning & Automation (26/11/2026)
 - Add recurrence-aware task editor, day/week/30-day plan views, conditional rules, three templates and separate occurrence history.
 - Opt-in automation using real movement and existing actions; estimated fastest eligible route, direct expense budget and cash reserve, canonical action preflight and interruption handling.
