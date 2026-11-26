@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.1.0 — Visual Fidelity & Smooth Experience** · 26/11/2026
+**V2.2.0 — Advanced Character Models** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.2.0 — Advanced Character Models
+- Four original skinned GLB templates (male/female, high/low); official GLTFLoader and SkeletonUtils clone in Three.js, same named 13 joints and 19 procedural clips. Customized models use shared geometry generator and the template rig; fallback works if GLB fails. No external model assets.
+- Smaller head, more natural torso and limbs, smoother normals, face details, eight hair styles and eight shirt colors, age details and NPC work/study wardrobe. NPC profile uses CPU geometry preview. Original art remains stylized and rigid-weighted.
+- All 25 residents use stable Vietnamese full names, 3 or 4 words. Existing IDs unchanged; new NPC_SAO (Đào Thị Sao, initial age 17, fictional student) remains one year younger than the player. Existing adult relationship age gate stays enforced.
+- NPC walking duration uses route length and a stable individual pace (1.55–1.82 world units / second at 1× for current population); short commutes arrive early, long commutes depart earlier, no slow-motion 60-minute fixed leg. Walk cadence follows displacement; high game speed remains accelerated. Normal schedule and interactions still deterministic.
+- 531 unit tests, native QA verified; official Three.js integration and hardware performance pending. Save schema 1 unchanged. NPC catalog and its minimum age validation intentionally updated; other Master Data files unchanged. Export backup before update; a save with NPC_SAO contacts cannot be loaded safely by V2.1.0.
 
 ## V2.1.0 — Visual Fidelity & Smooth Experience
 - Existing orthographic camera only: critically damped spring for position, zoom and pitch; interpolated player and vehicle motion from the fixed 60 Hz movement step. Reset presentation on visibility changes. Preserve existing yaw interpolation, journey, proximity labels, floating joystick and PWA zoom guard.

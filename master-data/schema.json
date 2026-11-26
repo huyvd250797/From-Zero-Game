@@ -179,7 +179,7 @@
         "workplace": "nullable:ref:Building_Instances",
         "description": "text",
         "fullName": "text",
-        "age": "int:18:100",
+        "age": "int:17:100",
         "gender": "enum:male,female",
         "occupation": "text",
         "home": "ref:Building_Instances",

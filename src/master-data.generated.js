@@ -3314,7 +3314,7 @@ export default {
     "NPC_Master": [
       {
         "id": "NPC_LAN",
-        "name": "Lan",
+        "name": "Nguyễn Ngọc Lan",
         "personality": "TRA_SOCIAL",
         "behavior": "service",
         "homeDistrict": "DST_RESIDENTIAL",
@@ -3333,7 +3333,7 @@ export default {
       },
       {
         "id": "NPC_NAM",
-        "name": "Nam",
+        "name": "Trần Hoài Nam",
         "personality": "TRA_DISCIPLINED",
         "behavior": "work",
         "homeDistrict": "DST_CENTER",
@@ -3352,13 +3352,13 @@ export default {
       },
       {
         "id": "NPC_THAO",
-        "name": "Thảo",
+        "name": "Lê Nguyễn Minh Thảo",
         "personality": "TRA_CURIOUS",
         "behavior": "study",
         "homeDistrict": "DST_RESIDENTIAL",
         "workplace": "BLD_SCHOOL",
         "description": "Bạn trẻ đang học nghề.",
-        "fullName": "Lê Minh Thảo",
+        "fullName": "Lê Nguyễn Minh Thảo",
         "age": 19,
         "gender": "female",
         "occupation": "Học viên trường nghề",
@@ -3371,13 +3371,13 @@ export default {
       },
       {
         "id": "NPC_HUNG",
-        "name": "Hùng",
+        "name": "Phạm Nguyễn Quốc Hùng",
         "personality": "TRA_CAREFUL",
         "behavior": "service",
         "homeDistrict": "DST_SERVICE",
         "workplace": "BLD_BIKE",
         "description": "Chủ cửa hàng xe.",
-        "fullName": "Phạm Quốc Hùng",
+        "fullName": "Phạm Nguyễn Quốc Hùng",
         "age": 39,
         "gender": "male",
         "occupation": "Chủ cửa hàng xe",
@@ -3390,7 +3390,7 @@ export default {
       },
       {
         "id": "NPC_MAI",
-        "name": "Mai",
+        "name": "Vũ Thanh Mai",
         "personality": "TRA_SOCIAL",
         "behavior": "service",
         "homeDistrict": "DST_RESIDENTIAL",
@@ -3409,7 +3409,7 @@ export default {
       },
       {
         "id": "NPC_DUC",
-        "name": "Đức",
+        "name": "Đỗ Anh Đức",
         "personality": "TRA_DETERMINED",
         "behavior": "work",
         "homeDistrict": "DST_CENTER",
@@ -3428,13 +3428,13 @@ export default {
       },
       {
         "id": "NPC_LINH",
-        "name": "Linh",
+        "name": "Ngô Nguyễn Khánh Linh",
         "personality": "TRA_CAREFUL",
         "behavior": "service",
         "homeDistrict": "DST_SERVICE",
         "workplace": "BLD_CLINIC",
         "description": "Nhân viên y tế.",
-        "fullName": "Ngô Khánh Linh",
+        "fullName": "Ngô Nguyễn Khánh Linh",
         "age": 27,
         "gender": "female",
         "occupation": "Nhân viên y tế",
@@ -3447,7 +3447,7 @@ export default {
       },
       {
         "id": "NPC_AN",
-        "name": "An",
+        "name": "Bùi Gia An",
         "personality": "TRA_IMPULSIVE",
         "behavior": "visit",
         "homeDistrict": "DST_LEISURE",
@@ -3767,6 +3767,25 @@ export default {
         "workEnd": 960,
         "color": "#66899b",
         "dialogue": "Hãy cân nhắc khả năng trả nợ trước khi vay."
+      },
+      {
+        "id": "NPC_SAO",
+        "name": "Đào Thị Sao",
+        "personality": "TRA_CURIOUS",
+        "behavior": "study",
+        "homeDistrict": "DST_RESIDENTIAL",
+        "workplace": "BLD_SCHOOL",
+        "description": "Học viên tại An Lạc.",
+        "fullName": "Đào Thị Sao",
+        "age": 17,
+        "gender": "female",
+        "occupation": "Học viên trường nghề",
+        "home": "BLD_DECOR_01",
+        "leisure": "BLD_LIBRARY",
+        "workStart": 480,
+        "workEnd": 900,
+        "color": "#b87996",
+        "dialogue": "Mỗi ngày học thêm một điều mới cũng là tiến bộ."
       }
     ],
     "Relationships": [

@@ -1,3 +1,8 @@
+## V2.2.0 — Advanced Character Models (26/11/2026)
+- Original four GLB templates; improved body/face/hair, age shading, context wardrobe and LOD hysteresis. Shared 13-joint skeleton and 19 clips; diagnostics report actual loaded GLB templates/actors.
+- Distance-based NPC commute durations and walking cadence; 25 residents, Vietnamese full names, NPC_SAO one year younger than the player. Existing IDs retained.
+- NPC portrait and rounded schedule display; save schema 1 unchanged, only NPC catalog and minimum age validation changed. 531 unit tests; native QA, production Three.js pending.
+
 ## V2.1.0 — Visual Fidelity & Smooth Experience (26/11/2026)
 - Orthographic spring camera; interpolated movement phase, heading and vehicle state; reset clocks after visibility changes.
 - Predictive chunk preparation with low LOD fallback, bounded queue work, zoom hysteresis and distance LOD; 128px procedural textures and preset anisotropy, refined contact shading, quantized shadow extent, smaller adaptive resolution steps.
