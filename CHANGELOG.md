@@ -1,3 +1,9 @@
+## V1.8.0 — Weather & Atmosphere
+- Deterministic visual climate with five states, wet/dry seasons, smooth cloud/rain/fog/wind transitions and road drying; fractional game time used for lighting.
+- Batched animated rain, fog, puddle geometry, wet road roughness/darkening, golden-hour and cloud shading. Screen-space particles pause, respect reduced motion and never intercept input.
+- Three.js local light pools for nearby existing lamps and player vehicle headlights, fog, wet PBR and small instanced street-tree sway. Legacy fallback retains rain, haze, puddles, basic lighting without Three.js local lamps.
+- Weather status in HUD, automatic/preview settings and visual effects toggle. No changes to gameplay/save/Master Data. 11 new unit tests (452 total); one gated Three.js integration test added; 70 native-preview assets verified. Production Three.js unavailable locally due to missing dependency.
+
 ## V1.7.0 — Advanced Transportation
 - Shared vehicle geometry: 6 owned types plus bus/taxi, circular rolling wheels, steering, distinct bodywork, brake lights and indicators; motorcycle rider and player marker.
 - Acceleration, coasting, brake control, bounded yaw and braking near route endpoints. Existing movement sweep and distance-based consumption preserved; no save or Master Data change.

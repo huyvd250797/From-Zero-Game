@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V1.7.0 — Advanced Transportation** · 26/11/2026
+**V1.8.0 — Weather & Atmosphere** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V1.8.0 — Weather & Atmosphere
+- Five deterministic climate states (clear, cloudy, rain, heavy rain, fog), three-hour slots and 24-minute transitions. Wet season May–November and dry season December–April; purely visual fictional climate, no external weather API. Road wetness decays after rain. Golden-hour colour and cloud-dependent sun strength.
+- Animated screen-space rain on a pointer-transparent canvas, batched in a single stroke, with quality-dependent caps and pause/reduced-motion handling; fog via Three.js Fog and fallback canvas haze. Puddles are procedural geometry on road surfaces; wet asphalt PBR roughness/darkening in Three.js and native shader, basic darkening in Canvas. No real-time reflection or rain physics.
+- Three.js bounded local lighting: up to six street lamps, two active vehicle/transit headlights; no extra shadow maps. Existing glass emissive and street-tree InstancedMesh wind shear. No real-time local lights in fallback.
+- Settings: automatic weather or explicit preview, effects on/off; weather displayed in HUD. Preferences only; saves, economy, navigation, NPC schedules and Master Data unchanged. See `docs/WEATHER-ATMOSPHERE.md`.
+- 452 independent unit tests; native preview 70 assets. Three.js integration remains gated by actual dependency install; production build not verified here.
 
 ## V1.7.0 — Advanced Transportation
 - 8 shared procedural vehicle meshes (6 owned models, bus and taxi); rolling wheels and front-wheel steering, vehicle lights including brake and flashing turn-indicator colors. No external assets. The motorcycle rider uses the existing ride pose; vehicle lamps are colored geometry, not local light sources.
