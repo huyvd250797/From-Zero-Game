@@ -1,10 +1,10 @@
 # From Zero — Từ hai bàn tay trắng
-**V1.2.1 — Three.js Engine Migration** · 26/11/2026
+**V1.3.0 — Character & Animation** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
 
 ## Bắt đầu
-1. Chọn **Bắt đầu cuộc đời mới**, nhập tên, chọn Dễ/Bình thường/Khó. Save cũ giữ nguyên độ khó đã có; save từ trước V0.22.0 mặc định Bình thường.
+1. Chọn **Bắt đầu cuộc đời mới**, nhập tên, chọn Dễ/Bình thường/Khó và tùy chỉnh ngoại hình. Save cũ giữ nguyên độ khó đã có; save từ trước V0.22.0 mặc định Bình thường.
 2. Hướng dẫn khởi đầu tự mở. Chọn **Đến nơi** để nhân vật tự tìm đường; đến cửa và tương tác với hoạt động. Có thể đóng hướng dẫn và tự do khám phá.
 3. Kiếm thu nhập tại cửa hàng khu dân cư (ca 4 giờ); mua cơm tại cửa hàng, uống nước/ nghỉ miễn phí ở công viên, thuê trọ khi có đủ tiền. Giá theo thời gian và độ khó. Dùng Sinh tồn & phục hồi để xem dự toán. Không có phần thưởng chỉ vì mở hướng dẫn.
 4. Học miễn phí tại thư viện hoặc đăng ký khóa học; ứng tuyển khi đủ kỹ năng. Quản lý nhà ở, phương tiện, quan hệ, sức khỏe, tài chính và các biến cố qua menu chức năng.
@@ -31,12 +31,15 @@ Thời gian chạy khi gameplay hoạt động. Modal, tạm dừng và tab ẩn
 - Bốn cấp độ đồ họa, cache A*, ba lớp lưu trữ, cảnh báo xung đột tab, PWA fingerprint và precache SHA-256.
 - V1.0.0: onboarding có dẫn đường thật, bảo vệ xác nhận thay thế save, hỗ trợ điều hướng bàn phím trong modal, đồng bộ branding.
 
-## Three.js Engine Migration V1.2.1
-- Three.js r180 (`three@0.180.0`) là renderer ưu tiên mặc định, sử dụng WebGL 2. `package-lock.json` ghim chính xác tarball và integrity. Native WebGL 2 V1.2.0, WebGL 1 và Canvas là fallback độc lập; lựa chọn Legacy cũ được giữ nguyên. Cài đặt hiển thị renderer đang hoạt động và nguyên nhân fallback.
-- Bridge chuyển hình học hiện tại thành `BufferGeometry`, 7 `MeshStandardMaterial` với màu linear, roughness/metalness, texture procedural nội bộ, contact shading tùy chọn; giữ camera, vùng va chạm và tọa độ thành phố. `InstancedMesh` dùng cho cây ven đường, LOD theo vùng, cache tối đa 44 phân vùng/mức LOD. NPC và phương tiện vẫn dùng hình học hiện tại.
-- Ánh sáng Directional/Hemisphere, bóng PCF, ACES tone mapping, EffectComposer với Bloom/FXAA/OutputPass, bốn preset và adaptive resolution. GLTFLoader chính thức cho ghế GLB mẫu; SkeletonUtils và AnimationMixer sẵn sàng cho V1.3.0, chưa gắn vào nhân vật hiện tại. Chưa có SSAO thật, texture PBR độc lập hay mô hình nhân vật rig hoàn chỉnh.
-- Production build **yêu cầu npm ci thành công**; tự kiểm thử với Three.js thật (camera, geometry, GLB, mixer, graph), đóng gói các module vendor và LICENSE vào fingerprint, đưa vào SHA-256 precache. Không dùng CDN lúc chơi. Không có dependency giả. Xem [THREE-JS-MIGRATION](docs/THREE-JS-MIGRATION.md).
-- **Trạng thái bàn giao:** 383/383 test không cần dependency đạt, build native QA và kiểm thử fallback đạt. npm không truy cập được Registry tại môi trường xây dựng nên chưa chạy 5 test runtime Three.js, chưa xác nhận production build, WebGL 2 Three.js hoặc PWA thật. Native preview nằm riêng `dist-native-preview/`, không phải output Vercel và không đăng ký Service Worker. Chỉ nghiệm thu chuyển đổi sau khi build và kiểm tra thiết bị thật.
+## Character & Animation V1.3.0
+- Hai dáng người, ba dạng khuôn mặt, bốn màu da, bốn kiểu tóc, bốn màu tóc, sáu màu áo, bốn màu quần, ba màu giày và ba phụ kiện. Chỉnh khi tạo nhân vật hoặc qua Ngoại hình nhân vật; miễn phí, không ảnh hưởng giới tính nghiệp vụ, chỉ số hay tài sản. Preview 3D procedural bằng Canvas chiếu các tam giác, có xoay và sáu động tác.
+- Mô hình tạo bằng code, 13 khớp phân cấp. Three.js `SkinnedMesh`, `Bone`, `Skeleton`, trọng số cứng một khớp/đỉnh, `AnimationMixer` và crossfade 0,18 giây. Idle/Walk/Run/Ride kết nối trạng thái di chuyển, Sit/Wave chỉ xem trước. NPC có ngoại hình xác định từ ID, theo tuổi và LOD, không thay đổi hành vi. Native/Canvas dùng chung hình học và pose CPU.
+- Tóc bạc và dáng người theo bốn nhóm tuổi (18–39, 40–54, 55–74, 75+). Save schema 1 thêm `appearance`, save cũ nhận mặc định; thay đổi ngoại hình không thay đổi gameplay. Không có mesh Blender, rig biến dạng mềm, biểu cảm động, quần áo vật lý hoặc animation tương tác đầy đủ.
+- **393/393 unit tests** đã chạy tại môi trường này. Native QA build (59 tài nguyên) và UI Chromium Canvas với storage mô phỏng được kiểm tra. npm Registry lỗi DNS EAI_AGAIN: 7 test runtime thật và production build Three.js chưa chạy được. Không phát hành `dist-native-preview` lên Vercel. Xem [Character & Animation](docs/CHARACTER-ANIMATION.md).
+
+## Three.js Engine Migration V1.2.1 (kế thừa)
+- Three.js r180 (`three@0.180.0`) là renderer ưu tiên mặc định; fallback native WebGL 2 → WebGL 1 → Canvas. Giữ vật liệu, ánh sáng, GLTFLoader, hậu kỳ, bốn preset, instancing cây ven đường, LOD, camera và vùng va chạm.
+- Production build yêu cầu npm ci, kiểm thử runtime Three.js, đóng gói module vendor và LICENSE trong fingerprint, SHA-256 precache. Không dùng CDN khi chơi. Xem [THREE-JS-MIGRATION](docs/THREE-JS-MIGRATION.md) (báo cáo lịch sử V1.2.1).
 
 ## Thành phố An Lạc V1.2.0
 - 62 công trình và 17 lô đất mở dùng 12 mẫu kiến trúc/cảnh quan procedural, 10 palette phân khu. Nhà phố có mái ngói, ban công, mặt tiền theo hướng cửa; cửa hàng có kính, mái che, biển chữ hình học tiếng Việt; chung cư, văn phòng, cơ sở công cộng và nhà xưởng có kiểu riêng.

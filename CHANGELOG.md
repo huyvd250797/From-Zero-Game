@@ -1,3 +1,9 @@
+## V1.3.0 — Character & Animation
+- Nhân vật procedural dáng nam/nữ, khuôn mặt, tóc, màu da, trang phục và phụ kiện. Character Creator và chỉnh ngoại hình trong game với preview xoay, sáu động tác và footer xác nhận.
+- 13 khớp; Three.js SkinnedMesh, Skeleton, sáu AnimationClip, crossfade; kết nối Idle/Walk/Run/Ride, preview Sit/Wave. Ngoại hình NPC xác định theo ID, tóc bạc và dáng theo tuổi, hai LOD.
+- Renderer dự phòng dùng cùng hình học và pose CPU; tách actor khỏi mesh động Three.js, giải phóng skeleton/geometry/material khi đổi hoặc rời vùng nhìn. Save schema 1 thêm appearance mặc định cho save cũ; không đổi Master Data.
+- 393 unit tests PASS (383 + 10); native preview 59 tài nguyên, UI Chromium Canvas desktop/mobile. npm Registry EAI_AGAIN: 7 integration tests cần Three.js thật chưa chạy, production build chưa xác nhận. Xem docs/CHARACTER-ANIMATION.md.
+
 ## V1.2.0 — Immersive City
 
 ## V1.2.1 — Three.js Engine Migration
