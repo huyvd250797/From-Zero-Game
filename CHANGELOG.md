@@ -1,3 +1,6 @@
+## V2.7.1 — Smart Mobility & Rig Cache Stability Fix (26/11/2026)
+- Correct real Three integration test fixture and expectations for the 65-NPC population and 16-hidden-rig retention budget. Add crowded-cache and rider visibility regression coverage; retain all production checks. No gameplay or save changes.
+
 ## V2.7.0 — Smart Mobility & Transportation (26/11/2026)
 - Scheduled bus network AL01–AL03, 14 stops, bidirectional service and transfer-aware journeys; street taxi pickup, fare and wait estimates. Destination chooser and timetable/parking screens.
 - NPC deterministic vehicle ownership, daily mode decisions and transport expense; viewport-capped moving/parked resident vehicles; occupied parking bay filtering and arrival recheck.

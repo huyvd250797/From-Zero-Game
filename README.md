@@ -1,7 +1,11 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.7.0 — Smart Mobility & Transportation** · 26/11/2026
+**V2.7.1 — Smart Mobility & Rig Cache Stability Fix** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.7.1 — Smart Mobility & Rig Cache Stability Fix
+- Production integration test regression: isolate a named pedestrian for brief offscreen reuse; exercise >16 named offscreen rigs separately and assert eviction, recreation and disposal. Verify NPC riders are rendered only with selected vehicles; hide car occupants. Runtime rendering/cache policy and mobility gameplay remain unchanged.
+- Production gate remains mandatory; dependency installation requires registry access.
 
 ## V2.7.0 — Smart Mobility & Transportation
 - Three bidirectional bus lines, 14 existing stops, terminal departures 06:00–22:00, 12/15 minute headways; route planner searches timetable transfers and walking links, with up to 90-minute wait per boarding. Scheduled bus visuals and passenger journey use identical trip times and path sampling. Taxi pickup at valid outdoor positions with 3–6 minute wait and distance fare. Choose walking, owned vehicle, bus or taxi in the destination dialog; advance public journeys by game clock. Fare paid once upfront; cancel/reload does not refund or resume the session-only journey.
