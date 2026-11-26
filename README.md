@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.7.1 — Smart Mobility & Rig Cache Stability Fix** · 26/11/2026
+**V2.8.0 — Interactive Buildings & Housing** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.8.0 — Interactive Buildings & Housing
+- Vào 41 công trình công cộng và 11 nhà ở bằng cảnh 3D toàn màn hình, giữ camera trực giao từ trên cao, Mesh và mô hình avatar/animation dùng chung với thành phố. Cảnh nhà nhiều phòng có cửa, vách cắt thấp, va chạm, đi bộ liên tục, WASD/Shift, joystick, bấm sàn/đồ vật để tìm đường, xoay/zoom và xem toàn nhà. Đồng hồ tiếp tục chạy khi ở cảnh nội thất, tạm dừng trong menu và chế độ bố trí.
+- Ba mẫu quy mô nhà (1, 2 hoặc 4 khu vực), kệ TV, tủ quần áo, bàn ăn, máy giặt, cây cảnh ở nhà lớn; đồ sở hữu vẫn mua theo Master Data. Bố trí đồ vật theo lưới, xoay 90°, 4 kiểu sàn và 4 màu tường; lưu riêng theo property ID, kiểm tra trùng đồ và lối đi, có hủy và khôi phục mặc định. Không thay đổi giá, tiện nghi, dữ liệu gia đình hay tọa độ ngoài trời.
+- Cảnh chỉ dựng nội thất hiện tại, không dựng thành phố song song; giới hạn 6 thành viên gia đình, 3 NPC công cộng, DPR và FPS theo preset. Production Three.js dùng cùng bộ xương; Canvas fallback vẫn chiếu tam giác 3D nhưng không phải GPU renderer.
+- Save schema 1 giữ nguyên với `housing.decorations` tùy chọn; dữ liệu canonical không đổi. Tiến trình di chuyển trong phòng là trạng thái phiên, khi tải lại sẽ ở cửa ngoài. Không có SQL migration.
+- 594/594 unit tests PASS, Native QA 91/91; bắt buộc chạy gate Three.js thật trước deploy. Không dùng native preview làm production.
 
 ## V2.7.1 — Smart Mobility & Rig Cache Stability Fix
 - Production integration test regression: isolate a named pedestrian for brief offscreen reuse; exercise >16 named offscreen rigs separately and assert eviction, recreation and disposal. Verify NPC riders are rendered only with selected vehicles; hide car occupants. Runtime rendering/cache policy and mobility gameplay remain unchanged.

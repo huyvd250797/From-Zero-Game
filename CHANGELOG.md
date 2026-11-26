@@ -1,3 +1,9 @@
+## V2.8.0 — Interactive Buildings & Housing (26/11/2026)
+- Full-screen 3D interior with camera-relative continuous keyboard/joystick movement, click-to-route, low cutaway walls, multiple connected rooms, zoom/orbit/overview, route line and actor ring.
+- 41 public interior templates and 11 property layouts; canonical actions and access checks retained, central mall accepts existing furniture purchases.
+- Per-property decoration: move and rotate furniture, change floors/walls, validate overlap/entry/reachability, save/cancel/reset. Added built-in TV, wardrobe, dining table, washer, plant geometry for larger homes. No new Master Data or economy changes.
+- Existing Three.js rig-cache hotfix and production build gate retained; add expanded apartment Three projection test. Native preview and browser Canvas QA; production verification still required.
+
 ## V2.7.1 — Smart Mobility & Rig Cache Stability Fix (26/11/2026)
 - Correct real Three integration test fixture and expectations for the 65-NPC population and 16-hidden-rig retention budget. Add crowded-cache and rider visibility regression coverage; retain all production checks. No gameplay or save changes.
 
