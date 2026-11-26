@@ -1,6 +1,6 @@
 {
   "name": "from-zero",
-  "version": "0.23.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -15,7 +15,8 @@
     "simulate:balance": "node scripts/simulate-balance.mjs",
     "verify:release": "node scripts/verify-release.mjs",
     "benchmark:navigation": "node scripts/benchmark-navigation.mjs",
-    "smoke:http": "node scripts/smoke-http.mjs"
+    "smoke:http": "node scripts/smoke-http.mjs",
+    "release:check": "npm ci --offline && npm test && npm run build && npm run verify:release && npm run smoke:http && npm run simulate:balance"
   },
   "engines": {
     "node": ">=20"

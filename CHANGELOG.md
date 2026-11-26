@@ -1,5 +1,12 @@
 # Changelog
 
+## V1.0.0 — Official Release (2026-11-26)
+- Chuẩn hóa version package, lockfile, giao diện, build/cache. Giữ toàn bộ Master Data V2.9.0 và save schema 1.
+- Hướng dẫn người chơi mới tự mở sau khi tạo nhân vật, tra cứu lại từ menu/Cài đặt; 5 mục tiêu dựa trên trạng thái thật, báo giá động, dẫn đường đến địa điểm, không cấp tiền/XP.
+- Đọc trạng thái save và token so sánh trong cùng snapshot; xác nhận tạo mới/nhập/khôi phục kiểm tra bản chính chưa thay đổi; bỏ qua kết quả đọc file khi hộp thoại đã đóng hoặc thay thế. Không thông báo phục hồi thành công khi ghi thất bại.
+- Hỗ trợ phím Esc/Tab và trả focus sau khi đóng modal, giá xe trong mục tiêu theo thị trường, nhận diện cả xe cơ giới.
+- 346 bài hồi quy + 7 bài mới; kiểm thử UI bằng Chromium Canvas/storage mô phỏng, kiểm tra HTTP/SHA-256. `npm run release:check` chạy các bước tự động. Thiết bị thật/WebGL/PWA offline/update thực tế vẫn cần nghiệm thu. Xem docs/OFFICIAL-RELEASE.md.
+
 ## V0.23.0 — Performance, PWA & Release Candidate (2026-11-26)
 - Giới hạn nhịp dựng hình theo chất lượng và trạng thái UI, đo FPS, cache tuyến đường và tái sử dụng buffer WebGL; menu mobile thu gọn, cải thiện safe area và modal.
 - Backup xoay vòng, checkpoint, phục hồi JSON, cảnh báo lỗi/quyền lưu trữ/xung đột tab, xử lý mất context không tự tải lại.

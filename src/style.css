@@ -65,3 +65,5 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 
 .rc-start-warning{font-size:12px!important;color:#f4d797!important;margin:4px 0!important;text-align:left;overflow-wrap:anywhere}
+/* Official release: accessible onboarding, responsive list without forced horizontal scroll. */
+.guide-launch{margin-top:6px;text-align:left}.guide-dialog .guide-intro{padding:12px;border:1px solid var(--line);border-radius:12px;background:#85deb00c;margin:8px 0}.guide-dialog .guide-intro p{margin:6px 0 0}.guide-dialog .survival-row{flex-wrap:wrap}.guide-dialog .survival-copy{flex:1 1 210px;min-width:0}.guide-dialog .survival-row button{min-height:40px}.dialog:focus{outline:none}button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--mint);outline-offset:2px}.start-card{max-height:calc(100dvh - 76px);overflow-y:auto;overscroll-behavior:contain}.start-card #startGuide{margin-top:4px}
