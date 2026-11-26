@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.19.0 — Law, Crime & Justice**
+**V0.20.0 — Prison, Bankruptcy & Recovery**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 25 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.20.0 — Prison, Bankruptcy & Recovery
+- Án tù V0.19.0 tự bắt đầu tại điểm an toàn của giao diện (sau thao tác hoặc khi mở save). Chấm dứt hợp đồng lao động, thanh toán lương đã tích lũy, đỗ xe, đưa nhân vật đến công an và mở trung tâm cải tạo riêng. Không dùng chức năng thành phố trong thời gian này.
+- 9 hoạt động, gồm 4 hoạt động cải tạo canonical, ăn uống, vệ sinh, ngủ nghỉ, lao động và chăm sóc y tế cơ bản. Tăng XP, kỷ luật, liên lạc gia đình; thời gian thực sự chạy, có thể tiến 1/7/30 ngày. Không rút ngắn bản án. Các chi phí và nghĩa vụ vẫn tiếp tục.
+- Phá sản giả lập khi tài sản ròng âm tại ngân hàng: dự toán trước khi xác nhận, thanh lý nhà/xe/nội thất/đầu tư/doanh nghiệp, tất toán tiết kiệm, ưu tiên khoản vay có bảo đảm, giữ nợ còn lại. Phần thiếu của khoản vay có bảo đảm được chuyển thành nợ không tính lãi mới. Không xóa nghĩa vụ pháp lý. Cố gắng giữ tối đa 100.000đ tiền mặt có sẵn sau trả khoản vay có bảo đảm.
+- 3 tab Phục hồi cuộc đời, lịch sử thi hành án và thanh lý; kích hoạt EVT_RELEASE/Second Chance. 60 danh mục, 659 bản ghi, Master Data V2.7.0. Save schema 1, tự bổ sung dữ liệu. Xem [docs/RECOVERY.md](docs/RECOVERY.md). Không mô phỏng luật phá sản thực tế, trại giam 3D hoặc giảm án.
 
 ## V0.19.0 — Law, Crime & Justice
 - 6 loại vi phạm, 3 nhóm hình phạt, hồ sơ pháp lý liên kết Story Engine, 5 giai đoạn xử lý tự động theo đồng hồ game; hồ sơ kiểm tra không đủ căn cứ kết thúc không xử phạt.

@@ -1,5 +1,10 @@
 # Changelog
 
+## V0.20.0 — Prison, Bankruptcy & Recovery (2026-11-26)
+- Thi hành án tuần tự, giao diện cải tạo riêng, 9 hoạt động, thời gian và chi phí tiếp tục, ghi án đã chấp hành.
+- Thanh lý tài sản có dự toán và xác nhận, ưu tiên nợ có bảo đảm, giữ nợ thiếu hụt, đóng cửa doanh nghiệp, hồ sơ lịch sử.
+- Kích hoạt tái hòa nhập và chương Second Chance. Master Data V2.7.0, 659 bản ghi; save schema 1.
+
 ## V0.19.0 — Law, Crime & Justice (2026-11-26)
 - Legal state, 6 vi phạm, 5 giai đoạn, phán quyết giả lập, hồ sơ kiểm tra không đủ căn cứ.
 - Hợp tác, tư vấn, nghĩa vụ phạt/hoàn trả, thanh toán từng phần, tích hợp tài sản ròng, vay vốn, nghề nghiệp, doanh nghiệp và gia đình.

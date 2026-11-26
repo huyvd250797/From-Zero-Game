@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "2.6.0",
+  "version": "2.7.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -5083,6 +5083,11 @@ export default {
         "id": "INC_STORY",
         "name": "Thu từ biến cố",
         "description": "Thu nhập phát sinh từ quyết định cốt truyện."
+      },
+      {
+        "id": "INC_LIQUIDATION",
+        "name": "Thanh lý nội thất",
+        "description": "Thu từ thanh lý nội thất khi mất khả năng thanh toán."
       }
     ],
     "Expense_Types": [

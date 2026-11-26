@@ -1,3 +1,4 @@
+import {incarcerated} from './recovery-state.js';
 import {syncLegal} from './legal.js';
 import {catalogs,record,config} from './master-data.js';
 import {cashChange} from './survival-state.js';
@@ -34,7 +35,8 @@ function match(s,e){const d=Math.floor(s.minutes/DAY)+1,p=s.story;switch(e.trigg
  case 'debt_pressure':return s.banking.loans.some(l=>l.overduePrincipal>0||l.interestDue>0);
  case 'recession':return economyAt(s.minutes).phase==='ECO_RECESSION';
  case 'community':{let h=(d^0x9e3779b9)>>>0;for(const ch of s.name)h=Math.imul(h^ch.charCodeAt(0),16777619)>>>0;h=Math.imul(h^(h>>>16),0x85ebca6b)>>>0;return d>=7&&h%11===0&&s.social.reputation>=40;}
- case 'recovery':return !!(p.resolved.EVT_HARDSHIP||p.resolved.EVT_JOB_LOSS)&&liquid(s)>=300000&&!!residence(s);
+ case 'release':return s.recovery?.releasedAt!==null&&s.recovery?.releasedAt!==undefined&&!incarcerated(s);
+ case 'recovery':return !!(p.resolved.EVT_HARDSHIP||p.resolved.EVT_JOB_LOSS||s.recovery?.bankruptcies.length||s.recovery?.releasedAt!=null)&&liquid(s)>=300000&&!!residence(s);
  case 'health_crisis':return !!s.wellness?.conditions.length;
  case 'habit_recovery':return !!s.wellness?.dependent.length;
  case 'retirement':return age(s)>=60;
@@ -45,7 +47,7 @@ function match(s,e){const d=Math.floor(s.minutes/DAY)+1,p=s.story;switch(e.trigg
 export function storyDue(s){if(!s.story)return;for(const q of [...s.story.scheduled]){if(q.due>s.minutes)continue;const e=evt(q.event);if(!eligible(s,e)){s.story.scheduled.splice(s.story.scheduled.indexOf(q),1);continue;}if(enqueue(s,e,q.context,q.choice))s.story.scheduled.splice(s.story.scheduled.indexOf(q),1);}}
 export function storyScan(s){if(!s.story)return;storyDue(s);const a=age(s);for(const e of events.values()){if(s.story.pending.length>=LIMIT)break;if(a<e.minAge||a>e.maxAge||!eligible(s,e))continue;const m=match(s,e);if(m)enqueue(s,e,typeof m==='string'?m:null);}}
 export function storyTick(s){if(!s.story)return;if(s.story.scheduled.some(q=>q.due<=s.minutes))storyDue(s);if(s.minutes%DAY===0)storyScan(s);}
-export function choiceReason(s,id){const c=choices.get(id),p=s.story?.pending.find(p=>p.event===c?.event);if(!c||!p)return 'Sự kiện không còn chờ quyết định.';if(c.event==='EVT_CRISIS'&&id!=='CHO_CRISIS_DECLINE'&&!s.business.active)return 'Doanh nghiệp đã đóng cửa; hãy từ chối đề xuất.';if(!Number.isSafeInteger(s.cash+c.cashDelta)||s.cash+c.cashDelta<0)return 'Không đủ tiền mặt.';if(c.delayDays>0&&(s.minutes+c.delayDays*DAY>MAX||s.story.scheduled.length>=16))return 'Không thể tạo thêm hậu quả trì hoãn.';return '';}
+export function choiceReason(s,id){if(incarcerated(s))return 'Đang chấp hành án.';const c=choices.get(id),p=s.story?.pending.find(p=>p.event===c?.event);if(!c||!p)return 'Sự kiện không còn chờ quyết định.';if(c.event==='EVT_CRISIS'&&id!=='CHO_CRISIS_DECLINE'&&!s.business.active)return 'Doanh nghiệp đã đóng cửa; hãy từ chối đề xuất.';if(!Number.isSafeInteger(s.cash+c.cashDelta)||s.cash+c.cashDelta<0)return 'Không đủ tiền mặt.';if(c.delayDays>0&&(s.minutes+c.delayDays*DAY>MAX||s.story.scheduled.length>=16))return 'Không thể tạo thêm hậu quả trì hoãn.';return '';}
 export function chooseStory(s,id){if(choiceReason(s,id))return false;const c=choices.get(id),p=s.story.pending.find(p=>p.event===c.event),e=evt(c.event),f=s.story;
  const category=c.cashDelta>0?'INC_STORY':e.id==='EVT_FRIEND'?'EXP_SOCIAL':['EVT_SHIFT','EVT_PARTY'].includes(e.id)?'EXP_FUN':'EXP_STORY';if(c.cashDelta&&!cashChange(s,c.cashDelta,category,e.name+' · '+c.name))return false;
  s.happy=cap(s.happy+c.happyDelta);s.health=cap(s.health+c.healthDelta);s.stress=cap(s.stress+c.stressDelta);s.social.reputation=cap(s.social.reputation+c.reputationDelta);f.ethics=cap(f.ethics+c.ethicsDelta);if(s.family.partner?.stage==='married'||s.family.children.length)s.family.happiness=cap(s.family.happiness+c.familyDelta);
