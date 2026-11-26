@@ -1,3 +1,4 @@
+import {recordJournal} from './important-events.js';
 import {incarcerated} from './recovery-state.js';
 import {syncLegal} from './legal.js';
 import {catalogs,record,config} from './master-data.js';
@@ -18,7 +19,7 @@ export const storyDefaults=(s,legacy=false)=>({story:{started:s.minutes,legacy,h
 const evt=id=>events.get(id);
 export const eventChoices=id=>catalogs.Event_Choices.filter(c=>c.event===id);
 const addHistory=(s,item)=>{s.story.history.unshift(item);s.story.history=s.story.history.slice(0,120)};
-function note(s,msg){s.journal.unshift(`Ngày ${Math.floor(s.minutes/DAY)+1}: ${msg}`);s.journal=s.journal.slice(0,20)}
+function note(s,msg){recordJournal(s,`Ngày ${Math.floor(s.minutes/DAY)+1}: ${msg}`)}
 const eligible=(s,e)=>{const r=s.story.resolved[e.id];return !s.story.pending.some(p=>p.event===e.id)&&(!r||e.repeatable&&s.minutes-r.at>=e.cooldownDays*DAY)};
 function enqueue(s,e,context=null,origin=null){if(s.story.pending.length>=(origin?FORCED_LIMIT:LIMIT)||!eligible(s,e))return false;s.story.pending.push({event:e.id,at:s.minutes,context,origin});if(!s.story.chapters.includes(e.chapter))s.story.chapters.push(e.chapter);if(e.id==='EVT_LEGAL'){s.social.reputation=cap(s.social.reputation-8);s.stress=cap(s.stress+10);}addHistory(s,{kind:'event',event:e.id,choice:null,at:s.minutes,context});note(s,'Biến cố: '+e.name);return true;}
 function match(s,e){const d=Math.floor(s.minutes/DAY)+1,p=s.story;switch(e.trigger){

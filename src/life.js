@@ -1,3 +1,4 @@
+import {recordJournal} from './important-events.js';
 import {agingTick} from './aging.js';
 import {ended} from './aging-state.js';
 import {custodyMinute} from './recovery.js';
@@ -28,7 +29,7 @@ export const hhmm=m=>`${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60)
 export function dateLabel(s){const d=calendar(s);return `${String(d.date).padStart(2,'0')}/${String(d.month).padStart(2,'0')}/${d.year}`;}
 export const phase=s=>{const h=s.minutes%1440/60;return h>=6&&h<8?'Bình minh':h>=8&&h<17?'Ban ngày':h>=17&&h<19?'Hoàng hôn':'Ban đêm'};
 export function light(s){const h=s.minutes%1440/60;const t=h<5.5||h>=19.5?0:h<8?(h-5.5)/2.5:h<17?1:(19.5-h)/2.5;return [.42+.58*t,.50+.50*t,.72+.28*t];}
-export function log(s,message){s.journal.unshift(`Ngày ${day(s)}: ${message}`);s.journal=s.journal.slice(0,20);}
+export function log(s,message){recordJournal(s,`Ngày ${day(s)}: ${message}`);}
 export function lifeDefaults(s,renew=false){return {...LIFE_DEFAULTS,autoRent:renew,bikeDue:s.bike?s.minutes+bikeMaintenance.intervalDays*1440:0,maintenanceDebt:0,aidDay:0};}
 const scheduleByPlace=new Map(catalogs.World_Schedules.map(r=>[record(r.building).legacyId,r]));
 export const schedule=place=>scheduleByPlace.get(place);

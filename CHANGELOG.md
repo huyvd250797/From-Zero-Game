@@ -1,3 +1,9 @@
+## V2.1.0 — Visual Fidelity & Smooth Experience (26/11/2026)
+- Orthographic spring camera; interpolated movement phase, heading and vehicle state; reset clocks after visibility changes.
+- Predictive chunk preparation with low LOD fallback, bounded queue work, zoom hysteresis and distance LOD; 128px procedural textures and preset anisotropy, refined contact shading, quantized shadow extent, smaller adaptive resolution steps.
+- Important-only notification center and visible journal; separate bounded event history, legacy filtering, warning transitions and transient action error feedback.
+- Graphics diagnostics (1% low, long frames, CPU preparation) and JSON export. No change to canonical Master Data or simulation balance. 523 unit tests; native QA build verified; Three.js production blocked by missing dependency.
+
 ## V2.0.1 — Gameplay Experience & Stability (26/11/2026)
 - Preserve final destination through vehicle pickup, automatic boarding, vehicle routing and arrival.
 - Viewport-aware instanced street-lamp glow + bulbs, stable LOD placement, fading local PointLight handoff; approximate fallback lighting.

@@ -1,10 +1,11 @@
+import {frameSummary} from './visual-fidelity.js';
 // Rendering frequency is independent of simulation frequency.
 export function frameInterval({fallback=false,quality=1,eco=false,active=true,hidden=false,blocked=false}={}){if(hidden||blocked)return Infinity;if(!active)return 250;return fallback||eco||quality===0?1000/30:1000/60;}
 // Windowed measurements of completed frames, not an estimate of GPU execution time.
 export class FrameMeter{
  constructor(){this.reset();}
- reset(){this.since=null;this.previous=null;this.count=0;this.total=0;this.intervals=[];this.fps=null;this.ms=null;this.p95=null;}
- sample(now,duration){if(!Number.isFinite(now)||!Number.isFinite(duration)||duration<0)return;if(this.since===null){this.since=this.previous=now;return;}const gap=now-this.previous;if(gap<=0)return;if(gap>2000){this.reset();this.since=this.previous=now;return;}this.previous=now;this.count++;this.total+=duration;this.intervals.push(gap);const elapsed=now-this.since;if(elapsed>=2000){this.fps=Math.round(this.count*1000/elapsed);this.ms=Math.round(this.total/this.count*10)/10;const sorted=this.intervals.sort((a,b)=>a-b);this.p95=Math.round(sorted[Math.ceil(sorted.length*.95)-1]*10)/10;this.since=now;this.count=0;this.total=0;this.intervals=[];}}
+ reset(){this.since=null;this.previous=null;this.count=0;this.total=0;this.intervals=[];this.fps=null;this.ms=null;this.p95=null;this.low1=null;this.longFrames=null;this.sampleCount=0;}
+ sample(now,duration,target=60){if(!Number.isFinite(now)||!Number.isFinite(duration)||duration<0)return;if(this.since===null){this.since=this.previous=now;return;}const gap=now-this.previous;if(gap<=0)return;if(gap>2000){this.reset();this.since=this.previous=now;return;}this.previous=now;this.count++;this.total+=duration;this.intervals.push(gap);const elapsed=now-this.since;if(elapsed>=2000){this.fps=Math.round(this.count*1000/elapsed);this.ms=Math.round(this.total/this.count*10)/10;const sorted=this.intervals.sort((a,b)=>a-b);this.p95=Math.round(sorted[Math.ceil(sorted.length*.95)-1]*10)/10;const summary=frameSummary(sorted,target);this.low1=summary.low1;this.longFrames=summary.longFrames;this.sampleCount=summary.samples;this.since=now;this.count=0;this.total=0;this.intervals=[];}}
 }
 
 // Bound internal render pixels, preserving CSS coordinates and camera picking.

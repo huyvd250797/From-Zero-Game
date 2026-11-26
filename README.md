@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.0.1 — Gameplay Experience & Stability** · 26/11/2026
+**V2.1.0 — Visual Fidelity & Smooth Experience** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.1.0 — Visual Fidelity & Smooth Experience
+- Existing orthographic camera only: critically damped spring for position, zoom and pitch; interpolated player and vehicle motion from the fixed 60 Hz movement step. Reset presentation on visibility changes. Preserve existing yaw interpolation, journey, proximity labels, floating joystick and PWA zoom guard.
+- Three renderer: predictive viewport translation, low LOD fallback, cooperative preparation of one CPU chunk per rendered frame, bounded LRU, zoom LOD hysteresis, distance-based low-detail selection. Mandatory visible geometry may be generated synchronously; actual GPU upload is not time-budgeted. No geometry holes intended; hardware QA pending.
+- 128×128 generated textures, anisotropic filtering per preset, refined approximate vertex contact shading, quantized shadow extent and existing texel snapping, smaller adaptive-resolution steps. Preserve existing FXAA and viewport lamps. No SSAO, new character assets or third-person camera.
+- Notification center and HUD journal show significant events only. Routine receipts are retained internally for existing business logic; optional `importantJournal` (max 40 entries) persists key events separately in schema 1, with legacy journal filtering. Current health/financial warnings alert on transition rather than every refresh. Direct error feedback stays transient.
+- Settings include 1% low FPS, long frames, prepared chunk counts and JSON diagnostics. CPU timings are not GPU timings. 523 unit tests, native QA only; production Three.js requires npm ci and device validation.
 
 ## V2.0.1 — Gameplay Experience & Stability
 - Smart Journey: choose walking or a reachable parked vehicle, walk to it, automatically board, replan the vehicle route and park at the destination. Keep the final destination when manually interrupting walking; cancel explicitly to discard it. Journey is session-local, not a save migration.
