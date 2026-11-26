@@ -1,5 +1,5 @@
 # From Zero — Từ hai bàn tay trắng
-**V1.1.0 — Next-Gen Graphics Engine** · 26/11/2026
+**V1.2.0 — Immersive City** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
 
@@ -23,20 +23,25 @@ Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân 
 Thời gian chạy khi gameplay hoạt động. Modal, tạm dừng và tab ẩn dừng mô phỏng; chọn ×1/2/4/8/16 để điều chỉnh nhịp game.
 
 ## Gameplay kế thừa V1.0.0
-- Thành phố low-poly 192 × 192, 10 phân khu, 28 địa điểm tương tác, 24 NPC định danh và lịch sinh hoạt.
+- Thành phố 3D cách điệu 192 × 192, 10 phân khu, 28 địa điểm tương tác, 24 NPC định danh và lịch sinh hoạt.
 - Sinh tồn, giáo dục (15 khóa học), nghề nghiệp, tài chính, nhà ở và phương tiện, quan hệ, hôn nhân và con cái.
 - Ngân hàng, tiết kiệm, vay vốn, cổ phiếu/vàng giả lập, 6 loại hình kinh doanh, kinh tế biến động.
 - 26 biến cố, 55 lựa chọn cốt truyện; sức khỏe dài hạn, thói quen, pháp luật, chấp hành án, thanh lý và phục hồi.
 - Lão hóa, lương hưu, di sản, 40 kết cục trong dữ liệu (39 có quy tắc đánh giá), Hall of Fame, 3 mức độ khó.
-- Hai chế độ đồ họa, cache A*, ba lớp lưu trữ, cảnh báo xung đột tab, PWA fingerprint và precache SHA-256.
+- Bốn cấp độ đồ họa, cache A*, ba lớp lưu trữ, cảnh báo xung đột tab, PWA fingerprint và precache SHA-256.
 - V1.0.0: onboarding có dẫn đường thật, bảo vệ xác nhận thay thế save, hỗ trợ điều hướng bàn phím trong modal, đồng bộ branding.
 
-## Đồ họa V1.1.0
+## Thành phố An Lạc V1.2.0
+- 62 công trình và 17 lô đất mở dùng 12 mẫu kiến trúc/cảnh quan procedural, 10 palette phân khu. Nhà phố có mái ngói, ban công, mặt tiền theo hướng cửa; cửa hàng có kính, mái che, biển chữ hình học tiếng Việt; chung cư, văn phòng, cơ sở công cộng và nhà xưởng có kiểu riêng.
+- Vỉa hè, bó vỉa, vạch đường, lối tiếp cận cửa, cây dạng tán tròn và cây cau cách điệu, cột đèn, thùng rác, ghế, bồn hoa, đài nước, luống cây và sân thể thao. Các vật trang trí không có collision/hoạt động riêng; đèn chưa phát sáng cục bộ. Hình học dùng chung WebGL 2/WebGL 1/Canvas. Canvas Low/Medium ưu tiên LOD thấp.
+- Không thay đổi master data, vị trí, collision, gameplay, save schema. Dùng lại GLB ghế của V1.1.0; chưa thêm bộ mô hình Blender hoặc texture ngoài. Xem [Immersive City](docs/IMMERSIVE-CITY.md).
+
+## Nền tảng đồ họa V1.1.0 kế thừa
 - WebGL 2 native, shader vật liệu theo mô hình chiếu sáng microfacet; bề mặt procedural theo tọa độ thế giới, bóng đổ depth map PCF, ánh sáng ngày/đêm, phản xạ giả lập và phát sáng cửa kính.
 - Low/Medium/High/Ultra; bật/tắt riêng bóng đổ, bóng tiếp xúc gần mặt đất (không phải SSAO), bloom và AA hậu kỳ đơn giản. Độ phân giải thích ứng có ngưỡng và hysteresis.
 - GLB ghế đá mẫu tự tạo, bộ đọc GLB 2.0 tĩnh có giới hạn, fallback mô hình code khi tải thất bại. Không sử dụng CDN hay dependency ngoài.
 - Nếu không có WebGL 2 hoặc lỗi khởi tạo, tự chọn WebGL 1/Canvas. Có thể chọn Legacy trong Cài đặt rồi lưu và tải lại. Khi lỗi renderer lúc chơi, tạm dừng và lưu/xuất JSON trước khi chuyển Legacy.
-- Chưa tích hợp Three.js do npm không truy cập được; kiến trúc giữ hình học thành phố gốc, không thiết kế lại toàn bộ công trình. Không có full GLTF loader, texture PBR riêng từng file, SSAO, skeletal animation hay instancing GPU mới. Xem [Graphics Engine](docs/GRAPHICS-ENGINE.md).
+- Chưa tích hợp Three.js do npm không truy cập được; V1.2.0 cải tiến hình học procedural, chưa thay thế bằng mô hình GLB riêng từng công trình. Không có full GLTF loader, texture PBR riêng từng file, SSAO, skeletal animation hay instancing GPU mới. Xem [Graphics Engine](docs/GRAPHICS-ENGINE.md).
 
 ## Deploy GitHub → Vercel
 Giải nén ZIP, đưa **nội dung bên trong** vào root repo. Không commit dist hoặc node_modules. Cấu hình `vercel.json` đã có:

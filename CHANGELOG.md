@@ -1,3 +1,10 @@
+## V1.2.0 — Immersive City
+- Kit hình học procedural 12 phong cách cho toàn bộ 79 lô (62 công trình, 17 cảnh quan), 10 palette phân khu; mặt tiền theo hướng cửa; mái ngói, ban công, cửa kính, biển chữ Việt, mái nhà xưởng, chi tiết hành chính và y tế.
+- Cải thiện đường/vỉa hè, lối tiếp cận, cây, cột đèn, bồn hoa, đài nước, luống cây, sân thể thao, bãi xe, vật dụng đường phố. Vật trang trí không thay đổi collision; đèn chưa có ánh sáng cục bộ.
+- Hai LOD dùng chung renderer; tối giản cửa sổ, biển, bó vỉa và cây ở LOD thấp. Canvas Low/Medium ưu tiên LOD thấp. Nhận diện vật liệu kính cao trên shader.
+- Giữ nguyên Master Data V2.9.0, gameplay, schema save 1 và hệ thống PWA. 11 test mới, tổng 374.
+- Hạn chế: kiến trúc procedural cách điệu; chưa có GLB riêng từng công trình, nội thất 3D hoặc giao thông/thời tiết nâng cao. Chưa xác minh WebGL 2 trên trình duyệt thật.
+
 ## V1.1.0 — Next-Gen Graphics Engine
 
 - Native WebGL 2 renderer, material shaders, depth shadows, lighting, procedural surfaces, basic bloom/AA, adaptive resolution.
