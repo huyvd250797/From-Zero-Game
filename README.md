@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.12.0 — Living Families & Generations** · 26/11/2026
+**V2.13.0 — Evolving City & Economy** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.13.0 — Evolving City & Economy
+- 18 phân khu tiến triển độc lập mỗi 360 ngày game; dân cư nền 3–9 mỗi khu, mô phỏng cơ sở kinh doanh mở/đóng và chỉ số phát triển. Giữ 65 NPC định danh, bản đồ và tọa độ cũ.
+- Bốn biến cố kinh tế từ kỳ 12, kéo dài hai kỳ mỗi sáu kỳ; giá sinh hoạt, nguyên liệu, sức mua, thất nghiệp và cổ phiếu phản ứng theo mô hình. Tuyển dụng và giá nhà đất có hệ số địa phương; nhu cầu doanh nghiệp tính cả chi nhánh có nhân sự.
+- Màn hình Kinh tế: Phân khu, Doanh nghiệp, Nhiều năm, lạm phát so 12 kỳ trước; bản đồ có thông tin phát triển khu vực. Không tạo công trình mới, không đóng cửa vật lý các điểm đến; số cơ sở là thống kê giả lập.
+- Không thay đổi Master Data, schema 1. Khoản vay lịch sử vẫn hợp lệ theo công thức định giá cũ. Xem [tài liệu](docs/EVOLVING-CITY-AND-ECONOMY.md).
 
 ## V2.12.0 — Living Families & Generations
 - Ngân sách gia đình, đóng góp trực tiếp từ tài khoản NPC vợ/chồng, lịch sử chi phí và tiền riêng; chăm sóc con tự động tùy chọn.

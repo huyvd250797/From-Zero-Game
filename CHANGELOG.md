@@ -1,3 +1,8 @@
+## V2.13.0 — Evolving City & Economy (26/11/2026)
+- Deterministic annual district evolution, dynamic ambient population, synthetic establishment openings/closures and employer hiring status.
+- Four periodic economic shocks; sector stock effects, local property and branch-weighted demand, indexed resident daily finances, 12-year city history and 12-period inflation.
+- Preserve historic collateral validation, canonical data, existing salary/rate contracts, save schema and production build gate.
+
 ## V2.12.0 — Living Families & Generations (26/11/2026)
 - Independent spouse career, retirement, contribution and optional childcare.
 - Family spending ledger, budget target, child education and adult finances, family tree.
