@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.5.0 — Greater An Lac City** · 26/11/2026
+**V2.6.0 — Autonomous NPC & Population** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.6.0 — Autonomous NPC & Population
+- 65 named NPCs (40 additions, all previous 25 records unchanged); 90 deterministic non-interactive background walkers (5 candidates per district, fewer at night). All 18 districts have named residents and/or workplace/study destinations; residential homes assigned to added NPCs.
+- Each named resident keeps independent cash, cumulative income/expenses, six needs, daily plan, day-off flag, days worked and bounded symmetric neighbor relations. World clock settles the previous day at midnight, then selects the next plan using utility scores. NPC schedules reflect work/study, rest at home, leisure, supplies and library visits. No camera-driven gameplay mutations, no player ledger mutations or notification spam.
+- Social menu includes district filter, population summary and resident profile. Render preparation only for viewport plus margin / nearby player; ambient render budgets Eco/Low 8, Medium 16, High 24, Ultra 32; background actors low LOD and no labels or contacts. Named NPC positions remain accessible everywhere.
+- Master Data 3.1.0 (1028 entries / 60 catalogs); optional population state initialized at current day for legacy save schema 1. 571 independent tests; Native QA only, production dependency not cached. See `docs/AUTONOMOUS-NPC-POPULATION.md`.
 
 ## V2.5.0 — Greater An Lac City
 - Expand to 384×384 (four times the area); 18 districts, 229 plots, 206 solid buildings, 60 interactive destinations, 24 road axes, 144 intersections, 12 bridge corridors over the An Bình river. All 79 old plot records, 29 navigation nodes, 10 old districts and 12 old road records remain unchanged. New districts extend east and south, no coordinate rescaling.

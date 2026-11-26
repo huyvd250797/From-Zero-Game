@@ -1,3 +1,4 @@
+import {residentPlan} from './population.js';
 import {incarcerated} from './recovery-state.js';
 import {currentHome} from './housing-state.js';
 import {catalogs,record,config} from './master-data.js';
@@ -10,28 +11,31 @@ import {workPlace} from './career.js';
 export const npcs=catalogs.NPC_Master;
 const byId=new Map(npcs.map(n=>[n.id,n])), schedules=new Map();
 const site=id=>sites.find(b=>b.masterId===id);
+function planVenue(n,homeId,plan){if(['rest','save'].includes(plan))return homeId;if(!['study','supplies'].includes(plan))return n.leisure;const home=site(homeId),types=plan==='study'?['BTY_LIBRARY']:['BTY_SHOP','BTY_MALL','BTY_CAFE'];const venue=sites.filter(b=>b.interactive&&types.includes(b.type)&&(catalogs.World_Schedules.find(r=>r.building===b.masterId)?.closes??0)>n.workEnd+90).sort((a,b)=>distance(home,a)-distance(home,b))[0];return venue?.masterId||n.leisure;}
 // All NPC locations are public outdoor anchors. No NPC uses a player's private interior.
 function anchor(id,i){const b=site(id),p=b.door?{x:b.door[0],z:b.door[1]}:{x:b.x,z:b.z+b.d/2+1.1};const a=nearestWalkable(p.x+(i%3-1)*2,p.z+(Math.floor(i/3)%3-1)*1.5);return a||nearestWalkable(p.x,p.z)}
 export function npcWalkSpeed(n){let h=0;for(const c of n.id)h=(Math.imul(h,31)+c.charCodeAt(0))>>>0;return (n.age>=65?1.25:1.55)+(h%7)*.045;}
 function leg(a,b,start,end,label){const r=planRoute(a,b);if(!r)throw Error('NPC route unavailable');return {a,b,start,end,label,path:r.path,length:routeLength(a,r.path)}}
-export function npcSchedule(id,state){const n=byId.get(id);if(!n)return null;const homeId=state?.family?.partner?.id===id&&state.family.partner.stage==='married'?currentHome(state)?.building||n.home:n.home,key=id+':'+homeId;if(schedules.has(key))return schedules.get(key);const i=npcs.indexOf(n),home=anchor(homeId,i),work=anchor(n.workplace,i),leisure=anchor(n.leisure,i),lunch=Math.min(720,n.workEnd-60),leave=Math.min(1260,catalogs.World_Schedules.find(r=>r.building===n.leisure)?.closes??1260);const pace=npcWalkSpeed(n),commute=leg(home,work,0,0,'Đang đi làm / học'),evening=leg(work,leisure,0,0,'Đang đi thư giãn'),returnHome=leg(leisure,home,0,0,'Đang về nhà');
+export function npcSchedule(id,state){const n=byId.get(id);if(!n)return null;const homeId=state?.family?.partner?.id===id&&state.family.partner.stage==='married'?currentHome(state)?.building||n.home:n.home,decision=residentPlan(state,id),plan=decision?.plan||'routine',off=!!decision?.off,key=id+':'+homeId+':'+plan+':'+off;if(schedules.has(key))return schedules.get(key);const i=npcs.indexOf(n),home=anchor(homeId,i),work=anchor(n.workplace,i),leisureId=planVenue(n,homeId,plan),leisure=anchor(leisureId,i),lunch=Math.min(720,n.workEnd-60),leave=Math.min(1260,catalogs.World_Schedules.find(r=>r.building===leisureId)?.closes??1260);const pace=npcWalkSpeed(n),commute=leg(home,work,0,0,'Đang đi làm / học'),evening=leg(work,leisure,0,0,'Đang đi thư giãn'),returnHome=leg(leisure,home,0,0,'Đang về nhà');
  const duration=r=>r.length*config.realSecondsPerMinute/pace;
+ if(off){const out=leg(home,leisure,0,0,'Đang đi thư giãn'),back=leg(leisure,home,0,0,'Đang về nhà'),start=Math.max(540,catalogs.World_Schedules.find(r=>r.building===leisureId)?.opens??0),arrive=start+duration(out),leaveAt=Math.max(arrive,Math.min(1080,leave,1440-duration(back))),end=leaveAt+duration(back);const result=[{start:0,end:start,a:home,label:'Ở gần nhà',place:homeId},{...out,start,end:arrive,place:leisureId},{start:arrive,end:leaveAt,a:leisure,label:leisureId===homeId?'Ở gần nhà':plan==='study'?'Đang học':plan==='supplies'?'Mua nhu yếu phẩm':'Thư giãn',place:leisureId},{...back,start:leaveAt,end,place:homeId},{start:end,end:1440,a:home,label:'Ở gần nhà',place:homeId}];schedules.set(key,result);if(schedules.size>260)schedules.delete(schedules.keys().next().value);return result;}
+
  const arriveWork=Math.min(n.workStart,Math.max(n.workStart-30+duration(commute)/2,duration(commute)+1)),departWork=arriveWork-duration(commute),arriveLeisure=n.workEnd+duration(evening),departHome=Math.max(arriveLeisure,Math.min(leave,1440-duration(returnHome))),arriveHome=departHome+duration(returnHome);
  const result=[
  {start:0,end:departWork,a:home,label:'Ở gần nhà',place:homeId},
  {...commute,start:departWork,end:arriveWork,place:n.workplace},
  {start:arriveWork,end:n.workStart,a:work,label:'Chờ vào ca / học',place:n.workplace},
- {start:n.workStart,end:lunch,a:work,label:n.behavior==='study'?'Đang học':'Đang làm việc',place:n.workplace},
+ {start:n.workStart,end:lunch,a:work,label:n.behavior==='study'?'Đang học':n.behavior==='visit'?'Đang sinh hoạt':'Đang làm việc',place:n.workplace},
  {start:lunch,end:lunch+60,a:work,label:'Nghỉ trưa',place:n.workplace},
- {start:lunch+60,end:n.workEnd,a:work,label:n.behavior==='study'?'Đang học':'Đang làm việc',place:n.workplace},
- {...evening,start:n.workEnd,end:arriveLeisure,place:n.leisure},
- {start:arriveLeisure,end:departHome,a:leisure,label:'Thư giãn',place:n.leisure},
+ {start:lunch+60,end:n.workEnd,a:work,label:n.behavior==='study'?'Đang học':n.behavior==='visit'?'Đang sinh hoạt':'Đang làm việc',place:n.workplace},
+ {...evening,start:n.workEnd,end:arriveLeisure,place:leisureId},
+ {start:arriveLeisure,end:departHome,a:leisure,label:leisureId===homeId?'Ở gần nhà':plan==='study'?'Đang học':plan==='supplies'?'Mua nhu yếu phẩm':'Thư giãn',place:leisureId},
  {...returnHome,start:departHome,end:arriveHome,place:homeId},
  {start:arriveHome,end:1440,a:home,label:'Ở gần nhà',place:homeId}];
  // A schedule is deterministic, so fast-forward and reload derive identical locations.
- schedules.set(key,result);if(schedules.size>96)schedules.delete(schedules.keys().next().value);return result;}
+ schedules.set(key,result);if(schedules.size>260)schedules.delete(schedules.keys().next().value);return result;}
 export function npcAt(id,minutes,state){const n=byId.get(id),schedule=npcSchedule(id,state);if(!n||!Number.isFinite(minutes))return null;const minute=((minutes%1440)+1440)%1440,seg=schedule.find(s=>minute>=s.start&&minute<s.end);let pos={...seg.a},yaw=0,travel=0,moving=false;if(seg.path?.length&&seg.length>0){travel=seg.length*(minute-seg.start)/(seg.end-seg.start);let left=travel,prev=seg.a;for(const next of seg.path){const len=distance(prev,next);if(left<=len&&len>0){pos={x:prev.x+(next.x-prev.x)*left/len,z:prev.z+(next.z-prev.z)*left/len};yaw=Math.atan2(next.x-prev.x,next.z-prev.z);moving=true;break}left-=len;prev=next;pos={...next}}}return {id,npc:n,pos,yaw,moving,phase:travel*4.8,status:seg.label,place:seg.place,placeName:record(seg.place).name}}
-let cacheKey='',cacheList=[];export function npcWorld(minutes,state){const key=minutes+':'+(state?.family?.partner?.stage==='married'?state.family.partner.id+':'+currentHome(state)?.id:'');if(key!==cacheKey){cacheKey=key;cacheList=npcs.map(n=>npcAt(n.id,minutes,state));}return cacheList}
+let cacheKey='',cacheState=null,cacheList=[];export function npcWorld(minutes,state){const key=minutes+':'+(state?.population?.day??'legacy')+':'+(state?.family?.partner?.stage==='married'?state.family.partner.id+':'+currentHome(state)?.id:'');if(key!==cacheKey||cacheState!==state?.population){cacheKey=key;cacheState=state?.population;cacheList=npcs.map(n=>npcAt(n.id,minutes,state));}return cacheList}
 const day=m=>Math.floor(m/1440);
 const actions={greet:{name:'Chào hỏi',minutes:5,trust:6,rep:0,happy:2,stress:-1},chat:{name:'Trò chuyện',minutes:15,trust:8,rep:1,happy:5,stress:-3},help:{name:'Giúp đỡ',minutes:20,trust:record('REV_HELP').trustDelta,rep:3,happy:3,stress:-2,cash:30000},disagree:{name:'Bất đồng quan điểm',minutes:5,trust:record('REV_CONFLICT').trustDelta,rep:-2,happy:-3,stress:4},apologize:{name:'Xin lỗi',minutes:10,trust:6,rep:1,happy:2,stress:-2}};
 export const socialActions=Object.freeze(Object.entries(actions).map(([id,a])=>Object.freeze({id,...a})));

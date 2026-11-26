@@ -1,3 +1,9 @@
+## V2.6.0 — Autonomous NPC & Population (26/11/2026)
+- 40 new named residents; 65 total; 90 background pedestrians distributed across 18 districts. Preserve 25 original identities.
+- Persistent independent daily needs, cash, income/expense, plans and neighbor relations; midnight settlement and utility decisions feed daily movement routes. Residential assignment for new residents, work/study in all 18 districts.
+- Population explorer, district filter, resident needs/financial profile and social links. Viewport-limited presentation, ambient low LOD and configurable preset budgets. No ordinary NPC event notifications.
+- Master Data 3.1.0, save schema 1 with optional population extension; 571 tests, 85 native assets. Three.js production not certified locally.
+
 ## V2.5.0 — Greater An Lac City (26/11/2026)
 - Expanded canonical city 192×192 → 384×384; 18 districts, 229 plots, 206 solid buildings, 60 destinations; An Bình river and 12 bridge corridors. Preserve legacy records and spawn.
 - Add 32 local actions, 19 employers, six properties, two courses and eight bus stops, reuse existing simulation and financial rules.

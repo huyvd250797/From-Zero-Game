@@ -120,3 +120,5 @@ body:not(.mini-enabled) #bottom>.minimap{display:none!important}body.mini-enable
 /* V2.5.0 map search */
 .map-side input[aria-label="Tìm địa điểm"]{width:100%;box-sizing:border-box;min-height:40px;padding:9px 12px;background:var(--panel,#1b322b);color:var(--text,#f2f5ef);border:1px solid #ffffff26;border-radius:9px;font:inherit;}
 .map-side input[aria-label="Tìm địa điểm"]:focus{outline:2px solid #7fcba3;outline-offset:1px;}
+/* V2.6 population explorer */
+.social-tabs{flex-wrap:wrap}.social-dialog .finance-short .survival-row{padding:5px 0}.social-dialog select{max-width:100%;min-width:0}.social-dialog .finance-short>button{margin:4px 3px 0 0}
