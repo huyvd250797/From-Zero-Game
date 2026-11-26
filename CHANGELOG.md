@@ -1,3 +1,9 @@
+## V1.6.0 — Living NPC World
+- Frame-level fractional time sampling for NPC route motion; smoothed yaw, distance-based gait rate, shared geometry/label snapshot and pause/time-skip handling.
+- Five additional NPC skeletal gestures, paired leisure conversations, short obstacle-checked local strolls, companion markers, bounded smoothed personal-space offsets.
+- Scheduled public interior residents (up to three) near furniture, independent rigs or Canvas poses, non-interactive labels with activity roster, disposal on exit.
+- Preserve 24 canonical schedules, 693 Master Data records and save schema. 11 additional unit tests, one additional gated Three.js integration test. Native preview QA passes; production blocked by Registry DNS.
+
 ## V1.5.0 — Interactive Interiors
 - Thêm scene nội thất 3D mở mái cho nhà đang sử dụng và 14 địa điểm công cộng, geometry đồ đạc dùng chung Three.js/Canvas.
 - Di chuyển theo BFS nội bộ, nội suy vị trí, chạm sàn và nhãn đồ vật, WASD/mũi tên; chỉ mở thao tác ở đúng trạm.

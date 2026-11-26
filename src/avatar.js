@@ -14,14 +14,20 @@ export const JOINTS=Object.freeze([
  ['thighL',0,-.145,0,0],['shinL',7,0,-.40,0],['footL',8,0,-.39,0],['thighR',0,.145,0,0],['shinR',10,0,-.40,0],['footR',11,0,-.39,0]
 ].map(Object.freeze));
 export const MODES=Object.freeze(['idle','walk','run','ride','sit','wave']);
-export const DURATIONS=Object.freeze({idle:2.4,walk:.85,run:.56,ride:.8,sit:1.4,wave:1.5});
+export const NPC_MODES=Object.freeze(['talk','work','read','eat','shop']);
+export const DURATIONS=Object.freeze({idle:2.4,walk:.85,run:.56,ride:.8,sit:1.4,wave:1.5,talk:1.8,work:1.2,read:2.6,eat:2.2,shop:2.1});
 export function pose(mode='idle',phase=0,age=18){const p=JOINTS.map(()=>[0,0,0]);const s=Math.sin(phase),c=Math.cos(phase),old=age>=75?.72:age>=55?.88:1;let bob=0,raise=0;
  if(mode==='walk'||mode==='run'){const r=mode==='run',amp=(r?.83:.48)*old;p[1][0]=r?.14:.035;p[7][0]=s*amp;p[10][0]=-s*amp;p[8][0]=Math.max(0,-s)*amp*.95;p[11][0]=Math.max(0,s)*amp*.95;p[3][0]=-s*amp*.85;p[5][0]=s*amp*.85;p[4][0]=p[6][0]=r?-.85:-.16;p[9][0]=-p[8][0]*.35;p[12][0]=-p[11][0]*.35;bob=Math.abs(c)*(r?.045:.022);}
  else if(mode==='ride'||mode==='sit'){p[7][0]=p[10][0]=-1.16;p[8][0]=p[11][0]=1.42;p[3][0]=p[5][0]=-.82;p[4][0]=p[6][0]=-.35;p[1][0]=.17;raise=mode==='ride'?-.12:-.38;if(mode==='ride'){p[7][0]+=s*.27;p[10][0]-=s*.27;}}
+ else if(mode==='talk'){p[3][0]=-.25-s*.16;p[4][0]=-.65-c*.2;p[5][2]=.15+s*.18;p[6][0]=-.45;p[2][1]=s*.11;}
+ else if(mode==='work'){p[3][0]=p[5][0]=-.55;p[4][0]=-.7+s*.15;p[6][0]=-.7-s*.15;p[2][0]=.12;}
+ else if(mode==='read'){p[3][0]=p[5][0]=-.45;p[4][0]=p[6][0]=-.95;p[2][0]=.22+s*.025;}
+ else if(mode==='eat'){p[5][0]=-.45;p[6][0]=-.9-s*.4;p[3][0]=-.25;p[4][0]=-.6;p[2][0]=.08+c*.05;}
+ else if(mode==='shop'){p[5][0]=-.3-s*.2;p[6][0]=-.5;p[2][1]=s*.25;}
  else if(mode==='wave'){p[5][2]=1.95;p[6][2]=.25+s*.42;p[2][1]=s*.10;}
  else {p[1][0]=s*.012;p[3][2]=-.055;p[5][2]=.055;p[2][1]=s*.045;bob=(1+c)*.007;}
- p[1][0]+=age>=75?.105:age>=55?.045:0;p[2][0]=-p[1][0]*.40;return {rot:p,bob:bob+raise};}
-export function motionPose(m={},age=18,riding=false){const mode=riding?'ride':MODES.includes(m.mode)?m.mode:'idle',a=pose(mode,mode==='idle'?(m.idleTime||0)*2.4:m.phase||0,age);if(mode==='walk'||mode==='run'){const idle=pose('idle',(m.idleTime||0)*2.4,age),b=Math.max(0,Math.min(1,m.blend??1));a.rot=a.rot.map((r,i)=>r.map((v,j)=>idle.rot[i][j]+(v-idle.rot[i][j])*b));a.bob*=b;}return a;}
+ p[1][0]+=age>=75?.105:age>=55?.045:0;p[2][0]+=-p[1][0]*.40;return {rot:p,bob:bob+raise};}
+export function motionPose(m={},age=18,riding=false){const mode=riding?'ride':(MODES.includes(m.mode)||NPC_MODES.includes(m.mode))?m.mode:'idle',a=pose(mode,mode==='idle'?(m.idleTime||0)*2.4:m.phase||0,age);if(mode==='walk'||mode==='run'){const idle=pose('idle',(m.idleTime||0)*2.4,age),b=Math.max(0,Math.min(1,m.blend??1));a.rot=a.rot.map((r,i)=>r.map((v,j)=>idle.rot[i][j]+(v-idle.rot[i][j])*b));a.bob*=b;}return a;}
 // Build local ring meshes instead of rectangular limbs. Vertices are weighted 100% to their joint.
 function rgb(hex){return [1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)/255);}
 function ringPart(bone,center,rings,color,n=8){const [x,y,z]=center,v=[],col=rgb(color);const points=rings.map(([dy,rx,rz])=>Array.from({length:n},(_,i)=>{const a=i*2*Math.PI/n;return [x+Math.cos(a)*rx,y+dy,z+Math.sin(a)*rz]}));const tri=(a,b,c,k=1)=>{for(const p of [a,b,c])v.push(...p,...col.map(x=>Math.min(1,x*k)));};for(let j=0;j<points.length-1;j++)for(let i=0;i<n;i++){const k=(i+1)%n,a=points[j][i],b=points[j+1][i],c=points[j+1][k],d=points[j][k];const shade=.81+.19*Math.sin((i+.5)*2*Math.PI/n)**2;tri(a,b,c,shade);tri(a,c,d,shade);}for(let i=1;i<n-1;i++){tri(points[0][0],points[0][i],points[0][i+1],.82);const top=points.at(-1);tri(top[0],top[i+1],top[i],1);}return {bone,v:new Float32Array(v)};}
