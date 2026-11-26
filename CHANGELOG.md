@@ -1,3 +1,8 @@
+## V2.9.0 — Life Planning & Automation (26/11/2026)
+- Add recurrence-aware task editor, day/week/30-day plan views, conditional rules, three templates and separate occurrence history.
+- Opt-in automation using real movement and existing actions; estimated fastest eligible route, direct expense budget and cash reserve, canonical action preflight and interruption handling.
+- Optional planner save state, bounded history, manual override and safe reload; 14 new unit tests. Retain Three.js integration gate and V2.7.1 cache fix.
+
 ## V2.8.0 — Interactive Buildings & Housing (26/11/2026)
 - Full-screen 3D interior with camera-relative continuous keyboard/joystick movement, click-to-route, low cutaway walls, multiple connected rooms, zoom/orbit/overview, route line and actor ring.
 - 41 public interior templates and 11 property layouts; canonical actions and access checks retained, central mall accepts existing furniture purchases.

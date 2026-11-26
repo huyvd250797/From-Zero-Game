@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.8.0 — Interactive Buildings & Housing** · 26/11/2026
+**V2.9.0 — Life Planning & Automation** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.9.0 — Life Planning & Automation
+- Menu → Kế hoạch & tự động hóa (also available in Lịch sinh hoạt). Separate opt-in schedule of up to 24 activities with daily, weekly, monthly and one-time recurrence; daily / 7-day / 30-day previews, editable time/window, mode, condition; three templates.
+- 13 actions reuse canonical work, school, study, survival, shopping, healthcare and housing rules. Routes use walking, owned vehicle pickup, scheduled bus and taxi. Normal gameplay movement to the destination, no teleport; wait until 08:00 for formal work; block after 09:00. Auto mode chooses estimated fastest eligible option, subject to fare and action budget.
+- Daily direct automation expense limit (default 150,000đ), cash reserve (60,000đ), atomic action preflight on cloned state; stop on critical needs, failed action, route loss or save failure. Paid transit fares not refunded on interruption. Regular automatic rent/debts and fuel depletion are not counted as direct automation expenses. One occurrence per task/day, history capped at 120; do not replay missed days or auto resume after loading. Manual input or opening menus stops automation. Runs at 1× and only in active foreground gameplay. Long actions apply canonical time advancement rather than live interior animations.
+- Optional planner in schema 1; no changes to Master Data, Three.js, graphics, interiors or rig cache fix. 608 unit tests (14 new); Native QA 93 assets. Production Three.js build still requires npm ci. See docs/LIFE-PLANNING-AUTOMATION.md.
 
 ## V2.8.0 — Interactive Buildings & Housing
 - Vào 41 công trình công cộng và 11 nhà ở bằng cảnh 3D toàn màn hình, giữ camera trực giao từ trên cao, Mesh và mô hình avatar/animation dùng chung với thành phố. Cảnh nhà nhiều phòng có cửa, vách cắt thấp, va chạm, đi bộ liên tục, WASD/Shift, joystick, bấm sàn/đồ vật để tìm đường, xoay/zoom và xem toàn nhà. Đồng hồ tiếp tục chạy khi ở cảnh nội thất, tạm dừng trong menu và chế độ bố trí.
