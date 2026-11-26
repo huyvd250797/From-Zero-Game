@@ -1,5 +1,5 @@
 # From Zero — Từ hai bàn tay trắng
-**V1.2.0 — Immersive City** · 26/11/2026
+**V1.2.1 — Three.js Engine Migration** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
 
@@ -31,17 +31,24 @@ Thời gian chạy khi gameplay hoạt động. Modal, tạm dừng và tab ẩn
 - Bốn cấp độ đồ họa, cache A*, ba lớp lưu trữ, cảnh báo xung đột tab, PWA fingerprint và precache SHA-256.
 - V1.0.0: onboarding có dẫn đường thật, bảo vệ xác nhận thay thế save, hỗ trợ điều hướng bàn phím trong modal, đồng bộ branding.
 
+## Three.js Engine Migration V1.2.1
+- Three.js r180 (`three@0.180.0`) là renderer ưu tiên mặc định, sử dụng WebGL 2. `package-lock.json` ghim chính xác tarball và integrity. Native WebGL 2 V1.2.0, WebGL 1 và Canvas là fallback độc lập; lựa chọn Legacy cũ được giữ nguyên. Cài đặt hiển thị renderer đang hoạt động và nguyên nhân fallback.
+- Bridge chuyển hình học hiện tại thành `BufferGeometry`, 7 `MeshStandardMaterial` với màu linear, roughness/metalness, texture procedural nội bộ, contact shading tùy chọn; giữ camera, vùng va chạm và tọa độ thành phố. `InstancedMesh` dùng cho cây ven đường, LOD theo vùng, cache tối đa 44 phân vùng/mức LOD. NPC và phương tiện vẫn dùng hình học hiện tại.
+- Ánh sáng Directional/Hemisphere, bóng PCF, ACES tone mapping, EffectComposer với Bloom/FXAA/OutputPass, bốn preset và adaptive resolution. GLTFLoader chính thức cho ghế GLB mẫu; SkeletonUtils và AnimationMixer sẵn sàng cho V1.3.0, chưa gắn vào nhân vật hiện tại. Chưa có SSAO thật, texture PBR độc lập hay mô hình nhân vật rig hoàn chỉnh.
+- Production build **yêu cầu npm ci thành công**; tự kiểm thử với Three.js thật (camera, geometry, GLB, mixer, graph), đóng gói các module vendor và LICENSE vào fingerprint, đưa vào SHA-256 precache. Không dùng CDN lúc chơi. Không có dependency giả. Xem [THREE-JS-MIGRATION](docs/THREE-JS-MIGRATION.md).
+- **Trạng thái bàn giao:** 383/383 test không cần dependency đạt, build native QA và kiểm thử fallback đạt. npm không truy cập được Registry tại môi trường xây dựng nên chưa chạy 5 test runtime Three.js, chưa xác nhận production build, WebGL 2 Three.js hoặc PWA thật. Native preview nằm riêng `dist-native-preview/`, không phải output Vercel và không đăng ký Service Worker. Chỉ nghiệm thu chuyển đổi sau khi build và kiểm tra thiết bị thật.
+
 ## Thành phố An Lạc V1.2.0
 - 62 công trình và 17 lô đất mở dùng 12 mẫu kiến trúc/cảnh quan procedural, 10 palette phân khu. Nhà phố có mái ngói, ban công, mặt tiền theo hướng cửa; cửa hàng có kính, mái che, biển chữ hình học tiếng Việt; chung cư, văn phòng, cơ sở công cộng và nhà xưởng có kiểu riêng.
 - Vỉa hè, bó vỉa, vạch đường, lối tiếp cận cửa, cây dạng tán tròn và cây cau cách điệu, cột đèn, thùng rác, ghế, bồn hoa, đài nước, luống cây và sân thể thao. Các vật trang trí không có collision/hoạt động riêng; đèn chưa phát sáng cục bộ. Hình học dùng chung WebGL 2/WebGL 1/Canvas. Canvas Low/Medium ưu tiên LOD thấp.
 - Không thay đổi master data, vị trí, collision, gameplay, save schema. Dùng lại GLB ghế của V1.1.0; chưa thêm bộ mô hình Blender hoặc texture ngoài. Xem [Immersive City](docs/IMMERSIVE-CITY.md).
 
-## Nền tảng đồ họa V1.1.0 kế thừa
+## Nền tảng đồ họa native V1.1.0–V1.2.0 (fallback kế thừa)
 - WebGL 2 native, shader vật liệu theo mô hình chiếu sáng microfacet; bề mặt procedural theo tọa độ thế giới, bóng đổ depth map PCF, ánh sáng ngày/đêm, phản xạ giả lập và phát sáng cửa kính.
 - Low/Medium/High/Ultra; bật/tắt riêng bóng đổ, bóng tiếp xúc gần mặt đất (không phải SSAO), bloom và AA hậu kỳ đơn giản. Độ phân giải thích ứng có ngưỡng và hysteresis.
-- GLB ghế đá mẫu tự tạo, bộ đọc GLB 2.0 tĩnh có giới hạn, fallback mô hình code khi tải thất bại. Không sử dụng CDN hay dependency ngoài.
+- GLB ghế đá mẫu tự tạo, bộ đọc GLB 2.0 tĩnh có giới hạn, fallback mô hình code khi tải thất bại. Renderer native không sử dụng CDN hay dependency ngoài.
 - Nếu không có WebGL 2 hoặc lỗi khởi tạo, tự chọn WebGL 1/Canvas. Có thể chọn Legacy trong Cài đặt rồi lưu và tải lại. Khi lỗi renderer lúc chơi, tạm dừng và lưu/xuất JSON trước khi chuyển Legacy.
-- Chưa tích hợp Three.js do npm không truy cập được; V1.2.0 cải tiến hình học procedural, chưa thay thế bằng mô hình GLB riêng từng công trình. Không có full GLTF loader, texture PBR riêng từng file, SSAO, skeletal animation hay instancing GPU mới. Xem [Graphics Engine](docs/GRAPHICS-ENGINE.md).
+- Ở V1.1.0–V1.2.0, chưa tích hợp Three.js; V1.2.0 cải tiến hình học procedural, chưa thay thế bằng mô hình GLB riêng từng công trình. Không có full GLTF loader, texture PBR riêng từng file, SSAO, skeletal animation hay instancing GPU mới. Xem [Graphics Engine](docs/GRAPHICS-ENGINE.md).
 
 ## Deploy GitHub → Vercel
 Giải nén ZIP, đưa **nội dung bên trong** vào root repo. Không commit dist hoặc node_modules. Cấu hình `vercel.json` đã có:
@@ -56,7 +63,7 @@ Giải nén ZIP, đưa **nội dung bên trong** vào root repo. Không commit d
 | Node.js | 22.x (engine >=20) |
 | Env / DB / SQL migration | Không cần |
 
-Khi repo liên kết Vercel, push branch production theo thiết lập hiện tại. Giữ cùng domain để truy cập bản lưu cũ. Không phải Next.js, không cần routes-manifest.json. Đây là source đã build, chưa tự deploy lên Vercel.
+Khi repo liên kết Vercel, push branch production theo thiết lập hiện tại. Giữ cùng domain để truy cập bản lưu cũ. Không phải Next.js, không cần routes-manifest.json. Source đã kiểm thử ở chế độ native QA, production build cần cài Three.js qua npm ci. Chưa deploy Vercel.
 
 ## Chạy local và kiểm tra
 ```sh
@@ -64,7 +71,7 @@ npm ci
 npm run release:check
 npm run preview
 ```
-Mở `http://localhost:5173`. `npm run dev` dành cho phát triển. Không mở trực tiếp index.html bằng file://. Bộ kiểm tra không cần tải dependency ngoài; `npm run release:check` chạy install offline, test, production build, kiểm tra SHA-256, HTTP và 30 ngày sinh tồn. Các test dài hạn riêng: `npm run simulate:balance -- --long`; benchmark cache A*: `npm run benchmark:navigation`.
+Mở `http://localhost:5173`. `npm run dev` dành cho phát triển. Không mở trực tiếp index.html bằng file://. `npm run release:check` chạy npm ci (cần Registry nếu cache trống), test, production build có 5 test Three.js runtime, kiểm tra SHA-256, HTTP và 30 ngày sinh tồn. `npm run test:three` chạy riêng test runtime sau cài đặt. Nếu Registry chưa truy cập được, `npm test` và `npm run build:native-preview` chỉ dùng QA native, không phải nghiệm thu production. `node scripts/serve.mjs dist-native-preview` chạy preview ở origin/port riêng. Các test dài hạn riêng: `npm run simulate:balance -- --long`; benchmark cache A*: `npm run benchmark:navigation`.
 
 ## Save và cập nhật
 Save schema 1 giữ nguyên: `fromzero.save.v1`, `fromzero.backup.v1`, `fromzero.checkpoint.v1`. Chỉ có một cuộc đời đang chơi, Hall of Fame lưu trong save. Autosave khoảng 12 giây, sau hoạt động và khi rời trang; **Cài đặt → Xuất bản lưu JSON** trước cập nhật/đổi thiết bị. Chỉ chơi một tab. Khi có bản cập nhật PWA, xác nhận lưu và cập nhật. Đừng xóa dữ liệu trình duyệt để ép update; nếu cần, đóng hết tab rồi mở lại. Bản lưu là dữ liệu cục bộ, không phải cloud. Quota, xóa dữ liệu hoặc đổi origin có thể ảnh hưởng truy cập save. Cài đặt có nhập JSON, xuất/khôi phục backup và checkpoint.
@@ -75,4 +82,4 @@ HTTPS hoặc localhost, mở online lần đầu và chờ cache được chuẩ
 Đã hoàn thành roadmap nền tảng V1.0.0, còn giới hạn: AI NPC/nhân viên cơ bản, nhà tù là giao diện quản lý riêng, thừa kế quy đổi tiền và timeline mới, 1 kết cục chưa có nghề tương ứng, chưa thử tất cả hành trình. Cần kiểm thử PWA thật, Safari/Edge, WebGL GPU và hiệu năng thiết bị thật trước khi phát hành rộng rãi. Xem [checklist nghiệm thu](docs/OFFICIAL-RELEASE.md).
 
 ## Kỹ thuật và tài liệu
-JavaScript ES Modules, WebGL 2 native / WebGL 1 / Canvas 2D, build Node.js không dependency. Master Data V2.9.0 (60 danh mục, 693 bản ghi), validate và compile từ `master-data/`; `src/` là simulation và UI; `public/` là manifest, icon, worker; `scripts/` là công cụ build/test; `tests/` là regression. Giữ nguyên các module nghiệp vụ V1.0.0. `docs/` và [CHANGELOG](CHANGELOG.md) chứa tài liệu theo từng phiên bản; các mục "chưa triển khai" ở tài liệu lịch sử mô tả thời điểm phát hành phiên bản tương ứng, không phải trạng thái hiện tại.
+JavaScript ES Modules, Three.js 0.180.0 / WebGL 2 native / WebGL 1 / Canvas 2D, build Node.js với npm dependency được ghim. Master Data V2.9.0 (60 danh mục, 693 bản ghi), validate và compile từ `master-data/`; `src/` là simulation và UI; `public/` là manifest, icon, worker; `scripts/` là công cụ build/test; `tests/` là regression. Giữ nguyên các module nghiệp vụ V1.0.0. `docs/` và [CHANGELOG](CHANGELOG.md) chứa tài liệu theo từng phiên bản; các mục "chưa triển khai" ở tài liệu lịch sử mô tả thời điểm phát hành phiên bản tương ứng, không phải trạng thái hiện tại.

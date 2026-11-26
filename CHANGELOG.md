@@ -1,4 +1,11 @@
 ## V1.2.0 — Immersive City
+
+## V1.2.1 — Three.js Engine Migration
+- Pin Three.js 0.180.0; ưu tiên renderer Three.js, fallback native WebGL 2 → WebGL 1 → Canvas. Giữ preset, save schema và Master Data.
+- BufferGeometry, MeshStandardMaterial, procedural texture, directional/hemisphere lighting, shadow, bloom/FXAA, camera bridge và adaptive resolution; instancing cây ven đường. GLTFLoader, SkeletonUtils, AnimationMixer foundation.
+- Vendor module graph + LICENSE trong fingerprint/precache, production gate dùng 5 test runtime Three.js. Build native QA riêng, không dùng làm output deploy.
+- 383 test độc lập dependency PASS (374 + 9); native QA 56 tài nguyên SHA-256/HTTP, fallback desktop/mobile PASS. npm Registry bị chặn, production build chưa xác nhận, 5 test runtime chưa chạy, GPU/browser Three.js chưa nghiệm thu. Không thay thế Three.js bằng renderer giả.
+
 - Kit hình học procedural 12 phong cách cho toàn bộ 79 lô (62 công trình, 17 cảnh quan), 10 palette phân khu; mặt tiền theo hướng cửa; mái ngói, ban công, cửa kính, biển chữ Việt, mái nhà xưởng, chi tiết hành chính và y tế.
 - Cải thiện đường/vỉa hè, lối tiếp cận, cây, cột đèn, bồn hoa, đài nước, luống cây, sân thể thao, bãi xe, vật dụng đường phố. Vật trang trí không thay đổi collision; đèn chưa có ánh sáng cục bộ.
 - Hai LOD dùng chung renderer; tối giản cửa sổ, biển, bó vỉa và cây ở LOD thấp. Canvas Low/Medium ưu tiên LOD thấp. Nhận diện vật liệu kính cao trên shader.
