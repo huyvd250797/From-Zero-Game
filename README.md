@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V1.3.0 — Character & Animation** · 26/11/2026
+**V1.4.0 — Camera & Player Control** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V1.4.0 — Camera & Player Control
+- 4 chế độ camera: Toàn cảnh, Theo nhân vật, Cận cảnh và Tự do; zoom .18–7, góc nghiêng 20–82°, xoay và bám theo mượt. Phép chiếu trực giao thống nhất Three.js, WebGL native và Canvas. Cận cảnh tự nâng góc khi tòa nhà chắn nhân vật; nếu vẫn khuất hiển thị cảnh báo.
+- Kéo chuột/trượt một ngón để pan; kéo chuột phải hoặc kéo ở chế độ Cận cảnh để orbit. Hai ngón pinch và twist; không phát sinh tap khi nhấc ngón sau pinch. Chạm đất sử dụng phép chiếu của khung hình cuối, không đổi A*. Camera tự do không tự bám lại khi nhân vật di chuyển. F: theo, C: cận cảnh, Q/R: nghiêng, Z/X: xoay, V: ẩn/hiện HUD phụ.
+- HUD phụ ẩn được, toolbar hai hàng responsive, địa điểm gần được làm nổi bật. Giữ nguyên simulation, save schema 1, Master Data, dependency Three.js 0.180.0. Xem docs/CAMERA-PLAYER-CONTROL.md.
+- 406 unit tests; native preview 60 tài nguyên. Production build yêu cầu npm ci và test Three.js thật.
 
 ## Bắt đầu
 1. Chọn **Bắt đầu cuộc đời mới**, nhập tên, chọn Dễ/Bình thường/Khó và tùy chỉnh ngoại hình. Save cũ giữ nguyên độ khó đã có; save từ trước V0.22.0 mặc định Bình thường.

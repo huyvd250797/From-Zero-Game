@@ -1,3 +1,8 @@
+## V1.4.0 — Camera & Player Control
+- Four orthographic camera modes; smoothed pan, yaw, elevation, zoom and tracking. Close mode automatic building sightline elevation; explicit occluded marker when pitch cap prevents clearance.
+- Shared projection/picking across renderers; tap uses last rendered projection. Multi-pointer gesture state, drag threshold, lost capture cleanup; no ghost taps after pinch.
+- Focus HUD toggle, nearby interaction outline, keyboard shortcuts and compact mobile toolbar. Preserve gameplay, save and Master Data; no new dependency. 13 camera unit tests, one additional gated real Three integration test.
+
 ## V1.3.0 — Character & Animation
 - Nhân vật procedural dáng nam/nữ, khuôn mặt, tóc, màu da, trang phục và phụ kiện. Character Creator và chỉnh ngoại hình trong game với preview xoay, sáu động tác và footer xác nhận.
 - 13 khớp; Three.js SkinnedMesh, Skeleton, sáu AnimationClip, crossfade; kết nối Idle/Walk/Run/Ride, preview Sit/Wave. Ngoại hình NPC xác định theo ID, tóc bạc và dáng theo tuổi, hai LOD.

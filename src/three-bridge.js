@@ -1,3 +1,4 @@
+import {cameraBasis} from './camera-control.js';
 import {surfaceGeometry} from './graphics.js';
 // Presentation-only conversion. Canonical game coordinates, colours and triangle surfaces remain intact.
 export const MATERIALS=Object.freeze([
@@ -17,7 +18,7 @@ export function meshArrays(raw,{grouped=true,ao=false}={}){
  }
  const index=new Uint32Array(count),groups=[];let offset=0;indices.forEach((a,id)=>{if(a.length){index.set(a,offset);groups.push({start:offset,count:a.length,materialIndex:id});offset+=a.length;}});return {position,normal,color,uv,index,groups,count};
 }
-export function cameraSpec(camera,width,height,unit){const a=camera.yaw*Math.PI/180,n=Math.hypot(.83,.55),d=480;return {target:[camera.x,0,camera.z],position:[camera.x+d*Math.sin(a)*.83/n,d*.55/n,camera.z+d*Math.cos(a)*.83/n],halfWidth:width/(2*unit),halfHeight:height/(2*unit*n),near:.1,far:1000};}
+export function cameraSpec(camera,width,height,unit){const a=camera.yaw*Math.PI/180,{c,s,n}=cameraBasis(camera),d=480;return {target:[camera.x,0,camera.z],position:[camera.x+d*Math.sin(a)*c/n,d*s/n,camera.z+d*Math.cos(a)*c/n],halfWidth:width/(2*unit),halfHeight:height/(2*unit*n),near:.1,far:1000};}
 export function treeBatches(items){const groups=[[],[],[]];for(const item of items)groups[item.type].push(item);return groups;}
 // Same-origin only, no CDN or remote model URL. Deterministic grayscale surface texture.
 export function texturePixels(kind,size=64){const bytes=new Uint8Array(size*size*4);for(let y=0;y<size;y++)for(let x=0;x<size;x++){let h=Math.imul(x+kind*97,374761393)^Math.imul(y+51,668265263);h=Math.imul(h^(h>>>13),1274126177);let v=232+((h>>>0)%24);if(kind===2&&(x<2||y<2))v=155;if(kind===5)v=210+((Math.imul(x+1,53)>>>0)%37)+((h>>>0)%8);if(kind===1)v=218+((h>>>0)%36);if(kind===6)v=219+((h>>>0)%36);bytes.set([v,v,v,255],(y*size+x)*4);}return bytes;}
