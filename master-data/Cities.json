@@ -2,9 +2,11 @@
   {
     "id": "CTY_ANLAC",
     "name": "An Lạc",
-    "size": 192,
+    "size": 384,
     "currency": "VND",
-    "description": "Thành phố An Lạc mở rộng, gồm 10 khu chức năng.",
-    "chunkSize": 32
+    "description": "An Lạc mở rộng: 18 phân khu, sông An Bình và cầu nối hai bờ.",
+    "chunkSize": 32,
+    "riverMinX": 194,
+    "riverMaxX": 202
   }
 ]

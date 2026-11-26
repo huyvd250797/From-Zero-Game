@@ -89,5 +89,197 @@
     "jobs": [
       "JOB_NURSE"
     ]
+  },
+  {
+    "id": "EMP_EAST_MARKET",
+    "name": "Siêu thị An Bình",
+    "building": "BLD_EAST_MARKET",
+    "jobs": [
+      "JOB_CASHIER",
+      "JOB_SALES",
+      "JOB_MANAGER"
+    ]
+  },
+  {
+    "id": "EMP_TECH_HUB",
+    "name": "Công ty Công nghệ Tân An",
+    "building": "BLD_TECH_HUB",
+    "jobs": [
+      "JOB_DEV",
+      "JOB_LEAD",
+      "JOB_ACCOUNT",
+      "JOB_MANAGER",
+      "JOB_DESIGNER"
+    ]
+  },
+  {
+    "id": "EMP_CENTRAL_SHOP",
+    "name": "Cửa hàng Tân An",
+    "building": "BLD_CENTRAL_SHOP",
+    "jobs": [
+      "JOB_TEMP",
+      "JOB_CASHIER",
+      "JOB_SALES",
+      "JOB_MANAGER"
+    ]
+  },
+  {
+    "id": "EMP_EAST_CAFE",
+    "name": "Cà phê Bờ Đông",
+    "building": "BLD_EAST_CAFE",
+    "jobs": [
+      "JOB_COOK",
+      "JOB_TEMP"
+    ]
+  },
+  {
+    "id": "EMP_CENTRAL_MALL",
+    "name": "Trung tâm thương mại Tân An",
+    "building": "BLD_CENTRAL_MALL",
+    "jobs": [
+      "JOB_CASHIER",
+      "JOB_SALES",
+      "JOB_MANAGER"
+    ]
+  },
+  {
+    "id": "EMP_FINANCE_HUB",
+    "name": "Văn phòng Tài chính Tân An",
+    "building": "BLD_FINANCE_HUB",
+    "jobs": [
+      "JOB_DEV",
+      "JOB_LEAD",
+      "JOB_ACCOUNT",
+      "JOB_MANAGER",
+      "JOB_DESIGNER"
+    ]
+  },
+  {
+    "id": "EMP_EAST_SCHOOL",
+    "name": "Trung tâm đào tạo An Bình",
+    "building": "BLD_EAST_SCHOOL",
+    "jobs": [
+      "JOB_TEACHER"
+    ]
+  },
+  {
+    "id": "EMP_NEW_FACTORY",
+    "name": "Nhà máy Tân Phát",
+    "building": "BLD_NEW_FACTORY",
+    "jobs": [
+      "JOB_WORKER",
+      "JOB_BUILDER"
+    ]
+  },
+  {
+    "id": "EMP_NEW_WAREHOUSE",
+    "name": "Kho vận Tân Phát",
+    "building": "BLD_NEW_WAREHOUSE",
+    "jobs": [
+      "JOB_DRIVER"
+    ]
+  },
+  {
+    "id": "EMP_CAMPUS_SHOP",
+    "name": "Cửa hàng Sinh viên",
+    "building": "BLD_CAMPUS_SHOP",
+    "jobs": [
+      "JOB_TEMP",
+      "JOB_CASHIER",
+      "JOB_SALES",
+      "JOB_MANAGER"
+    ]
+  },
+  {
+    "id": "EMP_INDUSTRY_SHOP",
+    "name": "Cửa hàng Công nghiệp",
+    "building": "BLD_INDUSTRY_SHOP",
+    "jobs": [
+      "JOB_TEMP",
+      "JOB_CASHIER",
+      "JOB_SALES",
+      "JOB_MANAGER"
+    ]
+  },
+  {
+    "id": "EMP_INDUSTRY_OFFICE",
+    "name": "Văn phòng Tân Phát",
+    "building": "BLD_INDUSTRY_OFFICE",
+    "jobs": [
+      "JOB_DEV",
+      "JOB_LEAD",
+      "JOB_ACCOUNT",
+      "JOB_MANAGER",
+      "JOB_DESIGNER"
+    ]
+  },
+  {
+    "id": "EMP_SOUTH_SHOP",
+    "name": "Cửa hàng Nam An",
+    "building": "BLD_SOUTH_SHOP",
+    "jobs": [
+      "JOB_TEMP",
+      "JOB_CASHIER",
+      "JOB_SALES",
+      "JOB_MANAGER"
+    ]
+  },
+  {
+    "id": "EMP_TANPHU_MARKET",
+    "name": "Siêu thị Tân Phú",
+    "building": "BLD_TANPHU_MARKET",
+    "jobs": [
+      "JOB_CASHIER",
+      "JOB_SALES",
+      "JOB_MANAGER"
+    ]
+  },
+  {
+    "id": "EMP_SOUTH_FARM",
+    "name": "Nông trại Nam An",
+    "building": "BLD_SOUTH_FARM",
+    "jobs": [
+      "JOB_FARMER"
+    ]
+  },
+  {
+    "id": "EMP_PHUAN_MARKET",
+    "name": "Siêu thị Phú An",
+    "building": "BLD_PHUAN_MARKET",
+    "jobs": [
+      "JOB_CASHIER",
+      "JOB_SALES",
+      "JOB_MANAGER"
+    ]
+  },
+  {
+    "id": "EMP_RIVER_CAFE",
+    "name": "Cà phê An Bình Riverside",
+    "building": "BLD_RIVER_CAFE",
+    "jobs": [
+      "JOB_COOK",
+      "JOB_TEMP"
+    ]
+  },
+  {
+    "id": "EMP_TANPHU_OFFICE",
+    "name": "Công ty Dịch vụ Tân Phú",
+    "building": "BLD_TANPHU_OFFICE",
+    "jobs": [
+      "JOB_DEV",
+      "JOB_LEAD",
+      "JOB_ACCOUNT",
+      "JOB_MANAGER",
+      "JOB_DESIGNER"
+    ]
+  },
+  {
+    "id": "EMP_TANPHU_CAFE",
+    "name": "Cà phê Tân Phú",
+    "building": "BLD_TANPHU_CAFE",
+    "jobs": [
+      "JOB_COOK",
+      "JOB_TEMP"
+    ]
   }
 ]

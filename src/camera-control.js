@@ -7,7 +7,7 @@ export const CAMERA_MODES=Object.freeze(['overview','follow','close','free']);
 export const MODE_LABELS=Object.freeze({overview:'Toàn cảnh',follow:'Theo nhân vật',close:'Cận cảnh',free:'Tự do'});
 export function cameraBasis(camera){const pitch=Number.isFinite(camera.pitch)?clamp(camera.pitch,20,82):DEFAULT_PITCH;return {c:N*Math.cos(pitch*RAD),s:N*Math.sin(pitch*RAD),n:N};}
 export function angleDelta(a,b){return ((b-a+180)%360+360)%360-180;}
-export function zoomLimit(z){return clamp(Number.isFinite(z)?z:1,.18,7);}
+export function zoomLimit(z){return clamp(Number.isFinite(z)?z:1,.09,7);}
 export function screenToWorldDelta(dx,dy,camera,unit){const a=camera.yaw*RAD,{s}=cameraBasis(camera),rx=dx/Math.max(.001,unit),rz=dy/Math.max(.001,unit)/s;return {x:rx*Math.cos(a)+rz*Math.sin(a),z:-rx*Math.sin(a)+rz*Math.cos(a)};}
 // Intersect a horizontal ray from the actor towards the orthographic camera with each footprint.
 // Return distance to entry; inside/edge cases are bounded to avoid divide-by-zero.
@@ -16,7 +16,7 @@ export function clearancePitch(pos,yaw,base,obstacles=buildings){let required=ba
 export class CameraControl{
  constructor(camera,mode='follow'){this.reset(camera,mode);}
  reset(camera,mode='follow'){this.mode=mode;this.goal={...camera,pitch:camera.pitch??DEFAULT_PITCH};this.basePitch=this.goal.pitch;this.occluded=false;this.lifted=false;this.moving=false;this.liftHold=0;this.velocity={x:0,z:0,zoom:0,pitch:0};}
- setMode(mode,camera,pos,width,height){if(!CAMERA_MODES.includes(mode))return;this.reset(camera,mode);const mobile=width<650;if(mode==='overview'){this.goal.x=this.goal.z=SIZE/2;const base=Math.max(.001,Math.min(width/100,height/61)),a=camera.yaw*RAD,span=SIZE*(Math.abs(Math.sin(a))+Math.abs(Math.cos(a))),{s,c}=cameraBasis({pitch:50}),top=Math.max(...buildings.map(b=>b.h+3.5));this.goal.zoom=clamp(Math.min((width-36)/(span*base),(height-210)/((span*s+2*top*c)*base)),.18,.46);this.basePitch=50;}else if(mode==='follow'||mode==='close'){this.goal.x=pos.x;this.goal.z=pos.z;this.goal.zoom=mode==='close'?(mobile?6.2:4.8):(mobile?1.75:1.28);this.basePitch=mode==='close'?24:DEFAULT_PITCH;}this.goal.pitch=this.basePitch;}
+ setMode(mode,camera,pos,width,height){if(!CAMERA_MODES.includes(mode))return;this.reset(camera,mode);const mobile=width<650;if(mode==='overview'){this.goal.x=this.goal.z=SIZE/2;const base=Math.max(.001,Math.min(width/100,height/61)),a=camera.yaw*RAD,span=SIZE*(Math.abs(Math.sin(a))+Math.abs(Math.cos(a))),{s,c}=cameraBasis({pitch:50}),top=Math.max(...buildings.map(b=>b.h+3.5));this.goal.zoom=clamp(Math.min((width-36)/(span*base),(height-210)/((span*s+2*top*c)*base)),.09,.46);this.basePitch=50;}else if(mode==='follow'||mode==='close'){this.goal.x=pos.x;this.goal.z=pos.z;this.goal.zoom=mode==='close'?(mobile?6.2:4.8):(mobile?1.75:1.28);this.basePitch=mode==='close'?24:DEFAULT_PITCH;}this.goal.pitch=this.basePitch;}
  focus(camera,x,z){this.reset(camera,'free');this.goal.x=clamp(x,0,SIZE);this.goal.z=clamp(z,0,SIZE);}
  zoom(factor){if(Number.isFinite(factor)&&factor>0)this.goal.zoom=zoomLimit(this.goal.zoom*factor);}
  rotate(delta){if(Number.isFinite(delta))this.goal.yaw=((this.goal.yaw+delta)%360+360)%360;}

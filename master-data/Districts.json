@@ -108,5 +108,93 @@
     "maxX": 192,
     "maxZ": 192,
     "color": "#a8c4b6"
+  },
+  {
+    "id": "DST_EAST_TOWN",
+    "name": "Đông An Bình",
+    "city": "CTY_ANLAC",
+    "description": "Nhà phố, cửa hàng và khu dân cư ven sông.",
+    "minX": 192,
+    "minZ": 0,
+    "maxX": 288,
+    "maxZ": 96,
+    "color": "#a8bd9e"
+  },
+  {
+    "id": "DST_EAST_CBD",
+    "name": "Tân Trung tâm",
+    "city": "CTY_ANLAC",
+    "description": "Văn phòng, thương mại và việc làm.",
+    "minX": 288,
+    "minZ": 0,
+    "maxX": 384,
+    "maxZ": 96,
+    "color": "#b2c4c8"
+  },
+  {
+    "id": "DST_EAST_CAMPUS",
+    "name": "Đại học An Bình",
+    "city": "CTY_ANLAC",
+    "description": "Đào tạo và thư viện.",
+    "minX": 192,
+    "minZ": 96,
+    "maxX": 288,
+    "maxZ": 192,
+    "color": "#b4bfd2"
+  },
+  {
+    "id": "DST_EAST_INDUSTRY",
+    "name": "Khu công nghiệp Tân Phát",
+    "city": "CTY_ANLAC",
+    "description": "Nhà máy, kho vận và việc làm.",
+    "minX": 288,
+    "minZ": 96,
+    "maxX": 384,
+    "maxZ": 192,
+    "color": "#b9b7a7"
+  },
+  {
+    "id": "DST_SOUTH_GREEN",
+    "name": "Nam An Lạc",
+    "city": "CTY_ANLAC",
+    "description": "Ngoại ô, vườn cây và nông trại.",
+    "minX": 0,
+    "minZ": 192,
+    "maxX": 96,
+    "maxZ": 384,
+    "color": "#9ebf8b"
+  },
+  {
+    "id": "DST_SOUTH_HOUSING",
+    "name": "Phú An",
+    "city": "CTY_ANLAC",
+    "description": "Nhà ở, chung cư và tiện ích.",
+    "minX": 96,
+    "minZ": 192,
+    "maxX": 192,
+    "maxZ": 384,
+    "color": "#b7c9a9"
+  },
+  {
+    "id": "DST_SE_RIVER",
+    "name": "An Bình Riverside",
+    "city": "CTY_ANLAC",
+    "description": "Công viên ven sông và dân cư.",
+    "minX": 192,
+    "minZ": 192,
+    "maxX": 288,
+    "maxZ": 384,
+    "color": "#9dbdb0"
+  },
+  {
+    "id": "DST_SE_SERVICE",
+    "name": "Tân Phú",
+    "city": "CTY_ANLAC",
+    "description": "Dịch vụ, thương mại và khu dân cư.",
+    "minX": 288,
+    "minZ": 192,
+    "maxX": 384,
+    "maxZ": 384,
+    "color": "#c5bea9"
   }
 ]

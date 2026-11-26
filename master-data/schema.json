@@ -1,5 +1,5 @@
 {
-  "version": "2.9.0",
+  "version": "3.0.0",
   "catalogs": {
     "Game_Config": {
       "prefix": "CFG",
@@ -83,7 +83,9 @@
         "size": "positiveInt",
         "currency": "enum:VND",
         "description": "text",
-        "chunkSize": "positiveInt"
+        "chunkSize": "positiveInt",
+        "riverMinX": "nonnegative",
+        "riverMaxX": "nonnegative"
       }
     },
     "Districts": {

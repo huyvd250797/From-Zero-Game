@@ -4,7 +4,7 @@ import {roadsX,roadsZ,SIZE} from './world.js';
 const mod=(v,m)=>((v%m)+m)%m;
 export const SIGNAL_CYCLE=20, GREEN=8;
 export function signalPhase(t,axis){const p=mod(t+(axis==='x'?0:10),SIGNAL_CYCLE);return p<GREEN?'green':p<10?'amber':'red';}
-const centers=[-16,...roadsX.map(r=>r.center).sort((a,b)=>a-b),208];
+const centers=[-16,...roadsX.map(r=>r.center).sort((a,b)=>a-b),SIZE+16];
 export const intersections=roadsX.flatMap(x=>roadsZ.map(z=>({x:x.center,z:z.center,wx:x.width,wz:z.width})));
 const colors=['#e4e5df','#bb6761','#d7ae55','#789bb8','#586b72','#a2aaba'];
 const reversed=[...centers].reverse();

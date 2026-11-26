@@ -201,5 +201,229 @@
     "city": "CTY_ANLAC",
     "x": 100,
     "z": 65
+  },
+  {
+    "id": "NAV_EAST_MARKET",
+    "name": "Cửa Siêu thị An Bình",
+    "city": "CTY_ANLAC",
+    "x": 218,
+    "z": 40
+  },
+  {
+    "id": "NAV_EAST_PARK",
+    "name": "Cửa Công viên Bình An",
+    "city": "CTY_ANLAC",
+    "x": 250,
+    "z": 40
+  },
+  {
+    "id": "NAV_TECH_HUB",
+    "name": "Cửa Công ty Công nghệ Tân An",
+    "city": "CTY_ANLAC",
+    "x": 314,
+    "z": 40
+  },
+  {
+    "id": "NAV_CENTRAL_SHOP",
+    "name": "Cửa Cửa hàng Tân An",
+    "city": "CTY_ANLAC",
+    "x": 346,
+    "z": 40
+  },
+  {
+    "id": "NAV_EAST_HOME",
+    "name": "Cửa Nhà phố Đông An",
+    "city": "CTY_ANLAC",
+    "x": 218,
+    "z": 72
+  },
+  {
+    "id": "NAV_EAST_CAFE",
+    "name": "Cửa Cà phê Bờ Đông",
+    "city": "CTY_ANLAC",
+    "x": 250,
+    "z": 72
+  },
+  {
+    "id": "NAV_CENTRAL_MALL",
+    "name": "Cửa Trung tâm thương mại Tân An",
+    "city": "CTY_ANLAC",
+    "x": 314,
+    "z": 72
+  },
+  {
+    "id": "NAV_FINANCE_HUB",
+    "name": "Cửa Văn phòng Tài chính Tân An",
+    "city": "CTY_ANLAC",
+    "x": 346,
+    "z": 72
+  },
+  {
+    "id": "NAV_EAST_SCHOOL",
+    "name": "Cửa Trung tâm đào tạo An Bình",
+    "city": "CTY_ANLAC",
+    "x": 218,
+    "z": 136
+  },
+  {
+    "id": "NAV_EAST_LIBRARY",
+    "name": "Cửa Thư viện An Bình",
+    "city": "CTY_ANLAC",
+    "x": 250,
+    "z": 136
+  },
+  {
+    "id": "NAV_NEW_FACTORY",
+    "name": "Cửa Nhà máy Tân Phát",
+    "city": "CTY_ANLAC",
+    "x": 314,
+    "z": 136
+  },
+  {
+    "id": "NAV_NEW_WAREHOUSE",
+    "name": "Cửa Kho vận Tân Phát",
+    "city": "CTY_ANLAC",
+    "x": 346,
+    "z": 136
+  },
+  {
+    "id": "NAV_CAMPUS_SHOP",
+    "name": "Cửa Cửa hàng Sinh viên",
+    "city": "CTY_ANLAC",
+    "x": 218,
+    "z": 168
+  },
+  {
+    "id": "NAV_CAMPUS_PARK",
+    "name": "Cửa Công viên Đại học",
+    "city": "CTY_ANLAC",
+    "x": 250,
+    "z": 168
+  },
+  {
+    "id": "NAV_INDUSTRY_SHOP",
+    "name": "Cửa Cửa hàng Công nghiệp",
+    "city": "CTY_ANLAC",
+    "x": 314,
+    "z": 168
+  },
+  {
+    "id": "NAV_INDUSTRY_OFFICE",
+    "name": "Cửa Văn phòng Tân Phát",
+    "city": "CTY_ANLAC",
+    "x": 346,
+    "z": 168
+  },
+  {
+    "id": "NAV_SOUTH_SHOP",
+    "name": "Cửa Cửa hàng Nam An",
+    "city": "CTY_ANLAC",
+    "x": 58,
+    "z": 232
+  },
+  {
+    "id": "NAV_PHUAN_APARTMENT",
+    "name": "Cửa Chung cư Phú An",
+    "city": "CTY_ANLAC",
+    "x": 122,
+    "z": 232
+  },
+  {
+    "id": "NAV_RIVER_PARK",
+    "name": "Cửa Công viên Bờ Sông",
+    "city": "CTY_ANLAC",
+    "x": 218,
+    "z": 232
+  },
+  {
+    "id": "NAV_TANPHU_MARKET",
+    "name": "Cửa Siêu thị Tân Phú",
+    "city": "CTY_ANLAC",
+    "x": 314,
+    "z": 232
+  },
+  {
+    "id": "NAV_SOUTH_FARM",
+    "name": "Cửa Nông trại Nam An",
+    "city": "CTY_ANLAC",
+    "x": 26,
+    "z": 264
+  },
+  {
+    "id": "NAV_PHUAN_MARKET",
+    "name": "Cửa Siêu thị Phú An",
+    "city": "CTY_ANLAC",
+    "x": 154,
+    "z": 264
+  },
+  {
+    "id": "NAV_RIVER_CAFE",
+    "name": "Cửa Cà phê An Bình Riverside",
+    "city": "CTY_ANLAC",
+    "x": 250,
+    "z": 264
+  },
+  {
+    "id": "NAV_TANPHU_OFFICE",
+    "name": "Cửa Công ty Dịch vụ Tân Phú",
+    "city": "CTY_ANLAC",
+    "x": 346,
+    "z": 264
+  },
+  {
+    "id": "NAV_SOUTH_GARDEN",
+    "name": "Cửa Vườn sinh thái Nam An",
+    "city": "CTY_ANLAC",
+    "x": 58,
+    "z": 328
+  },
+  {
+    "id": "NAV_PHUAN_HOME",
+    "name": "Cửa Nhà phố Phú An",
+    "city": "CTY_ANLAC",
+    "x": 122,
+    "z": 328
+  },
+  {
+    "id": "NAV_RIVER_HOME",
+    "name": "Cửa Nhà ven sông An Bình",
+    "city": "CTY_ANLAC",
+    "x": 218,
+    "z": 328
+  },
+  {
+    "id": "NAV_TANPHU_LIBRARY",
+    "name": "Cửa Thư viện Tân Phú",
+    "city": "CTY_ANLAC",
+    "x": 314,
+    "z": 328
+  },
+  {
+    "id": "NAV_SOUTH_HOME",
+    "name": "Cửa Nhà vườn Nam An",
+    "city": "CTY_ANLAC",
+    "x": 26,
+    "z": 360
+  },
+  {
+    "id": "NAV_PHUAN_PARK",
+    "name": "Cửa Công viên Phú An",
+    "city": "CTY_ANLAC",
+    "x": 154,
+    "z": 360
+  },
+  {
+    "id": "NAV_RIVER_APARTMENT",
+    "name": "Cửa Chung cư Riverside",
+    "city": "CTY_ANLAC",
+    "x": 250,
+    "z": 360
+  },
+  {
+    "id": "NAV_TANPHU_CAFE",
+    "name": "Cửa Cà phê Tân Phú",
+    "city": "CTY_ANLAC",
+    "x": 346,
+    "z": 360
   }
 ]

@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.4.0 — Advanced Lighting & Atmosphere** · 26/11/2026
+**V2.5.0 — Greater An Lac City** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.5.0 — Greater An Lac City
+- Expand to 384×384 (four times the area); 18 districts, 229 plots, 206 solid buildings, 60 interactive destinations, 24 road axes, 144 intersections, 12 bridge corridors over the An Bình river. All 79 old plot records, 29 navigation nodes, 10 old districts and 12 old road records remain unchanged. New districts extend east and south, no coordinate rescaling.
+- Add 32 scheduled local activities, 19 employers with existing job types, six properties and two courses at a new vocational training center. Link shops to existing goods. Require presence at expansion locations, use existing financial ledger and simulation. Bus stops increase from 6 to 14; taxi routing remains dynamic. No new NPC autonomy, jobs categories or new interiors in this release.
+- River is a collision barrier except at bridges. Shared obstacle spatial buckets, typed occupancy grid and reusable A* arrays with generation stamps, 128-entry route cache. 144 chunks of 32×32; preserve viewport rendering, macro chunks, LOD, cache and light policies. Searchable full-city map, district filter and adaptive labels. Orthographic view only.
+- Master Data 3.0.0: 60 catalogs, 988 records. Save schema 1 unchanged. Existing saves accepted; do not roll back a save containing new coordinates/IDs without restoring backup. 561 independent tests, native QA build and HTTP integrity verified; Three.js production and physical GPU acceptance pending. See `docs/GREATER-AN-LAC-CITY.md`.
 
 ## V2.4.0 — Advanced Lighting & Atmosphere
 - Improved day/night palette, hemisphere ground bounce approximation, exposure and cloud-dependent soft shadow strength. Keep orthographic view and stable shadow coordinates.

@@ -19,5 +19,12 @@
     "district": "DST_EDUCATION",
     "level": "EDU_NONE",
     "building": "BLD_LIBRARY"
+  },
+  {
+    "id": "SCHL_EAST",
+    "name": "Trung tâm đào tạo An Bình",
+    "district": "DST_EAST_CAMPUS",
+    "level": "EDU_VOC",
+    "building": "BLD_EAST_SCHOOL"
   }
 ]

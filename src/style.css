@@ -113,3 +113,10 @@ body:not(.mini-enabled) #bottom>.minimap{display:none!important}body.mini-enable
 #actionBar{grid-template-columns:repeat(4,48px)}#profileQuick,#planQuick{display:none!important}#actionBar .action-item{min-width:44px;min-height:44px}@media(max-width:650px){#actionBar{grid-template-columns:repeat(4,46px)}}
 
 .npc-model-portrait{width:92px;height:92px;flex:0 0 92px;border-radius:12px;border:1px solid var(--line);object-fit:contain}.npc-profile .survival-copy{min-width:0;overflow-wrap:anywhere}.map-label.npc-marker{max-width:min(200px,46vw)}
+
+/* Greater An Lac: searchable city destinations. */
+.map-results{display:grid;gap:4px;max-height:220px;overflow:auto;overscroll-behavior:contain}.map-destination{text-align:left;min-height:40px;white-space:normal;font-size:12px}.map-side>input{width:100%;min-width:0;font-size:16px}@media(max-width:650px){.map-results{max-height:160px}}
+
+/* V2.5.0 map search */
+.map-side input[aria-label="Tìm địa điểm"]{width:100%;box-sizing:border-box;min-height:40px;padding:9px 12px;background:var(--panel,#1b322b);color:var(--text,#f2f5ef);border:1px solid #ffffff26;border-radius:9px;font:inherit;}
+.map-side input[aria-label="Tìm địa điểm"]:focus{outline:2px solid #7fcba3;outline-offset:1px;}

@@ -9,7 +9,15 @@
     "shops": [
       "BLD_SHOP",
       "BLD_MARKET",
-      "BLD_LOT_100_60"
+      "BLD_LOT_100_60",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_SHOP",
+      "BLD_CENTRAL_MALL",
+      "BLD_CAMPUS_SHOP",
+      "BLD_INDUSTRY_SHOP",
+      "BLD_SOUTH_SHOP",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 15,
     "hydration": 5,
@@ -24,7 +32,10 @@
     "energy": 15,
     "happy": 8,
     "shops": [
-      "BLD_CAFE"
+      "BLD_CAFE",
+      "BLD_EAST_CAFE",
+      "BLD_RIVER_CAFE",
+      "BLD_TANPHU_CAFE"
     ],
     "useMinutes": 5,
     "hydration": 10,
@@ -41,7 +52,15 @@
     "shops": [
       "BLD_SHOP",
       "BLD_MARKET",
-      "BLD_LOT_100_60"
+      "BLD_LOT_100_60",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_SHOP",
+      "BLD_CENTRAL_MALL",
+      "BLD_CAMPUS_SHOP",
+      "BLD_INDUSTRY_SHOP",
+      "BLD_SOUTH_SHOP",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 5,
     "hydration": 40,
@@ -58,7 +77,15 @@
     "shops": [
       "BLD_SHOP",
       "BLD_MARKET",
-      "BLD_LOT_100_60"
+      "BLD_LOT_100_60",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_SHOP",
+      "BLD_CENTRAL_MALL",
+      "BLD_CAMPUS_SHOP",
+      "BLD_INDUSTRY_SHOP",
+      "BLD_SOUTH_SHOP",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 15,
     "hydration": 5,
@@ -75,7 +102,15 @@
     "shops": [
       "BLD_SHOP",
       "BLD_MARKET",
-      "BLD_LOT_100_60"
+      "BLD_LOT_100_60",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_SHOP",
+      "BLD_CENTRAL_MALL",
+      "BLD_CAMPUS_SHOP",
+      "BLD_INDUSTRY_SHOP",
+      "BLD_SOUTH_SHOP",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 15,
     "hydration": 10,
@@ -93,7 +128,15 @@
     "shops": [
       "BLD_SHOP",
       "BLD_MARKET",
-      "BLD_LOT_100_60"
+      "BLD_LOT_100_60",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_SHOP",
+      "BLD_CENTRAL_MALL",
+      "BLD_CAMPUS_SHOP",
+      "BLD_INDUSTRY_SHOP",
+      "BLD_SOUTH_SHOP",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 15,
     "ingredients": [],
@@ -110,7 +153,15 @@
     "shops": [
       "BLD_SHOP",
       "BLD_MARKET",
-      "BLD_LOT_100_60"
+      "BLD_LOT_100_60",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_SHOP",
+      "BLD_CENTRAL_MALL",
+      "BLD_CAMPUS_SHOP",
+      "BLD_INDUSTRY_SHOP",
+      "BLD_SOUTH_SHOP",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 15,
     "ingredients": [],

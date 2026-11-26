@@ -53,5 +53,71 @@
     "capacity": 8,
     "building": "BLD_LOT_60_188",
     "utilitiesMonthly": 1000000
+  },
+  {
+    "id": "PROP_EAST_HOME",
+    "name": "Nhà phố Đông An",
+    "type": "BTY_HOUSE",
+    "price": 500000000,
+    "rentDaily": 250000,
+    "maintenanceMonthly": 600000,
+    "capacity": 2,
+    "building": "BLD_EAST_HOME",
+    "utilitiesMonthly": 200000
+  },
+  {
+    "id": "PROP_PHUAN_APARTMENT",
+    "name": "Chung cư Phú An",
+    "type": "BTY_APARTMENT",
+    "price": 1500000000,
+    "rentDaily": 450000,
+    "maintenanceMonthly": 1500000,
+    "capacity": 4,
+    "building": "BLD_PHUAN_APARTMENT",
+    "utilitiesMonthly": 350000
+  },
+  {
+    "id": "PROP_PHUAN_HOME",
+    "name": "Nhà phố Phú An",
+    "type": "BTY_HOUSE",
+    "price": 500000000,
+    "rentDaily": 250000,
+    "maintenanceMonthly": 600000,
+    "capacity": 2,
+    "building": "BLD_PHUAN_HOME",
+    "utilitiesMonthly": 200000
+  },
+  {
+    "id": "PROP_RIVER_HOME",
+    "name": "Nhà ven sông An Bình",
+    "type": "BTY_HOUSE",
+    "price": 500000000,
+    "rentDaily": 250000,
+    "maintenanceMonthly": 600000,
+    "capacity": 2,
+    "building": "BLD_RIVER_HOME",
+    "utilitiesMonthly": 200000
+  },
+  {
+    "id": "PROP_SOUTH_HOME",
+    "name": "Nhà vườn Nam An",
+    "type": "BTY_HOUSE",
+    "price": 500000000,
+    "rentDaily": 250000,
+    "maintenanceMonthly": 600000,
+    "capacity": 2,
+    "building": "BLD_SOUTH_HOME",
+    "utilitiesMonthly": 200000
+  },
+  {
+    "id": "PROP_RIVER_APARTMENT",
+    "name": "Chung cư Riverside",
+    "type": "BTY_APARTMENT",
+    "price": 1500000000,
+    "rentDaily": 450000,
+    "maintenanceMonthly": 1500000,
+    "capacity": 4,
+    "building": "BLD_RIVER_APARTMENT",
+    "utilitiesMonthly": 350000
   }
 ]

@@ -208,5 +208,33 @@
     "requiresLevel": "EDU_HIGH",
     "sessions": 3,
     "sessionMinutes": 60
+  },
+  {
+    "id": "CRS_IT_EAST",
+    "name": "Lập trình nhập môn (An Bình)",
+    "school": "SCHL_EAST",
+    "skill": "SKL_IT",
+    "fee": 3000000,
+    "durationDays": 60,
+    "gain": 2,
+    "kind": "certificate",
+    "awardLevel": null,
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 12,
+    "sessionMinutes": 120
+  },
+  {
+    "id": "CRS_SERVICE_EAST",
+    "name": "Phục vụ cơ bản (An Bình)",
+    "school": "SCHL_EAST",
+    "skill": "SKL_SERVICE",
+    "fee": 300000,
+    "durationDays": 7,
+    "gain": 1,
+    "kind": "certificate",
+    "awardLevel": null,
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 3,
+    "sessionMinutes": 60
   }
 ]

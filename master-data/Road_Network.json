@@ -118,5 +118,125 @@
     "width": 7,
     "lanes": 2,
     "kind": "local"
+  },
+  {
+    "id": "ROD_X_208",
+    "name": "Đường X 208",
+    "city": "CTY_ANLAC",
+    "axis": "x",
+    "center": 208,
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
+  },
+  {
+    "id": "ROD_X_240",
+    "name": "Đại lộ X 240",
+    "city": "CTY_ANLAC",
+    "axis": "x",
+    "center": 240,
+    "width": 9,
+    "lanes": 4,
+    "kind": "avenue"
+  },
+  {
+    "id": "ROD_X_272",
+    "name": "Đường X 272",
+    "city": "CTY_ANLAC",
+    "axis": "x",
+    "center": 272,
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
+  },
+  {
+    "id": "ROD_X_304",
+    "name": "Đại lộ X 304",
+    "city": "CTY_ANLAC",
+    "axis": "x",
+    "center": 304,
+    "width": 9,
+    "lanes": 4,
+    "kind": "avenue"
+  },
+  {
+    "id": "ROD_X_336",
+    "name": "Đường X 336",
+    "city": "CTY_ANLAC",
+    "axis": "x",
+    "center": 336,
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
+  },
+  {
+    "id": "ROD_X_368",
+    "name": "Đường X 368",
+    "city": "CTY_ANLAC",
+    "axis": "x",
+    "center": 368,
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
+  },
+  {
+    "id": "ROD_Z_208",
+    "name": "Đường Z 208",
+    "city": "CTY_ANLAC",
+    "axis": "z",
+    "center": 208,
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
+  },
+  {
+    "id": "ROD_Z_240",
+    "name": "Đại lộ Z 240",
+    "city": "CTY_ANLAC",
+    "axis": "z",
+    "center": 240,
+    "width": 9,
+    "lanes": 4,
+    "kind": "avenue"
+  },
+  {
+    "id": "ROD_Z_272",
+    "name": "Đường Z 272",
+    "city": "CTY_ANLAC",
+    "axis": "z",
+    "center": 272,
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
+  },
+  {
+    "id": "ROD_Z_304",
+    "name": "Đại lộ Z 304",
+    "city": "CTY_ANLAC",
+    "axis": "z",
+    "center": 304,
+    "width": 9,
+    "lanes": 4,
+    "kind": "avenue"
+  },
+  {
+    "id": "ROD_Z_336",
+    "name": "Đường Z 336",
+    "city": "CTY_ANLAC",
+    "axis": "z",
+    "center": 336,
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
+  },
+  {
+    "id": "ROD_Z_368",
+    "name": "Đường Z 368",
+    "city": "CTY_ANLAC",
+    "axis": "z",
+    "center": 368,
+    "width": 7,
+    "lanes": 2,
+    "kind": "local"
   }
 ]

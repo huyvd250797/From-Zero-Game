@@ -5,7 +5,11 @@
     "price": 500000,
     "category": "personal",
     "shops": [
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 0,
     "hygiene": 0
@@ -16,7 +20,11 @@
     "price": 150000,
     "category": "personal",
     "shops": [
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 0,
     "hygiene": 0
@@ -28,7 +36,11 @@
     "category": "study",
     "shops": [
       "BLD_LIBRARY",
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 0,
     "hygiene": 0
@@ -39,7 +51,11 @@
     "price": 7000000,
     "category": "study",
     "shops": [
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 0,
     "hygiene": 0
@@ -50,7 +66,11 @@
     "price": 250000,
     "category": "utility",
     "shops": [
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 0,
     "hygiene": 0
@@ -61,7 +81,11 @@
     "price": 6000,
     "category": "ingredient",
     "shops": [
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 0,
     "hygiene": 0
@@ -72,7 +96,11 @@
     "price": 4000,
     "category": "ingredient",
     "shops": [
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 0,
     "hygiene": 0
@@ -83,7 +111,11 @@
     "price": 5000,
     "category": "ingredient",
     "shops": [
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 0,
     "hygiene": 0
@@ -94,7 +126,11 @@
     "price": 5000,
     "category": "ingredient",
     "shops": [
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 0,
     "hygiene": 0
@@ -107,7 +143,15 @@
     "shops": [
       "BLD_MARKET",
       "BLD_SHOP",
-      "BLD_LOT_100_60"
+      "BLD_LOT_100_60",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_SHOP",
+      "BLD_CENTRAL_MALL",
+      "BLD_CAMPUS_SHOP",
+      "BLD_INDUSTRY_SHOP",
+      "BLD_SOUTH_SHOP",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
     ],
     "useMinutes": 5,
     "hygiene": 25

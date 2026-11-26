@@ -1,3 +1,9 @@
+## V2.5.0 — Greater An Lac City (26/11/2026)
+- Expanded canonical city 192×192 → 384×384; 18 districts, 229 plots, 206 solid buildings, 60 destinations; An Bình river and 12 bridge corridors. Preserve legacy records and spawn.
+- Add 32 local actions, 19 employers, six properties, two courses and eight bus stops, reuse existing simulation and financial rules.
+- Collision-aware river crossings, spatial obstacle index, reusable A* arrays and 128-entry cache; adaptive overview and searchable district map. Retain chunk/LOD/lighting policies.
+- 561 unit tests, native preview and HTTP integrity; Master Data 3.0.0, schema 1 save compatibility. Production Three.js still requires npm dependency access.
+
 ## V2.4.0 — Advanced Lighting & Atmosphere (26/11/2026)
 - Day/night sky gradient, color/exposure grading, hemisphere ground fill, cloud-dependent directional soft shadows, zoom-aware fog.
 - Separate facade-window emission group, 82 preserved lamps with all-viewport base glow, road-aligned wet highlights, bounded clouds and puddle ripples.

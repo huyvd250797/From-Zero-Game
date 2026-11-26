@@ -1,3 +1,4 @@
+import {SIZE} from './world.js';
 // Visual-only atmospheric profiles, deterministic and bounded for mobile.
 const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
 const mix=(a,b,t)=>a+(b-a)*t;
@@ -16,7 +17,7 @@ export function skyPixels(palette,size=32){const bytes=new Uint8Array(size*4);fo
 export function windowLighting(minutes,night){const h=((minutes%1440)+1440)%1440/60;const late=smooth((h-21)/3)+1-smooth(h/5);return clamp(night)*(.25+.7*(1-clamp(late)*.75));}
 export function fogRange(fog,worldSpan){const strength=clamp(fog),span=clamp(worldSpan,30,300);return {near:480-span*(.35+.45*strength)+190*(1-strength),far:480+span*(1.5-.85*strength)+260*(1-strength)};}
 // Broad, soft cloud-shadow footprints move in world coordinates. No physical light or shadow-map allocation.
-export function cloudFootprints(seconds,count,size=192){const wrap=v=>((v%(size+64))+(size+64))%(size+64)-32;return Array.from({length:count},(_,i)=>({x:wrap(atmosphereHash(i+440)* (size+64)+seconds*.33),z:wrap(atmosphereHash(i+551)*(size+64)+seconds*.12),rx:18+atmosphereHash(i+660)*15,rz:11+atmosphereHash(i+770)*11}));}
+export function cloudFootprints(seconds,count,size=SIZE){const wrap=v=>((v%(size+64))+(size+64))%(size+64)-32;return Array.from({length:count},(_,i)=>({x:wrap(atmosphereHash(i+440)* (size+64)+seconds*.33),z:wrap(atmosphereHash(i+551)*(size+64)+seconds*.12),rx:18+atmosphereHash(i+660)*15,rz:11+atmosphereHash(i+770)*11}));}
 export function softTexture(size=64,kind='lamp'){const bytes=new Uint8Array(size*size*4);for(let y=0;y<size;y++)for(let x=0;x<size;x++){const u=(x+.5-size/2)/(size/2),v=(y+.5-size/2)/(size/2),d=Math.hypot(u,v),a=Math.max(0,1-d);const rgb=kind==='cloud'?[25,38,56]:kind==='reflection'?[255,214,147]:[255,226,170];bytes.set([...rgb,Math.round(255*a*a*(kind==='reflection'?.7+.3*Math.cos(v*42)**2:1))],(y*size+x)*4);}return bytes;}
 export function wetRoad(w,enabled=true){const wet=enabled?clamp(w.wetness):0;return {wet,roughness:mix(.96,.22,wet),brightness:1-wet*.29,reflection:wet*clamp(w.night)*.46};}
 export function isBuildingGlass(r,g,b){return [1,.68,.75,.85,.95].some(k=>Math.abs(r-100*k/255)<.001&&Math.abs(g-141*k/255)<.001&&Math.abs(b-166*k/255)<.001);}

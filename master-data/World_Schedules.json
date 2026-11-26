@@ -194,5 +194,229 @@
     "building": "BLD_LOT_100_60",
     "opens": 360,
     "closes": 1320
+  },
+  {
+    "id": "SCH_EAST_MARKET",
+    "name": "Siêu thị An Bình",
+    "building": "BLD_EAST_MARKET",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_EAST_PARK",
+    "name": "Công viên Bình An",
+    "building": "BLD_EAST_PARK",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_TECH_HUB",
+    "name": "Công ty Công nghệ Tân An",
+    "building": "BLD_TECH_HUB",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_CENTRAL_SHOP",
+    "name": "Cửa hàng Tân An",
+    "building": "BLD_CENTRAL_SHOP",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_EAST_HOME",
+    "name": "Nhà phố Đông An",
+    "building": "BLD_EAST_HOME",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_EAST_CAFE",
+    "name": "Cà phê Bờ Đông",
+    "building": "BLD_EAST_CAFE",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_CENTRAL_MALL",
+    "name": "Trung tâm thương mại Tân An",
+    "building": "BLD_CENTRAL_MALL",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_FINANCE_HUB",
+    "name": "Văn phòng Tài chính Tân An",
+    "building": "BLD_FINANCE_HUB",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_EAST_SCHOOL",
+    "name": "Trung tâm đào tạo An Bình",
+    "building": "BLD_EAST_SCHOOL",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_EAST_LIBRARY",
+    "name": "Thư viện An Bình",
+    "building": "BLD_EAST_LIBRARY",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_NEW_FACTORY",
+    "name": "Nhà máy Tân Phát",
+    "building": "BLD_NEW_FACTORY",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_NEW_WAREHOUSE",
+    "name": "Kho vận Tân Phát",
+    "building": "BLD_NEW_WAREHOUSE",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_CAMPUS_SHOP",
+    "name": "Cửa hàng Sinh viên",
+    "building": "BLD_CAMPUS_SHOP",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_CAMPUS_PARK",
+    "name": "Công viên Đại học",
+    "building": "BLD_CAMPUS_PARK",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_INDUSTRY_SHOP",
+    "name": "Cửa hàng Công nghiệp",
+    "building": "BLD_INDUSTRY_SHOP",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_INDUSTRY_OFFICE",
+    "name": "Văn phòng Tân Phát",
+    "building": "BLD_INDUSTRY_OFFICE",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_SOUTH_SHOP",
+    "name": "Cửa hàng Nam An",
+    "building": "BLD_SOUTH_SHOP",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_PHUAN_APARTMENT",
+    "name": "Chung cư Phú An",
+    "building": "BLD_PHUAN_APARTMENT",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_RIVER_PARK",
+    "name": "Công viên Bờ Sông",
+    "building": "BLD_RIVER_PARK",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_TANPHU_MARKET",
+    "name": "Siêu thị Tân Phú",
+    "building": "BLD_TANPHU_MARKET",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_SOUTH_FARM",
+    "name": "Nông trại Nam An",
+    "building": "BLD_SOUTH_FARM",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_PHUAN_MARKET",
+    "name": "Siêu thị Phú An",
+    "building": "BLD_PHUAN_MARKET",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_RIVER_CAFE",
+    "name": "Cà phê An Bình Riverside",
+    "building": "BLD_RIVER_CAFE",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_TANPHU_OFFICE",
+    "name": "Công ty Dịch vụ Tân Phú",
+    "building": "BLD_TANPHU_OFFICE",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_SOUTH_GARDEN",
+    "name": "Vườn sinh thái Nam An",
+    "building": "BLD_SOUTH_GARDEN",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_PHUAN_HOME",
+    "name": "Nhà phố Phú An",
+    "building": "BLD_PHUAN_HOME",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_RIVER_HOME",
+    "name": "Nhà ven sông An Bình",
+    "building": "BLD_RIVER_HOME",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_TANPHU_LIBRARY",
+    "name": "Thư viện Tân Phú",
+    "building": "BLD_TANPHU_LIBRARY",
+    "opens": 360,
+    "closes": 1320
+  },
+  {
+    "id": "SCH_SOUTH_HOME",
+    "name": "Nhà vườn Nam An",
+    "building": "BLD_SOUTH_HOME",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_PHUAN_PARK",
+    "name": "Công viên Phú An",
+    "building": "BLD_PHUAN_PARK",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_RIVER_APARTMENT",
+    "name": "Chung cư Riverside",
+    "building": "BLD_RIVER_APARTMENT",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_TANPHU_CAFE",
+    "name": "Cà phê Tân Phú",
+    "building": "BLD_TANPHU_CAFE",
+    "opens": 360,
+    "closes": 1320
   }
 ]
