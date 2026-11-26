@@ -1,3 +1,8 @@
+## V2.11.0 — Business & Wealth Simulation (26/11/2026)
+- Lease up to two branches at existing venues, with aggregate staffing and centralized cash/stock. Add supplier tiers, configurable restock and opt-in staffed operation with daily deduplication and reserve/debt guards.
+- Add HR, supplier, branches, 7/30/90-day P&L and cash-flow reporting, and unified wealth allocation. Activate canonical land asset with simulated periodic rent, existing liquidation and inheritance treatment.
+- Keep previous Master Data and saves, no SQL, no Three.js dependency change. 13 new unit tests; 634 total. Native QA 96 assets; production gate preserved.
+
 ## V2.10.0 — Advanced Careers & Education (26/11/2026)
 - Labor market: daily deterministic simulated applicants, competitive interview thresholds and offer salary snapshots; existing contracts remain fixed.
 - Career goal planner, qualification/XP/experience gaps, training suggestions and goal vacancy filter; salary premium up to 30%; job satisfaction, specialization labels and credential counts.

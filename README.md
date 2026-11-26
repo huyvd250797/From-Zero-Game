@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.10.0 — Advanced Careers & Education** · 26/11/2026
+**V2.11.0 — Business & Wealth Simulation** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.11.0 — Business & Wealth Simulation
+- One enterprise, up to two leased branches at existing destinations; common wallet, weighted inventory and staff allocation, branch rent and setup fees. Three supplier options and budget-limited reorder.
+- Staffed operation opt-in from next day, daily settlement without duplicate owner sales or XP. Remote stop, debt and restrictions enforced. HR/payroll and 7/30/90-day P&L/cash-flow reporting.
+- Activate canonical land investment (5-lot cap, 30-day holding minimum for simulated rent); portfolio and wealth breakdown use existing balance sheet and bankruptcy logic. No separate asset double counting.
+- 634 unit tests (13 new), Native QA 96 assets; unchanged Master Data and schema 1; no SQL. Production Three.js requires registry dependency. See [technical notes](docs/BUSINESS-WEALTH-SIMULATION.md).
 
 ## V2.10.0 — Advanced Careers & Education
 - Thị trường lao động theo ngày: hồ sơ ứng viên mô phỏng được tạo xác định từ danh tính cư dân và chỉ số sẵn sàng, có ngưỡng cạnh tranh riêng từng vị trí; vẫn giữ quy định mở/đóng tuyển dụng theo chu kỳ kinh tế. Không thay đổi nghề nghiệp của NPC hoặc chiếm suất tuyển dụng thực tế.
