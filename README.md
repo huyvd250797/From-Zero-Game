@@ -1,7 +1,12 @@
 # From Zero — Từ hai bàn tay trắng
-**V1.9.0 — Immersive Activities** · 26/11/2026
+**V1.10.0 — Audio & Soundscape** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V1.10.0 — Audio & Soundscape
+- Original procedural Web Audio mixer, offline without media downloads: day/night ambience, rain/wind, distance-panned traffic/NPC cues, footsteps by traveled distance, vehicle engine pitch, interior ambience, activity sound cues, original day/night synth music and UI cues.
+- Settings → Âm thanh & nhạc nền: master and six independent groups, enable/mute, stereo toggle, test and reset. Preferences in `fromzero.audio.v1` separate from character saves. Audio unlocks after trusted gesture, pauses in background and resumes if supported; no microphone or external requests.
+- Synthesized cues are stylized rather than recorded environmental audio. See `docs/AUDIO-SOUNDSCAPE.md`. 475 independent tests; 72 native preview assets; actual Web Audio signal measured in Chromium desktop/mobile emulation. Production Three.js dependency unavailable locally, physical iPhone audio and offline reload still need acceptance.
 
 ## V1.9.0 — Immersive Activities
 - Animated activity scenes tied to existing room stations and business actions; outdoor actions use a local illustrative scene. Close-up camera and full-room toggle, eight new skeletal clips, handheld props, ×1/×2/×4, finish now or cancel. Original simulation action runs once only on completion; no partial changes on cancellation, no new save fields. See `docs/IMMERSIVE-ACTIVITIES.md`.

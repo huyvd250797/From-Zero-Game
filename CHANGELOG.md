@@ -1,3 +1,8 @@
+## V1.10.0 — Audio & Soundscape
+- Web Audio mixer: master + six channels, bounded voices, offline original procedural loops/tones, compressor, scene-aware ambience, distance/stereo cues, speed-linked engine and distance-linked footsteps. Original day/night music, activity and UI cues.
+- Persist audio preferences separately, support explicit gesture-based playback unlock, mute, preview, reset, page visibility and pause. Audio failures do not alter simulation.
+- 10 new independent tests, 475 total; native QA 72 assets; actual Chromium signal and zero signal after mute measured. Production Three.js dependency unavailable locally; no new npm dependencies or save migration.
+
 ## V1.9.0 — Immersive Activities
 - ActivityRun presentation controller, exact-once completion, cancellation, progress and selectable ×1/×2/×4 preview rates. Existing action functions remain authoritative.
 - Eight additional skeletal clips and shared bone-attached props; sleeping and seated furniture anchors, close-up camera with full-room toggle. Connect station actions, item use, shop, cooking, work, study and NPC social interactions. Outdoor activities use a local visual scene.
