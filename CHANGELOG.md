@@ -1,3 +1,10 @@
+## V1.1.0 — Next-Gen Graphics Engine
+
+- Native WebGL 2 renderer, material shaders, depth shadows, lighting, procedural surfaces, basic bloom/AA, adaptive resolution.
+- Four graphics presets, fallback renderer selection, static GLB sample and cache.
+- Preserve simulation, world coordinates, save schema and Master Data.
+- Three.js unavailable in build environment; use dependency-free renderer. See `docs/GRAPHICS-ENGINE.md` for scope and acceptance gaps.
+
 # Changelog
 
 ## V1.0.0 — Official Release (2026-11-26)

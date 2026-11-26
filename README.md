@@ -1,5 +1,5 @@
 # From Zero — Từ hai bàn tay trắng
-**V1.0.0 — Official Release** · 26/11/2026
+**V1.1.0 — Next-Gen Graphics Engine** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
 
@@ -22,7 +22,7 @@ Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân 
 
 Thời gian chạy khi gameplay hoạt động. Modal, tạm dừng và tab ẩn dừng mô phỏng; chọn ×1/2/4/8/16 để điều chỉnh nhịp game.
 
-## Nội dung V1.0.0
+## Gameplay kế thừa V1.0.0
 - Thành phố low-poly 192 × 192, 10 phân khu, 28 địa điểm tương tác, 24 NPC định danh và lịch sinh hoạt.
 - Sinh tồn, giáo dục (15 khóa học), nghề nghiệp, tài chính, nhà ở và phương tiện, quan hệ, hôn nhân và con cái.
 - Ngân hàng, tiết kiệm, vay vốn, cổ phiếu/vàng giả lập, 6 loại hình kinh doanh, kinh tế biến động.
@@ -30,6 +30,13 @@ Thời gian chạy khi gameplay hoạt động. Modal, tạm dừng và tab ẩn
 - Lão hóa, lương hưu, di sản, 40 kết cục trong dữ liệu (39 có quy tắc đánh giá), Hall of Fame, 3 mức độ khó.
 - Hai chế độ đồ họa, cache A*, ba lớp lưu trữ, cảnh báo xung đột tab, PWA fingerprint và precache SHA-256.
 - V1.0.0: onboarding có dẫn đường thật, bảo vệ xác nhận thay thế save, hỗ trợ điều hướng bàn phím trong modal, đồng bộ branding.
+
+## Đồ họa V1.1.0
+- WebGL 2 native, shader vật liệu theo mô hình chiếu sáng microfacet; bề mặt procedural theo tọa độ thế giới, bóng đổ depth map PCF, ánh sáng ngày/đêm, phản xạ giả lập và phát sáng cửa kính.
+- Low/Medium/High/Ultra; bật/tắt riêng bóng đổ, bóng tiếp xúc gần mặt đất (không phải SSAO), bloom và AA hậu kỳ đơn giản. Độ phân giải thích ứng có ngưỡng và hysteresis.
+- GLB ghế đá mẫu tự tạo, bộ đọc GLB 2.0 tĩnh có giới hạn, fallback mô hình code khi tải thất bại. Không sử dụng CDN hay dependency ngoài.
+- Nếu không có WebGL 2 hoặc lỗi khởi tạo, tự chọn WebGL 1/Canvas. Có thể chọn Legacy trong Cài đặt rồi lưu và tải lại. Khi lỗi renderer lúc chơi, tạm dừng và lưu/xuất JSON trước khi chuyển Legacy.
+- Chưa tích hợp Three.js do npm không truy cập được; kiến trúc giữ hình học thành phố gốc, không thiết kế lại toàn bộ công trình. Không có full GLTF loader, texture PBR riêng từng file, SSAO, skeletal animation hay instancing GPU mới. Xem [Graphics Engine](docs/GRAPHICS-ENGINE.md).
 
 ## Deploy GitHub → Vercel
 Giải nén ZIP, đưa **nội dung bên trong** vào root repo. Không commit dist hoặc node_modules. Cấu hình `vercel.json` đã có:
@@ -58,9 +65,9 @@ Mở `http://localhost:5173`. `npm run dev` dành cho phát triển. Không mở
 Save schema 1 giữ nguyên: `fromzero.save.v1`, `fromzero.backup.v1`, `fromzero.checkpoint.v1`. Chỉ có một cuộc đời đang chơi, Hall of Fame lưu trong save. Autosave khoảng 12 giây, sau hoạt động và khi rời trang; **Cài đặt → Xuất bản lưu JSON** trước cập nhật/đổi thiết bị. Chỉ chơi một tab. Khi có bản cập nhật PWA, xác nhận lưu và cập nhật. Đừng xóa dữ liệu trình duyệt để ép update; nếu cần, đóng hết tab rồi mở lại. Bản lưu là dữ liệu cục bộ, không phải cloud. Quota, xóa dữ liệu hoặc đổi origin có thể ảnh hưởng truy cập save. Cài đặt có nhập JSON, xuất/khôi phục backup và checkpoint.
 
 ## PWA và giới hạn
-HTTPS hoặc localhost, mở online lần đầu và chờ cache được chuẩn bị. Chrome/Edge có thể có nút cài đặt; iOS Safari → Chia sẻ → Thêm vào màn hình chính. Chế độ Tiết kiệm giới hạn 30 FPS, Tiêu chuẩn mục tiêu 60 FPS WebGL; không đảm bảo FPS trên mọi thiết bị. Canvas fallback luôn tối đa 30 FPS. Các chỉ số kinh tế, sức khỏe, pháp luật, lương hưu đều là mô phỏng hư cấu, không phải tư vấn ngoài đời.
+HTTPS hoặc localhost, mở online lần đầu và chờ cache được chuẩn bị. Chrome/Edge có thể có nút cài đặt; iOS Safari → Chia sẻ → Thêm vào màn hình chính. Low giới hạn 30 FPS; Medium/High/Ultra giới hạn 60 FPS với WebGL 2, thích ứng độ phân giải khi bật. Fallback WebGL 1 áp dụng chất lượng cơ bản. Không đảm bảo FPS trên mọi thiết bị. Canvas fallback luôn tối đa 30 FPS. Các chỉ số kinh tế, sức khỏe, pháp luật, lương hưu đều là mô phỏng hư cấu, không phải tư vấn ngoài đời.
 
 Đã hoàn thành roadmap nền tảng V1.0.0, còn giới hạn: AI NPC/nhân viên cơ bản, nhà tù là giao diện quản lý riêng, thừa kế quy đổi tiền và timeline mới, 1 kết cục chưa có nghề tương ứng, chưa thử tất cả hành trình. Cần kiểm thử PWA thật, Safari/Edge, WebGL GPU và hiệu năng thiết bị thật trước khi phát hành rộng rãi. Xem [checklist nghiệm thu](docs/OFFICIAL-RELEASE.md).
 
 ## Kỹ thuật và tài liệu
-JavaScript ES Modules, WebGL/Canvas, build Node.js không dependency. Master Data V2.9.0 (60 danh mục, 693 bản ghi), validate và compile từ `master-data/`; `src/` là simulation và UI; `public/` là manifest, icon, worker; `scripts/` là công cụ build/test; `tests/` là regression. Giữ nguyên các module nghiệp vụ V0.23.0. `docs/` và [CHANGELOG](CHANGELOG.md) chứa tài liệu theo từng phiên bản; các mục "chưa triển khai" ở tài liệu lịch sử mô tả thời điểm phát hành phiên bản tương ứng, không phải trạng thái hiện tại.
+JavaScript ES Modules, WebGL 2 native / WebGL 1 / Canvas 2D, build Node.js không dependency. Master Data V2.9.0 (60 danh mục, 693 bản ghi), validate và compile từ `master-data/`; `src/` là simulation và UI; `public/` là manifest, icon, worker; `scripts/` là công cụ build/test; `tests/` là regression. Giữ nguyên các module nghiệp vụ V1.0.0. `docs/` và [CHANGELOG](CHANGELOG.md) chứa tài liệu theo từng phiên bản; các mục "chưa triển khai" ở tài liệu lịch sử mô tả thời điểm phát hành phiên bản tương ứng, không phải trạng thái hiện tại.
