@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V1.12.0 — Visual Performance & Polish** · 26/11/2026
+**V2.0.0 — Immersive Life Simulation** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.0.0 — Immersive Life Simulation
+- Nhận diện thế hệ thứ hai, giữ nguyên Three.js r180, save schema 1, Master Data V2.9.0 và các hệ thống cuộc đời.
+- Shadow scheduler cập nhật khi xoay/nghiêng camera; animation Three.js dừng khi gameplay tạm dừng, không bù thời gian animation lúc tiếp tục. Giảm báo xung đột lưu trữ giả bằng kiểm tra token hiện tại.
+- Thêm p95 khoảng cách giữa khung hình đã hoàn thành vào chẩn đoán hiệu năng; build tự kiểm tra toàn vẹn tài nguyên. Không coi Native QA là production.
+- Hướng dẫn nghiệm thu và rollback: `docs/IMMERSIVE-LIFE-SIMULATION.md`.
 
 ## V1.12.0 — Visual Performance & Polish
 - CPU mesh conversion uses direct typed-array writes and skips UVs for untextured dynamic geometry. Overview merges low-LOD 2×2 regions into nine macro batches with shared tree instances; near-camera keeps individual chunks. Active regions are never evicted; cache limits are 18/28/44, expanded if the visible set exceeds the limit.

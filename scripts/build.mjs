@@ -9,7 +9,7 @@ const preview=process.argv.includes('--native-preview'),dist=preview?'dist-nativ
 await compileMaster();
 const check=spawnSync(process.execPath,['scripts/check.mjs'],{stdio:'inherit'});if(check.status!==0)process.exit(1);
 const vendor=preview?new Map():await vendorInventory();
-if(!preview){const runtime=spawnSync(process.execPath,['--test','tests/three-runtime.integration.mjs'],{stdio:'inherit'});if(runtime.status!==0)process.exit(1);}
+if(!preview){const unitFiles=(await readdir('tests')).filter(f=>f.endsWith('.test.mjs')).sort().map(f=>'tests/'+f);const unit=spawnSync(process.execPath,['--test',...unitFiles],{stdio:'inherit'});if(unit.status!==0)process.exit(1);const runtime=spawnSync(process.execPath,['--test','tests/three-runtime.integration.mjs'],{stdio:'inherit'});if(runtime.status!==0)process.exit(1);}
 const entries=async dir=>(await readdir(dir,{recursive:true,withFileTypes:true})).filter(x=>x.isFile()).map(x=>`${x.parentPath||x.path}/${x.name}`.replaceAll('\\','/')).sort();
 const version=JSON.parse(await readFile('package.json','utf8')).version;
 const hash=createHash('sha256').update(version).update(preview?'native-preview':'three-production');for(const file of [...await entries('src'),...await entries('public'),'index.html','scripts/build.mjs','scripts/three-vendor.mjs','package-lock.json'])hash.update(file).update(await readFile(file));for(const [file,bytes] of vendor)hash.update(file).update(bytes);
@@ -19,7 +19,9 @@ for(const [file,bytes] of vendor){const target=`${dist}/${assetDir}/vendor/three
 // Validate the actual copied module graph too (relative imports must exist inside fingerprinted vendor).
 if(!preview)for(const file of THREE_ENTRIES)await import(pathToFileURL(path.resolve(dist,assetDir,'vendor/three',file)).href);
 let html=(await readFile('index.html','utf8')).replaceAll('./src/',`./${assetDir}/`);
-if(preview){html=html.replace(/<script type="importmap">.*?<\/script>/s,'').replace('</head>','<meta name="fz-native-preview" content="1"></head>').replace('V1.12.0 · Visual Performance & Polish','V1.12.0 · Native QA preview (không phải bản production)');}else html=html.replaceAll('./node_modules/three/',`./${assetDir}/vendor/three/`).replace('</head>','<meta name="fz-production" content="1"></head>');
+if(preview){html=html.replace(/<script type="importmap">.*?<\/script>/s,'').replace('</head>','<meta name="fz-native-preview" content="1"></head>').replace('V2.0.0 · Immersive Life Simulation','V2.0.0 · Native QA preview (không phải bản production)');}else html=html.replaceAll('./node_modules/three/',`./${assetDir}/vendor/three/`).replace('</head>','<meta name="fz-production" content="1"></head>');
 await writeFile(`${dist}/index.html`,html);
 const files=(await entries(dist)).map(x=>x.slice(dist.length+1)).filter(x=>x!=='sw.js');const integrity={};for(const file of files)integrity['./'+file]='sha256-'+createHash('sha256').update(await readFile(`${dist}/${file}`)).digest('base64');
 const template=await readFile('public/sw.js','utf8');const sw=template.replace('__FZ_CACHE__',cache).replace('/*__FZ_INTEGRITY__*/{}',JSON.stringify(integrity));await writeFile(`${dist}/sw.js`,sw);console.log(`From Zero v${version} → ${dist}/ · ${files.length} files · ${vendor.size} Three.js files · ${preview?'NATIVE PREVIEW ONLY (no production PWA)':'THREE.JS PRODUCTION'}`);
+
+const verification=spawnSync(process.execPath,['scripts/verify-release.mjs',dist],{stdio:'inherit'});if(verification.status!==0)process.exit(1);

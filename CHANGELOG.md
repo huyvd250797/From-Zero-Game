@@ -1,4 +1,10 @@
 ## V1.12.0 — Visual Performance & Polish
+
+## V2.0.0 — Immersive Life Simulation (26/11/2026)
+- Official second-generation branding, final integration and release verification gate.
+- Refresh cached shadows on camera yaw/pitch changes; pause/resume Three.js actor animation without catch-up; p95 completed-frame intervals.
+- Recheck current save token for storage events to avoid stale-event false conflicts. Preserve save schema and canonical data.
+- Production dependency and physical-device acceptance remain separate gates. See release documentation.
 - Direct typed-array geometry conversion, macro batching at overview, bounded cache, internal pixel budgets and optional battery mode.
 - Throttled shadow pass, invisible daytime lights, NPC rig reuse and shared clips, completed crossfade cleanup; precomputed traffic lane metadata and offscreen geometry filtering.
 - Preserve one prior fingerprinted cache during version transition; failed installs clean incomplete cache, update failures surfaced. No save schema or master data changes.
