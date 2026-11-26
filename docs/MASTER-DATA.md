@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V2.7.0
+# From Zero — Canonical Master Data V2.8.0
 
-Game release V0.20.0 · 60 danh mục, 659 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.21.0 · 60 danh mục, 660 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -11,7 +11,7 @@ Game release V0.20.0 · 60 danh mục, 659 bản ghi. Số liệu kinh tế và 
 | A – Foundation | `Character_Origins.json` | 3 | Seed cho phiên bản sau |
 | A – Foundation | `Character_Traits.json` | 6 | Seed cho phiên bản sau |
 | A – Foundation | `Character_Attributes.json` | 14 | Runtime Survival & Daily Activities |
-| A – Foundation | `Life_Stages.json` | 4 | Seed cho phiên bản sau |
+| A – Foundation | `Life_Stages.json` | 4 | Runtime Aging |
 | A – Foundation | `Needs_Rules.json` | 4 | Runtime Survival & Daily Activities |
 | B – World & City | `Cities.json` | 1 | Runtime prototype |
 | B – World & City | `Districts.json` | 10 | Runtime City Engine |
@@ -41,7 +41,7 @@ Game release V0.20.0 · 60 danh mục, 659 bản ghi. Số liệu kinh tế và 
 | E – Assets & Lifestyle | `Vehicles.json` | 6 | Runtime prototype |
 | E – Assets & Lifestyle | `Furniture.json` | 5 | Runtime Housing & Interior |
 | E – Assets & Lifestyle | `Maintenance.json` | 4 | Seed cho phiên bản sau |
-| F – Finance & Economy | `Income_Types.json` | 13 | Lương/thưởng/thời vụ và thu lịch sử runtime, các nguồn khác seed |
+| F – Finance & Economy | `Income_Types.json` | 14 | Runtime, thêm lương hưu |
 | F – Finance & Economy | `Expense_Types.json` | 20 | Runtime Survival & Daily Activities |
 | F – Finance & Economy | `Banks.json` | 2 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Loan_Products.json` | 4 | Runtime Banking & Business |
@@ -63,9 +63,9 @@ Game release V0.20.0 · 60 danh mục, 659 bản ghi. Số liệu kinh tế và 
 | I – Story & Events | `Story_Chapters.json` | 12 | Runtime Story Engine |
 | I – Story & Events | `Story_Events.json` | 22 | Runtime Story Engine (RELEASE đã kích hoạt) |
 | I – Story & Events | `Event_Choices.json` | 47 | Runtime Story Engine |
-| J – Endgame | `Achievements.json` | 7 | Seed cho phiên bản sau |
-| J – Endgame | `Life_Endings.json` | 40 | Seed cho phiên bản sau |
-| J – Endgame | `Legacy_Rules.json` | 2 | Seed cho phiên bản sau |
+| J – Endgame | `Achievements.json` | 7 | Runtime Aging |
+| J – Endgame | `Life_Endings.json` | 40 | 39 điều kiện runtime, công chức chưa khả dụng |
+| J – Endgame | `Legacy_Rules.json` | 2 | Runtime Legacy |
 
 ## Quyết định chuẩn hóa
 Roadmap trước ghi 60 nhưng liệt kê 65 tên. Giữ 60 danh mục vật lý, gộp năm khái niệm:

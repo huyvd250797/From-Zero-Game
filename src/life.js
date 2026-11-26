@@ -1,3 +1,5 @@
+import {agingTick} from './aging.js';
+import {ended} from './aging-state.js';
 import {custodyMinute} from './recovery.js';
 import {legalTick} from './legal.js';
 import {healthMinute,healthWarnings} from './health-state.js';
@@ -37,6 +39,7 @@ export function settleDebt(s){if(s.maintenanceDebt>0&&s.cash>=s.maintenanceDebt)
 const needKeys={ATR_ENERGY:'energy',ATR_HUNGER:'hunger',ATR_HYGIENE:'hygiene',ATR_HYDRATION:'hydration'};
 export function advanceTime(s,minutes,{resting=false,sleeping=false}={}){
  if(!Number.isSafeInteger(minutes)||minutes<0||minutes>10080)throw RangeError('Thời lượng không hợp lệ');
+ if(ended(s))return s;
  const end=Math.min(MAX_MINUTES,s.minutes+minutes);
  while(s.minutes<end){healthMinute(s,sleeping);s.minutes++;
   if(s.minutes%1440===0)careerMidnight(s);if(s.minutes%43200===0){const e=economyAt(s.minutes);log(s,`Kinh tế tháng ${e.month+1}: ${e.name}, chỉ số giá ${Math.round(e.cpi*100)}.`);} 
@@ -46,7 +49,7 @@ export function advanceTime(s,minutes,{resting=false,sleeping=false}={}){
   housingTick(s);vehicleTick(s);familyTick(s);bankingTick(s);businessTick(s);
   if(s.bike&&s.bikeDue>0&&s.minutes===s.bikeDue){s.bikeDue+=bikeMaintenance.intervalDays*1440;s.maintenanceDebt+=quote(s,bikeMaintenance.cost);log(s,`Đến hạn bảo dưỡng xe đạp: ${quote(s,bikeMaintenance.cost).toLocaleString('vi-VN')}đ.`);settleDebt(s);}
   if(s.minutes%1440===0){pruneFinance(s);pruneDetails(s);}
-  legalTick(s);custodyMinute(s);storyTick(s);
+  legalTick(s);custodyMinute(s);storyTick(s);agingTick(s);
   if(s.minutes%1440===0&&calendar(s).month===1&&calendar(s).date===1)log(s,`Chúc mừng sinh nhật ${calendar(s).age} tuổi!`);
  }
  return s;

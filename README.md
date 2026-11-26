@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.20.0 — Prison, Bankruptcy & Recovery**
+**V0.21.0 — Aging, Legacy & Endings**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 25 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.21.0 — Aging, Legacy & Endings
+- 4 giai đoạn tuổi theo Master Data; từ 60 tuổi giảm thể lực nếu ít vận động, hiệu suất nghề nghiệp/kinh doanh giảm tối đa 20 điểm. Từ 75 tuổi sức khỏe nguy kịch kéo dài 30 ngày có thể kết thúc đời; tuổi 100 tự tổng kết tại điểm an toàn, hoặc tự tổng kết từ tuổi 70.
+- Nghỉ hưu tự nguyện từ tuổi 60, kết thúc hợp đồng và nhận lương đã tích lũy. Lương hưu cố định mỗi 30 ngày, dựa trên số ca làm chính thức, được ghi nhận INC_PENSION. Không trở lại làm thuê sau nghỉ hưu.
+- 40 kết cục canonical, 39 có điều kiện đánh giá, một kết cục công chức chưa khả dụng; 7 thành tựu và tài sản ròng cao nhất ghi nhận từ khi nâng cấp. Kết cục chính theo thứ tự ưu tiên, báo cáo tổng kết và khóa hoạt động.
+- Di sản quy đổi tiền sau nghĩa vụ đã ghi nhận, một con từ 18 tuổi có thể tiếp nhận trong timeline mới ở tuổi 18; không chuyển nguyên tài sản/nhà/NPC. Hall of Fame lưu tối đa 20 hồ sơ trước, cùng save schema 1. Xem [docs/AGING.md](docs/AGING.md). Master Data V2.8.0, 660 bản ghi.
 
 ## V0.20.0 — Prison, Bankruptcy & Recovery
 - Án tù V0.19.0 tự bắt đầu tại điểm an toàn của giao diện (sau thao tác hoặc khi mở save). Chấm dứt hợp đồng lao động, thanh toán lương đã tích lũy, đỗ xe, đưa nhân vật đến công an và mở trung tâm cải tạo riêng. Không dùng chức năng thành phố trong thời gian này.

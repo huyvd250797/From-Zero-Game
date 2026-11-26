@@ -63,5 +63,10 @@
     "id": "INC_LIQUIDATION",
     "name": "Thanh lý nội thất",
     "description": "Thu từ thanh lý nội thất khi mất khả năng thanh toán."
+  },
+  {
+    "id": "INC_PENSION",
+    "name": "Lương hưu",
+    "description": "Thu nhập hưu trí theo kỳ mô phỏng."
   }
 ]

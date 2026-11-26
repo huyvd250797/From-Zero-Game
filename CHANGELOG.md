@@ -1,5 +1,10 @@
 # Changelog
 
+## V0.21.0 — Aging, Legacy & Endings (2026-11-26)
+- Lão hóa, nghỉ hưu tự nguyện, lương hưu, tổng kết tự động hoặc chủ động; 39 quy tắc kết cục trên 40 bản ghi canonical.
+- Di sản ròng, kế thừa một người con trưởng thành qua timeline mới, thành tựu, báo cáo và Hall of Fame.
+- Master Data V2.8.0, 660 bản ghi, schema save 1.
+
 ## V0.20.0 — Prison, Bankruptcy & Recovery (2026-11-26)
 - Thi hành án tuần tự, giao diện cải tạo riêng, 9 hoạt động, thời gian và chi phí tiếp tục, ghi án đã chấp hành.
 - Thanh lý tài sản có dự toán và xác nhận, ưu tiên nợ có bảo đảm, giữ nợ thiếu hụt, đóng cửa doanh nghiệp, hồ sơ lịch sử.
