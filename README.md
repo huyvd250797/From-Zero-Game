@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V1.10.0 — Audio & Soundscape** · 26/11/2026
+**V1.11.0 — Game UI & HUD 2.0** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V1.11.0 — Game UI & HUD 2.0
+- Compact HUD mặc định ẩn hai bảng phụ, thanh 7 chỉ số, minimap và 6 lối tắt. Menu cuộc đời gom toàn bộ chức năng; nút Camera mở thêm điều khiển mobile. Phím V vẫn bật/tắt bảng phụ.
+- Hiển thị thứ theo lịch mô phỏng; Lịch và Hồ sơ nhân vật có ngày hôm nay/ngày mai, ca bắt đầu 08:00, nhận ca đến 09:00 theo hợp đồng, không tự thay đổi lịch. Túi đồ dạng lưới với bộ lọc, hội thoại NPC, menu tương tác và trung tâm thông báo phiên chơi + nhật ký.
+- Chặn zoom tài liệu bằng viewport, touch-action và hủy default gesture đa điểm/zoom modifier; vẫn dùng pointer events cho pinch/rotate camera. Scroll modal một ngón giữ nguyên. Cần nghiệm thu iOS standalone trên thiết bị thật.
+- Nút Pause mở menu tạm dừng; tiếp tục, lưu, cài đặt, hướng dẫn, về màn hình chính. Đóng menu không tự chạy lại đồng hồ. Space giữ cơ chế bật/tắt pause.
+- Không thay đổi save schema, Master Data hoặc dependency. 483 unit tests, native preview 73 tài nguyên. Production Three.js chưa xác minh tại môi trường hiện tại. Xem `docs/GAME-UI-HUD.md`.
 
 ## V1.10.0 — Audio & Soundscape
 - Original procedural Web Audio mixer, offline without media downloads: day/night ambience, rain/wind, distance-panned traffic/NPC cues, footsteps by traveled distance, vehicle engine pitch, interior ambience, activity sound cues, original day/night synth music and UI cues.

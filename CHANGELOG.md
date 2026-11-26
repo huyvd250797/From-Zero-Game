@@ -1,3 +1,9 @@
+## V1.11.0 — Game UI & HUD 2.0
+- Game-first HUD, seven compact need meters, six quick actions, grouped module menu, mobile collapsible camera, visible minimap and dynamic layout offsets.
+- Calendar weekday and today/tomorrow contractual shift preview; inventory grid with real item filters, character profile, dialogue bubble and context-specific interaction label, bounded notification history, pause menu.
+- Prevent browser document zoom while retaining camera pointer pinch and modal single-touch scrolling. Form inputs use 16px to reduce automatic iOS input focus zoom. No save migration or new dependency.
+- 483 independent unit tests. Native QA build; physical iOS PWA and production Three.js need acceptance.
+
 ## V1.10.0 — Audio & Soundscape
 - Web Audio mixer: master + six channels, bounded voices, offline original procedural loops/tones, compressor, scene-aware ambience, distance/stereo cues, speed-linked engine and distance-linked footsteps. Original day/night music, activity and UI cues.
 - Persist audio preferences separately, support explicit gesture-based playback unlock, mute, preview, reset, page visibility and pause. Audio failures do not alter simulation.
