@@ -1,5 +1,10 @@
 # Changelog
 
+## V0.22.0 — Content Expansion & Game Balance (2026-11-26)
+- Kích hoạt ba độ khó, mở ba địa điểm, tám NPC, hai khóa học và bốn biến cố (tám lựa chọn).
+- Dự toán sinh tồn, doanh thu/giá vốn/hòa vốn, yêu cầu nước uống cho ca thời vụ, đỗ phương tiện khi vào nhà, lưu độ khó trong báo cáo kết cục.
+- 60 danh mục, 693 bản ghi, Master Data V2.9.0; schema save 1. Thêm mô phỏng sinh tồn và vòng đời có thể chạy lại.
+
 ## V0.21.0 — Aging, Legacy & Endings (2026-11-26)
 - Lão hóa, nghỉ hưu tự nguyện, lương hưu, tổng kết tự động hoặc chủ động; 39 quy tắc kết cục trên 40 bản ghi canonical.
 - Di sản ròng, kế thừa một người con trưởng thành qua timeline mới, thành tựu, báo cáo và Hall of Fame.

@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "2.8.0",
+  "version": "2.9.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -1265,19 +1265,19 @@ export default {
       },
       {
         "id": "BLD_LOT_100_60",
-        "name": "Cửa hàng 100-60",
-        "legacyId": "lot_100_60",
+        "name": "Cửa hàng tiện lợi",
+        "legacyId": "mini_mart",
         "type": "BTY_SHOP",
         "district": "DST_COMMERCIAL",
-        "icon": "",
+        "icon": "🛒",
         "x": 100,
         "z": 60,
         "w": 7,
         "d": 7,
         "h": 5,
         "color": "#cba98e",
-        "door": null,
-        "interactive": false
+        "door": "NAV_MINI_MART",
+        "interactive": true
       },
       {
         "id": "BLD_LOT_188_60",
@@ -1361,19 +1361,19 @@ export default {
       },
       {
         "id": "BLD_LOT_28_100",
-        "name": "Thư viện 28-100",
-        "legacyId": "lot_28_100",
+        "name": "Thư viện cộng đồng",
+        "legacyId": "library_annex",
         "type": "BTY_LIBRARY",
         "district": "DST_EDUCATION",
-        "icon": "",
+        "icon": "📚",
         "x": 28,
         "z": 100,
         "w": 7,
         "d": 7,
         "h": 7,
         "color": "#bdc5d5",
-        "door": null,
-        "interactive": false
+        "door": "NAV_LIBRARY_ANNEX",
+        "interactive": true
       },
       {
         "id": "BLD_LOT_36_100",
@@ -1521,19 +1521,19 @@ export default {
       },
       {
         "id": "BLD_LOT_4_132",
-        "name": "Công viên 4-132",
-        "legacyId": "lot_4_132",
+        "name": "Vườn cộng đồng",
+        "legacyId": "community_garden",
         "type": "BTY_PARK",
         "district": "DST_EDUCATION",
-        "icon": "",
+        "icon": "🌳",
         "x": 4,
         "z": 132,
         "w": 5,
         "d": 7,
         "h": 0,
         "color": "#8db67b",
-        "door": null,
-        "interactive": false
+        "door": "NAV_COMMUNITY_GARDEN",
+        "interactive": true
       },
       {
         "id": "BLD_LOT_100_132",
@@ -2128,6 +2128,27 @@ export default {
         "city": "CTY_ANLAC",
         "x": 60,
         "z": 183
+      },
+      {
+        "id": "NAV_LIBRARY_ANNEX",
+        "name": "Lối vào Thư viện cộng đồng",
+        "city": "CTY_ANLAC",
+        "x": 28,
+        "z": 105
+      },
+      {
+        "id": "NAV_COMMUNITY_GARDEN",
+        "name": "Lối vào Vườn cộng đồng",
+        "city": "CTY_ANLAC",
+        "x": 8,
+        "z": 132
+      },
+      {
+        "id": "NAV_MINI_MART",
+        "name": "Lối vào Cửa hàng tiện lợi",
+        "city": "CTY_ANLAC",
+        "x": 100,
+        "z": 65
       }
     ],
     "World_Schedules": [
@@ -2305,6 +2326,27 @@ export default {
         "building": "BLD_LOT_60_188",
         "opens": 0,
         "closes": 1440
+      },
+      {
+        "id": "SCH_LIBRARY_ANNEX",
+        "name": "Thư viện cộng đồng",
+        "building": "BLD_LOT_28_100",
+        "opens": 480,
+        "closes": 1200
+      },
+      {
+        "id": "SCH_COMMUNITY_GARDEN",
+        "name": "Vườn cộng đồng",
+        "building": "BLD_LOT_4_132",
+        "opens": 0,
+        "closes": 1440
+      },
+      {
+        "id": "SCH_MINI_MART",
+        "name": "Cửa hàng tiện lợi",
+        "building": "BLD_LOT_100_60",
+        "opens": 360,
+        "closes": 1320
       }
     ],
     "Location_Actions": [
@@ -3167,6 +3209,106 @@ export default {
         "health": 0,
         "stress": 0,
         "hydration": 0
+      },
+      {
+        "id": "ACT_ANNEX_VISIT",
+        "legacyId": "annex_visit",
+        "name": "Tham quan thư viện",
+        "building": "BLD_LOT_28_100",
+        "detail": "5 phút",
+        "cash": 0,
+        "time": 5,
+        "rule": "none",
+        "job": null,
+        "asset": null,
+        "log": "Tham quan thư viện.",
+        "energy": 0,
+        "hunger": 0,
+        "happy": 0,
+        "hygiene": 0,
+        "health": 0,
+        "stress": 0,
+        "hydration": 0
+      },
+      {
+        "id": "ACT_GARDEN_WALK",
+        "legacyId": "garden_walk",
+        "name": "Đi bộ trong vườn",
+        "building": "BLD_LOT_4_132",
+        "detail": "30 phút",
+        "cash": 0,
+        "time": 30,
+        "rule": "none",
+        "job": null,
+        "asset": null,
+        "log": "Đi bộ trong vườn.",
+        "energy": -4,
+        "hunger": 0,
+        "happy": 5,
+        "hygiene": 0,
+        "health": 0,
+        "stress": -5,
+        "hydration": 0
+      },
+      {
+        "id": "ACT_GARDEN_WATER",
+        "legacyId": "garden_water",
+        "name": "Uống nước miễn phí",
+        "building": "BLD_LOT_4_132",
+        "detail": "5 phút",
+        "cash": 0,
+        "time": 5,
+        "rule": "none",
+        "job": null,
+        "asset": null,
+        "log": "Uống nước miễn phí.",
+        "energy": 0,
+        "hunger": 0,
+        "happy": 0,
+        "hygiene": 0,
+        "health": 0,
+        "stress": 0,
+        "hydration": 35
+      },
+      {
+        "id": "ACT_GARDEN_REST",
+        "legacyId": "garden_rest",
+        "name": "Nghỉ chân trong vườn",
+        "building": "BLD_LOT_4_132",
+        "detail": "30 phút",
+        "cash": 0,
+        "time": 30,
+        "rule": "none",
+        "job": null,
+        "asset": null,
+        "log": "Nghỉ chân trong vườn.",
+        "energy": 8,
+        "hunger": 0,
+        "happy": 3,
+        "hygiene": 0,
+        "health": 0,
+        "stress": -5,
+        "hydration": 0
+      },
+      {
+        "id": "ACT_MINI_VISIT",
+        "legacyId": "mini_visit",
+        "name": "Tham quan cửa hàng",
+        "building": "BLD_LOT_100_60",
+        "detail": "5 phút",
+        "cash": 0,
+        "time": 5,
+        "rule": "none",
+        "job": null,
+        "asset": null,
+        "log": "Tham quan cửa hàng.",
+        "energy": 0,
+        "hunger": 0,
+        "happy": 0,
+        "hygiene": 0,
+        "health": 0,
+        "stress": 0,
+        "hydration": 0
       }
     ],
     "NPC_Master": [
@@ -3473,6 +3615,158 @@ export default {
         "workEnd": 960,
         "color": "#b7a0cc",
         "dialogue": "Tôi thích giúp mọi người cảm thấy tốt hơn."
+      },
+      {
+        "id": "NPC_THU",
+        "name": "Trần Thanh Thu",
+        "fullName": "Trần Thanh Thu",
+        "age": 24,
+        "gender": "female",
+        "occupation": "Thủ thư cộng đồng",
+        "personality": "TRA_CURIOUS",
+        "behavior": "work",
+        "homeDistrict": "DST_HEALTH",
+        "home": "BLD_LOT_156_188",
+        "workplace": "BLD_LOT_28_100",
+        "leisure": "BLD_LOT_4_132",
+        "description": "Thủ thư cộng đồng tại An Lạc.",
+        "workStart": 480,
+        "workEnd": 960,
+        "color": "#927eb4",
+        "dialogue": "Bạn có thể học thêm nhiều kỹ năng ở thư viện."
+      },
+      {
+        "id": "NPC_VINH",
+        "name": "Nguyễn Đức Vinh",
+        "fullName": "Nguyễn Đức Vinh",
+        "age": 32,
+        "gender": "male",
+        "occupation": "Nhân viên cửa hàng tiện lợi",
+        "personality": "TRA_DISCIPLINED",
+        "behavior": "work",
+        "homeDistrict": "DST_SERVICE",
+        "home": "BLD_DECOR_09",
+        "workplace": "BLD_LOT_100_60",
+        "leisure": "BLD_PARK",
+        "description": "Nhân viên cửa hàng tiện lợi tại An Lạc.",
+        "workStart": 480,
+        "workEnd": 960,
+        "color": "#467f9f",
+        "dialogue": "Tôi luôn dành một phần lương cho tiết kiệm."
+      },
+      {
+        "id": "NPC_HA",
+        "name": "Phạm Thu Hà",
+        "fullName": "Phạm Thu Hà",
+        "age": 38,
+        "gender": "female",
+        "occupation": "Nhân viên chăm sóc vườn",
+        "personality": "TRA_CAREFUL",
+        "behavior": "work",
+        "homeDistrict": "DST_LEISURE",
+        "home": "BLD_DECOR_05",
+        "workplace": "BLD_LOT_4_132",
+        "leisure": "BLD_LIBRARY",
+        "description": "Nhân viên chăm sóc vườn tại An Lạc.",
+        "workStart": 480,
+        "workEnd": 960,
+        "color": "#729e6a",
+        "dialogue": "Mỗi ngày vận động một chút giúp tôi thấy dễ chịu."
+      },
+      {
+        "id": "NPC_SON",
+        "name": "Lê Quốc Sơn",
+        "fullName": "Lê Quốc Sơn",
+        "age": 27,
+        "gender": "male",
+        "occupation": "Kỹ thuật viên phần mềm",
+        "personality": "TRA_DETERMINED",
+        "behavior": "work",
+        "homeDistrict": "DST_CENTER",
+        "home": "BLD_DECOR_02",
+        "workplace": "BLD_OFFICE",
+        "leisure": "BLD_CAFE",
+        "description": "Kỹ thuật viên phần mềm tại An Lạc.",
+        "workStart": 480,
+        "workEnd": 960,
+        "color": "#578ba5",
+        "dialogue": "Kỹ năng tốt mở ra nhiều cơ hội nghề nghiệp."
+      },
+      {
+        "id": "NPC_MY",
+        "name": "Võ Ngọc My",
+        "fullName": "Võ Ngọc My",
+        "age": 22,
+        "gender": "female",
+        "occupation": "Học viên nghề",
+        "personality": "TRA_CURIOUS",
+        "behavior": "study",
+        "homeDistrict": "DST_RESIDENTIAL",
+        "home": "BLD_DECOR_01",
+        "workplace": "BLD_SCHOOL",
+        "leisure": "BLD_LOT_28_100",
+        "description": "Học viên nghề tại An Lạc.",
+        "workStart": 480,
+        "workEnd": 960,
+        "color": "#bb83a0",
+        "dialogue": "Tôi đang cố gắng hoàn thành khóa học."
+      },
+      {
+        "id": "NPC_DUY",
+        "name": "Đỗ Minh Duy",
+        "fullName": "Đỗ Minh Duy",
+        "age": 46,
+        "gender": "male",
+        "occupation": "Nhân viên vận chuyển",
+        "personality": "TRA_CAREFUL",
+        "behavior": "work",
+        "homeDistrict": "DST_SERVICE",
+        "home": "BLD_DECOR_10",
+        "workplace": "BLD_WAREHOUSE",
+        "leisure": "BLD_PARK_EAST",
+        "description": "Nhân viên vận chuyển tại An Lạc.",
+        "workStart": 480,
+        "workEnd": 960,
+        "color": "#ac8863",
+        "dialogue": "Chi phí đi lại cũng cần có kế hoạch."
+      },
+      {
+        "id": "NPC_HUE",
+        "name": "Bùi Thanh Huệ",
+        "fullName": "Bùi Thanh Huệ",
+        "age": 54,
+        "gender": "female",
+        "occupation": "Nhân viên bán hàng",
+        "personality": "TRA_SOCIAL",
+        "behavior": "work",
+        "homeDistrict": "DST_RESIDENTIAL",
+        "home": "BLD_DECOR_11",
+        "workplace": "BLD_MARKET",
+        "leisure": "BLD_PARK_EAST",
+        "description": "Nhân viên bán hàng tại An Lạc.",
+        "workStart": 480,
+        "workEnd": 960,
+        "color": "#b88a53",
+        "dialogue": "Tôi thích trò chuyện với người dân quanh đây."
+      },
+      {
+        "id": "NPC_KIEN",
+        "name": "Hoàng Trung Kiên",
+        "fullName": "Hoàng Trung Kiên",
+        "age": 30,
+        "gender": "male",
+        "occupation": "Nhân viên ngân hàng",
+        "personality": "TRA_DISCIPLINED",
+        "behavior": "work",
+        "homeDistrict": "DST_CENTER",
+        "home": "BLD_DECOR_03",
+        "workplace": "BLD_BANK",
+        "leisure": "BLD_CAFE",
+        "description": "Nhân viên ngân hàng tại An Lạc.",
+        "workStart": 480,
+        "workEnd": 960,
+        "color": "#66899b",
+        "dialogue": "Hãy cân nhắc khả năng trả nợ trước khi vay."
       }
     ],
     "Relationships": [
@@ -4056,6 +4350,34 @@ export default {
         "requiresLevel": "EDU_HIGH",
         "sessions": 18,
         "sessionMinutes": 120
+      },
+      {
+        "id": "CRS_COMMUNITY_FINANCE",
+        "name": "Quản lý tài chính cá nhân",
+        "school": "SCHL_CENTER",
+        "skill": "SKL_FINANCE",
+        "fee": 250000,
+        "durationDays": 7,
+        "gain": 1,
+        "kind": "certificate",
+        "awardLevel": null,
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 3,
+        "sessionMinutes": 60
+      },
+      {
+        "id": "CRS_COMMUNITY_COMM",
+        "name": "Giao tiếp nghề nghiệp",
+        "school": "SCHL_CENTER",
+        "skill": "SKL_COMM",
+        "fee": 250000,
+        "durationDays": 7,
+        "gain": 1,
+        "kind": "certificate",
+        "awardLevel": null,
+        "requiresLevel": "EDU_HIGH",
+        "sessions": 3,
+        "sessionMinutes": 60
       }
     ],
     "Industries": [
@@ -4636,7 +4958,8 @@ export default {
         "category": "utility",
         "shops": [
           "BLD_MARKET",
-          "BLD_SHOP"
+          "BLD_SHOP",
+          "BLD_LOT_100_60"
         ],
         "useMinutes": 5,
         "hygiene": 25
@@ -4652,7 +4975,8 @@ export default {
         "happy": 3,
         "shops": [
           "BLD_SHOP",
-          "BLD_MARKET"
+          "BLD_MARKET",
+          "BLD_LOT_100_60"
         ],
         "useMinutes": 15,
         "hydration": 5,
@@ -4683,7 +5007,8 @@ export default {
         "happy": 0,
         "shops": [
           "BLD_SHOP",
-          "BLD_MARKET"
+          "BLD_MARKET",
+          "BLD_LOT_100_60"
         ],
         "useMinutes": 5,
         "hydration": 40,
@@ -4699,7 +5024,8 @@ export default {
         "happy": 2,
         "shops": [
           "BLD_SHOP",
-          "BLD_MARKET"
+          "BLD_MARKET",
+          "BLD_LOT_100_60"
         ],
         "useMinutes": 15,
         "hydration": 5,
@@ -4715,7 +5041,8 @@ export default {
         "happy": 2,
         "shops": [
           "BLD_SHOP",
-          "BLD_MARKET"
+          "BLD_MARKET",
+          "BLD_LOT_100_60"
         ],
         "useMinutes": 15,
         "hydration": 10,
@@ -4732,7 +5059,8 @@ export default {
         "hydration": 0,
         "shops": [
           "BLD_SHOP",
-          "BLD_MARKET"
+          "BLD_MARKET",
+          "BLD_LOT_100_60"
         ],
         "useMinutes": 15,
         "ingredients": [],
@@ -4748,7 +5076,8 @@ export default {
         "hydration": 20,
         "shops": [
           "BLD_SHOP",
-          "BLD_MARKET"
+          "BLD_MARKET",
+          "BLD_LOT_100_60"
         ],
         "useMinutes": 15,
         "ingredients": [],
@@ -6179,6 +6508,50 @@ export default {
         "repeatable": true,
         "description": "Một thói quen đã gây lệ thuộc. Bạn có thể tìm hỗ trợ hoặc tiếp tục tự quản lý.",
         "cooldownDays": 30
+      },
+      {
+        "id": "EVT_FIRST_VEHICLE",
+        "name": "Chuyến đi đầu tiên",
+        "chapter": "CHP_04",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "first_vehicle",
+        "repeatable": false,
+        "description": "Bạn đã có phương tiện riêng. Hãy cân nhắc cách sử dụng tài sản.",
+        "cooldownDays": 0
+      },
+      {
+        "id": "EVT_FIRST_OWN_HOME",
+        "name": "Mái nhà của mình",
+        "chapter": "CHP_04",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "first_owned_home",
+        "repeatable": false,
+        "description": "Bạn đã sở hữu nhà. Đây là dịp nhìn lại mục tiêu dài hạn.",
+        "cooldownDays": 0
+      },
+      {
+        "id": "EVT_FIRST_SAVING",
+        "name": "Khoản tiết kiệm đầu tiên",
+        "chapter": "CHP_04",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "first_saving",
+        "repeatable": false,
+        "description": "Bạn đã mở sổ tiết kiệm kỳ hạn. Lựa chọn tiếp theo thuộc về bạn.",
+        "cooldownDays": 0
+      },
+      {
+        "id": "EVT_PENSION_START",
+        "name": "Một nhịp sống mới",
+        "chapter": "CHP_11",
+        "minAge": 18,
+        "maxAge": 120,
+        "trigger": "pension_start",
+        "repeatable": false,
+        "description": "Bạn đã chính thức nghỉ hưu. Hãy dành thời gian cho điều mình coi trọng.",
+        "cooldownDays": 0
       }
     ],
     "Event_Choices": [
@@ -6931,6 +7304,134 @@ export default {
         "consequence": "Lợi ích trước mắt; hồ sơ pháp lý được tiếp nhận sau 365 ngày, có thể phát sinh phạt, hoàn trả và án tù.",
         "ethicsDelta": -20,
         "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_FIRST_VEHICLE_PLAN",
+        "name": "Lên kế hoạch đi lại",
+        "event": "EVT_FIRST_VEHICLE",
+        "cashDelta": 0,
+        "happyDelta": 3,
+        "reputationDelta": 1,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Thay đổi các chỉ số ghi trong lựa chọn; không tự tạo tài sản hoặc thực hiện nghiệp vụ.",
+        "ethicsDelta": 2,
+        "stressDelta": -3,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_FIRST_VEHICLE_ENJOY",
+        "name": "Tận hưởng thành quả",
+        "event": "EVT_FIRST_VEHICLE",
+        "cashDelta": 0,
+        "happyDelta": 5,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Thay đổi các chỉ số ghi trong lựa chọn; không tự tạo tài sản hoặc thực hiện nghiệp vụ.",
+        "ethicsDelta": 0,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_FIRST_OWN_HOME_RESERVE",
+        "name": "Dành quỹ bảo trì",
+        "event": "EVT_FIRST_OWN_HOME",
+        "cashDelta": 0,
+        "happyDelta": 3,
+        "reputationDelta": 1,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Thay đổi các chỉ số ghi trong lựa chọn; không tự tạo tài sản hoặc thực hiện nghiệp vụ.",
+        "ethicsDelta": 2,
+        "stressDelta": -3,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_FIRST_OWN_HOME_CELEBRATE",
+        "name": "Mừng nhà mới",
+        "event": "EVT_FIRST_OWN_HOME",
+        "cashDelta": -100000,
+        "happyDelta": 8,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Thay đổi các chỉ số ghi trong lựa chọn; không tự tạo tài sản hoặc thực hiện nghiệp vụ.",
+        "ethicsDelta": 0,
+        "stressDelta": -2,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_FIRST_SAVING_PATIENT",
+        "name": "Kiên trì với kế hoạch",
+        "event": "EVT_FIRST_SAVING",
+        "cashDelta": 0,
+        "happyDelta": 4,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Thay đổi các chỉ số ghi trong lựa chọn; không tự tạo tài sản hoặc thực hiện nghiệp vụ.",
+        "ethicsDelta": 2,
+        "stressDelta": -2,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_FIRST_SAVING_REVIEW",
+        "name": "Xem lại ngân sách",
+        "event": "EVT_FIRST_SAVING",
+        "cashDelta": 0,
+        "happyDelta": 2,
+        "reputationDelta": 1,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Thay đổi các chỉ số ghi trong lựa chọn; không tự tạo tài sản hoặc thực hiện nghiệp vụ.",
+        "ethicsDelta": 1,
+        "stressDelta": -3,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_PENSION_START_COMMUNITY",
+        "name": "Quan tâm cộng đồng",
+        "event": "EVT_PENSION_START",
+        "cashDelta": 0,
+        "happyDelta": 5,
+        "reputationDelta": 2,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Thay đổi các chỉ số ghi trong lựa chọn; không tự tạo tài sản hoặc thực hiện nghiệp vụ.",
+        "ethicsDelta": 2,
+        "stressDelta": -2,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_PENSION_START_REST",
+        "name": "Tận hưởng thời gian nghỉ",
+        "event": "EVT_PENSION_START",
+        "cashDelta": 0,
+        "happyDelta": 7,
+        "reputationDelta": 0,
+        "offense": null,
+        "nextEvent": null,
+        "delayDays": 0,
+        "consequence": "Thay đổi các chỉ số ghi trong lựa chọn; không tự tạo tài sản hoặc thực hiện nghiệp vụ.",
+        "ethicsDelta": 0,
+        "stressDelta": -4,
         "healthDelta": 0,
         "familyDelta": 0
       }

@@ -240,5 +240,49 @@
     "repeatable": true,
     "description": "Một thói quen đã gây lệ thuộc. Bạn có thể tìm hỗ trợ hoặc tiếp tục tự quản lý.",
     "cooldownDays": 30
+  },
+  {
+    "id": "EVT_FIRST_VEHICLE",
+    "name": "Chuyến đi đầu tiên",
+    "chapter": "CHP_04",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "first_vehicle",
+    "repeatable": false,
+    "description": "Bạn đã có phương tiện riêng. Hãy cân nhắc cách sử dụng tài sản.",
+    "cooldownDays": 0
+  },
+  {
+    "id": "EVT_FIRST_OWN_HOME",
+    "name": "Mái nhà của mình",
+    "chapter": "CHP_04",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "first_owned_home",
+    "repeatable": false,
+    "description": "Bạn đã sở hữu nhà. Đây là dịp nhìn lại mục tiêu dài hạn.",
+    "cooldownDays": 0
+  },
+  {
+    "id": "EVT_FIRST_SAVING",
+    "name": "Khoản tiết kiệm đầu tiên",
+    "chapter": "CHP_04",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "first_saving",
+    "repeatable": false,
+    "description": "Bạn đã mở sổ tiết kiệm kỳ hạn. Lựa chọn tiếp theo thuộc về bạn.",
+    "cooldownDays": 0
+  },
+  {
+    "id": "EVT_PENSION_START",
+    "name": "Một nhịp sống mới",
+    "chapter": "CHP_11",
+    "minAge": 18,
+    "maxAge": 120,
+    "trigger": "pension_start",
+    "repeatable": false,
+    "description": "Bạn đã chính thức nghỉ hưu. Hãy dành thời gian cho điều mình coi trọng.",
+    "cooldownDays": 0
   }
 ]

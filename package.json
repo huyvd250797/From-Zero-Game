@@ -1,6 +1,6 @@
 {
   "name": "from-zero",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,7 +11,8 @@
     "check": "node scripts/check.mjs",
     "data:validate": "node scripts/master-data.mjs",
     "predev": "npm run data:validate",
-    "pretest": "npm run data:validate"
+    "pretest": "npm run data:validate",
+    "simulate:balance": "node scripts/simulate-balance.mjs"
   },
   "engines": {
     "node": ">=20"

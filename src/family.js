@@ -1,5 +1,5 @@
 import {incarcerated} from './recovery-state.js';
-import {quote,goodsPrice,assetPrice,wageQuote,rateQuote,actionCash,economyAt,vacancyOpen} from './economy.js';
+import {livingQuote,quote,goodsPrice,assetPrice,wageQuote,rateQuote,actionCash,economyAt,vacancyOpen} from './economy.js';
 import {record, catalogs} from './master-data.js';
 import {nearNPC,trust,npcAge,npcs,npcAt} from './social.js';
 import {currentHome,homeAccess,nearPlace,residence} from './housing-state.js';
@@ -16,7 +16,7 @@ export const relationshipLabel=s=>({courting:'Đang tìm hiểu',dating:'Ngườ
 export const childAge=(s,c)=>Math.max(0,Math.floor((s.minutes-c.born)/(365*DAY)));
 export const familySize=s=>1+(s.family?.partner?.stage==='married'?1:0)+(s.family?.children.filter(c=>childAge(s,c)<18).length||0);
 export const childCost=(s,c)=>childAge(s,c)>=18?0:childAge(s,c)<3?rule('child').dailyCost:50000;
-export const familyDailyCost=s=>quote(s,(s.family?.partner?.stage==='married'?rule('marriage').dailyCost:0)+(s.family?.children.reduce((sum,c)=>sum+childCost(s,c),0)||0));
+export const familyDailyCost=s=>livingQuote(s,(s.family?.partner?.stage==='married'?rule('marriage').dailyCost:0)+(s.family?.children.reduce((sum,c)=>sum+childCost(s,c),0)||0));
 export const familyHousingOK=(s,extra=0)=>(currentHome(s)?.capacity||0)>=familySize(s)+extra;
 function event(s,message){s.family.history.unshift({minute:s.minutes,message});s.family.history=s.family.history.slice(0,60);log(s,message);}
 export function validateFamily(s){const f=s.family;if(!f||!int(f.debt)||!int(f.happiness,0,100)||!int(f.nextChild,1)||!Array.isArray(f.children)||f.children.length>MAX_CHILDREN||!Array.isArray(f.history)||f.history.length>60||f.history.some(e=>!e||!int(e.minute,0,s.minutes)||typeof e.message!=='string'||!e.message.trim()||e.message.length>240))return false;

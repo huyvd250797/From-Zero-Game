@@ -1,7 +1,12 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.21.0 — Aging, Legacy & Endings**
+**V0.22.0 — Content Expansion & Game Balance**
 
-Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 25 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Có 28 địa điểm tương tác, nhân vật 18 tuổi với vốn 300.000–800.000đ theo độ khó, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.22.0 — Content Expansion & Game Balance
+- Ba độ khó canonical; vốn, chi phí sinh hoạt/học tập và thu nhập lao động theo chế độ. Save cũ mặc định Bình thường; không điều chỉnh giá tài sản, lãi suất hoặc hợp đồng cũ theo độ khó.
+- 28 địa điểm, 24 NPC, 15 khóa học, 26 biến cố và 55 lựa chọn. Thư viện cộng đồng, vườn cộng đồng, cửa hàng tiện lợi mới dùng công trình hiện có.
+- Dự toán sinh tồn và hòa vốn kinh doanh, yêu cầu nước uống cho ca thời vụ; hiển thị độ khó trên báo cáo cuộc đời. Master Data V2.9.0 (693 bản ghi). Xem [docs/BALANCE.md](docs/BALANCE.md) và `npm run simulate:balance`.
 
 ## V0.21.0 — Aging, Legacy & Endings
 - 4 giai đoạn tuổi theo Master Data; từ 60 tuổi giảm thể lực nếu ít vận động, hiệu suất nghề nghiệp/kinh doanh giảm tối đa 20 điểm. Từ 75 tuổi sức khỏe nguy kịch kéo dài 30 ngày có thể kết thúc đời; tuổi 100 tự tổng kết tại điểm an toàn, hoặc tự tổng kết từ tuổi 70.

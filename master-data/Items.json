@@ -106,7 +106,8 @@
     "category": "utility",
     "shops": [
       "BLD_MARKET",
-      "BLD_SHOP"
+      "BLD_SHOP",
+      "BLD_LOT_100_60"
     ],
     "useMinutes": 5,
     "hygiene": 25

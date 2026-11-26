@@ -39,6 +39,10 @@ function match(s,e){const d=Math.floor(s.minutes/DAY)+1,p=s.story;switch(e.trigg
  case 'recovery':return !!(p.resolved.EVT_HARDSHIP||p.resolved.EVT_JOB_LOSS||s.recovery?.bankruptcies.length||s.recovery?.releasedAt!=null)&&liquid(s)>=300000&&!!residence(s);
  case 'health_crisis':return !!s.wellness?.conditions.length;
  case 'habit_recovery':return !!s.wellness?.dependent.length;
+ case 'first_vehicle':return !!(s.bike||s.transport?.vehicles.length);
+ case 'first_owned_home':return residence(s)?.mode==='owned';
+ case 'first_saving':return !!s.banking?.deposits.length;
+ case 'pension_start':return s.aging?.retiredAt!=null;
  case 'retirement':return age(s)>=60;
  case 'legacy':return age(s)>=70;
  default:return false;

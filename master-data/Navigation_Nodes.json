@@ -180,5 +180,26 @@
     "city": "CTY_ANLAC",
     "x": 60,
     "z": 183
+  },
+  {
+    "id": "NAV_LIBRARY_ANNEX",
+    "name": "Lối vào Thư viện cộng đồng",
+    "city": "CTY_ANLAC",
+    "x": 28,
+    "z": 105
+  },
+  {
+    "id": "NAV_COMMUNITY_GARDEN",
+    "name": "Lối vào Vườn cộng đồng",
+    "city": "CTY_ANLAC",
+    "x": 8,
+    "z": 132
+  },
+  {
+    "id": "NAV_MINI_MART",
+    "name": "Lối vào Cửa hàng tiện lợi",
+    "city": "CTY_ANLAC",
+    "x": 100,
+    "z": 65
   }
 ]

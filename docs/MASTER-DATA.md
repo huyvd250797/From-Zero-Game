@@ -1,13 +1,13 @@
-# From Zero — Canonical Master Data V2.8.0
+# From Zero — Canonical Master Data V2.9.0
 
-Game release V0.21.0 · 60 danh mục, 660 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.22.0 · 60 danh mục, 693 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
 | Nhóm | JSON | Bản ghi | Trạng thái |
 |---|---|---:|---|
 | A – Foundation | `Game_Config.json` | 1 | Runtime prototype |
-| A – Foundation | `Difficulty.json` | 3 | Seed cho phiên bản sau |
+| A – Foundation | `Difficulty.json` | 3 | Runtime Game Balance |
 | A – Foundation | `Character_Origins.json` | 3 | Seed cho phiên bản sau |
 | A – Foundation | `Character_Traits.json` | 6 | Seed cho phiên bản sau |
 | A – Foundation | `Character_Attributes.json` | 14 | Runtime Survival & Daily Activities |
@@ -18,18 +18,18 @@ Game release V0.21.0 · 60 danh mục, 660 bản ghi. Số liệu kinh tế và 
 | B – World & City | `Building_Types.json` | 24 | Runtime City Engine |
 | B – World & City | `Building_Instances.json` | 79 | Runtime City Engine |
 | B – World & City | `Road_Network.json` | 12 | Runtime City Engine |
-| B – World & City | `Navigation_Nodes.json` | 26 | Runtime City Engine |
-| B – World & City | `World_Schedules.json` | 25 | Runtime Life Simulation |
-| B – World & City | `Location_Actions.json` | 43 | Runtime Survival & Daily Activities |
-| C – Character & Social | `NPC_Master.json` | 16 | Runtime NPC & Social World |
+| B – World & City | `Navigation_Nodes.json` | 29 | Runtime City Engine |
+| B – World & City | `World_Schedules.json` | 28 | Runtime Life Simulation |
+| B – World & City | `Location_Actions.json` | 48 | Runtime Survival & Daily Activities |
+| C – Character & Social | `NPC_Master.json` | 24 | Runtime NPC & Social World |
 | C – Character & Social | `Relationships.json` | 5 | Runtime tình bạn; đối tác/vợ chồng là seed |
 | C – Character & Social | `Relationship_Events.json` | 4 | Runtime giúp đỡ/mâu thuẫn; còn lại là seed |
-| C – Character & Social | `Family_Rules.json` | 3 | Seed cho phiên bản sau |
+| C – Character & Social | `Family_Rules.json` | 14 | Seed cho phiên bản sau |
 | C – Character & Social | `Social_Reputation.json` | 3 | Runtime uy tín |
 | D – Education & Career | `Education_Levels.json` | 6 | Runtime Education & Skills |
 | D – Education & Career | `Schools.json` | 3 | Runtime Education & Skills |
 | D – Education & Career | `Skills.json` | 15 | Runtime Education & Skills |
-| D – Education & Career | `Courses.json` | 13 | Runtime Education & Skills |
+| D – Education & Career | `Courses.json` | 15 | Runtime Education & Skills |
 | D – Education & Career | `Industries.json` | 10 | Seed cho phiên bản sau |
 | D – Education & Career | `Jobs.json` | 19 | Runtime ca thời vụ và điều kiện đào tạo |
 | D – Education & Career | `Employers.json` | 10 | Runtime Career & Employment |
@@ -47,7 +47,7 @@ Game release V0.21.0 · 60 danh mục, 660 bản ghi. Số liệu kinh tế và 
 | F – Finance & Economy | `Loan_Products.json` | 4 | Runtime Banking & Business |
 | F – Finance & Economy | `Saving_Products.json` | 2 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Investment_Assets.json` | 4 | Seed cho phiên bản sau |
-| F – Finance & Economy | `Economy_Events.json` | 3 | Seed cho phiên bản sau |
+| F – Finance & Economy | `Economy_Events.json` | 5 | Seed cho phiên bản sau |
 | G – Business | `Business_Types.json` | 6 | Runtime Business |
 | G – Business | `Business_Products.json` | 6 | Runtime Business |
 | G – Business | `Business_Roles.json` | 5 | Vai trò bán hàng/lập trình runtime; còn lại dữ liệu nền |
@@ -61,8 +61,8 @@ Game release V0.21.0 · 60 danh mục, 660 bản ghi. Số liệu kinh tế và 
 | H – Health, Lifestyle & Law | `Penalties.json` | 3 | Runtime Law, Crime & Justice |
 | H – Health, Lifestyle & Law | `Prison_Rehabilitation.json` | 4 | Runtime cải tạo |
 | I – Story & Events | `Story_Chapters.json` | 12 | Runtime Story Engine |
-| I – Story & Events | `Story_Events.json` | 22 | Runtime Story Engine (RELEASE đã kích hoạt) |
-| I – Story & Events | `Event_Choices.json` | 47 | Runtime Story Engine |
+| I – Story & Events | `Story_Events.json` | 26 | Runtime Story Engine (RELEASE đã kích hoạt) |
+| I – Story & Events | `Event_Choices.json` | 55 | Runtime Story Engine |
 | J – Endgame | `Achievements.json` | 7 | Runtime Aging |
 | J – Endgame | `Life_Endings.json` | 40 | 39 điều kiện runtime, công chức chưa khả dụng |
 | J – Endgame | `Legacy_Rules.json` | 2 | Runtime Legacy |
@@ -131,3 +131,6 @@ Vehicles bổ sung capacity, consumption, unitPrice; tên BLD_BIKE đổi thành
 
 ## V2.4.0
 Story_Events bổ sung cooldownDays và trigger, Event_Choices bổ sung ethicsDelta, stressDelta, healthDelta, familyDelta. Thêm 12 biến cố, 25 lựa chọn, INC_STORY và EXP_STORY. Giữ nguyên 60 danh mục.
+
+## V2.9.0
+- Kích hoạt Difficulty; mở 3 công trình nền, 3 điểm điều hướng, 3 lịch, 5 hoạt động; thêm 8 NPC, 2 khóa học, 4 sự kiện và 8 lựa chọn. Giữ 60 danh mục, 693 bản ghi.

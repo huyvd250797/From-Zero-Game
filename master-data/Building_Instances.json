@@ -705,19 +705,19 @@
   },
   {
     "id": "BLD_LOT_100_60",
-    "name": "Cửa hàng 100-60",
-    "legacyId": "lot_100_60",
+    "name": "Cửa hàng tiện lợi",
+    "legacyId": "mini_mart",
     "type": "BTY_SHOP",
     "district": "DST_COMMERCIAL",
-    "icon": "",
+    "icon": "🛒",
     "x": 100,
     "z": 60,
     "w": 7,
     "d": 7,
     "h": 5,
     "color": "#cba98e",
-    "door": null,
-    "interactive": false
+    "door": "NAV_MINI_MART",
+    "interactive": true
   },
   {
     "id": "BLD_LOT_188_60",
@@ -801,19 +801,19 @@
   },
   {
     "id": "BLD_LOT_28_100",
-    "name": "Thư viện 28-100",
-    "legacyId": "lot_28_100",
+    "name": "Thư viện cộng đồng",
+    "legacyId": "library_annex",
     "type": "BTY_LIBRARY",
     "district": "DST_EDUCATION",
-    "icon": "",
+    "icon": "📚",
     "x": 28,
     "z": 100,
     "w": 7,
     "d": 7,
     "h": 7,
     "color": "#bdc5d5",
-    "door": null,
-    "interactive": false
+    "door": "NAV_LIBRARY_ANNEX",
+    "interactive": true
   },
   {
     "id": "BLD_LOT_36_100",
@@ -961,19 +961,19 @@
   },
   {
     "id": "BLD_LOT_4_132",
-    "name": "Công viên 4-132",
-    "legacyId": "lot_4_132",
+    "name": "Vườn cộng đồng",
+    "legacyId": "community_garden",
     "type": "BTY_PARK",
     "district": "DST_EDUCATION",
-    "icon": "",
+    "icon": "🌳",
     "x": 4,
     "z": 132,
     "w": 5,
     "d": 7,
     "h": 0,
     "color": "#8db67b",
-    "door": null,
-    "interactive": false
+    "door": "NAV_COMMUNITY_GARDEN",
+    "interactive": true
   },
   {
     "id": "BLD_LOT_100_132",

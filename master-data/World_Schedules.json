@@ -173,5 +173,26 @@
     "building": "BLD_LOT_60_188",
     "opens": 0,
     "closes": 1440
+  },
+  {
+    "id": "SCH_LIBRARY_ANNEX",
+    "name": "Thư viện cộng đồng",
+    "building": "BLD_LOT_28_100",
+    "opens": 480,
+    "closes": 1200
+  },
+  {
+    "id": "SCH_COMMUNITY_GARDEN",
+    "name": "Vườn cộng đồng",
+    "building": "BLD_LOT_4_132",
+    "opens": 0,
+    "closes": 1440
+  },
+  {
+    "id": "SCH_MINI_MART",
+    "name": "Cửa hàng tiện lợi",
+    "building": "BLD_LOT_100_60",
+    "opens": 360,
+    "closes": 1320
   }
 ]

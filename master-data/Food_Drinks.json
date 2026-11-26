@@ -8,7 +8,8 @@
     "happy": 3,
     "shops": [
       "BLD_SHOP",
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_LOT_100_60"
     ],
     "useMinutes": 15,
     "hydration": 5,
@@ -39,7 +40,8 @@
     "happy": 0,
     "shops": [
       "BLD_SHOP",
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_LOT_100_60"
     ],
     "useMinutes": 5,
     "hydration": 40,
@@ -55,7 +57,8 @@
     "happy": 2,
     "shops": [
       "BLD_SHOP",
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_LOT_100_60"
     ],
     "useMinutes": 15,
     "hydration": 5,
@@ -71,7 +74,8 @@
     "happy": 2,
     "shops": [
       "BLD_SHOP",
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_LOT_100_60"
     ],
     "useMinutes": 15,
     "hydration": 10,
@@ -88,7 +92,8 @@
     "hydration": 0,
     "shops": [
       "BLD_SHOP",
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_LOT_100_60"
     ],
     "useMinutes": 15,
     "ingredients": [],
@@ -104,7 +109,8 @@
     "hydration": 20,
     "shops": [
       "BLD_SHOP",
-      "BLD_MARKET"
+      "BLD_MARKET",
+      "BLD_LOT_100_60"
     ],
     "useMinutes": 15,
     "ingredients": [],

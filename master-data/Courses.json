@@ -180,5 +180,33 @@
     "requiresLevel": "EDU_HIGH",
     "sessions": 18,
     "sessionMinutes": 120
+  },
+  {
+    "id": "CRS_COMMUNITY_FINANCE",
+    "name": "Quản lý tài chính cá nhân",
+    "school": "SCHL_CENTER",
+    "skill": "SKL_FINANCE",
+    "fee": 250000,
+    "durationDays": 7,
+    "gain": 1,
+    "kind": "certificate",
+    "awardLevel": null,
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 3,
+    "sessionMinutes": 60
+  },
+  {
+    "id": "CRS_COMMUNITY_COMM",
+    "name": "Giao tiếp nghề nghiệp",
+    "school": "SCHL_CENTER",
+    "skill": "SKL_COMM",
+    "fee": 250000,
+    "durationDays": 7,
+    "gain": 1,
+    "kind": "certificate",
+    "awardLevel": null,
+    "requiresLevel": "EDU_HIGH",
+    "sessions": 3,
+    "sessionMinutes": 60
   }
 ]
