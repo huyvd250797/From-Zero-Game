@@ -1,3 +1,4 @@
+import {syncLegal} from './legal.js';
 import {catalogs,record,config} from './master-data.js';
 import {cashChange} from './survival-state.js';
 import {report,liquid} from './personal-finance.js';
@@ -53,7 +54,7 @@ export function chooseStory(s,id){if(choiceReason(s,id))return false;const c=cho
  const previous=f.resolved[e.id];f.resolved[e.id]={at:s.minutes,count:(previous?.count||0)+1,choice:id};f.pending.splice(f.pending.indexOf(p),1);addHistory(s,{kind:'choice',event:e.id,choice:id,at:s.minutes,context:p.context});
  if(c.nextEvent&&c.delayDays>0)f.scheduled.push({event:c.nextEvent,choice:id,due:s.minutes+c.delayDays*DAY,context:p.context});
  // Arrival -> first shift is condition-based, never grants experience or wages.
- note(s,'Lựa chọn: '+c.name+' · '+e.name);storyScan(s);return true;
+ note(s,'Lựa chọn: '+c.name+' · '+e.name);syncLegal(s);storyScan(s);return true;
 }
 export function validateStory(s){const f=s.story;if(!obj(f)||!int(f.started,0,s.minutes)||typeof f.legacy!=='boolean'||typeof f.hadShift!=='boolean'||!int(f.ethics,0,100)||!Array.isArray(f.pending)||f.pending.length>FORCED_LIMIT||!Array.isArray(f.scheduled)||f.scheduled.length>16||!obj(f.resolved)||!Array.isArray(f.chapters)||new Set(f.chapters).size!==f.chapters.length||!f.chapters.every(x=>chapters.has(x))||!Array.isArray(f.history)||f.history.length>120||!Array.isArray(f.offenses)||f.offenses.length>20)return false;
  const ctx=x=>x===null||catalogs.NPC_Master.some(n=>n.id===x);const validChoice=(id,event)=>choices.get(id)?.event===event;

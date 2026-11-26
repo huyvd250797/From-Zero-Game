@@ -62,7 +62,7 @@
     "maxAge": 120,
     "trigger": "legal_case",
     "repeatable": false,
-    "description": "Thông báo rủi ro pháp lý từ hành vi đã ghi nhận. Chưa có điều tra hay xét xử trong phiên bản này.",
+    "description": "Thông báo tiếp nhận hồ sơ pháp lý từ hành vi đã ghi nhận; chưa phải phán quyết.",
     "cooldownDays": 0
   },
   {

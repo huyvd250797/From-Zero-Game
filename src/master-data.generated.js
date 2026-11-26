@@ -1,6 +1,6 @@
 // Generated from master-data/*.json. Do not edit.
 export default {
-  "version": "2.5.0",
+  "version": "2.6.0",
   "catalogs": {
     "Game_Config": [
       {
@@ -5175,6 +5175,16 @@ export default {
         "id": "EXP_STORY",
         "name": "Chi phí biến cố",
         "description": "Chi phí phát sinh từ quyết định cốt truyện."
+      },
+      {
+        "id": "EXP_LEGAL",
+        "name": "Tư vấn pháp lý",
+        "description": "Chi phí hỗ trợ pháp lý giả lập."
+      },
+      {
+        "id": "EXP_RESTITUTION",
+        "name": "Hoàn trả và bồi thường",
+        "description": "Hoàn trả lợi ích bất chính theo phán quyết giả lập."
       }
     ],
     "Banks": [
@@ -5981,7 +5991,7 @@ export default {
         "maxAge": 120,
         "trigger": "legal_case",
         "repeatable": false,
-        "description": "Thông báo rủi ro pháp lý từ hành vi đã ghi nhận. Chưa có điều tra hay xét xử trong phiên bản này.",
+        "description": "Thông báo tiếp nhận hồ sơ pháp lý từ hành vi đã ghi nhận; chưa phải phán quyết.",
         "cooldownDays": 0
       },
       {
@@ -6284,7 +6294,7 @@ export default {
         "offense": "OFF_TAX",
         "nextEvent": "EVT_LEGAL",
         "delayDays": 365,
-        "consequence": "Lợi ích trước mắt, ghi nhận hành vi sai trái; thông báo rủi ro pháp lý sau 365 ngày.",
+        "consequence": "Lợi ích trước mắt; hồ sơ pháp lý được tiếp nhận sau 365 ngày, có thể phát sinh phạt, hoàn trả và án tù.",
         "ethicsDelta": -20,
         "stressDelta": 0,
         "healthDelta": 0,
@@ -6332,7 +6342,7 @@ export default {
         "offense": null,
         "nextEvent": null,
         "delayDays": 0,
-        "consequence": "Ghi nhận thái độ hợp tác. Chưa có phán quyết hay án phạt ở phiên bản này.",
+        "consequence": "Ghi nhận thái độ hợp tác trong cốt truyện. Theo dõi tiến trình chính thức tại trung tâm Pháp luật.",
         "ethicsDelta": 4,
         "stressDelta": -5,
         "healthDelta": 0,
@@ -6831,6 +6841,86 @@ export default {
         "consequence": "Chưa thay đổi mức lệ thuộc.",
         "ethicsDelta": 0,
         "stressDelta": 2,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_CRISIS_FRAUD_OTHER",
+        "name": "Chấp nhận hành vi lừa đảo",
+        "event": "EVT_CRISIS",
+        "cashDelta": 10000000,
+        "happyDelta": 0,
+        "reputationDelta": -5,
+        "offense": "OFF_FRAUD",
+        "nextEvent": "EVT_LEGAL",
+        "delayDays": 365,
+        "consequence": "Lợi ích trước mắt; hồ sơ pháp lý được tiếp nhận sau 365 ngày, có thể phát sinh phạt, hoàn trả và án tù.",
+        "ethicsDelta": -20,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_CRISIS_FAKE",
+        "name": "Chấp nhận vi phạm hàng giả",
+        "event": "EVT_CRISIS",
+        "cashDelta": 10000000,
+        "happyDelta": 0,
+        "reputationDelta": -5,
+        "offense": "OFF_FAKE",
+        "nextEvent": "EVT_LEGAL",
+        "delayDays": 365,
+        "consequence": "Lợi ích trước mắt; hồ sơ pháp lý được tiếp nhận sau 365 ngày, có thể phát sinh phạt, hoàn trả và án tù.",
+        "ethicsDelta": -20,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_CRISIS_BRIBE",
+        "name": "Chấp nhận hành vi hối lộ",
+        "event": "EVT_CRISIS",
+        "cashDelta": 10000000,
+        "happyDelta": 0,
+        "reputationDelta": -5,
+        "offense": "OFF_BRIBE",
+        "nextEvent": "EVT_LEGAL",
+        "delayDays": 365,
+        "consequence": "Lợi ích trước mắt; hồ sơ pháp lý được tiếp nhận sau 365 ngày, có thể phát sinh phạt, hoàn trả và án tù.",
+        "ethicsDelta": -20,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_CRISIS_SAFETY",
+        "name": "Chấp nhận vi phạm an toàn",
+        "event": "EVT_CRISIS",
+        "cashDelta": 10000000,
+        "happyDelta": 0,
+        "reputationDelta": -5,
+        "offense": "OFF_SAFETY",
+        "nextEvent": "EVT_LEGAL",
+        "delayDays": 365,
+        "consequence": "Lợi ích trước mắt; hồ sơ pháp lý được tiếp nhận sau 365 ngày, có thể phát sinh phạt, hoàn trả và án tù.",
+        "ethicsDelta": -20,
+        "stressDelta": 0,
+        "healthDelta": 0,
+        "familyDelta": 0
+      },
+      {
+        "id": "CHO_CRISIS_LICENSE",
+        "name": "Chấp nhận thiếu giấy phép",
+        "event": "EVT_CRISIS",
+        "cashDelta": 1000000,
+        "happyDelta": 0,
+        "reputationDelta": -5,
+        "offense": "OFF_LICENSE",
+        "nextEvent": "EVT_LEGAL",
+        "delayDays": 365,
+        "consequence": "Lợi ích trước mắt; hồ sơ pháp lý được tiếp nhận sau 365 ngày, có thể phát sinh phạt, hoàn trả và án tù.",
+        "ethicsDelta": -20,
+        "stressDelta": 0,
         "healthDelta": 0,
         "familyDelta": 0
       }

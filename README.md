@@ -1,7 +1,12 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.18.0 — Health, Habits & Addiction**
+**V0.19.0 — Law, Crime & Justice**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Prototype có 25 địa điểm tương tác, nhân vật 18 tuổi với 500.000đ, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.19.0 — Law, Crime & Justice
+- 6 loại vi phạm, 3 nhóm hình phạt, hồ sơ pháp lý liên kết Story Engine, 5 giai đoạn xử lý tự động theo đồng hồ game; hồ sơ kiểm tra không đủ căn cứ kết thúc không xử phạt.
+- Hợp tác và tư vấn ở công an/tòa án; phán quyết, tiền phạt, hoàn trả lợi ích bất chính, thanh toán từng phần, lưu lịch sử. Nợ pháp lý tính vào tài sản ròng; hạn chế vay mới, tuyển dụng và vận hành có điều kiện.
+- 4 tab Pháp luật & trách nhiệm, cảnh báo HUD. Save schema 1, giữ dữ liệu cũ, không phạt hồi tố. Án tù lưu chờ V0.20.0, chưa thi hành. Xem [docs/LEGAL.md](docs/LEGAL.md).
 
 ## V0.18.0 — Health, Habits & Addiction
 - Bốn tab Sức khỏe & thói quen: Tổng quan, Thói quen, Điều trị, Lịch sử. Theo dõi dinh dưỡng, thể lực, tinh thần, kỷ luật, nợ ngủ; số phút ngủ thực tế chia qua nửa đêm, điểm món ăn và vận động theo ngày.

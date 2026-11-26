@@ -12,7 +12,7 @@ export async function loadMaster(root=path.join(base,'master-data')){
 }
 export function validateMaster(schema,data){
  const errors=[],err=(p,m)=>errors.push(`${p}: ${m}`), ids=new Map();
- if(schema?.version!=='2.5.0'||!schema.catalogs||Object.keys(schema.catalogs).length!==60){return ['Schema phải là 2.5.0 và có 60 danh mục'];}
+ if(schema?.version!=='2.6.0'||!schema.catalogs||Object.keys(schema.catalogs).length!==60){return ['Schema phải là 2.6.0 và có 60 danh mục'];}
  for(const k of Object.keys(data))if(!Object.hasOwn(schema.catalogs,k))err(k,'Danh mục ngoài schema');
  for(const [key,s] of Object.entries(schema.catalogs)){
   if(!/^[A-Z][A-Z0-9]*$/.test(s.prefix)||!s.fields||typeof s.fields!=='object'){err(key,'Schema không hợp lệ');continue}

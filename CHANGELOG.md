@@ -1,5 +1,10 @@
 # Changelog
 
+## V0.19.0 — Law, Crime & Justice (2026-11-26)
+- Legal state, 6 vi phạm, 5 giai đoạn, phán quyết giả lập, hồ sơ kiểm tra không đủ căn cứ.
+- Hợp tác, tư vấn, nghĩa vụ phạt/hoàn trả, thanh toán từng phần, tích hợp tài sản ròng, vay vốn, nghề nghiệp, doanh nghiệp và gia đình.
+- 4 tab pháp luật, lưu án tích và án tù chờ V0.20.0. Master Data V2.6.0, 658 bản ghi; tương thích schema 1.
+
 ## V0.18.0 — Health, Habits & Addiction (2026-11-26)
 - Wellness state: dinh dưỡng, thể lực, tinh thần, kỷ luật, nợ ngủ, nhật ký ngày. Kết nối ngủ, ăn, vận động, công việc và tiết kiệm.
 - 3 tình trạng bệnh, 3 dịch vụ điều trị, 7 thói quen, 4 dạng lệ thuộc, 2 phương án hỗ trợ. Chi phí động và phục hồi theo thời gian.

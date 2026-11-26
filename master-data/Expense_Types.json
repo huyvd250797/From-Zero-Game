@@ -88,5 +88,15 @@
     "id": "EXP_STORY",
     "name": "Chi phí biến cố",
     "description": "Chi phí phát sinh từ quyết định cốt truyện."
+  },
+  {
+    "id": "EXP_LEGAL",
+    "name": "Tư vấn pháp lý",
+    "description": "Chi phí hỗ trợ pháp lý giả lập."
+  },
+  {
+    "id": "EXP_RESTITUTION",
+    "name": "Hoàn trả và bồi thường",
+    "description": "Hoàn trả lợi ích bất chính theo phán quyết giả lập."
   }
 ]

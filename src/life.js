@@ -1,3 +1,4 @@
+import {legalTick} from './legal.js';
 import {healthMinute,healthWarnings} from './health-state.js';
 import {storyTick} from './story.js';
 import {quote,goodsPrice,assetPrice,wageQuote,rateQuote,actionCash,economyAt,vacancyOpen} from './economy.js';
@@ -44,7 +45,7 @@ export function advanceTime(s,minutes,{resting=false,sleeping=false}={}){
   housingTick(s);vehicleTick(s);familyTick(s);bankingTick(s);businessTick(s);
   if(s.bike&&s.bikeDue>0&&s.minutes===s.bikeDue){s.bikeDue+=bikeMaintenance.intervalDays*1440;s.maintenanceDebt+=quote(s,bikeMaintenance.cost);log(s,`Đến hạn bảo dưỡng xe đạp: ${quote(s,bikeMaintenance.cost).toLocaleString('vi-VN')}đ.`);settleDebt(s);}
   if(s.minutes%1440===0){pruneFinance(s);pruneDetails(s);}
-  storyTick(s);
+  storyTick(s);legalTick(s);
   if(s.minutes%1440===0&&calendar(s).month===1&&calendar(s).date===1)log(s,`Chúc mừng sinh nhật ${calendar(s).age} tuổi!`);
  }
  return s;

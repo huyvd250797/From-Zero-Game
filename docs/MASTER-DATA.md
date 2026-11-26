@@ -1,6 +1,6 @@
-# From Zero — Canonical Master Data V2.4.0
+# From Zero — Canonical Master Data V2.6.0
 
-Game release V0.17.0 · 60 danh mục, 641 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
+Game release V0.19.0 · 60 danh mục, 658 bản ghi. Số liệu kinh tế và pháp luật là dữ liệu hư cấu phục vụ cân bằng game, không phải dữ liệu thực tế.
 
 ## Danh mục
 
@@ -42,7 +42,7 @@ Game release V0.17.0 · 60 danh mục, 641 bản ghi. Số liệu kinh tế và 
 | E – Assets & Lifestyle | `Furniture.json` | 5 | Runtime Housing & Interior |
 | E – Assets & Lifestyle | `Maintenance.json` | 4 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Income_Types.json` | 12 | Lương/thưởng/thời vụ và thu lịch sử runtime, các nguồn khác seed |
-| F – Finance & Economy | `Expense_Types.json` | 18 | Runtime Survival & Daily Activities |
+| F – Finance & Economy | `Expense_Types.json` | 20 | Runtime Survival & Daily Activities |
 | F – Finance & Economy | `Banks.json` | 2 | Seed cho phiên bản sau |
 | F – Finance & Economy | `Loan_Products.json` | 4 | Runtime Banking & Business |
 | F – Finance & Economy | `Saving_Products.json` | 2 | Seed cho phiên bản sau |
@@ -54,15 +54,15 @@ Game release V0.17.0 · 60 danh mục, 641 bản ghi. Số liệu kinh tế và 
 | G – Business | `Business_Operations.json` | 6 | Runtime Business |
 | H – Health, Lifestyle & Law | `Diseases.json` | 3 | Seed cho phiên bản sau |
 | H – Health, Lifestyle & Law | `Treatments.json` | 3 | Seed cho phiên bản sau |
-| H – Health, Lifestyle & Law | `Lifestyle_Habits.json` | 5 | Seed cho phiên bản sau |
-| H – Health, Lifestyle & Law | `Addiction_Rules.json` | 2 | Seed cho phiên bản sau |
-| H – Health, Lifestyle & Law | `Legal_Offenses.json` | 6 | Seed cho phiên bản sau |
-| H – Health, Lifestyle & Law | `Legal_Proceedings.json` | 5 | Seed cho phiên bản sau |
-| H – Health, Lifestyle & Law | `Penalties.json` | 3 | Seed cho phiên bản sau |
+| H – Health, Lifestyle & Law | `Lifestyle_Habits.json` | 7 | Seed cho phiên bản sau |
+| H – Health, Lifestyle & Law | `Addiction_Rules.json` | 4 | Seed cho phiên bản sau |
+| H – Health, Lifestyle & Law | `Legal_Offenses.json` | 6 | Runtime Law, Crime & Justice |
+| H – Health, Lifestyle & Law | `Legal_Proceedings.json` | 5 | Runtime Law, Crime & Justice |
+| H – Health, Lifestyle & Law | `Penalties.json` | 3 | Runtime Law, Crime & Justice |
 | H – Health, Lifestyle & Law | `Prison_Rehabilitation.json` | 4 | Seed cho phiên bản sau |
 | I – Story & Events | `Story_Chapters.json` | 12 | Runtime Story Engine |
-| I – Story & Events | `Story_Events.json` | 20 | Runtime (19 hoạt động, RELEASE dữ liệu nền) |
-| I – Story & Events | `Event_Choices.json` | 38 | Runtime Story Engine |
+| I – Story & Events | `Story_Events.json` | 22 | Runtime (19 hoạt động, RELEASE dữ liệu nền) |
+| I – Story & Events | `Event_Choices.json` | 47 | Runtime Story Engine |
 | J – Endgame | `Achievements.json` | 7 | Seed cho phiên bản sau |
 | J – Endgame | `Life_Endings.json` | 40 | Seed cho phiên bản sau |
 | J – Endgame | `Legacy_Rules.json` | 2 | Seed cho phiên bản sau |
