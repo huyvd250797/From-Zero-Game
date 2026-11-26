@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V0.22.0 — Content Expansion & Game Balance**
+**V0.23.0 — Performance, PWA & Release Candidate**
 
 Game mô phỏng cuộc đời single-player, thành phố 3D low-poly nhìn từ trên cao. Có 28 địa điểm tương tác, nhân vật 18 tuổi với vốn 300.000–800.000đ theo độ khó, công việc thời vụ, ăn uống, thuê trọ, xe đạp và nhật ký. Không cần backend, database, tài khoản hoặc API key.
+
+## V0.23.0 — Performance, PWA & Release Candidate
+- Hai chế độ đồ họa: Tiêu chuẩn mục tiêu tối đa 60 FPS WebGL; Tiết kiệm và Canvas tối đa 30 FPS; giảm render khi menu/modal/tạm dừng, không render tab ẩn. Bộ đo FPS và thời gian render + nhãn, cache A* 128 tuyến trả bản sao độc lập, GPU dynamic buffer tái sử dụng, cache minimap/NPC giới hạn. Không thay đổi công thức mô phỏng.
+- Mobile: nút thu gọn menu, safe area, modal cuộn với nút đóng sticky ở Cài đặt, cỡ chữ ô nhập 16px, hỗ trợ reduced motion.
+- Save schema 1: giữ bản chính, backup xoay vòng và checkpoint trước thay thế; xác nhận khôi phục, xuất JSON, cảnh báo lỗi lưu trữ, phát hiện xung đột tab (không phải khóa giao dịch nguyên tử); không tự reload khi mất WebGL context.
+- Build tạo thư mục asset fingerprint, manifest PNG 192/512 + maskable, Service Worker precache SHA-256, cache-first trong từng build và kích hoạt cập nhật theo xác nhận; dev không đăng ký worker. Xem [docs/RELEASE-CANDIDATE.md](docs/RELEASE-CANDIDATE.md) để kiểm tra trên HTTPS/thiết bị thật.
+- Master Data giữ V2.9.0 (60 danh mục, 693 bản ghi). Không thêm dependency/backend. `npm test`, `npm run build`, `npm run verify:release`, `npm run smoke:http`, `npm run benchmark:navigation`.
 
 ## V0.22.0 — Content Expansion & Game Balance
 - Ba độ khó canonical; vốn, chi phí sinh hoạt/học tập và thu nhập lao động theo chế độ. Save cũ mặc định Bình thường; không điều chỉnh giá tài sản, lãi suất hoặc hợp đồng cũ theo độ khó.

@@ -24,7 +24,7 @@ export function npcSchedule(id,state){const n=byId.get(id);if(!n)return null;con
  {...leg(leisure,home,leave,leave+60,'Đang về nhà'),place:homeId},
  {start:leave+60,end:1440,a:home,label:'Ở gần nhà',place:homeId}];
  // A schedule is deterministic, so fast-forward and reload derive identical locations.
- schedules.set(key,result);return result;}
+ schedules.set(key,result);if(schedules.size>96)schedules.delete(schedules.keys().next().value);return result;}
 export function npcAt(id,minutes,state){const n=byId.get(id),schedule=npcSchedule(id,state);if(!n||!Number.isFinite(minutes))return null;const minute=((minutes%1440)+1440)%1440,seg=schedule.find(s=>minute>=s.start&&minute<s.end);let pos={...seg.a},yaw=0,travel=0,moving=false;if(seg.path?.length&&seg.length>0){travel=seg.length*(minute-seg.start)/(seg.end-seg.start);let left=travel,prev=seg.a;for(const next of seg.path){const len=distance(prev,next);if(left<=len&&len>0){pos={x:prev.x+(next.x-prev.x)*left/len,z:prev.z+(next.z-prev.z)*left/len};yaw=Math.atan2(next.x-prev.x,next.z-prev.z);moving=true;break}left-=len;prev=next;pos={...next}}}return {id,npc:n,pos,yaw,moving,phase:travel*7,status:seg.label,place:seg.place,placeName:record(seg.place).name}}
 let cacheKey='',cacheList=[];export function npcWorld(minutes,state){const key=minutes+':'+(state?.family?.partner?.stage==='married'?state.family.partner.id+':'+currentHome(state)?.id:'');if(key!==cacheKey){cacheKey=key;cacheList=npcs.map(n=>npcAt(n.id,minutes,state));}return cacheList}
 const day=m=>Math.floor(m/1440);

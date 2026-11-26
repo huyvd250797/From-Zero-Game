@@ -1,6 +1,14 @@
 import {compileMaster} from './master-data.mjs';
-await compileMaster();
-import {cp,mkdir,rm,copyFile} from 'node:fs/promises';
+import {cp,mkdir,rm,readFile,writeFile,readdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
 import {spawnSync} from 'node:child_process';
+await compileMaster();
 const check=spawnSync(process.execPath,['scripts/check.mjs'],{stdio:'inherit'});if(check.status!==0)process.exit(1);
-await rm('dist',{recursive:true,force:true});await mkdir('dist',{recursive:true});await cp('src','dist/src',{recursive:true});await cp('public','dist',{recursive:true});await copyFile('index.html','dist/index.html');console.log('From Zero v0.22.0 → dist/');
+const entries=async dir=>(await readdir(dir,{recursive:true,withFileTypes:true})).filter(x=>x.isFile()).map(x=>`${x.parentPath||x.path}/${x.name}`.replaceAll('\\','/')).sort();
+const version=JSON.parse(await readFile('package.json','utf8')).version;
+const hash=createHash('sha256').update(version);for(const file of [...await entries('src'),...await entries('public'),'index.html','scripts/build.mjs'])hash.update(file).update(await readFile(file));
+const fingerprint=hash.digest('hex').slice(0,16),assetDir=`assets/${fingerprint}`,cache=`fromzero-v${version}-${fingerprint}`;
+await rm('dist',{recursive:true,force:true});await mkdir('dist',{recursive:true});await cp('src',`dist/${assetDir}`,{recursive:true});await cp('public','dist',{recursive:true});
+const html=(await readFile('index.html','utf8')).replaceAll('./src/',`./${assetDir}/`).replace('</head>','<meta name="fz-production" content="1"></head>');await writeFile('dist/index.html',html);
+const files=(await entries('dist')).map(x=>x.replace(/^dist\//,'')).filter(x=>x!=='sw.js');const integrity={};for(const file of files)integrity['./'+file]='sha256-'+createHash('sha256').update(await readFile('dist/'+file)).digest('base64');
+const template=await readFile('public/sw.js','utf8');const sw=template.replace('__FZ_CACHE__',cache).replace('/*__FZ_INTEGRITY__*/{}',JSON.stringify(integrity));await writeFile('dist/sw.js',sw);console.log(`From Zero v${version} → dist/ · ${files.length} precached files · ${cache}`);

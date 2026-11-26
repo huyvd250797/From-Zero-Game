@@ -1,5 +1,11 @@
 # Changelog
 
+## V0.23.0 — Performance, PWA & Release Candidate (2026-11-26)
+- Giới hạn nhịp dựng hình theo chất lượng và trạng thái UI, đo FPS, cache tuyến đường và tái sử dụng buffer WebGL; menu mobile thu gọn, cải thiện safe area và modal.
+- Backup xoay vòng, checkpoint, phục hồi JSON, cảnh báo lỗi/quyền lưu trữ/xung đột tab, xử lý mất context không tự tải lại.
+- Asset fingerprint, manifest PNG/maskable, precache SHA-256, update có xác nhận, kiểm tra HTTP và inventory build. Giữ schema 1 và Master Data V2.9.0.
+- 332 ca hồi quy và 14 ca RC mới. Browser UI bằng Chromium Canvas và storage mô phỏng; truy cập localhost bị chặn nên chưa chứng nhận PWA offline thực tế.
+
 ## V0.22.0 — Content Expansion & Game Balance (2026-11-26)
 - Kích hoạt ba độ khó, mở ba địa điểm, tám NPC, hai khóa học và bốn biến cố (tám lựa chọn).
 - Dự toán sinh tồn, doanh thu/giá vốn/hòa vốn, yêu cầu nước uống cho ca thời vụ, đỗ phương tiện khi vào nhà, lưu độ khó trong báo cáo kết cục.

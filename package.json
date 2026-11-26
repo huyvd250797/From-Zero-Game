@@ -1,6 +1,6 @@
 {
   "name": "from-zero",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -12,7 +12,10 @@
     "data:validate": "node scripts/master-data.mjs",
     "predev": "npm run data:validate",
     "pretest": "npm run data:validate",
-    "simulate:balance": "node scripts/simulate-balance.mjs"
+    "simulate:balance": "node scripts/simulate-balance.mjs",
+    "verify:release": "node scripts/verify-release.mjs",
+    "benchmark:navigation": "node scripts/benchmark-navigation.mjs",
+    "smoke:http": "node scripts/smoke-http.mjs"
   },
   "engines": {
     "node": ">=20"

@@ -1,0 +1,3 @@
+// Rendering frequency is independent of simulation frequency.
+export function frameInterval({fallback=false,quality=1,active=true,hidden=false,blocked=false}={}){if(hidden||blocked)return Infinity;if(!active)return 250;return fallback||quality===0?1000/30:1000/60;}
+export class FrameMeter{constructor(){this.reset();}reset(){this.since=null;this.count=0;this.total=0;this.fps=null;this.ms=null;}sample(now,duration){if(this.since===null){this.since=now;return;}this.count++;this.total+=duration;const elapsed=now-this.since;if(elapsed>=2000){this.fps=Math.round(this.count*1000/elapsed);this.ms=Math.round(this.total/this.count*10)/10;this.since=now;this.count=0;this.total=0;}}}
