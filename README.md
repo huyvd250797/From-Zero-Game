@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.11.0 — Business & Wealth Simulation** · 26/11/2026
+**V2.12.0 — Living Families & Generations** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.12.0 — Living Families & Generations
+- Ngân sách gia đình, đóng góp trực tiếp từ tài khoản NPC vợ/chồng, lịch sử chi phí và tiền riêng; chăm sóc con tự động tùy chọn.
+- Học tập, tài chính, gia đình riêng và nghỉ hưu của con được mô phỏng theo ngày; nghề nghiệp vợ/chồng tiến triển từ dữ liệu dân cư.
+- Gia phả và phân chia di sản cho các con trưởng thành; người chơi thế hệ mới nhận phần riêng và tiền tích lũy của người thừa kế. Giữ cơ chế dòng thời gian mới.
+- Save schema 1, Master Data 3.1.0, không SQL. Xem [ghi chú kỹ thuật](docs/LIVING-FAMILIES-AND-GENERATIONS.md).
 
 ## V2.11.0 — Business & Wealth Simulation
 - One enterprise, up to two leased branches at existing destinations; common wallet, weighted inventory and staff allocation, branch rent and setup fees. Three supplier options and budget-limited reorder.

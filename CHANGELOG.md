@@ -1,3 +1,9 @@
+## V2.12.0 — Living Families & Generations (26/11/2026)
+- Independent spouse career, retirement, contribution and optional childcare.
+- Family spending ledger, budget target, child education and adult finances, family tree.
+- Split estate across eligible adult children; selected heir receives own share plus private savings.
+- Preserve schema 1, canonical Master Data, and production build gates.
+
 ## V2.11.0 — Business & Wealth Simulation (26/11/2026)
 - Lease up to two branches at existing venues, with aggregate staffing and centralized cash/stock. Add supplier tiers, configurable restock and opt-in staffed operation with daily deduplication and reserve/debt guards.
 - Add HR, supplier, branches, 7/30/90-day P&L and cash-flow reporting, and unified wealth allocation. Activate canonical land asset with simulated periodic rent, existing liquidation and inheritance treatment.
