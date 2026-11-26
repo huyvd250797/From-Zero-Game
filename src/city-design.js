@@ -1,0 +1,11 @@
+// Visual-only design registry. Stable canonical sites, no new navigation or economic entities.
+export const LANDMARK_PROFILES=Object.freeze({shop:'grocery',room:'boarding',cafe:'cafe',office:'office',bank:'bank',bike:'showroom',clinic:'clinic',mall:'mall',market:'market',factory:'factory',warehouse:'warehouse',school:'school',library:'library',cityhall:'civic',court:'court',hospital:'hospital',apartment:'apartment',police:'police',prison:'prison',mini_mart:'convenience',library_annex:'library'});
+export function designProfile(b){return LANDMARK_PROFILES[b.id]||({rowhouse:'shophouse',house:'house',retail:'retail',tower:'office',industrial:'warehouse',school:'school',medical:'clinic',civic:'civic'})[b.style]||b.style;}
+export const CITY_GRAPHICS_VERSION='3.0';
+export const CITY_BUDGET=Object.freeze({low:50000,high:140000,chunk:14000});
+// Flat markings replace unnecessary five-sided solids. All y values stay above the road surface.
+export function flatRect(m,x,y,z,w,d,col){if(w<=0||d<=0)return;const n=typeof col==='string'?parseInt(col.slice(1),16):0,c=typeof col==='string'?[(n>>16&255)/255,(n>>8&255)/255,(n&255)/255]:col;m.quad([x-w/2,y,z-d/2],[x+w/2,y,z-d/2],[x+w/2,y,z+d/2],[x-w/2,y,z+d/2],c);}
+export function roadSegments(start,end,crossings,margin=0){let cursor=start;const out=[];for(const r of [...crossings].sort((a,b)=>a.center-b.center)){const a=Math.max(start,r.center-r.width/2-margin),b=Math.min(end,r.center+r.width/2+margin);if(b<=cursor||a>=end)continue;if(a>cursor)out.push([cursor,a]);cursor=Math.max(cursor,b);}if(cursor<end)out.push([cursor,end]);return out;}
+// Stable positions in both LODs. Placement avoids existing lamps and crossings.
+export function treeStations(start,end,other){const out=[];for(let k=start+5;k<end;k+=12){if(other.some(v=>Math.abs(k-v.center)<v.width/2+4))continue;out.push(k);}return out;}
+export function intersectionPaint(m,a,b){for(const side of [-1,1]){for(let i=-a.width/2+.55;i<a.width/2-.1;i+=.9)flatRect(m,a.center+i,.097,b.center+side*(b.width/2+.60),.45,1.05,'#e8e6d8');for(let i=-b.width/2+.55;i<b.width/2-.1;i+=.9)flatRect(m,a.center+side*(a.width/2+.60),.098,b.center+i,1.05,.45,'#e8e6d8');flatRect(m,a.center+side*a.width*.25,.096,b.center+side*(b.width/2+1.48),a.width*.43,.16,'#e8e6d8');flatRect(m,a.center+side*(a.width/2+1.48),.096,b.center-side*b.width*.25,.16,b.width*.43,'#e8e6d8');}}

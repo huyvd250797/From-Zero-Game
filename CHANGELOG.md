@@ -1,3 +1,9 @@
+## V2.3.0 — City Graphics 3.0 (26/11/2026)
+- Stable visual profile registry for all canonical plots; refined Vietnamese housing, commercial, office, institutional and industrial geometry, selected Vietnamese rooftop signs.
+- Optimized road paint and pavement geometry, continuous crosswalks, separated intersection surfaces, drainage details, signs, landscaping and stable tree placements across LOD.
+- Refined procedural surface maps; keep shared materials, instancing and viewport lamps. Static High LOD triangle total reduced; Low LOD increased modestly with denser consistent tree placement.
+- 540 unit tests, native QA and asset integrity pass; real Three.js production and physical GPU validation pending. Master Data and save schema unchanged.
+
 ## V2.2.0 — Advanced Character Models (26/11/2026)
 - Original four GLB templates; improved body/face/hair, age shading, context wardrobe and LOD hysteresis. Shared 13-joint skeleton and 19 clips; diagnostics report actual loaded GLB templates/actors.
 - Distance-based NPC commute durations and walking cadence; 25 residents, Vietnamese full names, NPC_SAO one year younger than the player. Existing IDs retained.

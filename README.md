@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.2.0 — Advanced Character Models** · 26/11/2026
+**V2.3.0 — City Graphics 3.0** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.3.0 — City Graphics 3.0
+- Visual design registry covers all 79 plots, with 27 derived visual profiles and 21 landmark overrides. Keep 62 solid buildings, 28 interactive destinations, 192×192 map, all canonical IDs and entrance positions.
+- Vietnamese rowhouses: roof tanks, balcony planters, ventilation details and AC units. Separate mall/market, café, store/showroom, office/apartment, institutional and industrial façade details; Vietnamese rooftop identification on selected landmarks. Existing procedural stylized meshes, not imported architectural GLBs.
+- Flat road markings and sidewalk tile surfaces, separated intersecting asphalt strips, crosswalks and stop lines at both LODs, drainage grates, roadside signs, park planting and improved bench details. Tree stations stable at both LODs; keep all 82 lamp coordinates unchanged. Decorative props are visual only.
+- Improved 128px procedural surface texture patterns; preserve existing shared material grouping, instanced street trees, LOD hysteresis, predictive preparation and chunk cache. Total static city triangles High 116,108 vs 123,570; Low 40,148 vs 36,962, with 240 rather than 120 street trees at both levels. These are CPU geometry counts, not GPU FPS or draw-call measurements.
+- 540 independent tests and 83 Native QA assets; Desktop/Mobile Chromium Canvas smoke and offline mesh preview. Real Three.js dependency unavailable in local cache; production GPU validation pending. No database, migration, new dependency or Master Data change.
 
 ## V2.2.0 — Advanced Character Models
 - Four original skinned GLB templates (male/female, high/low); official GLTFLoader and SkeletonUtils clone in Three.js, same named 13 joints and 19 procedural clips. Customized models use shared geometry generator and the template rig; fallback works if GLB fails. No external model assets.
