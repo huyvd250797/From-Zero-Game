@@ -1,7 +1,16 @@
 # From Zero — Từ hai bàn tay trắng
-**V1.4.0 — Camera & Player Control** · 26/11/2026
+**V1.5.0 — Interactive Interiors** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V1.5.0 — Interactive Interiors
+- Vào nội thất mở mái tại nhà đang có quyền sử dụng và 14 địa điểm công cộng; nút “Vào bên trong · 3D” xuất hiện tại cửa.
+- Chạm nhãn đồ vật/sàn hoặc dùng WASD, phím mũi tên và bốn nút điều hướng để đi theo lưới 9×6 tránh đồ đạc. Chức năng tại vật dụng chỉ xuất hiện khi đến ô tương tác; E kích hoạt thao tác đầu tiên.
+- Phòng trọ/nhà dùng nội thất từ dữ liệu đã có; ngủ, tắm, thư giãn, nấu ăn, học tập. Các địa điểm công cộng chuyển tới đúng nghiệp vụ mua hàng, làm việc, học tập, ngân hàng, y tế. Giao dịch hiện vẫn dùng bảng xác nhận nghiệp vụ cũ.
+- Three.js r180: scene/camera riêng, MeshStandardMaterial và rig nhân vật, có fallback Canvas dựng từ cùng hình học; giải phóng scene khi rời phòng, không render lại thành phố trong lúc ở bên trong.
+- Không đổi save schema, Master Data hoặc collision ngoài thành phố. Vị trí trong phòng là trạng thái tạm thời; lưu/reload sẽ trở về cửa ngoài. Không tính thời gian đi bộ trong phòng (giống nội thất cũ), các hoạt động vẫn tính thời gian/chi phí theo quy tắc gốc.
+- Chưa có nội thất riêng theo từng loại nhà, hoạt động animation chuyên sâu hoặc nhà tù 3D. Production Three.js cần `npm ci` với Registry truy cập được; kiểm thử fallback không thay thế nghiệm thu GPU thực.
+- Chi tiết: `docs/INTERACTIVE-INTERIORS.md`.
 
 ## V1.4.0 — Camera & Player Control
 - 4 chế độ camera: Toàn cảnh, Theo nhân vật, Cận cảnh và Tự do; zoom .18–7, góc nghiêng 20–82°, xoay và bám theo mượt. Phép chiếu trực giao thống nhất Three.js, WebGL native và Canvas. Cận cảnh tự nâng góc khi tòa nhà chắn nhân vật; nếu vẫn khuất hiển thị cảnh báo.

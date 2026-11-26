@@ -1,3 +1,10 @@
+## V1.5.0 — Interactive Interiors
+- Thêm scene nội thất 3D mở mái cho nhà đang sử dụng và 14 địa điểm công cộng, geometry đồ đạc dùng chung Three.js/Canvas.
+- Di chuyển theo BFS nội bộ, nội suy vị trí, chạm sàn và nhãn đồ vật, WASD/mũi tên; chỉ mở thao tác ở đúng trạm.
+- Giữ nghiệp vụ và save cũ, kiểm tra cửa, giờ mở cửa, quyền sử dụng nhà; không thay đổi world position hoặc thời gian khi đi bộ nội thất.
+- Giải phóng tài nguyên khi đóng modal, dự phòng Canvas nếu renderer nội thất gặp lỗi; tạm ngừng render thành phố khi room scene hoạt động.
+- Thêm 11 unit test và 1 integration test Three.js (cần dependency thật).
+
 ## V1.4.0 — Camera & Player Control
 - Four orthographic camera modes; smoothed pan, yaw, elevation, zoom and tracking. Close mode automatic building sightline elevation; explicit occluded marker when pitch cap prevents clearance.
 - Shared projection/picking across renderers; tap uses last rendered projection. Multi-pointer gesture state, drag threshold, lost capture cleanup; no ghost taps after pinch.
