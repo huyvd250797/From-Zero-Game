@@ -9,4 +9,9 @@ export class ThreeAssets{
  clear(){this.closed=true;for(const p of this.cache.values())p.then(g=>disposeModel(g.scene)).catch(()=>{});this.cache.clear();}
 }
 // AnimationMixer drives each avatar skeleton; transitions use a short cross-fade.
-export class ClipPlayer{constructor(root,clips=[]){this.root=root;this.clips=clips;this.mixer=new AnimationMixer(root);this.current=null;}play(name,fade=.18){const clip=this.clips.find(c=>c.name===name);if(!clip)return false;const action=this.mixer.clipAction(clip);if(action===this.current)return true;action.reset().setEffectiveWeight(1).play();if(this.current){if(fade>0){this.current.fadeOut(fade);action.fadeIn(fade);}else this.current.stop();}this.current=action;return true;}update(dt){this.mixer.update(Math.max(0,Math.min(.25,dt)));}dispose(){this.mixer.stopAllAction();this.mixer.uncacheRoot(this.root);}}
+export class ClipPlayer{
+ constructor(root,clips=[]){this.root=root;this.clips=clips;this.mixer=new AnimationMixer(root);this.current=null;this.fading=new Map();this.time=0;}
+ play(name,fade=.18){const clip=this.clips.find(c=>c.name===name);if(!clip)return false;const action=this.mixer.clipAction(clip);if(action===this.current)return true;this.fading.delete(action);action.reset().setEffectiveWeight(1).play();if(this.current){if(fade>0){this.current.fadeOut(fade);this.fading.set(this.current,this.time+fade);action.fadeIn(fade);}else{this.current.stop();for(const a of this.fading.keys())a.stop();this.fading.clear();}}this.current=action;return true;}
+ update(dt){const delta=Math.max(0,Math.min(.25,dt));this.time+=delta;this.mixer.update(delta);for(const [action,end] of this.fading)if(this.time>=end){if(action!==this.current)action.stop();this.fading.delete(action);}}
+ dispose(){this.fading.clear();this.mixer.stopAllAction();this.mixer.uncacheRoot(this.root);}
+}

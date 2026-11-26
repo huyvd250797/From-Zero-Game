@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V1.11.0 — Game UI & HUD 2.0** · 26/11/2026
+**V1.12.0 — Visual Performance & Polish** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V1.12.0 — Visual Performance & Polish
+- CPU mesh conversion uses direct typed-array writes and skips UVs for untextured dynamic geometry. Overview merges low-LOD 2×2 regions into nine macro batches with shared tree instances; near-camera keeps individual chunks. Active regions are never evicted; cache limits are 18/28/44, expanded if the visible set exceeds the limit.
+- Adaptive internal render pixel budgets, 30 FPS optional battery mode, capped shadows and weather in battery mode; shadow passes refresh at 10–20 Hz or on major view changes. HUD and camera coordinates remain CSS-pixel based. NPC rigs retained for up to six seconds offscreen, clips cached by age, old crossfaded actions stopped. Traffic lanes precomputed; hidden vehicle geometry and duplicate NPC pass avoided.
+- Retain one previous fingerprinted PWA cache for old tabs during update, remove newly created incomplete cache after failed install, preserve current shell and save schema. No migration or new dependency.
+- See `docs/VISUAL-PERFORMANCE-POLISH.md` for benchmark, limitations and V2.0.0 acceptance checklist. Production Three.js still requires dependency install and runtime tests.
 
 ## V1.11.0 — Game UI & HUD 2.0
 - Compact HUD mặc định ẩn hai bảng phụ, thanh 7 chỉ số, minimap và 6 lối tắt. Menu cuộc đời gom toàn bộ chức năng; nút Camera mở thêm điều khiển mobile. Phím V vẫn bật/tắt bảng phụ.

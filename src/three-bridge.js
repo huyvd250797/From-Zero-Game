@@ -8,15 +8,16 @@ export const MATERIALS=Object.freeze([
  {name:'Vegetation',roughness:.98,metalness:0}
 ].map(Object.freeze));
 export const linear=c=>c<=.04045?c/12.92:((c+.055)/1.055)**2.4;
-export function meshArrays(raw,{grouped=true,ao=false}={}){
- const stream=surfaceGeometry(raw),count=stream.length/10,position=new Float32Array(count*3),normal=new Float32Array(count*3),color=new Float32Array(count*3),uv=new Float32Array(count*2),indices=Array.from({length:grouped?7:1},()=>[]);
+// Single-pass conversion of the normal stream; no per-vertex arrays or subarray views.
+export function meshArrays(raw,{grouped=true,ao=false,withUV=true}={}){
+ const stream=surfaceGeometry(raw),count=stream.length/10,position=new Float32Array(count*3),normal=new Float32Array(count*3),color=new Float32Array(count*3),uv=withUV?new Float32Array(count*2):null,index=new Uint32Array(count),groups=[],counts=new Uint32Array(grouped?7:1),offsets=new Uint32Array(counts.length);
+ for(let i=0;i<count;i+=3)counts[grouped?stream[i*10+9]:0]+=3;
+ let offset=0;for(let id=0;id<counts.length;id++){offsets[id]=offset;if(counts[id])groups.push({start:offset,count:counts[id],materialIndex:id});offset+=counts[id];}
  for(let i=0;i<count;i+=3){const off=i*10,id=grouped?stream[off+9]:0;
-  for(let k=0;k<3;k++){const s=off+k*10,j=i+k,x=stream[s],y=stream[s+1],z=stream[s+2],nx=stream[s+6],ny=stream[s+7],nz=stream[s+8];position.set([x,y,z],j*3);normal.set([nx,ny,nz],j*3);const contact=ao?.76+.24*Math.max(0,Math.min(1,(y-.1)/1)):1;for(let l=0;l<3;l++)color[j*3+l]=linear(stream[s+3+l])*contact;uv.set(Math.abs(ny)>.6?[x,z]:Math.abs(nx)>.6?[z,y]:[x,y],j*2);}
-  // Preserve intended face normal; reverse clockwise legacy faces before Three's front-face test.
-  const a=position.subarray(i*3,i*3+3),b=position.subarray(i*3+3,i*3+6),c=position.subarray(i*3+6,i*3+9),u=[b[0]-a[0],b[1]-a[1],b[2]-a[2]],v=[c[0]-a[0],c[1]-a[1],c[2]-a[2]];
-  const dot=(u[1]*v[2]-u[2]*v[1])*normal[i*3]+(u[2]*v[0]-u[0]*v[2])*normal[i*3+1]+(u[0]*v[1]-u[1]*v[0])*normal[i*3+2];indices[id].push(i,i+(dot<0?2:1),i+(dot<0?1:2));
+  for(let k=0;k<3;k++){const s=off+k*10,j=(i+k)*3,x=stream[s],y=stream[s+1],z=stream[s+2],nx=stream[s+6],ny=stream[s+7],nz=stream[s+8];position[j]=x;position[j+1]=y;position[j+2]=z;normal[j]=nx;normal[j+1]=ny;normal[j+2]=nz;const contact=ao?.76+.24*Math.max(0,Math.min(1,y-.1)):1;for(let l=0;l<3;l++)color[j+l]=linear(stream[s+3+l])*contact;if(uv){const q=(i+k)*2;uv[q]=Math.abs(ny)>.6?x:Math.abs(nx)>.6?z:x;uv[q+1]=Math.abs(ny)>.6?z:y;}}
+  const j=i*3,ax=position[j+3]-position[j],ay=position[j+4]-position[j+1],az=position[j+5]-position[j+2],bx=position[j+6]-position[j],by=position[j+7]-position[j+1],bz=position[j+8]-position[j+2];const dot=(ay*bz-az*by)*normal[j]+(az*bx-ax*bz)*normal[j+1]+(ax*by-ay*bx)*normal[j+2],k=offsets[id];index[k]=i;index[k+1]=i+(dot<0?2:1);index[k+2]=i+(dot<0?1:2);offsets[id]+=3;
  }
- const index=new Uint32Array(count),groups=[];let offset=0;indices.forEach((a,id)=>{if(a.length){index.set(a,offset);groups.push({start:offset,count:a.length,materialIndex:id});offset+=a.length;}});return {position,normal,color,uv,index,groups,count};
+ return {position,normal,color,uv,index,groups,count};
 }
 export function cameraSpec(camera,width,height,unit){const a=camera.yaw*Math.PI/180,{c,s,n}=cameraBasis(camera),d=480;return {target:[camera.x,0,camera.z],position:[camera.x+d*Math.sin(a)*c/n,d*s/n,camera.z+d*Math.cos(a)*c/n],halfWidth:width/(2*unit),halfHeight:height/(2*unit*n),near:.1,far:1000};}
 export function treeBatches(items){const groups=[[],[],[]];for(const item of items)groups[item.type].push(item);return groups;}

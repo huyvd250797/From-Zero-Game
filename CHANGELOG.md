@@ -1,3 +1,9 @@
+## V1.12.0 — Visual Performance & Polish
+- Direct typed-array geometry conversion, macro batching at overview, bounded cache, internal pixel budgets and optional battery mode.
+- Throttled shadow pass, invisible daytime lights, NPC rig reuse and shared clips, completed crossfade cleanup; precomputed traffic lane metadata and offscreen geometry filtering.
+- Preserve one prior fingerprinted cache during version transition; failed installs clean incomplete cache, update failures surfaced. No save schema or master data changes.
+- Native QA and benchmark results in `docs/VISUAL-PERFORMANCE-POLISH.md`; Three.js production requires real dependency and device acceptance.
+
 ## V1.11.0 — Game UI & HUD 2.0
 - Game-first HUD, seven compact need meters, six quick actions, grouped module menu, mobile collapsible camera, visible minimap and dynamic layout offsets.
 - Calendar weekday and today/tomorrow contractual shift preview; inventory grid with real item filters, character profile, dialogue bubble and context-specific interaction label, bounded notification history, pause menu.
