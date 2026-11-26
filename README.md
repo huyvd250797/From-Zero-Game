@@ -1,7 +1,12 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.6.0 — Autonomous NPC & Population** · 26/11/2026
+**V2.7.0 — Smart Mobility & Transportation** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.7.0 — Smart Mobility & Transportation
+- Three bidirectional bus lines, 14 existing stops, terminal departures 06:00–22:00, 12/15 minute headways; route planner searches timetable transfers and walking links, with up to 90-minute wait per boarding. Scheduled bus visuals and passenger journey use identical trip times and path sampling. Taxi pickup at valid outdoor positions with 3–6 minute wait and distance fare. Choose walking, owned vehicle, bus or taxi in the destination dialog; advance public journeys by game clock. Fare paid once upfront; cancel/reload does not refund or resume the session-only journey.
+- Stable NPC vehicle ownership derived from identity, daily mode (walk/bicycle/motorbike/car) chosen from route distance, needs and cash. Existing daily schedules use road paths for vehicles; daily transport expense included in NPC spending and optional cumulative transportSpent. Moving NPC vehicles and nearby parked vehicles use bounded viewport budgets; social interactions require NPC not riding. Parking planner excludes NPC and player occupied bays; rechecks at arrival. Roadside parking remains available.
+- Automatic player vehicles slow at peak hours and respect aligned road stop lines on red/amber. Existing manual driving and lane background traffic retained; no collision/fine/traffic-capacity simulation. Prefer sidewalk connectors when valid and reasonably short; fallback to canonical pathfinder. No map or Master Data changes. 582 unit tests, 88 native QA resources; production Three.js still requires npm access. See `docs/SMART-MOBILITY-TRANSPORTATION.md`.
 
 ## V2.6.0 — Autonomous NPC & Population
 - 65 named NPCs (40 additions, all previous 25 records unchanged); 90 deterministic non-interactive background walkers (5 candidates per district, fewer at night). All 18 districts have named residents and/or workplace/study destinations; residential homes assigned to added NPCs.

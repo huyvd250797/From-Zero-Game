@@ -1,3 +1,9 @@
+## V2.7.0 — Smart Mobility & Transportation (26/11/2026)
+- Scheduled bus network AL01–AL03, 14 stops, bidirectional service and transfer-aware journeys; street taxi pickup, fare and wait estimates. Destination chooser and timetable/parking screens.
+- NPC deterministic vehicle ownership, daily mode decisions and transport expense; viewport-capped moving/parked resident vehicles; occupied parking bay filtering and arrival recheck.
+- Prefer validated sidewalk links; peak-hour slowdown and red/amber stop lines for automatic player driving. Preserve orthographic camera, schema 1, Master Data 3.1.0 and 65 NPC identities.
+- 582 unit tests, Native QA build and HTTP verification 88 resources; production Three.js not certified locally.
+
 ## V2.6.0 — Autonomous NPC & Population (26/11/2026)
 - 40 new named residents; 65 total; 90 background pedestrians distributed across 18 districts. Preserve 25 original identities.
 - Persistent independent daily needs, cash, income/expense, plans and neighbor relations; midnight settlement and utility decisions feed daily movement routes. Residential assignment for new residents, work/study in all 18 districts.
