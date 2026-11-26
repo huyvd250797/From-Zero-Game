@@ -1,3 +1,10 @@
+## V1.7.0 — Advanced Transportation
+- Shared vehicle geometry: 6 owned types plus bus/taxi, circular rolling wheels, steering, distinct bodywork, brake lights and indicators; motorcycle rider and player marker.
+- Acceleration, coasting, brake control, bounded yaw and braking near route endpoints. Existing movement sweep and distance-based consumption preserved; no save or Master Data change.
+- Lane-based deterministic traffic, 36 intersections with phase-driven signals, red/amber stops and off-map reentry; traffic is visual only.
+- Speed HUD, brake (G / touch toggle), vehicle-follow camera, nearest free marked parking bay with auto route and park. Restores heading from saved vehicle on continue.
+- 13 new independent tests; 441 total. Native QA SHA-256/HTTP 67 assets. Three.js production integration test added but dependency unavailable locally.
+
 ## V1.6.0 — Living NPC World
 - Frame-level fractional time sampling for NPC route motion; smoothed yaw, distance-based gait rate, shared geometry/label snapshot and pause/time-skip handling.
 - Five additional NPC skeletal gestures, paired leisure conversations, short obstacle-checked local strolls, companion markers, bounded smoothed personal-space offsets.

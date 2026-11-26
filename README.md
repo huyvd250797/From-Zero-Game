@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V1.6.0 — Living NPC World** · 26/11/2026
+**V1.7.0 — Advanced Transportation** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V1.7.0 — Advanced Transportation
+- 8 shared procedural vehicle meshes (6 owned models, bus and taxi); rolling wheels and front-wheel steering, vehicle lights including brake and flashing turn-indicator colors. No external assets. The motorcycle rider uses the existing ride pose; vehicle lamps are colored geometry, not local light sources.
+- Continuous acceleration, coasting, stronger explicit braking and bounded yaw for owned vehicles; canonical maximum speed unchanged. Route following retains collision sweep and fuel cost per actual distance. G holds brake, mobile Phanh toggles; braking cancels auto route. Camera xe follows vehicle at a closer zoom; B parks/mounts as before. Bãi đỗ finds a reachable painted stall at one of the 3 existing lots, drives to it and parks. The saved position/yaw remains the existing schema.
+- Deterministic ambient right-hand traffic across 12 roads and 36 intersections; up to 24 ambient vehicles, shared signal cycle (8 green + 2 amber + 10 red simulation seconds per axis). Cars stop during amber/red and cross on green. Traffic is a visual simulation only: no player traffic penalties, no NPC vehicle collisions, no dynamic overtaking. Existing player auto routes use road centrelines and do not enforce signal phases.
+- See `docs/ADVANCED-TRANSPORTATION.md`. Three.js r180 unchanged; 441 unit tests; native preview 67 assets. Production requires actual Three.js dependency (`npm ci`).
 
 ## V1.6.0 — Living NPC World
 - NPC exterior positions sample the fractional simulation clock per render frame, with shortest-angle heading interpolation and distance-based gait pacing. Geometry, Three.js actors and labels consume the same snapshot. Paused gameplay freezes the snapshot; time skips reset presentation without replaying travel.

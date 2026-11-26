@@ -84,3 +84,8 @@
 .map-label.npc-talking{background:#405b69ed;border-color:#92d4d6;color:#e1faf4}.map-label.npc-marker{max-width:170px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 .room-tag.room-resident{pointer-events:none!important;min-height:17px!important;padding:2px 5px!important;background:#405b69ed!important;border-color:#92d4d6!important;font-size:10px!important;white-space:nowrap;z-index:1}
+
+/* V1.7.0 vehicle controls */
+.drive-hud{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:6px 8px;border:1px solid #78bc9b55;border-radius:9px;background:#0e211b99}.drive-hud strong{font-size:1.2rem;color:#a8e4be;font-variant-numeric:tabular-nums}.drive-hud small{flex:1;color:#bbd0c5}.drive-controls{display:flex;gap:5px}.drive-controls button{flex:1;min-width:0;padding:7px 5px;font-size:.85rem}.drive-controls:not(:has(> button:not(.hidden))){display:none}.drive-controls button.active{background:#8f473d;border-color:#ff9a81;color:#fff}
+
+@media(max-width:650px){.drive-controls{flex-wrap:wrap}.drive-controls button{flex:1 1 28%;font-size:10px;padding:7px 2px}.drive-hud{gap:3px;padding:4px 5px}.drive-hud strong{font-size:14px}.drive-hud small{font-size:9px}}
