@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.0.0 — Immersive Life Simulation** · 26/11/2026
+**V2.0.1 — Gameplay Experience & Stability** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.0.1 — Gameplay Experience & Stability
+- Smart Journey: choose walking or a reachable parked vehicle, walk to it, automatically board, replan the vehicle route and park at the destination. Keep the final destination when manually interrupting walking; cancel explicitly to discard it. Journey is session-local, not a save migration.
+- Viewport lighting: every visible street lamp receives an instanced bulb and soft world-space ground glow (Three.js), independent of the bounded supplemental PointLight pool; fade supplemental lights before reassigning. Stable lamp coordinates across LOD. Native/Canvas use approximate colored geometry. No per-lamp shadow maps.
+- NPC proximity labels (6 m enter / 8 m exit), max three nearby names, line-of-sight and viewport filters. Minimap hidden and drawing suspended by default; full map retained. Four visible quick actions, collapsible camera, context-dependent controls and default floating joystick; fixed joystick and minimap options in settings.
+- 19 original SVG item pictograms, shared by inventory, store and recipe screens.
+- Fractional frame pacing, fixed 60 Hz movement substeps and shared interpolated actor/camera position; occlusion pitch hold/rate limit; texel-snapped directional shadow center. No change to time/economic simulation or save schema. See `docs/GAMEPLAY-EXPERIENCE-STABILITY.md`.
 
 ## V2.0.0 — Immersive Life Simulation
 - Nhận diện thế hệ thứ hai, giữ nguyên Three.js r180, save schema 1, Master Data V2.9.0 và các hệ thống cuộc đời.

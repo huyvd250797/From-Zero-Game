@@ -17,3 +17,18 @@ export function trimCache(cache,active,limit,dispose){for(const [key,value] of c
 export class ShadowScheduler{constructor(){this.reset();}reset(){this.last=null;}update(now,camera,key,quality,enabled=true){if(!enabled){this.reset();return false;}const p=this.last,interval=quality>=3?50:quality===2?67:100;if(!p||now-p.now>=interval||p.key!==key||Math.hypot(camera.x-p.x,camera.z-p.z)>1||Math.abs(camera.zoom-p.zoom)>.12||angleDifference(camera.yaw,p.yaw)>3||Math.abs((camera.pitch??0)-p.pitch)>2){this.last={now,x:camera.x,z:camera.z,zoom:camera.zoom,yaw:camera.yaw??0,pitch:camera.pitch??0,key};return true;}return false;}}
 
 function angleDifference(a=0,b=0){return Math.abs((((a-b)%360)+540)%360-180);}
+
+// Preserve the fractional cadence instead of resetting to the last rAF timestamp.
+export class FramePacer {
+ constructor(){this.reset()}
+ reset(){this.next=null;this.interval=null;}
+ ready(now,interval){if(!Number.isFinite(interval)){this.reset();return false;}if(this.next===null||this.interval!==interval||now-this.next>interval*4){this.interval=interval;this.next=now+interval;return true;}if(now+.65<this.next)return false;this.next+=interval;while(this.next<=now-.65)this.next+=interval;return true;}
+}
+// Fixed movement substeps; bounded catch-up after a long stall. Interpolate only presentation.
+export const MOTION_STEP=1/60;
+export class MovementClock {
+ constructor(){this.reset()}
+ reset(pos=null){this.acc=0;this.previous=pos?{...pos}:null;}
+ advance(dt,pos,step,keepGoing=()=>true){this.acc+=Math.min(.20,Math.max(0,dt));if(!this.previous)this.previous={...pos()};while(this.acc+1e-9>=MOTION_STEP&&keepGoing()){this.previous={...pos()};step(MOTION_STEP);this.acc=Math.max(0,this.acc-MOTION_STEP);}if(!keepGoing())this.reset(pos());}
+ position(pos){const p=this.previous||pos,a=Math.min(1,this.acc/MOTION_STEP);return {x:p.x+(pos.x-p.x)*a,z:p.z+(pos.z-p.z)*a};}
+}

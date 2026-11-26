@@ -1,3 +1,10 @@
+## V2.0.1 — Gameplay Experience & Stability (26/11/2026)
+- Preserve final destination through vehicle pickup, automatic boarding, vehicle routing and arrival.
+- Viewport-aware instanced street-lamp glow + bulbs, stable LOD placement, fading local PointLight handoff; approximate fallback lighting.
+- Nearby NPC name hysteresis, max three, line-of-sight; default hidden minimap with suspended drawing, compact four-button quick bar, context controls and floating joystick.
+- 19 individual item SVGs. Fixed movement timestep and interpolated presentation, phase-preserving FPS limiter, close-camera pitch hold, texel-snapped shadow center.
+- Keep Master Data V2.9.0 and save schema 1. 511 independent tests; native QA only. Production Three.js dependency not cached locally.
+
 ## V1.12.0 — Visual Performance & Polish
 
 ## V2.0.0 — Immersive Life Simulation (26/11/2026)
