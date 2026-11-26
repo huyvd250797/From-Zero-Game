@@ -92,3 +92,5 @@
 
 /* Weather overlay is rendered separately from the HUD and never captures gestures. */
 #weatherCanvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}.weather-status{font-size:11px;color:#a9d2da;margin:3px 0 5px;letter-spacing:.02em}
+/* V1.9.0 activity presentation: progress is independent of game simulation. */
+.activity-stage{height:clamp(260px,45dvh,470px)}.activity-badge{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:#152b25e8;color:#e6f5e8;padding:6px 12px;border:1px solid #8db8a2;border-radius:99px;max-width:90%;text-align:center;pointer-events:none;font-size:13px}.activity-progress{display:block;width:100%;height:14px;accent-color:#7ad1a5;margin:12px 0 4px}.activity-info{font-variant-numeric:tabular-nums;margin:5px 0 10px!important;color:#d4eadb!important}.activity-dialog .room-footer{margin-top:8px}.activity-dialog .room-controls button[aria-pressed=true]{outline:2px solid #a3e0bc;outline-offset:-2px}@media(max-width:650px){.activity-stage{height:clamp(230px,38dvh,350px)}.activity-dialog .room-footer button{min-height:44px}}

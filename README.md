@@ -1,7 +1,11 @@
 # From Zero — Từ hai bàn tay trắng
-**V1.8.0 — Weather & Atmosphere** · 26/11/2026
+**V1.9.0 — Immersive Activities** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V1.9.0 — Immersive Activities
+- Animated activity scenes tied to existing room stations and business actions; outdoor actions use a local illustrative scene. Close-up camera and full-room toggle, eight new skeletal clips, handheld props, ×1/×2/×4, finish now or cancel. Original simulation action runs once only on completion; no partial changes on cancellation, no new save fields. See `docs/IMMERSIVE-ACTIVITIES.md`.
+- Three.js r180 remains required for production; Canvas preview is available for QA. Three.js runtime is not verified locally because dependency is absent from npm cache.
 
 ## V1.8.0 — Weather & Atmosphere
 - Five deterministic climate states (clear, cloudy, rain, heavy rain, fog), three-hour slots and 24-minute transitions. Wet season May–November and dry season December–April; purely visual fictional climate, no external weather API. Road wetness decays after rain. Golden-hour colour and cloud-dependent sun strength.

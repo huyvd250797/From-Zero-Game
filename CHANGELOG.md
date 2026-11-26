@@ -1,3 +1,8 @@
+## V1.9.0 — Immersive Activities
+- ActivityRun presentation controller, exact-once completion, cancellation, progress and selectable ×1/×2/×4 preview rates. Existing action functions remain authoritative.
+- Eight additional skeletal clips and shared bone-attached props; sleeping and seated furniture anchors, close-up camera with full-room toggle. Connect station actions, item use, shop, cooking, work, study and NPC social interactions. Outdoor activities use a local visual scene.
+- No Master Data, dependency, gameplay formula or save schema change. Production Three.js remains gated by actual install and runtime tests.
+
 ## V1.8.0 — Weather & Atmosphere
 - Deterministic visual climate with five states, wet/dry seasons, smooth cloud/rain/fog/wind transitions and road drying; fractional game time used for lighting.
 - Batched animated rain, fog, puddle geometry, wet road roughness/darkening, golden-hour and cloud shading. Screen-space particles pause, respect reduced motion and never intercept input.
