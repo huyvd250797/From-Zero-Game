@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.3.0 — City Graphics 3.0** · 26/11/2026
+**V2.4.0 — Advanced Lighting & Atmosphere** · 26/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.4.0 — Advanced Lighting & Atmosphere
+- Improved day/night palette, hemisphere ground bounce approximation, exposure and cloud-dependent soft shadow strength. Keep orthographic view and stable shadow coordinates.
+- Dedicated emissive material for canonical facade glass, daytime off and late-night dimming; no extra lights per window. Sky gradient in Three.js and Canvas; moving soft ground cloud footprints on Three.js.
+- Every visible streetlamp retains its base glow and bulb; wet roads receive bounded road-aligned glow streaks, PBR roughness and darkening, plus animated puddle ripples. These are simulated highlights, not ray-traced or screen-space reflections.
+- Deterministic soft lightning pulse and delayed procedural thunder on existing weather audio bus, only at normal simulation speed. Flash setting and reduced-motion suppression. Manual weather changes interpolate over 1.6 seconds, automatic climate keeps existing deterministic schedule.
+- Quality/eco limits for cloud, rain, ripple, reflection and overlay DPR. No changes to Master Data, save schema or gameplay. See `docs/ADVANCED-LIGHTING-ATMOSPHERE.md`.
 
 ## V2.3.0 — City Graphics 3.0
 - Visual design registry covers all 79 plots, with 27 derived visual profiles and 21 landmark overrides. Keep 62 solid buildings, 28 interactive destinations, 192×192 map, all canonical IDs and entrance positions.

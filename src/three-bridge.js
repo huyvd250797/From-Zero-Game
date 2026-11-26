@@ -1,3 +1,4 @@
+import {isBuildingGlass} from './atmosphere-detail.js';
 import {cameraBasis} from './camera-control.js';
 import {surfaceGeometry} from './graphics.js';
 // Presentation-only conversion. Canonical game coordinates, colours and triangle surfaces remain intact.
@@ -9,11 +10,12 @@ export const MATERIALS=Object.freeze([
 ].map(Object.freeze));
 export const linear=c=>c<=.04045?c/12.92:((c+.055)/1.055)**2.4;
 // Single-pass conversion of the normal stream; no per-vertex arrays or subarray views.
-export function meshArrays(raw,{grouped=true,ao=false,withUV=true}={}){
- const stream=surfaceGeometry(raw),count=stream.length/10,position=new Float32Array(count*3),normal=new Float32Array(count*3),color=new Float32Array(count*3),uv=withUV?new Float32Array(count*2):null,index=new Uint32Array(count),groups=[],counts=new Uint32Array(grouped?7:1),offsets=new Uint32Array(counts.length);
- for(let i=0;i<count;i+=3)counts[grouped?stream[i*10+9]:0]+=3;
+export function meshArrays(raw,{grouped=true,ao=false,withUV=true,windowLighting=false}={}){
+ const stream=surfaceGeometry(raw),count=stream.length/10,position=new Float32Array(count*3),normal=new Float32Array(count*3),color=new Float32Array(count*3),uv=withUV?new Float32Array(count*2):null,index=new Uint32Array(count),groups=[],counts=new Uint32Array(grouped?(windowLighting?8:7):1),offsets=new Uint32Array(counts.length);
+ const groupAt=i=>!grouped?0:windowLighting&&stream[i*10+9]===3&&isBuildingGlass(stream[i*10+3],stream[i*10+4],stream[i*10+5])?7:stream[i*10+9];
+ for(let i=0;i<count;i+=3)counts[groupAt(i)]+=3;
  let offset=0;for(let id=0;id<counts.length;id++){offsets[id]=offset;if(counts[id])groups.push({start:offset,count:counts[id],materialIndex:id});offset+=counts[id];}
- for(let i=0;i<count;i+=3){const off=i*10,id=grouped?stream[off+9]:0;
+ for(let i=0;i<count;i+=3){const off=i*10,id=groupAt(i);
   for(let k=0;k<3;k++){const s=off+k*10,j=(i+k)*3,x=stream[s],y=stream[s+1],z=stream[s+2],nx=stream[s+6],ny=stream[s+7],nz=stream[s+8];position[j]=x;position[j+1]=y;position[j+2]=z;normal[j]=nx;normal[j+1]=ny;normal[j+2]=nz;const contact=ao?(Math.abs(ny)<.65?.78+.22*Math.max(0,Math.min(1,(y-.08)/1.6)):.94+.06*Math.max(0,Math.min(1,y))):1;for(let l=0;l<3;l++)color[j+l]=linear(stream[s+3+l])*contact;if(uv){const q=(i+k)*2;uv[q]=Math.abs(ny)>.6?x:Math.abs(nx)>.6?z:x;uv[q+1]=Math.abs(ny)>.6?z:y;}}
   const j=i*3,ax=position[j+3]-position[j],ay=position[j+4]-position[j+1],az=position[j+5]-position[j+2],bx=position[j+6]-position[j],by=position[j+7]-position[j+1],bz=position[j+8]-position[j+2];const dot=(ay*bz-az*by)*normal[j]+(az*bx-ax*bz)*normal[j+1]+(ax*by-ay*bx)*normal[j+2],k=offsets[id];index[k]=i;index[k+1]=i+(dot<0?2:1);index[k+2]=i+(dot<0?1:2);offsets[id]+=3;
  }

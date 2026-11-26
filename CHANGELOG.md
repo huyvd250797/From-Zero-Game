@@ -1,3 +1,9 @@
+## V2.4.0 — Advanced Lighting & Atmosphere (26/11/2026)
+- Day/night sky gradient, color/exposure grading, hemisphere ground fill, cloud-dependent directional soft shadows, zoom-aware fog.
+- Separate facade-window emission group, 82 preserved lamps with all-viewport base glow, road-aligned wet highlights, bounded clouds and puddle ripples.
+- Manual weather interpolation, accessible soft lightning toggle, delayed procedural thunder and quality-aware weather budgets. No game simulation or Master Data changes.
+- 551 independent tests; 84 native-preview resources verified. Production Three.js gate remains required.
+
 ## V2.3.0 — City Graphics 3.0 (26/11/2026)
 - Stable visual profile registry for all canonical plots; refined Vietnamese housing, commercial, office, institutional and industrial geometry, selected Vietnamese rooftop signs.
 - Optimized road paint and pavement geometry, continuous crosswalks, separated intersection surfaces, drainage details, signs, landscaping and stable tree placements across LOD.
