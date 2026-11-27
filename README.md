@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.9.0 — Advanced Vehicle Dynamics** · 27/11/2026
+**V3.10.0 — Collision & Vehicle Damage** · 27/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V3.10.0 — Collision & Vehicle Damage
+- Swept player-vehicle collisions, impact-dependent damage, condition and breakdown; persisted accident history and compatible saves.
+- Repair, recovery towing service and paid maintenance through the vehicle menu. Existing showroom reused as garage.
+- Night vehicle lighting: front spotlights, additive light footprints, unlit lens meshes, red rear/brake lights and reverse lamps; bounded GPU resources and lamp failure based on condition.
+- See [Collision & Vehicle Damage](docs/COLLISION-AND-VEHICLE-DAMAGE.md) for scope and limitations.
 
 ## V3.9.0 — Advanced Vehicle Dynamics
 - Eight vehicle profiles, power/mass-dependent acceleration, braking, speed-dependent steering, coast, reverse (H), grip, wet weather, EV regeneration, wheel animation and body roll. Automatic routes retain exact waypoints; buses and background traffic remain schedule/path-driven.

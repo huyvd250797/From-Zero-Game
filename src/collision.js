@@ -1,0 +1,14 @@
+import {roadsX,roadsZ,SIZE,CHUNK,urbanPlan,roadPoint} from './world.js';
+import {treeStations} from './city-design.js';
+import {streetPropAllowed} from './city-architecture.js';
+import {streetLights} from './weather-world.js';
+const dims={VEH_BIKE:[.28,.9],VEH_MOTO:[.32,.95],VEH_CAR:[.7,1.48],VEH_EV:[.7,1.48],VEH_LUX:[.75,1.65],VEH_TRUCK:[.86,2],BUS:[.86,2.34],TAXI:[.7,1.48]};
+// Swept circles along the chassis; supports long vehicles without an oversized single circle.
+function discs(v){const [r,l]=v.kind==='pedestrian'?[.26,.26]:v.kind==='object'?[v.radius||.18,v.radius||.18]:dims[v.id]||dims.VEH_CAR;const yaw=v.yaw||0,a=Math.max(0,l-r);return (a?[ -a,0,a]:[0]).map(k=>({x:v.pos.x+Math.sin(yaw)*k,z:v.pos.z+Math.cos(yaw)*k,r}));}
+function sweep(a,b,c,r){const dx=b.x-a.x,dz=b.z-a.z,x=a.x-c.x,z=a.z-c.z,A=dx*dx+dz*dz,B=2*(x*dx+z*dz),C=x*x+z*z-r*r;if(A<1e-12)return null;if(C<=0)return B< -1e-8?0:null;const D=B*B-4*A*C;if(D<0)return null;const t=(-B-Math.sqrt(D))/(2*A);return t>=0&&t<=1?t:null;}
+export function firstCollision(from,to,id,yaw,actors){let hit=null;const a=discs({pos:from,id,yaw}),b=discs({pos:to,id,yaw});for(const v of actors){if(!v?.pos||Math.hypot(v.pos.x-from.x,v.pos.z-from.z)>Math.hypot(to.x-from.x,to.z-from.z)+6)continue;for(const c of discs(v))for(let i=0;i<a.length;i++){const t=sweep(a[i],b[i],c,a[i].r+c.r);if(t!==null&&(!hit||t<hit.t))hit={t,actor:v};}}return hit;}
+let props;
+export function staticCollisionProps(){if(props)return props;props=[];for(const [list,other,vertical] of [[roadsX,roadsZ,true],[roadsZ,roadsX,false]])for(const r of list)for(let start=0;start<SIZE;start+=CHUNK)for(const [a,b] of urbanPlan.ranges(r,start,Math.min(start+CHUNK,SIZE)))for(const k of treeStations(a,b,other))for(const side of [-1,1]){const q=r.center+side*(r.width/2+1.1),x=vertical?q:k,z=vertical?k:q,p=roadPoint(r,k,side*(r.width/2+1.1));if(streetPropAllowed(x,z)&&streetPropAllowed(p.x,p.z))props.push({kind:'object',key:'tree:'+p.x+':'+p.z,pos:p,radius:.22});}for(const p of streetLights()){props.push({kind:'object',key:'lamp:'+p.x+':'+p.z,pos:{x:p.x,z:p.z},radius:.15});}return props;}
+export function relativeImpactSpeed(speed,yaw,actor){const v=actor.speed||0,a=actor.yaw||0;return Math.hypot(Math.sin(yaw)*speed-Math.sin(a)*v,Math.cos(yaw)*speed-Math.cos(a)*v);}
+
+let propGrid;export function nearbyCollisionProps(pos,radius=12){if(!propGrid){propGrid=new Map();for(const p of staticCollisionProps()){const key=Math.floor(p.pos.x/8)+':'+Math.floor(p.pos.z/8);if(!propGrid.has(key))propGrid.set(key,[]);propGrid.get(key).push(p);}}const out=[];for(let x=Math.floor((pos.x-radius)/8);x<=Math.floor((pos.x+radius)/8);x++)for(let z=Math.floor((pos.z-radius)/8);z<=Math.floor((pos.z+radius)/8);z++)out.push(...(propGrid.get(x+':'+z)||[]));return out;}

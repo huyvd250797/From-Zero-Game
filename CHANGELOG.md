@@ -1,3 +1,9 @@
+## V3.10.0 — Collision & Vehicle Damage (27/11/2026)
+- Add player vehicle swept collision checks, impact energy, five-part damage condition, breakdown and saved accident history.
+- Add paid garage repair, towing service and maintenance effects. Preserve layout 9 and schema 1.
+- Add condition-aware night headlights, rear/brake and reverse lights, Three.js spotlights, additive light footprints and native preview approximation.
+- Add focused damage, collision, transaction and geometry tests. Three.js production and full browser rendering remain pending where dependencies are unavailable.
+
 ## V3.9.0 — Advanced Vehicle Dynamics (27/11/2026)
 - Add eight kinematic vehicle profiles, power/weight and grip based driving, braking, reverse, roll, wheel phase, EV regeneration and load-sensitive sound.
 - Replace decorative highway with a connected four-lane perimeter ring, eight entry/exit points, two extra river bridges and persistent background trips.

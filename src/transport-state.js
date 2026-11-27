@@ -1,3 +1,4 @@
+import {conditionOf,conditionScore} from "./vehicle-damage.js";
 import {quote,goodsPrice,assetPrice,wageQuote,rateQuote,actionCash,economyAt,vacancyOpen} from './economy.js';
 import {catalogs,record} from './master-data.js';
 import {walkable} from './world.js';
@@ -6,7 +7,7 @@ export const transportDefaults=()=>({transport:{bikePos:null,bikeYaw:0,vehicles:
 export const activeVehicle=s=>s.transport?.vehicles.find(v=>v.id===s.transport.active)||null;
 export const driving=s=>!!activeVehicle(s)||!!s.riding;
 export const bikePosition=s=>s.transport?.bikePos||s.pos;
-export const vehicleValue=(v,s)=>Math.floor(assetPrice(s,record(v.id))*Math.max(.45,1-v.distance/100000));
+export const vehicleValue=(v,s)=>Math.floor(assetPrice(s,record(v.id))*Math.max(.45,1-v.distance/100000)*(.4+.6*conditionScore(conditionOf(s,v.id))/100));
 export const vehicleSale=(v,s)=>Math.floor(vehicleValue(v,s)*.9);
 export const vehicleDebt=s=>s.transport?.debt||0;
 export const parkedVehicles=s=>[...(s.bike&&!s.riding?[{id:'VEH_BIKE',pos:bikePosition(s),yaw:s.transport?.bikeYaw||0}]:[]),...(s.transport?.vehicles||[]).filter(v=>v.id!==s.transport.active)];

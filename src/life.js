@@ -11,6 +11,7 @@ import {livingQuote,quote,goodsPrice,assetPrice,wageQuote,rateQuote,actionCash,e
 import {businessTick} from './business.js';
 import {bankingTick} from './banking.js';
 import {familyTick,familyHousingOK,familySize,childAge} from './family.js';
+import {wearCondition} from './vehicle-damage.js';
 import {vehicleTick} from './transport.js';
 import {housingTick} from './housing.js';
 import {pruneDetails} from './personal-finance.js';
@@ -38,7 +39,7 @@ export const schedule=place=>scheduleByPlace.get(place);
 export function isOpen(place,minutes,duration=0){const r=schedule(place);if(!r)return false;if(r.opens===0&&r.closes===1440)return true;const m=minutes%1440;return m>=r.opens&&m<r.closes&&m+duration<=r.closes;}
 export function scheduleLabel(place){const r=schedule(place);return !r?'Chưa có lịch':r.opens===0&&r.closes===1440?'24/24':`${hhmm(r.opens)}–${hhmm(r.closes)}`;}
 export function untilOpen(place,minutes){const r=schedule(place);if(!r||isOpen(place,minutes))return 0;const m=minutes%1440;return (r.opens-m+1440)%1440;}
-export function settleDebt(s){if(s.maintenanceDebt>0&&s.cash>=s.maintenanceDebt){if(!cashChange(s,-s.maintenanceDebt,'EXP_TRANSPORT','Thanh toán bảo dưỡng xe đạp'))return;log(s,`Đã thanh toán phí bảo dưỡng ${s.maintenanceDebt.toLocaleString('vi-VN')}đ.`);s.maintenanceDebt=0;}}
+export function settleDebt(s){if(s.maintenanceDebt>0&&s.cash>=s.maintenanceDebt){if(!cashChange(s,-s.maintenanceDebt,'EXP_TRANSPORT','Thanh toán bảo dưỡng xe đạp'))return;wearCondition(s,'VEH_BIKE');log(s,`Đã thanh toán phí bảo dưỡng ${s.maintenanceDebt.toLocaleString('vi-VN')}đ.`);s.maintenanceDebt=0;}}
 const needKeys={ATR_ENERGY:'energy',ATR_HUNGER:'hunger',ATR_HYGIENE:'hygiene',ATR_HYDRATION:'hydration'};
 export function advanceTime(s,minutes,{resting=false,sleeping=false}={}){
  if(!Number.isSafeInteger(minutes)||minutes<0||minutes>10080)throw RangeError('Thời lượng không hợp lệ');

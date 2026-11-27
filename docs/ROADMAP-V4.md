@@ -1,6 +1,6 @@
 # From Zero — Roadmap V4.0.0
 
-Baseline V3.0.0 Advanced Life Simulation. Main releases only; intermediate patches do not count. Status reflects source implementation, not production acceptance. As of V3.9.0: 9/16 (56.25%), 7 remaining.
+Baseline V3.0.0 Advanced Life Simulation. Main releases only; intermediate patches do not count. Status reflects source implementation, not production acceptance. As of V3.10.0: 10/16 (62.5%), 6 remaining.
 
 ## M1 — Premium Experience & Digital Life (4/4)
 - [x] V3.1.0 — Premium Identity & UX
@@ -14,9 +14,9 @@ Baseline V3.0.0 Advanced Life Simulation. Main releases only; intermediate patch
 - [x] V3.7.0 — Public Transport 4.0
 - [x] V3.8.0 — Smart Navigation & Camera (source; production acceptance pending)
 
-## M3 — Vehicle Physics & Living Traffic (1/4)
+## M3 — Vehicle Physics & Living Traffic (2/4)
 - [x] V3.9.0 — Advanced Vehicle Dynamics
-- [ ] V3.10.0 — Collision & Vehicle Damage
+- [x] V3.10.0 — Collision & Vehicle Damage
 - [ ] V3.11.0 — Intelligent Traffic AI
 - [ ] V3.12.0 — Traffic Law & City Services
 

@@ -3,7 +3,7 @@ import {clamp,sites,walkable} from './world.js';
 import {distance,moveSwept,advanceRoute,routeLength} from './navigation.js';
 export const wrapYaw=a=>Math.atan2(Math.sin(a),Math.cos(a));
 export const yawDelta=(a,b)=>wrapYaw(b-a);
-export const drivingState=()=>({id:null,speed:0,yaw:0,steer:0,distance:0,braking:false,indicator:0,gear:1,roll:0,regen:0,acceleration:0,wheelDistance:0,grip:1});
+export const drivingState=()=>({id:null,speed:0,yaw:0,steer:0,distance:0,braking:false,indicator:0,gear:1,roll:0,regen:0,acceleration:0,wheelDistance:0,grip:1,lastImpactKey:null,lastImpactAt:0});
 export function resetDriving(d,id=null,yaw=0){Object.assign(d,drivingState(),{id,yaw:wrapYaw(yaw)});return d;}
 export const VEHICLE_DYNAMICS=Object.freeze({
  VEH_BIKE:{mass:90,power:0.35,accel:2.4,brake:4.5,wheelbase:1.35,steer:.68,roll:.55,grip:.9,reverse:false},
