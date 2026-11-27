@@ -1,3 +1,9 @@
+## V2.14.0 — Digital Life, Performance & Polish (27/11/2026)
+- Local in-game smartphone with 15 entries, read-only dashboard, confirmed canonical wallet transfers, scripted NPC conversations and persistent categorized notifications.
+- Explicit current-state checkpoint, storage readback and additional stale-token check, slot diagnostics and opt-in browser persistence request. Preserve schema 1 and existing PWA integrity/update gates.
+- Cache static culling corners, camera projection basis and annual ambient cohorts; stop city rendering while the phone is open and throttle management-modal HUD updates. CPU benchmark and exact culling regression coverage.
+- 12 new unit tests, 674 total; Native QA 99 assets. No new dependency, Master Data or SQL. Production GPU verification pending.
+
 ## V2.13.0 — Evolving City & Economy (26/11/2026)
 - Deterministic annual district evolution, dynamic ambient population, synthetic establishment openings/closures and employer hiring status.
 - Four periodic economic shocks; sector stock effects, local property and branch-weighted demand, indexed resident daily finances, 12-year city history and 12-period inflation.

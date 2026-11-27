@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.13.0 — Evolving City & Economy** · 26/11/2026
+**V2.14.0 — Digital Life, Performance & Polish** · 27/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V2.14.0 — Digital Life, Performance & Polish
+- Điện thoại trong game: 15 mục truy cập, tổng quan cuộc đời, nạp/rút tài khoản theo nghiệp vụ chuyển nội bộ có xác nhận, liên lạc NPC đã quen (3 câu hỏi mẫu, 1 lượt/NPC/ngày, không tăng độ tin tưởng).
+- Thông báo quan trọng lưu qua phiên chơi (80 mục, bộ lọc, trạng thái đọc); tin nhắn lưu 80 mục. Save schema 1, tự khởi tạo dữ liệu digital cho bản lưu cũ.
+- Quản lý bản lưu: kiểm tra 3 slot, tạo checkpoint hiện tại theo yêu cầu, kiểm tra token trước ghi và đọc lại dữ liệu đã ghi; yêu cầu lưu trữ bền vững nếu trình duyệt hỗ trợ. Không đồng bộ đám mây.
+- Tối ưu CPU: precompute bounding corners của 144 chunk, cache camera basis và cohort dân cư nền; tạm ngừng dựng thành phố khi mở điện thoại, giảm nhịp cập nhật HUD khi mở modal quản lý. Không giảm chi tiết mô hình đang hiển thị.
+- 674 unit tests (12 mới), Native QA 99 tài nguyên; Desktop/Mobile Chromium với Canvas fallback và bộ nhớ giả lập. Production Three.js cần npm registry, chưa xác minh trong môi trường QA. Xem [ghi chú kỹ thuật](docs/DIGITAL-LIFE-PERFORMANCE-POLISH.md).
 
 ## V2.13.0 — Evolving City & Economy
 - 18 phân khu tiến triển độc lập mỗi 360 ngày game; dân cư nền 3–9 mỗi khu, mô phỏng cơ sở kinh doanh mở/đóng và chỉ số phát triển. Giữ 65 NPC định danh, bản đồ và tọa độ cũ.
