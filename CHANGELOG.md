@@ -1,3 +1,11 @@
+## V3.12.0 — Traffic Law & City Services (27/11/2026)
+
+- Add schema-compatible traffic records, fictional fines, license quiz and points, camera/patrol attribution, accident reports, insurance and claims.
+- Add city-service menu and phone shortcuts, route-based emergency dispatch actors, reception, existing tow transfer, and hospital treatment. AI reacts to priority vehicles using bounded yielding heuristics.
+- Replace bus route calculation with direction-aware directed-edge search, safe hook removal and rounded transitions. All 30 legs share a kinematic timetable for NPC buses and riders; max 30 km/h, acceleration 1.35 m/s², braking 1.8 m/s², yaw rate 1 rad/s, controlled stops.
+- Save schema 1, layout 9, Three.js r180 and all three public bus lines retained. No new backend dependency.
+- Final focused tests 72/72 across four disjoint runs; native preview 130 SHA-256/HTTP resources. Mixed-version full regression stopped at 461 successful tests; final full regression not certified. Production dependency not installed in this environment (ENOTCACHED); no production/browser acceptance.
+
 ## V3.11.1 — Deployment & Regression Fix
 
 - Synchronize the Three.js night-light integration fixture with the renderer vehicle-lamp contract, including the active light count, independent weather toggle and cleanup.

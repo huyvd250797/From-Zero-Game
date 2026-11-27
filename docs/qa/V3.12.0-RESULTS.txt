@@ -1,0 +1,70 @@
+V3.12.0 final focused QA
+--- fz312-finalnew.log
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8400.289439
+--- fz312-finalbus.log
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9438.734234
+--- fz312-finaltraffic.log
+1..32
+# tests 32
+# suites 0
+# pass 32
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 14185.014581
+--- fz312-finalbranding.log
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7162.322529
+--- Native preview
+
+> from-zero@3.12.0 build:native-preview
+> node scripts/build.mjs --native-preview
+
+
+[BUILD] JavaScript syntax
+JavaScript syntax check passed
+[BUILD PASS] JavaScript syntax
+From Zero v3.12.0 → dist-native-preview/ · 130 files · 0 Three.js files · NATIVE PREVIEW ONLY (no production PWA)
+
+[BUILD] Release integrity
+PASS: 130 assets; exact SHA-256, HTML references and versioned paths.
+[BUILD PASS] Release integrity
+HTTP integrity PASS: 130 resources
+--- Production
+
+[BUILD] JavaScript syntax
+JavaScript syntax check passed
+[BUILD PASS] JavaScript syntax
+file:///mnt/data/fz312/scripts/three-vendor.mjs:9
+ let pkg;try{pkg=JSON.parse(await readFile(path.join(root,'package.json'),'utf8'));}catch{throw Error('Three.js dependency missing. Run npm ci with npm Registry access. Use build:native-preview only for local fallback QA.');}
+                                                                                                ^
+
+Error: Three.js dependency missing. Run npm ci with npm Registry access. Use build:native-preview only for local fallback QA.
+    at vendorInventory (file:///mnt/data/fz312/scripts/three-vendor.mjs:9:97)
+    at async file:///mnt/data/fz312/scripts/build.mjs:12:32
+
+Node.js v22.16.0

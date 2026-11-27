@@ -1,7 +1,7 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.11.1 — Deployment & Regression Fix** · 27/11/2026
+**V3.12.0 — Traffic Law & City Services** · 27/11/2026
 
-Hotfix: updated the real Three.js lighting integration test for the renderer-provided vehicle lamp list. Production still runs all unit and Three.js integration tests. If deployment fails, inspect the `[BUILD FAILED]` stage and the failing test summary, not the final Vercel wrapper error. Three.js remains pinned at r180.
+V3.12.0 adds fictional An Lạc traffic regulations and city services, plus directional bus routing and bounded speed/yaw profiles. See [Traffic Law & City Services](docs/TRAFFIC-LAW-CITY-SERVICES.md). The V3.11.1 hotfix updated the real Three.js lighting integration test for the renderer-provided vehicle lamp list. Production still runs all unit and Three.js integration tests. If deployment fails, inspect the `[BUILD FAILED]` stage and the failing test summary, not the final Vercel wrapper error. Three.js remains pinned at r180.
 
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
