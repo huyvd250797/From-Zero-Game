@@ -5,7 +5,7 @@ export const wrapYaw=a=>Math.atan2(Math.sin(a),Math.cos(a));
 export const yawDelta=(a,b)=>wrapYaw(b-a);
 export const drivingState=()=>({id:null,speed:0,yaw:0,steer:0,distance:0,braking:false,indicator:0});
 export function resetDriving(d,id=null,yaw=0){Object.assign(d,drivingState(),{id,yaw:wrapYaw(yaw)});return d;}
-export function drivingProfile(id,max){const two=id==='VEH_BIKE'||id==='VEH_MOTO';return {max,accel:max/(two?1.2:2),brake:max/(two?.40:.60),turn:two?5.5:3.4,radius:two?.32:.28};}
+export function drivingProfile(id,max){const two=id==='VEH_BIKE'||id==='VEH_MOTO';return {vehicle:id,max,accel:max/(two?1.2:2),brake:max/(two?.40:.60),turn:two?5.5:3.4,radius:two?.32:.28};}
 const approach=(a,b,amount)=>a+clamp(b-a,-amount,amount);
 export function driveStep(d,pos,path,input,dt,profile,limit=Infinity){
  dt=clamp(dt,0,.2);const old={...pos},before=d.speed,manual=Math.hypot(input.x,input.z)>.01,route=!manual&&path.length>0&&!input.brake;
@@ -17,8 +17,8 @@ export function driveStep(d,pos,path,input,dt,profile,limit=Infinity){
  const decel=!input.brake&&!manual&&!route?profile.brake*.45:profile.brake;d.speed=approach(d.speed,wanted,(wanted<d.speed?decel:profile.accel)*dt);let budget=Math.min(Math.max(0,limit),Math.max(0,(before+d.speed)*.5*dt));
  // Route movement keeps exact legacy waypoints and collision sweep; no overshoot.
  let moved=0,blocked=false,reached=false;
- if(route){const r=advanceRoute(pos,path,budget);moved=r.moved;blocked=r.blocked;reached=!path.length;if(reached)d.speed=0;}
- else if(budget>0){moved=moveSwept(pos,Math.sin(d.yaw)*budget,Math.cos(d.yaw)*budget,false);blocked=moved<budget-1e-6;}
+ if(route){const r=advanceRoute(pos,path,budget,profile.vehicle);moved=r.moved;blocked=r.blocked;reached=!path.length;if(reached)d.speed=0;}
+ else if(budget>0){moved=moveSwept(pos,Math.sin(d.yaw)*budget,Math.cos(d.yaw)*budget,false,profile.vehicle);blocked=moved<budget-1e-6;}
  if(blocked||limit<=0)d.speed=0;
  d.distance+=moved;d.braking=input.brake||wanted<before-.01||blocked||reached;
  return {moved,blocked,reached,dx:pos.x-old.x,dz:pos.z-old.z};

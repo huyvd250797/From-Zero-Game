@@ -1,0 +1,10 @@
+import {urbanPlan,roadNetwork,roadsX,roadsZ,SIZE,walkable} from './world.js';
+import {roadSpec,oneWay,HIGHWAY,highwayPoint,allowedVehicle} from './road-standards.js';
+const cell=8,buckets=new Map(),dist=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z);
+for(const s of urbanPlan.segments){const pad=s.width/2+.25;for(let x=Math.floor((Math.min(s.a.x,s.b.x)-pad)/cell);x<=Math.floor((Math.max(s.a.x,s.b.x)+pad)/cell);x++)for(let z=Math.floor((Math.min(s.a.z,s.b.z)-pad)/cell);z<=Math.floor((Math.max(s.a.z,s.b.z)+pad)/cell);z++){const k=x+':'+z;if(!buckets.has(k))buckets.set(k,[]);buckets.get(k).push(s);}}
+export function roadAt(p){for(const r of urbanPlan.roundabouts){const d=dist(p,r);if(d>=r.island&&d<=r.outer)return {id:r.id,...roadSpec({kind:'roundabout',width:r.outer-r.island}),direction:1};}let best=null,bestD=Infinity;for(const s of buckets.get(Math.floor(p.x/cell)+':'+Math.floor(p.z/cell))||[]){const dx=s.b.x-s.a.x,dz=s.b.z-s.a.z,t=Math.max(0,Math.min(1,((p.x-s.a.x)*dx+(p.z-s.a.z)*dz)/(dx*dx+dz*dz||1))),d=Math.hypot(p.x-s.a.x-t*dx,p.z-s.a.z-t*dz);if(d>s.width/2+.15)continue;const score=d/s.width;if(score>=bestD)continue;bestD=score;const r=s.road;best={id:r.id,...roadSpec(r),direction:oneWay(r,r.axis==='x'?p.z:p.x)};}return best;}
+export const roadLimit=p=>roadAt(p)?.kmh??25;
+export function speedCap(p,max){return Math.min(max,roadLimit(p)/3.6);}
+export function roadAccess(p,id){const r=roadAt(p);return !r||allowedVehicle(r,id);}
+export function motorwayExit(p){const z=Math.max(1,Math.min(SIZE-1,Math.round(p.z)));for(let radius=0;radius<=50;radius++){for(const zz of [z-radius,z+radius])for(const x of [369,368,367,370,366])if(walkable(x,zz)&&!highwayPoint({x,z:zz}))return {x,z:zz};}return null;}
+export const roadSummary=()=>({axes:roadNetwork.length,classes:Object.fromEntries(['local','street','avenue','boulevard'].map(k=>[k,roadNetwork.filter(r=>r.roadClass===k).length])),highwayLength:HIGHWAY.z1-HIGHWAY.z0,ramps:2,crossings:roadsX.flatMap(a=>roadsZ.filter(b=>urbanPlan.active(a,b.center)&&urbanPlan.active(b,a.center)&&!urbanPlan.ringAt(a.center,b.center)&&!urbanPlan.cuts.get(b.id)?.some(([lo,hi])=>a.center===lo||a.center===hi))).length});

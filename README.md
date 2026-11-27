@@ -1,7 +1,12 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.5.3 — Natural Urban Masterplan & Realistic Water** · 27/11/2026
+**V3.6.0 — Advanced Road Network** · 27/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V3.6.0 — Advanced Road Network
+- Six narrow local axes, ten urban streets, six four-lane avenues and two six-lane boulevards. A four-lane east expressway (212 world units) joins the street network through two bidirectional ramps. Retains the V3.5.3 river, four bridges, five roundabouts and all 60 interaction IDs.
+- Directed street edges, lane center geometry, time-weighted vehicle routing and per-vehicle expressway access. Automatic driving uses local speed limits; manual driving is not automatically fined. Added speed signs, one-way markings, extra crossing paint, map distinction and highway traffic.
+- Layout 8 migrates valid older saves; all financial and ownership data remain intact. See [road network notes](docs/ADVANCED-ROAD-NETWORK.md) for limits and QA.
 
 ## V3.5.3 — Natural Urban Masterplan & Realistic Water
 - Replace repeated short road bends with straight streets, five diagonal links, two long arcs and two continuous bank roads. Four bridges, five roundabouts, pronounced meandering channel with both banks following one centreline.

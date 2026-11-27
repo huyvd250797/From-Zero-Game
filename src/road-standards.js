@@ -1,0 +1,18 @@
+// V3.6.0: compressed world scale; km/h is the in-game speedometer unit.
+const carOnly=['VEH_CAR','VEH_LUX','VEH_EV','VEH_TRUCK','TAXI','BUS','taxi','bus'];
+export const ROAD_CLASSES=Object.freeze({alley:{name:'Hẻm đi bộ',lanes:0,kmh:0},local:{name:'Đường nội bộ',lanes:2,kmh:30},street:{name:'Đường đô thị',lanes:2,kmh:50},avenue:{name:'Đại lộ',lanes:4,kmh:60},boulevard:{name:'Đại lộ lớn',lanes:6,kmh:60},shore:{name:'Đường ven sông',lanes:2,kmh:40},highway:{name:'Cao tốc An Lạc',lanes:4,kmh:90},ramp:{name:'Lối nhập / thoát cao tốc',lanes:2,kmh:40},roundabout:{name:'Vòng xoay',lanes:1,kmh:25}});
+export const HIGHWAY={id:'AL_EXPRESS_EAST',x:379,z0:36,z1:248,width:7,entry:{x:368,z:20},exit:{x:368,z:264}};
+const narrow=new Set(['ROD_X_48','ROD_X_80','ROD_X_272','ROD_Z_48','ROD_Z_176','ROD_Z_208']);
+export const ONE_WAYS=Object.freeze([{id:'ROD_X_48',from:16,to:48,dir:1},{id:'ROD_Z_48',from:48,to:80,dir:1}]);
+export function classifyAxis(r){const roadClass=r.kind==='avenue'?(r.width>=11?'boulevard':'avenue'):narrow.has(r.id)?'local':'street';return {...r,width:narrow.has(r.id)?5.5:r.width,roadClass,lanes:ROAD_CLASSES[roadClass].lanes,kmh:ROAD_CLASSES[roadClass].kmh};}
+export function roadSpec(r){const roadClass=r.roadClass||({shore:'shore',arc:'street',diagonal:'street',highway:'highway',ramp:'ramp',avenue:'avenue',local:'local',roundabout:'roundabout'})[r.kind]||'street';return {...ROAD_CLASSES[roadClass],roadClass,width:r.width||0,lanes:r.lanes??ROAD_CLASSES[roadClass].lanes,kmh:r.kmh??ROAD_CLASSES[roadClass].kmh};}
+export function oneWay(r,coord){return ONE_WAYS.find(o=>o.id===r.id&&coord>o.from+1e-6&&coord<o.to-1e-6)?.dir||0;}
+export function allowedVehicle(spec,id='VEH_CAR'){return spec.roadClass==='alley'?id==='walk':spec.roadClass==='highway'||spec.roadClass==='ramp'?carOnly.includes(id):true;}
+export function highwayCorridors(){const h=HIGHWAY,lerp=(a,b,t)=>a+(b-a)*t,curve=(a,b)=>Array.from({length:17},(_,i)=>{const t=i/16;return {x:lerp(a.x,b.x,t*t*(3-2*t)),z:lerp(a.z,b.z,t)}});const main=Array.from({length:107},(_,i)=>({x:h.x,z:lerp(h.z0,h.z1,i/106)}));return [{id:h.id,kind:'highway',roadClass:'highway',width:h.width,lanes:4,points:main,a:main[0],b:main.at(-1)},{id:'AL_RAMP_N',kind:'ramp',width:5.2,points:curve(h.entry,main[0]),a:h.entry,b:main[0]},{id:'AL_RAMP_S',kind:'ramp',width:5.2,points:curve(main.at(-1),h.exit),a:main.at(-1),b:h.exit}];}
+// Restricted strip excludes the public street at x=368; the actual motorway has no side entrances.
+const restricted={minX:374.5,maxX:383,minZ:29,maxZ:255};
+export function highwayPoint(p){return p.x>restricted.minX&&p.x<restricted.maxX&&p.z>restricted.minZ&&p.z<restricted.maxZ;}
+export function highwaySegment(a,b){let lo=0,hi=1;for(const [p,d,min,max] of [[a.x,b.x-a.x,restricted.minX,restricted.maxX],[a.z,b.z-a.z,restricted.minZ,restricted.maxZ]]){if(Math.abs(d)<1e-9){if(p<=min||p>=max)return false;}else{const u=(min-p)/d,v=(max-p)/d;lo=Math.max(lo,Math.min(u,v));hi=Math.min(hi,Math.max(u,v));if(lo>=hi)return false;}}return lo<hi;}
+export const restrictedActor=id=>!carOnly.includes(id);
+export function accessSegment(a,b,id){if(!highwaySegment(a,b))return true;if(restrictedActor(id))return false;const insideA=highwayPoint(a),insideB=highwayPoint(b);if(insideA===insideB)return insideA;const q=insideA?b:a;return q.z<=HIGHWAY.z0+2||q.z>=HIGHWAY.z1-2;}
+export function laneOffsets(r,dir,coord){const s=roadSpec(r),one=oneWay(r,coord);if(one&&one!==dir)return [];const n=one?s.lanes:Math.max(1,Math.floor(s.lanes/2)),w=s.width/Math.max(1,s.lanes);return Array.from({length:n},(_,i)=>one?(-s.width/2+w*(i+.5)):w*(i+.5));}

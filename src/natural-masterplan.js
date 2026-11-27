@@ -1,14 +1,16 @@
+import {highwayCorridors,HIGHWAY} from './road-standards.js';
 // Layout 7: explicit corridors, two continuous river promenades, four bridges.
 const dist=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z);
 const nearest=(p,a,b)=>{const dx=b.x-a.x,dz=b.z-a.z,t=Math.max(0,Math.min(1,((p.x-a.x)*dx+(p.z-a.z)*dz)/(dx*dx+dz*dz||1)));return Math.hypot(p.x-a.x-t*dx,p.z-a.z-t*dz);};
 export const BRIDGE_Z=Object.freeze([80,144,272,336]);
-export function naturalMasterplan(roads,all,old,river,districts,size){
+export function naturalMasterplan(roads,all,old,river,districts,size,advanced=false){
  const xs=roads.filter(r=>r.axis==='x'),zs=roads.filter(r=>r.axis==='z'),cuts=new Map(),curves=new Map(roads.map(r=>[r.id,[]]));
  const shore=(z,side)=>{const b=river.banks(z);return (side<0?b.left:b.right)+side*9.5;};
  const addCut=(r,a,b)=>{if(b-a<1e-5)return;cuts.set(r.id,[...(cuts.get(r.id)||[]),[Math.max(0,a),Math.min(size,b)]]);};
  for(const r of zs)if(!BRIDGE_Z.includes(r.center))addCut(r,shore(r.center,-1),shore(r.center,1));
  // North/south axes end at actual bank-road intersections, not at the water.
  for(const r of xs){let start=null;for(let i=0;i<size;i++){const ts=[0,1];for(const side of [-1,1]){const a=shore(i,side)-r.center,b=shore(i+1,side)-r.center;if(a*b<0)ts.push(a/(a-b));}ts.sort((a,b)=>a-b);for(let j=1;j<ts.length;j++){const a=i+ts[j-1],b=i+ts[j],k=(a+b)/2,wet=r.center>shore(k,-1)&&r.center<shore(k,1);if(wet&&start===null)start=a;if(!wet&&start!==null){addCut(r,start,a);start=null;}}}if(start!==null)addCut(r,start,size);}
+ if(advanced)for(const r of zs)if(r.center>HIGHWAY.entry.z&&r.center<HIGHWAY.exit.z)addCut(r,368,size);
  // Deliberately merge selected dry blocks; the connecting diagonal replaces the redundant street.
  const proposed=[{a:{x:16,z:176},b:{x:80,z:240},cut:['ROD_Z_208',16,48]},{a:{x:16,z:272},b:{x:80,z:336},cut:['ROD_X_48',272,304]},{a:{x:272,z:144},b:{x:336,z:208},cut:['ROD_Z_176',304,336]},{a:{x:272,z:240},b:{x:336,z:304},cut:['ROD_X_304',240,272]},{a:{x:304,z:336},b:{x:368,z:272},cut:['ROD_Z_304',336,368]},{a:{x:80,z:304},b:{x:144,z:368},cut:['ROD_X_112',336,368]}];
  const point=(r,k,l=0)=>r.axis==='x'?{x:r.center+l,z:k}:{x:k,z:r.center+l};
@@ -19,9 +21,10 @@ export function naturalMasterplan(roads,all,old,river,districts,size){
  for(const [i,d] of proposed.entries()){const points=Array.from({length:33},(_,j)=>({x:d.a.x+(d.b.x-d.a.x)*j/32,z:d.a.z+(d.b.z-d.a.z)*j/32}));if(!points.every(dry))continue;diagonals.push({...d,id:'MASTER_DIAG_'+i,kind:'diagonal',width:4.5,points});const r=roads.find(r=>r.id===d.cut[0]);if(r?.kind==='local')addCut(r,d.cut[1],d.cut[2]);}
  // Two long purposeful arcs in peripheral neighborhoods; no repeated sine bends.
  for(const [i,a,b,bend] of [[0,{x:16,z:240},{x:80,z:368},-11],[1,{x:336,z:144},{x:368,z:240},9]]){const points=Array.from({length:65},(_,j)=>{const t=j/64;return {x:a.x+(b.x-a.x)*t+bend*4*t*(1-t),z:a.z+(b.z-a.z)*t};});if(points.every(dry))diagonals.push({id:'MASTER_ARC_'+i,kind:'arc',width:4.5,points,a,b});}
+ if(advanced)diagonals.push(...highwayCorridors());
  const rings=old.roundabouts.filter(r=>dry({x:r.x-r.outer,z:r.z})&&dry({x:r.x+r.outer,z:r.z})&&[...diagonals].every(d=>d.points.slice(1).every((p,i)=>nearest(r,d.points[i],p)>r.outer+3))&&active(xs.find(x=>x.center===r.x),r.z)&&active(zs.find(z=>z.center===r.z),r.x)).slice(0,5);
  // Roads and shore corridors indexed as actual segment strips for parcel replanning.
- const segments=[];for(const r of roads)for(const [a,b] of ranges(r,0,size))segments.push({a:point(r,a),b:point(r,b),width:r.width});for(const d of diagonals)for(let i=1;i<d.points.length;i++)segments.push({a:d.points[i-1],b:d.points[i],width:d.width});
+ const segments=[];for(const r of roads)for(const [a,b] of ranges(r,0,size))segments.push({a:point(r,a),b:point(r,b),width:r.width,road:r});for(const d of diagonals)for(let i=1;i<d.points.length;i++)segments.push({a:d.points[i-1],b:d.points[i],width:d.width,road:d});
  const index=new Map(),cell=16;for(const s of segments){const p=s.width/2+3;for(let x=Math.floor((Math.min(s.a.x,s.b.x)-p)/cell);x<=Math.floor((Math.max(s.a.x,s.b.x)+p)/cell);x++)for(let z=Math.floor((Math.min(s.a.z,s.b.z)-p)/cell);z<=Math.floor((Math.max(s.a.z,s.b.z)+p)/cell);z++){const k=x+':'+z;if(!index.has(k))index.set(k,[]);index.get(k).push(s);}}
  const nearby=p=>{const set=new Set();for(let x=Math.floor((p.x-p.w/2-3)/cell);x<=Math.floor((p.x+p.w/2+3)/cell);x++)for(let z=Math.floor((p.z-p.d/2-3)/cell);z<=Math.floor((p.z+p.d/2+3)/cell);z++)for(const s of index.get(x+':'+z)||[])set.add(s);return set;};
  // Liang-Barsky segment/expanded AABB intersection. Conservative road shoulder clearance.

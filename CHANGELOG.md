@@ -1,3 +1,8 @@
+## V3.6.0 — Advanced Road Network (27/11/2026)
+- Road hierarchy, directed routing, lane geometry, speed limits, east expressway and two ramp connections, motorway restrictions, road signs and crossing paint.
+- Preserve river and all canonical IDs; layout 8 safely migrates valid layout 7 saves.
+- Add ten focused road network tests and retain production QA gate.
+
 ## V3.5.3 — Natural Urban Masterplan & Realistic Water (27/11/2026)
 - Replan city with strong meanders, two continuous bank roads, straight axes, five diagonals, two long arcs, five roundabouts and four bridges. Remove redundant and flooded road sections; all crossings form graph junctions.
 - Relocate existing parcels and 28 whole terraces; preserve IDs, interaction districts, assets and schema 1. Layout 7 migration handles layout 6 and older saves.
