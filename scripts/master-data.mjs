@@ -78,12 +78,12 @@ export function validateMaster(schema,data){
   if(!get('Building_Instances',r.building).interactive)err(p,'Không thể tương tác công trình nền');
   if(r.rule==='work'){const j=get('Jobs',r.job);if(!j||j.payPeriod!=='shift'||r.cash!==j.pay||r.time!==j.shiftMinutes)err(p,'Tiền công/giờ làm không khớp nghề');}
   const food=get('Food_Drinks',r.asset);if(food&&['cash','energy','hunger','happy'].some(f=>r[f]!== (f==='cash'?-food.price:food[f])))err(p,'Giá/chỉ số món ăn không khớp');
-  if(r.rule==='rent'&&r.cash!==-get('Properties',r.asset)?.rentDaily)err(p,'Giá thuê không khớp');
+  if(r.rule==='rent'&&r.cash!==-get('Properties',r.asset)?.rentMonthly)err(p,'Giá thuê không khớp');
   if(r.rule==='buybike'&&r.cash!==-get('Vehicles',r.asset)?.price)err(p,'Giá xe không khớp');
  });
  for(const id of ['work','meal','rent','sleep','coffee','rest','ask','bankinfo','buybike','ride','clinicinfo'])if(!data.Location_Actions.some(r=>r.legacyId===id))err('Location_Actions',`Thiếu hành động tương thích ${id}`);
  each('Vehicles',(r,p)=>{if(r.energyType==='none'?[r.capacity,r.consumption,r.unitPrice].some(Boolean):![r.capacity,r.consumption,r.unitPrice].every(n=>n>0))err(p,'Thông số năng lượng xe không hợp lệ');});
- unique('Properties','building');each('Properties',(r,p)=>{const b=get('Building_Instances',r.building);if(!b.interactive||b.type!==r.type||!r.rentDaily||r.id!=='PROP_ROOM'&&!r.price)err(p,'Bất động sản hoặc địa điểm không hợp lệ');});
+ unique('Properties','building');each('Properties',(r,p)=>{const b=get('Building_Instances',r.building);if(!b.interactive||b.type!==r.type||!r.rentMonthly||!r.rentDaily||r.id!=='PROP_ROOM'&&!r.price)err(p,'Bất động sản hoặc địa điểm không hợp lệ');});
  each('Story_Events',(r,p)=>{if(!data.Event_Choices.some(c=>c.event===r.id))err(p,'Sự kiện không có lựa chọn');if(r.repeatable!==Boolean(r.cooldownDays))err(p,'Cooldown không phù hợp');});
  each('Event_Choices',(r,p)=>{if(r.delayDays>0&&!r.nextEvent)err(p,'Hậu quả trì hoãn thiếu sự kiện đích');if(r.delayDays>3650)err(p,'Hậu quả trì hoãn vượt 3650 ngày');});
  each('Employers',(r,p)=>{const hours=data.World_Schedules.find(s=>s.building===r.building);if(!hours||new Set(r.jobs).size!==r.jobs.length)err(p,'Nhà tuyển dụng không hợp lệ');for(const id of r.jobs){const j=get('Jobs',id);if(j?.payPeriod==='month'&&(!hours||hours.opens>480||hours.closes<540+j.shiftMinutes))err(p,'Ca làm không phù hợp giờ công trình');}});

@@ -25,7 +25,7 @@ export const LIFE_DEFAULTS=Object.freeze(Object.fromEntries(['hygiene','health',
 const clamp=v=>Math.min(100,Math.max(0,v));
 const start=Date.UTC(config.startYear,0,1);
 const bikeMaintenance=record('MNT_BIKE');
-const baseRent=record('PROP_ROOM').rentDaily;
+const baseRent=record('PROP_ROOM').rentMonthly;
 export const day=s=>Math.floor(s.minutes/1440)+1;
 export function calendar(s){const d=new Date(start+Math.floor(s.minutes/1440)*86400000);return {year:d.getUTCFullYear(),month:d.getUTCMonth()+1,date:d.getUTCDate(),age:ageOf(s)};}
 export const hhmm=m=>`${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`;

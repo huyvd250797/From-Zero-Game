@@ -12,7 +12,7 @@ export function guideSteps(s){
  return [
  {id:'work',title:'Kiếm thu nhập đầu tiên',detail:`Cửa hàng tiện lợi ở khu dân cư: ca 4 giờ, nhận ${money(price(s,'shop','work'))}. Kiểm tra sức khỏe, độ no và nước trước khi làm.`,place:'shop',done:worked},
  {id:'meal',title:'Ăn uống và uống nước',detail:`Cơm hộp ${money(price(s,'shop','meal'))}; nước uống miễn phí tại công viên. Ăn và uống trước khi các chỉ số xuống thấp.`,place:'park',done:done.has('eat')&&done.has('drink')},
- {id:'home',title:'Tìm chỗ nghỉ',detail:`Phòng trọ ${money(price(s,'room','rent'))}/24 giờ. Có thể nghỉ miễn phí ở công viên khi thiếu tiền. Kiểm tra gia hạn tự động.`,place:'room',done:hasRoom(s)},
+ {id:'home',title:'Tìm chỗ nghỉ',detail:`Phòng trọ ${money(price(s,'room','rent'))}/tháng (30 ngày game). Có thể nghỉ miễn phí ở công viên khi thiếu tiền. Kiểm tra gia hạn tự động.`,place:'room',done:hasRoom(s)},
  {id:'study',title:'Phát triển kỹ năng',detail:'Tự học tại thư viện hoặc đăng ký khóa học phù hợp; học tập mở cơ hội tuyển dụng mới.',place:'library',done:s.education.completed.length>0||Object.values(s.education.xp).some(n=>n>0)},
  {id:'vehicle',title:'Chuẩn bị phương tiện',detail:`Xe đạp hiện có giá ${money(assetPrice(s,record('VEH_BIKE')))}. Chỉ mua sau khi đủ tiền sinh hoạt; chưa cần mua ngay.`,place:'bike',done:s.bike||s.transport.vehicles.length>0},
  ];

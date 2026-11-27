@@ -341,7 +341,8 @@
         "maintenanceMonthly": "money",
         "capacity": "positiveInt",
         "building": "ref:Building_Instances",
-        "utilitiesMonthly": "money"
+        "utilitiesMonthly": "money",
+        "rentMonthly": "money"
       }
     },
     "Vehicles": {

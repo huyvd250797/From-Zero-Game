@@ -16,7 +16,7 @@ import {cashChange} from './survival-state.js';
 import {vehicleTypes,activeVehicle,driving,bikePosition,vehicleSale,parkedVehicles} from './transport-state.js';
 export const SHOWROOM='bike',PETROL='warehouse',CHARGE='mall';
 export const busStops=['shop','office','market','school','hospital','mall','east_market','tech_hub','east_school','new_factory','south_farm','phuan_market','river_park','tanphu_market'];
-const CYCLE=43200, near=(s,place)=>nearPlace(s,place), model=id=>vehicleTypes.find(v=>v.id===id);
+const CYCLE=90*1440, near=(s,place)=>nearPlace(s,place), model=id=>vehicleTypes.find(v=>v.id===id);
 const service=(s,place,time)=>near(s,place)&&isOpen(place,s.minutes,time)&&s.minutes+time<=MAX_MINUTES;
 export function buyVehicleReason(s,id){if(incarcerated(s))return 'Đang chấp hành án.';const r=model(id);if(!r)return 'Xe không tồn tại.';if(driving(s))return 'Xuống xe trước.';if(id==='VEH_BIKE'?s.bike:s.transport.vehicles.some(v=>v.id===id))return 'Đã sở hữu mẫu xe này.';if(!service(s,SHOWROOM,10))return 'Đến cửa hàng xe trong giờ mở cửa (cần 10 phút).';if(s.cash<assetPrice(s,r))return 'Không đủ tiền mặt.';return '';}
 function parkingSpot(s){const occupied=parkedVehicles(s);for(const [dx,dz] of [[0,0],[2,0],[-2,0],[0,2],[0,-2],[1.5,1.5],[-1.5,-1.5],[1.5,-1.5],[-1.5,1.5]]){const p={x:s.pos.x+dx,z:s.pos.z+dz};if(walkable(p.x,p.z)&&occupied.every(v=>distance(v.pos,p)>1.8))return p;}return {...s.pos};}

@@ -19,7 +19,7 @@ export default {
         "lowEnergyThreshold": 15,
         "lowEnergyMultiplier": 0.55,
         "movementDecayInterval": 15,
-        "rentMinutes": 1440,
+        "rentMinutes": 43200,
         "spawn": "NAV_SPAWN",
         "startYear": 2026,
         "criticalHealthThreshold": 20,
@@ -5450,16 +5450,16 @@ export default {
       },
       {
         "id": "ACT_RENT",
-        "name": "Thuê phòng một đêm",
+        "name": "Thuê phòng một tháng",
         "legacyId": "rent",
         "building": "BLD_ROOM",
-        "detail": "120.000đ · 24 giờ",
-        "cash": -120000,
+        "detail": "1.200.000đ · 30 ngày",
+        "cash": -1200000,
         "time": 10,
         "energy": 0,
         "hunger": 0,
         "happy": 0,
-        "log": "Thuê phòng trọ trong 24 giờ.",
+        "log": "Thuê phòng trọ trong 30 ngày.",
         "rule": "rent",
         "job": null,
         "asset": "PROP_ROOM",
@@ -9968,7 +9968,8 @@ export default {
         "maintenanceMonthly": 0,
         "capacity": 1,
         "building": "BLD_ROOM",
-        "utilitiesMonthly": 0
+        "utilitiesMonthly": 0,
+        "rentMonthly": 1200000
       },
       {
         "id": "PROP_SMALL",
@@ -9979,7 +9980,8 @@ export default {
         "maintenanceMonthly": 600000,
         "capacity": 2,
         "building": "BLD_LOT_36_100",
-        "utilitiesMonthly": 200000
+        "utilitiesMonthly": 200000,
+        "rentMonthly": 2500000
       },
       {
         "id": "PROP_APT",
@@ -9990,7 +9992,8 @@ export default {
         "maintenanceMonthly": 1500000,
         "capacity": 4,
         "building": "BLD_APARTMENT",
-        "utilitiesMonthly": 350000
+        "utilitiesMonthly": 350000,
+        "rentMonthly": 4500000
       },
       {
         "id": "PROP_TOWN",
@@ -10001,7 +10004,8 @@ export default {
         "maintenanceMonthly": 2500000,
         "capacity": 5,
         "building": "BLD_LOT_60_100",
-        "utilitiesMonthly": 500000
+        "utilitiesMonthly": 500000,
+        "rentMonthly": 8000000
       },
       {
         "id": "PROP_VILLA",
@@ -10012,7 +10016,8 @@ export default {
         "maintenanceMonthly": 8000000,
         "capacity": 8,
         "building": "BLD_LOT_60_188",
-        "utilitiesMonthly": 1000000
+        "utilitiesMonthly": 1000000,
+        "rentMonthly": 20000000
       },
       {
         "id": "PROP_EAST_HOME",
@@ -10023,7 +10028,8 @@ export default {
         "maintenanceMonthly": 600000,
         "capacity": 2,
         "building": "BLD_EAST_HOME",
-        "utilitiesMonthly": 200000
+        "utilitiesMonthly": 200000,
+        "rentMonthly": 2500000
       },
       {
         "id": "PROP_PHUAN_APARTMENT",
@@ -10034,7 +10040,8 @@ export default {
         "maintenanceMonthly": 1500000,
         "capacity": 4,
         "building": "BLD_PHUAN_APARTMENT",
-        "utilitiesMonthly": 350000
+        "utilitiesMonthly": 350000,
+        "rentMonthly": 4500000
       },
       {
         "id": "PROP_PHUAN_HOME",
@@ -10045,7 +10052,8 @@ export default {
         "maintenanceMonthly": 600000,
         "capacity": 2,
         "building": "BLD_PHUAN_HOME",
-        "utilitiesMonthly": 200000
+        "utilitiesMonthly": 200000,
+        "rentMonthly": 2500000
       },
       {
         "id": "PROP_RIVER_HOME",
@@ -10056,7 +10064,8 @@ export default {
         "maintenanceMonthly": 600000,
         "capacity": 2,
         "building": "BLD_RIVER_HOME",
-        "utilitiesMonthly": 200000
+        "utilitiesMonthly": 200000,
+        "rentMonthly": 2500000
       },
       {
         "id": "PROP_SOUTH_HOME",
@@ -10067,7 +10076,8 @@ export default {
         "maintenanceMonthly": 600000,
         "capacity": 2,
         "building": "BLD_SOUTH_HOME",
-        "utilitiesMonthly": 200000
+        "utilitiesMonthly": 200000,
+        "rentMonthly": 2500000
       },
       {
         "id": "PROP_RIVER_APARTMENT",
@@ -10078,7 +10088,8 @@ export default {
         "maintenanceMonthly": 1500000,
         "capacity": 4,
         "building": "BLD_RIVER_APARTMENT",
-        "utilitiesMonthly": 350000
+        "utilitiesMonthly": 350000,
+        "rentMonthly": 4500000
       }
     ],
     "Vehicles": [
@@ -10192,21 +10203,21 @@ export default {
         "id": "MNT_BIKE",
         "name": "Bảo dưỡng xe đạp",
         "asset": "VEH_BIKE",
-        "intervalDays": 30,
+        "intervalDays": 90,
         "cost": 10000
       },
       {
         "id": "MNT_MOTO",
         "name": "Bảo dưỡng xe máy",
         "asset": "VEH_MOTO",
-        "intervalDays": 30,
+        "intervalDays": 90,
         "cost": 200000
       },
       {
         "id": "MNT_CAR",
         "name": "Bảo dưỡng ô tô",
         "asset": "VEH_CAR",
-        "intervalDays": 30,
+        "intervalDays": 90,
         "cost": 1800000
       },
       {

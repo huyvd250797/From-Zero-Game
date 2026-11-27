@@ -1,3 +1,11 @@
+## V3.15.0 — Realistic Life Balance & Optimization (27/11/2026)
+
+- 30-day rental cycles; monthly base rent is ten times the old daily tariff. Preserve existing paid rental expiry on load.
+- 90-day maintenance cycles; preserve existing next-due dates and fee amounts.
+- Shared chassis footprint clearance and continuous relative sweeps, AI reservation checks, and delayed bus and taxi motion; retain manual collision damage.
+- Preserve mobile rendering budgets, save schema 1, urban layout 9 and Three.js r180.
+- Update canonical data, housing and finance UI, balance simulation and regression coverage. Production/browser/device acceptance pending.
+
 ## V3.14.0 — Living Buildings & Household (27/11/2026)
 
 - Per-property food storage, spoilage, refrigerator capacity, cleaning and laundry, time-based household activities.

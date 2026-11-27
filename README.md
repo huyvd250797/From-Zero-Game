@@ -1,5 +1,7 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.14.0 — Living Buildings & Household** · 27/11/2026
+**V3.15.0 — Realistic Life Balance & Optimization** · 27/11/2026
+
+V3.15.0 introduces 30-day paid rental periods, balanced monthly rent, 90-day maintenance, vehicle footprint clearance, swept traffic conflict checks and delayed buses/taxis when blocked. Mobile rendering budgets and save schema remain unchanged. See [Realistic Life Balance & Optimization](docs/REALISTIC-LIFE-BALANCE-OPTIMIZATION.md).
 
 V3.14.0 adds per-home food storage and expiry, household chores, scheduled interior activities, interactive city map, compact GPS, demand-based named NPC bus trips, player road safety, patrol-based enforcement and revised vehicle breakdown threshold. See [Living Buildings & Household](docs/LIVING-BUILDINGS-HOUSEHOLD.md).
 

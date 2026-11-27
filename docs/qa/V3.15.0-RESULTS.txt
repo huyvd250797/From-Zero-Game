@@ -1,0 +1,6 @@
+V3.15.0 acceptance, Node.js 22.16.0
+Full existing unit run: 847/848 PASS, one housing assertion assumed no appreciation of unrelated assets during the new monthly rental cycle. Corrected assertion checks rented property ID absent from owned assets. Final focused housing and new tests: 22/22 PASS (6 new tests). Full suite not rerun after final housing assertion and taxi integration changes.
+Earlier focused traffic/household: 16/16 PASS.
+30-day scripted balance: easy cash 7,220,000; normal 5,450,000; hard 3,585,000; health, nutrition, mental 100; sleepDebt 0; conditions 0. Not a guarantee for all playstyles.
+Native preview: 135 assets SHA-256 PASS, HTTP integrity PASS. JavaScript syntax PASS. Production build stopped at missing Three.js 0.180.0 dependency (offline npm ENOTCACHED). No test/build gate bypassed.
+No browser/device thermal, FPS or global traffic-deadlock acceptance. Taxi guard syntax checked; final focused tests cover shared clearance, not full rendered taxi integration.

@@ -8,7 +8,8 @@
     "maintenanceMonthly": 0,
     "capacity": 1,
     "building": "BLD_ROOM",
-    "utilitiesMonthly": 0
+    "utilitiesMonthly": 0,
+    "rentMonthly": 1200000
   },
   {
     "id": "PROP_SMALL",
@@ -19,7 +20,8 @@
     "maintenanceMonthly": 600000,
     "capacity": 2,
     "building": "BLD_LOT_36_100",
-    "utilitiesMonthly": 200000
+    "utilitiesMonthly": 200000,
+    "rentMonthly": 2500000
   },
   {
     "id": "PROP_APT",
@@ -30,7 +32,8 @@
     "maintenanceMonthly": 1500000,
     "capacity": 4,
     "building": "BLD_APARTMENT",
-    "utilitiesMonthly": 350000
+    "utilitiesMonthly": 350000,
+    "rentMonthly": 4500000
   },
   {
     "id": "PROP_TOWN",
@@ -41,7 +44,8 @@
     "maintenanceMonthly": 2500000,
     "capacity": 5,
     "building": "BLD_LOT_60_100",
-    "utilitiesMonthly": 500000
+    "utilitiesMonthly": 500000,
+    "rentMonthly": 8000000
   },
   {
     "id": "PROP_VILLA",
@@ -52,7 +56,8 @@
     "maintenanceMonthly": 8000000,
     "capacity": 8,
     "building": "BLD_LOT_60_188",
-    "utilitiesMonthly": 1000000
+    "utilitiesMonthly": 1000000,
+    "rentMonthly": 20000000
   },
   {
     "id": "PROP_EAST_HOME",
@@ -63,7 +68,8 @@
     "maintenanceMonthly": 600000,
     "capacity": 2,
     "building": "BLD_EAST_HOME",
-    "utilitiesMonthly": 200000
+    "utilitiesMonthly": 200000,
+    "rentMonthly": 2500000
   },
   {
     "id": "PROP_PHUAN_APARTMENT",
@@ -74,7 +80,8 @@
     "maintenanceMonthly": 1500000,
     "capacity": 4,
     "building": "BLD_PHUAN_APARTMENT",
-    "utilitiesMonthly": 350000
+    "utilitiesMonthly": 350000,
+    "rentMonthly": 4500000
   },
   {
     "id": "PROP_PHUAN_HOME",
@@ -85,7 +92,8 @@
     "maintenanceMonthly": 600000,
     "capacity": 2,
     "building": "BLD_PHUAN_HOME",
-    "utilitiesMonthly": 200000
+    "utilitiesMonthly": 200000,
+    "rentMonthly": 2500000
   },
   {
     "id": "PROP_RIVER_HOME",
@@ -96,7 +104,8 @@
     "maintenanceMonthly": 600000,
     "capacity": 2,
     "building": "BLD_RIVER_HOME",
-    "utilitiesMonthly": 200000
+    "utilitiesMonthly": 200000,
+    "rentMonthly": 2500000
   },
   {
     "id": "PROP_SOUTH_HOME",
@@ -107,7 +116,8 @@
     "maintenanceMonthly": 600000,
     "capacity": 2,
     "building": "BLD_SOUTH_HOME",
-    "utilitiesMonthly": 200000
+    "utilitiesMonthly": 200000,
+    "rentMonthly": 2500000
   },
   {
     "id": "PROP_RIVER_APARTMENT",
@@ -118,6 +128,7 @@
     "maintenanceMonthly": 1500000,
     "capacity": 4,
     "building": "BLD_RIVER_APARTMENT",
-    "utilitiesMonthly": 350000
+    "utilitiesMonthly": 350000,
+    "rentMonthly": 4500000
   }
 ]
