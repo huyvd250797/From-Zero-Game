@@ -1,7 +1,24 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.4.0 — Realistic Shopping & Inventory** · 27/11/2026
+**V3.5.2 — Organic City & Living River** · 27/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V3.5.2 — Organic City & Living River
+- River An Bình uses an authoritative 385-sample bank profile, not a rectangular channel. Exact water-strip collision, 12 preserved bridge crossings, map and all renderers use the same profile.
+- Ten diagonal links and seven removed local road sections create irregular blocks; 22 gentle bends straightened in formal zones, 10 new riverside bends. Nine waterfront parcels relocated; preserve canonical IDs and all interaction anchors. Previous 28 residential clusters preserved.
+- Shared depth gradient and embankment geometry, downstream moving ripple strips on native renderers, procedural Three.js water shader with animated normals, shore colour, sunlight glints and day/night response. Visual water clock uses real elapsed time while rendered, independent of game speed (reduced motion freezes animation).
+- Layout 6 migrates valid layout 5 saves using the actual previous geometry and relocates only invalidated positions; preserves save schema 1.
+- See docs/ORGANIC-CITY-LIVING-RIVER.md for scope, limitations and verification.
+
+## V3.5.1 — Organic Neighborhoods & Street Layout
+- Replat five mixed-layout neighborhoods in Đông An Bình, Nam An Lạc, Riverside and Tân Phú. Remove five 64-unit stretches of local road and replace short curves with five long, pronounced 54-unit bends (including an S bend). Retain the formal arterial grid elsewhere.
+- 28 shared residential clusters of 3/4/6/8 homes, 130 houses within the clusters, 33 decorative plots replatted; 57 new orthogonal alley segments connect directly to road shoulders. Preserve all 229 canonical IDs and all 60 interaction doors.
+- Layout marker 5 migrates valid layout-4 and older saves; relocated positions only if blocked by new buildings. See [organic neighborhood notes](docs/ORGANIC-NEIGHBORHOODS.md).
+
+## V3.5.0 — Urban Planning 4.0
+- Derived city planning layer: 100 curved road sections, seven roundabouts, 72 pedestrian alleys, 90 rear/side green spaces and three additional non-interactive houses. Retains all canonical sites, doors, road IDs and bridges.
+- Shared geometry for 3D chunks, city map, vehicle road graph, lane traffic, pedestrian shoulders and street lamps. Save schema 1 gains an `urbanLayout:4` marker; migrate only positions obstructed by newly added solids.
+- See [urban planning notes](docs/URBAN-PLANNING-4.md) for validation and remaining limitations. The existing arterial grid remains the connectivity backbone; new road classes/highways and curbside bus stops are planned for later releases.
 
 ## V3.4.0 — Realistic Shopping & Inventory
 - Multi-item cart, category/search, stock per shop, atomic checkout with exact economy prices, 60 receipts and bag capacity.

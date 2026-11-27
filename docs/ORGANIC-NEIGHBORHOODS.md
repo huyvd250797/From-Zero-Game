@@ -1,0 +1,13 @@
+# V3.5.1 — Organic Neighborhoods & Street Layout
+
+This corrective release implements the requested mixed urban fabric, rather than just increasing short road offsets. `organic-neighborhoods.js` derives five 64x64 neighborhoods from the canonical city. Local east-west links are removed over 320 world units; the remaining north-south routes have 54-unit-long bends with 15–16 units of lateral displacement and one S curve with about 13 units of displacement to each side. Main avenues, bridges, seven roundabouts and formal blocks outside selected areas remain.
+
+## Shared geometry
+- `urbanPlan.active`, `ranges`, `cuts`, `offset`, `point` serve street meshes, map, route graph, cosmetic traffic, signals and weather lighting. The removed segments are absent from road graph and asphalt meshes, not just hidden by houses.
+- 33 canonical decorative plots are replatted without changing IDs, and 100 total derived annexes are present (including legacy ones retained outside replatted areas). 28 residential clusters, 130 houses grouped in rows or two-row courts of 3, 4, 6 or 8 homes. Neighboring houses have a 0.35-unit structural gap (not an accessible public alley); façades face the shared court, not four roads. No economic ownership added for these decorative homes.
+- 57 new right-angle pedestrian segments connect to road shoulders; existing 55 straight pedestrian alleys retained outside redesigned regions. 67 retained landscaped yards. Existing formal center is deliberately preserved. New houses use simpler side/back façades. 60 interaction locations and all canonical interactive footprints unchanged.
+- Route graph 3,585 nodes, 3,702 edges. Existing road access fallback may use open, walkable ground near endpoints. Background traffic remains cosmetic; trips through deleted stretches are omitted rather than routed over them. Full lane graph, turn behavior, highway rules and AI are later releases.
+- Save schema 1 with `urbanLayout:5`; legacy position validity checked against previous layout, including previous annexes and roundabout islands for marker 4. Only newly obstructed coordinates are repaired to nearest walkable points, preserving other fields. Backup JSON before upgrade; backward migration from layout 5 to layout 4 is not provided.
+
+## Scope
+This is a selective redevelopment, not a fully arbitrary polygon road planner. The 24 canonical road axes remain as the backbone; the five neighborhoods remove links and alter their geometry. Formal blocks and some single-building blocks elsewhere remain. No new purchasable houses, highway, traffic enforcement, or bus-stop behavior. Three.js production and real-device FPS require separate acceptance; the production build gate is unchanged.

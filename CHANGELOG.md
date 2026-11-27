@@ -1,3 +1,19 @@
+## V3.5.2 — Organic City & Living River (27/11/2026)
+- Replace straight river with shared meandering channel, exact water collision and animated water surface.
+- Add ten real diagonal road links, remove seven redundant local segments; retain formal city zones and replot waterfront parcels.
+- Preserve all canonical IDs, interaction doors and save data; migrate layout 5 → 6.
+- Add ten unit tests and a real Three.js integration test. Production build remains gated on pinned Three.js.
+
+## V3.5.1 — Organic Neighborhoods & Street Layout (27/11/2026)
+- Replace local grid stretches in five neighborhoods with merged blocks, long bends and S curve; replat non-interactive lots as contiguous 3/4/6/8-home clusters and right-angle shared alleys.
+- Shared road cuts for meshes, map, route graph, traffic and light placement; preserve interactive properties, all canonical IDs, bridge and roundabout network. Extend static chunk culling for long bends.
+- Save layout 5 migration, seven new regression tests; retain production Three.js checks.
+
+## V3.5.0 — Urban Planning 4.0 (27/11/2026)
+- 100 collision-checked curved sections, seven one-way roundabout rings with solid islands, 72 pedestrian alleys, 90 green setbacks and three derived annex buildings. All canonical records and doors retained.
+- Route graph with 3,705 nodes and 3,832 edges; shared map and chunk geometry, arc-length traffic movement, curved sidewalk candidates, road-aligned lighting and audio distances.
+- Legacy position migration only when a newly added solid obstructs an originally valid location; preserve cash, property and vehicle data. 13 new tests and updated legacy geometry expectations.
+
 ## V3.4.0 — Realistic Shopping & Inventory (27/11/2026)
 - Retail cart with quantity control, search/filter, per-store daily stock, price confirmation and 60 receipts. One five-minute atomic checkout with accurate ledger categories; stale quotes rejected.
 - Existing single-item and automated shopping share stock and checkout. Save schema 1 migration preserves prior assets.

@@ -1,3 +1,4 @@
+import {urbanRoadRoute} from './urban-routing.js';
 import {incarcerated} from './recovery-state.js';
 import {livingQuote,quote,goodsPrice,assetPrice,wageQuote,rateQuote,actionCash,economyAt,vacancyOpen} from './economy.js';
 import {pledged} from './banking-state.js';
@@ -27,9 +28,7 @@ export function vehicleTick(s){for(const v of s.transport?.vehicles||[]){if(s.mi
 export function payVehicleDebt(s){const n=s.transport.debt;if(!n||!cashChange(s,-n,'EXP_TRANSPORT','Thanh toán nợ phương tiện'))return false;s.transport.debt=0;return true;}
 export function movementBudget(s,wanted){const v=activeVehicle(s);return v?Math.min(wanted,v.fuel/record(v.id).consumption):wanted;}
 export function recordMovement(s,moved,yaw){const v=activeVehicle(s);if(v){v.pos={...s.pos};v.yaw=yaw;v.distance+=moved;v.fuel=Math.max(0,v.fuel-moved*record(v.id).consumption);}else if(s.riding){s.transport.bikePos={...s.pos};s.transport.bikeYaw=yaw;}}
-// Connect endpoints to nearby road centrelines; choose shortest valid road-centre connection.
-function access(p){return roadNetwork.map(r=>({r,p:r.axis==='x'?{x:r.center,z:p.z}:{x:p.x,z:r.center}})).sort((a,b)=>distance(p,a.p)-distance(p,b.p)).slice(0,4).map(a=>({...a,route:planRoute(p,a.p)})).filter(a=>a.route);}
-export function roadRoute(start,end){if(distance(start,end)<.025)return planRoute(start,end);if(!walkable(end.x,end.z))return planRoute(start,end);let best=null;const fromAccess=access(start),toAccess=access(end);for(const a of fromAccess)for(const b of toAccess){const x=a.r.axis==='x'?a:b,z=a.r.axis==='z'?a:b;let mids=[];if(a.r.axis!==b.r.axis)mids=[[{x:x.r.center,z:z.r.center}]];else if(a.r.center===b.r.center)mids=[[]];else mids=roadNetwork.filter(r=>r.axis!==a.r.axis).map(r=>a.r.axis==='x'?[{x:a.r.center,z:r.center},{x:b.r.center,z:r.center}]:[{x:r.center,z:a.r.center},{x:r.center,z:b.r.center}]);for(const mid of mids){const tail=[b.p,...[...b.route.path].reverse().slice(1),end];const path=[...a.route.path,...mid,...tail].filter((p,i,arr)=>distance(i?arr[i-1]:start,p)>1e-6);let from=start;if(!path.every(p=>{const ok=segmentClear(from,p);from=p;return ok}))continue;const length=routeLength(start,path);if(!best||length<best.length)best={target:end,path,length};}}return best||planRoute(start,end);}
+export const roadRoute=urbanRoadRoute;
 export function transitQuote(s,kind,target){const to=places.find(p=>p.id===target),from=places.find(p=>near(s,p.id));if(!to||!from||to.id===from.id||driving(s)||!['bus','taxi'].includes(kind)||kind==='bus'&&(!busStops.includes(from.id)||!busStops.includes(to.id)))return null;const route=roadRoute(s.pos,{x:to.door[0],z:to.door[1]});if(!route||!route.path.length)return null;return {route,fare:livingQuote(s,kind==='bus'?7000:Math.ceil(12000+routeLength(s.pos,route.path)*120),'fuel'),speed:kind==='bus'?22:28,target};}
 export function payTransit(s,quote,kind){return !!quote&&cashChange(s,-quote.fare,'EXP_TRANSPORT',kind==='bus'?'Vé xe buýt':'Cước taxi');}
 

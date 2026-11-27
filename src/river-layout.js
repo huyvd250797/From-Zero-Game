@@ -1,0 +1,11 @@
+// One shared piecewise-linear bank profile for map, mesh, collision and bridges.
+// Smooth control points describe the channel; samples are the authoritative geometry.
+const controls=[[0,190,201],[30,185,200],[67,182,192],[111,191,203],[151,192,202],[199,182,201],[237,184,203],[278,192,203],[322,182,201],[355,187,201],[384,190,202]];
+export function createRiver(minX,maxX,size){
+ const samples=[];for(let z=0;z<=size;z+=1){let i=controls.findIndex((p,j)=>j<controls.length-1&&z<=controls[j+1][0]);if(i<0)i=controls.length-2;const a=controls[i],b=controls[i+1],t=Math.max(0,Math.min(1,(z-a[0])/(b[0]-a[0]))),f=t*t*(3-2*t);samples.push(Object.freeze({z,left:a[1]+(b[1]-a[1])*f,right:a[2]+(b[2]-a[2])*f}));}
+ const banks=z=>{z=Math.max(0,Math.min(size,z));const a=samples[Math.floor(z)],b=samples[Math.min(size,Math.floor(z)+1)],f=z-a.z;return {left:a.left+(b.left-a.left)*f,right:a.right+(b.right-a.right)*f};};
+ return Object.freeze({name:'Sông An Bình',minX,maxX,samples:Object.freeze(samples),banks,contains(x,z){const b=banks(z);return z>=0&&z<=size&&x>=b.left&&x<=b.right;}});
+}
+export function waterStrips(river,bridges,size){const out=[];for(let z=0;z<size;z++){let intervals=[[z,z+1]];for(const b of bridges){const lo=b.z-b.width/2,hi=b.z+b.width/2;intervals=intervals.flatMap(([a,c])=>hi<=a||lo>=c?[[a,c]]:[[a,Math.min(c,lo)],[Math.max(a,hi),c]].filter(([l,h])=>h>l));}for(const [a,b] of intervals){const p=river.banks(a),q=river.banks(b);out.push({minX:Math.min(p.left,q.left),maxX:Math.max(p.right,q.right),minZ:a,maxZ:b,water:{a,b,p,q}});}}return out;}
+// Convex trapezoid clipping, including boundary contact. No rectangular approximation.
+export function intersectsWater(a,b,o){const {a:z0,b:z1,p,q}=o.water,dx=b.x-a.x,dz=b.z-a.z,L=(q.left-p.left)/(z1-z0),R=(q.right-p.right)/(z1-z0);let lo=0,hi=1;for(const [v,d] of [[a.z-z0,dz],[z1-a.z,-dz],[a.x-p.left-L*(a.z-z0),dx-L*dz],[p.right+R*(a.z-z0)-a.x,R*dz-dx]]){if(Math.abs(d)<1e-12){if(v<0)return false;}else if(d>0)lo=Math.max(lo,-v/d);else hi=Math.min(hi,-v/d);if(lo>hi)return false;}return lo<=hi;}

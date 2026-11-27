@@ -1,0 +1,14 @@
+import * as T from 'three';
+import {river} from './world.js';
+export const riverVertex=`varying vec2 vWorld; varying float vBank; attribute float across; void main(){vWorld=position.xz;vBank=across;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`;
+export const riverFragment=`uniform float time; uniform float daylight; uniform float wind; uniform float detail; uniform vec3 sunDir; uniform vec3 viewDir; varying vec2 vWorld; varying float vBank;
+void main(){vec2 p=vWorld;float t=time;float a=p.x*1.55+p.y*.93-t*1.8;float b=p.x*3.1-p.y*1.52+t*2.2;float c=p.x*.63+p.y*2.8-t*3.1;float d=p.x*7.2+p.y*4.1-t*5.2;
+vec2 grad=vec2(1.55,.93)*cos(a)*.067+vec2(3.1,-1.52)*cos(b)*.028+vec2(.63,2.8)*cos(c)*.017+vec2(7.2,4.1)*cos(d)*.004*detail;
+grad*=.7+wind*.8;vec3 n=normalize(vec3(-grad.x,1.0,-grad.y));float shore=1.0-smoothstep(.0,.19,min(vBank,1.0-vBank));float w=.5+.5*sin(a+.45*sin(b));vec3 deep=vec3(.035,.16,.21), shallow=vec3(.09,.32,.32);vec3 color=mix(deep,shallow,shore*.85)+vec3(.012,.04,.045)*w;
+float fresnel=pow(1.0-max(0.0,dot(n,normalize(viewDir))),3.0);color=mix(color,vec3(.25,.43,.53),fresnel*.52);vec3 h=normalize(normalize(sunDir)+normalize(viewDir));float sparkle=pow(max(0.0,dot(n,h)),55.0);float streak=pow(max(0.0,sin(c+.6*sin(a))),9.0)*(.35+.65*pow(max(0.0,sin(b)),3.0));color=color*(.24+.76*daylight)+vec3(.48,.39,.23)*sparkle*daylight*.95+vec3(.10,.21,.22)*streak*(.18+.82*daylight)+shore*.018;gl_FragColor=vec4(color,1.0);
+#include <tonemapping_fragment>
+#include <colorspace_fragment>
+}`;
+export class ThreeRiver{constructor(scene){const pos=[],across=[],index=[];for(const b of river.samples){for(const u of [0,.25,.5,.75,1]){pos.push(b.left+(b.right-b.left)*u,.016,b.z);across.push(u);}}for(let i=0;i<river.samples.length-1;i++)for(let j=0;j<4;j++){const a=i*5+j,b=a+5;index.push(a,b,a+1,a+1,b,b+1);}const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setAttribute('across',new T.Float32BufferAttribute(across,1));g.setIndex(index);g.computeBoundingSphere();const material=new T.ShaderMaterial({side:T.DoubleSide,uniforms:{time:{value:0},daylight:{value:1},wind:{value:.3},detail:{value:1},sunDir:{value:new T.Vector3(.4,.9,.2)},viewDir:{value:new T.Vector3(.4,.8,.4)}},vertexShader:riverVertex,fragmentShader:riverFragment});this.mesh=new T.Mesh(g,material);this.scene=scene;scene.add(this.mesh);}
+ update(renderer,t,minutes){const u=this.mesh.material.uniforms;u.time.value=Number.isFinite(t)?t:0;u.daylight.value=Math.max(.06,1-(renderer.weather?.night??((minutes%1440<360||minutes%1440>=1080)?1:0)));u.wind.value=renderer.weather?.wind??.3;u.detail.value=renderer.quality===0||renderer.prefs?.eco?0:1;renderer.view.getWorldDirection(u.viewDir.value).negate();u.sunDir.value.copy(renderer.sun.position).sub(renderer.sun.target.position).normalize();}
+ dispose(){this.scene.remove(this.mesh);this.mesh.geometry.dispose();this.mesh.material.dispose();}}
