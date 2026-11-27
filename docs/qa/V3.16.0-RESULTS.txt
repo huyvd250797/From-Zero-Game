@@ -1,0 +1,8 @@
+Node v22.16.0
+Focused regression: 43/43 PASS, 9 new tests.
+Full regression interrupted: 256 passed, 0 failed in observed output; not certified complete.
+Native Preview: 144 assets SHA-256 and HTTP PASS.
+HTTP range: 206 bytes 0-1/88244, audio/wav.
+Chromium localhost blocked: ERR_BLOCKED_BY_ADMINISTRATOR.
+Production npm run build: syntax PASS, Three.js dependency missing; npm ci --offline ENOTCACHED.
+No actual iOS playback or thermal measurement.

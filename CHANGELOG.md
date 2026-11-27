@@ -1,3 +1,12 @@
+## V3.16.0 — Audio Engine Recovery (28/11/2026)
+
+- Protect playback tests from silent modal scene ticks and improve optional stereo panner compatibility.
+- Add independent single-element HTML Audio fallback, eight synthesized PCM WAV files, and individual sample tests in audio settings.
+- Persist selected backend and separate horn and NPC conversation volume; preserve legacy audio preferences and save schema.
+- Request playback audio session on supported browsers from trusted gestures; improve nearby engine harmonics and idle sound.
+- Serve cached WAV byte ranges for iOS PWA playback; keep asset integrity checks and production build gates.
+- Actual iPhone audio acceptance and Three.js production build remain pending.
+
 ## V3.15.1 — Navigation, Immersion & Mobile UX Refinement (27/11/2026)
 
 - Bounded lane miters, local hook removal, rounded validated turns, turn speed lookahead and cumulative GPS turn detection. Direct legal routes to nearby building doors within eight world units.

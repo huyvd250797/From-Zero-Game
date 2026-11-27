@@ -1,5 +1,7 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.15.1 — Navigation, Immersion & Mobile UX Refinement** · 27/11/2026
+**V3.16.0 — Audio Engine Recovery** · 28/11/2026
+
+V3.16.0 adds independent HTML Audio fallback, eight original WAV files, protected audio preview, per-group horn/NPC mixer, iOS playback session hint and offline media byte ranges. See [Audio Engine Recovery](docs/AUDIO-ENGINE-RECOVERY.md). Actual iPhone audio acceptance remains pending.
 
 V3.15.1 improves local entrance routing, lane junctions, mobile map pinch-to-zoom and destination pins, compact driving/GPS controls, original synthesized spatial vehicle sounds and one-handed umbrella poses. Adds 28 canonical goods/recipes/ingredients. See [V3.15.1 release notes](docs/NAVIGATION-IMMERSION-3151.md).
 
