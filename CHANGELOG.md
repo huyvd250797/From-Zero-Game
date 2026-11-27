@@ -1,3 +1,7 @@
+## V3.1.1 — Mobile HUD Refinement (27/11/2026)
+- Align mobile camera, vehicle and recenter controls; reserve independent bottom corners and compact taskbar.
+- Icon-only interaction/run; accessible labels; vehicle gray/green state and short mount/dismount feedback. No gameplay or data migration.
+
 ## V3.1.0 — Premium Identity & UX (27/11/2026)
 - Exact approved image logo, updated app/PWA/favicons, splash and real initialization stages with retry. Premium Emerald Glass palette and compact icon system.
 - Actual renderer title preview with visual-only time, static low/eco/fallback/reduced-motion mode; dedicated save management using existing guarded operations.

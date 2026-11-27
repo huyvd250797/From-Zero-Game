@@ -67,3 +67,41 @@ select,input:not([type=checkbox]):not([type=range]),textarea{border-radius:9px;b
 #modalBody.building-world .editing .building-focus{display:none!important}
 @media(max-width:760px){#actionBar{grid-template-columns:repeat(5,51px)}#actionBar .action-label{font-size:9px}}
 @media(max-height:550px) and (orientation:landscape){.splash-logo{width:clamp(80px,25vmin,128px)}}
+/* V3.1.1 — Mobile HUD only. Preserve existing palette, camera modes and taskbar actions. */
+.ride-toast{position:fixed;z-index:12;left:50%;bottom:calc(74px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:22px;border:1px solid #79b59c88;background:#153f32f2;color:var(--ink);font-size:12px;font-weight:700;white-space:nowrap;pointer-events:none;box-shadow:0 3px 12px #001a1540}
+.ride-toast-dot{display:grid;place-items:center;background:#91d7b8;color:#102820;border-radius:50%;width:19px;height:19px;font-size:12px}
+#interact,#bikeToggle,#runTouch{display:flex;align-items:center;justify-content:center;gap:6px}
+@media(min-width:761px) and (pointer:fine){#interact .ui-icon,#bikeToggle .ui-icon,#runTouch .ui-icon{display:none}}
+body:has(#modal:not(.hidden)) .ride-toast{display:none!important;}
+@media(max-width:760px),(pointer:coarse) and (max-height:550px){
+ #bottom .camera-buttons button{color:var(--gold)}
+ :root{--mobile-hud-button:44px;--mobile-hud-gap:6px;--mobile-hud-left:max(7px,env(safe-area-inset-left,0px));--mobile-hud-right:max(7px,env(safe-area-inset-right,0px));--mobile-hud-base:max(7px,env(safe-area-inset-bottom,0px));--mobile-hud-row:54px;--mobile-hud-step:calc(var(--mobile-hud-button) + var(--mobile-hud-gap));}
+ #bottom{bottom:calc(var(--mobile-hud-base) + var(--mobile-hud-row));left:var(--mobile-hud-left);right:var(--mobile-hud-right);display:block;}
+ #bottom .camera-dock{position:fixed;right:var(--mobile-hud-right);bottom:calc(var(--mobile-hud-base) + 5px + 2 * var(--mobile-hud-step));width:var(--mobile-hud-button);max-width:none;display:flex;justify-content:flex-end;align-items:flex-end;gap:0;pointer-events:none;z-index:5}
+ #bottom .camera-dock.expanded{width:min(440px,calc(100vw - var(--mobile-hud-left) - var(--mobile-hud-right)));}
+ #bottom .camera-controls:not(.camera-expanded){background:transparent;padding:0;border:0;box-shadow:none;width:var(--mobile-hud-button);}
+ #bottom .camera-controls.camera-expanded{width:100%;max-width:none;max-height:calc(100dvh - var(--mobile-hud-base) - 5px - 2 * var(--mobile-hud-step) - 6px);overflow:auto;}
+ #bottom #follow.quick-focus,#bottom .camera-controls:not(.camera-expanded) #cameraExpand,#interaction #bikeToggle,#interaction #interact,#touchpad #runTouch{display:grid;place-items:center;flex:none;width:var(--mobile-hud-button);min-width:var(--mobile-hud-button);max-width:var(--mobile-hud-button);height:var(--mobile-hud-button)!important;min-height:var(--mobile-hud-button)!important;padding:0;margin:0;gap:0;border:1px solid #d8bb8288;border-radius:12px;background:#153f32ee;color:var(--gold);box-shadow:0 3px 10px #001a1540;touch-action:manipulation;}
+ #bottom .camera-controls:not(.camera-expanded) #cameraExpand{display:grid!important;}
+ #bottom #follow.quick-focus,#touchpad #runTouch,#interaction #bikeToggle,#interaction #interact{position:fixed;z-index:4;}
+ #bottom #follow.quick-focus{right:var(--mobile-hud-right);bottom:calc(var(--mobile-hud-base) + 5px)}
+ #interaction #bikeToggle{right:var(--mobile-hud-right);bottom:calc(var(--mobile-hud-base) + 5px + var(--mobile-hud-step));color:#a1aba8;border-color:#a1aba866;background:#203831ee;}
+ #interaction #bikeToggle.mounted{color:#85deb0;border-color:#85deb0b3;background:#153f32ee;}
+ #interaction #interact{right:calc(var(--mobile-hud-right) + var(--mobile-hud-step));bottom:calc(var(--mobile-hud-base) + 5px + var(--mobile-hud-step));}
+ #touchpad #runTouch{left:var(--mobile-hud-left);bottom:calc(var(--mobile-hud-base) + 5px);border-radius:50%;}
+ #touchpad #runTouch.active{background:#38604a;border-color:#f2d49b;color:#f2d49b;}
+ #bottom .camera-controls:not(.camera-expanded) #cameraExpand .hud-control-label,#interaction .hud-control-label,#touchpad .hud-control-label{display:none;}
+ #bottom #follow .ui-icon,#bottom .camera-controls:not(.camera-expanded) #cameraExpand .ui-icon,#interaction #bikeToggle .ui-icon,#interaction #interact .ui-icon,#touchpad #runTouch .ui-icon{width:25px;height:25px;color:inherit;}
+ #actionBar{left:calc(var(--mobile-hud-left) + var(--mobile-hud-step));right:calc(var(--mobile-hud-right) + var(--mobile-hud-step));transform:none;bottom:var(--mobile-hud-base);width:auto;max-width:none;height:var(--mobile-hud-row);grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;padding:3px;}
+ #actionBar .action-item{min-width:0;min-height:44px;padding:1px 0;}
+ #actionBar .action-label{font-size:clamp(8px,2.25vw,10px);white-space:normal;overflow-wrap:normal;text-align:center;line-height:1.05;}
+ #actionBar .action-icon{min-height:20px;}#actionBar .ui-icon{width:20px;height:20px;}
+ #touchpad{position:fixed;left:var(--mobile-hud-left);bottom:calc(var(--mobile-hud-base) + var(--mobile-hud-row) + 8px);grid-template-rows:auto;gap:0;}
+ #interaction.has-context{position:fixed;right:calc(var(--mobile-hud-right) + 2 * var(--mobile-hud-step));bottom:calc(var(--mobile-hud-base) + var(--mobile-hud-row) + 8px);max-width:min(230px,calc(100vw - var(--mobile-hud-left) - var(--mobile-hud-right) - 2 * var(--mobile-hud-step) - 108px));padding:0;}
+ #interaction .drive-controls:empty{display:none}#interaction .drive-controls:has(>button:not(.hidden)){display:flex}#interaction .drive-controls:not(:has(>button:not(.hidden))){display:none}
+ #interaction.has-context:not(:has(#actionHint:not(.hidden),#drivingHUD:not(.hidden),#cancelRoute:not(.hidden),.drive-controls>button:not(.hidden))){width:0;height:0;}
+ .ride-toast{bottom:calc(var(--mobile-hud-base) + var(--mobile-hud-row) + 2 * var(--mobile-hud-step) + 14px);max-width:calc(100vw - 112px);}
+ body:has(#modal:not(.hidden)) .ride-toast{display:none!important;}
+}
+
+@media(max-height:550px) and (pointer:coarse){.ride-toast{top:calc(var(--hud-strip-bottom,110px) + 8px);bottom:auto;}#actionBar{width:min(520px,calc(100vw - var(--mobile-hud-left) - var(--mobile-hud-right) - 2 * var(--mobile-hud-step)));right:auto;left:50%;transform:translateX(-50%);}}

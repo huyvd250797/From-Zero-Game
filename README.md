@@ -1,7 +1,12 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.1.0 — Premium Identity & UX** · 27/11/2026
+**V3.1.1 — Mobile HUD Refinement** · 27/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V3.1.1 — Mobile HUD Refinement
+- Mobile icon-only run, interaction, camera and mount controls; camera → mount → focus in a fixed right column; run at bottom left as approved in the visual reference.
+- Gray mount icon while on foot, mint green while mounted; successful explicit mount/dismount shows a short non-modal toast without adding a journal entry.
+- Preserve all simulation, save and branding assets. See [HUD notes](docs/MOBILE-HUD-REFINEMENT.md).
 
 ## V3.1.0 — Premium Identity & UX
 - Approved original FZ illustration on splash, main menu, HUD, app icons and favicon. Emerald Glass UI with champagne accents, shared SVG quick controls and responsive layouts.
