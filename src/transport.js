@@ -1,6 +1,6 @@
 import {recordParking} from './city-services.js';
 import {conditionOf,conditionScore,broken,repairBase,resetCondition,wearCondition} from "./vehicle-damage.js";
-import {publicJourney} from './mobility.js';
+import {publicJourney,reserveBusJourney} from './mobility.js';
 import {highwayPoint} from './road-standards.js';
 import {motorwayExit} from './road-rules.js';
 import {urbanRoadRoute} from './urban-routing.js';
@@ -36,7 +36,7 @@ export function recordMovement(s,moved,yaw){const v=activeVehicle(s);if(v){v.pos
 export const roadRoute=urbanRoadRoute;
 // Compatibility API: the public bus quote now uses the same timetable, stops and fare as gameplay.
 export function transitQuote(s,kind,target){const to=places.find(p=>p.id===target),from=places.find(p=>near(s,p.id));if(!to||!from||to.id===from.id||driving(s)||!['bus','taxi'].includes(kind)||kind==='bus'&&(!busStops.includes(from.id)||!busStops.includes(to.id)))return null;const q=publicJourney(s,kind,target);if(!q)return null;return {...q,route:{target:q.target,path:q.legs.flatMap(l=>l.path)},speed:kind==='bus'?30/3.6:28,target};}
-export function payTransit(s,quote,kind){return !!quote&&cashChange(s,-quote.fare,'EXP_TRANSPORT',kind==='bus'?'Vé xe buýt':'Cước taxi');}
+export function payTransit(s,quote,kind){if(!quote||!cashChange(s,-quote.fare,'EXP_TRANSPORT',kind==='bus'?'Vé xe buýt':'Cước taxi'))return false;if(kind==='bus')reserveBusJourney(quote,'player');return true;}
 
 export function rescueReason(s,id){if(incarcerated(s))return 'Đang chấp hành án.';const v=s.transport.vehicles.find(v=>v.id===id);if(!v||driving(s)||distance(s.pos,v.pos)>2.5)return 'Cần đứng cạnh xe đã đỗ.';if(v.fuel>=record(id).capacity*.10)return 'Chỉ hỗ trợ khi năng lượng dưới 10%.';if(s.cash<30000)return 'Cần 30.000đ để cứu hộ.';if(s.minutes+15>MAX_MINUTES)return 'Đã đạt giới hạn mô phỏng.';return '';}
 export function rescueFuel(s,id){if(rescueReason(s,id))return false;const v=s.transport.vehicles.find(v=>v.id===id);if(!cashChange(s,-30000,'EXP_TRANSPORT','Cứu hộ năng lượng '+record(id).name))return false;advanceTime(s,15);v.fuel=record(id).capacity*.15;log(s,'Cứu hộ: nạp đủ 15% năng lượng.');return true;}

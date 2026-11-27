@@ -1,5 +1,7 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.13.0 — Dynamic Weather & NPC Behavior** · 27/11/2026
+**V3.14.0 — Living Buildings & Household** · 27/11/2026
+
+V3.14.0 adds per-home food storage and expiry, household chores, scheduled interior activities, interactive city map, compact GPS, demand-based named NPC bus trips, player road safety, patrol-based enforcement and revised vehicle breakdown threshold. See [Living Buildings & Household](docs/LIVING-BUILDINGS-HOUSEHOLD.md).
 
 V3.13.0 adds deterministic climate, NPC weather-aware leisure plans and umbrellas, storm-day bus timetables, weather-based driving and outdoor needs, in-game forecast and mobile performance budgets (24/30/45 FPS, adaptive down to 20 FPS). See [Dynamic Weather & Mobile](docs/DYNAMIC-WEATHER-MOBILE.md). Mobile optimizes rendering pressure, not measured temperature.
 

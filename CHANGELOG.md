@@ -1,3 +1,12 @@
+## V3.14.0 — Living Buildings & Household (27/11/2026)
+
+- Per-property food storage, spoilage, refrigerator capacity, cleaning and laundry, time-based household activities.
+- Demand-based buses with named resident bookings and player ticket reservations; 60-minute departure slots, 06:00–20:00 planned operating window, staggered routes and platform spacing checks.
+- Swept player protection for bus movement and visible road actors; player pedestrian blocking, compact GPS and guarded red-light override.
+- Interactive map zoom/pan, precise place selection and place-type filters; nearby-only world building labels.
+- Remove automated fine cameras; patrol-based driving enforcement remains. Breakdown only below 10% aggregate condition.
+- Retain V3.13 mobile governor, save schema 1 and Three.js r180. Full unit regression 848/848 PASS; native preview 134 assets PASS. Production and device acceptance pending. See QA notes for verified scope and limitations.
+
 ## V3.13.0 — Dynamic Weather & NPC Behavior (27/11/2026)
 
 - Deterministic temperature, humidity, wind, visibility and six-hour in-game forecast; smartphone app and HUD integration.

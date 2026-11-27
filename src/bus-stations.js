@@ -3,9 +3,9 @@ import {oneWay,highwayPoint} from './road-standards.js';
 import {roadSurfaces,pedestrianCrossings} from './junction-layout.js';
 import {distance,segmentClear} from './navigation.js';
 export const BUS_LINES=Object.freeze([
- {id:'AL01',name:'Trung tâm – Tây An Lạc',color:'#3489c2',headway:12,stops:['shop','office','mall','market','school','hospital']},
- {id:'AL02',name:'Trung tâm – Đông An Bình',color:'#d6a64c',headway:15,stops:['mall','east_market','tech_hub','new_factory','east_school','hospital']},
- {id:'AL03',name:'Nam An Lạc – Tân Phú',color:'#5caa80',headway:15,stops:['school','south_farm','phuan_market','river_park','tanphu_market','new_factory']}
+ {id:'AL01',name:'Trung tâm – Tây An Lạc',color:'#3489c2',headway:60,stops:['shop','office','mall','market','school','hospital']},
+ {id:'AL02',name:'Trung tâm – Đông An Bình',color:'#d6a64c',headway:60,stops:['mall','east_market','tech_hub','new_factory','east_school','hospital']},
+ {id:'AL03',name:'Nam An Lạc – Tân Phú',color:'#5caa80',headway:60,stops:['school','south_farm','phuan_market','river_park','tanphu_market','new_factory']}
 ].map(l=>Object.freeze({...l,stops:Object.freeze(l.stops)})));
 export const BUS_STOP_IDS=Object.freeze([...new Set(BUS_LINES.flatMap(l=>l.stops))]);
 let cache;

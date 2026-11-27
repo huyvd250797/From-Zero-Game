@@ -1,0 +1,5 @@
+Full unit regression: 848/848 PASS (exit 0; Node.js 22.16.0).
+Focused regression: 63/63 PASS (including 7 new tests).
+Native preview: 134/134 SHA-256 and HTTP resources PASS.
+Production build: syntax PASS, stopped at missing Three.js 0.180.0 dependency; npm ci --offline ENOTCACHED.
+No mobile browser or thermal acceptance.
