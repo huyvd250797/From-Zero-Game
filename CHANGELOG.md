@@ -1,3 +1,10 @@
+## V3.9.0 — Advanced Vehicle Dynamics (27/11/2026)
+- Add eight kinematic vehicle profiles, power/weight and grip based driving, braking, reverse, roll, wheel phase, EV regeneration and load-sensitive sound.
+- Replace decorative highway with a connected four-lane perimeter ring, eight entry/exit points, two extra river bridges and persistent background trips.
+- Prefer right-hand lanes and sidewalks for automatic routing; keep manual steering free. Retain bus lines and schedule model.
+- Layout 9 migration; preserve schema 1 and all canonical destination IDs. Add eight focused tests and adapt historical geometry assertions to the new layout.
+- Native preview and targeted QA pass; full final regression and Three.js production acceptance pending. See docs/ADVANCED-VEHICLE-DYNAMICS.md.
+
 ## V3.8.0 — Smart Navigation & Camera (27/11/2026)
 - Add navigation snapshot, maneuvers, route estimates and independent HUD with full-journey ETA, bus phases and cancellation.
 - Preserve destination during manual steering and braking; recalculate after release; clone cached sidewalk paths to prevent route consumption corrupting future lookups.

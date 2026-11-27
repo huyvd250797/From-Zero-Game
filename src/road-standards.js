@@ -8,11 +8,19 @@ export function classifyAxis(r){const roadClass=r.kind==='avenue'?(r.width>=11?'
 export function roadSpec(r){const roadClass=r.roadClass||({shore:'shore',arc:'street',diagonal:'street',highway:'highway',ramp:'ramp',avenue:'avenue',local:'local',roundabout:'roundabout'})[r.kind]||'street';return {...ROAD_CLASSES[roadClass],roadClass,width:r.width||0,lanes:r.lanes??ROAD_CLASSES[roadClass].lanes,kmh:r.kmh??ROAD_CLASSES[roadClass].kmh};}
 export function oneWay(r,coord){return ONE_WAYS.find(o=>o.id===r.id&&coord>o.from+1e-6&&coord<o.to-1e-6)?.dir||0;}
 export function allowedVehicle(spec,id='VEH_CAR'){return spec.roadClass==='alley'?id==='walk':spec.roadClass==='highway'||spec.roadClass==='ramp'?carOnly.includes(id):true;}
-export function highwayCorridors(){const h=HIGHWAY,lerp=(a,b,t)=>a+(b-a)*t,curve=(a,b)=>Array.from({length:17},(_,i)=>{const t=i/16;return {x:lerp(a.x,b.x,t*t*(3-2*t)),z:lerp(a.z,b.z,t)}});const main=Array.from({length:107},(_,i)=>({x:h.x,z:lerp(h.z0,h.z1,i/106)}));return [{id:h.id,kind:'highway',roadClass:'highway',width:h.width,lanes:4,points:main,a:main[0],b:main.at(-1)},{id:'AL_RAMP_N',kind:'ramp',width:5.2,points:curve(h.entry,main[0]),a:h.entry,b:main[0]},{id:'AL_RAMP_S',kind:'ramp',width:5.2,points:curve(main.at(-1),h.exit),a:main.at(-1),b:h.exit}];}
-// Restricted strip excludes the public street at x=368; the actual motorway has no side entrances.
-const restricted={minX:374.5,maxX:383,minZ:29,maxZ:255};
-export function highwayPoint(p){return p.x>restricted.minX&&p.x<restricted.maxX&&p.z>restricted.minZ&&p.z<restricted.maxZ;}
-export function highwaySegment(a,b){let lo=0,hi=1;for(const [p,d,min,max] of [[a.x,b.x-a.x,restricted.minX,restricted.maxX],[a.z,b.z-a.z,restricted.minZ,restricted.maxZ]]){if(Math.abs(d)<1e-9){if(p<=min||p>=max)return false;}else{const u=(min-p)/d,v=(max-p)/d;lo=Math.max(lo,Math.min(u,v));hi=Math.min(hi,Math.max(u,v));if(lo>=hi)return false;}}return lo<hi;}
+export function legacyHighwayCorridors(){const h=HIGHWAY,lerp=(a,b,t)=>a+(b-a)*t,curve=(a,b)=>Array.from({length:17},(_,i)=>{const t=i/16;return {x:lerp(a.x,b.x,t*t*(3-2*t)),z:lerp(a.z,b.z,t)}});const main=Array.from({length:107},(_,i)=>({x:h.x,z:lerp(h.z0,h.z1,i/106)}));return [{id:h.id,kind:'highway',roadClass:'highway',width:h.width,lanes:4,points:main,a:main[0],b:main.at(-1)},{id:'AL_RAMP_N',kind:'ramp',width:5.2,points:curve(h.entry,main[0]),a:h.entry,b:main[0]},{id:'AL_RAMP_S',kind:'ramp',width:5.2,points:curve(main.at(-1),h.exit),a:main.at(-1),b:h.exit}];}
+// Closed perimeter motorway, with at-grade ramp junctions only at designated access roads.
+export const RING_MIN=5,RING_MAX=379;
+export const RING_ACCESS=Object.freeze([
+ {id:'W_N',city:{x:16,z:80},ring:{x:5,z:80}}, {id:'W_S',city:{x:16,z:272},ring:{x:5,z:272}},
+ {id:'E_N',city:{x:368,z:80},ring:{x:379,z:80}}, {id:'E_S',city:{x:368,z:272},ring:{x:379,z:272}},
+ {id:'N_W',city:{x:80,z:16},ring:{x:80,z:5}}, {id:'N_E',city:{x:336,z:16},ring:{x:336,z:5}},
+ {id:'S_W',city:{x:80,z:368},ring:{x:80,z:379}}, {id:'S_E',city:{x:304,z:368},ring:{x:304,z:379}}
+]);
+const interpolate=(a,b)=>{const n=Math.ceil(Math.hypot(b.x-a.x,b.z-a.z)/2);return Array.from({length:n+1},(_,i)=>({x:a.x+(b.x-a.x)*i/n,z:a.z+(b.z-a.z)*i/n}));};
+export function highwayCorridors(){const corners=[{x:5,z:5},{x:379,z:5},{x:379,z:379},{x:5,z:379},{x:5,z:5}];const points=corners.slice(1).flatMap((b,i)=>interpolate(corners[i],b).slice(i?1:0));return [{id:HIGHWAY.id,kind:'highway',roadClass:'highway',width:7,lanes:4,points,a:points[0],b:points.at(-1)},...RING_ACCESS.map(r=>({id:'AL_RAMP_'+r.id,kind:'ramp',width:5.2,points:interpolate(r.city,r.ring),a:r.city,b:r.ring}))];}
+export function highwayPoint(p){return p.x<8.5||p.x>375.5||p.z<8.5||p.z>375.5;}
+export function highwaySegment(a,b){return highwayPoint(a)||highwayPoint(b);}
 export const restrictedActor=id=>!carOnly.includes(id);
-export function accessSegment(a,b,id){if(!highwaySegment(a,b))return true;if(restrictedActor(id))return false;const insideA=highwayPoint(a),insideB=highwayPoint(b);if(insideA===insideB)return insideA;const q=insideA?b:a;return q.z<=HIGHWAY.z0+2||q.z>=HIGHWAY.z1-2;}
+export function accessSegment(a,b,id){if(!highwaySegment(a,b))return true;if(restrictedActor(id))return false;if(highwayPoint(a)===highwayPoint(b))return true;const dx=b.x-a.x,dz=b.z-a.z;return RING_ACCESS.some(r=>{const vertical=r.city.x===r.ring.x;const bound=vertical?(r.ring.z===5?8.5:375.5):(r.ring.x===5?8.5:375.5);const t=vertical?(bound-a.z)/dz:(bound-a.x)/dx;return t>=0&&t<=1&&Math.abs((vertical?a.x+dx*t:a.z+dz*t)-(vertical?r.ring.x:r.ring.z))<=3;});}
 export function laneOffsets(r,dir,coord){const s=roadSpec(r),one=oneWay(r,coord);if(one&&one!==dir)return [];const n=one?s.lanes:Math.max(1,Math.floor(s.lanes/2)),w=s.width/Math.max(1,s.lanes);return Array.from({length:n},(_,i)=>one?(-s.width/2+w*(i+.5)):w*(i+.5));}

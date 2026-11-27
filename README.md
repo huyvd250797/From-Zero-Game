@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.8.0 — Smart Navigation & Camera** · 27/11/2026
+**V3.9.0 — Advanced Vehicle Dynamics** · 27/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V3.9.0 — Advanced Vehicle Dynamics
+- Eight vehicle profiles, power/mass-dependent acceleration, braking, speed-dependent steering, coast, reverse (H), grip, wet weather, EV regeneration, wheel animation and body roll. Automatic routes retain exact waypoints; buses and background traffic remain schedule/path-driven.
+- Four-lane closed ring expressway (1,496 world units), eight at-grade entry/exit connections, six bridges, three interior roundabouts. Eight persistent background vehicles follow closed city–ring–city itineraries.
+- Right-hand lane preference for automated vehicles, directional bus access and sidewalk preference for automated walking. Manual input remains free subject to collision and access restrictions.
+- Layout 9 migrates older valid saves; schema 1, canonical IDs, master data and Three.js r180 retained. See [Advanced Vehicle Dynamics](docs/ADVANCED-VEHICLE-DYNAMICS.md) for controls, scope and QA status.
 
 ## V3.8.0 — Smart Navigation & Camera
 - GPS 3D with directional chevrons, walking/vehicle colors, final destination marker, and independent responsive navigation HUD. The city map includes the remaining public-transit itinerary.
