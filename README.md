@@ -1,7 +1,12 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.1.1 — Mobile HUD Refinement** · 27/11/2026
+**V3.2.0 — Immersive Audio Engine** · 27/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V3.2.0 — Immersive Audio Engine
+- Recover Web Audio after interrupted/suspended contexts, bounded resume attempts and trusted retry. PWA lifecycle, audio diagnostic and explicit rebuild.
+- Distinct vehicle synthesis, spatial nearby traffic, horn cues, wet footsteps, indoor details and weather; seven existing mixer groups retained.
+- See [audio notes](docs/IMMERSIVE-AUDIO-ENGINE.md).
 
 ## V3.1.1 — Mobile HUD Refinement
 - Mobile icon-only run, interaction, camera and mount controls; camera → mount → focus in a fixed right column; run at bottom left as approved in the visual reference.

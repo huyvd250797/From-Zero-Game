@@ -1,3 +1,7 @@
+## V3.2.0 — Immersive Audio Engine (27/11/2026)
+- Recover interrupted Web Audio and bound pending resume; add retry, diagnostics and tone preview.
+- Distinct vehicle profiles, spatial traffic cues, wet footsteps, indoor detail and weather. Preserve mobile HUD, saves, master data and production build gate.
+
 ## V3.1.1 — Mobile HUD Refinement (27/11/2026)
 - Align mobile camera, vehicle and recenter controls; reserve independent bottom corners and compact taskbar.
 - Icon-only interaction/run; accessible labels; vehicle gray/green state and short mount/dismount feedback. No gameplay or data migration.

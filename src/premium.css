@@ -105,3 +105,6 @@ body:has(#modal:not(.hidden)) .ride-toast{display:none!important;}
 }
 
 @media(max-height:550px) and (pointer:coarse){.ride-toast{top:calc(var(--hud-strip-bottom,110px) + 8px);bottom:auto;}#actionBar{width:min(520px,calc(100vw - var(--mobile-hud-left) - var(--mobile-hud-right) - 2 * var(--mobile-hud-step)));right:auto;left:50%;transform:translateX(-50%);}}
+/* V3.2.0 audio diagnostics and recovery actions */
+#audioDiagnostics,#audioPreviewResult{overflow-wrap:anywhere;line-height:1.5;font-size:.78rem;min-width:0}
+.audio-actions{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}.audio-actions button{white-space:normal;min-height:44px}.audio-actions button:last-child{grid-column:1/-1}
