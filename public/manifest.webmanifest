@@ -4,8 +4,8 @@
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#142823",
-  "theme_color": "#142823",
+  "background_color": "#09251f",
+  "theme_color": "#102820",
   "lang": "vi",
   "icons": [
     {
@@ -28,5 +28,5 @@
     }
   ],
   "id": "./",
-  "description": "From Zero V3.0.0 — Advanced Life Simulation tại An Lạc"
+  "description": "From Zero V3.1.0 — Premium Identity & UX tại An Lạc"
 }

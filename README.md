@@ -1,7 +1,12 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.0.0 — Advanced Life Simulation** · 27/11/2026
+**V3.1.0 — Premium Identity & UX** · 27/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V3.1.0 — Premium Identity & UX
+- Approved original FZ illustration on splash, main menu, HUD, app icons and favicon. Emerald Glass UI with champagne accents, shared SVG quick controls and responsive layouts.
+- Real loading stages and retry; city-renderer title preview; direct save manager; eight camera buttons in one row and independent focus-to-player button (also in interior).
+- Keep schema 1, Master Data 3.1.0 and Three.js r180. See [release notes and QA limits](docs/PREMIUM-IDENTITY-UX.md). Production Three.js/device acceptance still required.
 
 ## V3.0.0 — Advanced Life Simulation
 - Hoàn thành roadmap bàn giao source thế hệ 3.0; giữ nguyên gameplay 3D từ trên cao và toàn bộ module đã phát triển.

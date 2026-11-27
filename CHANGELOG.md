@@ -1,3 +1,9 @@
+## V3.1.0 — Premium Identity & UX (27/11/2026)
+- Exact approved image logo, updated app/PWA/favicons, splash and real initialization stages with retry. Premium Emerald Glass palette and compact icon system.
+- Actual renderer title preview with visual-only time, static low/eco/fallback/reduced-motion mode; dedicated save management using existing guarded operations.
+- Eight original camera controls in one row, independent HUD focus and interior focus, sticky management headers/footers and responsive refinements.
+- No gameplay/Master Data/schema/dependency changes. Ten new UI-specific regression tests; production Three.js gate preserved.
+
 ## V3.0.0 — Advanced Life Simulation (27/11/2026)
 - Continuous inheritance: preserve world date, economy, NPC population and heir age; retain independent and legacy restart. Validate birth-year anchor against archived heir, enforce timeline capacity and keep retirement/story/calendar consistent.
 - Retain all prior save schema and asset IDs; no new dependency. Add generation roundtrip and financial regression tests, five-year simulation gate, GitHub Actions production QA and release acceptance documentation.
