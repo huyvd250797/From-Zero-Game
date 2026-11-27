@@ -1,5 +1,7 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.12.0 — Traffic Law & City Services** · 27/11/2026
+**V3.13.0 — Dynamic Weather & NPC Behavior** · 27/11/2026
+
+V3.13.0 adds deterministic climate, NPC weather-aware leisure plans and umbrellas, storm-day bus timetables, weather-based driving and outdoor needs, in-game forecast and mobile performance budgets (24/30/45 FPS, adaptive down to 20 FPS). See [Dynamic Weather & Mobile](docs/DYNAMIC-WEATHER-MOBILE.md). Mobile optimizes rendering pressure, not measured temperature.
 
 V3.12.0 adds fictional An Lạc traffic regulations and city services, plus directional bus routing and bounded speed/yaw profiles. See [Traffic Law & City Services](docs/TRAFFIC-LAW-CITY-SERVICES.md). The V3.11.1 hotfix updated the real Three.js lighting integration test for the renderer-provided vehicle lamp list. Production still runs all unit and Three.js integration tests. If deployment fails, inspect the `[BUILD FAILED]` stage and the failing test summary, not the final Vercel wrapper error. Three.js remains pinned at r180.
 

@@ -1,3 +1,11 @@
+## V3.13.0 — Dynamic Weather & NPC Behavior (27/11/2026)
+
+- Deterministic temperature, humidity, wind, visibility and six-hour in-game forecast; smartphone app and HUD integration.
+- Weather-aware leisure schedules, lightweight umbrella geometry for pedestrians, outdoor needs and AI/automatic driving speed adjustment.
+- Storm-day bus timetable with 0.75 speed factor and shared offsets, preserving V3.12.0 controlled bus motion.
+- Mobile cool/balanced/smooth modes, pressure governor, DPR/pixel caps, lower weather/actor/lighting budget, reduced HUD refresh and stationary title camera; fixed-step gameplay preserved.
+- Save schema 1, layout 9, Three.js r180 retained. Full unit regression 841/841 PASS; native preview 132 SHA-256/HTTP resources PASS; production/physical phone thermal acceptance pending. See docs/DYNAMIC-WEATHER-MOBILE.md and QA report.
+
 ## V3.12.0 — Traffic Law & City Services (27/11/2026)
 
 - Add schema-compatible traffic records, fictional fines, license quiz and points, camera/patrol attribution, accident reports, insurance and claims.

@@ -1,0 +1,43 @@
+V3.13.0 — final QA
+Full unit regression on final code (Node 22.16.0):
+ℹ tests 841
+ℹ suites 0
+ℹ pass 841
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 165650.748619
+
+Earlier focused regression (before final render budget adjustments):
+ℹ tests 79
+ℹ suites 0
+ℹ pass 79
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 20945.331799
+
+
+> from-zero@3.13.0 build:native-preview
+> node scripts/build.mjs --native-preview
+
+
+[BUILD] JavaScript syntax
+JavaScript syntax check passed
+[BUILD PASS] JavaScript syntax
+From Zero v3.13.0 → dist-native-preview/ · 132 files · 0 Three.js files · NATIVE PREVIEW ONLY (no production PWA)
+
+[BUILD] Release integrity
+PASS: 132 assets; exact SHA-256, HTML references and versioned paths.
+[BUILD PASS] Release integrity
+HTTP integrity PASS: 132 resources
+
+
+> from-zero@3.13.0 data:validate
+> node scripts/master-data.mjs
+
+Master Data PASS: 60 catalogs, 1028 records
+
+Production build: blocked at vendor dependency; npm ci online EAI_AGAIN, offline ENOTCACHED. Three.js integration not run. No physical device, GPU, power or thermal acceptance.
