@@ -1,3 +1,10 @@
+## V3.8.0 — Smart Navigation & Camera (27/11/2026)
+- Add navigation snapshot, maneuvers, route estimates and independent HUD with full-journey ETA, bus phases and cancellation.
+- Preserve destination during manual steering and braking; recalculate after release; clone cached sidewalk paths to prevent route consumption corrupting future lookups.
+- Prefer validated marked pedestrian crossings with bounded detours; enhance route geometry and persistent final destination marker. Extend map to remaining transit itinerary.
+- Adaptive orthographic vehicle camera, manual heading override, device-local preferences and per-session destination history.
+- Add 12 targeted regression tests, keep existing source QA and production Three.js gate. No save migration or master-data changes.
+
 ## V3.7.0 — Public Transport 4.0 (27/11/2026)
 - Add 14 physical curbside stations with 28 directional shelters, number signs, benches, boarding-side vehicle positions and route-specific vehicle signs.
 - Reuse the three canonical fixed bus lines; integrate scheduled walking, queueing, board/alight legs, up to three boardings, trip manifests, capacity-aware departures and per-boarding fares.

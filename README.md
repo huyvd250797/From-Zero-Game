@@ -1,7 +1,14 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.7.0 — Public Transport 4.0** · 27/11/2026
+**V3.8.0 — Smart Navigation & Camera** · 27/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V3.8.0 — Smart Navigation & Camera
+- GPS 3D with directional chevrons, walking/vehicle colors, final destination marker, and independent responsive navigation HUD. The city map includes the remaining public-transit itinerary.
+- Manual steering/braking suspends the route without deleting the destination; releasing controls recalculates once from the actual position. Explicit cancel and Esc clear the destination. Estimates reflect speed caps, peak factor, pickup legs and transit timetable; comparisons include estimated energy cost, public fares, distance and game-clock arrival.
+- Player walking routes prefer a nearby valid V3.7 crossing when a bounded safe detour is available; otherwise use the existing safe pathfinder. Public transit retains its established sidewalk/station and timetable routing.
+- Camera vehicle mode adds speed-dependent zoom, heading follow on automatic routes, and footprint-based occlusion pitch adjustment. Manual rotation overrides auto-heading. Existing orthographic camera, gestures and one-tap recenter preserved.
+- Device-local GPS and camera preferences; session-only history for up to 12 completed named destinations. Save schema 1, layout 8, canonical data and Three.js r180 unchanged. See [Smart Navigation & Camera](docs/SMART-NAVIGATION-AND-CAMERA.md).
 
 ## V3.7.0 — Public Transport 4.0
 - 14 trạm ven đường, 28 điểm đón hai chiều; nhà chờ, ghế, biển 01/02/03, xe có số tuyến. Giữ 3 tuyến AL01/AL02/AL03 và toàn bộ địa điểm canonical của V3.6.0.
