@@ -29,7 +29,7 @@ export function driveStep(d,pos,path,input,dt,profile,limit=Infinity){
  // Route movement keeps exact legacy waypoints and collision sweep; no overshoot.
  let moved=0,blocked=false,reached=false;
  if(route){const r=advanceRoute(pos,path,budget,profile.vehicle);moved=r.moved;blocked=r.blocked;reached=!path.length;if(reached)d.speed=0;}
- else if(budget>0){moved=moveSwept(pos,Math.sin(d.yaw)*budget*d.gear,Math.cos(d.yaw)*budget*d.gear,false,profile.vehicle);blocked=moved<budget-1e-6;}
+ else if(budget>0){moved=moveSwept(pos,Math.sin(d.yaw)*budget*d.gear,Math.cos(d.yaw)*budget*d.gear,false,profile.vehicle,true);blocked=moved<budget-1e-6;}
  if(blocked||limit<=0)d.speed=0;
  d.acceleration=(d.speed-before)/Math.max(dt,.001);d.regen=profile.regen&&moved>0&&!blocked?Math.min(.012,Math.max(0,before*before-d.speed*d.speed)*profile.mass/7200000*.65):0;d.distance+=moved;d.wheelDistance+=moved*d.gear;d.braking=input.brake||wanted<before-.01||blocked||reached;
  return {moved,blocked,reached,dx:pos.x-old.x,dz:pos.z-old.z};

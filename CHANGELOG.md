@@ -1,3 +1,10 @@
+## V3.11.0 — Intelligent Traffic AI (27/11/2026)
+- Add session-persistent ambient traffic, spatially indexed following, lane-change and yield heuristics, contact stops, congestion-aware local ETA and render interpolation.
+- Preserve straight lane alignment at intersections, remove redundant centerline hooks, smooth validated motorway transitions and guard motorway access.
+- Separate overlapping ramp and ring road geometry to reduce depth fighting.
+- Replace player labels with directional chevron and geometry-derived dashed occlusion silhouette.
+- Preserve save schema 1, layout 9, Three.js r180. Focused tests 49/49; native preview 127 assets verified. Full regression on final source and production/browser acceptance remain pending.
+
 ## V3.10.0 — Collision & Vehicle Damage (27/11/2026)
 - Add player vehicle swept collision checks, impact energy, five-part damage condition, breakdown and saved accident history.
 - Add paid garage repair, towing service and maintenance effects. Preserve layout 9 and schema 1.

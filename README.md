@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.10.0 — Collision & Vehicle Damage** · 27/11/2026
+**V3.11.0 — Intelligent Traffic AI** · 27/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V3.11.0 — Intelligent Traffic AI
+- Persistent session traffic agents, closed ring/city itineraries, following, safe lane-change heuristics, signal and crossing yields, merge/roundabout priority, local traffic ETA and interpolated positions.
+- Preserve lanes through straight junctions; smooth validated ramp turns; guard expressway perimeter and restricted ramp access; separate overlapping road surface elevations.
+- Replace player text labels with a downward chevron and an occluded dashed silhouette derived from character/vehicle geometry, including skinned character geometry when available.
+- Bus and named NPC schedules remain timetable-driven; ambient traffic reacts to them. Full bus rescheduling, persistent NPC damage and production visual acceptance remain pending. See [Intelligent Traffic AI](docs/INTELLIGENT-TRAFFIC-AI.md).
 
 ## V3.10.0 — Collision & Vehicle Damage
 - Swept player-vehicle collisions, impact-dependent damage, condition and breakdown; persisted accident history and compatible saves.

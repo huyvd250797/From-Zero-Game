@@ -131,3 +131,6 @@ body:has(#modal:not(.hidden)) .ride-toast{display:none!important;}
 /* V3.9 mobile gear control keeps the original joystick. */
 .drive-controls{display:flex;flex-wrap:wrap;gap:4px;}#driveGear{font-size:.72rem;color:#8ee0b5;font-weight:700;}#reverseVehicle{touch-action:manipulation;min-height:36px;}
 @media(max-width:700px){.drive-controls{flex-wrap:wrap;}#reverseVehicle{min-height:40px;}}
+
+/* V3.11: screen-space player pointer and dashed projected silhouette. */
+.fz-player-arrow,.fz-player-outline{position:absolute;pointer-events:none;z-index:4;}.fz-player-arrow{transform:translate(-50%,-100%);filter:drop-shadow(0 2px 3px #0009);width:32px;height:28px;}.fz-player-arrow.occluded svg path:first-child{fill:#f0d292;}.fz-player-outline{z-index:3;filter:drop-shadow(0 0 2px #0e302a);}.fz-player-arrow[hidden],.fz-player-outline[hidden]{display:none!important;}
