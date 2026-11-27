@@ -1,3 +1,4 @@
+import {publicJourney} from './mobility.js';
 import {highwayPoint} from './road-standards.js';
 import {motorwayExit} from './road-rules.js';
 import {urbanRoadRoute} from './urban-routing.js';
@@ -31,7 +32,8 @@ export function payVehicleDebt(s){const n=s.transport.debt;if(!n||!cashChange(s,
 export function movementBudget(s,wanted){const v=activeVehicle(s);return v?Math.min(wanted,v.fuel/record(v.id).consumption):wanted;}
 export function recordMovement(s,moved,yaw){const v=activeVehicle(s);if(v){v.pos={...s.pos};v.yaw=yaw;v.distance+=moved;v.fuel=Math.max(0,v.fuel-moved*record(v.id).consumption);}else if(s.riding){s.transport.bikePos={...s.pos};s.transport.bikeYaw=yaw;}}
 export const roadRoute=urbanRoadRoute;
-export function transitQuote(s,kind,target){const to=places.find(p=>p.id===target),from=places.find(p=>near(s,p.id));if(!to||!from||to.id===from.id||driving(s)||!['bus','taxi'].includes(kind)||kind==='bus'&&(!busStops.includes(from.id)||!busStops.includes(to.id)))return null;const route=roadRoute(s.pos,{x:to.door[0],z:to.door[1]});if(!route||!route.path.length)return null;return {route,fare:livingQuote(s,kind==='bus'?7000:Math.ceil(12000+routeLength(s.pos,route.path)*120),'fuel'),speed:kind==='bus'?22:28,target};}
+// Compatibility API: the public bus quote now uses the same timetable, stops and fare as gameplay.
+export function transitQuote(s,kind,target){const to=places.find(p=>p.id===target),from=places.find(p=>near(s,p.id));if(!to||!from||to.id===from.id||driving(s)||!['bus','taxi'].includes(kind)||kind==='bus'&&(!busStops.includes(from.id)||!busStops.includes(to.id)))return null;const q=publicJourney(s,kind,target);if(!q)return null;return {...q,route:{target:q.target,path:q.legs.flatMap(l=>l.path)},speed:kind==='bus'?14:28,target};}
 export function payTransit(s,quote,kind){return !!quote&&cashChange(s,-quote.fare,'EXP_TRANSPORT',kind==='bus'?'Vé xe buýt':'Cước taxi');}
 
 export function rescueReason(s,id){if(incarcerated(s))return 'Đang chấp hành án.';const v=s.transport.vehicles.find(v=>v.id===id);if(!v||driving(s)||distance(s.pos,v.pos)>2.5)return 'Cần đứng cạnh xe đã đỗ.';if(v.fuel>=record(id).capacity*.10)return 'Chỉ hỗ trợ khi năng lượng dưới 10%.';if(s.cash<30000)return 'Cần 30.000đ để cứu hộ.';if(s.minutes+15>MAX_MINUTES)return 'Đã đạt giới hạn mô phỏng.';return '';}

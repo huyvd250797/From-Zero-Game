@@ -1,3 +1,10 @@
+## V3.7.0 — Public Transport 4.0 (27/11/2026)
+- Add 14 physical curbside stations with 28 directional shelters, number signs, benches, boarding-side vehicle positions and route-specific vehicle signs.
+- Reuse the three canonical fixed bus lines; integrate scheduled walking, queueing, board/alight legs, up to three boardings, trip manifests, capacity-aware departures and per-boarding fares.
+- Add route map overlay, capacity/ETA details and boarding/alighting HUD. Keep taxi and personal transport behavior.
+- Unify zebra placement with actual at-grade junctions and roundabout approaches; remove legacy overlapping paint, interrupt lane marks and curbs at crossings, align automatic signal stop targets.
+- Add nine focused tests, update outdated geometry and branding assertions; preserve layout 8 and schema 1, Three.js r180 production build gate and Vercel configuration.
+
 ## V3.6.0 — Advanced Road Network (27/11/2026)
 - Road hierarchy, directed routing, lane geometry, speed limits, east expressway and two ramp connections, motorway restrictions, road signs and crossing paint.
 - Preserve river and all canonical IDs; layout 8 safely migrates valid layout 7 saves.

@@ -1,7 +1,15 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.6.0 — Advanced Road Network** · 27/11/2026
+**V3.7.0 — Public Transport 4.0** · 27/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V3.7.0 — Public Transport 4.0
+- 14 trạm ven đường, 28 điểm đón hai chiều; nhà chờ, ghế, biển 01/02/03, xe có số tuyến. Giữ 3 tuyến AL01/AL02/AL03 và toàn bộ địa điểm canonical của V3.6.0.
+- 6 dịch vụ có hướng, 30 chặng theo mạng đường hiện hành; tiếp cận bằng đi bộ, chờ tại vỉa hè, lên xe, xuống xe và chuyển tối đa 3 tuyến. Giờ đầu tuyến 06:00–22:00, 12/15 phút/chuyến, dừng 1 phút game.
+- Manifest hành khách nền theo chuyến, sức chứa 24, hành khách lên/xuống theo điểm đến; bỏ qua chuyến thiếu chỗ trên bất kỳ chặng cần đi. Vé cơ sở 7.000đ/lượt lên xe, điều chỉnh theo nền kinh tế game, trả trước một lần. Không hoàn vé khi hủy như baseline.
+- Bản đồ có lớp toàn bộ tuyến hoặc từng tuyến, điểm dừng và xe đang hoạt động; bảng giờ, chỗ trống và trạng thái lên/xuống.
+- Vạch giao lộ thống nhất theo graph: 565 vạch qua đường đủ điều kiện (19 trên nhánh vòng xoay), không vẽ chồng hệ thống cũ, ngắt phân làn và bó vỉa, vạch dừng đúng chiều đi vào. Không vẽ qua cao tốc hoặc lối nhập/thoát.
+- Không đổi save schema 1, layout 8, ID công trình hay master data. Không cần migration. Xem [Public Transport 4.0](docs/PUBLIC-TRANSPORT-4.md) để biết chi tiết và giới hạn.
 
 ## V3.6.0 — Advanced Road Network
 - Six narrow local axes, ten urban streets, six four-lane avenues and two six-lane boulevards. A four-lane east expressway (212 world units) joins the street network through two bidirectional ramps. Retains the V3.5.3 river, four bridges, five roundabouts and all 60 interaction IDs.
