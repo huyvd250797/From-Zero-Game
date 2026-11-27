@@ -155,5 +155,140 @@
     ],
     "useMinutes": 5,
     "hygiene": 25
+  },
+  {
+    "id": "ITM_CHICKEN",
+    "name": "Thịt gà (1 phần)",
+    "price": 18000,
+    "category": "ingredient",
+    "shops": [
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
+  },
+  {
+    "id": "ITM_PORK",
+    "name": "Thịt heo (1 phần)",
+    "price": 20000,
+    "category": "ingredient",
+    "shops": [
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
+  },
+  {
+    "id": "ITM_FISH",
+    "name": "Cá (1 phần)",
+    "price": 20000,
+    "category": "ingredient",
+    "shops": [
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
+  },
+  {
+    "id": "ITM_TOFU",
+    "name": "Đậu hũ (1 phần)",
+    "price": 7000,
+    "category": "ingredient",
+    "shops": [
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
+  },
+  {
+    "id": "ITM_TOMATO",
+    "name": "Cà chua (1 phần)",
+    "price": 5000,
+    "category": "ingredient",
+    "shops": [
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
+  },
+  {
+    "id": "ITM_POTATO",
+    "name": "Khoai tây (1 phần)",
+    "price": 6000,
+    "category": "ingredient",
+    "shops": [
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
+  },
+  {
+    "id": "ITM_BEEF",
+    "name": "Thịt bò (1 phần)",
+    "price": 28000,
+    "category": "ingredient",
+    "shops": [
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
+  },
+  {
+    "id": "ITM_ONION",
+    "name": "Hành (1 phần)",
+    "price": 4000,
+    "category": "ingredient",
+    "shops": [
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
+  },
+  {
+    "id": "ITM_FRUIT",
+    "name": "Trái cây tươi (1 phần)",
+    "price": 8000,
+    "category": "ingredient",
+    "shops": [
+      "BLD_MARKET",
+      "BLD_EAST_MARKET",
+      "BLD_CENTRAL_MALL",
+      "BLD_TANPHU_MARKET",
+      "BLD_PHUAN_MARKET"
+    ],
+    "useMinutes": 0,
+    "hygiene": 0
   }
 ]

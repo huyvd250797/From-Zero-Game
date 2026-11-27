@@ -137,3 +137,33 @@ body:has(#modal:not(.hidden)) .ride-toast{display:none!important;}
 
 /* V3.14 compact navigation and interactive map */
 .nav-hud{left:auto;right:max(8px,env(safe-area-inset-right));transform:none;width:min(208px,45vw);padding:5px 7px;border-radius:10px;top:calc(var(--hud-strip-bottom,145px) + 6px)}.nav-top{gap:5px}.nav-copy strong{font-size:12px}#navArrow{font-size:22px;width:24px}#navCancel{width:26px;height:26px;font-size:17px}#navDestination{display:none}.nav-metrics{font-size:10px;gap:4px;margin-top:3px;padding-top:3px}#navMap{min-height:24px;padding:2px 4px}.map-viewport{min-width:0;display:grid;align-content:start;gap:6px}.map-zoom-tools{display:flex;align-items:center;flex-wrap:wrap;gap:5px}.map-zoom-tools button{min-height:34px;padding:5px 9px}.map-zoom-tools span{font-variant-numeric:tabular-nums}.map-selected{display:grid;gap:5px}.map-viewport .expanded-map{width:100%;height:auto;aspect-ratio:1;touch-action:none}.map-side select{width:100%}@media(max-height:550px) and (orientation:landscape){.nav-hud{left:auto;right:max(8px,env(safe-area-inset-right));width:190px;top:calc(var(--hud-strip-bottom,70px) + 4px)}}
+/* V3.15.1: compact controls, map actions visible next to the map. */
+#navHUD{width:112px;padding:5px 6px;border-radius:13px;min-height:100px;box-sizing:border-box;}
+#navHUD .nav-top{display:grid;grid-template-columns:1fr 34px;gap:2px;align-items:center;}
+#navHUD #navArrow{grid-column:1;font-size:32px;width:auto;text-align:center;line-height:1;}
+#navHUD #navCancel{grid-column:2;grid-row:1;width:34px;height:34px;min-height:34px;padding:0;}
+#navHUD .nav-copy{grid-column:1/-1;text-align:center;gap:0;}
+#navHUD #navInstruction{font-size:11px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#navHUD #navTurnDistance{font-size:12px;font-weight:700;}
+#navHUD .nav-metrics{display:grid;grid-template-columns:1fr 1fr 32px;gap:2px;margin-top:3px;padding-top:2px;align-items:center;font-size:10px;}
+#navHUD #navMap{width:32px;height:32px;min-height:32px;padding:4px;}
+#navHUD svg,#interaction .drive-controls svg,#interaction #cancelRoute svg{width:22px;height:22px;display:block;margin:auto;pointer-events:none;}
+#interaction:has(#drivingHUD:not(.hidden)) #actionHint{display:none!important;}
+#interaction:has(#drivingHUD:not(.hidden)){width:max-content;max-width:min(260px,65vw);}
+#interaction .drive-hud{display:grid;grid-template-columns:auto auto;gap:1px 7px;padding:5px 7px;align-items:center;}
+#interaction .drive-hud #driveSpeed{font-size:15px;white-space:nowrap;}
+#interaction .drive-hud #driveGear{font-size:11px;white-space:nowrap;text-align:right;}
+#interaction .drive-hud #driveStatus{grid-column:1/-1;font-size:10px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#interaction .drive-controls{flex-wrap:nowrap;gap:4px;}
+#interaction .drive-controls button,#interaction #cancelRoute{flex:0 0 42px;width:42px;height:42px;min-width:42px;min-height:42px;padding:5px;border-radius:11px;}
+#interaction #cancelRoute{align-self:end;}
+#interaction .drive-hud #overrideRed:not(.hidden){grid-column:1/-1;padding:4px;min-height:30px;font-size:10px;}
+.map-viewport{position:relative;}
+.map-viewport .expanded-map{touch-action:none;max-height:min(55dvh,440px);object-fit:contain;}
+.map-viewport .map-selected{display:flex;flex-wrap:nowrap;align-items:center;gap:6px;min-height:44px;padding:5px 6px;border:1px solid #83c7a14a;border-radius:10px;background:#102d26;}
+.map-viewport .map-selected strong{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;}
+.map-viewport .map-selected small{display:none;}
+.map-viewport .map-selected button{flex:0 0 auto;min-height:40px;padding:6px 10px;font-size:12px;}
+@media(max-width:700px){#interaction.has-context:has(#drivingHUD:not(.hidden)){right:calc(var(--mobile-hud-right) + var(--mobile-hud-step));max-width:calc(100vw - 126px - var(--mobile-hud-step));width:max-content;gap:4px;}#interaction:has(#drivingHUD:not(.hidden)) .drive-controls{flex-wrap:wrap;justify-content:end;}#interaction:has(#drivingHUD:not(.hidden)) #cancelRoute{margin-left:auto;}#navHUD{right:max(8px,env(safe-area-inset-right));width:106px;}.map-viewport .expanded-map{width:min(100%,48dvh);max-height:none;aspect-ratio:1;margin:auto;}.map-viewport .map-selected{position:sticky;bottom:0;z-index:2;}.city-map-dialog .map-zoom-tools button{min-height:40px;}.city-map-dialog .map-zoom-tools{flex-wrap:nowrap;overflow:auto;}.city-map-dialog .map-zoom-tools button{white-space:nowrap;}}
+body:has(#navHUD:not(.hidden)) #interaction:has(#drivingHUD:not(.hidden)) #cancelRoute{display:none!important;}
+#interaction .drive-controls button{touch-action:manipulation;}

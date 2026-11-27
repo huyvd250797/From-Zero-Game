@@ -1,5 +1,7 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.15.0 — Realistic Life Balance & Optimization** · 27/11/2026
+**V3.15.1 — Navigation, Immersion & Mobile UX Refinement** · 27/11/2026
+
+V3.15.1 improves local entrance routing, lane junctions, mobile map pinch-to-zoom and destination pins, compact driving/GPS controls, original synthesized spatial vehicle sounds and one-handed umbrella poses. Adds 28 canonical goods/recipes/ingredients. See [V3.15.1 release notes](docs/NAVIGATION-IMMERSION-3151.md).
 
 V3.15.0 introduces 30-day paid rental periods, balanced monthly rent, 90-day maintenance, vehicle footprint clearance, swept traffic conflict checks and delayed buses/taxis when blocked. Mobile rendering budgets and save schema remain unchanged. See [Realistic Life Balance & Optimization](docs/REALISTIC-LIFE-BALANCE-OPTIMIZATION.md).
 

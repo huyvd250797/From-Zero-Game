@@ -9711,6 +9711,141 @@ export default {
         ],
         "useMinutes": 5,
         "hygiene": 25
+      },
+      {
+        "id": "ITM_CHICKEN",
+        "name": "Thịt gà (1 phần)",
+        "price": 18000,
+        "category": "ingredient",
+        "shops": [
+          "BLD_MARKET",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_MALL",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
+      },
+      {
+        "id": "ITM_PORK",
+        "name": "Thịt heo (1 phần)",
+        "price": 20000,
+        "category": "ingredient",
+        "shops": [
+          "BLD_MARKET",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_MALL",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
+      },
+      {
+        "id": "ITM_FISH",
+        "name": "Cá (1 phần)",
+        "price": 20000,
+        "category": "ingredient",
+        "shops": [
+          "BLD_MARKET",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_MALL",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
+      },
+      {
+        "id": "ITM_TOFU",
+        "name": "Đậu hũ (1 phần)",
+        "price": 7000,
+        "category": "ingredient",
+        "shops": [
+          "BLD_MARKET",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_MALL",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
+      },
+      {
+        "id": "ITM_TOMATO",
+        "name": "Cà chua (1 phần)",
+        "price": 5000,
+        "category": "ingredient",
+        "shops": [
+          "BLD_MARKET",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_MALL",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
+      },
+      {
+        "id": "ITM_POTATO",
+        "name": "Khoai tây (1 phần)",
+        "price": 6000,
+        "category": "ingredient",
+        "shops": [
+          "BLD_MARKET",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_MALL",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
+      },
+      {
+        "id": "ITM_BEEF",
+        "name": "Thịt bò (1 phần)",
+        "price": 28000,
+        "category": "ingredient",
+        "shops": [
+          "BLD_MARKET",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_MALL",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
+      },
+      {
+        "id": "ITM_ONION",
+        "name": "Hành (1 phần)",
+        "price": 4000,
+        "category": "ingredient",
+        "shops": [
+          "BLD_MARKET",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_MALL",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
+      },
+      {
+        "id": "ITM_FRUIT",
+        "name": "Trái cây tươi (1 phần)",
+        "price": 8000,
+        "category": "ingredient",
+        "shops": [
+          "BLD_MARKET",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_MALL",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 0,
+        "hygiene": 0
       }
     ],
     "Food_Drinks": [
@@ -9914,6 +10049,443 @@ export default {
           "ITM_EGG"
         ],
         "cookMinutes": 20
+      },
+      {
+        "id": "FOOD_PHO",
+        "name": "Phở bò",
+        "price": 42000,
+        "hunger": 42,
+        "energy": 5,
+        "happy": 5,
+        "hydration": 10,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET",
+          "BLD_LOT_100_60",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_SHOP",
+          "BLD_CENTRAL_MALL",
+          "BLD_CAMPUS_SHOP",
+          "BLD_INDUSTRY_SHOP",
+          "BLD_SOUTH_SHOP",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 15,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_BUN",
+        "name": "Bún thịt nướng",
+        "price": 38000,
+        "hunger": 40,
+        "energy": 4,
+        "happy": 6,
+        "hydration": 5,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET",
+          "BLD_LOT_100_60",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_SHOP",
+          "BLD_CENTRAL_MALL",
+          "BLD_CAMPUS_SHOP",
+          "BLD_INDUSTRY_SHOP",
+          "BLD_SOUTH_SHOP",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 15,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_PORRIDGE",
+        "name": "Cháo gà",
+        "price": 28000,
+        "hunger": 30,
+        "energy": 3,
+        "happy": 4,
+        "hydration": 16,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET",
+          "BLD_LOT_100_60",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_SHOP",
+          "BLD_CENTRAL_MALL",
+          "BLD_CAMPUS_SHOP",
+          "BLD_INDUSTRY_SHOP",
+          "BLD_SOUTH_SHOP",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 15,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_STICKY_RICE",
+        "name": "Xôi gà",
+        "price": 26000,
+        "hunger": 35,
+        "energy": 4,
+        "happy": 4,
+        "hydration": 1,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET",
+          "BLD_LOT_100_60",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_SHOP",
+          "BLD_CENTRAL_MALL",
+          "BLD_CAMPUS_SHOP",
+          "BLD_INDUSTRY_SHOP",
+          "BLD_SOUTH_SHOP",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 15,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_SALAD",
+        "name": "Salad rau củ",
+        "price": 25000,
+        "hunger": 25,
+        "energy": 2,
+        "happy": 5,
+        "hydration": 8,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET",
+          "BLD_LOT_100_60",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_SHOP",
+          "BLD_CENTRAL_MALL",
+          "BLD_CAMPUS_SHOP",
+          "BLD_INDUSTRY_SHOP",
+          "BLD_SOUTH_SHOP",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 15,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_YOGURT",
+        "name": "Sữa chua",
+        "price": 12000,
+        "hunger": 12,
+        "energy": 1,
+        "happy": 4,
+        "hydration": 4,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET",
+          "BLD_LOT_100_60",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_SHOP",
+          "BLD_CENTRAL_MALL",
+          "BLD_CAMPUS_SHOP",
+          "BLD_INDUSTRY_SHOP",
+          "BLD_SOUTH_SHOP",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 15,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_TEA",
+        "name": "Trà đá",
+        "price": 5000,
+        "hunger": 0,
+        "energy": 1,
+        "happy": 2,
+        "hydration": 25,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET",
+          "BLD_LOT_100_60",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_SHOP",
+          "BLD_CENTRAL_MALL",
+          "BLD_CAMPUS_SHOP",
+          "BLD_INDUSTRY_SHOP",
+          "BLD_SOUTH_SHOP",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET",
+          "BLD_CAFE",
+          "BLD_EAST_CAFE",
+          "BLD_RIVER_CAFE",
+          "BLD_TANPHU_CAFE"
+        ],
+        "useMinutes": 10,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_ORANGE",
+        "name": "Nước cam",
+        "price": 22000,
+        "hunger": 5,
+        "energy": 3,
+        "happy": 5,
+        "hydration": 28,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET",
+          "BLD_LOT_100_60",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_SHOP",
+          "BLD_CENTRAL_MALL",
+          "BLD_CAMPUS_SHOP",
+          "BLD_INDUSTRY_SHOP",
+          "BLD_SOUTH_SHOP",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET",
+          "BLD_CAFE",
+          "BLD_EAST_CAFE",
+          "BLD_RIVER_CAFE",
+          "BLD_TANPHU_CAFE"
+        ],
+        "useMinutes": 10,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_SOY",
+        "name": "Sữa đậu nành",
+        "price": 12000,
+        "hunger": 10,
+        "energy": 3,
+        "happy": 3,
+        "hydration": 20,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET",
+          "BLD_LOT_100_60",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_SHOP",
+          "BLD_CENTRAL_MALL",
+          "BLD_CAMPUS_SHOP",
+          "BLD_INDUSTRY_SHOP",
+          "BLD_SOUTH_SHOP",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET",
+          "BLD_CAFE",
+          "BLD_EAST_CAFE",
+          "BLD_RIVER_CAFE",
+          "BLD_TANPHU_CAFE"
+        ],
+        "useMinutes": 10,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_SMOOTHIE",
+        "name": "Sinh tố trái cây",
+        "price": 30000,
+        "hunger": 12,
+        "energy": 3,
+        "happy": 6,
+        "hydration": 25,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET",
+          "BLD_LOT_100_60",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_SHOP",
+          "BLD_CENTRAL_MALL",
+          "BLD_CAMPUS_SHOP",
+          "BLD_INDUSTRY_SHOP",
+          "BLD_SOUTH_SHOP",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET",
+          "BLD_CAFE",
+          "BLD_EAST_CAFE",
+          "BLD_RIVER_CAFE",
+          "BLD_TANPHU_CAFE"
+        ],
+        "useMinutes": 10,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_COCONUT",
+        "name": "Nước dừa",
+        "price": 18000,
+        "hunger": 2,
+        "energy": 1,
+        "happy": 4,
+        "hydration": 30,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET",
+          "BLD_LOT_100_60",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_SHOP",
+          "BLD_CENTRAL_MALL",
+          "BLD_CAMPUS_SHOP",
+          "BLD_INDUSTRY_SHOP",
+          "BLD_SOUTH_SHOP",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET",
+          "BLD_CAFE",
+          "BLD_EAST_CAFE",
+          "BLD_RIVER_CAFE",
+          "BLD_TANPHU_CAFE"
+        ],
+        "useMinutes": 10,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_SOUP",
+        "name": "Canh rau",
+        "price": 18000,
+        "hunger": 15,
+        "energy": 1,
+        "happy": 2,
+        "hydration": 20,
+        "shops": [
+          "BLD_SHOP",
+          "BLD_MARKET",
+          "BLD_LOT_100_60",
+          "BLD_EAST_MARKET",
+          "BLD_CENTRAL_SHOP",
+          "BLD_CENTRAL_MALL",
+          "BLD_CAMPUS_SHOP",
+          "BLD_INDUSTRY_SHOP",
+          "BLD_SOUTH_SHOP",
+          "BLD_TANPHU_MARKET",
+          "BLD_PHUAN_MARKET"
+        ],
+        "useMinutes": 15,
+        "ingredients": [],
+        "cookMinutes": 0
+      },
+      {
+        "id": "FOOD_HOME_CHICKEN_RICE",
+        "name": "Cơm gà",
+        "price": 36000,
+        "hunger": 48,
+        "energy": 5,
+        "happy": 6,
+        "hydration": 6,
+        "shops": [],
+        "useMinutes": 15,
+        "ingredients": [
+          "ITM_RICE",
+          "ITM_CHICKEN",
+          "ITM_VEG"
+        ],
+        "cookMinutes": 30
+      },
+      {
+        "id": "FOOD_HOME_FISH_RICE",
+        "name": "Cơm cá kho",
+        "price": 39000,
+        "hunger": 49,
+        "energy": 5,
+        "happy": 6,
+        "hydration": 5,
+        "shops": [],
+        "useMinutes": 15,
+        "ingredients": [
+          "ITM_RICE",
+          "ITM_FISH",
+          "ITM_TOMATO"
+        ],
+        "cookMinutes": 35
+      },
+      {
+        "id": "FOOD_HOME_PORK_SOUP",
+        "name": "Canh thịt rau củ",
+        "price": 32000,
+        "hunger": 32,
+        "energy": 4,
+        "happy": 5,
+        "hydration": 25,
+        "shops": [],
+        "useMinutes": 15,
+        "ingredients": [
+          "ITM_PORK",
+          "ITM_VEG",
+          "ITM_POTATO"
+        ],
+        "cookMinutes": 30
+      },
+      {
+        "id": "FOOD_HOME_TOFU_RICE",
+        "name": "Cơm đậu hũ sốt cà",
+        "price": 22000,
+        "hunger": 38,
+        "energy": 3,
+        "happy": 5,
+        "hydration": 8,
+        "shops": [],
+        "useMinutes": 15,
+        "ingredients": [
+          "ITM_RICE",
+          "ITM_TOFU",
+          "ITM_TOMATO"
+        ],
+        "cookMinutes": 25
+      },
+      {
+        "id": "FOOD_HOME_BEEF_NOODLE",
+        "name": "Mì bò rau",
+        "price": 38000,
+        "hunger": 45,
+        "energy": 6,
+        "happy": 6,
+        "hydration": 12,
+        "shops": [],
+        "useMinutes": 15,
+        "ingredients": [
+          "ITM_DRY_NOODLE",
+          "ITM_BEEF",
+          "ITM_VEG"
+        ],
+        "cookMinutes": 25
+      },
+      {
+        "id": "FOOD_HOME_FRUIT_BOWL",
+        "name": "Trái cây trộn",
+        "price": 15000,
+        "hunger": 15,
+        "energy": 2,
+        "happy": 5,
+        "hydration": 15,
+        "shops": [],
+        "useMinutes": 15,
+        "ingredients": [
+          "ITM_FRUIT"
+        ],
+        "cookMinutes": 5
+      },
+      {
+        "id": "FOOD_HOME_POTATO_EGG",
+        "name": "Khoai tây trứng",
+        "price": 20000,
+        "hunger": 30,
+        "energy": 3,
+        "happy": 4,
+        "hydration": 3,
+        "shops": [],
+        "useMinutes": 15,
+        "ingredients": [
+          "ITM_POTATO",
+          "ITM_EGG",
+          "ITM_ONION"
+        ],
+        "cookMinutes": 25
       }
     ],
     "Activities": [

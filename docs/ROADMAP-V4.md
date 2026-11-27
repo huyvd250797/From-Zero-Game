@@ -1,6 +1,6 @@
 # From Zero — Roadmap V4.0.0
 
-Baseline V3.0.0 Advanced Life Simulation. Main releases only; intermediate patches do not count. Status reflects source implementation, not production acceptance. As of V3.15.0: 15/16 (93.75%), 1 remaining. This counts source releases, not complete feature acceptance.
+Baseline V3.0.0 Advanced Life Simulation. Main releases only; intermediate patches do not count. Status reflects source implementation, not production acceptance. As of V3.15.1 (supplementary patch): 15/16 (93.75%), 1 remaining. This counts source releases, not complete feature acceptance.
 
 ## M1 — Premium Experience & Digital Life (4/4)
 - [x] V3.1.0 — Premium Identity & UX
@@ -28,3 +28,5 @@ Baseline V3.0.0 Advanced Life Simulation. Main releases only; intermediate patch
 
 
 Patch V3.11.1 — Deployment & Regression Fix: no new main release; progress remains 11/16 (68.75%) at the time of the patch. Current main roadmap 15/16 (93.75%).
+
+V3.15.1 — Navigation, Immersion & Mobile UX Refinement (supplementary patch; 15/16 main releases, production/device acceptance pending).

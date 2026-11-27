@@ -1,3 +1,12 @@
+## V3.15.1 — Navigation, Immersion & Mobile UX Refinement (27/11/2026)
+
+- Bounded lane miters, local hook removal, rounded validated turns, turn speed lookahead and cumulative GPS turn detection. Direct legal routes to nearby building doors within eight world units.
+- Map pinch/pan with a world-space anchor, selected pin and immediate destination action beside the map; compact GPS and icon vehicle controls.
+- Add 12 ready-to-use foods and drinks, seven recipes and nine ingredients; integrate shopping, food storage, health and eating/drinking interaction.
+- Isolate audio input from scheduled bus lookup; sanitize non-finite spatial data, recover suspended context, add two continuous spatial engine slots, throttled horn and synthesized NPC chatter; honor existing volume/mute settings.
+- One-handed NPC umbrella grip on procedural and Three.js avatar paths, with umbrella handle placed near the right hand. Mobile rendering budgets retained.
+- Save schema 1, urban layout 9, Three.js r180 unchanged. Device and Three.js production acceptance remain pending.
+
 ## V3.15.0 — Realistic Life Balance & Optimization (27/11/2026)
 
 - 30-day rental cycles; monthly base rent is ten times the old daily tariff. Preserve existing paid rental expiry on load.

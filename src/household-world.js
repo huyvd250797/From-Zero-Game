@@ -4,7 +4,7 @@ import {itemCount} from './survival-state.js';
 import {advanceTime,MAX_MINUTES,log} from './life.js';
 import {incarcerated} from './recovery-state.js';
 const foods=new Set([...catalogs.Food_Drinks.map(r=>r.id),...catalogs.Food_Drinks.flatMap(r=>r.ingredients)]);
-const perish=new Set(['FOOD_MEAL','FOOD_MILK','FOOD_FRUIT','FOOD_HOME_RICE','FOOD_HOME_NOODLES','ITM_EGG','ITM_VEG','FOOD_BREAD']);
+const perish=new Set(['FOOD_MEAL','FOOD_MILK','FOOD_FRUIT','FOOD_HOME_RICE','FOOD_HOME_NOODLES','ITM_EGG','ITM_VEG','FOOD_BREAD',...catalogs.Food_Drinks.filter(r=>r.ingredients.length||['FOOD_PHO','FOOD_BUN','FOOD_PORRIDGE','FOOD_STICKY_RICE','FOOD_SALAD','FOOD_YOGURT','FOOD_ORANGE','FOOD_SOY','FOOD_SMOOTHIE','FOOD_COCONUT','FOOD_SOUP'].includes(r.id)).map(r=>r.id),...['CHICKEN','PORK','FISH','TOFU','TOMATO','POTATO','BEEF','ONION','FRUIT'].map(x=>'ITM_'+x)]);
 export const storableFood=id=>foods.has(id);
 const key=s=>residence(s)?.id;
 export const storageCapacity=s=>s.housing.furniture.includes('FUR_FRIDGE')?30:12;
