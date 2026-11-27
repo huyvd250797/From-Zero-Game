@@ -25,3 +25,6 @@ Baseline V3.0.0 Advanced Life Simulation. Main releases only; intermediate patch
 - [ ] V3.14.0 — Living Buildings & Household
 - [ ] V3.15.0 — Realistic Life Balance & Optimization
 - [ ] V4.0.0 — Realistic Life Simulation
+
+
+Patch V3.11.1 — Deployment & Regression Fix: no new main release; progress remains 11/16 (68.75%).

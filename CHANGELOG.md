@@ -1,3 +1,9 @@
+## V3.11.1 — Deployment & Regression Fix
+
+- Synchronize the Three.js night-light integration fixture with the renderer vehicle-lamp contract, including the active light count, independent weather toggle and cleanup.
+- Report failing build stage explicitly and retain all production test gates.
+- No save schema, master data or gameplay migration.
+
 ## V3.11.0 — Intelligent Traffic AI (27/11/2026)
 - Add session-persistent ambient traffic, spatially indexed following, lane-change and yield heuristics, contact stops, congestion-aware local ETA and render interpolation.
 - Preserve straight lane alignment at intersections, remove redundant centerline hooks, smooth validated motorway transitions and guard motorway access.
