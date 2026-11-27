@@ -8,7 +8,7 @@ import {advanceTime,isOpen,MAX_MINUTES,log,settleDebt} from './life.js';
 import {goods,itemCount,cashChange,completeRoutine} from './survival-state.js';
 const byId=new Map(goods.map(r=>[r.id,r]));
 export const recipes=Object.freeze(catalogs.Food_Drinks.filter(r=>r.ingredients.length));
-export const goodsAt=place=>goods.filter(r=>r.shops.some(id=>record(id).legacyId===place));
+export const goodsAt=place=>goods.filter(r=>r.id!=='ITM_PHONE'&&r.shops.some(id=>record(id).legacyId===place));
 const near=(s,place)=>{const p=places.find(p=>p.id===place);return !!p&&Math.hypot(s.pos.x-p.door[0],s.pos.z-p.door[1])<=2.5};
 const fitsTime=(s,time)=>s.minutes+time<=MAX_MINUTES;
 export function buyReason(s,place,id,qty=1){if(incarcerated(s))return 'Đang chấp hành án.';const r=byId.get(id);if(!r||!goodsAt(place).includes(r))return 'Không bán tại địa điểm này.';if(!Number.isSafeInteger(qty)||qty<1||qty>config.inventoryCapacity)return 'Số lượng không hợp lệ.';if(!near(s,place))return 'Cần đến cửa hàng.';if(!fitsTime(s,5)||!isOpen(place,s.minutes,5))return 'Cửa hàng đã đóng hoặc sắp đóng cửa.';if(itemCount(s)+qty>config.inventoryCapacity)return 'Túi đồ đã đầy.';if(s.cash<goodsPrice(s,r)*qty)return 'Không đủ tiền.';return '';}

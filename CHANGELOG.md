@@ -1,3 +1,6 @@
+## V3.3.0 — Smartphone & Device Ownership (27/11/2026)
+- Device purchases, used devices, resale, battery, prepaid plan and capability gates. Platform-specific icons and shells; legacy phones migrate to basic devices.
+
 ## V3.2.0 — Immersive Audio Engine (27/11/2026)
 - Recover interrupted Web Audio and bound pending resume; add retry, diagnostics and tone preview.
 - Distinct vehicle profiles, spatial traffic cues, wet footsteps, indoor detail and weather. Preserve mobile HUD, saves, master data and production build gate.

@@ -1,7 +1,11 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.2.0 — Immersive Audio Engine** · 27/11/2026
+**V3.3.0 — Smartphone & Device Ownership** · 27/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V3.3.0 — Smartphone & Device Ownership
+- Buy phones at existing shops; no starter smartphone. Legacy phone becomes basic. Distinct iOS and Android artwork.
+- Battery, prepaid plan, calls/SMS, ownership-guarded digital banking, resale. See [device notes](docs/SMARTPHONE-DEVICE-OWNERSHIP.md).
 
 ## V3.2.0 — Immersive Audio Engine
 - Recover Web Audio after interrupted/suspended contexts, bounded resume attempts and trusted retry. PWA lifecycle, audio diagnostic and explicit rebuild.
