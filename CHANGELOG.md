@@ -1,3 +1,7 @@
+## V3.4.0 — Realistic Shopping & Inventory (27/11/2026)
+- Retail cart with quantity control, search/filter, per-store daily stock, price confirmation and 60 receipts. One five-minute atomic checkout with accurate ledger categories; stale quotes rejected.
+- Existing single-item and automated shopping share stock and checkout. Save schema 1 migration preserves prior assets.
+
 ## V3.3.0 — Smartphone & Device Ownership (27/11/2026)
 - Device purchases, used devices, resale, battery, prepaid plan and capability gates. Platform-specific icons and shells; legacy phones migrate to basic devices.
 
