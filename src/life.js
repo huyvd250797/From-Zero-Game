@@ -2,7 +2,7 @@ import {economicEvent,CITY_YEAR,cityStatistics} from './city-evolution.js';
 import {populationMidnight} from './population.js';
 import {recordJournal} from './important-events.js';
 import {agingTick} from './aging.js';
-import {ended} from './aging-state.js';
+import {ended,ageOf} from './aging-state.js';
 import {custodyMinute} from './recovery.js';
 import {legalTick} from './legal.js';
 import {healthMinute,healthWarnings} from './health-state.js';
@@ -26,7 +26,7 @@ const start=Date.UTC(config.startYear,0,1);
 const bikeMaintenance=record('MNT_BIKE');
 const baseRent=record('PROP_ROOM').rentDaily;
 export const day=s=>Math.floor(s.minutes/1440)+1;
-export function calendar(s){const d=new Date(start+Math.floor(s.minutes/1440)*86400000);return {year:d.getUTCFullYear(),month:d.getUTCMonth()+1,date:d.getUTCDate(),age:config.age+d.getUTCFullYear()-config.startYear};}
+export function calendar(s){const d=new Date(start+Math.floor(s.minutes/1440)*86400000);return {year:d.getUTCFullYear(),month:d.getUTCMonth()+1,date:d.getUTCDate(),age:ageOf(s)};}
 export const hhmm=m=>`${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`;
 export function dateLabel(s){const d=calendar(s);return `${String(d.date).padStart(2,'0')}/${String(d.month).padStart(2,'0')}/${d.year}`;}
 export const phase=s=>{const h=s.minutes%1440/60;return h>=6&&h<8?'Bình minh':h>=8&&h<17?'Ban ngày':h>=17&&h<19?'Hoàng hôn':'Ban đêm'};

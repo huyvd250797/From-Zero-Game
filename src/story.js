@@ -1,3 +1,4 @@
+import {ageOf} from './aging-state.js';
 import {recordJournal} from './important-events.js';
 import {incarcerated} from './recovery-state.js';
 import {syncLegal} from './legal.js';
@@ -14,7 +15,7 @@ const chapters=new Set(catalogs.Story_Chapters.map(c=>c.id));
 const int=(n,min=0,max=Number.MAX_SAFE_INTEGER)=>Number.isSafeInteger(n)&&n>=min&&n<=max;
 const obj=x=>x&&typeof x==='object'&&!Array.isArray(x);
 const cap=x=>Math.max(0,Math.min(100,x));
-const age=s=>config.age+new Date(Date.UTC(config.startYear,0,1)+Math.floor(s.minutes/DAY)*86400000).getUTCFullYear()-config.startYear;
+const age=ageOf;
 export const storyDefaults=(s,legacy=false)=>({story:{started:s.minutes,legacy,hadShift:legacy&&((s.shifts||0)+Object.values(s.career?.experience||{}).reduce((a,b)=>a+b,0)>0),ethics:50,pending:[],scheduled:[],resolved:{},chapters:[],history:[],offenses:[]}});
 const evt=id=>events.get(id);
 export const eventChoices=id=>catalogs.Event_Choices.filter(c=>c.event===id);

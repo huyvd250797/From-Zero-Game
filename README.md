@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V2.14.0 — Digital Life, Performance & Polish** · 27/11/2026
+**V3.0.0 — Advanced Life Simulation** · 27/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V3.0.0 — Advanced Life Simulation
+- Hoàn thành roadmap bàn giao source thế hệ 3.0; giữ nguyên gameplay 3D từ trên cao và toàn bộ module đã phát triển.
+- Hai lựa chọn kế thừa: tiếp tục tại An Lạc với tuổi người thừa kế, đồng hồ thế giới, kinh tế, dân cư và Hall of Fame giữ nguyên; hoặc khởi tạo dòng thời gian ở tuổi 18 như trước. Di sản chia đều và cộng tiền riêng người được chọn. Tài sản vật lý, nghề và quan hệ cá nhân vẫn khởi tạo mới. Không bổ sung NPC tử vong/thay thế tự động.
+- Bộ kiểm thử tích hợp chuyển thế hệ, xác thực tuổi, nghỉ hưu, giao thừa, ghi/khôi phục save; kiểm thử sinh tồn 1.825 ngày và vòng đời 18–100 tuổi. CI GitHub Actions Node 22 chạy production build, Three.js integration, kiểm tra tài nguyên, hồi quy và mô phỏng dài hạn.
+- Giữ Master Data 3.1.0, Three.js r180, schema 1. Xem [hồ sơ nghiệm thu V3.0.0](docs/RELEASE-V3.md). Chưa nghiệm thu production GPU và PWA thật: môi trường QA không tải được dependency Three.js. Không dùng Native QA để deploy production.
 
 ## V2.14.0 — Digital Life, Performance & Polish
 - Điện thoại trong game: 15 mục truy cập, tổng quan cuộc đời, nạp/rút tài khoản theo nghiệp vụ chuyển nội bộ có xác nhận, liên lạc NPC đã quen (3 câu hỏi mẫu, 1 lượt/NPC/ngày, không tăng độ tin tưởng).

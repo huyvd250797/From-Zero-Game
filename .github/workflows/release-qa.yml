@@ -1,0 +1,25 @@
+name: From Zero release QA
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run verify:release
+      - run: npm run smoke:http
+      - run: npm run simulate:balance
+      - run: npm run simulate:long-term
+      - if: github.event_name == 'workflow_dispatch'
+        run: npm run simulate:balance -- --long

@@ -1,6 +1,6 @@
 {
   "name": "from-zero",
-  "version": "2.14.0",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -16,10 +16,11 @@
     "verify:release": "node scripts/verify-release.mjs",
     "benchmark:navigation": "node scripts/benchmark-navigation.mjs",
     "smoke:http": "node scripts/smoke-http.mjs",
-    "release:check": "npm ci && npm test && npm run build && npm run verify:release && npm run smoke:http && npm run simulate:balance",
+    "release:check": "npm ci && npm test && npm run build && npm run verify:release && npm run smoke:http && npm run simulate:balance && npm run simulate:long-term",
     "test:three": "node --test tests/three-runtime.integration.mjs",
     "build:native-preview": "node scripts/build.mjs --native-preview",
-    "benchmark:npc": "node scripts/benchmark-npc.mjs"
+    "benchmark:npc": "node scripts/benchmark-npc.mjs",
+    "simulate:long-term": "node scripts/simulate-long-term.mjs"
   },
   "engines": {
     "node": ">=20"

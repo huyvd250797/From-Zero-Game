@@ -1,3 +1,8 @@
+## V3.0.0 — Advanced Life Simulation (27/11/2026)
+- Continuous inheritance: preserve world date, economy, NPC population and heir age; retain independent and legacy restart. Validate birth-year anchor against archived heir, enforce timeline capacity and keep retirement/story/calendar consistent.
+- Retain all prior save schema and asset IDs; no new dependency. Add generation roundtrip and financial regression tests, five-year simulation gate, GitHub Actions production QA and release acceptance documentation.
+- Update app, package, manifest and build branding to V3.0.0; keep native preview explicitly non-production. Production acceptance requires real Three.js installation and device testing.
+
 ## V2.14.0 — Digital Life, Performance & Polish (27/11/2026)
 - Local in-game smartphone with 15 entries, read-only dashboard, confirmed canonical wallet transfers, scripted NPC conversations and persistent categorized notifications.
 - Explicit current-state checkpoint, storage readback and additional stale-token check, slot diagnostics and opt-in browser persistence request. Preserve schema 1 and existing PWA integrity/update gates.

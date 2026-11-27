@@ -1,7 +1,7 @@
 import {inheritanceShares,childProfile,heirShare} from './family-life.js';
 import {difficultyOf} from './difficulty.js';
 import {catalogs,record,config} from './master-data.js';
-import {ageOf,lifeStage,retired,ended,DAY} from './aging-state.js';
+import {ageOf,lifeStage,retired,ended,DAY,worldYear} from './aging-state.js';
 import {businessStockValue} from './business-state.js';
 import {balanceSheet,report} from './personal-finance.js';
 import {cashChange} from './survival-state.js';
@@ -11,7 +11,7 @@ import {convictions,pendingCustody} from './legal-state.js';
 import {residence} from './housing-state.js';
 import {educationLevel,skillLevel} from './education.js';
 import {childAge} from './family.js';
-import {log} from './life.js';
+import {log,MAX_MINUTES} from './life.js';
 import {parkVehicle} from './transport.js';
 export const formalShifts=s=>Object.values(s.career.experience).reduce((a,b)=>a+b,0);
 export const pensionQuote=s=>formalShifts(s)>=240?Math.min(8000000,1000000+Math.floor(formalShifts(s)/240)*500000):0;
@@ -30,3 +30,8 @@ export function endingCandidates(s,cause='reflection'){const b=balanceSheet(s),n
  add('END_ORDINARY_03',retired(s)&&n>=1e8,50);add('END_ORDINARY_06',biz&&biz.level===1&&biz.revenue>biz.costs,49);add('END_ORDINARY_07',kids>0&&f.happiness>=65,48);add('END_ORDINARY_04',!p&&s.happy>=65,47);add('END_ORDINARY_05',a.achievements.length>=5&&friends>=2,46);add('END_ORDINARY_09',(bankrupt||s.career.history.some(h=>h.reason==='dismissed'))&&n>=0,45);add('END_ORDINARY_01',formal+s.shifts>=240,44);add('END_ORDINARY_02',home&&n>=1e7,43);add('END_ORDINARY_08',!s.career.contract&&s.happy>=55&&n>=0,42);add('END_ORDINARY_10',true,1);return rows.sort((a,b)=>b.priority-a.priority);}
 export function endLife(s,cause=endingDue(s)){if(ended(s)||!['age','health','reflection'].includes(cause)||cause==='reflection'&&(ageOf(s)<70||incarcerated(s)||pendingCustody(s).length)||cause!=='reflection'&&cause!==endingDue(s))return false;captureMilestones(s);parkVehicle(s);const b=balanceSheet(s),a=s.aging,heirs=s.family.children.filter(c=>childAge(s,c)>=record('LEG_HEIR').minHeirAge).map(c=>({id:c.id,name:c.name,age:childAge(s,c)}));const {estate}=estatePreview(s);const shares=inheritanceShares(estate,heirs).map(h=>({...h,privateCash:childProfile(s,s.family.children.find(c=>c.id===h.id)).cash}));const score=Math.round((s.health+s.happy+s.social.reputation+s.story.ethics+(s.family.partner||s.family.children.length?s.family.happiness:s.wellness.mental))/5);a.ending={difficulty:difficultyOf(s).id,id:endingCandidates(s,cause)[0].id,name:s.name,age:ageOf(s),at:s.minutes,cause,assets:b.assets,debt:b.debt,net:b.net,estate,health:Math.round(s.health),happy:Math.round(s.happy),ethics:s.story.ethics,reputation:s.social.reputation,family:s.family.happiness,score,shifts:s.shifts+formalShifts(s),children:s.family.children.length,friends:Object.values(s.social.contacts).filter(c=>c.trust>=30).length,convictions:convictions(s).length,pensionReceived:a.pensionReceived,generation:a.generation,heirs:shares,achievements:[...a.achievements]};log(s,'Kết thúc hành trình: '+record(a.ending.id).name);return true;}
 export function nextLife(previous,freshState,heirId=null){const e=previous?.aging?.ending;if(!e||ended(freshState))return null;const heir=heirId===null?null:e.heirs.find(h=>h.id===heirId);if(heirId!==null&&!heir)return null;freshState.aging.archive=structuredClone([e,...previous.aging.archive].slice(0,20));freshState.aging.generation=heir?e.generation+1:1;if(heir){freshState.difficulty=difficultyOf(previous).id;freshState.name=heir.name.slice(0,24);freshState.cash=Math.floor((heir.share??heirShare(e,heir.id))*record('LEG_HEIR').transferRatio)+(heir.privateCash??0);freshState.journal=[];log(freshState,'Bắt đầu thế hệ mới với phần di sản '+(heir.share??heirShare(e,heir.id)).toLocaleString('vi-VN')+'đ.');}return freshState;}
+
+// Keep the original restart API intact. A continuous heir uses a clean personal
+// state at the same world timestamp; only the world population and archive carry.
+export function continuityReason(previous,heirId){const e=previous?.aging?.ending,h=e?.heirs.find(x=>x.id===heirId);if(!h)return 'Không có người thừa kế hợp lệ.';if(h.age>=100)return 'Người thừa kế đã đến tuổi kết thúc cuộc đời.';if(worldYear(MAX_MINUTES)-worldYear(e.at)<100-h.age)return 'Dòng thời gian đã gần giới hạn mô phỏng. Hãy chọn dòng thời gian mới.';return '';}
+export function continueGeneration(previous,freshState,heirId){if(continuityReason(previous,heirId)||freshState.minutes!==previous.minutes)return null;const heir=previous.aging.ending.heirs.find(h=>h.id===heirId),next=nextLife(previous,freshState,heirId);if(!next)return null;next.aging.birthYear=worldYear(previous.minutes)-heir.age;next.population=structuredClone(previous.population);next.journal=[];log(next,`Bắt đầu thế hệ ${next.aging.generation} tại An Lạc, ${heir.age} tuổi, giữ nguyên thời gian thành phố.`);return next;}
