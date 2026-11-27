@@ -1,7 +1,13 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.5.2 — Organic City & Living River** · 27/11/2026
+**V3.5.3 — Natural Urban Masterplan & Realistic Water** · 27/11/2026
 
 Game mô phỏng cuộc đời single-player tại thành phố An Lạc. Nhân vật bắt đầu ở tuổi 18, với vốn 300.000–800.000đ theo độ khó; tự lựa chọn sinh tồn, học tập, sự nghiệp, gia đình, tài sản, đầu tư, kinh doanh, phục hồi và kết thúc cuộc đời. Không cần tài khoản, API key, database hoặc backend.
+
+## V3.5.3 — Natural Urban Masterplan & Realistic Water
+- Replace repeated short road bends with straight streets, five diagonal links, two long arcs and two continuous bank roads. Four bridges, five roundabouts, pronounced meandering channel with both banks following one centreline.
+- Replat 244 sites, preserving all 329 site IDs, 60 interaction destinations, 18 logical districts and 28 complete residential clusters. Split at-grade crossings into connected graph nodes; shared road geometry for map and engine.
+- Arc-length water flow, foam and rain ripple shader, native animated wave ribbons, bank embankment/green strips. Layout 7 migration accepts valid older saves, including V3.5.2. Save schema 1, master data and Three.js version unchanged.
+- See [masterplan notes](docs/NATURAL-URBAN-MASTERPLAN.md) for QA and limitations. Production GPU acceptance remains pending.
 
 ## V3.5.2 — Organic City & Living River
 - River An Bình uses an authoritative 385-sample bank profile, not a rectangular channel. Exact water-strip collision, 12 preserved bridge crossings, map and all renderers use the same profile.

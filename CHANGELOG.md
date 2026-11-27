@@ -1,3 +1,8 @@
+## V3.5.3 — Natural Urban Masterplan & Realistic Water (27/11/2026)
+- Replan city with strong meanders, two continuous bank roads, straight axes, five diagonals, two long arcs, five roundabouts and four bridges. Remove redundant and flooded road sections; all crossings form graph junctions.
+- Relocate existing parcels and 28 whole terraces; preserve IDs, interaction districts, assets and schema 1. Layout 7 migration handles layout 6 and older saves.
+- Arc-length flow, animated foam and rain effects, colored shore strips, subdued map styling. Six new unit tests; keep pinned Three.js production QA gate.
+
 ## V3.5.2 — Organic City & Living River (27/11/2026)
 - Replace straight river with shared meandering channel, exact water collision and animated water surface.
 - Add ten real diagonal road links, remove seven redundant local segments; retain formal city zones and replot waterfront parcels.

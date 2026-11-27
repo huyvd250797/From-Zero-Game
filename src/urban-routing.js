@@ -6,13 +6,16 @@ let graph;
 export function roadGraph(){if(graph)return graph;const nodes=[],keys=new Map(),edges=[];
  const node=p=>{const key=coordKey(p);if(keys.has(key))return keys.get(key);const id=nodes.length;nodes.push({id,...p,links:[]});keys.set(key,id);return id;};
  const connect=(a,b,oneWay=false)=>{if(a===b)return;const p=nodes[a],q=nodes[b];if(!segmentClear(p,q))throw Error(`Invalid urban graph edge ${coordKey(p)} -> ${coordKey(q)}`);const length=distance(p,q);p.links.push({to:b,length});if(!oneWay)q.links.push({to:a,length});edges.push({a,b,length,oneWay});};
+ const strips=[];
  for(const r of roadNetwork){const other=r.axis==='x'?roadsZ:roadsX;let start=1;const ranges=[];
   for(const o of other){if(!urbanPlan.active(r,o.center)||!urbanPlan.active(o,r.center))continue;const ring=urbanPlan.ringAt(r.axis==='x'?r.center:o.center,r.axis==='x'?o.center:r.center);if(ring){ranges.push([start,o.center-ring.radius]);start=o.center+ring.radius;}else{ranges.push([start,o.center]);start=o.center;}}ranges.push([start,SIZE-1]);
-  for(const [a,b] of ranges.flatMap(([a,b])=>urbanPlan.ranges(r,a,b))){const count=Math.ceil((b-a)/2.5);let prev=node(at(r,a));for(let i=1;i<=count;i++){const next=node(at(r,a+(b-a)*i/count));connect(prev,next);prev=next;}}
+  for(const [a,b] of ranges.flatMap(([a,b])=>urbanPlan.ranges(r,a,b))){if(b-a>1e-5)strips.push({a:at(r,a),b:at(r,b),ts:[0,1]});}
  }
- // All four ports belong to one directed circular road, counterclockwise in map coordinates.
+ for(const d of urbanPlan.diagonals)for(let i=1;i<d.points.length;i++){const a=d.points[i-1],b=d.points[i];if(a.z<1||b.z>SIZE-1)continue;strips.push({a,b,ts:[0,1]});}
+ // Split every at-grade crossing into a shared graph node. No orphaned diagonal crossing.
+ for(let i=0;i<strips.length;i++){const p=strips[i],u={x:p.b.x-p.a.x,z:p.b.z-p.a.z};for(let j=i+1;j<strips.length;j++){const q=strips[j];if(Math.max(p.a.x,p.b.x)+1e-5<Math.min(q.a.x,q.b.x)||Math.max(q.a.x,q.b.x)+1e-5<Math.min(p.a.x,p.b.x)||Math.max(p.a.z,p.b.z)+1e-5<Math.min(q.a.z,q.b.z)||Math.max(q.a.z,q.b.z)+1e-5<Math.min(p.a.z,p.b.z))continue;const v={x:q.b.x-q.a.x,z:q.b.z-q.a.z},w={x:q.a.x-p.a.x,z:q.a.z-p.a.z},den=u.x*v.z-u.z*v.x;if(Math.abs(den)<1e-9)continue;const t=(w.x*v.z-w.z*v.x)/den,k=(w.x*u.z-w.z*u.x)/den;if(t>=-1e-6&&t<=1+1e-6&&k>=-1e-6&&k<=1+1e-6){p.ts.push(Math.max(0,Math.min(1,t)));q.ts.push(Math.max(0,Math.min(1,k)));}}}
+ const edgeKeys=new Set();for(const s of strips){const ts=[...s.ts].sort((a,b)=>a-b).filter((t,i,a)=>!i||t-a[i-1]>1e-7);const at=t=>({x:s.a.x+(s.b.x-s.a.x)*t,z:s.a.z+(s.b.z-s.a.z)*t});for(let i=1;i<ts.length;i++){const a=ts[i-1],b=ts[i],n=Math.max(1,Math.ceil(distance(at(a),at(b))/2.5));let prev=node(at(a));for(let j=1;j<=n;j++){const next=node(at(a+(b-a)*j/n)),key=[prev,next].sort((a,b)=>a-b).join(':');if(!edgeKeys.has(key)){connect(prev,next);edgeKeys.add(key);}prev=next;}}}
  for(const r of urbanPlan.roundabouts){const ring=[];for(let i=0;i<24;i++){const a=-i*Math.PI/12;ring.push(node({x:r.x+r.radius*Math.cos(a),z:r.z+r.radius*Math.sin(a)}));}for(let i=0;i<24;i++)connect(ring[i],ring[(i+1)%24],true);}
- for(const d of urbanPlan.diagonals){let prev=node(d.points[0]);for(const p of d.points.slice(1)){const next=node(p);connect(prev,next);prev=next;}}
  graph={nodes,edges};return graph;}
 class Heap{constructor(){this.a=[]}push(e){let i=this.a.length;this.a.push(e);while(i){const p=(i-1)>>1;if(this.a[p].cost<=e.cost)break;this.a[i]=this.a[p];i=p}this.a[i]=e;}pop(){const a=this.a,f=a[0],v=a.pop();if(a.length){let i=0;while(i*2+1<a.length){let j=i*2+1;if(j+1<a.length&&a[j+1].cost<a[j].cost)j++;if(a[j].cost>=v.cost)break;a[i]=a[j];i=j}a[i]=v;}return f;}}
 const cache=new Map();
