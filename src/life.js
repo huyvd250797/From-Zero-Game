@@ -1,3 +1,4 @@
+import {schoolById} from './school-life-data.js';
 import {MILITARY_HQ,MILITARY_BASE,militaryTick,finishMilitary,militaryActive} from './military-state.js';
 import {incarcerated} from './recovery-state.js';
 import {FIRE_STATION,fireTick} from './fire-state.js';
@@ -38,7 +39,7 @@ export function light(s){const h=s.minutes%1440/60;const t=h<5.5||h>=19.5?0:h<8?
 export function log(s,message){recordJournal(s,`Ngày ${day(s)}: ${message}`);}
 export function lifeDefaults(s,renew=false){return {...LIFE_DEFAULTS,autoRent:renew,bikeDue:s.bike?s.minutes+bikeMaintenance.intervalDays*1440:0,maintenanceDebt:0,aidDay:0};}
 const scheduleByPlace=new Map(catalogs.World_Schedules.map(r=>[record(r.building).legacyId,r]));
-export const schedule=place=>[MILITARY_HQ,MILITARY_BASE].includes(place)?{opens:420,closes:960}:place===FIRE_STATION?{opens:0,closes:1440}:scheduleByPlace.get(place);
+export const schedule=place=>[MILITARY_HQ,MILITARY_BASE].includes(place)?{opens:420,closes:960}:place===FIRE_STATION?{opens:0,closes:1440}:scheduleByPlace.get(place)??(schoolById(place)?{opens:420,closes:1020}:undefined);
 export function isOpen(place,minutes,duration=0){const r=schedule(place);if(!r)return false;if(r.opens===0&&r.closes===1440)return true;const m=minutes%1440;return m>=r.opens&&m<r.closes&&m+duration<=r.closes;}
 export function scheduleLabel(place){const r=schedule(place);return !r?'Chưa có lịch':r.opens===0&&r.closes===1440?'24/24':`${hhmm(r.opens)}–${hhmm(r.closes)}`;}
 export function untilOpen(place,minutes){const r=schedule(place);if(!r||isOpen(place,minutes))return 0;const m=minutes%1440;return (r.opens-m+1440)%1440;}

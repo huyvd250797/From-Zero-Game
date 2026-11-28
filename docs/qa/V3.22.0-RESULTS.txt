@@ -1,0 +1,5 @@
+V3.22.0 final selected regression: 229 tests, 229 passed, 0 failed; 7 new education/NPC/police tests.
+Node 22.16.0. Native Preview syntax and professional asset check PASS (0/9 imported). 198 assets SHA-256 and HTTP integrity PASS.
+Production npm run build stopped at missing Three.js r180; npm ci --offline ENOTCACHED. Full suite and Three runtime/browser/device acceptance not run.
+Police CPU geometry preview: LOD0 754 -> 3328 triangles; new LOD1 2368; LOD2 986.
+Tests: education-school-life-322, population, city-evolution, living-npc, digital-life, interactive-buildings, military-defense-321, master-data, urban-planning, organic-neighborhoods, city-graphics-3, dynamic-weather-mobile, education, family, realistic-balance-315, smart-mobility, public-transport-4, traffic-law-services, police-security-319, fire-rescue-320, vehicle-optimization-31810, release.

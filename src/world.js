@@ -1,3 +1,4 @@
+import {SCHOOLS} from './school-life-data.js';
 import {MILITARY_HQ,MILITARY_BASE} from './military-state.js';
 import {classifyAxis,highwayPoint,RING_ACCESS} from './road-standards.js';
 import {createRiver,createLegacyRiver,waterStrips} from './river-layout.js';
@@ -35,6 +36,7 @@ export const sites=[...all.map(p=>urbanPlan.replatted.get(p.id)||p),...urbanPlan
 const fireSite=sites.find(p=>p.id==='lot_100_124');
 if(fireSite)sites[sites.indexOf(fireSite)]={...fireSite,name:'Trạm PCCC & CNCH An Lạc',door:[100,119],interactive:true,icon:'🚒',fireStation:true};
 for(const [id,name,door,role] of [[MILITARY_HQ,'Ban chỉ huy quân sự An Lạc',[96,169],'hq'],[MILITARY_BASE,'Doanh trại An Lạc',[96,189],'base']]){const b=sites.find(p=>p.id===id);if(b)sites[sites.indexOf(b)]={...b,name,door,interactive:true,icon:'🛡️',militaryRole:role};}
+for(const school of SCHOOLS){const b=sites.find(p=>p.id===school.id);if(b)sites[sites.indexOf(b)]={...b,name:school.name,door:school.door||b.door,interactive:true,type:'BTY_SCHOOL',icon:'🎓',schoolLevel:school.level,schoolSign:school.sign,schoolColor:school.color};}
 export const places=sites.filter(p=>p.interactive);
 export const buildings=sites.filter(p=>p.h>0);
 export const roadOffset=urbanPlan.offset,roadPoint=urbanPlan.point;

@@ -1,3 +1,7 @@
+# From Zero V3.22.0 — Education & School Life
+
+Six school levels, child enrollment, scheduled civilian population (65 named + 180 background initially), economy-based mobility, indoor arrival, rounded police rider. See [scope and controls](docs/EDUCATION-SCHOOL-LIFE-322.md). No new GLBs or migration. Production/device acceptance pending.
+
 # From Zero V3.21.0 — Military & National Defense
 
 Non-combat military life simulation: two interactive civic sites, health screening, optional 30-day game service or professional career, three duty types, finance and bounded history, normal-traffic supply truck. See [controls, scope and limitations](docs/MILITARY-DEFENSE-321.md).

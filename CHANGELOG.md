@@ -1,3 +1,11 @@
+# V3.22.0 — Education & School Life
+
+- Six school levels, four new interactive locations, classroom interiors, child registration and weekday attendance. Retain canonical adult courses and Master Data.
+- Replace decorative pedestrians with 180 deterministic scheduled residents; preserve 65 named residents and their independent finances. Indoor arrival, weekday/weekend and selected lunch itineraries; varied private and public mobility.
+- Refine seated police officer and CB250P-inspired fairing in three LODs. Keep GLB assets and schema 1 unchanged.
+- Increase outside background render budget with mobile pressure cap. See docs/EDUCATION-SCHOOL-LIFE-322.md for limits.
+- Selected regression 229/229 PASS (7 new); Native Preview 198/198 SHA-256 and HTTP assets PASS. Production Three.js dependency missing (npm offline ENOTCACHED). Browser/device acceptance pending.
+
 # V3.21.0 — Military & National Defense
 
 - Convert two existing civic lots into military administration and barracks; preserve 60 original destinations plus the fire station and original collision footprint.

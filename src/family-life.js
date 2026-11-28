@@ -1,8 +1,9 @@
+import {settleChildSchool} from './school-life.js';
 import {catalogs,record,config} from './master-data.js';
 const DAY=1440, int=(v,min=0,max=Number.MAX_SAFE_INTEGER)=>Number.isSafeInteger(v)&&v>=min&&v<=max;
 const clamp=v=>Math.max(0,Math.min(100,v)),day=s=>Math.floor(s.minutes/DAY);
 export const childYears=(s,c)=>Math.max(0,Math.floor((s.minutes-c.born)/(365*DAY)));
-export const childStage=age=>age<3?'Sơ sinh / mầm non':age<6?'Mẫu giáo':age<12?'Tiểu học':age<15?'THCS':age<18?'THPT':age<60?'Trưởng thành':'Nghỉ hưu';
+export const childStage=age=>age<3?'Sơ sinh / mầm non':age<6?'Mẫu giáo':age<11?'Tiểu học':age<15?'THCS':age<18?'THPT':age<60?'Trưởng thành':'Nghỉ hưu';
 const childDefaults=()=>({educationDays:0,cash:0,earned:0,spent:0,workDays:0,relationship:70,marriedDay:null,children:0});
 const defaults=()=>({day:-1,share:0,reserve:1000000,budget:150000,autoCare:false,history:[],children:{}});
 export function household(s){return s.family.living||defaults();}
@@ -13,7 +14,7 @@ export const spouseResident=s=>s.family.partner?.stage==='married'?s.population?
 export function familyFinances(s){const h=household(s),rows=h.history.filter(r=>r.day>day(s)-30),totals=rows.reduce((a,r)=>{for(const k of ['cost','partner','player','debt'])a[k]+=r[k];return a;},{cost:0,partner:0,player:0,debt:0});return {settings:h,totals,partnerCash:spouseResident(s)?.cash??0,childrenCash:Object.values(h.children).reduce((n,c)=>n+c.cash,0)};}
 export function beginFamilyDay(s,cost){const f=s.family;if(!f.partner&&!f.children.length&&!f.living)return null;const h=f.living??=defaults(),d=day(s);if(h.day>=d)return false;h.day=d;const r=spouseResident(s);const paid=r?Math.min(Math.floor(cost*h.share/100),Math.max(0,r.cash-h.reserve)):0;if(paid){r.cash-=paid;r.spent+=paid;}return {h,cost,partner:paid,day:d};}
 export function completeFamilyDay(s,entry,paid){if(!entry)return;const {h,cost,partner,day:d}=entry;const player=paid?cost-partner:0,debt=cost-partner-player;h.history.unshift({day:d,cost,partner,player,debt});h.history=h.history.slice(0,90);
- for(const c of s.family.children){const age=childYears(s,c),p=h.children[c.id]??=childDefaults();if(age<18){if(age>=6&&debt===0&&c.health>=40&&c.care>=25&&weekday(d))p.educationDays++;p.relationship=clamp(p.relationship+(c.care>=60?1:c.care<25?-2:0));}else{const wage=age>=60?(p.workDays>=240?50000:0):weekday(d)&&c.health>=35?Math.min(500000,180000+Math.floor(p.educationDays/180)*15000+Math.floor(p.workDays/220)*10000):0;if(age<60&&wage)p.workDays++;const expense=Math.min(p.cash+wage,95000+(p.marriedDay===null?0:25000)+p.children*35000);p.cash+=wage-expense;p.earned+=wage;p.spent+=expense;if(age>=25&&p.marriedDay===null&&p.cash>=10000000&&p.relationship>=50)p.marriedDay=d;if(p.marriedDay!==null)p.children=Math.min(2,Math.floor((d-p.marriedDay)/(3*365)));}}
+ for(const c of s.family.children){const age=childYears(s,c),p=h.children[c.id]??=childDefaults();if(age<18){if(weekday(d)){const eligible=debt===0&&c.health>=40&&c.care>=25;if(c.school){if(settleChildSchool(s,c,d,eligible))p.educationDays++;}else if(age>=6&&eligible)p.educationDays++;}p.relationship=clamp(p.relationship+(c.care>=60?1:c.care<25?-2:0));}else{const wage=age>=60?(p.workDays>=240?50000:0):weekday(d)&&c.health>=35?Math.min(500000,180000+Math.floor(p.educationDays/180)*15000+Math.floor(p.workDays/220)*10000):0;if(age<60&&wage)p.workDays++;const expense=Math.min(p.cash+wage,95000+(p.marriedDay===null?0:25000)+p.children*35000);p.cash+=wage-expense;p.earned+=wage;p.spent+=expense;if(age>=25&&p.marriedDay===null&&p.cash>=10000000&&p.relationship>=50)p.marriedDay=d;if(p.marriedDay!==null)p.children=Math.min(2,Math.floor((d-p.marriedDay)/(3*365)));}}
 }
 const weekday=d=>![0,6].includes(new Date(Date.UTC(config.startYear,0,1)+d*86400000).getUTCDay());
 export const childProfile=(s,c)=>({...childDefaults(),...household(s).children[c.id],age:childYears(s,c),stage:childStage(childYears(s,c))});
