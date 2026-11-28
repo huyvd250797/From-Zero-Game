@@ -58,3 +58,5 @@ V3.18.5 — Professional 3D Modeling Pipeline: supplemental offline authoring/ex
 - V3.18.8 — Automotive Interior & Animation: source implementation of cabin studies, showroom front-door animation and first-person Three.js driving; exterior door rigs, NPC boarding, production/device acceptance pending. Main progress 18/24 (75%). Next supplemental V3.18.9 — Photorealistic Vehicle Rendering.
 
 - V3.18.9 — Photorealistic Vehicle Rendering (supplemental; synthetic HDR, wet PBR, GLB software showroom; Three.js production and visual acceptance pending). Next: V3.18.10 — Vehicle Graphics Optimization.
+
+- V3.18.10 — Vehicle Graphics Optimization: supplemental source release, 10/10 supplemental versions implemented in scope, production/device acceptance and professional art pending. Main progress remains 18/24 (75%). Next V3.19.0 — Police & Public Security.

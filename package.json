@@ -1,6 +1,6 @@
 {
   "name": "from-zero",
-  "version": "3.18.9",
+  "version": "3.18.10",
   "private": true,
   "type": "module",
   "scripts": {
@@ -24,7 +24,8 @@
     "vehicle:import": "node scripts/import-professional-vehicle.mjs",
     "vehicle:verify": "node scripts/verify-professional-vehicles.mjs",
     "vehicle:prepare": "node scripts/modeling/prepare-vehicle.mjs",
-    "vehicle:publish": "node scripts/modeling/publish-vehicle.mjs"
+    "vehicle:publish": "node scripts/modeling/publish-vehicle.mjs",
+    "benchmark:vehicles": "node scripts/benchmark-vehicles.mjs"
   },
   "engines": {
     "node": ">=20"

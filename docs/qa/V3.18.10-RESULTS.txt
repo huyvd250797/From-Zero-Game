@@ -1,0 +1,11 @@
+V3.18.10 Vehicle Graphics Optimization — QA
+Baseline: uploaded V3.18.9 full source. Node v22.16.0.
+Focused suite 1: 101/101 PASS (vehicle optimization, graphics, GLB, professional asset, photorealistic rendering, cabin, collection, dynamics, collision, traffic AI, mobile, performance, official branding, final release).
+Focused suite 2: 30/30 PASS (coachwork, modeling pipeline, premium sedans, premium SUVs, smart navigation camera).
+Total distinct focused tests: 131/131 PASS, including 7 new tests. Full unit suite not run.
+Additional Three.js eviction and reorder integration test authored but not executed: missing dependency.
+Native Preview build PASS; SHA-256 and HTTP 187/187 resources PASS. Native Preview is not production and does not exercise actual Three.js rendering.
+npm ci online: EAI_AGAIN registry.npmjs.org; offline: ENOTCACHED. npm run build: syntax and professional asset verification PASS, Three.js dependency inventory FAIL; no production gate bypassed.
+All 27 vehicle GLBs verified byte-identical to baseline. Master Data files byte-identical. No save schema or gameplay change.
+CPU conversion-only benchmark, 12 vehicles, 8733 triangles, 26199 vertices, median 9 alternating batches x20 after warm-up: old 6.5415702 ms, new 5.00704065 ms (23.46% shorter), former temporary large typed arrays 2724696 bytes (~2.60 MiB) per conversion, new direct conversion reuses existing arrays (small metadata allocations remain). Does not measure GPU, full frame FPS, battery, or temperature.
+No new licensed/artist vehicle models, no Meshopt/Draco/KTX2 compression. Production and device acceptance pending.

@@ -1,3 +1,11 @@
+# V3.18.10 — Vehicle Graphics Optimization
+
+- Adaptive vehicle LOD hysteresis, frame-pressure policy, frustum culling and dynamic light/reflection budgets.
+- GLB template LRU eviction, protected shared geometry and reusable material slots.
+- Direct persistent tagged geometry upload and lower-allocation showroom.
+- Diagnostics and CPU conversion benchmark; preserved 27 GLBs and save schema.
+- Production/device acceptance and asset compression remain pending.
+
 # V3.18.9 — Photorealistic Vehicle Rendering
 
 - Synthetic HDR reflection map with LDR fallback and shared PBR wetness response.

@@ -4,8 +4,10 @@ import {clone} from 'three/addons/utils/SkeletonUtils.js';
 export function disposeModel(root){const geometries=new Set(),materials=new Set(),textures=new Set();root.traverse(o=>{if(o.geometry)geometries.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:o.material?[o.material]:[]){materials.add(m);for(const v of Object.values(m))if(v?.isTexture)textures.add(v);}if(o.skeleton?.boneTexture)textures.add(o.skeleton.boneTexture);});for(const g of geometries)g.dispose();for(const m of materials)m.dispose();for(const t of textures)t.dispose();}
 export class ThreeAssets{
  constructor(loader=new GLTFLoader()){this.loader=loader;this.cache=new Map();this.closed=false;}
- load(url){if(this.closed)return Promise.reject(Error('Asset manager disposed'));const u=new URL(url,import.meta.url);if(u.origin!==new URL(import.meta.url).origin)return Promise.reject(Error('Only local assets are supported'));const key=u.href;if(!this.cache.has(key)){const pending=this.loader.loadAsync(key).then(g=>{if(this.closed){disposeModel(g.scene);throw Error('Asset manager disposed');}return g;}).catch(e=>{this.cache.delete(key);throw e;});this.cache.set(key,pending);}return this.cache.get(key);}
+ load(url){if(this.closed)return Promise.reject(Error('Asset manager disposed'));const u=new URL(url,import.meta.url);if(u.origin!==new URL(import.meta.url).origin)return Promise.reject(Error('Only local assets are supported'));const key=u.href;if(!this.cache.has(key)){const pending=this.loader.loadAsync(key).then(g=>{if(this.closed){disposeModel(g.scene);throw Error('Asset manager disposed');}return g;}).catch(e=>{if(this.cache.get(key)===pending)this.cache.delete(key);throw e;});this.cache.set(key,pending);}return this.cache.get(key);}
  async instance(url){const g=await this.load(url);return {scene:clone(g.scene),animations:g.animations};}
+ // Only callers that own all clones of this URL may evict it.
+ evict(url){const key=new URL(url,import.meta.url).href,p=this.cache.get(key);if(!p)return false;this.cache.delete(key);p.then(g=>disposeModel(g.scene)).catch(()=>{});return true;}
  clear(){this.closed=true;for(const p of this.cache.values())p.then(g=>disposeModel(g.scene)).catch(()=>{});this.cache.clear();}
 }
 // AnimationMixer drives each avatar skeleton; transitions use a short cross-fade.
