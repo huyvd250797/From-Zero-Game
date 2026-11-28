@@ -1,3 +1,7 @@
+# From Zero V3.18.6 — Premium Sedan Collection
+
+Updated four original reference-inspired sedan shells (Civic, K3, K5, Vios), in both GLB and native meshes. Not professional/OEM assets. No new approved professional model. See `docs/modeling/PREMIUM-SEDANS.md`. No migration.
+
 # From Zero V3.18.3 — Deployment Regression Fix
 
 Hotfix of V3.18.2. Corrects outdated Three.js NPC commuter fixture, keeps all production build gates and adds stage diagnostics. No migration. Deploy with `npm ci` / `npm run build` / `dist`. See `docs/qa/V3.18.3-RESULTS.txt`.

@@ -1,0 +1,65 @@
+{
+  "id": "VEH_VIOS",
+  "collections": [
+    "VIOS_LOD0",
+    "VIOS_LOD1",
+    "VIOS_LOD2"
+  ],
+  "sourceFrame": {
+    "min": [
+      -0.65,
+      0,
+      -1.365
+    ],
+    "max": [
+      0.65,
+      1.02,
+      1.365
+    ]
+  },
+  "wheelCenters": [
+    [
+      -0.5980000000000001,
+      0.28,
+      -0.8736
+    ],
+    [
+      -0.5980000000000001,
+      0.28,
+      0.8736
+    ],
+    [
+      0.5980000000000001,
+      0.28,
+      -0.8736
+    ],
+    [
+      0.5980000000000001,
+      0.28,
+      0.8736
+    ]
+  ],
+  "materialRoles": {
+    "paint": "paint",
+    "glass": "glass",
+    "chrome": "chrome",
+    "trim": "trim",
+    "head": "head",
+    "tail": "tail",
+    "plate": "plate"
+  },
+  "lodMaterials": [
+    {},
+    {},
+    {}
+  ],
+  "provenance": {
+    "author": "",
+    "source": "",
+    "license": "",
+    "modelYear": "2023 facelift (target reference, not verified model)",
+    "rightsEvidence": "",
+    "webDistributionAllowed": false,
+    "derivativesAllowed": false
+  }
+}

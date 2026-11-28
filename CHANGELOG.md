@@ -1,3 +1,9 @@
+# V3.18.6 — Premium Sedan Collection
+
+- Revised Civic/K3/K5/Vios exterior profiles, glazing, pillars, fascia, light signatures and mirror position. Removed floating arch overlays on these cars. Rebuilt 12 GLB bodies and native fallback meshes.
+- Added four empty artist studio job templates and generalized Blender workspace creation. No externally authored assets or professional visual approval.
+- Kept gameplay, collision dimensions, original City and four SUV/EV shells, save schema and mobile budgets.
+
 # V3.18.5 — Professional 3D Modeling Pipeline
 
 - Added Blender empty studio and evaluated mesh extraction, offline GLB preparation, wheel alignment, baked map handling and review-gated publish.

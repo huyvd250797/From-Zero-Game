@@ -1,0 +1,65 @@
+{
+  "id": "VEH_K5",
+  "collections": [
+    "K5_LOD0",
+    "K5_LOD1",
+    "K5_LOD2"
+  ],
+  "sourceFrame": {
+    "min": [
+      -0.725,
+      0,
+      -1.59
+    ],
+    "max": [
+      0.725,
+      0.98,
+      1.59
+    ]
+  },
+  "wheelCenters": [
+    [
+      -0.667,
+      0.28,
+      -1.0176
+    ],
+    [
+      -0.667,
+      0.28,
+      1.0176
+    ],
+    [
+      0.667,
+      0.28,
+      -1.0176
+    ],
+    [
+      0.667,
+      0.28,
+      1.0176
+    ]
+  ],
+  "materialRoles": {
+    "paint": "paint",
+    "glass": "glass",
+    "chrome": "chrome",
+    "trim": "trim",
+    "head": "head",
+    "tail": "tail",
+    "plate": "plate"
+  },
+  "lodMaterials": [
+    {},
+    {},
+    {}
+  ],
+  "provenance": {
+    "author": "",
+    "source": "",
+    "license": "",
+    "modelYear": "2022 DL3 (target reference, not verified model)",
+    "rightsEvidence": "",
+    "webDistributionAllowed": false,
+    "derivativesAllowed": false
+  }
+}

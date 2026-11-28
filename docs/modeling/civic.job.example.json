@@ -1,0 +1,65 @@
+{
+  "id": "VEH_CIVIC",
+  "collections": [
+    "CIVIC_LOD0",
+    "CIVIC_LOD1",
+    "CIVIC_LOD2"
+  ],
+  "sourceFrame": {
+    "min": [
+      -0.695,
+      0,
+      -1.48
+    ],
+    "max": [
+      0.695,
+      0.95,
+      1.48
+    ]
+  },
+  "wheelCenters": [
+    [
+      -0.6394,
+      0.28,
+      -0.9472
+    ],
+    [
+      -0.6394,
+      0.28,
+      0.9472
+    ],
+    [
+      0.6394,
+      0.28,
+      -0.9472
+    ],
+    [
+      0.6394,
+      0.28,
+      0.9472
+    ]
+  ],
+  "materialRoles": {
+    "paint": "paint",
+    "glass": "glass",
+    "chrome": "chrome",
+    "trim": "trim",
+    "head": "head",
+    "tail": "tail",
+    "plate": "plate"
+  },
+  "lodMaterials": [
+    {},
+    {},
+    {}
+  ],
+  "provenance": {
+    "author": "",
+    "source": "",
+    "license": "",
+    "modelYear": "2022 RS (target reference, not verified model)",
+    "rightsEvidence": "",
+    "webDistributionAllowed": false,
+    "derivativesAllowed": false
+  }
+}

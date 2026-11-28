@@ -1,0 +1,65 @@
+{
+  "id": "VEH_K3",
+  "collections": [
+    "K3_LOD0",
+    "K3_LOD1",
+    "K3_LOD2"
+  ],
+  "sourceFrame": {
+    "min": [
+      -0.685,
+      0,
+      -1.46
+    ],
+    "max": [
+      0.685,
+      1.01,
+      1.46
+    ]
+  },
+  "wheelCenters": [
+    [
+      -0.6302000000000001,
+      0.28,
+      -0.9344
+    ],
+    [
+      -0.6302000000000001,
+      0.28,
+      0.9344
+    ],
+    [
+      0.6302000000000001,
+      0.28,
+      -0.9344
+    ],
+    [
+      0.6302000000000001,
+      0.28,
+      0.9344
+    ]
+  ],
+  "materialRoles": {
+    "paint": "paint",
+    "glass": "glass",
+    "chrome": "chrome",
+    "trim": "trim",
+    "head": "head",
+    "tail": "tail",
+    "plate": "plate"
+  },
+  "lodMaterials": [
+    {},
+    {},
+    {}
+  ],
+  "provenance": {
+    "author": "",
+    "source": "",
+    "license": "",
+    "modelYear": "2022 facelift (target reference, not verified model)",
+    "rightsEvidence": "",
+    "webDistributionAllowed": false,
+    "derivativesAllowed": false
+  }
+}
