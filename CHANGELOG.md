@@ -1,3 +1,10 @@
+# V3.18.9 — Photorealistic Vehicle Rendering
+
+- Synthetic HDR reflection map with LDR fallback and shared PBR wetness response.
+- GLB showroom now loads local assets and interpolates vertex shading; Studio/Night/Wet lighting modes.
+- Existing bounded vehicle lamp pool; wet light footprints, smaller lenses, brake emission.
+- Preserve 27 GLBs, gameplay and save schema; no new professional models.
+
 # V3.18.8 — Automotive Interior & Animation
 
 - Added nine scaled cabin profiles and cutaway viewer; independent front-door hinge animation, steering preview, speed display and rain-driven wipers.

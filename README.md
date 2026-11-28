@@ -1,3 +1,7 @@
+# From Zero V3.18.9 — Photorealistic Vehicle Rendering
+
+New: synthetic linear HDR environment (LDR fallback), wet PBR material parameters, bounded headlamp glow, and GLB-normal software showroom with Studio/Night/Wet previews. No new professional vehicle models. See `docs/PHOTOREALISTIC-VEHICLE-RENDERING.md`.
+
 # V3.18.8 — Automotive Interior & Animation
 
 Cabin cutaway for nine collection cars, animated inspection doors, steering, speed display, rain wipers and a Three.js-only perspective driving view. See [scope and controls](docs/AUTOMOTIVE-INTERIOR-3188.md). This is original approximate cabin art, not OEM interiors. Production and device acceptance pending.

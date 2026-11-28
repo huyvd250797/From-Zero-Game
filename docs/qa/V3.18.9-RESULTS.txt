@@ -1,0 +1,6 @@
+From Zero V3.18.9 — Photorealistic Vehicle Rendering
+Final focused regression: 53 tests, 53 pass, 0 fail (7 new unit tests included). One new Three runtime integration case authored, not executed.
+Native preview build: PASS. SHA-256 186/186 and HTTP integrity 186/186.
+Production build attempted: failed at Three.js dependency and module inventory, r180 not installed. npm ci --offline: ENOTCACHED. All existing gates retained. Full unit regression and actual browser/mobile Three runtime not run. No real FPS, temperature or photorealism certification.
+27/27 original exterior GLBs byte-identical to uploaded V3.18.8. Master data, gameplay and save schema unchanged. 0/9 professional models registered.
+Preview PNG generated using the final CPU showroom, not a Three.js screenshot. Studio, Night, Wet for 4 models. Original approximate geometry remains visibly stylized.
