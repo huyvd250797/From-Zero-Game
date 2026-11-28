@@ -1,3 +1,4 @@
+import {militaryActive} from './military-state.js';
 import {inheritanceShares,childProfile,heirShare} from './family-life.js';
 import {difficultyOf} from './difficulty.js';
 import {catalogs,record,config} from './master-data.js';
@@ -15,7 +16,7 @@ import {log,MAX_MINUTES} from './life.js';
 import {parkVehicle} from './transport.js';
 export const formalShifts=s=>Object.values(s.career.experience).reduce((a,b)=>a+b,0);
 export const pensionQuote=s=>formalShifts(s)>=240?Math.min(8000000,1000000+Math.floor(formalShifts(s)/240)*500000):0;
-export function retirementReason(s){if(ended(s))return 'Cuộc đời đã kết thúc.';if(retired(s))return 'Đã nghỉ hưu.';if(ageOf(s)<60)return 'Cần đủ 60 tuổi.';if(incarcerated(s))return 'Chờ hoàn thành án.';return '';}
+export function retirementReason(s){if(militaryActive(s))return 'Cần kết thúc phục vụ quân sự.';if(ended(s))return 'Cuộc đời đã kết thúc.';if(retired(s))return 'Đã nghỉ hưu.';if(ageOf(s)<60)return 'Cần đủ 60 tuổi.';if(incarcerated(s))return 'Chờ hoàn thành án.';return '';}
 export function retire(s){if(retirementReason(s))return false;if(s.career.contract&&!resign(s))return false;s.career.application=null;const a=s.aging;a.retiredAt=s.minutes;a.pension=pensionQuote(s);a.pensionDue=s.minutes+30*DAY;log(s,'Nghỉ hưu: '+a.pension.toLocaleString('vi-VN')+'đ mỗi 30 ngày.');return true;}
 export function captureMilestones(s){if(!s.aging||ended(s))return;const a=s.aging,net=balanceSheet(s).net;if(Number.isSafeInteger(net))a.peakNet=Math.max(a.peakNet,net);const values={shifts:s.shifts+formalShifts(s),bike:Number(s.bike),cash:s.cash,home:Number(!!residence(s)),education:educationLevel(s).rank,business:Number(!!s.business.active||s.business.history.length>0),recovery:Number(s.recovery.releasedAt!==null||s.recovery.bankruptcies.length>0&&net>=0)};for(const r of catalogs.Achievements)if((values[r.metric]||0)>=r.threshold&&!a.achievements.includes(r.id))a.achievements.push(r.id);}
 export function agingTick(s){const a=s.aging;if(!a||ended(s))return;if(retired(s)&&s.minutes>=a.pensionDue){while(a.pensionDue<=s.minutes){a.pensionDue+=30*DAY;if(a.pension&&cashChange(s,a.pension,'INC_PENSION','Lương hưu'))a.pensionReceived+=a.pension;}}if(s.minutes%DAY!==0)return;const age=ageOf(s);if(age>=60&&s.wellness){if((s.wellness.history[0]?.exercise||0)<30)s.wellness.fitness=Math.max(0,s.wellness.fitness-1);if(age>=75&&s.wellness.nutrition<40)s.health=Math.max(0,s.health-1);}a.criticalDays=age>=75&&s.health===0?Math.min(30,a.criticalDays+1):0;captureMilestones(s);}

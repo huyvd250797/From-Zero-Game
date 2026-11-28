@@ -1,3 +1,12 @@
+# V3.21.0 — Military & National Defense
+
+- Convert two existing civic lots into military administration and barracks; preserve 60 original destinations plus the fire station and original collision footprint.
+- Add optional schema-1 military extension with health screening, service/career entry, three non-combat duties, earned allowances, progression and completion/resignation/medical/custody history.
+- Prevent concurrent civilian employment and casual shifts during military service. Add city services panel and direct navigation.
+- Add olive supply truck on validated short route, replacing a regular truck, with normal traffic and no emergency priority.
+- Keep existing Master Data and GLB assets. No professional military NPCs or interiors, no combat.
+- Selected regression 170/170 PASS (8 new); Native Preview 195 SHA-256 and HTTP resources PASS. Production blocked at missing Three.js dependency. Browser/device acceptance pending.
+
 # V3.20.0 — Fire & Rescue Services
 
 - Convert existing civic infill into an interactive 24-hour PCCC station; preserve 60 original doors and layout.

@@ -1,3 +1,7 @@
+# From Zero V3.21.0 — Military & National Defense
+
+Non-combat military life simulation: two interactive civic sites, health screening, optional 30-day game service or professional career, three duty types, finance and bounded history, normal-traffic supply truck. See [controls, scope and limitations](docs/MILITARY-DEFENSE-321.md).
+
 # From Zero V3.20.0 — Fire & Rescue Services
 
 24-hour fire station, truck dispatch, saved city incidents and drills, bounded smoke/fire, evacuation presentation, response and rescue timers. Reuses an existing civic footprint and truck chassis. See [scope and controls](docs/FIRE-RESCUE-320.md). Production/device acceptance pending.

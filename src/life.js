@@ -1,3 +1,5 @@
+import {MILITARY_HQ,MILITARY_BASE,militaryTick,finishMilitary,militaryActive} from './military-state.js';
+import {incarcerated} from './recovery-state.js';
 import {FIRE_STATION,fireTick} from './fire-state.js';
 import {economicEvent,CITY_YEAR,cityStatistics} from './city-evolution.js';
 import {populationMidnight} from './population.js';
@@ -36,7 +38,7 @@ export function light(s){const h=s.minutes%1440/60;const t=h<5.5||h>=19.5?0:h<8?
 export function log(s,message){recordJournal(s,`Ngày ${day(s)}: ${message}`);}
 export function lifeDefaults(s,renew=false){return {...LIFE_DEFAULTS,autoRent:renew,bikeDue:s.bike?s.minutes+bikeMaintenance.intervalDays*1440:0,maintenanceDebt:0,aidDay:0};}
 const scheduleByPlace=new Map(catalogs.World_Schedules.map(r=>[record(r.building).legacyId,r]));
-export const schedule=place=>place===FIRE_STATION?{opens:0,closes:1440}:scheduleByPlace.get(place);
+export const schedule=place=>[MILITARY_HQ,MILITARY_BASE].includes(place)?{opens:420,closes:960}:place===FIRE_STATION?{opens:0,closes:1440}:scheduleByPlace.get(place);
 export function isOpen(place,minutes,duration=0){const r=schedule(place);if(!r)return false;if(r.opens===0&&r.closes===1440)return true;const m=minutes%1440;return m>=r.opens&&m<r.closes&&m+duration<=r.closes;}
 export function scheduleLabel(place){const r=schedule(place);return !r?'Chưa có lịch':r.opens===0&&r.closes===1440?'24/24':`${hhmm(r.opens)}–${hhmm(r.closes)}`;}
 export function untilOpen(place,minutes){const r=schedule(place);if(!r||isOpen(place,minutes))return 0;const m=minutes%1440;return (r.opens-m+1440)%1440;}
@@ -51,10 +53,10 @@ export function advanceTime(s,minutes,{resting=false,sleeping=false}={}){
   for(const r of catalogs.Needs_Rules){const k=needKeys[r.attribute];if(k&&s.minutes%r.intervalMinutes===0&&!(resting&&k==='energy'))s[k]=clamp(s[k]+r.delta);}
   if(s.minutes%60===0){const critical=['energy','hunger','hygiene','hydration'].filter(k=>s[k]<config.criticalNeedThreshold).length;if(critical){s.health=clamp(s.health-critical*2);s.happy=clamp(s.happy-critical);s.stress=clamp(s.stress+critical*2);}else if(s.hunger>=45&&s.energy>=40&&s.hygiene>=40){s.stress=clamp(s.stress-1);if(resting)s.health=clamp(s.health+1);}if(s.stress>=85){s.health=clamp(s.health-1);s.happy=clamp(s.happy-1);}}
   if(s.rentUntil&&s.minutes===s.rentUntil){const rent=livingQuote(s,baseRent);if(s.autoRent&&s.cash>=rent&&cashChange(s,-rent,'EXP_RENT','Gia hạn phòng trọ')){s.rentUntil+=config.rentMinutes;log(s,`Gia hạn phòng trọ: −${rent.toLocaleString('vi-VN')}đ.`);}else{log(s,s.autoRent?'Không đủ tiền gia hạn phòng trọ. Bạn đã mất chỗ ở.':'Hết hạn phòng trọ.');}}
-  fireTick(s);housingTick(s);vehicleTick(s);familyTick(s);bankingTick(s);businessTick(s);
+  const serving=militaryActive(s);militaryTick(s);if(serving&&!militaryActive(s))log(s,s.cityServices.military.history[0].reason==='completed'?'Đã hoàn thành nghĩa vụ quân sự mô phỏng.':'Dừng phục vụ vì sức khỏe.');fireTick(s);housingTick(s);vehicleTick(s);familyTick(s);bankingTick(s);businessTick(s);
   if(s.bike&&s.bikeDue>0&&s.minutes===s.bikeDue){s.bikeDue+=bikeMaintenance.intervalDays*1440;s.maintenanceDebt+=livingQuote(s,bikeMaintenance.cost);log(s,`Đến hạn bảo dưỡng xe đạp: ${livingQuote(s,bikeMaintenance.cost).toLocaleString('vi-VN')}đ.`);settleDebt(s);}
   if(s.minutes%1440===0){pruneFinance(s);pruneDetails(s);}
-  legalTick(s);custodyMinute(s);storyTick(s);agingTick(s);
+  legalTick(s);custodyMinute(s);if(militaryActive(s)&&incarcerated(s)){finishMilitary(s,'custody');log(s,'Kết thúc phục vụ do chấp hành án.');}storyTick(s);agingTick(s);
   if(s.minutes%1440===0&&calendar(s).month===1&&calendar(s).date===1)log(s,`Chúc mừng sinh nhật ${calendar(s).age} tuổi!`);
  }
  return s;

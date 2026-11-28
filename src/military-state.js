@@ -1,0 +1,16 @@
+// Fictional civilian-life simulation; no combat, real recruitment rules or weapons.
+export const MILITARY_HQ='lot_100_156', MILITARY_BASE='lot_100_164';
+export const SERVICE_DAYS=30, DAY_MINUTES=1440;
+export const MILITARY_MODES=Object.freeze({service:'Nghĩa vụ quân sự',career:'Quân nhân chuyên nghiệp'});
+export const DUTIES=Object.freeze({fitness:{label:'Rèn luyện thể lực',minutes:60,pay:20000},logistics:{label:'Hậu cần & vận tải',minutes:120,pay:40000},community:{label:'Hỗ trợ cộng đồng',minutes:120,pay:40000}});
+export const militaryDefaults=()=>({screenedAt:null,active:null,history:[],serviceCompleted:false});
+export const militaryData=s=>s.cityServices.military??=militaryDefaults();
+export const militaryActive=s=>!!s.cityServices?.military?.active;
+const int=(v,a=0,b=Number.MAX_SAFE_INTEGER)=>Number.isSafeInteger(v)&&v>=a&&v<=b;
+const plain=v=>v&&typeof v==='object'&&!Array.isArray(v);
+function validRecord(r,m){return plain(r)&&Object.hasOwn(MILITARY_MODES,r.mode)&&int(r.start,0,m)&&r.until===(r.mode==='service'?r.start+SERVICE_DAYS*DAY_MINUTES:null)&&int(r.duties,0,Math.floor(m/DAY_MINUTES)-Math.floor(r.start/DAY_MINUTES)+1)&&int(r.lastDay,-1,Math.floor(m/DAY_MINUTES))&&(r.duties===0?r.lastDay===-1:r.lastDay>=Math.floor(r.start/DAY_MINUTES))&&int(r.earned,0,r.duties*80000)&&int(r.earned,r.duties*20000);}
+export function validMilitary(s){const f=s.cityServices?.military;if(f===undefined)return true;const m=s.minutes;if(!plain(f)||typeof f.serviceCompleted!=='boolean'||!(f.screenedAt===null||int(f.screenedAt,0,m))||!Array.isArray(f.history)||f.history.length>30)return false;if(!f.history.every(r=>validRecord(r,r.closed)&&int(r.closed,r.start,m)&&['completed','resigned','medical','custody','retirement'].includes(r.reason)&&(r.reason!=='completed'||r.mode==='service'&&r.closed>=r.until)&&(r.reason!=='resigned'||r.mode==='career')))return false;if(f.history.some((r,i)=>i>0&&r.closed>f.history[i-1].start)||f.history.filter(r=>r.mode==='service'&&r.reason==='completed').length>1||(!f.serviceCompleted&&f.history.some(r=>r.reason==='completed')))return false;const a=f.active;return a===null||validRecord(a,m)&&a.until!==m&&(a.until===null||a.until>m)&&f.screenedAt!==null&&f.screenedAt<=a.start&&!s.career?.contract&&!s.aging?.retiredAt&&(!f.history.length||f.history[0].closed<=a.start)&&!(a.mode==='service'&&f.serviceCompleted);}
+export function finishMilitary(s,reason){const f=s.cityServices?.military,a=f?.active;if(!a)return false;f.history.unshift({...a,closed:s.minutes,reason});f.history=f.history.slice(0,30);if(reason==='completed')f.serviceCompleted=true;f.active=null;f.screenedAt=null;return true;}
+export function militaryTick(s){const a=s.cityServices?.military?.active;if(!a)return;if(s.health<=10)finishMilitary(s,'medical');else if(a.until!==null&&s.minutes>=a.until)finishMilitary(s,'completed');}
+export function militaryRank(a){return !a?'—':a.duties>=20?'Tổ trưởng (mô phỏng)':a.duties>=8?'Quân nhân bậc 2':'Quân nhân bậc 1';}
+export const militarySchedule=Object.freeze([{time:'06:00',label:'Thể dục & sinh hoạt'},{time:'07:00–16:00',label:'Nhận nhiệm vụ tại doanh trại'},{time:'17:00',label:'Sinh hoạt cá nhân'},{time:'22:00',label:'Nghỉ ngơi'}]);
