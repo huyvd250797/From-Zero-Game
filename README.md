@@ -1,3 +1,7 @@
+# From Zero V3.22.2 — Intelligent Navigation & Traffic Recovery
+
+Collision-aware walking detours, visible pedestrian recovery, lane-aware traffic braking and safe same-direction passing. Full regression 979/979 PASS; native preview 199 assets verified; production dependency blocked. See [scope and acceptance](docs/NAVIGATION-RECOVERY-3222.md), [QA results](docs/qa/V3.22.2-RESULTS.txt) and [release gate](docs/RELEASE-GATE.md).
+
 # From Zero V3.22.1 — Deployment & Regression Guard
 
 Fix two stale V3.20.0 branding assertions and the walking cadence fixture using a real current walking leg. Add version-consistency preflight and explicit failing-test summary. No gameplay or save changes. See [mandatory release gate](docs/RELEASE-GATE.md).

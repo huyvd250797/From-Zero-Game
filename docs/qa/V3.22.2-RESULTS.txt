@@ -1,0 +1,11 @@
+From Zero V3.22.2 — Intelligent Navigation & Traffic Recovery
+Baseline: V3.22.1 — Deployment & Regression Guard
+Node v22.16.0
+Full unit regression (all tests/*.test.mjs): 979 PASS / 0 FAIL / 0 SKIPPED; exit 0; 235107 ms.
+Includes 6 new recovery tests, successful startup failed-loading/retry test, dynamic branding tests and prior NPC/traffic regression.
+See V3.22.2-REGRESSION.log for actual full output.
+JavaScript syntax: PASS.
+Native preview build: PASS, 199 SHA-256 assets, HTTP integrity PASS 199.
+Production build: exit 1, missing Three.js dependency at inventory gate; npm ci online EAI_AGAIN, offline ENOTCACHED. No gates bypassed. Three.js integration, browser UI, iPhone FPS/thermal, long-term acceptance not run.
+Baseline comparison: all 32 GLB and 61 master-data files unchanged; generated master data unchanged; save schema 1, urban layout 9 retained.
+Build executed on identical code snapshot in separate QA directory; only README, changelog and QA docs/log added after regression.

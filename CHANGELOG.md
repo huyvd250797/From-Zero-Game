@@ -1,3 +1,9 @@
+# V3.22.2 — Intelligent Navigation & Traffic Recovery
+
+- Collision-aware pedestrian detours, manual avoidance, persistent destination and bounded retry.
+- Visible scheduled NPC walking recovery; lane-aware pedestrian braking, safe same-direction bypass, bus pedestrian sweeps.
+- Full Unit Regression 979/979 PASS (including six new tests); Native Preview 199 assets SHA-256 and HTTP PASS. Production remains blocked by Three.js dependency. See docs/qa/V3.22.2-RESULTS.txt.
+
 # V3.22.1 — Deployment & Regression Guard
 
 - Fix stale release branding assertions and walking cadence fixture; retain startup retry/save protection.
