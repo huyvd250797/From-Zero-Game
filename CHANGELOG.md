@@ -1,3 +1,9 @@
+# V3.18.8 — Automotive Interior & Animation
+
+- Added nine scaled cabin profiles and cutaway viewer; independent front-door hinge animation, steering preview, speed display and rain-driven wipers.
+- Added opt-in Three.js perspective cabin driving camera and guarded screen picking; retained exterior rendering and legacy saves.
+- Preserved all 27 exterior GLB files and existing physics. Professional interior assets, world exterior door rigs and boarding animations remain pending.
+
 # V3.18.7 — Premium SUV & EV Collection
 
 - Revised four SUV/EV shells and individual light signatures, glass, lower cladding and rear fascia. Re-baked 12 GLBs and native meshes.

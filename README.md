@@ -1,3 +1,7 @@
+# V3.18.8 — Automotive Interior & Animation
+
+Cabin cutaway for nine collection cars, animated inspection doors, steering, speed display, rain wipers and a Three.js-only perspective driving view. See [scope and controls](docs/AUTOMOTIVE-INTERIOR-3188.md). This is original approximate cabin art, not OEM interiors. Production and device acceptance pending.
+
 # From Zero V3.18.7 — Premium SUV & EV Collection
 
 Four revised original interim SUV/EV models: Fortuner, VF6, VF7, VF8. Updated 12 GLBs and native coachwork, distinct roof, glazing, fascia, rear bumper and cladding. No professional/OEM models; no migration. See `docs/modeling/PREMIUM-SUVS.md`.

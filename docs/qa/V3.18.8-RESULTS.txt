@@ -1,0 +1,7 @@
+V3.18.8 — Automotive Interior & Animation
+Focused regression: 77/77 pass, 0 fail (12 suites/files, six new cases).
+Native Preview build: PASS; 185 SHA-256 asset and 185 HTTP integrity checks PASS.
+JavaScript syntax and professional catalog verification PASS. Professional assets 0/9.
+Production npm run build: BLOCKED at Three.js dependency/module inventory. npm ci --offline ENOTCACHED. Real Three integration test added but not executed. Full unit regression and physical device/browser acceptance not executed.
+Cabin source render: nine supported profiles, typical 1480 cutaway tris sedan, 1904 Fortuner, 1468 EV, for 000 speed; driving geometry ~444–456 desktop or 352–364 mobile, varies with speed digits. Existing exterior GLBs unchanged. No migration.
+No rigged exterior doors, no player/NPC entry or exit animation, mirror or trunk animation. Cockpit perspective is production-only, not certified on browser/iPhone.

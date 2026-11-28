@@ -161,3 +161,6 @@ body:not(.mini-enabled) #bottom>.minimap{display:none!important}body.mini-enable
 #modalBody.phone-dialog .phone-app{min-height:68px!important;padding:6px 3px!important;gap:3px}.phone-app-icon{width:30px;height:30px;font-size:19px}.phone-dialog .phone-metrics>div{padding:9px 11px}.phone-dialog .phone-metrics{margin:8px 0}.phone-dialog .phone-apps{gap:6px}.phone-dialog .phone-app strong{font-weight:600}.phone-dialog .phone-app:focus-visible{outline:2px solid #b8e6cc;outline-offset:1px}
 
 .vehicle-showroom-canvas{display:block;width:100%;max-width:440px;height:auto;border-radius:12px;margin:8px auto;touch-action:pan-y;}
+
+/* V3.18.8: perspective view has no orthographic picking or map label overlay. */
+body.cockpit-active #labels{visibility:hidden;pointer-events:none} .cabin-preview-controls{display:grid;gap:8px;margin:8px 0} .cabin-preview-controls.hidden{display:none} #cabinCamera[aria-pressed="true"]{outline:2px solid #68c8a4} #cabinCamera{white-space:nowrap}
