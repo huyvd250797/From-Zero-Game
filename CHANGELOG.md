@@ -1,3 +1,11 @@
+# V3.20.0 — Fire & Rescue Services
+
+- Convert existing civic infill into an interactive 24-hour PCCC station; preserve 60 original doors and layout.
+- Add scheduled incidents, drills, fire/rescue dispatch, actual actor arrival, cancellation, response progress and history.
+- Add original red fire truck equipment, shared siren, bounded fire/smoke effects, map marker and pedestrian evacuation presentation.
+- Preserve save schema and master data, no migration. Dedicated ladder truck, physical spread, structural damage and multi-agency response remain pending.
+- Final selected regression: 105/105 PASS; 192 Native Preview SHA-256 and HTTP assets PASS. Production dependency missing (npm offline ENOTCACHED); no browser/device acceptance.
+
 # V3.19.0 — Police & Public Security
 
 - Replace generic random police actors with two station-rooted patrol units and stable identities/shift labels; preserve peak traffic budget.

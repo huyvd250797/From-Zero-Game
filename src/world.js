@@ -30,6 +30,9 @@ let layout8;
 const priorLayout8=()=>layout8??=naturalMasterplan(roadNetwork,all,layout6,river,districts,SIZE,true);
 export const urbanPlan=naturalMasterplan(roadNetwork,all,layout6,river,districts,SIZE,'ring');
 export const sites=[...all.map(p=>urbanPlan.replatted.get(p.id)||p),...urbanPlan.infill];
+// Reuse an existing civic footprint: no collision or layout migration.
+const fireSite=sites.find(p=>p.id==='lot_100_124');
+if(fireSite)sites[sites.indexOf(fireSite)]={...fireSite,name:'Trạm PCCC & CNCH An Lạc',door:[100,119],interactive:true,icon:'🚒',fireStation:true};
 export const places=sites.filter(p=>p.interactive);
 export const buildings=sites.filter(p=>p.h>0);
 export const roadOffset=urbanPlan.offset,roadPoint=urbanPlan.point;

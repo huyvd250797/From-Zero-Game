@@ -1,0 +1,16 @@
+# V3.20.0 — Fire & Rescue Services
+
+Fictional An Lạc simulation, not real-world emergency procedures. The existing civic infill `lot_100_124` is now a 24-hour interactive fire and rescue station with a new façade; its building footprint, all original canonical locations and the road network are unchanged. The station has a simulated roster of four staff on three shifts (not four persistent NPC citizens).
+
+## Play
+- Phương tiện & giao thông → Dịch vụ đô thị → PCCC & CNCH; or navigate to the new station and interact there.
+- Incidents appear at 10:00 on every third simulation day (day indices 0, 3, 6…), cycling shop, market, factory and warehouse. The explosion category is an abstract incident label with the same graphical effect as a fire; no ignition or blast mechanics. If no incident is active, a player at the station can create a harmless drill with one of the three incident categories.
+- Select **Điều xe PCCC**. The shared city service dispatcher permits a single active mission at a time. The truck travels from the station to the selected building entrance. Close the modal to resume the world. The renderer's actual service actor must be within four world units of the target and the scheduled ETA must have elapsed. UI updates start response automatically. Fire is resolved 12 game minutes after the response starts; rescue-only missions take 6. There is no fee.
+- Unanswered incidents are resolved off-screen after 90 game minutes; dispatched incidents not reached by the live truck resolve off-screen after the later of 120 minutes since report or 30 after ETA. These are explicitly labelled background resolution, not a rendered arrival. Cancellation before response returns to reported status. Drill damage stays zero.
+- In the affected area, pedestrian presentation moves towards a checked safe point or waits for assistance. This is not persistent NPC evacuation routing; vehicle owners, building interiors and occupations are unchanged.
+- Visible incidents show low-poly flames/smoke and a map marker. On response, two illustrative firefighter meshes and stylized water stream appear. Mobile uses three flame/smoke groups instead of six; off-screen effects are skipped. Truck uses the canonical truck chassis with original red body, equipment, ladder stowed on roof, and shared priority lights/siren. No dedicated ladder truck, professional GLB, independently animated hose rig, physical fire spread, real explosion, persistent damage to buildings, or multi-agency dispatch.
+
+## Compatibility / tests
+Optional `cityServices.fire` data; schema 1 and layout 9 unchanged. Old saves lacking fire state are accepted. Active incident, status, time, damage and 60 history entries are persisted; incident damage is a report metric, not structural damage or a charge to the player. Existing shared dispatch and police reports are preserved. No migration or environment variables. Production Three.js dependency is still required; native preview does not replace production/browser/device acceptance.
+
+Final selected regression: 105/105 passed, including 9 new fire tests. Native Preview build, 192 SHA-256 and HTTP resources verified. Full unit regression and Three.js integration not run; production stopped at missing dependency, npm ci --offline returned ENOTCACHED.

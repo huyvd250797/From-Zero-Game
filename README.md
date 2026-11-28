@@ -1,3 +1,7 @@
+# From Zero V3.20.0 — Fire & Rescue Services
+
+24-hour fire station, truck dispatch, saved city incidents and drills, bounded smoke/fire, evacuation presentation, response and rescue timers. Reuses an existing civic footprint and truck chassis. See [scope and controls](docs/FIRE-RESCUE-320.md). Production/device acceptance pending.
+
 # From Zero V3.19.0 — Police & Public Security
 
 Two station-rooted patrol units, shift labels, police/CSGT panel, saved reports and priority scene dispatch, synthetic siren for Web Audio and HTML Audio. Existing city station and chassis IDs reused; model art is approximate. No layout or database migration. See [scope, controls and QA](docs/POLICE-PUBLIC-SECURITY.md). Production and browser acceptance pending.

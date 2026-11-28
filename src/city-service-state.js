@@ -1,10 +1,13 @@
+import {places} from './world.js';
+import {FIRE_ORIGIN} from './fire-state.js';
+import {fireDefaults,validFire} from './fire-state.js';
 import {securityDefaults,validSecurity} from './police-state.js';
 import {COLLECTION_IDS} from './vehicle-collection.js';
 // Optional schema-1 extension. All fees/points are fictional An Lạc game rules.
 export const LAW_RULES=Object.freeze({speed:{label:'Quá tốc độ',fine:80000,points:1},red:{label:'Vượt đèn đỏ',fine:150000,points:2},wrong:{label:'Đi ngược chiều',fine:120000,points:2},parking:{label:'Đỗ xe sai quy định',fine:50000,points:0},license:{label:'Không có giấy phép hợp lệ',fine:180000,points:0}});
 export const LICENSE_CLASSES=['A','B','C'];
 export const licenseClass=id=>id==='VEH_BIKE'?null:id==='VEH_MOTO'?'A':id==='VEH_TRUCK'?'C':'B';
-export const cityServiceDefaults=()=>({cityServices:{licenses:{},violations:[],archivedDebt:0,nextId:1,cooldowns:{},policies:{},reports:[],dispatch:null,security:securityDefaults()}});
+export const cityServiceDefaults=()=>({cityServices:{licenses:{},violations:[],archivedDebt:0,nextId:1,cooldowns:{},policies:{},reports:[],dispatch:null,security:securityDefaults(),fire:fireDefaults()}});
 const plain=x=>x&&typeof x==='object'&&!Array.isArray(x),int=(n,min=0,max=Number.MAX_SAFE_INTEGER)=>Number.isSafeInteger(n)&&n>=min&&n<=max,ids=[...COLLECTION_IDS,'VEH_BIKE','VEH_MOTO','VEH_CAR','VEH_EV','VEH_LUX','VEH_TRUCK'];
 const point=p=>plain(p)&&Number.isFinite(p.x)&&Number.isFinite(p.z)&&p.x>=0&&p.x<=384&&p.z>=0&&p.z<=384;
 export function validCityServices(s){const c=s.cityServices;if(!plain(c)||!plain(c.licenses)||!plain(c.cooldowns)||!plain(c.policies)||!int(c.archivedDebt)||!int(c.nextId,1)||!Array.isArray(c.violations)||c.violations.length>120||!Array.isArray(c.reports)||c.reports.length>60)return false;
@@ -15,7 +18,7 @@ export function validCityServices(s){const c=s.cityServices;if(!plain(c)||!plain
  if(!c.violations.every(r=>common(r)&&Object.hasOwn(LAW_RULES,r.kind)&&int(r.fine,1)&&int(r.points,0,12)&&typeof r.paid==='boolean'&&['camera','patrol','system'].includes(r.source)))return false;
  if(!c.reports.every(r=>common(r)&&int(r.damage,1,100)&&typeof r.target==='string'&&r.target.length<=100&&int(r.energy)&&int(r.cover,0)&&typeof r.claimed==='boolean'))return false;
  if(new Set([...c.violations,...c.reports].map(r=>r.id)).size!==c.violations.length+c.reports.length)return false;
- if(!validSecurity(c,s.minutes))return false;const d=c.dispatch;return d===null||plain(d)&&['tow','ambulance','police'].includes(d.kind)&&(d.kind==='tow'?ids.includes(d.vehicle):d.vehicle===null)&&int(d.start,0,s.minutes)&&int(d.arrive,d.start+1,d.start+2000)&&point(d.target)&&point(d.origin)&&Array.isArray(d.path)&&d.path.length>=1&&d.path.length<=600&&d.path.every(point)&&Math.hypot(d.path.at(-1).x-d.target.x,d.path.at(-1).z-d.target.z)<.01;
+ if(!validSecurity(c,s.minutes)||!validFire(c,s.minutes))return false;const d=c.dispatch;if(d?.kind==='fire'){const b=places.find(p=>p.id===c.fire?.active?.site);if(!b||!point(d.target)||!point(d.origin)||Math.hypot(d.target.x-b.door[0],d.target.z-b.door[1])>.001||Math.hypot(d.origin.x-FIRE_ORIGIN.x,d.origin.z-FIRE_ORIGIN.z)>.001)return false;}return d===null||plain(d)&&['tow','ambulance','police','fire'].includes(d.kind)&&(d.kind==='tow'?ids.includes(d.vehicle):d.vehicle===null)&&int(d.start,0,s.minutes)&&int(d.arrive,d.start+1,d.start+2000)&&point(d.target)&&point(d.origin)&&Array.isArray(d.path)&&d.path.length>=1&&d.path.length<=600&&d.path.every(point)&&Math.hypot(d.path.at(-1).x-d.target.x,d.path.at(-1).z-d.target.z)<.01;
 }
 export const cityData=s=>s.cityServices??=(cityServiceDefaults().cityServices);
 export const hasLicense=(s,id)=>{const k=licenseClass(id);return !k||!!(s.cityServices?.licenses?.[k]?.points>0||(k==='B'&&s.cityServices?.licenses?.C?.points>0));};

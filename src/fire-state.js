@@ -1,0 +1,18 @@
+// Fictional city incident state. No real-world fire mechanics or ignition instructions.
+export const FIRE_STATION='lot_100_124';
+export const FIRE_ORIGIN=Object.freeze({x:100,z:119});
+export const FIRE_SITES=Object.freeze(['shop','market','factory','warehouse']);
+export const FIRE_TYPES=Object.freeze({fire:'Cháy công trình',rescue:'Cứu nạn cứu hộ',explosion:'Sự cố cháy nổ (mô phỏng)'});
+export const FIRE_STATUS=Object.freeze({reported:'Chờ điều xe',dispatched:'Đang điều xe',responding:'Đang xử lý',resolved:'Đã xử lý',background:'Đã xử lý ngoài màn hình'});
+export const fireDefaults=()=>({nextId:1,active:null,history:[]});
+export const fireData=c=>c.fire??=fireDefaults();
+const int=(n,min,max)=>Number.isSafeInteger(n)&&n>=min&&n<=max;
+const point=p=>p&&Number.isFinite(p.x)&&Number.isFinite(p.z)&&p.x>=1&&p.x<=383&&p.z>=1&&p.z<=383;
+const rowValid=(r,f,m)=>r&&int(r.id,1,f.nextId-1)&&FIRE_SITES.includes(r.site)&&Object.hasOwn(FIRE_TYPES,r.kind)&&int(r.at,0,m)&&typeof r.drill==='boolean'&&Object.hasOwn(FIRE_STATUS,r.status)&&int(r.damage,0,100)&& (r.responseAt===null||int(r.responseAt,r.at,m))&&(r.closed===null||int(r.closed,r.at,m));
+export function validFire(c,m){const f=c.fire,d=c.dispatch;if(f===undefined)return d?.kind!=='fire';if(!f||typeof f!=='object'||Array.isArray(f)||!int(f.nextId,1,Number.MAX_SAFE_INTEGER)||!Array.isArray(f.history)||f.history.length>60)return false;const a=f.active;if(a!==null&&(!rowValid(a,f,m)||!['reported','dispatched','responding'].includes(a.status)||a.closed!==null||((a.status==='responding')!==(a.responseAt!==null))))return false;if(!f.history.every(r=>rowValid(r,f,m)&&['resolved','background'].includes(r.status)&&r.closed!==null&&(r.responseAt===null||r.responseAt<=r.closed)))return false;const ids=[...f.history,...(a?[a]:[])].map(r=>r.id);if(new Set(ids).size!==ids.length)return false;return d?.kind==='fire'?!!a&&['dispatched','responding'].includes(a.status)&&d.fireId===a.id&&point(d.target)&&d.start>=a.at&&(a.responseAt===null||a.responseAt>=d.arrive):!a||a.status==='reported';}
+export function createFireIncident(c,minute,site,kind='fire',drill=false){if(!FIRE_SITES.includes(site)||!Object.hasOwn(FIRE_TYPES,kind)||!int(minute,0,Number.MAX_SAFE_INTEGER))return null;const f=fireData(c);if(f.active)return null;return f.active={id:f.nextId++,site,kind,at:minute,drill:!!drill,status:'reported',responseAt:null,closed:null,damage:0};}
+export const fireIntensity=(r,minute)=>!r||r.kind==='rescue'?0:r.status==='responding'?Math.min(1,.25+Math.max(0,r.responseAt-r.at)/60)*Math.max(0,1-(minute-r.responseAt)/12):Math.min(1,.25+Math.max(0,minute-r.at)/60);
+export const fireDuration=r=>r.kind==='rescue'?6:12;
+export function closeFireIncident(c,minute,status){const f=fireData(c),r=f.active;if(!r)return false;r.status=status;r.closed=minute;f.history.unshift({...r});f.history=f.history.slice(0,60);f.active=null;if(c.dispatch?.kind==='fire')c.dispatch=null;return true;}
+export function fireTick(s){const c=s.cityServices;if(!c)return;const m=s.minutes;let a=c.fire?.active;if(!a){if(m%4320===600){const i=Math.floor(m/4320);createFireIncident(c,m,FIRE_SITES[i%FIRE_SITES.length],i%5===4?'explosion':'fire');}return;}if(a.kind!=='rescue'&&!a.drill&&a.status!=='responding'&&(m-a.at)%5===0)a.damage=Math.min(100,a.damage+2);if(a.status==='responding'&&m-a.responseAt>=fireDuration(a))closeFireIncident(c,m,'resolved');else if(a.status==='reported'&&m-a.at>=90||a.status==='dispatched'&&m>=Math.max(a.at+120,(c.dispatch?.arrive??m)+30))closeFireIncident(c,m,'background');}
+export const fireShift=m=>{const h=Math.floor(m/60)%24;return h>=6&&h<14?'06:00–14:00':h>=14&&h<22?'14:00–22:00':'22:00–06:00';};
