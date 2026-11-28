@@ -1,3 +1,4 @@
+import {COLLECTION} from './vehicle-collection.js';
 import {clearMovement} from './traffic-clearance.js';
 import {firstCollision} from './collision.js';
 import {busWeatherFactor} from './dynamic-climate.js';
@@ -60,4 +61,4 @@ export function updateBusTraffic(minute,player,ride=null,actors=[]){const prior=
 // Actual visible scheduled buses, derived from the same trip offsets as player tickets.
 export function scheduledBuses(minute){const result=[];for(const key of new Set([...demands.keys(),...playerTrips])){const [line,dir,raw]=key.split(':'),start=Number(raw),effective=minute-(busDelays.get(key)||0);if(effective<start-BOARD_TIME||start<minute-600)continue;const base=busServices().find(s=>s.id===line&&s.dir===Number(dir));if(!base)continue;const svc=busServiceForDay(base,Math.floor(start/1440));if(effective>=start+svc.duration+STOP_DWELL)continue;const row=busAt(svc,start,effective);if(row){if(effective<minute&&(busClock===minute)){row.delayed=true;}if(heldBuses.has(key)){row.speed=0;row.braking=true;}result.push(row);}}return result;}
 export function visibleScheduledBuses(minute,renderer,passenger){const limit=[4,8,12,16][renderer.quality??1];return scheduledBuses(minute).filter(v=>!(passenger?.kind==='bus'||passenger?.kind==='bus-stop')||v.line!==passenger.line||v.dir!==passenger.dir||v.trip!==passenger.trip).filter(v=>{const p=renderer.project(v.pos.x,1,v.pos.z);return p.x>=-65&&p.x<=renderer.width+65&&p.y>=-65&&p.y<=renderer.height+65;}).sort((a,b)=>distance(a.pos,renderer.camera)-distance(b.pos,renderer.camera)).slice(0,limit);}
-export const MOBILITY_LABELS={walk:'Đi bộ',VEH_BIKE:'Xe đạp',VEH_MOTO:'Xe máy',VEH_CAR:'Ô tô',bus:'Xe buýt',taxi:'Taxi'};
+export const MOBILITY_LABELS={...Object.fromEntries(Object.entries(COLLECTION).map(([id,p])=>[id,p.name])),walk:'Đi bộ',VEH_BIKE:'Xe đạp',VEH_MOTO:'Xe máy',VEH_CAR:'Ô tô',bus:'Xe buýt',taxi:'Taxi'};

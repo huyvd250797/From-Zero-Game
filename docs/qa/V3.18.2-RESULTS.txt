@@ -1,0 +1,13 @@
+V3.18.2 — Realistic 3D Vehicle Assets
+Baseline: uploaded V3.18.1 Signature Vehicle Models (2).zip
+Node: v22.16.0
+
+Final focused unit regression: 50/50 PASS (6 new tests). Groups: realistic-vehicle-assets-3182, vehicle-coachwork-3181, vietnamese-vehicles-318, vehicle-graphics-317, vehicle-dynamics, audio-recovery-316, official, final-release.
+Final traffic regression: 25/25 PASS: intelligent-traffic-ai, collision-damage, realistic-balance-315.
+Earlier focused failures: initial GLB test assumed chrome on every LOD; corrected to validate actual per-model roles; software showroom had a shadowed variable causing ReferenceError, corrected and reran all 50 focused tests successfully.
+GLB: 27 binary files with SHA-256, normalized normals, UV, valid indices, role materials and bounds. 1,864,192 bytes combined (excluding inventory).
+Master Data: 60 catalogs, 1065 records PASS.
+JavaScript syntax PASS; build:native-preview PASS; verify-release exact SHA-256 180 assets PASS; smoke-http 180 resources PASS.
+Production build attempted; JavaScript syntax PASS, then dependency missing. npm ci offline ENOTCACHED; online EAI_AGAIN. Actual GLTFLoader r180 integration tests added but not run because dependency is unavailable. No build gate disabled. Full unit regression not run.
+No device/browser rendering or audio acceptance, actual FPS/thermal results unavailable. Native preview does not execute GLTFLoader. Preview PNG from actual GLBs + dynamic wheel geometry offline, not Three.js screenshot.
+Original, generated interim models are approximations, not externally authored licensed realistic car assets. No Draco/Meshopt/KTX2 encoder or photo textures. High-fidelity licensed replacements remain pending.

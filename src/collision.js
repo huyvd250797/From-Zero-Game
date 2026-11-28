@@ -1,8 +1,9 @@
+import {COLLECTION_IDS,collectionFootprint} from './vehicle-collection.js';
 import {roadsX,roadsZ,SIZE,CHUNK,urbanPlan,roadPoint} from './world.js';
 import {treeStations} from './city-design.js';
 import {streetPropAllowed} from './city-architecture.js';
 import {streetLights} from './weather-world.js';
-const dims={pedestrian:[.26,.26],VEH_BIKE:[.28,.9],VEH_MOTO:[.32,.95],VEH_CAR:[.7,1.48],VEH_EV:[.7,1.48],VEH_LUX:[.75,1.65],VEH_TRUCK:[.86,2],BUS:[.86,2.34],TAXI:[.7,1.48]};
+const dims={...Object.fromEntries(COLLECTION_IDS.map(id=>[id,collectionFootprint(id)])),pedestrian:[.26,.26],VEH_BIKE:[.28,.9],VEH_MOTO:[.32,.95],VEH_CAR:[.7,1.48],VEH_EV:[.7,1.48],VEH_LUX:[.75,1.65],VEH_TRUCK:[.86,2],BUS:[.86,2.34],TAXI:[.7,1.48]};
 // Swept circles along the chassis; supports long vehicles without an oversized single circle.
 function discs(v){const [r,l]=v.kind==='pedestrian'?[.26,.26]:v.kind==='object'?[v.radius||.18,v.radius||.18]:dims[v.id]||dims.VEH_CAR;const yaw=v.yaw||0,a=Math.max(0,l-r);return (a?[ -a,0,a]:[0]).map(k=>({x:v.pos.x+Math.sin(yaw)*k,z:v.pos.z+Math.cos(yaw)*k,r}));}
 function sweep(a,b,c,r){const dx=b.x-a.x,dz=b.z-a.z,x=a.x-c.x,z=a.z-c.z,A=dx*dx+dz*dz,B=2*(x*dx+z*dz),C=x*x+z*z-r*r;if(A<1e-12)return null;if(C<=0)return B< -1e-8?0:null;const D=B*B-4*A*C;if(D<0)return null;const t=(-B-Math.sqrt(D))/(2*A);return t>=0&&t<=1?t:null;}

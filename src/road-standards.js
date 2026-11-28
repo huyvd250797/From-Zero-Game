@@ -1,5 +1,6 @@
+import {COLLECTION_IDS} from './vehicle-collection.js';
 // V3.6.0: compressed world scale; km/h is the in-game speedometer unit.
-const carOnly=['VEH_CAR','VEH_LUX','VEH_EV','VEH_TRUCK','TAXI','BUS','taxi','bus'];
+const carOnly=[...COLLECTION_IDS,'VEH_CAR','VEH_LUX','VEH_EV','VEH_TRUCK','TAXI','BUS','taxi','bus'];
 export const ROAD_CLASSES=Object.freeze({alley:{name:'Hẻm đi bộ',lanes:0,kmh:0},local:{name:'Đường nội bộ',lanes:2,kmh:30},street:{name:'Đường đô thị',lanes:2,kmh:50},avenue:{name:'Đại lộ',lanes:4,kmh:60},boulevard:{name:'Đại lộ lớn',lanes:6,kmh:60},shore:{name:'Đường ven sông',lanes:2,kmh:40},highway:{name:'Cao tốc An Lạc',lanes:4,kmh:90},ramp:{name:'Lối nhập / thoát cao tốc',lanes:2,kmh:40},roundabout:{name:'Vòng xoay',lanes:1,kmh:25}});
 export const HIGHWAY={id:'AL_EXPRESS_EAST',x:379,z0:36,z1:248,width:7,entry:{x:368,z:20},exit:{x:368,z:264}};
 const narrow=new Set(['ROD_X_48','ROD_X_80','ROD_X_272','ROD_Z_48','ROD_Z_176','ROD_Z_208']);

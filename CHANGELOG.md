@@ -1,3 +1,19 @@
+# V3.18.2 — Realistic 3D Vehicle Assets
+
+- Actual local GLB pipeline: 27 original interim body assets, indexed geometry, smooth normals, UVs, PBR material roles and clearcoat. Curved near-LOD body/roof and revised fascia details. Not OEM CAD or photoreal models.
+- GLTFLoader, bounded reusable slots, dynamic wheels and lighting, fallback for damaged or unavailable assets. Mobile active GLB body cap 1 (0 under pressure); PC 1–4. Shared tiny metallic paint surface maps on high-quality desktop.
+- Software depth-buffer showroom, GLB diagnostics and repeatable asset inventory. No save/master-data or physics changes. Licensed high-fidelity assets and production/device acceptance remain pending. See docs/REALISTIC-3D-VEHICLE-ASSETS.md.
+
+# V3.18.1 — Signature Vehicle Models
+
+- Nine independent pre-baked vehicle body meshes per three LODs; individual front, rear, side and roof styling, wheel arches, wraps and model-specific lamps.
+- Shared city/showroom geometry. Existing vehicle physics and save schema unchanged.
+- Focused regression 39/39; native preview 150 asset integrity PASS; production build blocked by missing Three.js.
+
+# V3.18.0 — Vietnamese Vehicle Collection
+
+Nine original procedural vehicle interpretations: Honda City, Civic, Kia K3, K5, Toyota Vios, Fortuner, VinFast VF 6/7/8. Adds canonical catalog rows, distinct profiles, vehicle physics, safe parking, shared PBR, NPC traffic and lightweight 360° preview. All specifications and prices are fictional gameplay balance values. Previous save IDs remain valid. See docs/VIETNAMESE-VEHICLE-COLLECTION.md.
+
 ## V3.17.0 — Next-Gen Vehicle Graphics (28/11/2026)
 
 - Separate vehicle triangle stream into shared semantic PBR material groups; one reusable dynamic GPU buffer.

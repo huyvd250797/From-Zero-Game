@@ -1,9 +1,10 @@
+import {isElectric} from './vehicle-collection.js';
 // Independent HTMLMediaElement output for devices where Web Audio is inaudible.
 // One reusable element, no additional AudioContext or microphone permissions.
 import {audioPrefs,nearestAudible,requestPlaybackSession} from './audio.js';
 export const MEDIA_TRACKS=Object.freeze({tone:'ui',music:'music',engine:'vehicles',ev:'vehicles',horn:'horn',npc:'conversation',rain:'weather',ambient:'ambient'});
 const url=kind=>new URL(`./audio/${kind}.wav`,import.meta.url).href;
-export function mediaScene(input,prefs){if(input.scene==='silent')return null;if(input.scene==='title')return prefs.music>0?'music':null;if(input.scene==='world'){const near=nearestAudible(input.pos,(input.traffic||[]).filter(a=>a.id!=='VEH_BIKE'),input.yaw,24,1)[0];const vehicle=input.vehicle&&input.vehicle!=='VEH_BIKE'?input.vehicle:near?.actor.id;if(vehicle&&prefs.vehicles>0)return vehicle==='VEH_EV'?'ev':'engine';if(prefs.conversation>0&&nearestAudible(input.pos,input.talkers||[],input.yaw,12,1).length)return 'npc';}if((input.weather?.rain||0)>.2&&prefs.weather>0)return 'rain';return prefs.ambient>0?'ambient':prefs.music>0?'music':null;}
+export function mediaScene(input,prefs){if(input.scene==='silent')return null;if(input.scene==='title')return prefs.music>0?'music':null;if(input.scene==='world'){const near=nearestAudible(input.pos,(input.traffic||[]).filter(a=>a.id!=='VEH_BIKE'),input.yaw,24,1)[0];const vehicle=input.vehicle&&input.vehicle!=='VEH_BIKE'?input.vehicle:near?.actor.id;if(vehicle&&prefs.vehicles>0)return isElectric(vehicle)?'ev':'engine';if(prefs.conversation>0&&nearestAudible(input.pos,input.talkers||[],input.yaw,12,1).length)return 'npc';}if((input.weather?.rain||0)>.2&&prefs.weather>0)return 'rain';return prefs.ambient>0?'ambient':prefs.music>0?'music':null;}
 export class MediaAudio {
  constructor(prefs={},factory=()=>new Audio(),clock=()=>Date.now()){this.prefs=audioPrefs(prefs);this.factory=factory;this.clock=clock;this.element=null;this.track='';this.status='locked';this.lastError='';this.hidden=false;this.unlocked=false;this.testUntil=0;this.generation=0;this.pending=null;this.lastAttempt=0;this.lastScene=null;}
  get ready(){return this.unlocked&&this.prefs.enabled&&!this.hidden;}

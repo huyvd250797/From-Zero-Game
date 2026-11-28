@@ -1,3 +1,4 @@
+import {COLLECTION,collectionFootprint} from './vehicle-collection.js';
 // Transient presentation/control state: no changes to the canonical vehicle or save schema.
 import {clamp,sites,walkable} from './world.js';
 import {distance,moveSwept,advanceRoute,routeLength} from './navigation.js';
@@ -5,7 +6,7 @@ export const wrapYaw=a=>Math.atan2(Math.sin(a),Math.cos(a));
 export const yawDelta=(a,b)=>wrapYaw(b-a);
 export const drivingState=()=>({id:null,speed:0,yaw:0,steer:0,distance:0,braking:false,indicator:0,gear:1,roll:0,regen:0,acceleration:0,wheelDistance:0,grip:1,lastImpactKey:null,lastImpactAt:0});
 export function resetDriving(d,id=null,yaw=0){Object.assign(d,drivingState(),{id,yaw:wrapYaw(yaw)});return d;}
-export const VEHICLE_DYNAMICS=Object.freeze({
+export const VEHICLE_DYNAMICS=Object.freeze({...Object.fromEntries(Object.entries(COLLECTION).map(([id,p])=>[id,p.dynamics])),
  VEH_BIKE:{mass:90,power:0.35,accel:2.4,brake:4.5,wheelbase:1.35,steer:.68,roll:.55,grip:.9,reverse:false},
  VEH_MOTO:{mass:180,power:18,accel:5.5,brake:7.5,wheelbase:1.4,steer:.65,roll:.60,grip:1,reverse:false},
  VEH_CAR:{mass:1450,power:95,accel:3.8,brake:8,wheelbase:2.1,steer:.62,roll:.12,grip:1,reverse:true},
@@ -36,4 +37,4 @@ export function driveStep(d,pos,path,input,dt,profile,limit=Infinity){
 }
 
 // Match the existing painted stall lines. Wide vehicles occupy two adjacent bays.
-export function parkingTargets(id,pos,parked=[]){const wide=id==='VEH_TRUCK'||id==='VEH_LUX',width=wide?2.9:1.45;const out=[];for(const lot of sites.filter(s=>s.style==='parking')){const lines=[];for(let x=-lot.w/2+.8;x<lot.w/2;x+=1.45)lines.push(x);for(let i=0;i+(wide?2:1)<lines.length;i++){const target={x:lot.x+lines[i]+width/2,z:lot.z};const hw=id==='VEH_TRUCK'?.9:id==='VEH_LUX'?.78:id==='VEH_BIKE'||id==='VEH_MOTO'?.4:.72,hl=id==='VEH_TRUCK'?2:id==='VEH_LUX'?1.65:id==='VEH_BIKE'||id==='VEH_MOTO'?1:1.45;if(!walkable(target.x,target.z)||![-1,1].every(x=>[-1,1].every(z=>walkable(target.x+x*hw,target.z+z*hl)))||parked.some(v=>Math.abs(v.pos.z-target.z)<3.5&&Math.abs(v.pos.x-target.x)<(wide||v.id==='VEH_TRUCK'||v.id==='VEH_LUX'?2.2:1.5)))continue;out.push({id:lot.id,target,name:lot.name,distance:distance(pos,target)});}}return out.sort((a,b)=>a.distance-b.distance);}
+export function parkingTargets(id,pos,parked=[]){const wide=id==='VEH_TRUCK'||id==='VEH_LUX'||(collectionFootprint(id)?.[0]||0)>.72,width=wide?2.9:1.45;const out=[];for(const lot of sites.filter(s=>s.style==='parking')){const lines=[];for(let x=-lot.w/2+.8;x<lot.w/2;x+=1.45)lines.push(x);for(let i=0;i+(wide?2:1)<lines.length;i++){const target={x:lot.x+lines[i]+width/2,z:lot.z};const hw=collectionFootprint(id)?.[0]??(id==='VEH_TRUCK'?.9:id==='VEH_LUX'?.78:id==='VEH_BIKE'||id==='VEH_MOTO'?.4:.72),hl=collectionFootprint(id)?.[1]??(id==='VEH_TRUCK'?2:id==='VEH_LUX'?1.65:id==='VEH_BIKE'||id==='VEH_MOTO'?1:1.45);if(!walkable(target.x,target.z)||![-1,1].every(x=>[-1,1].every(z=>walkable(target.x+x*hw,target.z+z*hl)))||parked.some(v=>Math.abs(v.pos.z-target.z)<3.5&&Math.abs(v.pos.x-target.x)<(wide||v.id==='VEH_TRUCK'||v.id==='VEH_LUX'||(collectionFootprint(v.id)?.[0]||0)>.72?2.2:1.5)))continue;out.push({id:lot.id,target,name:lot.name,distance:distance(pos,target)});}}return out.sort((a,b)=>a.distance-b.distance);}

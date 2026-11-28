@@ -1,0 +1,24 @@
+import * as T from 'three';
+import {ThreeAssets} from './three-assets.js';
+import {vehicleAssetURL,assetBudget,canUseVehicleAsset} from './vehicle-asset-mesh.js';
+import {PAINT_FINISHES,finishFor,validPaint} from './vehicle-design.js';
+import {COLLECTION} from './vehicle-collection.js';
+import {coachworkColor} from './vehicle-coachwork.js';
+// One tiny shared surface map per renderer, not one texture per vehicle.
+function paintMaps(){const size=32,normal=new Uint8Array(size*size*4),orm=new Uint8Array(size*size*4);for(let i=0;i<size*size;i++){const r=(Math.imul(i+1,2654435761)>>>24),n=(Math.imul(i+17,1597334677)>>>24);normal.set([125+r%7,125+n%7,255,255],i*4);orm.set([255,230+r%26,248+n%8,255],i*4);}const tex=bytes=>{const t=new T.DataTexture(bytes,size,size,T.RGBAFormat);t.wrapS=t.wrapT=T.RepeatWrapping;t.repeat.set(8,8);t.magFilter=T.LinearFilter;t.minFilter=T.LinearMipmapLinearFilter;t.generateMipmaps=true;t.needsUpdate=true;return t;};return {normal:tex(normal),orm:tex(orm)};}
+// Local GLB assets are static body shells. Wheels, registration digits, indicators,
+// reverse lamps and damage remain in the shared simulation-driven batch.
+export class VehicleAssetScene{
+ constructor(scene,loader=new ThreeAssets()){this.scene=scene;this.loader=loader;this.templates=new Map();this.pending=new Set();this.failed=new Set();this.slots=[];this.closed=false;this.max=0;this.used=0;this.intensity=.5;this.maps=null;}
+ begin(quality,mobile,pixels){this.quality=quality;this.mobile=mobile;this.max=assetBudget(mobile,quality,pixels);this.used=0;this.triangles=0;for(const s of this.slots)s.root.visible=false;}
+ request(id,lod){const key=id+':'+lod;if(this.closed||this.templates.has(key)||this.pending.has(key)||this.failed.has(key)||this.pending.size>=2)return;this.pending.add(key);this.loader.load(vehicleAssetURL(id,lod)).then(g=>{if(this.closed)return;const nodes=[];g.scene.traverse(o=>{if(o.isMesh)nodes.push(o);});if(!nodes.length||!nodes.some(o=>o.material.name==='paint'))throw Error('Invalid vehicle asset roles');this.templates.set(key,{scene:g.scene,triangles:nodes.reduce((n,o)=>n+(o.geometry.index?.count||o.geometry.attributes.position.count)/3,0)});}).catch(()=>{if(!this.closed)this.failed.add(key);}).finally(()=>this.pending.delete(key));}
+ remove(s){this.scene.remove(s.root);for(const m of s.materials)m.dispose();}
+ draw(v,yaw,visual,lod,night,env){if(this.closed||this.used>=this.max||!canUseVehicleAsset(v))return false;const key=v.id+':'+lod;this.request(v.id,lod);const model=this.templates.get(key);if(!model)return false;
+ let s=this.slots[this.used];if(!s||s.key!==key){if(s)this.remove(s);const root=model.scene.clone(true),materials=[];root.traverse(o=>{if(!o.isMesh)return;const role=o.material.name;const mat=o.material.clone();mat.name=role;mat.envMap=env||null;mat.envMapIntensity=this.intensity;mat.side=T.DoubleSide;o.material=mat;o.castShadow=!this.mobile;o.receiveShadow=true;materials.push(mat);});s={root,key,materials,style:''};this.slots[this.used]=s;this.scene.add(root);}
+ this.used++;this.triangles+=model.triangles;s.root.visible=true;s.root.position.set(v.pos.x,0,v.pos.z);s.root.rotation.set(0,yaw||0,visual.roll||0,'YXZ');const color=validPaint(v.color)?v.color:COLLECTION[v.id].color,finish=finishFor(v),style=finish+':'+this.mobile+':'+lod+':'+this.quality;
+ for(const m of s.materials){const role=m.name;m.envMapIntensity=this.intensity;if(role==='paint'){m.color.set(color);if(s.style!==style){const p=PAINT_FINISHES[finish];m.metalness=p.metalness;m.roughness=p.roughness;m.clearcoat=this.mobile?Math.min(.35,p.clearcoat):p.clearcoat;m.clearcoatRoughness=p.clearcoatRoughness;m.iridescence=this.mobile?0:p.iridescence||0;m.iridescenceIOR=p.iridescenceIOR||1.3;const detail=!this.mobile&&lod===0&&this.quality>=2&&finish==='metal';if(detail&&!this.maps)this.maps=paintMaps();m.normalMap=detail?this.maps.normal:null;m.roughnessMap=detail?this.maps.orm:null;m.metalnessMap=detail?this.maps.orm:null;m.normalScale?.set(.22,.22);m.needsUpdate=true;}}else if(role==='head'||role==='tail'){const lit=night||role==='tail'&&visual.braking;const c=coachworkColor(role,[1,1,1],night,visual.braking,true);m.color.setRGB(...c,T.SRGBColorSpace);m.emissive.copy(m.color);m.emissiveIntensity=lit?(role==='tail'&&visual.braking?1.5:.9):0;}}
+ s.style=style;return true;}
+ end(){while(this.slots.length>this.max){const s=this.slots.pop();this.remove(s);}return {glbVehicleBodies:this.used,glbVehicleTriangles:this.triangles,vehicleAssetsCached:this.templates.size,vehicleAssetErrors:this.failed.size};}
+ light(intensity){this.intensity=intensity;for(const s of this.slots)for(const m of s.materials)m.envMapIntensity=intensity;}
+ dispose(){this.closed=true;for(const s of this.slots)this.remove(s);this.slots=[];this.templates.clear();this.loader.clear();this.maps?.normal.dispose();this.maps?.orm.dispose();this.maps=null;}
+}

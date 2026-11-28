@@ -1,9 +1,10 @@
+import {COLLECTION_IDS} from './vehicle-collection.js';
 // Optional schema-1 extension. All fees/points are fictional An Lạc game rules.
 export const LAW_RULES=Object.freeze({speed:{label:'Quá tốc độ',fine:80000,points:1},red:{label:'Vượt đèn đỏ',fine:150000,points:2},wrong:{label:'Đi ngược chiều',fine:120000,points:2},parking:{label:'Đỗ xe sai quy định',fine:50000,points:0},license:{label:'Không có giấy phép hợp lệ',fine:180000,points:0}});
 export const LICENSE_CLASSES=['A','B','C'];
 export const licenseClass=id=>id==='VEH_BIKE'?null:id==='VEH_MOTO'?'A':id==='VEH_TRUCK'?'C':'B';
 export const cityServiceDefaults=()=>({cityServices:{licenses:{},violations:[],archivedDebt:0,nextId:1,cooldowns:{},policies:{},reports:[],dispatch:null}});
-const plain=x=>x&&typeof x==='object'&&!Array.isArray(x),int=(n,min=0,max=Number.MAX_SAFE_INTEGER)=>Number.isSafeInteger(n)&&n>=min&&n<=max,ids=['VEH_BIKE','VEH_MOTO','VEH_CAR','VEH_EV','VEH_LUX','VEH_TRUCK'];
+const plain=x=>x&&typeof x==='object'&&!Array.isArray(x),int=(n,min=0,max=Number.MAX_SAFE_INTEGER)=>Number.isSafeInteger(n)&&n>=min&&n<=max,ids=[...COLLECTION_IDS,'VEH_BIKE','VEH_MOTO','VEH_CAR','VEH_EV','VEH_LUX','VEH_TRUCK'];
 const point=p=>plain(p)&&Number.isFinite(p.x)&&Number.isFinite(p.z)&&p.x>=0&&p.x<=384&&p.z>=0&&p.z<=384;
 export function validCityServices(s){const c=s.cityServices;if(!plain(c)||!plain(c.licenses)||!plain(c.cooldowns)||!plain(c.policies)||!int(c.archivedDebt)||!int(c.nextId,1)||!Array.isArray(c.violations)||c.violations.length>120||!Array.isArray(c.reports)||c.reports.length>60)return false;
  if(!Object.entries(c.licenses).every(([k,v])=>LICENSE_CLASSES.includes(k)&&plain(v)&&int(v.issued,0,s.minutes)&&int(v.points,0,12)&&int(v.restoreAt,0,s.minutes+10080)))return false;

@@ -1,0 +1,182 @@
+{
+  "VEH_CITY": [
+    {
+      "lod": 0,
+      "triangles": 4288,
+      "bytes": 126048,
+      "sha256": "d2a4dc12f7e1642c40eebb939ec75d45554793c703e301131ff47244ffd50130"
+    },
+    {
+      "lod": 1,
+      "triangles": 1790,
+      "bytes": 64888,
+      "sha256": "e19eefab05cb191b7078f032eea20a141a782abe428bf9a409f93ce4580dc5ed"
+    },
+    {
+      "lod": 2,
+      "triangles": 208,
+      "bytes": 16896,
+      "sha256": "ade88f897c4e9d3fce29fd4c3963f7390642b01cd2c5e4881601d3c854ecb2f0"
+    }
+  ],
+  "VEH_CIVIC": [
+    {
+      "lod": 0,
+      "triangles": 4278,
+      "bytes": 124600,
+      "sha256": "4f95792e02b15b57e3e79121e83b1c0f65ef6a2b51413f8006d8eab9e4775075"
+    },
+    {
+      "lod": 1,
+      "triangles": 1780,
+      "bytes": 63372,
+      "sha256": "d36e5287e3245ae02759f3972f3ab682328c8ecbf9722b1865703a9b414343ee"
+    },
+    {
+      "lod": 2,
+      "triangles": 200,
+      "bytes": 15240,
+      "sha256": "fcf15aa7cc3719a84b7f6fb1e6256400b8190bb0cdad4046740d9e72fd1f7eb3"
+    }
+  ],
+  "VEH_K3": [
+    {
+      "lod": 0,
+      "triangles": 4292,
+      "bytes": 127876,
+      "sha256": "f5daf32fe9a863d89c625bb46bf01bd78f01258d37a85403c2adb48bcdbe311c"
+    },
+    {
+      "lod": 1,
+      "triangles": 1796,
+      "bytes": 65480,
+      "sha256": "c653618b68ce67a3b93badadd5c1fa939ca2e6c487326ac8d724d2912c35c835"
+    },
+    {
+      "lod": 2,
+      "triangles": 212,
+      "bytes": 15908,
+      "sha256": "9c4cecbeb4bea87eca03296183b78165d12dcd89a755f811cc5616365e436273"
+    }
+  ],
+  "VEH_K5": [
+    {
+      "lod": 0,
+      "triangles": 4299,
+      "bytes": 124668,
+      "sha256": "54def33b9a5072cc1c64f9cbe38344f7b2f4133a35e5c09cef2bcd6d4ff8f2be"
+    },
+    {
+      "lod": 1,
+      "triangles": 1801,
+      "bytes": 63916,
+      "sha256": "b6d41d89d47c93cde6913cbc5f9a301cbf97160de5e00770648b5bb246384af8"
+    },
+    {
+      "lod": 2,
+      "triangles": 215,
+      "bytes": 15884,
+      "sha256": "c30171f109fde20c3633aaff6736fc2e0a73d2c1371335aad5e709c8c97afa23"
+    }
+  ],
+  "VEH_VIOS": [
+    {
+      "lod": 0,
+      "triangles": 4288,
+      "bytes": 125620,
+      "sha256": "0142ad412c6037345955e72f4e09f04b5c82bbfe9004e25ed4a8f7fe774d85e1"
+    },
+    {
+      "lod": 1,
+      "triangles": 1792,
+      "bytes": 63992,
+      "sha256": "695ffdce0dec08b4af25743a6e247f56f8368c9e56e4e15041bed140875cdeee"
+    },
+    {
+      "lod": 2,
+      "triangles": 204,
+      "bytes": 16524,
+      "sha256": "4b2478b0ecf205d943b66d16c2e3539d8f4f77bef1f24f11ad828b259216dc41"
+    }
+  ],
+  "VEH_FORTUNER": [
+    {
+      "lod": 0,
+      "triangles": 4316,
+      "bytes": 124792,
+      "sha256": "f0a053e4e0850a1d29723c6a1904ce54838aa0b9b3bb964779ee1e8b62675f78"
+    },
+    {
+      "lod": 1,
+      "triangles": 1828,
+      "bytes": 64044,
+      "sha256": "8dd29ec0bd215e9ef18e85659cc669ede9f605703ba837dea55bc3e5ac1d7b87"
+    },
+    {
+      "lod": 2,
+      "triangles": 210,
+      "bytes": 16948,
+      "sha256": "12fc38cc6e2d469e6cd6a97355b8ba581cebf50ff63d5468a6b215026cd9e3d7"
+    }
+  ],
+  "VEH_VF6": [
+    {
+      "lod": 0,
+      "triangles": 4358,
+      "bytes": 128916,
+      "sha256": "a9f22402b4706d1980e04b4bb4ec92ae05ffff71e93056decf7f7a18ed80238c"
+    },
+    {
+      "lod": 1,
+      "triangles": 1822,
+      "bytes": 66596,
+      "sha256": "ca6344e77779d7c40961bfc2326abd040534ba2ffb3abb74612f26637334ec5d"
+    },
+    {
+      "lod": 2,
+      "triangles": 210,
+      "bytes": 16036,
+      "sha256": "84dc6738e32d015f66a031f3251fb507e3e6583b12102acc7f96948b88c1965a"
+    }
+  ],
+  "VEH_VF7": [
+    {
+      "lod": 0,
+      "triangles": 4362,
+      "bytes": 127624,
+      "sha256": "da677ad510cc0333b9b74684d2e44071f69a3e53a5494498b9ea297e26e6e15d"
+    },
+    {
+      "lod": 1,
+      "triangles": 1826,
+      "bytes": 65740,
+      "sha256": "aaa73ddcf3ce0166c0518c75789ee16b6ab3d6050824cdd5c16c8a2570964162"
+    },
+    {
+      "lod": 2,
+      "triangles": 212,
+      "bytes": 15884,
+      "sha256": "49e08f3f4b1a360d419beb42a93dc3b701625ee759201d80d484d0623575581c"
+    }
+  ],
+  "VEH_VF8": [
+    {
+      "lod": 0,
+      "triangles": 4316,
+      "bytes": 126208,
+      "sha256": "2b30df3942df75461c20fc3ac2fb9874243a99ed6451f97220cb8222b4252d12"
+    },
+    {
+      "lod": 1,
+      "triangles": 1828,
+      "bytes": 64692,
+      "sha256": "4fafdd3635b0809065d3757df80b924247d76b4d206474f40cee7be4ba432445"
+    },
+    {
+      "lod": 2,
+      "triangles": 212,
+      "bytes": 15800,
+      "sha256": "d3363bad443d1cae43c6c0ecba01170c6a16558ca4f06213819d171eddb837eb"
+    }
+  ]
+}

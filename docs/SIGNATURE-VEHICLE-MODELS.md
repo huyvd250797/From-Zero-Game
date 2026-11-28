@@ -1,0 +1,7 @@
+# V3.18.1 — Signature Vehicle Models
+
+Baseline V3.18.0. Each of the nine collection models now uses independent authored body/roof longitudinal stations and front/rear/side geometry instead of the shared `sculptCar` body. Static assets are baked for all three levels of detail with `node scripts/bake-vehicle-coachwork.mjs`. Vehicle drawing consumes the baked meshes, paint materials and animated wheel/lighting state. Legacy vehicle IDs still use their original meshes. The showroom uses the same body mesh as the city. No change to the 1,065 master data entries, physics or collision footprint, player ownership, or save schema.
+
+Reference styling (approximate, not manufacturer CAD): City RS 2023, Civic RS 2022, K3 and K5 2022, Vios 2023, Fortuner 2021, first-generation VF6/7/8. No third-party models or textures embedded. Models remain stylized low-poly, not photorealistic. Do not interpret model fidelity as verified on iOS. Branding/design rights require independent review before commercial distribution.
+
+QA: 39 focused tests passed on final code, including four new tests for baked asset reproducibility, distinctive silhouettes, bounding geometry and lighting. Native Preview build and SHA-256 integrity for 150 assets passed. Production build blocked by missing Three.js r180 dependency. Full regression and device visual/performance/audio testing not completed. Mobile low LOD and existing FPS budget retained.

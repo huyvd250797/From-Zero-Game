@@ -1,6 +1,7 @@
+import {COLLECTION_IDS,collectionFootprint} from './vehicle-collection.js';
 // Shared chassis clearance for all traffic. All positions in game-world metres.
 // Three overlapping discs approximate the footprint without blocking an entire adjacent lane.
-const sizes={pedestrian:[.26,.26],VEH_BIKE:[.28,.9],VEH_MOTO:[.32,.95],VEH_CAR:[.7,1.48],VEH_EV:[.7,1.48],VEH_LUX:[.75,1.65],VEH_TRUCK:[.86,2],BUS:[.86,2.34],TAXI:[.7,1.48]};
+const sizes={...Object.fromEntries(COLLECTION_IDS.map(id=>[id,collectionFootprint(id)])),pedestrian:[.26,.26],VEH_BIKE:[.28,.9],VEH_MOTO:[.32,.95],VEH_CAR:[.7,1.48],VEH_EV:[.7,1.48],VEH_LUX:[.75,1.65],VEH_TRUCK:[.86,2],BUS:[.86,2.34],TAXI:[.7,1.48]};
 export const CLEARANCE=.45;
 const size=a=>sizes[a.kind==='pedestrian'?'pedestrian':a.id]||sizes.VEH_CAR;
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z);

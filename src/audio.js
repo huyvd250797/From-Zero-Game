@@ -1,10 +1,11 @@
+import {COLLECTION} from './vehicle-collection.js';
 // Offline, original procedural soundscape. No microphone, network, or save mutation.
 import {districtAt,roadsX,roadsZ,roadOffset} from './world.js';
 export const AUDIO_KEY='fromzero.audio.v1';
 export const AUDIO_GROUPS=Object.freeze({master:'Tổng âm lượng',ambient:'Môi trường',weather:'Thời tiết',vehicles:'Động cơ phương tiện',horn:'Còi xe',conversation:'NPC trò chuyện',activities:'Nhân vật & hoạt động',music:'Nhạc nền',ui:'Giao diện'});
 const defaults={master:65,ambient:55,weather:60,vehicles:55,horn:55,conversation:65,activities:65,music:22,ui:40};
 // Fixed voice budget; profiles describe synthesized audio, not vehicle performance.
-export const ENGINE_PROFILES=Object.freeze({VEH_MOTO:[42,95,290,520,.85,'sawtooth'],VEH_CAR:[29,70,180,380,1,'sawtooth'],VEH_LUX:[25,65,150,320,.8,'triangle'],VEH_EV:[52,95,320,950,.40,'sine'],VEH_TRUCK:[22,45,130,240,1.2,'sawtooth'],bus:[24,48,150,260,1.1,'sawtooth'],taxi:[30,70,190,380,.9,'sawtooth']});
+export const ENGINE_PROFILES=Object.freeze({...Object.fromEntries(Object.entries(COLLECTION).map(([id,p])=>[id,p.audio])),VEH_MOTO:[42,95,290,520,.85,'sawtooth'],VEH_CAR:[29,70,180,380,1,'sawtooth'],VEH_LUX:[25,65,150,320,.8,'triangle'],VEH_EV:[52,95,320,950,.40,'sine'],VEH_TRUCK:[22,45,130,240,1.2,'sawtooth'],bus:[24,48,150,260,1.1,'sawtooth'],taxi:[30,70,190,380,.9,'sawtooth']});
 export function engineProfile(id){return ENGINE_PROFILES[id]||ENGINE_PROFILES.VEH_CAR;}
 export function nearestAudible(listener,actors=[],yaw=0,range=24,limit=3){const best=[];for(const actor of actors){const mix=spatialMix(listener,actor?.pos,yaw,range);if(mix.gain<=.03)continue;const entry={actor,...mix};let i=best.findIndex(v=>v.gain<mix.gain);if(i<0)i=best.length;if(i<limit){best.splice(i,0,entry);if(best.length>limit)best.pop();}}return best;}
 export function audioEnvironment(nav=globalThis.navigator,win=globalThis){return nav?.standalone===true||win.matchMedia?.('(display-mode: standalone)').matches?'PWA standalone':'Trình duyệt';}

@@ -1,3 +1,15 @@
+# From Zero V3.18.2 — Realistic 3D Vehicle Assets
+
+Local GLB vehicle asset pipeline, 27 original reference-inspired interim models, curved coachwork and smooth normals, bounded Three.js rendering, and a depth-buffered lightweight showroom. This is not a set of licensed high-detail OEM car models. See [asset contract, limitations and integration](docs/REALISTIC-3D-VEHICLE-ASSETS.md). Three.js production and device acceptance remain pending.
+
+# From Zero V3.18.1 — Signature Vehicle Models
+
+See [model design and QA](docs/SIGNATURE-VEHICLE-MODELS.md). The nine models are individually authored low-poly interpretations, not manufacturer CAD assets.
+
+# V3.18.0 — Vietnamese Vehicle Collection
+
+Nine original procedural vehicle interpretations: Honda City, Civic, Kia K3, K5, Toyota Vios, Fortuner, VinFast VF 6/7/8. Adds canonical catalog rows, distinct profiles, vehicle physics, safe parking, shared PBR, NPC traffic and lightweight 360° preview. All specifications and prices are fictional gameplay balance values. Previous save IDs remain valid. See docs/VIETNAMESE-VEHICLE-COLLECTION.md.
+
 # From Zero — Từ hai bàn tay trắng
 **V3.17.0 — Next-Gen Vehicle Graphics** · 28/11/2026
 
