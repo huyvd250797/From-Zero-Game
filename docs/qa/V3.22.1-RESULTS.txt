@@ -1,0 +1,7 @@
+Node v22.16.0
+V3.22.0 original full Unit Test: 970 tests, 967 pass, 3 fail.
+Failures: advanced-characters walking cadence fixture uses legacy schedule; final-release and official branding hardcode 3.20.0.
+V3.22.1 impacted regression files: 32/32 pass, including startup retry; new guard tests 3/3 pass.
+Native Preview build: PASS; 198 SHA-256 / HTTP assets PASS.
+Production build: blocked at Three.js inventory; npm ci EAI_AGAIN (registry DNS). No actual Three.js integration, final full-suite rerun or browser/device acceptance claimed.
+No src gameplay files, GLBs or Master Data changed.

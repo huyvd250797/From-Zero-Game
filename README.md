@@ -1,3 +1,7 @@
+# From Zero V3.22.1 — Deployment & Regression Guard
+
+Fix two stale V3.20.0 branding assertions and the walking cadence fixture using a real current walking leg. Add version-consistency preflight and explicit failing-test summary. No gameplay or save changes. See [mandatory release gate](docs/RELEASE-GATE.md).
+
 # From Zero V3.22.0 — Education & School Life
 
 Six school levels, child enrollment, scheduled civilian population (65 named + 180 background initially), economy-based mobility, indoor arrival, rounded police rider. See [scope and controls](docs/EDUCATION-SCHOOL-LIFE-322.md). No new GLBs or migration. Production/device acceptance pending.

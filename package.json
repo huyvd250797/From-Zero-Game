@@ -1,12 +1,12 @@
 {
   "name": "from-zero",
-  "version": "3.22.0",
+  "version": "3.22.1",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",
-    "test": "node --test tests/*.test.mjs",
+    "test": "node scripts/run-regression.mjs",
     "preview": "node scripts/serve.mjs dist",
     "check": "node scripts/check.mjs",
     "data:validate": "node scripts/master-data.mjs",
@@ -25,7 +25,8 @@
     "vehicle:verify": "node scripts/verify-professional-vehicles.mjs",
     "vehicle:prepare": "node scripts/modeling/prepare-vehicle.mjs",
     "vehicle:publish": "node scripts/modeling/publish-vehicle.mjs",
-    "benchmark:vehicles": "node scripts/benchmark-vehicles.mjs"
+    "benchmark:vehicles": "node scripts/benchmark-vehicles.mjs",
+    "test:regression": "node scripts/run-regression.mjs"
   },
   "engines": {
     "node": ">=20"

@@ -1,0 +1,8 @@
+# Mandatory release gate (V3.22.1 onward)
+
+1. Finish all code and branding changes before testing. Do not edit files during a test run. Keep package/lockfile, manifest and both HTML labels synchronized. Never hardcode the previous release version in a regression fixture.
+2. Run `npm ci` using Node 22, then `npm run test:regression` (all `tests/*.test.mjs`, not just focused tests). Test fixtures must use the real current state/schedule when testing NPC motion.
+3. Run `npm run build` on that exact source snapshot. It requires syntax, professional asset checks, Three.js dependency, every unit test, actual Three.js integration, copied module graph and asset integrity. No gate may be bypassed. The production build already runs all unit tests; a separate regression run is useful for diagnosing failures even without Three.js.
+4. Run `npm run verify:release` and `npm run smoke:http`. Native preview is separate and never a production-build substitute. Run the CI release QA including balance and long-term simulation before an official production acceptance.
+5. A line containing `failed loading displays error and retry` is a successful scenario when preceded by ✔. Diagnose `[FAILED TEST]`, `AssertionError`, and `[BUILD FAILED]`, not the generic Vercel exit-1 wrapper. Report the original error and the failing stage.
+6. Package only the tested source (no node_modules/dist or preview). If full regression, dependency installation, Three.js integration, or production verification is blocked, explicitly report the blocker; do not call the release production-ready. For later source upgrades, rerun the full suite on the final ZIP before claiming full regression PASS.

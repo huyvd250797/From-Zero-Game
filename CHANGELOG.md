@@ -1,3 +1,10 @@
+# V3.22.1 — Deployment & Regression Guard
+
+- Fix stale release branding assertions and walking cadence fixture; retain startup retry/save protection.
+- Validate package/lockfile/manifest/menu/splash branding dynamically and print explicit failed-test summary while preserving nonzero exit.
+- Keep all production gates; mandatory release policy in docs/RELEASE-GATE.md.
+- Original full unit suite: 967 PASS / 3 FAIL; affected test files rerun on hotfix: 32 PASS; 3 new guard tests PASS. Full final-source suite not rerun; production blocked by missing Three.js dependency (npm registry DNS EAI_AGAIN). Native preview 198 assets integrity and HTTP PASS.
+
 # V3.22.0 — Education & School Life
 
 - Six school levels, four new interactive locations, classroom interiors, child registration and weekday attendance. Retain canonical adult courses and Master Data.
