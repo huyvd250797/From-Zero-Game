@@ -1,3 +1,11 @@
+## V3.17.0 — Next-Gen Vehicle Graphics (28/11/2026)
+
+- Separate vehicle triangle stream into shared semantic PBR material groups; one reusable dynamic GPU buffer.
+- Sculpt sedan, EV, luxury and taxi silhouettes within existing dimensions; improve wheel/rim, windows, mirrors, grille, lighting and plate detail. Add near-detail trim to bus, truck and motorbike.
+- Four paint finishes, optional saved cosmetic settings per owned motor vehicle, and garage paint controls; no changes to economy or physics.
+- Three detail tiers, mobile clamps, one generated environment map, material reuse and cleanup; no realtime city reflection or ray tracing.
+- Keep V3.16.0 audio systems, master data, schema 1 and Three.js r180. Production rendering and iPhone acceptance remain pending.
+
 ## V3.16.0 — Audio Engine Recovery (28/11/2026)
 
 - Protect playback tests from silent modal scene ticks and improve optional stereo panner compatibility.

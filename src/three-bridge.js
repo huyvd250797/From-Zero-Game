@@ -10,9 +10,9 @@ export const MATERIALS=Object.freeze([
 ].map(Object.freeze));
 export const linear=c=>c<=.04045?c/12.92:((c+.055)/1.055)**2.4;
 // Single-pass conversion of the normal stream; no per-vertex arrays or subarray views.
-export function meshArrays(raw,{grouped=true,ao=false,withUV=true,windowLighting=false}={}){
- const stream=surfaceGeometry(raw),count=stream.length/10,position=new Float32Array(count*3),normal=new Float32Array(count*3),color=new Float32Array(count*3),uv=withUV?new Float32Array(count*2):null,index=new Uint32Array(count),groups=[],counts=new Uint32Array(grouped?(windowLighting?8:7):1),offsets=new Uint32Array(counts.length);
- const groupAt=i=>!grouped?0:windowLighting&&stream[i*10+9]===3&&isBuildingGlass(stream[i*10+3],stream[i*10+4],stream[i*10+5])?7:stream[i*10+9];
+export function meshArrays(raw,{grouped=true,ao=false,withUV=true,windowLighting=false,materialIds=null,materialCount=0}={}){
+ const stream=surfaceGeometry(raw),count=stream.length/10,position=new Float32Array(count*3),normal=new Float32Array(count*3),color=new Float32Array(count*3),uv=withUV?new Float32Array(count*2):null,index=new Uint32Array(count),groups=[],counts=new Uint32Array(materialIds?materialCount:grouped?(windowLighting?8:7):1),offsets=new Uint32Array(counts.length);
+ const groupAt=i=>materialIds?materialIds[i/3]:!grouped?0:windowLighting&&stream[i*10+9]===3&&isBuildingGlass(stream[i*10+3],stream[i*10+4],stream[i*10+5])?7:stream[i*10+9];
  for(let i=0;i<count;i+=3)counts[groupAt(i)]+=3;
  let offset=0;for(let id=0;id<counts.length;id++){offsets[id]=offset;if(counts[id])groups.push({start:offset,count:counts[id],materialIndex:id});offset+=counts[id];}
  for(let i=0;i<count;i+=3){const off=i*10,id=groupAt(i);

@@ -1,5 +1,7 @@
 # From Zero — Từ hai bàn tay trắng
-**V3.16.0 — Audio Engine Recovery** · 28/11/2026
+**V3.17.0 — Next-Gen Vehicle Graphics** · 28/11/2026
+
+V3.17.0 separates vehicle geometry into a shared PBR material batch, adds sculpted sedan/EV/luxury bodies, four paint finishes, three car LODs, garage paint selection, and bounded offline environment reflections. See [Vehicle Graphics](docs/NEXT-GEN-VEHICLE-GRAPHICS.md). Production rendering and iPhone acceptance remain pending.
 
 V3.16.0 adds independent HTML Audio fallback, eight original WAV files, protected audio preview, per-group horn/NPC mixer, iOS playback session hint and offline media byte ranges. See [Audio Engine Recovery](docs/AUDIO-ENGINE-RECOVERY.md). Actual iPhone audio acceptance remains pending.
 
