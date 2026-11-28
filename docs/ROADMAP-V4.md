@@ -48,3 +48,5 @@ V3.18.1 — Signature Vehicle Models and V3.18.2 — Realistic 3D Vehicle Assets
 V3.18.3 — Deployment Regression Fix: supplementary hotfix; 18/24 main releases (75%). V3.19.0 remains the next main release.
 
 V3.18.4 — High-Fidelity Vehicle Asset Integration: supplementary integration framework, professional asset sourcing incomplete; 18/24 main releases (75%). V3.19.0 remains next.
+
+V3.18.5 — Professional 3D Modeling Pipeline: supplemental offline authoring/export framework; City RS pilot art pending, 18/24 main releases (75%). Proposed follow-up V3.18.6 Premium Sedan Collection only after City visual approval.

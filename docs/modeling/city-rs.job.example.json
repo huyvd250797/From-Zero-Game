@@ -1,0 +1,65 @@
+{
+  "id": "VEH_CITY",
+  "collections": [
+    "CITY_LOD0",
+    "CITY_LOD1",
+    "CITY_LOD2"
+  ],
+  "sourceFrame": {
+    "min": [
+      -0.66,
+      0,
+      -1.39
+    ],
+    "max": [
+      0.66,
+      0.99,
+      1.39
+    ]
+  },
+  "wheelCenters": [
+    [
+      -0.6072000000000001,
+      0.28,
+      -0.8896
+    ],
+    [
+      -0.6072000000000001,
+      0.28,
+      0.8896
+    ],
+    [
+      0.6072000000000001,
+      0.28,
+      -0.8896
+    ],
+    [
+      0.6072000000000001,
+      0.28,
+      0.8896
+    ]
+  ],
+  "materialRoles": {
+    "paint": "paint",
+    "glass": "glass",
+    "chrome": "chrome",
+    "trim": "trim",
+    "head": "head",
+    "tail": "tail",
+    "plate": "plate"
+  },
+  "lodMaterials": [
+    {},
+    {},
+    {}
+  ],
+  "provenance": {
+    "author": "",
+    "source": "",
+    "license": "",
+    "modelYear": "2023 RS (target reference generation, not verified model)",
+    "rightsEvidence": "",
+    "webDistributionAllowed": false,
+    "derivativesAllowed": false
+  }
+}

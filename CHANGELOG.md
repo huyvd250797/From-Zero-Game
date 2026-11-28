@@ -1,3 +1,9 @@
+# V3.18.5 — Professional 3D Modeling Pipeline
+
+- Added Blender empty studio and evaluated mesh extraction, offline GLB preparation, wheel alignment, baked map handling and review-gated publish.
+- Honda City RS pilot authoring brief; no professional model delivered. Existing 27 fallback assets unchanged.
+- Six new technical pipeline tests; Blender runtime not available in build environment.
+
 # V3.18.3 — Deployment Regression Fix
 
 - Fix stale real Three.js NPC rider/driver test after V3.18.0 replaced generic car commute allocations. Select a real cabin commuter from the schedule and exercise every legacy and collection cabin model; retain the no-visible-driver and rendered-bike assertions.

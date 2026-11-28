@@ -378,3 +378,6 @@ JavaScript ES Modules, Three.js 0.180.0 / WebGL 2 native / WebGL 1 / Canvas 2D, 
 - Added offline professional GLB import, provenance and LOD validation, content-addressed registry, build verification, runtime selection with fallback, showroom imported geometry and credits.
 - **0/9 externally authored professional models installed.** Existing 27 GLBs unchanged; no visual fidelity upgrade claimed until licensed files are supplied. See `docs/asset-import/README.md`.
 - Preserves V3.18.3 hotfix, save schema, physics and mobile budgets.
+
+## V3.18.5 — Professional 3D Modeling Pipeline
+Artist workbench and Blender shell extraction scripts, offline GLB preparation with wheel anchors, embedded PBR maps and explicit hash-bound visual review gate. See `docs/modeling/README.md`. City RS pilot is a production brief only; 0/9 professional art assets installed. No gameplay or graphics change until an approved model is supplied.

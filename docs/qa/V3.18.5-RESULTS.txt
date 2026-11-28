@@ -1,0 +1,8 @@
+V3.18.5 — Professional 3D Modeling Pipeline
+Baseline: user-supplied V3.18.4 ZIP
+Node v22.16.0
+Focused tests (modeling pipeline, prior asset import, GLB, coachwork, collection, graphics, final and official release): 49/49 pass, including 6 new tests.
+Blender scripts Python syntax compilation PASS; Blender runtime absent, no .blend created, no Blender export tested.
+Native Preview build PASS: exact SHA-256 inventory 182 assets, HTTP integrity 182/182 PASS.
+Original 27 fallback GLBs byte identical to input ZIP. Professional registry 0/9. No actual new professional model or visual improvement. City QA repacking in temporary test only.
+Production npm run build exit 1 at Three.js dependency and module inventory (Three.js r180 absent). No full regression or Three.js runtime integration executed. No gate bypassed. No device benchmarks or visual review performed.
