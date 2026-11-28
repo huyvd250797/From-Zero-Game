@@ -1,0 +1,191 @@
+V3.19.0 QA — final source
+Focused Node tests: 139 passed, 0 failed; 8 new police tests.
+Native preview: 190 assets verified SHA-256 and HTTP.
+Production: missing Three.js r180; npm ci --offline ENOTCACHED.
+Chromium UI attempt: ERR_BLOCKED_BY_ADMINISTRATOR on local URL.
+No full unit regression, Three runtime, real device audio/FPS test.
+Master Data and all 32 GLB files unchanged, including 27 vehicle GLBs.
+
+✔ media fallback starts synchronously on gesture, survives silent scene during preview and then loops (3.257718ms)
+✔ media rejection remains retryable and mute respects saved settings (0.550596ms)
+✔ media scene selection prefers nearby vehicles or NPC, handles zero group and silent scenes (0.434682ms)
+✔ all bundled PCM wave assets have real nonzero samples and valid headers (13.841689ms)
+✔ PWA cached WAV range serves Safari bytes=0-1 and rejects invalid ranges (32.258322ms)
+✔ audio preferences migrate separately, defaults and bounds (0.999766ms)
+✔ spatial gain decreases with distance, pan rotates with camera (0.393442ms)
+✔ weather and time change outdoor layers, interiors attenuate rain (0.915449ms)
+✔ district and road position influence city bed (0.247904ms)
+✔ silent scene has no audible layers, bicycle has no motor (0.187161ms)
+✔ steps follow traveled distance, stop on pause and ignore teleport (0.168323ms)
+✔ noise generation deterministic bounded and tapered (0.842249ms)
+✔ activity cues cover immersive modes, no mutation of save (15.955572ms)
+✔ engine lazy unlock, independent mixer, mute and hidden state (4.849424ms)
+✔ bounded voices and scene reset; unsupported audio does not break gameplay (1.416143ms)
+✔ trusted activation supersedes a stalled automatic resume (1800.250852ms)
+✔ resume rejection remains recoverable and does not disable audio preference (1.003796ms)
+✔ interrupted context recovery and closed context recreation (1.07929ms)
+✔ late resume cannot unmute hidden app (0.530205ms)
+✔ foreground resumes after delayed background suspend completes (1.922435ms)
+✔ explicit rebuild preserves mixer and releases failed context (1.054052ms)
+✔ preview respects mute and can be replayed without recreating graph (0.997748ms)
+✔ vehicle sound profiles differ and EV uses sine synthesis (0.933181ms)
+✔ nearest spatial sources bounded and sorted, distant actors ignored (0.660962ms)
+✔ PWA environment detection covers iOS and standalone display mode (0.296034ms)
+✔ audio settings preserve saved mixer, lifecycle and existing HUD in integration source (3.402156ms)
+✔ two bounded continuous nearby engine sources, distant sources fade out and horn/chatter are triggered (0.987522ms)
+✔ audio preview is not canceled by silent modal or world tick (0.423296ms)
+✔ optional unsupported stereo panner cannot disable entire sound graph (0.434282ms)
+✔ legacy volume preferences migrate to separate horn and NPC mixer (0.15354ms)
+✔ iOS audio session hint is optional and safe (0.268282ms)
+✔ all canonical sites use a city style and each district has a valid distinct palette (1.56636ms)
+✔ facade faces actual doors on all four orientations (0.392932ms)
+✔ all solid structures render deterministic finite triangles within roof height limit (424.139489ms)
+✔ all open plots have finite geometry and near LOD adds details (12.312795ms)
+✔ all signs refer to canonical sites and contain Vietnamese content (0.39873ms)
+✔ props excluded around all entrances, player spawn, solid plots and outside map (9.184834ms)
+✔ entrance approaches deterministic, no navigation changes (135.898776ms)
+✔ road detail both axes and levels finite, high includes extra geometry (42.806263ms)
+✔ all 144 chunks use bounded LOD triangle budgets and valid normals (1028.476735ms)
+✔ glass on tall new shop windows uses material 3, normals outward (0.476926ms)
+✔ city visuals never mutate save or world and renderer continues to project destinations (67.799117ms)
+✔ swept collision detects vehicles without tunneling (1.035464ms)
+✔ pedestrian and street prop hits and separation (0.352068ms)
+✔ relative impact depends on travel directions (0.2465ms)
+✔ damage persists, migration and tamper validation (19.128139ms)
+✔ damage slows vehicles and critical breakdown prevents acceleration (2.00566ms)
+✔ repair and tow charge money once and repair requires location (5.198462ms)
+✔ night lights emit front and red rear; brake is brighter; reverse and failures (0.582935ms)
+✔ street props are cached and have geometry positions (58.972038ms)
+✔ dynamic renderer emits native geometry and lamp list for owned car (1012.281896ms)
+✔ visual damage changes mesh and keeps finite geometry (5.969739ms)
+✔ shadow refresh on yaw and tilt, wrap-around does not cause false refresh (0.839981ms)
+✔ frame meter p95 reflects slow intervals and resets after suspension (0.482754ms)
+✔ save comparison reads current token, not obsolete storage event (21.379297ms)
+✔ recovery from damaged primary and backup retains checkpoint and schema (6.916ms)
+✔ release branding matches manifest, package and source HTML (0.414883ms)
+✔ already-aligned vehicle crosses junctions without centreline hooks in both directions (2.367334ms)
+✔ legal motorway ramps remain connected and both unauthorized side entry and restricted ramp entry are blocked (11.541071ms)
+✔ ramp corner rounding never leaves valid corridor or changes endpoint (13.627343ms)
+✔ separate asphalt elevations at ramp and motorway seam, no coplanar asphalt (9.541588ms)
+✔ following brakes for leader but not car on opposite lane, lane change refuses occupied adjacent lane (0.478239ms)
+✔ automatic player limit and dynamic ETA respond to local traffic, not manual input (0.69186ms)
+✔ persistent live agents circulate on closed legal paths, fixed-step interpolation and pause do not respawn (1281.704127ms)
+✔ occlusion uses camera-facing footprint and vehicle/actor geometry is distinct (38.449085ms)
+✔ silhouette mask follows perimeter without internal edges and supports holes (0.708074ms)
+✔ all six offenses have real story choices (33.980881ms)
+✔ lawful crisis decision creates no legal risk (0.563357ms)
+✔ report occurs at exact minute and is not a conviction (1.203539ms)
+✔ automatic proceedings progress without attendance (5.386665ms)
+✔ all six penalties match canonical data and restitution (5.903351ms)
+✔ routine review closes without conviction or debt (0.920112ms)
+✔ court counsel requires proximity and funds, once only (1.239632ms)
+✔ cooperation requires actual police visit and cannot repeat (0.526311ms)
+✔ verdict adds liability once, not a cash charge, even after reload (1.562658ms)
+✔ partial payment reduces cash and liability equally; invalid requests atomic (3.80698ms)
+✔ minor case closes after full fine and restitution (1.021835ms)
+✔ custody remains pending even after all financial obligations (1.156428ms)
+✔ career, business and bank restrictions use verdict rather than allegation (0.890859ms)
+✔ migration of old case past due starts report, not retroactive fine (1.919705ms)
+✔ reject forged legal record and duplicate identifiers (2.739196ms)
+✔ food storage persists per property, inventory conserved, expired food cannot be withdrawn (21.475112ms)
+✔ cleaning and laundry use time, cooldown and save validation; household follows time slots (2.013312ms)
+✔ 10 percent remains drivable, 9 percent stops, performance proportional to condition (0.293571ms)
+✔ map transform and building selection accurate after zoom, convenience filter excludes supermarket (1.032419ms)
+✔ swept vehicle guard stops a car before hitting a pedestrian (234.184884ms)
+✔ reserved bus holds for player on its lane, and resumes when clear (2.248575ms)
+✔ no traffic cameras and no camera-based speed fine without police (24.673833ms)
+✔ guide is read-only and all suggested destinations exist (14.998641ms)
+✔ guide uses current economic and difficulty quotes (1.733452ms)
+✔ guide detects work, current home, study and any owned vehicle without awarding progression (0.388383ms)
+✔ continue uses state and raw token from the same primary read (6.14292ms)
+✔ fallback selection preserves corrupt primary token and prefers backup over checkpoint (3.089326ms)
+✔ confirmation rejects changed and inaccessible storage (0.440622ms)
+✔ official branding and lockfile versions agree, save schema unchanged (0.567472ms)
+✔ two named patrol routes start at police station and return via valid city paths (39.176095ms)
+✔ real patrol actors persist and rotate shifts without changing identity, routine patrol not priority (315.924202ms)
+✔ old schema 1 saves without security remain compatible and malformed reports rejected (24.499575ms)
+✔ police dispatch persists, travels from station, blocks duplicates and acknowledges only on arrival (4.869303ms)
+✔ station reports are local, cancellation preserves history and no penalty is created (3.386937ms)
+✔ patrol geometry has finite coordinates and police-only equipment, flashing priority differs (10.565327ms)
+✔ siren media only for audible priority police vehicles and respects mute (0.680492ms)
+✔ live arrival requires actual service actor near scene even after scheduled ETA (1.842928ms)
+✔ both room acquisition paths use one 30-day quote, no daily payment, preserve old paid expiry (952.771733ms)
+✔ maintenance uses 90-day renewal for bike and motor vehicles without changing previously scheduled due date (31.293761ms)
+✔ relative sweep prevents high-speed crossing even when both final positions are free (0.543696ms)
+✔ bus footprint includes its long front and rear and safe gap is not just a center threshold (0.327351ms)
+✔ live AI maintains positive chassis clearance in a deterministic 60-second sample (1514.090937ms)
+✔ reserved bus waits for a stationary vehicle then continues on the same delayed trip (210.568254ms)
+✔ old saves migrate without traffic charges, invalid data rejected (19.698037ms)
+✔ license exam checks answers, fees and points; fines cannot be charged twice (4.861047ms)
+✔ manual sustained speeding and wrong side are detected without penalizing automatic movement (4.446314ms)
+✔ coverage is captured at the accident, no retroactive or duplicate payout (17.999127ms)
+✔ ambulance runs to incident, no instant receipt, hospital treatment and save compatibility (22.392301ms)
+✔ tow truck reaches parked vehicle before transferring to garage (14.502578ms)
+✔ all bus legs avoid sharp reversals and share bounded approach motion with schedule (224.594208ms)
+✔ red light crossing uses actual stop line and direction, green is allowed; parking at ring is illegal (2.141775ms)
+✔ profiles have different power, mass, braking, turning and rain grip (0.99919ms)
+✔ wet braking increases stopping distance, EV recovers bounded energy (4.880387ms)
+✔ reverse gear requires stop, supports signed wheel phase and rejects two wheels (1.652161ms)
+✔ ring closes and eight access ramps connect to the shared graph (29.513668ms)
+✔ each of eight motorway vehicles persists across city, ring, exit and loop seam (130.823203ms)
+✔ bus legs stay valid and reach the existing directional platforms (197.067655ms)
+✔ straight automatic lane offsets are on the right for both directions (4.861338ms)
+✔ pedestrian route does not enter ring; layout 8 save retains finances (3153.660684ms)
+✔ pressure responds to sustained frame cost and recovers more slowly, not a temperature reading (0.863927ms)
+✔ adaptive budgets bound assets, pending loads, reflection and dynamic light counts (0.266841ms)
+✔ LOD hysteresis stabilizes zoom and distance, hard pressure caps override history (0.465589ms)
+✔ LRU eviction protects live clones, releases only cold templates (0.741423ms)
+✔ direct upload arrays match legacy grouped geometry and colors, including road-facing normal correction (36.449281ms)
+✔ showroom skips identical redraws but updates on lighting and resize (237.521687ms)
+✔ render-only culling preserves collision actors and game data (1261.268233ms)
+✔ nine new canonical models with 6 petrol and 3 EV plus all legacy IDs (1.068484ms)
+✔ distinct meshes, three LODs, finite triangles and valid material groups (89.378283ms)
+✔ buy all nine, safe dealer parking, save/reload and distinct plates (74.048948ms)
+✔ new vehicle damage and service data valid with schema 1 (2.75133ms)
+✔ named residents use deterministic ownership and commute data supports all models (0.868594ms)
+✔ 360 degree preview uses actual projected mesh, changes with angle, no animation loop (851.080249ms)
+✔ all nine models represented in peak-hour traffic without increasing fleet (313.705041ms)
+ℹ tests 139
+ℹ suites 0
+ℹ pass 139
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 35822.671175
+
+
+> from-zero@3.19.0 build:native-preview
+> node scripts/build.mjs --native-preview
+
+
+[BUILD] JavaScript syntax
+JavaScript syntax check passed
+[BUILD PASS] JavaScript syntax
+
+[BUILD] Professional vehicle assets
+Professional vehicle catalog verified: 0 / 9 installed (fallbacks retained).
+[BUILD PASS] Professional vehicle assets
+From Zero v3.19.0 → dist-native-preview/ · 190 files · 0 Three.js files · NATIVE PREVIEW ONLY (no production PWA)
+
+[BUILD] Release integrity
+PASS: 190 assets; exact SHA-256, HTML references and versioned paths.
+[BUILD PASS] Release integrity
+
+HTTP integrity PASS: 190 resources
+
+
+> from-zero@3.19.0 build
+> node scripts/build.mjs
+
+
+[BUILD] JavaScript syntax
+JavaScript syntax check passed
+[BUILD PASS] JavaScript syntax
+
+[BUILD] Professional vehicle assets
+Professional vehicle catalog verified: 0 / 9 installed (fallbacks retained).
+[BUILD PASS] Professional vehicle assets
+
+[BUILD] Three.js dependency and module inventory
+[BUILD FAILED] Three.js dependency and module inventory: Three.js dependency missing. Run npm ci with npm Registry access. Use build:native-preview only for local fallback QA.

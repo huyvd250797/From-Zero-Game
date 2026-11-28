@@ -1,3 +1,7 @@
+# From Zero V3.19.0 — Police & Public Security
+
+Two station-rooted patrol units, shift labels, police/CSGT panel, saved reports and priority scene dispatch, synthetic siren for Web Audio and HTML Audio. Existing city station and chassis IDs reused; model art is approximate. No layout or database migration. See [scope, controls and QA](docs/POLICE-PUBLIC-SECURITY.md). Production and browser acceptance pending.
+
 # From Zero V3.18.10 — Vehicle Graphics Optimization
 
 New: adaptive vehicle LOD and pressure, bounded GLB cache and slot reuse, frustum culling, direct persistent vehicle buffers and showroom redraw coalescing. See `docs/VEHICLE-GRAPHICS-OPTIMIZATION.md`. No new model assets or migration.

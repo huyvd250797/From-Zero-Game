@@ -1,3 +1,11 @@
+# V3.19.0 — Police & Public Security
+
+- Replace generic random police actors with two station-rooted patrol units and stable identities/shift labels; preserve peak traffic budget.
+- Add police/CSGT reporting panel, station submission, scene dispatch, actual live actor arrival guard and cancellation history.
+- Add CB250P-inspired fairing and rider, Lux A2.0-inspired livery, priority lights and synthetic siren; retain all GLBs.
+- Keep canonical city layout, law rules, save schema and vehicle ownership; optional bounded security data.
+- 139 focused tests PASS, 190 native preview assets verified. Production and browser acceptance blocked by missing Three.js and local browser policy.
+
 # V3.18.10 — Vehicle Graphics Optimization
 
 - Adaptive vehicle LOD hysteresis, frame-pressure policy, frustum culling and dynamic light/reflection budgets.
