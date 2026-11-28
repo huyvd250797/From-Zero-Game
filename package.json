@@ -1,6 +1,6 @@
 {
   "name": "from-zero",
-  "version": "3.18.2",
+  "version": "3.18.4",
   "private": true,
   "type": "module",
   "scripts": {
@@ -20,7 +20,9 @@
     "test:three": "node --test tests/three-runtime.integration.mjs",
     "build:native-preview": "node scripts/build.mjs --native-preview",
     "benchmark:npc": "node scripts/benchmark-npc.mjs",
-    "simulate:long-term": "node scripts/simulate-long-term.mjs"
+    "simulate:long-term": "node scripts/simulate-long-term.mjs",
+    "vehicle:import": "node scripts/import-professional-vehicle.mjs",
+    "vehicle:verify": "node scripts/verify-professional-vehicles.mjs"
   },
   "engines": {
     "node": ">=20"

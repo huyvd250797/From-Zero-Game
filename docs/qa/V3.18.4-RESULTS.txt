@@ -1,0 +1,5 @@
+V3.18.4 High-Fidelity Vehicle Asset Integration — partial art delivery
+Node v22.16.0. Final focused regression 68/68 pass, including 6 new unit tests (temporary fixture import and verification), existing vehicle geometry, showroom, version, collision, audio and release tests.
+Native Preview Build passed; SHA-256 exact inventory and HTTP 182/182 resources passed.
+Production npm run build: syntax and professional asset registry gates passed; stopped at Three.js dependency missing. npm ci --offline ENOTCACHED. Full unit regression not run. Three runtime integration test added but not run; no iPhone or browser visual/performance QA.
+External acquisition: DNS failed for api.sketchfab.com; no licensed model files downloaded, purchased, or supplied. 0/9 professional models registered. 27 original GLB fallbacks unchanged. Test fixtures use existing project GLBs in temporary folders only. No change to physics/save/master data. No claim of increased visual resemblance.

@@ -1,0 +1,14 @@
+V3.18.3 — Deployment Regression Fix
+Baseline: uploaded V3.18.2 Realistic 3D Vehicle Assets (1).zip
+Node.js 22.16.0, npm 10.9.2.
+Confirmed stale production integration fixture without Three.js: real 07:30 NPC schedule contains VEH_VF7 and VEH_VF8 commuters but no VEH_CAR. Corrected fixture selects cabin commuter and exercises all nine collection models and four legacy cabin models. Actual Three.js integration cannot run without dependency.
+Full unit regression started before hotfix metadata edits and ended with the sole mismatch expected 3.18.2 vs actual 3.18.3 (test loaded before metadata change). See appended summary. Final focused regression: premium-ui, official, final-release 22/22 PASS, including user-reported test and the branding test. New independent deployment regression tests 2/2 PASS. Full unit suite not rerun on immutable final source.
+Native preview build, syntax, exact SHA-256 and HTTP smoke: 180/180 resources PASS. npm ci attempted, EAI_AGAIN registry.npmjs.org. npm run build exits at required Three.js dependency stage; no production build or Three.js integration acceptance. All original gates retained; explicit failure diagnostics added. Exact cause of user's Vercel failure not confirmed without full log.
+No gameplay, save, master data or GLB changes. No migrations.
+ℹ tests 896
+ℹ pass 895
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 184692.396513

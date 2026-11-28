@@ -1,0 +1,13 @@
+{
+  "id": "VEH_CITY",
+  "files": ["city-lod0.glb", "city-lod1.glb", "city-lod2.glb"],
+  "provenance": {
+    "author": "",
+    "source": "",
+    "license": "",
+    "modelYear": "",
+    "rightsEvidence": "",
+    "webDistributionAllowed": false,
+    "derivativesAllowed": false
+  }
+}

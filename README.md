@@ -1,3 +1,7 @@
+# From Zero V3.18.3 — Deployment Regression Fix
+
+Hotfix of V3.18.2. Corrects outdated Three.js NPC commuter fixture, keeps all production build gates and adds stage diagnostics. No migration. Deploy with `npm ci` / `npm run build` / `dist`. See `docs/qa/V3.18.3-RESULTS.txt`.
+
 # From Zero V3.18.2 — Realistic 3D Vehicle Assets
 
 Local GLB vehicle asset pipeline, 27 original reference-inspired interim models, curved coachwork and smooth normals, bounded Three.js rendering, and a depth-buffered lightweight showroom. This is not a set of licensed high-detail OEM car models. See [asset contract, limitations and integration](docs/REALISTIC-3D-VEHICLE-ASSETS.md). Three.js production and device acceptance remain pending.
@@ -368,3 +372,9 @@ HTTPS hoặc localhost, mở online lần đầu và chờ cache được chuẩ
 
 ## Kỹ thuật và tài liệu
 JavaScript ES Modules, Three.js 0.180.0 / WebGL 2 native / WebGL 1 / Canvas 2D, build Node.js với npm dependency được ghim. Master Data V2.9.0 (60 danh mục, 693 bản ghi), validate và compile từ `master-data/`; `src/` là simulation và UI; `public/` là manifest, icon, worker; `scripts/` là công cụ build/test; `tests/` là regression. Giữ nguyên các module nghiệp vụ V1.0.0. `docs/` và [CHANGELOG](CHANGELOG.md) chứa tài liệu theo từng phiên bản; các mục "chưa triển khai" ở tài liệu lịch sử mô tả thời điểm phát hành phiên bản tương ứng, không phải trạng thái hiện tại.
+
+## V3.18.4 — High-Fidelity Vehicle Asset Integration
+
+- Added offline professional GLB import, provenance and LOD validation, content-addressed registry, build verification, runtime selection with fallback, showroom imported geometry and credits.
+- **0/9 externally authored professional models installed.** Existing 27 GLBs unchanged; no visual fidelity upgrade claimed until licensed files are supplied. See `docs/asset-import/README.md`.
+- Preserves V3.18.3 hotfix, save schema, physics and mobile budgets.

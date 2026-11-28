@@ -44,3 +44,7 @@ Patch V3.11.1 — Deployment & Regression Fix: no new main release; progress rem
 V3.15.1 — Navigation, Immersion & Mobile UX Refinement (supplementary patch; 15/16 main releases, production/device acceptance pending).
 
 V3.18.1 — Signature Vehicle Models and V3.18.2 — Realistic 3D Vehicle Assets: supplementary patches, 18/24 (75%) main releases. V3.18.2 adds the local GLB pipeline and original interim models, not licensed high-detail assets. Production/device acceptance pending.
+
+V3.18.3 — Deployment Regression Fix: supplementary hotfix; 18/24 main releases (75%). V3.19.0 remains the next main release.
+
+V3.18.4 — High-Fidelity Vehicle Asset Integration: supplementary integration framework, professional asset sourcing incomplete; 18/24 main releases (75%). V3.19.0 remains next.

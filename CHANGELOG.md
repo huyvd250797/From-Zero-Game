@@ -1,3 +1,9 @@
+# V3.18.3 — Deployment Regression Fix
+
+- Fix stale real Three.js NPC rider/driver test after V3.18.0 replaced generic car commute allocations. Select a real cabin commuter from the schedule and exercise every legacy and collection cabin model; retain the no-visible-driver and rendered-bike assertions.
+- Add independent NPC fixture and production build-gate regression tests. Add explicit dependency and copied module graph stage diagnostics. No production checks removed.
+- No gameplay, GLB, save-schema or master-data changes. Production acceptance pending actual Three.js dependency availability.
+
 # V3.18.2 — Realistic 3D Vehicle Assets
 
 - Actual local GLB pipeline: 27 original interim body assets, indexed geometry, smooth normals, UVs, PBR material roles and clearcoat. Curved near-LOD body/roof and revised fascia details. Not OEM CAD or photoreal models.
@@ -503,3 +509,9 @@ Nine original procedural vehicle interpretations: Honda City, Civic, Kia K3, K5,
 - Eight places, starter work/food/rent/rest/bicycle activities, cash and journal.
 - Local save, validation, import/export, PWA manifest and cache worker.
 - Dependency-free static build and Vercel configuration.
+
+## V3.18.4 — High-Fidelity Vehicle Asset Integration
+
+- Added offline professional GLB import, provenance and LOD validation, content-addressed registry, build verification, runtime selection with fallback, showroom imported geometry and credits.
+- **0/9 externally authored professional models installed.** Existing 27 GLBs unchanged; no visual fidelity upgrade claimed until licensed files are supplied. See `docs/asset-import/README.md`.
+- Preserves V3.18.3 hotfix, save schema, physics and mobile budgets.
