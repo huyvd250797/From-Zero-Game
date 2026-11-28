@@ -1,3 +1,7 @@
+# From Zero V3.18.7 — Premium SUV & EV Collection
+
+Four revised original interim SUV/EV models: Fortuner, VF6, VF7, VF8. Updated 12 GLBs and native coachwork, distinct roof, glazing, fascia, rear bumper and cladding. No professional/OEM models; no migration. See `docs/modeling/PREMIUM-SUVS.md`.
+
 # From Zero V3.18.6 — Premium Sedan Collection
 
 Updated four original reference-inspired sedan shells (Civic, K3, K5, Vios), in both GLB and native meshes. Not professional/OEM assets. No new approved professional model. See `docs/modeling/PREMIUM-SEDANS.md`. No migration.

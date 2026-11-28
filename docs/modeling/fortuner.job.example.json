@@ -1,0 +1,65 @@
+{
+  "id": "VEH_FORTUNER",
+  "collections": [
+    "FORTUNER_LOD0",
+    "FORTUNER_LOD1",
+    "FORTUNER_LOD2"
+  ],
+  "sourceFrame": {
+    "min": [
+      -0.75,
+      0,
+      -1.59
+    ],
+    "max": [
+      0.75,
+      1.38,
+      1.59
+    ]
+  },
+  "wheelCenters": [
+    [
+      -0.6900000000000001,
+      0.28,
+      -1.0176
+    ],
+    [
+      -0.6900000000000001,
+      0.28,
+      1.0176
+    ],
+    [
+      0.6900000000000001,
+      0.28,
+      -1.0176
+    ],
+    [
+      0.6900000000000001,
+      0.28,
+      1.0176
+    ]
+  ],
+  "materialRoles": {
+    "paint": "paint",
+    "glass": "glass",
+    "chrome": "chrome",
+    "trim": "trim",
+    "head": "head",
+    "tail": "tail",
+    "plate": "plate"
+  },
+  "lodMaterials": [
+    {},
+    {},
+    {}
+  ],
+  "provenance": {
+    "author": "",
+    "source": "",
+    "license": "",
+    "modelYear": "2021 facelift (target reference, not verified model)",
+    "rightsEvidence": "",
+    "webDistributionAllowed": false,
+    "derivativesAllowed": false
+  }
+}

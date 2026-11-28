@@ -1,3 +1,9 @@
+# V3.18.7 — Premium SUV & EV Collection
+
+- Revised four SUV/EV shells and individual light signatures, glass, lower cladding and rear fascia. Re-baked 12 GLBs and native meshes.
+- Added four empty Blender guide jobs, not finished models. Professional registry remains empty.
+- Kept 15 sedan GLBs, physics, save schema and mobile budgets unchanged.
+
 # V3.18.6 — Premium Sedan Collection
 
 - Revised Civic/K3/K5/Vios exterior profiles, glazing, pillars, fascia, light signatures and mirror position. Removed floating arch overlays on these cars. Rebuilt 12 GLB bodies and native fallback meshes.

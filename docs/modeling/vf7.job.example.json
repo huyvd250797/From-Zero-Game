@@ -1,0 +1,65 @@
+{
+  "id": "VEH_VF7",
+  "collections": [
+    "VF7_LOD0",
+    "VF7_LOD1",
+    "VF7_LOD2"
+  ],
+  "sourceFrame": {
+    "min": [
+      -0.725,
+      0,
+      -1.52
+    ],
+    "max": [
+      0.725,
+      1.12,
+      1.52
+    ]
+  },
+  "wheelCenters": [
+    [
+      -0.667,
+      0.28,
+      -0.9728
+    ],
+    [
+      -0.667,
+      0.28,
+      0.9728
+    ],
+    [
+      0.667,
+      0.28,
+      -0.9728
+    ],
+    [
+      0.667,
+      0.28,
+      0.9728
+    ]
+  ],
+  "materialRoles": {
+    "paint": "paint",
+    "glass": "glass",
+    "chrome": "chrome",
+    "trim": "trim",
+    "head": "head",
+    "tail": "tail",
+    "plate": "plate"
+  },
+  "lodMaterials": [
+    {},
+    {},
+    {}
+  ],
+  "provenance": {
+    "author": "",
+    "source": "",
+    "license": "",
+    "modelYear": "2024 Plus (target reference, not verified model)",
+    "rightsEvidence": "",
+    "webDistributionAllowed": false,
+    "derivativesAllowed": false
+  }
+}

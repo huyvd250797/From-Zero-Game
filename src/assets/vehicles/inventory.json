@@ -102,81 +102,81 @@
   "VEH_FORTUNER": [
     {
       "lod": 0,
-      "triangles": 4316,
-      "bytes": 124792,
-      "sha256": "f0a053e4e0850a1d29723c6a1904ce54838aa0b9b3bb964779ee1e8b62675f78"
+      "triangles": 5276,
+      "bytes": 174788,
+      "sha256": "9fe8b90e0cd76e5b7fd6ace24f867e6f6c76e84189d0399aade9015bb93658ea"
     },
     {
       "lod": 1,
-      "triangles": 1828,
-      "bytes": 64044,
-      "sha256": "8dd29ec0bd215e9ef18e85659cc669ede9f605703ba837dea55bc3e5ac1d7b87"
+      "triangles": 2228,
+      "bytes": 89840,
+      "sha256": "a24c8102b0b8ee717559d5f81ecd179bfc884844a8d0ee6769c3a97bf38459f9"
     },
     {
       "lod": 2,
-      "triangles": 210,
-      "bytes": 16948,
-      "sha256": "12fc38cc6e2d469e6cd6a97355b8ba581cebf50ff63d5468a6b215026cd9e3d7"
+      "triangles": 252,
+      "bytes": 19876,
+      "sha256": "aa84dcf148df528a2da221c23cebf0f163fa3df96e2581df96b6ef42f0d12a60"
     }
   ],
   "VEH_VF6": [
     {
       "lod": 0,
-      "triangles": 4358,
-      "bytes": 128916,
-      "sha256": "a9f22402b4706d1980e04b4bb4ec92ae05ffff71e93056decf7f7a18ed80238c"
+      "triangles": 5132,
+      "bytes": 168428,
+      "sha256": "692acd55b65836301ee19d7413ad831a19c93610b5e4e3f2e229f5253cc6d085"
     },
     {
       "lod": 1,
-      "triangles": 1822,
-      "bytes": 66596,
-      "sha256": "ca6344e77779d7c40961bfc2326abd040534ba2ffb3abb74612f26637334ec5d"
+      "triangles": 2156,
+      "bytes": 87016,
+      "sha256": "2766d2b6476c16cf9dc1f1461b619410c2f9630c283e5855e66467ea06bf2672"
     },
     {
       "lod": 2,
-      "triangles": 210,
-      "bytes": 16036,
-      "sha256": "84dc6738e32d015f66a031f3251fb507e3e6583b12102acc7f96948b88c1965a"
+      "triangles": 256,
+      "bytes": 19564,
+      "sha256": "2c3dbdd032a25e3f6b7af8c398b55ca5d5707785dd09acd2ed911ace4c6743ff"
     }
   ],
   "VEH_VF7": [
     {
       "lod": 0,
-      "triangles": 4362,
-      "bytes": 127624,
-      "sha256": "da677ad510cc0333b9b74684d2e44071f69a3e53a5494498b9ea297e26e6e15d"
+      "triangles": 5242,
+      "bytes": 169716,
+      "sha256": "f26fffc9358597ac1bc2abb7d90c893d883c003f7df075e340eacffeedef23c5"
     },
     {
       "lod": 1,
-      "triangles": 1826,
-      "bytes": 65740,
-      "sha256": "aaa73ddcf3ce0166c0518c75789ee16b6ab3d6050824cdd5c16c8a2570964162"
+      "triangles": 2234,
+      "bytes": 88788,
+      "sha256": "089143b78ad6519385b9f2eb847c89ffd60aa2c23bd0ab3a451f89f2c6e7a7da"
     },
     {
       "lod": 2,
-      "triangles": 212,
-      "bytes": 15884,
-      "sha256": "49e08f3f4b1a360d419beb42a93dc3b701625ee759201d80d484d0623575581c"
+      "triangles": 276,
+      "bytes": 19872,
+      "sha256": "8daad8cf89179cc6b596e31454e8c15da32e92e42e44186fe359b8116b222353"
     }
   ],
   "VEH_VF8": [
     {
       "lod": 0,
-      "triangles": 4316,
-      "bytes": 126208,
-      "sha256": "2b30df3942df75461c20fc3ac2fb9874243a99ed6451f97220cb8222b4252d12"
+      "triangles": 5178,
+      "bytes": 170428,
+      "sha256": "77754e50cb18da4aa77c3764ffe42be66347986c824a82caf0cf589a6c441aca"
     },
     {
       "lod": 1,
-      "triangles": 1828,
-      "bytes": 64692,
-      "sha256": "4fafdd3635b0809065d3757df80b924247d76b4d206474f40cee7be4ba432445"
+      "triangles": 2186,
+      "bytes": 88060,
+      "sha256": "7c2ec51d95e60a7fba9b2cf99f952a91c4d47030755b4ef65d6f0c19c916ec8c"
     },
     {
       "lod": 2,
-      "triangles": 212,
-      "bytes": 15800,
-      "sha256": "d3363bad443d1cae43c6c0ecba01170c6a16558ca4f06213819d171eddb837eb"
+      "triangles": 266,
+      "bytes": 20112,
+      "sha256": "1c890b3266c231978604f0ba6abd0a1d17007242b39903acc2d4d11dc7700474"
     }
   ]
 }

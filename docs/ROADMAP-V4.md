@@ -52,3 +52,5 @@ V3.18.4 — High-Fidelity Vehicle Asset Integration: supplementary integration f
 V3.18.5 — Professional 3D Modeling Pipeline: supplemental offline authoring/export framework; City RS pilot art pending, 18/24 main releases (75%). Proposed follow-up V3.18.6 Premium Sedan Collection only after City visual approval.
 
 - V3.18.6 — Premium Sedan Collection: four original reference-inspired sedan revisions; professional art remains pending. Next V3.18.7 Premium SUV & EV Collection (conditional on visual quality).
+
+- V3.18.7 — Premium SUV & EV Collection: four original interim SUV/EV revisions, no professional artist models; main progress 18/24 (75%). Next supplemental V3.18.8 Automotive Interior & Animation.
